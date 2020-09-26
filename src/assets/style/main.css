@@ -52,10 +52,6 @@ a {
 a:hover {
     text-decoration: underline;
 }
-.link-discrete, .link-discrete:hover {
-    color: var(--FG-COLOR);
-    text-decoration: none;
-}
 
 hr {
     outline: none;
@@ -125,22 +121,54 @@ hr {
     font-weight: 400;
     letter-spacing: -0.0625rem;
 }
+.section-header h4 {
+    color: var(--ACCENT-PRIMARY-COLOR);
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: -0.0625rem;
+}
 .section-header h1,
 .section-header h2,
-.section-header h3 {
-    text-align: center;
-    align-self: center;
-    justify-self: center;
+.section-header h3,
+.section-header h4 {
+    text-align: center !important;
+    align-self: center !important;
+    justify-self: center !important;
     width: 100%;
 }
 
 .navbar {
+    position: sticky;
     background: var(--BG-COLOR);
     box-shadow: 0px 0px 8px rgba(0,0,0,0.125);
+    top: 0;
+}
+.navbar-wordmark {
+    display: inline-flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
 }
 .navbar-wordmark h1 {
     font-size: 2.25rem;
     margin: 0;
-    margin-top: 0.25rem;
     padding: 0;
+    line-height: 1;
+}
+.navbar-wordmark a, .navbar-wordmark a:hover {
+    color: var(--FG-COLOR);
+    text-decoration: none;
+}
+.profile-img {
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.125);
+}
+.profile-img-s {
+    width: 3rem;
+    height: 3rem;
+}
+.profile-img-l {
+    width: 8rem;
+    height: 8rem;
 }

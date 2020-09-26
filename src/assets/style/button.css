@@ -19,11 +19,17 @@
     --BUTTON-BOX-SHADOW-ACTIVE: 0px 1px 1px rgba(0,0,0,0.25);
 }
 
-.button, button {
+.button, button, .tabbar, .tabbar-item {
     display: inline-flex;
     flex-flow: row wrap;
     align-items: center;
     justify-content: center;
+}
+.tabbar {
+    flex-flow: row;
+}
+
+.button, button {
     color: var(--BUTTON-FG-COLOR);
     background: var(--BUTTON-BG-COLOR);
     border-color: var(--BUTTON-BORDER-COLOR);
@@ -78,4 +84,58 @@
 }
 .row .button:last-child, .row button:last-child {
     margin-right: 0;
+}
+
+.tabbar-item {
+    color: var(--BUTTON-FG-COLOR);
+    background: var(--BUTTON-BG-COLOR);
+    border-color: var(--BUTTON-BORDER-COLOR);
+    border-width: var(--BUTTON-BORDER-WIDTH) 0 var(--BUTTON-BORDER-WIDTH) var(--BUTTON-BORDER-WIDTH);
+    border-style: solid;
+    border-radius: 0;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 700;
+    margin: 0;
+    padding: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    transition: var(--BUTTON-TRANSITION);
+
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+}
+.tabbar-item:first-child {
+    border-top-left-radius: var(--BUTTON-BORDER-RADIUS);
+    border-bottom-left-radius: var(--BUTTON-BORDER-RADIUS);
+}
+.tabbar-item:last-child {
+    border-top-right-radius: var(--BUTTON-BORDER-RADIUS);
+    border-bottom-right-radius: var(--BUTTON-BORDER-RADIUS);
+    border-width: var(--BUTTON-BORDER-WIDTH);
+}
+.tabbar-item:hover {
+    color: var(--BUTTON-FG-COLOR-HOVER);
+    background: var(--BUTTON-BG-COLOR-HOVER);
+    border-color: var(--BUTTON-BORDER-COLOR-HOVER);
+    box-shadow: var(--BUTTON-BOX-SHADOW-HOVER);
+    text-decoration: none !important;
+    transition: var(--BUTTON-TRANSITION);
+}
+.tabbar-item:active {
+    color: var(--BUTTON-FG-COLOR-ACTIVE);
+    background: var(--BUTTON-BG-COLOR-ACTIVE);
+    border-color: var(--BUTTON-BORDER-COLOR-ACTIVE);
+    box-shadow: var(--BUTTON-BOX-SHADOW-ACTIVE);
+    transition: var(--BUTTON-TRANSITION);
+}
+.tabbar-item.router-link-active {
+    color: var(--BUTTON-FG-COLOR-HOVER);
+    background: var(--BUTTON-BG-COLOR-HOVER);
+    border-color: var(--BUTTON-BORDER-COLOR-HOVER);
 }

@@ -1,7 +1,7 @@
 <template>
   <div class="section text-align-center margin-auto-horizontal margin-xl-top">
     <div class="section-header margin-xxl-bottom">
-      <img id="profile-img" class="nodrag noselect border-radius-100pct" src="@/assets/images/profile.jpg" />
+      <img class="profile-img profile-img-l nodrag noselect border-radius-100pct margin-m-bottom" src="@/assets/images/profile.jpg" />
       <h1 class="margin-none">Clarence Siew</h1>
       <p>
         <small>Software Engineer based in Melbourne, Australia.</small>
@@ -73,12 +73,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-#profile-img {
-  box-shadow: 0px 0px 8px rgba(0,0,0,0.125);
-  width: 8rem;
-  height: 8rem;
-  margin-bottom: 2rem;
-}
-</style>

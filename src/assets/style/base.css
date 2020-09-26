@@ -95,16 +95,19 @@
 .grid-auto-flow-dense { grid-auto-flow: dense !important; }
 .grid-auto-flow-row { grid-auto-flow: row !important; }
 .grid-auto-flow-column { grid-auto-flow: column !important; }
+
 .grid-col-auto-fill-128 { grid-template-columns: repeat(auto-fill, minmax(128px, 1fr)) !important; }
 .grid-col-auto-fill-256 { grid-template-columns: repeat(auto-fill, minmax(256px, 1fr)) !important; }
 .grid-col-auto-fill-320 { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)) !important; }
 .grid-col-auto-fill-480 { grid-template-columns: repeat(auto-fill, minmax(480px, 1fr)) !important; }
 .grid-col-auto-fill-640 { grid-template-columns: repeat(auto-fill, minmax(640px, 1fr)) !important; }
+
 .grid-col-auto-fit-128 { grid-template-columns: repeat(auto-fit, minmax(128px, 1fr)) !important; }
 .grid-col-auto-fit-256 { grid-template-columns: repeat(auto-fit, minmax(256px, 1fr)) !important; }
 .grid-col-auto-fit-320 { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important; }
 .grid-col-auto-fit-480 { grid-template-columns: repeat(auto-fit, minmax(480px, 1fr)) !important; }
 .grid-col-auto-fit-640 { grid-template-columns: repeat(auto-fit, minmax(640px, 1fr)) !important; }
+
 .grid-col-1 { grid-template-columns: repeat(1, 1fr) !important; }
 .grid-col-2 { grid-template-columns: repeat(2, 1fr) !important; }
 .grid-col-3 { grid-template-columns: repeat(3, 1fr) !important; }

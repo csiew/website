@@ -1,13 +1,15 @@
 <template>
-  <div class="navbar position-sticky">
-    <div class="hstack hstack-space-between padding-s padding-m-left padding-m-right">
-      <div class="navbar-wordmark">
-        <router-link class="link-discrete" to="/"><h1>Clarence Siew</h1></router-link>
-      </div>
+  <div class="navbar">
+    <div class="hstack hstack-space-between padding-s">
+      <router-link class="navbar-wordmark" to="/">
+        <img class="profile-img profile-img-s nodrag noselect border-radius-100pct" src="@/assets/images/profile.jpg" />
+      </router-link>
       <div v-if="!this.isMobile()">
-        <div id="navbarLinks" class="grid grid-auto-flow-column grid-gap-xl text-align-center">
-          <router-link v-for="item in this.pages" v-bind:key="item.id" class="grid-item" v-bind:to="item.route">{{ item.label }}</router-link>
-        </div>
+        <small>
+          <div id="navbarLinks" class="tabbar">
+            <router-link v-for="item in this.pages" v-bind:key="item.id" class="tabbar-item" v-bind:to="item.route">{{ item.label }}</router-link>
+          </div>
+        </small>
       </div>
       <div v-else>
         <a id="navbarMenuButton" class="button" v-on:click="this.toggleNavMenu()">&#9776;</a>
@@ -43,6 +45,11 @@ export default {
           id: 'projects',
           label: 'Projects',
           route: '/projects'
+        },
+        {
+          id: 'playlists',
+          label: 'Playlists',
+          route: '/playlists'
         }
       ]
     };
