@@ -1,10 +1,24 @@
 <template>
-  <div class="navbar hstack hstack-space-between padding-s padding-m-left padding-m-right">
-    <div>
-      <router-link class="link-discrete" to="/"><h1>Clarence Siew</h1></router-link>
+  <div class="navbar position-sticky">
+    <div class="hstack hstack-space-between padding-s padding-m-left padding-m-right">
+      <div class="navbar-wordmark">
+        <router-link class="link-discrete" to="/"><h1>Clarence Siew</h1></router-link>
+      </div>
+      <div v-if="!this.isMobile()">
+        <div id="navbarLinks" class="grid grid-auto-flow-column grid-gap-xl text-align-center">
+          <router-link v-for="item in this.pages" v-bind:key="item.id" class="grid-item" v-bind:to="item.route">{{ item.label }}</router-link>
+        </div>
+      </div>
+      <div v-else>
+        <a id="navbarMenuButton" class="button" v-on:click="this.toggleNavMenu()">&#9776;</a>
+      </div>
     </div>
-    <div class="grid grid-auto-flow-column grid-gap-xl text-align-center">
-      <router-link v-for="item in this.pages" v-bind:key="item.id" class="grid-item" v-bind:to="item.route">{{ item.label }}</router-link>
+    <div v-if="this.isMobile()"> 
+      <div id="navbarMenu" class="width-full text-align-left">
+        <div class="vstack">
+          <router-link v-for="item in this.pages" v-bind:key="item.id" class="padding-m" v-bind:to="item.route" v-on:click="this.hideNavMenu()">{{ item.label }}</router-link>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -32,6 +46,54 @@ export default {
         }
       ]
     };
+  },
+  methods: {
+    isMobile() {
+      if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        return true
+      } else {
+        return false
+      }
+    },
+    revealNavMenuButton() {
+      document.getElementById("navbarMenuButton").style.visibility = "visible";
+      document.getElementById("navbarMenuButton").style.display = "inline-block";
+    },
+    hideNavMenuButton() {
+      document.getElementById("navbarMenuButton").style.visibility = "hidden";
+      document.getElementById("navbarMenuButton").style.display = "none";
+    },
+    revealNavMenu() {
+      document.getElementById("navbarMenu").style.visibility = "visible";
+      document.getElementById("navbarMenu").style.display = "inline-block";
+    },
+    hideNavMenu() {
+      document.getElementById("navbarMenu").style.visibility = "hidden";
+      document.getElementById("navbarMenu").style.display = "none";
+    },
+    toggleNavMenu() {
+      let navbarMenu = document.getElementById("navbarMenu");
+      if (navbarMenu != null) {
+        if (navbarMenu.style.visibility === "hidden") {
+          this.revealNavMenu();
+        } else {
+          this.hideNavMenu();
+        }
+      }
+    },
+    revealNavLinks() {
+      document.getElementById("navbarLinks").style.visibility = "visible";
+      document.getElementById("navbarLinks").style.display = "inline-block";
+    },
+    hideNavLinks() {
+      document.getElementById("navbarLinks").style.visibility = "hidden";
+      document.getElementById("navbarLinks").style.display = "none";
+    }
+  },
+  mounted: function () {
+    if (this.isMobile() === true) {
+      this.hideNavMenu();
+    }
   }
 }
 </script>

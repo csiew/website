@@ -22,7 +22,7 @@
 
 html, body {
     font-size: var(--FONT-SIZE);
-    font-family: Epilogue, Helvetica, Arial, sans-serif;
+    font-family: 'Epilogue', 'Public Sans', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     line-height: var(--LINE-HEIGHT);
@@ -107,7 +107,7 @@ hr {
 .section:last-child {
     margin-bottom: 0 !important;
 }
-.section-header h1 {
+.section-header h1, .navbar-wordmark h1 {
     font-size: 3.5rem;
     font-weight: 900;
     text-transform: uppercase;
@@ -115,13 +115,13 @@ hr {
 }
 .section-header h2 {
     color: var(--ACCENT-PRIMARY-COLOR);
-    font-size: 2rem;
+    font-size: 2.75rem;
     font-weight: 800;
     letter-spacing: -0.0625rem;
 }
 .section-header h3 {
     color: var(--ACCENT-PRIMARY-COLOR);
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 400;
     letter-spacing: -0.0625rem;
 }
@@ -138,7 +138,9 @@ hr {
     background: var(--BG-COLOR);
     box-shadow: 0px 0px 8px rgba(0,0,0,0.125);
 }
-.navbar h1 {
+.navbar-wordmark h1 {
+    font-size: 2.25rem;
     margin: 0;
+    margin-top: 0.25rem;
     padding: 0;
 }
