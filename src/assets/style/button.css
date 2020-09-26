@@ -1,0 +1,81 @@
+:root {
+    --BUTTON-FG-COLOR: seagreen;
+    --BUTTON-FG-COLOR-HOVER: white;
+    --BUTTON-FG-COLOR-ACTIVE: white;
+    --BUTTON-FG-COLOR-DISABLED: gray;
+    --BUTTON-BG-COLOR: none;
+    --BUTTON-BG-COLOR-HOVER: seagreen;
+    --BUTTON-BG-COLOR-ACTIVE: darkgreen;
+    --BUTTON-BG-COLOR-DISABLED: whitesmoke;
+    --BUTTON-BORDER-COLOR: seagreen;
+    --BUTTON-BORDER-COLOR-HOVER: seagreen;
+    --BUTTON-BORDER-COLOR-ACTIVE: darkgreen;
+    --BUTTON-BORDER-COLOR-DISABLED: whitesmoke;
+    --BUTTON-BORDER-WIDTH: 2px;
+    --BUTTON-BORDER-RADIUS: 5px;
+    --BUTTON-TRANSITION: 0.125s;
+    --BUTTON-BOX-SHADOW: none;
+    --BUTTON-BOX-SHADOW-HOVER: 0px 1px 4px rgba(0,0,0,0.25);
+    --BUTTON-BOX-SHADOW-ACTIVE: 0px 1px 1px rgba(0,0,0,0.25);
+}
+
+.button, button {
+    display: inline-flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    color: var(--BUTTON-FG-COLOR);
+    background: var(--BUTTON-BG-COLOR);
+    border-color: var(--BUTTON-BORDER-COLOR);
+    border-width: var(--BUTTON-BORDER-WIDTH);
+    border-style: solid;
+    border-radius: var(--BUTTON-BORDER-RADIUS);
+    box-shadow: var(--BUTTON-BOX-SHADOW);
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 700;
+    margin: 0;
+    padding: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    transition: var(--BUTTON-TRANSITION);
+
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+}
+.button:hover, button:hover {
+    color: var(--BUTTON-FG-COLOR-HOVER);
+    background: var(--BUTTON-BG-COLOR-HOVER);
+    border-color: var(--BUTTON-BORDER-COLOR-HOVER);
+    box-shadow: var(--BUTTON-BOX-SHADOW-HOVER);
+    text-decoration: none !important;
+    transition: var(--BUTTON-TRANSITION);
+}
+.button:active, button:active {
+    color: var(--BUTTON-FG-COLOR-ACTIVE);
+    background: var(--BUTTON-BG-COLOR-ACTIVE);
+    border-color: var(--BUTTON-BORDER-COLOR-ACTIVE);
+    box-shadow: var(--BUTTON-BOX-SHADOW-ACTIVE);
+    transition: var(--BUTTON-TRANSITION);
+}
+
+.button-disabled, button:disabled,
+.button-disabled:hover, button:disabled:hover,
+.button-disabled:active, button:disabled:active {
+    color: var(--BUTTON-FG-COLOR-DISABLED);
+    background: var(--BUTTON-BG-COLOR-DISABLED);
+    border-color: var(--BUTTON-BORDER-COLOR-DISABLED);
+    box-shadow: none;
+}
+
+.row .button, .row button {
+    margin-right: 1rem !important;
+}
+.row .button:last-child, .row button:last-child {
+    margin-right: 0;
+}

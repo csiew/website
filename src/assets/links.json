@@ -1,0 +1,34 @@
+{
+    "links": [
+        {
+            "id": "blog",
+            "name": "Blog",
+            "url": "https://csiew.github.io/blog/"
+        },
+        {
+            "id": "instagram",
+            "name": "Instagram",
+            "url": "https://instagram.com/clarence_siew"
+        },
+        {
+            "id": "twitter",
+            "name": "Twitter",
+            "url": "https://twitter.com/clarence_siew"
+        },
+        {
+            "id": "github",
+            "name": "GitHub",
+            "url": "https://github.com/csiew"
+        },
+        {
+            "id": "linkedin",
+            "name": "LinkedIn",
+            "url": "https://www.linkedin.com/in/clarencesiew/"
+        },
+        {
+            "id": "email",
+            "name": "Email",
+            "url": "mailto:clarence.siew@gmail.com"
+        }
+    ]
+}

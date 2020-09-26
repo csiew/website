@@ -1,0 +1,144 @@
+:root {
+    --FG-COLOR: #333333;
+    --BG-COLOR: white;
+    --FG-SECONDARY-COLOR: gray;
+    --BG-SECONDARY-COLOR: whitesmoke;
+    --ACCENT-PRIMARY-COLOR: seagreen;
+    --ACCENT-SECONDARY-COLOR: mediumaquamarine;
+    --FONT-SIZE: 1.0625rem;
+    --LINE-HEIGHT: 1.5;
+}
+
+* {
+    box-sizing: border-box !important;
+}
+
+@media (prefers-color-scheme: dark) {
+    html {
+        filter: invert(0.9) hue-rotate(180deg) !important;
+        -webkit-filter: invert(0.9) hue-rotate(180deg) !important;
+    }
+}
+
+html, body {
+    font-size: var(--FONT-SIZE);
+    font-family: Epilogue, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: var(--LINE-HEIGHT);
+    color: var(--FG-COLOR);
+    background: var(--BG-SECONDARY-COLOR);
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+h1, h2, h3, h4, h5 {
+    line-height: 1;
+}
+
+p {
+    margin: 0;
+    margin-top: 0.5rem;
+    margin-bottom: 0.75rem;
+    padding: 0;
+}
+
+a {
+    color: var(--ACCENT-PRIMARY-COLOR);
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+.link-discrete, .link-discrete:hover {
+    color: var(--FG-COLOR);
+    text-decoration: none;
+}
+
+hr {
+    outline: none;
+    border: none;
+    border-bottom: 2px solid var(--FG-SECONDARY-COLOR);
+    margin: 0;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 0;
+}
+
+.footer {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 0;
+    bottom: 0;
+}
+
+#app {
+    display: inline-flex;
+    flex-flow: column;
+    align-items: stretch;
+    justify-content: stretch;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    display: inline-flex;
+    flex-flow: column;
+    align-items: stretch;
+    justify-content: space-between;
+    margin: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+}
+
+.section {
+    margin: 0;
+    margin-bottom: 5rem !important;
+}
+.section:last-child {
+    margin-bottom: 0 !important;
+}
+.section-header h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.125rem;
+}
+.section-header h2 {
+    color: var(--ACCENT-PRIMARY-COLOR);
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.0625rem;
+}
+.section-header h3 {
+    color: var(--ACCENT-PRIMARY-COLOR);
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: -0.0625rem;
+}
+.section-header h1,
+.section-header h2,
+.section-header h3 {
+    text-align: center;
+    align-self: center;
+    justify-self: center;
+    width: 100%;
+}
+
+.navbar {
+    background: var(--BG-COLOR);
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.125);
+}
+.navbar h1 {
+    margin: 0;
+    padding: 0;
+}

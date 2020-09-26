@@ -1,0 +1,96 @@
+{
+    "recent": [
+        {
+            "id": "cast",
+            "name": "Cast",
+            "timeRange": "2020-Present",
+            "description": "A podcast web app that allows you to manage your podcast subscriptions and bookmarks with an intuitive, well-organised interface. It uses Node/Express for its backend API service. Its frontend uses Node/Express for server and routing functionality, whilst EJS is used for basic server-side templating and my own custom frontend library is used for single-page application functionality. Public beta access will be available in the near future!",
+            "imgUrl": "cast.png",
+            "url": "",
+            "github": ""
+        },
+        {
+            "id": "cardo",
+            "name": "Cardo",
+            "timeRange": "2020-Present",
+            "description": "A client-side web frontend library (more so a collection of functions to enable single-page web apps). The previous version of my site and my 'Hoddle' Javascript window manager contain the foundational work for this library. My upcoming podcast app uses this yet-to-be-named library extensively. I will publish this library on GitHub once it reaches some level of maturity.",
+            "imgUrl": "",
+            "url": "",
+            "github": ""
+        },
+        {
+            "id": "recipebook",
+            "name": "Recipe Book",
+            "timeRange": "2020-Present",
+            "description": "A recipe scrapbook app for iOS. Its design is extremely minimalistic and revolves around the user's recipes and only their recipes. It's written in Swift and uses the SwiftUI framework. It's also open source.",
+            "imgUrl": "",
+            "url": "",
+            "github": "https://github.com/csiew/recipebook"
+        }
+    ],
+    "previous": [
+        {
+            "id": "podzol",
+            "name": "Podzol",
+            "timeRange": "2020",
+            "description": "A podcast web app that lives in your terminal. It stores indexes of your podcast subscriptions and episode data in JSON files. It's written in Python and uses the pygame library for audio streaming functionality. Limitations with pygame and cross-platform compatibiltiy (Linux and macOS) led me to start working on a web-based podcast client (which was initially codenamed Podzol).",
+            "imgUrl": "",
+            "url": "",
+            "github": "https://github.com/csiew/podzol"
+        },
+        {
+            "id": "biscuitwm",
+            "name": "BiscuitWM",
+            "timeRange": "2020",
+            "description": "A minimalist X11 window manager for Linux/Unix systems written in Python. Largely an experimental effort.",
+            "imgUrl": "biscuitwm.png",
+            "url": "https://csiew.github.io/BiscuitWM",
+            "github": "https://github.com/csiew/BiscuitWM"
+        },
+        {
+            "id": "hoddle",
+            "name": "Hoddle",
+            "timeRange": "2020",
+            "description": "An experimental client-side JavaScript frontend library to turn a web page into a desktop-like environment. It allows for moveable and resizeable windows.",
+            "imgUrl": "hoddle.png",
+            "url": "https://csiew.github.io/Hoddle",
+            "github": "https://github.com/csiew/Hoddle"
+        },
+        {
+            "id": "md2magic",
+            "name": "md2magic",
+            "timeRange": "2018, 2020",
+            "description": "A static site generator written in Python. Ideal for blogs. Work on a rewrite had been on-and-off until 2020.",
+            "imgUrl": "",
+            "url": "",
+            "github": "https://github.com/csiew/md2magic"
+        },
+        {
+            "id": "transitsafe",
+            "name": "TransitSafe",
+            "timeRange": "2017-2019",
+            "description": "An app and service that lets commuters report incidents (crime, hygiene, medical emergencies, etc) on public transport. It used the Public Transport Victoria APIs to get data on public transport services and station metadata.",
+            "imgUrl": "",
+            "url": "",
+            "github": ""
+        },
+        {
+            "id": "antorcalinux",
+            "name": "Antorca Linux",
+            "timeRange": "2017-2019",
+            "description": "A Debian-based Linux distribution designed for a simple out of the box experience. Ideal for Windows users transitioning to Linux. It used the Xfce desktop environment.",
+            "imgUrl": "antorca_linux.png",
+            "url": "https://antorca.github.io/linux/",
+            "github": ""
+        },
+        {
+            "id": "illumeos",
+            "name": "illume OS",
+            "timeRange": "2011-2017",
+            "description": "A lightweight Debian-based Linux distribution designed for old hardware (e.g. 32-bit x86 PCs). It used IceWM as its window manager in version 1.x, before transitioning to the LXDE desktop environment from version 2.x onwards.",
+            "imgUrl": "",
+            "url": "https://illume-os.firebaseapp.com/",
+            "github": ""
+        }
+    ]
+}
