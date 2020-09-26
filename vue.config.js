@@ -1,5 +1,4 @@
 module.exports = {
-    publicPath: process.env.NODE_ENV === 'production'
-    ? '/vue-crash-course/'
-    : '/'
+    baseUrl: '/vue-crash-course/',
+    publicPath: process.env.NODE_ENV === 'production' ? '/vue-crash-course/' : '/'
 }
