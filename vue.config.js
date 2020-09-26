@@ -1,3 +1,3 @@
 module.exports = {
-    publicPath: 'https://csiew.github.io/vue-crash-course/'
+    publicPath: '/vue-crash-course/'
 }
