@@ -1,9 +1,9 @@
 <template>
-  <div class="section width-full width-max-640 margin-auto-horizontal">
+  <div>
     <div class="section-header">
       <h2>Projects</h2>
     </div>
-    <div class="section">
+    <div class="section width-full width-max-640 margin-auto-horizontal">
       <div class="section-header">
         <h3>Recent projects</h3>
       </div>
@@ -13,7 +13,7 @@
         </span>
       </div>
     </div>
-    <div class="section">
+    <div class="section width-full width-max-640 margin-auto-horizontal">
       <div class="section-header">
         <h3>Past projects</h3>
       </div>
