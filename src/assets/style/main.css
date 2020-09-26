@@ -98,10 +98,7 @@ hr {
 
 .section {
     margin: 0;
-    margin-bottom: 5rem !important;
-}
-.section:last-child {
-    margin-bottom: 0 !important;
+    margin-bottom: 4rem !important;
 }
 .section-header h1, .navbar-wordmark h1 {
     font-size: 3.5rem;

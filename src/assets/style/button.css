@@ -123,7 +123,6 @@
     color: var(--BUTTON-FG-COLOR-HOVER);
     background: var(--BUTTON-BG-COLOR-HOVER);
     border-color: var(--BUTTON-BORDER-COLOR-HOVER);
-    box-shadow: var(--BUTTON-BOX-SHADOW-HOVER);
     text-decoration: none !important;
     transition: var(--BUTTON-TRANSITION);
 }
@@ -131,7 +130,6 @@
     color: var(--BUTTON-FG-COLOR-ACTIVE);
     background: var(--BUTTON-BG-COLOR-ACTIVE);
     border-color: var(--BUTTON-BORDER-COLOR-ACTIVE);
-    box-shadow: var(--BUTTON-BOX-SHADOW-ACTIVE);
     transition: var(--BUTTON-TRANSITION);
 }
 .tabbar-item.router-link-active {
