@@ -20,6 +20,11 @@
         --FONT-SIZE: 1.0625rem;
         --LINE-HEIGHT: 1.5;
     }
+
+    .img-dark-mode-invert img {
+        filter: invert(1) !important;
+        -webkit-filter: invert(1) !important;
+    }
 }
 
 * {

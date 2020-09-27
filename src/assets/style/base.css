@@ -352,6 +352,12 @@
 }
 
 @media only screen and (max-width: 720px) {
+    .only-desktop {
+        display: none;
+        visibility: hidden;
+        height: 0;
+    }
+
     .padding-s { padding: 0.5rem !important; }
     .padding-m { padding: 1rem !important; }
     .padding-l { padding: 1.5rem !important; }

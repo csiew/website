@@ -11,11 +11,21 @@
         <p>
           He currently lives in Melbourne, Australia. He was born and raised in Penang, Malaysia.
         </p>
+        <div class="grid grid-col-2 grid-col-auto-fit-640 grid-gap-m margin-s-top margin-m-bottom nodrag img-dark-mode-invert only-desktop">
+          <div class="grid grid-col-1">
+            <img class="grid-item" src="@/assets/images/Penang.png" style="box-sizing: border-box; object-fit: content; max-width: 233px; max-height: 240px; width: auto; height: auto;" />
+            <span class="width-full text-align-center text-color-secondary"><small>Penang, Malaysia</small></span>
+          </div>
+          <div class="grid grid-col-1">
+            <img class="grid-item" src="@/assets/images/Victoria.png" style="box-sizing: border-box; object-fit: content; max-width: 328px; max-height: 240px; width: auto; height: auto;" />
+            <span class="width-full text-align-center text-color-secondary"><small>Victoria, Australia</small></span>
+          </div>
+        </div>
         <p>
           He has since ventured into the world of full stack web development and mobile app development.
         </p>
         <p>
-          He completed a Bachelor of Software Engineering at Monash University, graduating in May 2020.
+          He completed a Bachelor of Software Engineering at Monash University in March 2020.
         </p>
         <p>
           Post-punk and caffeine are the best brain fuel for software development.
