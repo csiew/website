@@ -19,6 +19,26 @@
     --BUTTON-BOX-SHADOW-ACTIVE: 0px 1px 1px rgba(0,0,0,0.25);
 }
 
+@media (prefers-color-scheme: dark) {
+    :root {
+        --BUTTON-FG-COLOR: mediumaquamarine;
+        --BUTTON-FG-COLOR-HOVER: #333333;
+        --BUTTON-FG-COLOR-ACTIVE: #333333;
+        --BUTTON-FG-COLOR-DISABLED: darkgray;
+        --BUTTON-BG-COLOR: none;
+        --BUTTON-BG-COLOR-HOVER: mediumaquamarine;
+        --BUTTON-BG-COLOR-ACTIVE: darkcyan;
+        --BUTTON-BG-COLOR-DISABLED: #555555;
+        --BUTTON-BORDER-COLOR: mediumaquamarine;
+        --BUTTON-BORDER-COLOR-HOVER: mediumaquamarine;
+        --BUTTON-BORDER-COLOR-ACTIVE: darkcyan;
+        --BUTTON-BORDER-COLOR-DISABLED:  #555555;
+        --BUTTON-BOX-SHADOW: none;
+        --BUTTON-BOX-SHADOW-HOVER: 0px 1px 4px rgba(0,0,0,0.5);
+        --BUTTON-BOX-SHADOW-ACTIVE: 0px 1px 1px rgba(0,0,0,0.5);
+    }
+}
+
 .button, button, .tabbar, .tabbar-item {
     display: inline-flex;
     flex-flow: row wrap;
@@ -90,7 +110,7 @@
     color: var(--BUTTON-FG-COLOR);
     background: var(--BUTTON-BG-COLOR);
     border-color: var(--BUTTON-BORDER-COLOR);
-    border-width: var(--BUTTON-BORDER-WIDTH) 0 var(--BUTTON-BORDER-WIDTH) var(--BUTTON-BORDER-WIDTH);
+    border-width: var(--BUTTON-BORDER-WIDTH) 0 var(--BUTTON-BORDER-WIDTH) 0;
     border-style: solid;
     border-radius: 0;
     font-family: inherit;
@@ -111,13 +131,14 @@
                                     supported by Chrome, Edge, Opera and Firefox */
 }
 .tabbar-item:first-child {
+    border-width: var(--BUTTON-BORDER-WIDTH) 0 var(--BUTTON-BORDER-WIDTH) var(--BUTTON-BORDER-WIDTH);
     border-top-left-radius: var(--BUTTON-BORDER-RADIUS);
     border-bottom-left-radius: var(--BUTTON-BORDER-RADIUS);
 }
 .tabbar-item:last-child {
+    border-width: var(--BUTTON-BORDER-WIDTH) var(--BUTTON-BORDER-WIDTH) var(--BUTTON-BORDER-WIDTH) 0;
     border-top-right-radius: var(--BUTTON-BORDER-RADIUS);
     border-bottom-right-radius: var(--BUTTON-BORDER-RADIUS);
-    border-width: var(--BUTTON-BORDER-WIDTH);
 }
 .tabbar-item:hover {
     color: var(--BUTTON-FG-COLOR-HOVER);
