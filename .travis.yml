@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+ - "node"
+
+cache: npm
+
+script: npm run build
+
+deploy:
+ provider: pages
+ skip_cleanup: true
+ local_dir: dist
+ on:
+   branch: master
