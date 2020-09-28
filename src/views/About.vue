@@ -6,10 +6,10 @@
       </div>
       <div class="card padding-m">
         <p>
-          Clarence is a software engineer who is perhaps best known for creating illume OS and Antorca Linux.
+          Clarence is a software engineer who is perhaps best known for creating illume OS and Antorca Linux. These days he's mostly involved in full-stack web development and mobile app development.
         </p>
         <p>
-          He currently lives in Melbourne, Australia. He was born and raised in Penang, Malaysia.
+          He completed a Bachelor of Software Engineering at Monash University in March 2020. He currently lives in Melbourne, Australia. He was born and raised in Penang, Malaysia.
         </p>
         <div class="grid grid-col-2 grid-col-auto-fit-640 grid-gap-m margin-s-top margin-m-bottom nodrag img-dark-mode-invert only-desktop">
           <div class="grid grid-col-1">
@@ -22,13 +22,7 @@
           </div>
         </div>
         <p>
-          He has since ventured into the world of full stack web development and mobile app development.
-        </p>
-        <p>
-          He completed a Bachelor of Software Engineering at Monash University in March 2020.
-        </p>
-        <p>
-          Post-punk and caffeine are the best brain fuel for software development.
+          Post-punk &amp; surf rock (The National, IDLES, Heavy Lungs, Good Boy, Hockey Dad) and caffeine (coffee in the day, tea at night) are the best brain fuel for software development. Some of his hobbies include programming (of course), playing Minecraft (specifically planning and building cities), and graphic design (pixel art).
         </p>
       </div>
     </div>

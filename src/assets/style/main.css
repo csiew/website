@@ -5,8 +5,9 @@
     --BG-SECONDARY-COLOR: whitesmoke;
     --ACCENT-PRIMARY-COLOR: seagreen;
     --ACCENT-SECONDARY-COLOR: mediumaquamarine;
-    --FONT-SIZE: 1.0625rem;
-    --LINE-HEIGHT: 1.5;
+    --FONT-SIZE: 1rem;
+    --FONT-FAMILY: 'Epilogue', 'Public Sans', Helvetica, Arial, sans-serif;
+    --LINE-HEIGHT: 1.625;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -33,7 +34,7 @@
 
 html, body {
     font-size: var(--FONT-SIZE);
-    font-family: 'Epilogue', 'Public Sans', Helvetica, Arial, sans-serif;
+    font-family: var(--FONT-FAMILY);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     line-height: var(--LINE-HEIGHT);

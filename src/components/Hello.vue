@@ -2,10 +2,8 @@
   <div class="card section hello width-full width-max-640 text-align-center margin-auto-horizontal margin-xl-top padding-m padding-xxl-top padding-xxl-bottom">
     <div class="section-header margin-xxl-bottom">
       <img class="profile-img profile-img-l nodrag noselect border-radius-100pct margin-m-bottom" alt="profile.jpg" src="@/assets/images/profile.jpg" />
-      <h1 class="margin-none">Clarence Siew</h1>
-      <p>
-        <small>Software Engineer based in Melbourne, Australia.</small>
-      </p>
+      <h1 class="margin-s-bottom">Clarence Siew</h1>
+      <p class="text-color-secondary">Software Engineer based in Melbourne, Australia</p>
     </div>
     <span v-if="isMobile()">
       <a id="toggleContactLinksButton" class="button cursor-pointer width-max-480 width-full margin-l-bottom" v-on:click="toggleContactLinks">Contact</a>
