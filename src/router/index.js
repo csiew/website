@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from '@/views/Home.vue';
+import NotFound from '@/views/NotFound.vue';
 
 const routes = [
   {
@@ -21,11 +22,22 @@ const routes = [
     path: '/playlists',
     name: 'Playlists',
     component() { return import('@/views/Playlists.vue') }
+  },
+  {
+    path: '/404',
+    name: 'Not Found',
+    component: NotFound
+  },
+  {
+    path: '/:catchAll(.*)',
+    name: 'Not Found',
+    redirect: '/404'
   }
 ];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
+  mode: 'history',
   routes
 });
 

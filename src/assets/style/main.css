@@ -39,6 +39,21 @@ html, body {
     line-height: var(--LINE-HEIGHT);
     color: var(--FG-COLOR);
     background: var(--BG-SECONDARY-COLOR);
+    display: inline-flex;
+    flex-flow: column;
+    align-items: stretch;
+    justify-content: stretch;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#app {
+    display: inline-flex;
+    flex-flow: column;
+    align-items: stretch;
+    justify-content: stretch;
     margin: 0;
     padding: 0;
     width: 100%;
@@ -81,17 +96,6 @@ hr {
     margin: auto;
     margin-bottom: 0;
     bottom: 0;
-}
-
-#app {
-    display: inline-flex;
-    flex-flow: column;
-    align-items: stretch;
-    justify-content: stretch;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
 }
 
 .container {
@@ -180,4 +184,8 @@ hr {
 .profile-img-l {
     width: 8rem;
     height: 8rem;
+}
+
+.hello h1 {
+    font-size: 7.25vh !important;
 }
