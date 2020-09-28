@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import Home from '@/views/Home.vue';
-import NotFound from '@/views/NotFound.vue';
+import Home from '@/pages/Home/Home.vue';
+import NotFound from '@/pages/NotFound/NotFound.vue';
 
 const routes = [
   {
@@ -11,17 +11,17 @@ const routes = [
   {
     path: '/about',
     name: 'About',
-    component() { return import('@/views/About.vue') }
+    component() { return import('@/pages/About/About.vue') }
   },
   {
     path: '/projects',
     name: 'Projects',
-    component() { return import('@/views/Projects.vue') }
+    component() { return import('@/pages/Projects/Projects.vue') }
   },
   {
     path: '/playlists',
     name: 'Playlists',
-    component() { return import('@/views/Playlists.vue') }
+    component() { return import('@/pages/Playlists/Playlists.vue') }
   },
   {
     path: '/404',
@@ -36,8 +36,8 @@ const routes = [
 ];
 
 const router = createRouter({
+  mode: 'history',
   history: createWebHistory(process.env.BASE_URL),
-  mode: 'hash',
   routes
 });
 
