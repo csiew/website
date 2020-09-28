@@ -6,32 +6,27 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home,
-    template: 'public/index.html'
+    component: Home
   },
   {
     path: '/about',
     name: 'About',
-    component() { return import('@/views/About.vue') },
-    template: 'public/index.html'
+    component() { return import('@/views/About.vue') }
   },
   {
     path: '/projects',
     name: 'Projects',
-    component() { return import('@/views/Projects.vue') },
-    template: 'public/index.html'
+    component() { return import('@/views/Projects.vue') }
   },
   {
     path: '/playlists',
     name: 'Playlists',
-    component() { return import('@/views/Playlists.vue') },
-    template: 'public/index.html'
+    component() { return import('@/views/Playlists.vue') }
   },
   {
     path: '/404',
     name: 'Not Found',
-    component: NotFound,
-    template: 'public/index.html'
+    component: NotFound
   },
   {
     path: '/:catchAll(.*)',
