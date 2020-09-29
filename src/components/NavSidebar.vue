@@ -4,7 +4,7 @@
       <router-link class="navbar-wordmark" to="/">
         <img class="profile-img profile-img-m nodrag noselect border-radius-100pct margin-m-bottom" src="@/assets/images/profile.jpg" />
       </router-link>
-      <div id="navbarMenu" class="width-full text-align-left">
+      <div class="width-full text-align-left">
         <div class="vstack">
           <router-link v-for="item in this.pages" v-bind:key="item.id" class="tabbar-vertical-item" v-bind:to="item.route">{{ item.label }}</router-link>
         </div>

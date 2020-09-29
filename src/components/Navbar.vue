@@ -1,5 +1,5 @@
 <template>
-  <div class="nav navbar width-full">
+  <div class="nav navbar vstack width-full">
     <div class="hstack hstack-space-between padding-s">
       <router-link class="navbar-wordmark" to="/">
         <img class="profile-img profile-img-s nodrag noselect border-radius-100pct" src="@/assets/images/profile.jpg" />
