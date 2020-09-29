@@ -2,16 +2,9 @@
     --CARD-BORDER-COLOR: none;
     --CARD-BORDER-WIDTH: 0;
     --CARD-BORDER-RADIUS: 5px;
-    --CARD-BOX-SHADOW: 0px 0px 8px rgba(0,0,0,0.125);
-    --CARD-IMG-BORDER-COLOR: lightgray;
+    --CARD-BOX-SHADOW: 0px 0px 8px rgba(0,0,0,0.5);
+    --CARD-IMG-BORDER-COLOR: black;
     --CARD-IMG-BORDER-WIDTH: 1px;
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --CARD-BOX-SHADOW: 0px 0px 8px rgba(0,0,0,0.5);
-        --CARD-IMG-BORDER-COLOR: black;
-    }
 }
 
 .card {

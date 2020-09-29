@@ -1,31 +1,14 @@
 :root {
-    --FG-COLOR: #333333;
-    --BG-COLOR: white;
-    --FG-SECONDARY-COLOR: gray;
-    --BG-SECONDARY-COLOR: whitesmoke;
-    --ACCENT-PRIMARY-COLOR: seagreen;
-    --ACCENT-SECONDARY-COLOR: mediumaquamarine;
+    --FG-COLOR: whitesmoke;
+    --BG-COLOR: #2e2e2e;
+    --FG-SECONDARY-COLOR: darkgray;
+    --BG-SECONDARY-COLOR: #222222;
+    --ACCENT-PRIMARY-COLOR: gold;
+    --ACCENT-SECONDARY-COLOR: goldenrod;
+    --NAVBAR-SHADOW: 0px 0px 8px rgba(0,0,0,0.5);
     --FONT-SIZE: 1rem;
     --FONT-FAMILY: 'Epilogue', 'Public Sans', Helvetica, Arial, sans-serif;
     --LINE-HEIGHT: 1.625;
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --FG-COLOR: whitesmoke;
-        --BG-COLOR: #333333;
-        --FG-SECONDARY-COLOR: gray;
-        --BG-SECONDARY-COLOR: #222222;
-        --ACCENT-PRIMARY-COLOR: mediumaquamarine;
-        --ACCENT-SECONDARY-COLOR: darkcyan;
-        --FONT-SIZE: 1.0625rem;
-        --LINE-HEIGHT: 1.5;
-    }
-
-    .img-dark-mode-invert img {
-        filter: invert(1) !important;
-        -webkit-filter: invert(1) !important;
-    }
 }
 
 * {
@@ -152,9 +135,9 @@ hr {
 
 .navbar {
     z-index: 10;
-    position: sticky;
+    position: relative;
     background: var(--BG-COLOR);
-    box-shadow: 0px 0px 8px rgba(0,0,0,0.125);
+    box-shadow: var(--NAVBAR-SHADOW);
     top: 0;
 }
 .navbar-wordmark {
@@ -188,5 +171,5 @@ hr {
 }
 
 .hello h1 {
-    font-size: 7.25vh !important;
+    font-size: 8.5vh !important;
 }
