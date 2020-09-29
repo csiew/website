@@ -37,12 +37,8 @@ const routes = [
 
 const router = createRouter({
   mode: 'history',
-  base: process.env.NODE_ENV === 'production'
-  ? '/vue-crash-course/'
-  : '/',
-  history: createWebHistory(process.env.NODE_ENV === 'production'
-  ? '/vue-crash-course/'
-  : '/',),
+  base: process.env.BASE_URL,
+  history: createWebHistory(process.env.BASE_URL),
   routes
 });
 
