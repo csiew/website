@@ -279,9 +279,6 @@
     margin: 0;
     padding: 0;
 }
-.hstack-column:last-child {
-    border-right: none !important;
-}
 .hstack-column-third {
     flex: 1 1 auto;
     max-width: 22vw;

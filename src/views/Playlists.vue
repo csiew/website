@@ -12,6 +12,7 @@
                 <a v-for="standard in year.playlists.standard" v-bind:key="standard.name" class="grid-item button" v-bind:href="standard.url">{{ standard.name }}</a>
             </div>
           </span>
+          <hr v-if="year.playlists.standard.length !== 0 && year.playlists.special.length !== 0" />
           <span v-if="year.playlists.special.length !== 0">
             <div class="grid grid-col-3 grid-col-auto-fit-640 grid-gap-m">
               <a v-for="special in year.playlists.special" v-bind:key="special.name" class="grid-item button" v-bind:href="special.url">{{ special.name }}</a>

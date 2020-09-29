@@ -2,7 +2,7 @@
   <div class="nav navsidebar">
     <div class="vstack vstack-space-between padding-s">
       <router-link class="navbar-wordmark" to="/">
-        <img class="profile-img profile-img-m nodrag noselect border-radius-100pct margin-m-bottom" src="@/assets/images/profile.jpg" />
+        <img class="profile-img profile-img-m nodrag noselect border-radius-100pct margin-m margin-l-bottom" src="@/assets/images/profile.jpg" />
       </router-link>
       <div class="width-full text-align-left">
         <div class="vstack">

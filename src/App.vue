@@ -1,11 +1,9 @@
 <template>
+  <Navbar />
   <div class="hstack hstack-height-full">
     <NavSidebar class="hstack-column" />
-    <div class="hstack-column width-full">
-      <Navbar />
-      <div class="container padding-l">
-        <router-view></router-view>
-      </div>
+    <div class="container width-full padding-l">
+      <router-view></router-view>
       <Footer />
     </div>
   </div>
