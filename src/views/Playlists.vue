@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="section width-full width-max-640 margin-auto-horizontal">
+  <div class="width-max-640 width-full margin-auto-horizontal">
+    <div class="section width-full">
       <div class="section-header">
         <h2>Playlists</h2>
       </div>

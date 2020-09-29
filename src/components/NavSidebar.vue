@@ -1,24 +1,12 @@
 <template>
-  <div class="nav navbar width-full">
-    <div class="hstack hstack-space-between padding-s">
+  <div class="nav navsidebar">
+    <div class="vstack vstack-space-between padding-s">
       <router-link class="navbar-wordmark" to="/">
-        <img class="profile-img profile-img-s nodrag noselect border-radius-100pct" src="@/assets/images/profile.jpg" />
+        <img class="profile-img profile-img-m nodrag noselect border-radius-100pct margin-m-bottom" src="@/assets/images/profile.jpg" />
       </router-link>
-      <div v-if="!this.isMobile()">
-        <small>
-          <div id="navbarLinks" class="tabbar">
-            <router-link v-for="item in this.pages" v-bind:key="item.id" class="tabbar-item" v-bind:to="item.route">{{ item.label }}</router-link>
-          </div>
-        </small>
-      </div>
-      <div v-else>
-        <a id="navbarMenuButton" class="button" v-on:click="this.toggleNavMenu()">&#9776;</a>
-      </div>
-    </div>
-    <div v-if="this.isMobile()"> 
       <div id="navbarMenu" class="width-full text-align-left">
         <div class="vstack">
-          <router-link v-for="item in this.pages" v-bind:key="item.id" class="padding-m" v-bind:to="item.route" v-on:click="this.hideNavMenu()">{{ item.label }}</router-link>
+          <router-link v-for="item in this.pages" v-bind:key="item.id" class="tabbar-vertical-item" v-bind:to="item.route">{{ item.label }}</router-link>
         </div>
       </div>
     </div>
@@ -27,7 +15,7 @@
 
 <script>
 export default {
-  name: 'Navbar',
+  name: 'NavSidebar',
   data() {
     return {
       pages: [
@@ -95,11 +83,6 @@ export default {
     hideNavLinks() {
       document.getElementById("navbarLinks").style.visibility = "hidden";
       document.getElementById("navbarLinks").style.display = "none";
-    }
-  },
-  mounted: function () {
-    if (this.isMobile() === true) {
-      this.hideNavMenu();
     }
   }
 }

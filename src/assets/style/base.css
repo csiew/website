@@ -269,16 +269,6 @@
 .hstack-responsive {
     flex-flow: row wrap;
 }
-.hstack-item {
-    margin-right: 16px !important;
-}
-.hstack-item-s {
-    margin-right: 8px !important;
-}
-.hstack-item:last-child,
-.hstack-item-s:last-child {
-    margin-right: 0 !important;
-}
 .hstack-column {
     display: inline-flex;
     flex-flow: column;

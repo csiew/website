@@ -1,19 +1,26 @@
 <template>
-  <Navbar />
-  <div class="container padding-l">
-    <router-view></router-view>
+  <div class="hstack hstack-height-full">
+    <NavSidebar class="hstack-column" />
+    <div class="hstack-column width-full">
+      <Navbar />
+      <div class="container padding-l">
+        <router-view></router-view>
+      </div>
+      <Footer />
+    </div>
   </div>
-  <Footer />
 </template>
 
 <script>
 import Navbar from '@/components/Navbar.vue'
+import NavSidebar from '@/components/NavSidebar.vue'
 import Footer from '@/components/Footer.vue'
 
 export default {
   name: 'App',
   components: {
     Navbar,
+    NavSidebar,
     Footer
   }
 }
