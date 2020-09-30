@@ -104,8 +104,8 @@ hr {
 .container {
     display: inline-flex;
     flex-flow: column;
-    align-items: stretch;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: flex-start;
     margin: auto;
     margin-top: 0;
     margin-bottom: 0;
@@ -164,6 +164,11 @@ hr {
     height: 100%;
     top: 0;
     left: 0;
+}
+.navmenu {
+    position: fixed;
+    width: 100%;
+    height: 100%;
 }
 .navbar {
     visibility: hidden;

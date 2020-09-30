@@ -1,5 +1,5 @@
 <template>
-  <div class="nav navbar vstack width-full">
+  <div class="nav navbar vstack justify-stretch align-stretch width-full">
     <div class="hstack hstack-space-between padding-s">
       <router-link class="navbar-wordmark" to="/">
         <img class="profile-img profile-img-s nodrag noselect border-radius-100pct" src="@/assets/images/profile.jpg" />
@@ -15,11 +15,17 @@
         <a id="navbarMenuButton" class="button" v-on:click="this.toggleNavMenu()">&#9776;</a>
       </div>
     </div>
-    <div v-if="this.isMobile()"> 
-      <div id="navbarMenu" class="width-full text-align-left">
-        <div class="vstack">
-          <router-link v-for="item in this.pages" v-bind:key="item.id" class="padding-m" v-bind:to="item.route" v-on:click="this.hideNavMenu()">{{ item.label }}</router-link>
-        </div>
+  </div>
+  <div v-if="this.isMobile()" id="navbarMenu" class="nav navmenu vstack width-full text-align-left">
+    <div class="vstack">
+      <div class="hstack hstack-space-between padding-s">
+        <router-link class="navbar-wordmark" to="/">
+          <img class="profile-img profile-img-s nodrag noselect border-radius-100pct" src="@/assets/images/profile.jpg" />
+        </router-link>
+        <a class="button" v-on:click="this.hideNavMenu()">&#10005;</a>
+      </div>
+      <div class="vstack padding-m">
+        <router-link v-for="item in this.pages" v-bind:key="item.id" class="tabbar-vertical-item text-align-center font-scale-xl" v-bind:to="item.route" v-on:click="this.hideNavMenu()">{{ item.label }}</router-link>
       </div>
     </div>
   </div>
@@ -64,7 +70,7 @@ export default {
     },
     revealNavMenuButton() {
       document.getElementById("navbarMenuButton").style.visibility = "visible";
-      document.getElementById("navbarMenuButton").style.display = "inline-block";
+      document.getElementById("navbarMenuButton").style.display = "inline-flex";
     },
     hideNavMenuButton() {
       document.getElementById("navbarMenuButton").style.visibility = "hidden";
@@ -72,7 +78,7 @@ export default {
     },
     revealNavMenu() {
       document.getElementById("navbarMenu").style.visibility = "visible";
-      document.getElementById("navbarMenu").style.display = "inline-block";
+      document.getElementById("navbarMenu").style.display = "inline-flex";
     },
     hideNavMenu() {
       document.getElementById("navbarMenu").style.visibility = "hidden";

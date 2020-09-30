@@ -3,7 +3,7 @@
   <div class="hstack hstack-height-full">
     <NavSidebar class="hstack-column" />
     <div class="hstack-column width-full padding-l">
-      <router-view class="container"></router-view>
+      <router-view></router-view>
       <Footer />
     </div>
   </div>
