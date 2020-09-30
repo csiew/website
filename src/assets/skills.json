@@ -28,13 +28,14 @@
             "Firestore (NoSQL)"
         ],
         "cloud": [
-            "EC2, CloudWatch (Amazon AWS)",
+            "Amazon AWS (EC2, CloudWatch)",
             "Google Firebase"
         ],
         "ci": [
             "GitHub Pages",
             "Travis CI",
-            "Netlify"
+            "Netlify",
+            "GoCD"
         ]
     }
 }

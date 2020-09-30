@@ -36,7 +36,7 @@
           This site was made using the <a href="https://vuejs.org/" target="_blank">Vue.js framework</a>. You can see the previous version of the site <a href="https://csiew.github.io/" target="_blank">here</a>, and an even older one <a href="https://csiew.github.io/archive/index.html" target="_blank">here</a>.
         </p>
         <p>
-          It's hosted on <a href="https://netlify.com/" target="_blank">Netlify</a>, and uses <a href="https://travis-ci.org/" target="_blank">Travis CI</a> to automatically deploy new commits from the GitHub repository to GitHub Pages.
+          It's hosted on <a href="https://netlify.com/" target="_blank">Netlify</a>, and uses <a href="https://travis-ci.org/" target="_blank">Travis CI</a> to automatically deploy new commits from the GitHub repository to Netlify.
         </p>
       </div>
     </div>
