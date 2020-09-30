@@ -10,6 +10,7 @@
     --BUTTON-BORDER-COLOR: var(--ACCENT-PRIMARY-COLOR);
     --BUTTON-BORDER-COLOR-HOVER: var(--ACCENT-PRIMARY-COLOR);
     --BUTTON-BORDER-COLOR-ACTIVE: var(--ACCENT-SECONDARY-COLOR);
+    --BUTTON-BORDER-COLOR-FOCUS: var(--ACCENT-SECONDARY-COLOR);
     --BUTTON-BORDER-COLOR-DISABLED:  #555555;
     --BUTTON-BORDER-WIDTH: 2px;
     --BUTTON-BORDER-RADIUS: 5px;
@@ -67,6 +68,10 @@
     border-color: var(--BUTTON-BORDER-COLOR-ACTIVE);
     box-shadow: var(--BUTTON-BOX-SHADOW-ACTIVE);
     transition: var(--TRANSITION);
+}
+.button:focus, button:focus {
+    outline: none;
+    border-color: var(--BUTTON-BORDER-COLOR-FOCUS);
 }
 
 .button-disabled, button:disabled,

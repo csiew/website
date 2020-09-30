@@ -1,0 +1,40 @@
+{
+    "programmingLangs": [
+        "JavaScript",
+        "Python",
+        "Swift",
+        "Java",
+        "Kotlin",
+        "HTML",
+        "CSS",
+        "Bash"
+    ],
+    "frameworks": {
+        "frontend": [
+            "React",
+            "Vue",
+            "SwiftUI"
+        ],
+        "backend": [
+            "Node.js",
+            "Express",
+            "Spring"
+        ]
+    },
+    "infrastructure": {
+        "database": [
+            "PostgreSQL",
+            "MySQL",
+            "Firestore (NoSQL)"
+        ],
+        "cloud": [
+            "EC2, CloudWatch (Amazon AWS)",
+            "Google Firebase"
+        ],
+        "ci": [
+            "GitHub Pages",
+            "Travis CI",
+            "Netlify"
+        ]
+    }
+}
