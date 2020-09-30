@@ -1,0 +1,61 @@
+:root {
+    --TEXT-FIELD-FG-COLOR: #222222;
+    --TEXT-FIELD-FG-COLOR-HOVER: #222222;
+    --TEXT-FIELD-FG-COLOR-ACTIVE: #222222;
+    --TEXT-FIELD-BG-COLOR: lightgray;
+    --TEXT-FIELD-BG-COLOR-HOVER: whitesmoke;
+    --TEXT-FIELD-BG-COLOR-ACTIVE: whitesmoke;
+    --TEXT-FIELD-BORDER-COLOR: lightgray;
+    --TEXT-FIELD-BORDER-COLOR-HOVER: whitesmoke;
+    --TEXT-FIELD-BORDER-COLOR-ACTIVE: whitesmoke;
+    --TEXT-FIELD-BORDER-COLOR-FOCUS: gold;
+    --TEXT-FIELD-BORDER-WIDTH: 2px;
+    --TEXT-FIELD-BORDER-RADIUS: 5px;
+}
+
+input[type=text],
+input[type=number],
+input[type=search],
+input[type=email],
+input[type=password] {
+    margin: 0;
+    padding: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    color: var(--TEXT-FIELD-FG-COLOR);
+    background: var(--TEXT-FIELD-BG-COLOR);
+    border-width: var(--TEXT-FIELD-BORDER-WIDTH);
+    border-style: solid;
+    border-color: var(--TEXT-FIELD-BORDER-COLOR);
+    border-radius: var(--TEXT-FIELD-BORDER-RADIUS);
+    font-family: inherit;
+    font-size: inherit;
+}
+input[type=text]:hover,
+input[type=number]:hover,
+input[type=search]:hover,
+input[type=email]:hover,
+input[type=password]:hover {
+    color: var(--TEXT-FIELD-FG-COLOR-HOVER);
+    background: var(--TEXT-FIELD-BG-COLOR-HOVER);
+    border-color: var(--TEXT-FIELD-BORDER-COLOR-HOVER);
+}
+input[type=text]:active,
+input[type=number]:active,
+input[type=search]:active,
+input[type=email]:active,
+input[type=password]:active {
+    color: var(--TEXT-FIELD-FG-COLOR-ACTIVE);
+    background: var(--TEXT-FIELD-BG-COLOR-ACTIVE);
+    border-color: var(--TEXT-FIELD-BORDER-COLOR-ACTIVE);
+}
+input[type=text]:focus,
+input[type=number]:focus,
+input[type=search]:focus,
+input[type=email]:focus,
+input[type=password]:focus {
+    outline: none;
+    color: var(--TEXT-FIELD-FG-COLOR-ACTIVE);
+    background: var(--TEXT-FIELD-BG-COLOR-ACTIVE);
+    border-color: var(--TEXT-FIELD-BORDER-COLOR-FOCUS);
+}
