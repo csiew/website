@@ -30,6 +30,7 @@ input[type=password] {
     border-radius: var(--TEXT-FIELD-BORDER-RADIUS);
     font-family: inherit;
     font-size: inherit;
+    transition: var(--TRANSITION);
 }
 input[type=text]:hover,
 input[type=number]:hover,
@@ -39,6 +40,7 @@ input[type=password]:hover {
     color: var(--TEXT-FIELD-FG-COLOR-HOVER);
     background: var(--TEXT-FIELD-BG-COLOR-HOVER);
     border-color: var(--TEXT-FIELD-BORDER-COLOR-HOVER);
+    transition: var(--TRANSITION);
 }
 input[type=text]:active,
 input[type=number]:active,
@@ -48,6 +50,7 @@ input[type=password]:active {
     color: var(--TEXT-FIELD-FG-COLOR-ACTIVE);
     background: var(--TEXT-FIELD-BG-COLOR-ACTIVE);
     border-color: var(--TEXT-FIELD-BORDER-COLOR-ACTIVE);
+    transition: var(--TRANSITION);
 }
 input[type=text]:focus,
 input[type=number]:focus,
@@ -58,4 +61,5 @@ input[type=password]:focus {
     color: var(--TEXT-FIELD-FG-COLOR-ACTIVE);
     background: var(--TEXT-FIELD-BG-COLOR-ACTIVE);
     border-color: var(--TEXT-FIELD-BORDER-COLOR-FOCUS);
+    transition: var(--TRANSITION);
 }
