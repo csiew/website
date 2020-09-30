@@ -265,6 +265,7 @@
     display: inline-flex;
     overflow-x: hidden;
     overflow-y: auto;
+    height: 100%;
 }
 .hstack-responsive {
     flex-flow: row wrap;

@@ -26,75 +26,7 @@
         </p>
       </div>
     </div>
-    <div class="section width-full">
-      <div class="section-header">
-        <h3>Skills</h3>
-      </div>
-      <div class="card padding-m">
-        <h4 class="padding-s-bottom">Programming Languages</h4>
-        <div class="grid grid-gap-m grid-col-1 grid-col-auto-fit-640">
-          <div class="grid-item list-freestyle">
-            <ul>
-              <li>JavaScript</li>
-              <li>Python</li>
-              <li>Swift</li>
-              <li>Java</li>
-              <li>Kotlin</li>
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>Bash</li>
-            </ul>
-          </div>
-        </div>
-        <hr />
-        <h4 class="padding-s-bottom">Frameworks</h4>
-        <div class="grid grid-gap-m grid-col-2 grid-col-auto-fit-640">
-          <div class="grid-item list-freestyle">
-            <h5>Frontend</h5>
-            <ul>
-              <li>React</li>
-              <li>Vue</li>
-              <li>SwiftUI</li>
-            </ul>
-          </div>
-          <div class="grid-item list-freestyle">
-            <h5>Backend</h5>
-            <ul>
-              <li>Node.js</li>
-              <li>Express</li>
-              <li>Spring</li>
-            </ul>
-          </div>
-        </div>
-        <hr />
-        <h4 class="padding-s-bottom">Infrastructure</h4>
-        <div class="grid grid-gap-m grid-col-2 grid-col-auto-fit-640">
-          <div class="grid-item list-freestyle">
-            <h5>Database</h5>
-            <ul>
-              <li>PostgreSQL</li>
-              <li>MySQL</li>
-              <li>Firestore (NoSQL)</li>
-            </ul>
-          </div>
-          <div class="grid-item list-freestyle">
-            <h5>Cloud</h5>
-            <ul>
-              <li>EC2, CloudWatch (Amazon AWS)</li>
-              <li>Google Firebase</li>
-            </ul>
-          </div>
-          <div class="grid-item list-freestyle">
-            <h5>Continuous Integration</h5>
-            <ul>
-              <li>Travis CI</li>
-              <li>Netlify</li>
-              <li>GitHub Pages</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
+    <Skills />
     <div class="section width-full">
       <div class="section-header">
         <h3>This Site</h3>
@@ -112,7 +44,12 @@
 </template>
 
 <script>
+import Skills from '@/components/Skills.vue'
+
 export default {
-  name: 'About'
+  name: 'About',
+  components: {
+    Skills
+  }
 }
 </script>

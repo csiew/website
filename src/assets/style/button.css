@@ -141,7 +141,7 @@
 .tabbar-vertical-item {
     color: var(--BUTTON-FG-COLOR);
     background: none;
-    border-color: transparent !important;
+    border-color: transparent;
     border-width: var(--BUTTON-BORDER-WIDTH);
     border-style: solid;
     border-radius: var(--BUTTON-BORDER-RADIUS);
