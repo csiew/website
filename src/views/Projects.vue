@@ -8,9 +8,7 @@
         <h3>Recent projects</h3>
       </div>
       <div class="width-full width-max-640 grid grid-gap-m grid-col-1 margin-auto-horizontal margin-xl-top margin-xl-bottom">
-        <span v-for="item in this.recent" v-bind:key="item.id">
-          <ProjectCard class="grid-item width-full padding-m" v-bind:project=item />
-        </span>
+        <ProjectCard v-for="item in this.recent" v-bind:key="item.id" v-bind:name="item['id']" class="grid-item width-full padding-m" v-bind:project=item />
       </div>
     </div>
     <div class="section width-full">
@@ -18,17 +16,15 @@
         <h3>Past projects</h3>
       </div>
       <div class="width-full width-max-640 grid grid-gap-m grid-col-1 margin-auto-horizontal margin-xl-top margin-xl-bottom">
-        <span v-for="item in this.previous" v-bind:key="item.id">
-          <ProjectCard class="grid-item width-full padding-m" v-bind:project=item />
-        </span>
+        <ProjectCard v-for="item in this.previous" v-bind:key="item.id" v-bind:name="item['id']" class="grid-item width-full padding-m" v-bind:project=item />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import ProjectCard from '@/components/ProjectCard.vue'
-import projectsJSON from '@/assets/projects.json'
+import ProjectCard from '@/components/ProjectCard.vue';
+import projectsJSON from '@/assets/projects.json';
 
 export default {
   name: 'Projects',
