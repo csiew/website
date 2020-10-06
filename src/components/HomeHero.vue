@@ -3,10 +3,10 @@
     <div class="section-header">
       <h3>Featured projects</h3>
     </div>
-    <div class="section card width-full width-max-1024 margin-auto-horizontal text-align-center padding-l padding-xl-top padding-xl-bottom">
-      <div class="vstack align-center justify-center width-full height-full">
-        <div class="vstack width-full align-center justify-center text-align-center">
-          <div class="hstack hstack-responsive hstack-space-between width-full align-center text-align-center padding-s-bottom">
+    <div class="section card width-full width-max-1024 margin-auto-horizontal text-align-center padding-l">
+      <div class="vstack align-start justify-center width-full height-full">
+        <div class="vstack width-full align-start justify-center text-align-center">
+          <div class="hstack hstack-responsive hstack-space-between width-full align-start text-align-center padding-s-bottom">
             <div class="hstack width-auto align-center justify-start padding-xs-bottom">
               <img v-bind:src="this.getImgUrl(projects[currentIndex].logoUrl)" class="margin-s-right nodrag noselect" style="max-width: 2.5rem; max-height: 2.5rem;" />
               <div class="vstack width-auto text-align-left align-start justify-center">
@@ -14,7 +14,7 @@
                 <small class="text-color-secondary">{{ projects[currentIndex].description }}</small>
               </div>
             </div>
-            <div class="hstack width-auto align-center justify-end">
+            <div class="hstack width-auto align-start justify-end">
               <div class="hstack width-auto">
                 <button v-for="(item, index) in this.projects" v-bind:key="item.name" class="tabbar-item" v-bind:class="currentIndex === index ? 'tabbar-item-current' : ''" v-on:click="this.setIndex(index)">{{ index + 1 }}</button>
               </div>
