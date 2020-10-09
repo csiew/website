@@ -153,14 +153,15 @@
 .tabbar-vertical-item {
     color: var(--FG-SECONDARY-COLOR);
     background: none;
+    border-radius: var(--BUTTON-BORDER-RADIUS);
     font-family: inherit;
     font-size: inherit;
     font-weight: 700;
     margin: 0;
     margin-bottom: 0.5rem;
-    padding: 0.5rem;
-    padding-top: 0.25rem;
-    padding-bottom: 0.25rem;
+    padding: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     transition: var(--TRANSITION);
 
     -webkit-touch-callout: none; /* iOS Safari */
@@ -175,12 +176,15 @@
     margin-bottom: 0;
 }
 .tabbar-vertical-item:hover {
-    color: var(--ACCENT-PRIMARY-COLOR);
+    color: var(--BG-COLOR);
+    background: var(--FG-COLOR);
     text-decoration: none !important;
 }
 .tabbar-vertical-item:active {
-    color: var(--BUTTON-BG-COLOR-ACTIVE);
+    color: var(--BG-COLOR);
+    background: var(--BUTTON-BG-COLOR-ACTIVE);
 }
 .tabbar-vertical-item.router-link-active {
-    color: var(--ACCENT-PRIMARY-COLOR);
+    color: var(--BG-COLOR);
+    background: var(--ACCENT-PRIMARY-COLOR);
 }
