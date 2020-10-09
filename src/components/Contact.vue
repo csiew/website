@@ -3,7 +3,7 @@
     <div class="section-header">
       <h3>Contact</h3>
     </div>
-    <div class="section card width-full width-max-1024 margin-auto-horizontal padding-s padding-xl-top padding-xl-bottom">
+    <div class="section card width-full width-max-800 margin-auto-horizontal padding-s padding-xl-top padding-xl-bottom">
       <div class="grid grid-col-3 grid-col-auto-fit-640 grid-gap-m width-max-640 margin-auto-horizontal">
         <span v-for="item in links" v-bind:key="item.id">
           <a class="grid-item button width-full" v-bind:href=item.url target="_blank">{{ item.name }}</a>

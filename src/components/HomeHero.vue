@@ -3,7 +3,7 @@
     <div class="section-header">
       <h3>Featured projects</h3>
     </div>
-    <div class="section card width-full width-max-1024 margin-auto-horizontal text-align-center padding-l">
+    <div class="section card width-full width-max-800 margin-auto-horizontal text-align-center padding-l">
       <div class="vstack align-start justify-center width-full height-full">
         <div class="vstack width-full align-start justify-center text-align-center">
           <div class="hstack hstack-responsive hstack-space-between width-full align-start text-align-center padding-s-bottom">
