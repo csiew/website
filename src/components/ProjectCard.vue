@@ -21,7 +21,7 @@
       </div>
     </div>
     <span v-if="project.imgUrl">
-      <a v-bind:href="getProjectImgUrl(project.imgUrl)"><img v-bind:alt="project.imgUrl" class="card card-img margin-s-top margin-s-bottom" v-bind:src="getProjectImgUrl(project.imgUrl)" style="width: 100%; height: 100%;" /></a>
+      <a v-bind:href="getProjectImgUrl(project.imgUrl)"><img v-bind:alt="project.imgUrl" class="card card-img margin-s-top margin-s-bottom" v-bind:src="getProjectImgUrl(project.imgUrl)" style="width: 100%; height: auto;" /></a>
     </span>
     <p>
       {{ project.description }}

@@ -1,6 +1,6 @@
 :root {
     --FONT-SIZE: 1rem;
-    --FONT-FAMILY: 'Epilogue', 'Public Sans', Helvetica, Arial, sans-serif;
+    --FONT-FAMILY: 'Public Sans', Helvetica, Arial, sans-serif;
     --LINE-HEIGHT: 1.625;
 
     --TRANSITION: 0.125s;
@@ -10,19 +10,11 @@
     --FG-SECONDARY-COLOR: gray;
     --BG-SECONDARY-COLOR: whitesmoke;
     --ACCENT-PRIMARY-COLOR: #336666;
-    --ACCENT-SECONDARY-COLOR: #669999;
+    --ACCENT-SECONDARY-COLOR: #558888;
+    --ACCENT-TERTIARY-COLOR: #88bbbb;
     --NAVBAR-SHADOW: 0px 2px 4px rgba(0,0,0,0.25);
 
-    --HR-BORDER-COLOR: darkgray;
-
-    --LIST-FREESTYLE-ITEM-FG-COLOR: var(--BG-COLOR);
-    --LIST-FREESTYLE-ITEM-FG-COLOR-HOVER: var(--BG-COLOR);
-    --LIST-FREESTYLE-ITEM-BG-COLOR: var(--ACCENT-SECONDARY-COLOR);
-    --LIST-FREESTYLE-ITEM-BG-COLOR-HOVER: var(--ACCENT-PRIMARY-COLOR);
-    --LIST-FREESTYLE-ITEM-BORDER-COLOR: var(--ACCENT-SECONDARY-COLOR);
-    --LIST-FREESTYLE-ITEM-BORDER-COLOR-HOVER: var(--ACCENT-PRIMARY-COLOR);
-    --LIST-FREESTYLE-ITEM-BORDER-WIDTH: 2px;
-    --LIST-FREESTYLE-ITEM-BORDER-RADIUS: 32px;
+    --HR-BORDER-COLOR: lightgray;
 }
 
 * {
@@ -214,50 +206,6 @@ hr {
 
 .hello h1 {
     font-size: 8.5vh !important;
-}
-
-.list-freestyle ul {
-    list-style: none;
-    display: inline-flex;
-    flex-flow: row wrap;
-    align-items: flex-start;
-    justify-content: flex-start;
-    margin: 0 !important;
-    margin-top: 0.5rem !important;
-    margin-bottom: 0.5rem !important;
-    padding: 0 !important;
-}
-.list-freestyle li {
-    display: inline-flex;
-    flex-flow: row;
-    align-items: center;
-    justify-content: center;
-    width: min-content;
-    margin: 0 !important;
-    margin-right: 0.5rem !important;
-    margin-bottom: 0.5rem !important;
-    padding: 0.25rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    color: var(--LIST-FREESTYLE-ITEM-FG-COLOR);
-    background: var(--LIST-FREESTYLE-ITEM-BG-COLOR);
-    border-width: var(--LIST-FREESTYLE-ITEM-BORDER-WIDTH);
-    border-style: solid;
-    border-color: var(--LIST-FREESTYLE-ITEM-BORDER-COLOR);
-    border-radius: var(--LIST-FREESTYLE-ITEM-BORDER-RADIUS);
-    white-space: nowrap;
-    font-size: 90%;
-    font-weight: bold;
-    transition: var(--BUTTON-TRANSITION);
-}
-.list-freestyle li:last-child {
-    margin-right: 0;
-}
-.list-freestyle li:hover {
-    color: var(--LIST-FREESTYLE-ITEM-FG-COLOR-HOVER);
-    background: var(--LIST-FREESTYLE-ITEM-BG-COLOR-HOVER);
-    border-color: var(--LIST-FREESTYLE-ITEM-BORDER-COLOR-HOVER);
-    transition: var(--TRANSITION);
 }
 
 

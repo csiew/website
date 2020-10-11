@@ -1,9 +1,9 @@
 :root {
-    --CARD-BORDER-COLOR: darkgray;
+    --CARD-BORDER-COLOR: lightgray;
     --CARD-BORDER-WIDTH: 1px;
     --CARD-BORDER-RADIUS: 5px;
     --CARD-BOX-SHADOW: 0px 2px 4px rgba(0,0,0,0.25);
-    --CARD-IMG-BORDER-COLOR: darkgray;
+    --CARD-IMG-BORDER-COLOR: lightgray;
     --CARD-IMG-BORDER-WIDTH: 1px;
 }
 

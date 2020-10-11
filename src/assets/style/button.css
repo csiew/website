@@ -1,22 +1,33 @@
 :root {
-    --BUTTON-FG-COLOR: var(--ACCENT-PRIMARY-COLOR);
+    --BUTTON-FG-COLOR: var(--BG-COLOR);
     --BUTTON-FG-COLOR-HOVER: var(--BG-COLOR);
     --BUTTON-FG-COLOR-ACTIVE: var(--BG-COLOR);
-    --BUTTON-FG-COLOR-DISABLED: darkgray;
-    --BUTTON-BG-COLOR: none;
+    --BUTTON-FG-COLOR-DISABLED: gray;
+    --BUTTON-BG-COLOR: var(--ACCENT-SECONDARY-COLOR);
     --BUTTON-BG-COLOR-HOVER: var(--ACCENT-PRIMARY-COLOR);
     --BUTTON-BG-COLOR-ACTIVE: var(--ACCENT-SECONDARY-COLOR);
-    --BUTTON-BG-COLOR-DISABLED: #555555;
+    --BUTTON-BG-COLOR-DISABLED: lightgray;
     --BUTTON-BORDER-COLOR: var(--ACCENT-PRIMARY-COLOR);
     --BUTTON-BORDER-COLOR-HOVER: var(--ACCENT-PRIMARY-COLOR);
     --BUTTON-BORDER-COLOR-ACTIVE: var(--ACCENT-SECONDARY-COLOR);
     --BUTTON-BORDER-COLOR-FOCUS: var(--ACCENT-SECONDARY-COLOR);
-    --BUTTON-BORDER-COLOR-DISABLED:  #555555;
+    --BUTTON-BORDER-COLOR-DISABLED:  lightgray;
     --BUTTON-BORDER-WIDTH: 1px;
     --BUTTON-BORDER-RADIUS: 5px;
+    --BUTTON-TEXT-SHADOW: 1px 1px 0px var(--ACCENT-PRIMARY-COLOR);
     --BUTTON-BOX-SHADOW: none;
     --BUTTON-BOX-SHADOW-HOVER: 0px 2px 4px rgba(0,0,0,0.25);
     --BUTTON-BOX-SHADOW-ACTIVE: 0px 2px 4px rgba(0,0,0,0.325);
+
+    --LIST-FREESTYLE-ITEM-FG-COLOR: var(--BG-COLOR);
+    --LIST-FREESTYLE-ITEM-FG-COLOR-HOVER: var(--BG-COLOR);
+    --LIST-FREESTYLE-ITEM-BG-COLOR: var(--ACCENT-SECONDARY-COLOR);
+    --LIST-FREESTYLE-ITEM-BG-COLOR-HOVER: var(--ACCENT-PRIMARY-COLOR);
+    --LIST-FREESTYLE-ITEM-BORDER-COLOR: var(--ACCENT-SECONDARY-COLOR);
+    --LIST-FREESTYLE-ITEM-BORDER-COLOR-HOVER: var(--ACCENT-PRIMARY-COLOR);
+    --LIST-FREESTYLE-ITEM-BORDER-WIDTH: 1px;
+    --LIST-FREESTYLE-ITEM-BORDER-COLOR: var(--ACCENT-PRIMARY-COLOR);
+    --LIST-FREESTYLE-ITEM-BORDER-RADIUS: 32px;
 }
 
 .button, button, .tabbar, .tabbar-item {
@@ -36,6 +47,7 @@
     border-width: var(--BUTTON-BORDER-WIDTH);
     border-style: solid;
     border-radius: var(--BUTTON-BORDER-RADIUS);
+    text-shadow: var(--BUTTON-TEXT-SHADOW);
     box-shadow: var(--BUTTON-BOX-SHADOW);
     font-family: inherit;
     font-size: inherit;
@@ -84,6 +96,7 @@
     color: var(--BUTTON-FG-COLOR-DISABLED);
     background: var(--BUTTON-BG-COLOR-DISABLED);
     border-color: var(--BUTTON-BORDER-COLOR-DISABLED);
+    text-shadow: none;
     box-shadow: none;
 }
 
@@ -101,6 +114,7 @@
     border-width: var(--BUTTON-BORDER-WIDTH) 0 var(--BUTTON-BORDER-WIDTH) 0;
     border-style: solid;
     border-radius: 0;
+    text-shadow: var(--BUTTON-TEXT-SHADOW);
     box-shadow: none;
     font-family: inherit;
     font-size: inherit;
@@ -177,14 +191,61 @@
 }
 .tabbar-vertical-item:hover {
     color: var(--BG-COLOR);
-    background: var(--FG-COLOR);
+    background: var(--ACCENT-SECONDARY-COLOR);
     text-decoration: none !important;
 }
 .tabbar-vertical-item:active {
     color: var(--BG-COLOR);
-    background: var(--BUTTON-BG-COLOR-ACTIVE);
+    background: var(--ACCENT-PRIMARY-COLOR);
 }
 .tabbar-vertical-item.router-link-active {
     color: var(--BG-COLOR);
     background: var(--ACCENT-PRIMARY-COLOR);
+}
+
+.list-freestyle ul {
+    list-style: none;
+    display: inline-flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: 0 !important;
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+    padding: 0 !important;
+}
+.list-freestyle li {
+    display: inline-flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;
+    width: min-content;
+    margin: 0 !important;
+    margin-right: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+    padding: 0.25rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    color: var(--LIST-FREESTYLE-ITEM-FG-COLOR);
+    background: var(--LIST-FREESTYLE-ITEM-BG-COLOR);
+    border-width: var(--LIST-FREESTYLE-ITEM-BORDER-WIDTH);
+    border-style: solid;
+    border-color: var(--LIST-FREESTYLE-ITEM-BORDER-COLOR);
+    border-radius: var(--LIST-FREESTYLE-ITEM-BORDER-RADIUS);
+    text-shadow: var(--BUTTON-TEXT-SHADOW);
+    box-shadow: var(--BUTTON-BOX-SHADOW);
+    white-space: nowrap;
+    font-size: 90%;
+    font-weight: bold;
+    transition: var(--BUTTON-TRANSITION);
+}
+.list-freestyle li:last-child {
+    margin-right: 0;
+}
+.list-freestyle li:hover {
+    color: var(--LIST-FREESTYLE-ITEM-FG-COLOR-HOVER);
+    background: var(--LIST-FREESTYLE-ITEM-BG-COLOR-HOVER);
+    border-color: var(--LIST-FREESTYLE-ITEM-BORDER-COLOR-HOVER);
+    box-shadow: var(--BUTTON-BOX-SHADOW-HOVER);
+    transition: var(--TRANSITION);
 }
