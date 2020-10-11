@@ -87,3 +87,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.navsidebar {
+  border-right: 1px solid var(--CARD-BORDER-COLOR);
+}
+</style>

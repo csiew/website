@@ -5,22 +5,22 @@
 
     --TRANSITION: 0.125s;
 
-    --FG-COLOR: whitesmoke;
-    --BG-COLOR: #2e2e2e;
-    --FG-SECONDARY-COLOR: darkgray;
-    --BG-SECONDARY-COLOR: #222222;
-    --ACCENT-PRIMARY-COLOR: gold;
-    --ACCENT-SECONDARY-COLOR: goldenrod;
-    --NAVBAR-SHADOW: 0px 0px 8px rgba(0,0,0,0.5);
+    --FG-COLOR: #333333;
+    --BG-COLOR: white;
+    --FG-SECONDARY-COLOR: gray;
+    --BG-SECONDARY-COLOR: whitesmoke;
+    --ACCENT-PRIMARY-COLOR: #336666;
+    --ACCENT-SECONDARY-COLOR: #669999;
+    --NAVBAR-SHADOW: 0px 2px 4px rgba(0,0,0,0.25);
 
-    --HR-BORDER-COLOR: #333333;
+    --HR-BORDER-COLOR: darkgray;
 
     --LIST-FREESTYLE-ITEM-FG-COLOR: var(--BG-COLOR);
     --LIST-FREESTYLE-ITEM-FG-COLOR-HOVER: var(--BG-COLOR);
-    --LIST-FREESTYLE-ITEM-BG-COLOR: var(--FG-SECONDARY-COLOR);
-    --LIST-FREESTYLE-ITEM-BG-COLOR-HOVER: var(--FG-COLOR);
-    --LIST-FREESTYLE-ITEM-BORDER-COLOR: var(--FG-SECONDARY-COLOR);
-    --LIST-FREESTYLE-ITEM-BORDER-COLOR-HOVER: var(--FG-COLOR);
+    --LIST-FREESTYLE-ITEM-BG-COLOR: var(--ACCENT-SECONDARY-COLOR);
+    --LIST-FREESTYLE-ITEM-BG-COLOR-HOVER: var(--ACCENT-PRIMARY-COLOR);
+    --LIST-FREESTYLE-ITEM-BORDER-COLOR: var(--ACCENT-SECONDARY-COLOR);
+    --LIST-FREESTYLE-ITEM-BORDER-COLOR-HOVER: var(--ACCENT-PRIMARY-COLOR);
     --LIST-FREESTYLE-ITEM-BORDER-WIDTH: 2px;
     --LIST-FREESTYLE-ITEM-BORDER-RADIUS: 32px;
 }
@@ -80,8 +80,8 @@ a:hover {
 
 hr {
     outline: none;
-    border-width: 1px;
-    border-style: inset;
+    border-width: 0 0 1px 0;
+    border-style: solid;
     border-color: var(--HR-BORDER-COLOR);
     margin: 0;
     margin-top: 1.5rem;
