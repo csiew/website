@@ -26,6 +26,15 @@
             "imgUrl": "",
             "url": "",
             "github": "https://github.com/csiew/recipebook"
+        },
+        {
+            "id": "biscuitwm",
+            "name": "BiscuitWM",
+            "timeRange": "2020",
+            "description": "A minimalist X11 window manager for Linux/Unix systems written in Python. Largely an experimental effort.",
+            "imgUrl": "biscuitwm.png",
+            "url": "https://csiew.github.io/BiscuitWM",
+            "github": "https://github.com/csiew/BiscuitWM"
         }
     ],
     "previous": [
@@ -37,15 +46,6 @@
             "imgUrl": "",
             "url": "",
             "github": "https://github.com/csiew/podzol"
-        },
-        {
-            "id": "biscuitwm",
-            "name": "BiscuitWM",
-            "timeRange": "2020",
-            "description": "A minimalist X11 window manager for Linux/Unix systems written in Python. Largely an experimental effort.",
-            "imgUrl": "biscuitwm.png",
-            "url": "https://csiew.github.io/BiscuitWM",
-            "github": "https://github.com/csiew/BiscuitWM"
         },
         {
             "id": "hoddle",
