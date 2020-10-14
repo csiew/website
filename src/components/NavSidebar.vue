@@ -1,11 +1,11 @@
 <template>
-  <div class="nav navsidebar">
-    <div class="vstack vstack-space-between padding-s">
+  <div id="navSidebar" class="nav navsidebar">
+    <div class="vstack vstack-space-between">
       <router-link class="navbar-wordmark" to="/">
         <img class="profile-img profile-img-m nodrag noselect border-radius-100pct margin-m margin-l-bottom" src="@/assets/images/profile.jpg" />
       </router-link>
-      <div class="width-full text-align-left">
-        <div class="vstack">
+      <div class="width-full text-align-left padding-s">
+        <div class="vstack margin-none">
           <router-link v-for="item in this.pages" v-bind:key="item.id" class="tabbar-vertical-item" v-bind:to="item.route">{{ item.label }}</router-link>
         </div>
       </div>
@@ -91,5 +91,16 @@ export default {
 <style scoped>
 .navsidebar {
   border-right: 1px solid var(--CARD-BORDER-COLOR);
+}
+
+#navSidebar {
+  visibility: visible;
+  display: inline-flex;
+}
+@media only screen and (max-width: 1024px) {
+  #navSidebar {
+    visibility: hidden;
+    display: none;
+  }
 }
 </style>

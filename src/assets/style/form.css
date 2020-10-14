@@ -1,18 +1,3 @@
-:root {
-    --TEXT-FIELD-FG-COLOR: #222222;
-    --TEXT-FIELD-FG-COLOR-HOVER: #222222;
-    --TEXT-FIELD-FG-COLOR-ACTIVE: #222222;
-    --TEXT-FIELD-BG-COLOR: whitesmoke;
-    --TEXT-FIELD-BG-COLOR-HOVER: white;
-    --TEXT-FIELD-BG-COLOR-ACTIVE: white;
-    --TEXT-FIELD-BORDER-COLOR: darkgray;
-    --TEXT-FIELD-BORDER-COLOR-HOVER: gray;
-    --TEXT-FIELD-BORDER-COLOR-ACTIVE: gray;
-    --TEXT-FIELD-BORDER-COLOR-FOCUS: #333333;
-    --TEXT-FIELD-BORDER-WIDTH: 1px;
-    --TEXT-FIELD-BORDER-RADIUS: 5px;
-}
-
 input[type=text],
 input[type=number],
 input[type=search],

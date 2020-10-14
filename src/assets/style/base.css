@@ -62,6 +62,7 @@
     width: 100%;
 }
 
+.width-max-240 { max-width: 240px !important; }
 .width-max-256 { max-width: 256px !important; }
 .width-max-320 { max-width: 320px !important; }
 .width-max-380 { max-width: 380px !important; }
@@ -154,6 +155,7 @@
 .font-scale-l { font-size: 120% !important; }
 .font-scale-xl { font-size: 150% !important; }
 .font-scale-xxl { font-size: 200% !important; }
+.font-scale-xxxl { font-size: 300% !important; }
 
 .line-height-0 { line-height: 0 !important; }
 .line-height-1 { line-height: 1 !important; }
@@ -318,7 +320,6 @@
 }
 .hstack-column-fill {
     flex: 2 1 auto;
-    min-width: 480px;
 }
 
 .vstack {
@@ -377,6 +378,16 @@
     filter: invert(1) !important;
     -webkit-filter: invert(1) !important;
 }
+.invert-dark-mode {
+    filter: invert(0) !important;
+    -webkit-filter: invert(0) !important;
+}
+@media all and (prefers-color-scheme: dark) {
+    .invert-dark-mode {
+        filter: invert(1) !important;
+        -webkit-filter: invert(1) !important;
+    }
+}
 
 .opacity-25 { opacity: 25% !important; }
 .opacity-50 { opacity: 50% !important; }
@@ -398,6 +409,18 @@
     box-shadow: none !important;
 }
 
+/* From: https://stackoverflow.com/a/16771693 */
+.animate-rotate {
+    -webkit-animation: spin 2s linear infinite;
+    -moz-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+/* From: https://stackoverflow.com/a/16771693 */
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
 @media only screen and (max-width: 720px) {
     .only-desktop {
         display: none;
@@ -405,12 +428,36 @@
         height: 0;
     }
 
-    .padding-xs { padding: 0.5rem !important; }
-    .padding-s { padding: 1rem !important; }
-    .padding-m { padding: 1.25rem !important; }
-    .padding-l { padding: 1.5rem !important; }
-    .padding-xl { padding: 1.75rem !important; }
-    .padding-xxl { padding: 2rem !important; }
+    .padding-xs {
+        padding: 0.325rem;
+        padding-left: 0.25rem !important;
+        padding-right: 0.25rem !important;
+    }
+    .padding-s {
+        padding: 0.875rem;
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+    }
+    .padding-m {
+        padding: 1.125rem;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    .padding-l {
+        padding: 1.375rem;
+        padding-left: 1.25rem !important;
+        padding-right: 1.25rem !important;
+    }
+    .padding-xl {
+        padding: 1.625rem;
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
+    }
+    .padding-xxl {
+        padding: 1.875rem;
+        padding-left: 1.75rem !important;
+        padding-right: 1.75rem !important;
+    }
 
     .flex-flow-row-wrap-reverse {
         flex-flow: column-reverse !important;

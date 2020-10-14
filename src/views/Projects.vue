@@ -15,7 +15,7 @@
       <div class="section-header">
         <h3>Past projects</h3>
       </div>
-      <div class="width-full width-max-640 grid grid-gap-m grid-col-1 margin-auto-horizontal margin-xl-top margin-xl-bottom">
+      <div class="width-full width-max-640 grid grid-gap-m grid-col-1 margin-auto-horizontal margin-xl-top">
         <ProjectCard v-for="item in this.previous" v-bind:key="item.id" v-bind:name="item['id']" class="grid-item width-full padding-m" v-bind:project=item />
       </div>
     </div>

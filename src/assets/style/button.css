@@ -1,35 +1,3 @@
-:root {
-    --BUTTON-FG-COLOR: var(--BG-COLOR);
-    --BUTTON-FG-COLOR-HOVER: var(--BG-COLOR);
-    --BUTTON-FG-COLOR-ACTIVE: var(--BG-COLOR);
-    --BUTTON-FG-COLOR-DISABLED: gray;
-    --BUTTON-BG-COLOR: var(--ACCENT-SECONDARY-COLOR);
-    --BUTTON-BG-COLOR-HOVER: var(--ACCENT-PRIMARY-COLOR);
-    --BUTTON-BG-COLOR-ACTIVE: var(--ACCENT-SECONDARY-COLOR);
-    --BUTTON-BG-COLOR-DISABLED: lightgray;
-    --BUTTON-BORDER-COLOR: var(--ACCENT-PRIMARY-COLOR);
-    --BUTTON-BORDER-COLOR-HOVER: var(--ACCENT-PRIMARY-COLOR);
-    --BUTTON-BORDER-COLOR-ACTIVE: var(--ACCENT-SECONDARY-COLOR);
-    --BUTTON-BORDER-COLOR-FOCUS: var(--ACCENT-SECONDARY-COLOR);
-    --BUTTON-BORDER-COLOR-DISABLED:  lightgray;
-    --BUTTON-BORDER-WIDTH: 1px;
-    --BUTTON-BORDER-RADIUS: 5px;
-    --BUTTON-TEXT-SHADOW: 1px 1px 0px var(--ACCENT-PRIMARY-COLOR);
-    --BUTTON-BOX-SHADOW: none;
-    --BUTTON-BOX-SHADOW-HOVER: 0px 2px 4px rgba(0,0,0,0.25);
-    --BUTTON-BOX-SHADOW-ACTIVE: 0px 2px 4px rgba(0,0,0,0.325);
-
-    --LIST-FREESTYLE-ITEM-FG-COLOR: var(--BG-COLOR);
-    --LIST-FREESTYLE-ITEM-FG-COLOR-HOVER: var(--BG-COLOR);
-    --LIST-FREESTYLE-ITEM-BG-COLOR: var(--ACCENT-SECONDARY-COLOR);
-    --LIST-FREESTYLE-ITEM-BG-COLOR-HOVER: var(--ACCENT-PRIMARY-COLOR);
-    --LIST-FREESTYLE-ITEM-BORDER-COLOR: var(--ACCENT-SECONDARY-COLOR);
-    --LIST-FREESTYLE-ITEM-BORDER-COLOR-HOVER: var(--ACCENT-PRIMARY-COLOR);
-    --LIST-FREESTYLE-ITEM-BORDER-WIDTH: 1px;
-    --LIST-FREESTYLE-ITEM-BORDER-COLOR: var(--ACCENT-PRIMARY-COLOR);
-    --LIST-FREESTYLE-ITEM-BORDER-RADIUS: 32px;
-}
-
 .button, button, .tabbar, .tabbar-item {
     display: inline-flex;
     flex-flow: row wrap;
@@ -47,7 +15,6 @@
     border-width: var(--BUTTON-BORDER-WIDTH);
     border-style: solid;
     border-radius: var(--BUTTON-BORDER-RADIUS);
-    text-shadow: var(--BUTTON-TEXT-SHADOW);
     box-shadow: var(--BUTTON-BOX-SHADOW);
     font-family: inherit;
     font-size: inherit;
@@ -85,6 +52,13 @@
     outline: none;
     border-color: var(--BUTTON-BORDER-COLOR-FOCUS);
 }
+.button-selected, .button-selected:hover {
+    color: var(--BUTTON-FG-COLOR-SELECTED);
+    background: var(--BUTTON-BG-COLOR-SELECTED);
+    border-color: var(--BUTTON-BORDER-COLOR-SELECTED);
+    box-shadow: var(--BUTTON-BOX-SHADOW-ACTIVE);
+    transition: var(--TRANSITION);
+}
 
 .button-borderless {
     border-width: 0 !important;
@@ -96,7 +70,6 @@
     color: var(--BUTTON-FG-COLOR-DISABLED);
     background: var(--BUTTON-BG-COLOR-DISABLED);
     border-color: var(--BUTTON-BORDER-COLOR-DISABLED);
-    text-shadow: none;
     box-shadow: none;
 }
 
@@ -107,15 +80,23 @@
     margin-right: 0;
 }
 
+.tabbar {
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    border-radius: var(--BUTTON-BORDER-RADIUS);
+    box-shadow: var(--BUTTON-BOX-SHADOW);
+}
 .tabbar-item {
-    color: var(--BUTTON-FG-COLOR);
-    background: var(--BUTTON-BG-COLOR);
-    border-color: var(--BUTTON-BORDER-COLOR);
-    border-width: var(--BUTTON-BORDER-WIDTH) 0 var(--BUTTON-BORDER-WIDTH) 0;
+    color: var(--TABBAR-ITEM-FG-COLOR);
+    background: var(--TABBAR-ITEM-BG-COLOR);
+    border-color: var(--TABBAR-ITEM-BORDER-COLOR);
+    border-width: var(--BUTTON-BORDER-WIDTH);
+    border-left-width: 0;
+    border-right-width: 0;
     border-style: solid;
     border-radius: 0;
-    text-shadow: var(--BUTTON-TEXT-SHADOW);
-    box-shadow: none;
+    box-shadow: var(--BUTTON-BOX-SHADOW);
     font-family: inherit;
     font-size: inherit;
     font-weight: 700;
@@ -134,48 +115,54 @@
                                     supported by Chrome, Edge, Opera and Firefox */
 }
 .tabbar-item:first-child {
-    border-width: var(--BUTTON-BORDER-WIDTH) 0 var(--BUTTON-BORDER-WIDTH) var(--BUTTON-BORDER-WIDTH);
+    border-left-width: var(--BUTTON-BORDER-WIDTH);
     border-top-left-radius: var(--BUTTON-BORDER-RADIUS);
     border-bottom-left-radius: var(--BUTTON-BORDER-RADIUS);
 }
 .tabbar-item:last-child {
-    border-width: var(--BUTTON-BORDER-WIDTH) var(--BUTTON-BORDER-WIDTH) var(--BUTTON-BORDER-WIDTH) 0;
+    border-right-width: var(--BUTTON-BORDER-WIDTH);
     border-top-right-radius: var(--BUTTON-BORDER-RADIUS);
     border-bottom-right-radius: var(--BUTTON-BORDER-RADIUS);
 }
-.tabbar-item:hover,
-.tabbar-item-current {
-    color: var(--BUTTON-FG-COLOR-HOVER);
-    background: var(--BUTTON-BG-COLOR-HOVER);
-    border-color: var(--BUTTON-BORDER-COLOR-HOVER);
-    box-shadow: none;
+.tabbar-item:hover {
+    color: var(--TABBAR-ITEM-FG-COLOR-HOVER);
+    background: var(--TABBAR-ITEM-BG-COLOR-HOVER);
+    border-color: var(--TABBAR-ITEM-BORDER-COLOR-HOVER);
+    box-shadow: var(--BUTTON-BOX-SHADOW-HOVER);
     text-decoration: none !important;
     transition: var(--TRANSITION);
 }
 .tabbar-item:active {
-    color: var(--BUTTON-FG-COLOR-ACTIVE);
-    background: var(--BUTTON-BG-COLOR-ACTIVE);
-    border-color: var(--BUTTON-BORDER-COLOR-ACTIVE);
+    color: var(--TABBAR-ITEM-FG-COLOR-ACTIVE);
+    background: var(--TABBAR-ITEM-BG-COLOR-ACTIVE);
+    border-color: var(--TABBAR-ITEM-BORDER-COLOR-ACTIVE);
+    box-shadow: var(--BUTTON-BOX-SHADOW-ACTIVE);
     transition: var(--TRANSITION);
 }
-.tabbar-item.router-link-active {
-    color: var(--BUTTON-FG-COLOR-HOVER);
-    background: var(--BUTTON-BG-COLOR-HOVER);
-    border-color: var(--BUTTON-BORDER-COLOR-HOVER);
+.tabbar-item:focus {
+    border-color: var(--TABBAR-ITEM-BORDER-COLOR-FOCUS);
+    transition: var(--TRANSITION);
+}
+.tabbar-item.router-link-active,
+.tabbar-item-current {
+    color: var(--TABBAR-ITEM-FG-COLOR-SELECTED);
+    background: var(--TABBAR-ITEM-BG-COLOR-SELECTED);
+    border-color: var(--TABBAR-ITEM-BORDER-COLOR-SELECTED);
+    box-shadow: var(--BUTTON-BOX-SHADOW-ACTIVE) !important;
 }
 
 .tabbar-vertical-item {
-    color: var(--FG-SECONDARY-COLOR);
-    background: none;
+    color: var(--TABBAR-VERTICAL-ITEM-FG-COLOR);
+    background: var(--TABBAR-VERTICAL-ITEM-BG-COLOR);
     border-radius: var(--BUTTON-BORDER-RADIUS);
     font-family: inherit;
     font-size: inherit;
     font-weight: 700;
     margin: 0;
     margin-bottom: 0.5rem;
-    padding: 1rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    padding: 1.125rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
     transition: var(--TRANSITION);
 
     -webkit-touch-callout: none; /* iOS Safari */
@@ -190,17 +177,17 @@
     margin-bottom: 0;
 }
 .tabbar-vertical-item:hover {
-    color: var(--BG-COLOR);
-    background: var(--ACCENT-SECONDARY-COLOR);
+    color: var(--TABBAR-VERTICAL-ITEM-FG-COLOR-HOVER);
+    background: var(--TABBAR-VERTICAL-ITEM-BG-COLOR-HOVER);
     text-decoration: none !important;
 }
 .tabbar-vertical-item:active {
-    color: var(--BG-COLOR);
-    background: var(--ACCENT-PRIMARY-COLOR);
+    color: var(--TABBAR-VERTICAL-ITEM-FG-COLOR-ACTIVE);
+    background: var(--TABBAR-VERTICAL-ITEM-BG-COLOR-ACTIVE);
 }
 .tabbar-vertical-item.router-link-active {
-    color: var(--BG-COLOR);
-    background: var(--ACCENT-PRIMARY-COLOR);
+    color: var(--TABBAR-VERTICAL-ITEM-FG-COLOR-SELECTED);
+    background: var(--TABBAR-VERTICAL-ITEM-BG-COLOR-SELECTED);
 }
 
 .list-freestyle ul {
@@ -232,12 +219,10 @@
     border-style: solid;
     border-color: var(--LIST-FREESTYLE-ITEM-BORDER-COLOR);
     border-radius: var(--LIST-FREESTYLE-ITEM-BORDER-RADIUS);
-    text-shadow: var(--BUTTON-TEXT-SHADOW);
-    box-shadow: var(--BUTTON-BOX-SHADOW);
     white-space: nowrap;
     font-size: 90%;
     font-weight: bold;
-    transition: var(--BUTTON-TRANSITION);
+    transition: var(--TRANSITION);
 }
 .list-freestyle li:last-child {
     margin-right: 0;
@@ -246,6 +231,5 @@
     color: var(--LIST-FREESTYLE-ITEM-FG-COLOR-HOVER);
     background: var(--LIST-FREESTYLE-ITEM-BG-COLOR-HOVER);
     border-color: var(--LIST-FREESTYLE-ITEM-BORDER-COLOR-HOVER);
-    box-shadow: var(--BUTTON-BOX-SHADOW-HOVER);
     transition: var(--TRANSITION);
 }

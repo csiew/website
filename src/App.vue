@@ -1,8 +1,8 @@
 <template>
   <Navbar />
   <div class="hstack hstack-height-full">
-    <NavSidebar class="hstack-column" />
-    <div class="hstack-column width-full padding-l">
+    <NavSidebar class="hstack-column hstack-column-third width-max-240" />
+    <div class="hstack-column hstack-column-fill width-full padding-l">
       <router-view></router-view>
       <Footer />
     </div>
@@ -31,4 +31,6 @@ export default {
 @import './assets/style/form.css';
 @import './assets/style/card.css';
 @import './assets/style/fonts/fonts.css';
+@import './assets/style/themes/dark.css' all and (prefers-color-scheme: dark);
+@import './assets/style/themes/light.css' all and (prefers-color-scheme: light);
 </style>

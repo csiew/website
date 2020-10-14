@@ -1,5 +1,5 @@
 <template>
-  <div class="nav navbar vstack justify-stretch align-stretch width-full">
+  <div id="navbar" class="nav navbar vstack justify-stretch align-stretch width-full">
     <div class="hstack hstack-space-between padding-s">
       <router-link class="navbar-wordmark" to="/">
         <img class="profile-img profile-img-s nodrag noselect border-radius-100pct" src="@/assets/images/profile.jpg" />
@@ -110,3 +110,16 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+#navbar {
+  visibility: hidden;
+  display: none;
+}
+@media only screen and (max-width: 1024px) {
+  #navbar {
+    visibility: visible;
+    display: inline-flex;
+  }
+}
+</style>
