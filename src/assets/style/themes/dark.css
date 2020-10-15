@@ -91,7 +91,7 @@
 
     /* Card styling */
     --CARD-BORDER-COLOR: var(--HR-BORDER-COLOR);
-    --CARD-BOX-SHADOW: none;
+    --CARD-BOX-SHADOW: 0px 0px 4px rgba(0,0,0,0.75);
     --CARD-IMG-BORDER-COLOR: var(--HR-BORDER-COLOR);
 
     --CARD-LIST-ITEM-FG-COLOR: var(--FG-COLOR);
