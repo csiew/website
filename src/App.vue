@@ -2,7 +2,7 @@
   <Navbar />
   <div class="hstack hstack-height-full">
     <NavSidebar class="hstack-column hstack-column-third width-max-200" />
-    <div class="hstack-column hstack-column-fill width-full padding-l">
+    <div class="hstack-column hstack-column-fill width-full">
       <router-view></router-view>
       <Footer />
     </div>

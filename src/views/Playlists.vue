@@ -1,5 +1,5 @@
 <template>
-  <div class="width-max-640 width-full margin-auto-horizontal">
+  <div class="width-max-800 width-full margin-auto-horizontal padding-l">
     <div class="section width-full">
       <div class="section-header">
         <h2>Playlists</h2>

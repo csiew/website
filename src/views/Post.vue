@@ -1,19 +1,16 @@
 <template>
-  <div class="width-full margin-xl-bottom">
+  <div class="nav flex-inline flex-flow-row align-center justify-start width-full padding-s">
     <router-link v-bind:to="{ name: 'Blog' }" class="button">&#10094;</router-link>
   </div>
-  <div class="width-max-640 width-full margin-auto-horizontal">
+  <div class="width-max-800 width-full margin-auto-horizontal padding-l">
     <div class="section">
-      <div v-if="isLoading.postItem === false" class="card padding-m">
-        <div class="width-full flex-inline flex-flow-column padding-s-bottom">
-          <h1 class="margin-xs-bottom" style="line-height: 1.125;">{{ postItem.title }}</h1>
+      <div v-if="isLoading.postItem === false && isLoading.content === false" class="card padding-m">
+        <div class="width-full flex-inline flex-flow-column padding-xs-bottom">
+          <h1 class="margin-xs-top margin-xs-bottom" style="line-height: 1.125;">{{ postItem.title }}</h1>
           <small class="text-color-secondary">{{ this.formatTimestamp(postItem.date) }}</small>
         </div>
-        <hr class="margin-none-top margin-m-bottom padding-none" />
-        <div v-if="isLoading.content === false" v-html="postMarkdown"></div>
-        <span v-else>
-          <div class="width-full align-center justify-center padding-m text-align-center text-color-secondary">Loading...</div>
-        </span>
+        <hr class="margin-xs-top margin-m-bottom padding-none" />
+        <div v-html="postMarkdown"></div>
       </div>
       <div v-else class="card">
         <div class="width-full align-center justify-center padding-xl text-align-center text-color-secondary">Loading...</div>

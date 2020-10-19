@@ -23,17 +23,22 @@
     <span v-if="project.imgUrl">
       <a v-bind:href="getProjectImgUrl(project.imgUrl)"><img v-bind:alt="project.imgUrl" class="card card-img margin-s-top margin-s-bottom" v-bind:src="getProjectImgUrl(project.imgUrl)" style="width: 100%; height: auto;" /></a>
     </span>
-    <p>
-      {{ project.description }}
-    </p>
+    <div v-html="contentMarkdown"></div>
   </div>
 </template>
 
 <script>
+import marked from 'marked';
+
 export default {
   name: 'ProjectCard',
   props: {
     project: Object
+  },
+  computed: {
+    contentMarkdown: function () {
+      return marked(this.project.description, { sanitized: true });
+    }
   },
   methods: {
     getProjectImgUrl: function (imgFilename) {

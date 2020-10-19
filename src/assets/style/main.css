@@ -228,6 +228,7 @@ hr {
     border-bottom: 1px solid var(--HR-BORDER-COLOR);
 }
 .navmenu {
+    z-index: 50;
     position: fixed;
     width: 100%;
     height: 100%;

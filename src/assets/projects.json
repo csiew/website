@@ -4,7 +4,7 @@
             "id": "cast",
             "name": "Cast",
             "timeRange": "2020-Present",
-            "description": "A podcast web app that allows you to manage your podcast subscriptions and bookmarks with an intuitive, well-organised interface. It uses Node/Express for its backend API service. Its frontend uses Node/Express for server and routing functionality, whilst EJS is used for basic server-side templating and my own custom frontend library is used for single-page application functionality. Public beta access will be available in the near future!",
+            "description": "A podcast web app that allows you to manage your podcast subscriptions and bookmarks with an intuitive, well-organised interface.\n\nIt uses Node/Express for its backend API service. Its frontend uses Node/Express for server and routing functionality, whilst EJS is used for basic server-side templating and my own custom frontend library is used for single-page application functionality.\n\nPublic beta access will be available in the near future!",
             "imgUrl": "cast.png",
             "url": "",
             "github": ""

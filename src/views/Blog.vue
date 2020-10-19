@@ -1,5 +1,5 @@
 <template>
-  <div class="width-max-640 width-full margin-auto-horizontal">
+  <div class="width-max-800 width-full margin-auto-horizontal padding-l">
     <div v-if="this.isLoading.posts === false" class="section width-full">
       <div class="section-header">
         <h2>Blog</h2>
