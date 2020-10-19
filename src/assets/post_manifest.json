@@ -1,0 +1,21 @@
+{
+    "info": {
+        "title": "",
+        "description": ""
+    },
+    "posts": [
+        {
+            "id": "b5873d60-299f-4b24-a41c-b0b858a43f72",
+            "title": "New blog - a new blog, a new static site generator ...ish",
+            "path": "/posts/new-blog.md",
+            "date": {
+                "year": "2020",
+                "month": "10",
+                "day": "19",
+                "hr": "17",
+                "mins": "22",
+                "sec": "06"
+            }
+        }
+    ]
+}

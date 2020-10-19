@@ -30,6 +30,11 @@ export default {
           route: '/about'
         },
         {
+          id: 'blog',
+          label: 'Blog',
+          route: '/blog'
+        },
+        {
           id: 'projects',
           label: 'Projects',
           route: '/projects'

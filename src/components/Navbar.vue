@@ -48,6 +48,11 @@ export default {
           route: '/about'
         },
         {
+          id: 'blog',
+          label: 'Blog',
+          route: '/blog'
+        },
+        {
           id: 'projects',
           label: 'Projects',
           route: '/projects'
@@ -115,6 +120,7 @@ export default {
 #navbar {
   visibility: hidden;
   display: none;
+  border-bottom: 1px solid var(--CARD-BORDER-COLOR);
 }
 @media only screen and (max-width: 1024px) {
   #navbar {

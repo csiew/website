@@ -1,11 +1,6 @@
 {
     "links": [
         {
-            "id": "blog",
-            "name": "Blog",
-            "url": "https://csiew.github.io/blog/"
-        },
-        {
             "id": "instagram",
             "name": "Instagram",
             "url": "https://instagram.com/clarence_siew"

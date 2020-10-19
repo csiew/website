@@ -1,4 +1,4 @@
 {
-    "post_store": "src/assets/posts",
-    "post_store_manifest": "src/assets/posts/manifest.json"
+    "post_store": "public/posts",
+    "post_store_manifest": "src/assets/post_manifest.json"
 }

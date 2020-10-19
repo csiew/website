@@ -1,7 +1,7 @@
 <template>
   <Navbar />
   <div class="hstack hstack-height-full">
-    <NavSidebar class="hstack-column hstack-column-third width-max-240" />
+    <NavSidebar class="hstack-column hstack-column-third width-max-200" />
     <div class="hstack-column hstack-column-fill width-full padding-l">
       <router-view></router-view>
       <Footer />
