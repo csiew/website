@@ -98,12 +98,14 @@ class StatGen:
                 post_id = sys.argv[2]
                 if self.remove_post(post_id) == True:
                     print("Removed post with ID: {post_id}".format(post_id=post_id))
-                else:
-                    print("Unable to remove or find post with ID: {post_id}".format(post_id=post_id))
+                    self.exit()
+                print("Unable to remove or find post with ID: {post_id}".format(post_id=post_id))
+                self.exit(1)
         elif len(sys.argv) == 2:
             if sys.argv[1] == "list":
                 for post in self.manifest_data['posts']:
                     print("{post_id}\t\t{post_title}".format(post_id=post['id'], post_title=post['title']))
+            self.exit()
         else:
             print("Use: statgen [add/remove/list] [path] [title]")
             self.exit()
