@@ -4,9 +4,9 @@ input[type=search],
 input[type=email],
 input[type=password] {
     margin: 0;
-    padding: 0.5rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding: 1.25rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     color: var(--TEXT-FIELD-FG-COLOR);
     background: var(--TEXT-FIELD-BG-COLOR);
     border-width: var(--TEXT-FIELD-BORDER-WIDTH);

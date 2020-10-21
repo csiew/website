@@ -13,10 +13,3 @@ export default {
   name: 'Hello'
 }
 </script>
-
-<style scoped>
-h1 {
-  letter-spacing: -0.25rem;
-  text-transform: uppercase;
-}
-</style>

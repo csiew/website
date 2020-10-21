@@ -120,7 +120,7 @@ export default {
 #navbar {
   visibility: hidden;
   display: none;
-  border-bottom: 1px solid var(--CARD-BORDER-COLOR);
+  border-bottom: var(--CARD-BORDER-WIDTH) solid var(--CARD-BORDER-COLOR);
 }
 @media only screen and (max-width: 1024px) {
   #navbar {

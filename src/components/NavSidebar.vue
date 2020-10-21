@@ -95,7 +95,7 @@ export default {
 
 <style scoped>
 .navsidebar {
-  border-right: 1px solid var(--CARD-BORDER-COLOR);
+  border-right: var(--CARD-BORDER-WIDTH) solid var(--CARD-BORDER-COLOR);
 }
 
 #navSidebar {

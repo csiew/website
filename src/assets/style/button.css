@@ -16,11 +16,11 @@
     border-style: solid;
     border-radius: var(--BUTTON-BORDER-RADIUS);
     box-shadow: var(--BUTTON-BOX-SHADOW);
-    font-family: inherit;
+    font-family: var(--FONT-FAMILY-HEADER);
     font-size: inherit;
     font-weight: 700;
     margin: 0;
-    padding: 1rem;
+    padding: 1.25rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     transition: var(--TRANSITION);
@@ -81,6 +81,7 @@
 }
 
 .tabbar {
+    font-family: var(--FONT-FAMILY-HEADER);
     display: inline-flex;
     justify-content: flex-start;
     align-items: stretch;
@@ -96,7 +97,7 @@
     border-right-width: 0;
     border-style: solid;
     border-radius: 0;
-    box-shadow: var(--BUTTON-BOX-SHADOW);
+    box-shadow: none;
     font-family: inherit;
     font-size: inherit;
     font-weight: 700;
@@ -118,17 +119,19 @@
     border-left-width: var(--BUTTON-BORDER-WIDTH);
     border-top-left-radius: var(--BUTTON-BORDER-RADIUS);
     border-bottom-left-radius: var(--BUTTON-BORDER-RADIUS);
+    padding-left: 1.125rem;
 }
 .tabbar-item:last-child {
     border-right-width: var(--BUTTON-BORDER-WIDTH);
     border-top-right-radius: var(--BUTTON-BORDER-RADIUS);
     border-bottom-right-radius: var(--BUTTON-BORDER-RADIUS);
+    padding-right: 1.125rem;
 }
 .tabbar-item:hover {
     color: var(--TABBAR-ITEM-FG-COLOR-HOVER);
     background: var(--TABBAR-ITEM-BG-COLOR-HOVER);
     border-color: var(--TABBAR-ITEM-BORDER-COLOR-HOVER);
-    box-shadow: var(--BUTTON-BOX-SHADOW-HOVER);
+    box-shadow: none;
     text-decoration: none !important;
     transition: var(--TRANSITION);
 }
@@ -136,7 +139,7 @@
     color: var(--TABBAR-ITEM-FG-COLOR-ACTIVE);
     background: var(--TABBAR-ITEM-BG-COLOR-ACTIVE);
     border-color: var(--TABBAR-ITEM-BORDER-COLOR-ACTIVE);
-    box-shadow: var(--BUTTON-BOX-SHADOW-ACTIVE);
+    box-shadow: none;
     transition: var(--TRANSITION);
 }
 .tabbar-item:focus {
@@ -148,19 +151,19 @@
     color: var(--TABBAR-ITEM-FG-COLOR-SELECTED);
     background: var(--TABBAR-ITEM-BG-COLOR-SELECTED);
     border-color: var(--TABBAR-ITEM-BORDER-COLOR-SELECTED);
-    box-shadow: var(--BUTTON-BOX-SHADOW-ACTIVE) !important;
+    box-shadow: none;
 }
 
 .tabbar-vertical-item {
     color: var(--TABBAR-VERTICAL-ITEM-FG-COLOR);
     background: var(--TABBAR-VERTICAL-ITEM-BG-COLOR);
     border-radius: var(--BUTTON-BORDER-RADIUS);
-    font-family: inherit;
+    font-family: var(--FONT-FAMILY-HEADER);
     font-size: inherit;
     font-weight: 700;
     margin: 0;
     margin-bottom: 0.5rem;
-    padding: 1.125rem;
+    padding: 1.75rem;
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
     transition: var(--TRANSITION);
@@ -211,8 +214,8 @@
     margin-right: 0.5rem !important;
     margin-bottom: 0.5rem !important;
     padding: 0.25rem;
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     color: var(--LIST-FREESTYLE-ITEM-FG-COLOR);
     background: var(--LIST-FREESTYLE-ITEM-BG-COLOR);
     border-width: var(--LIST-FREESTYLE-ITEM-BORDER-WIDTH);
@@ -220,6 +223,7 @@
     border-color: var(--LIST-FREESTYLE-ITEM-BORDER-COLOR);
     border-radius: var(--LIST-FREESTYLE-ITEM-BORDER-RADIUS);
     white-space: nowrap;
+    font-family: var(--FONT-FAMILY-HEADER);
     font-size: 90%;
     font-weight: bold;
     transition: var(--TRANSITION);

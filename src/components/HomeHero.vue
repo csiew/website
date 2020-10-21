@@ -15,10 +15,10 @@
               </div>
             </div>
             <div class="hstack width-auto align-start justify-end">
-              <div class="hstack width-auto">
+              <div class="tabbar width-auto">
                 <button v-for="(item, index) in this.projects" v-bind:key="item.name" class="tabbar-item" v-bind:class="currentIndex === index ? 'tabbar-item-current' : ''" v-on:click="this.setIndex(index)">{{ index + 1 }}</button>
               </div>
-              <div class="hstack width-auto margin-s-left">
+              <div class="tabbar width-auto margin-s-left">
                 <button class="tabbar-item" v-on:click="this.prevIndex">&#10094;</button>
                 <button class="tabbar-item" v-on:click="this.nextIndex">&#10095;</button>
               </div>

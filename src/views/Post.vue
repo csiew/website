@@ -84,6 +84,6 @@ export default {
 
 <style scoped>
 #postNavbar {
-  border-bottom: 1px solid var(--HR-BORDER-COLOR);
+  border-bottom: var(--CARD-BORDER-WIDTH) solid var(--HR-BORDER-COLOR);
 }
 </style>
