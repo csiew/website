@@ -1,5 +1,5 @@
 <template>
-  <div class="nav flex-inline flex-flow-row align-center justify-start width-full padding-s">
+  <div id="postNavbar" class="nav flex-inline flex-flow-row align-center justify-start width-full padding-s">
     <router-link v-bind:to="{ name: 'Blog' }" class="button">&#10094;</router-link>
   </div>
   <div class="width-max-800 width-full margin-auto-horizontal padding-l">
@@ -81,3 +81,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+#postNavbar {
+  border-bottom: 1px solid var(--HR-BORDER-COLOR);
+}
+</style>
