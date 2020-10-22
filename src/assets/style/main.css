@@ -285,7 +285,7 @@ hr {
 }
 
 .hello h1 {
-    font-size: 8.5vh !important;
+    font-size: 6vmax !important;
 }
 
 .cover-art {

@@ -87,6 +87,11 @@
     align-items: stretch;
     border-radius: var(--BUTTON-BORDER-RADIUS);
     box-shadow: var(--BUTTON-BOX-SHADOW);
+    transition: var(--TRANSITION);
+}
+.tabbar:hover {
+    box-shadow: var(--BUTTON-BOX-SHADOW-HOVER);
+    transition: var(--TRANSITION);
 }
 .tabbar-item {
     color: var(--TABBAR-ITEM-FG-COLOR);
