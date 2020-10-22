@@ -6,7 +6,7 @@
     --TRANSITION: 0.125s;
 
     --COVER-ART-BORDER-WIDTH: 0px;
-    --COVER-ART-BORDER-RADIUS: 12px;
+    --COVER-ART-BORDER-RADIUS: 8px;
 
     --BUTTON-BORDER-WIDTH: 0px;
     --BUTTON-BORDER-RADIUS: 32px;
@@ -18,7 +18,7 @@
     --TEXT-FIELD-BORDER-RADIUS: 32px;
 
     --CARD-BORDER-WIDTH: 0px;
-    --CARD-BORDER-RADIUS: 12px;
+    --CARD-BORDER-RADIUS: 8px;
     --CARD-IMG-BORDER-WIDTH: 1px;
 }
 @media only screen and (max-width: 720px) {

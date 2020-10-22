@@ -2,7 +2,7 @@
     --FG-COLOR: #333333;
     --FG-SECONDARY-COLOR: gray;
     --BG-COLOR: white;
-    --BG-SECONDARY-COLOR: #eeeeee;
+    --BG-SECONDARY-COLOR: whitesmoke;
     --BG-TERTIARY-COLOR: lightgray;
     --ACCENT-PRIMARY-COLOR: #336666;
     --ACCENT-SECONDARY-COLOR: #558888;
@@ -10,7 +10,7 @@
     --NAVBAR-BG-COLOR: var(--BG-COLOR);
     --NAVBAR-BG-COLOR-GRADIENT: linear-gradient(to bottom, var(--BG-COLOR), var(--BG-SECONDARY-COLOR));
     --NAVBAR-BG-COLOR-TRANSLUCENT: linear-gradient(to bottom, rgba(255,255,255,1.0), rgba(255,255,255,0.8));
-    --NAVBAR-SHADOW: none;
+    --NAVBAR-SHADOW: 0px 0px 16px rgba(0,0,0,0.25);
 
     --HR-BORDER-COLOR: lightgray;
 
@@ -22,7 +22,7 @@
     --COVER-ART-BG-COLOR: #555555;
     --COVER-ART-BORDER-COLOR: var(--HR-BORDER-COLOR);
     --COVER-ART-SHADOW: none;
-    --PROFILE-IMAGE-SHADOW: none;
+    --PROFILE-IMAGE-SHADOW: 0px 4px 8px rgba(0,0,0,0.25);
 
     /* Button styling */
     --BUTTON-FG-COLOR: var(--FG-COLOR);
@@ -41,9 +41,9 @@
     --BUTTON-BORDER-COLOR-FOCUS: var(--ACCENT-PRIMARY-COLOR);
     --BUTTON-BORDER-COLOR-SELECTED: var(--ACCENT-PRIMARY-COLOR);
     --BUTTON-BORDER-COLOR-DISABLED:  darkgray;
-    --BUTTON-BOX-SHADOW: none;
-    --BUTTON-BOX-SHADOW-HOVER: none;
-    --BUTTON-BOX-SHADOW-ACTIVE: none;
+    --BUTTON-BOX-SHADOW: 0px 4px 8px rgba(0,0,0,0.1875);
+    --BUTTON-BOX-SHADOW-HOVER: 0px 4px 8px rgba(0,0,0,0.25);
+    --BUTTON-BOX-SHADOW-ACTIVE: 0px 4px 8px rgba(0,0,0,0.25) inset;
 
     --TABBAR-ITEM-FG-COLOR: var(--BUTTON-FG-COLOR);
     --TABBAR-ITEM-FG-COLOR-HOVER: var(--BUTTON-FG-COLOR-HOVER);
@@ -82,7 +82,7 @@
     --TEXT-FIELD-FG-COLOR: var(--FG-COLOR);
     --TEXT-FIELD-FG-COLOR-HOVER: var(--FG-COLOR);
     --TEXT-FIELD-FG-COLOR-ACTIVE: var(--FG-COLOR);
-    --TEXT-FIELD-BG-COLOR: var(--BG-SECONDARY-COLOR);
+    --TEXT-FIELD-BG-COLOR: #eeeeee;
     --TEXT-FIELD-BG-COLOR-HOVER: whitesmoke;
     --TEXT-FIELD-BG-COLOR-ACTIVE: whitesmoke;
     --TEXT-FIELD-BORDER-COLOR: var(--HR-BORDER-COLOR);
@@ -92,7 +92,7 @@
 
     /* Card styling */
     --CARD-BORDER-COLOR: var(--HR-BORDER-COLOR);
-    --CARD-BOX-SHADOW: none;
+    --CARD-BOX-SHADOW: 0px 8px 16px rgba(0,0,0,0.25);
     --CARD-IMG-BORDER-COLOR: var(--HR-BORDER-COLOR);
 
     --CARD-LIST-ITEM-FG-COLOR: var(--FG-COLOR);
