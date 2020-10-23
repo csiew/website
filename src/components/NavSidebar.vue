@@ -1,8 +1,8 @@
 <template>
   <div id="navSidebar" class="nav navsidebar">
     <div class="vstack vstack-space-between">
-      <router-link class="navbar-wordmark" to="/">
-        <img class="profile-img profile-img-m nodrag noselect border-radius-100pct margin-m margin-l-bottom" src="@/assets/images/profile.jpg" />
+      <router-link class="navbar-wordmark margin-l-top margin-s-bottom" to="/">
+        <img class="profile-img profile-img-m nodrag noselect border-radius-100pct" src="@/assets/images/profile.jpg" />
       </router-link>
       <div class="width-full text-align-left padding-s">
         <div class="vstack margin-none">

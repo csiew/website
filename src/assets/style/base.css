@@ -62,9 +62,11 @@
     width: 100%;
 }
 
+.width-max-128 { max-width: 128px !important; }
 .width-max-200 { max-width: 200px !important; }
 .width-max-240 { max-width: 240px !important; }
 .width-max-256 { max-width: 256px !important; }
+.width-max-300 { max-width: 300px !important; }
 .width-max-320 { max-width: 320px !important; }
 .width-max-380 { max-width: 380px !important; }
 .width-max-480 { max-width: 480px !important; }

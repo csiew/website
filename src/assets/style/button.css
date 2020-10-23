@@ -124,13 +124,11 @@
     border-left-width: var(--BUTTON-BORDER-WIDTH);
     border-top-left-radius: var(--BUTTON-BORDER-RADIUS);
     border-bottom-left-radius: var(--BUTTON-BORDER-RADIUS);
-    padding-left: 1.125rem;
 }
 .tabbar-item:last-child {
     border-right-width: var(--BUTTON-BORDER-WIDTH);
     border-top-right-radius: var(--BUTTON-BORDER-RADIUS);
     border-bottom-right-radius: var(--BUTTON-BORDER-RADIUS);
-    padding-right: 1.125rem;
 }
 .tabbar-item:hover {
     color: var(--TABBAR-ITEM-FG-COLOR-HOVER);
@@ -169,7 +167,7 @@
     font-weight: 700;
     margin: 0;
     margin-bottom: 0.5rem;
-    padding: 1.75rem;
+    padding: 1.25rem;
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
     transition: var(--TRANSITION);

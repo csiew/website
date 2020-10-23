@@ -4,13 +4,11 @@
       <h3>Skills</h3>
     </div>
     <div class="card padding-m">
-      <div class="margin-l-bottom">
-        <form class="hstack">
-          <input class="width-full" type="text" placeholder="Filter..." @keyup="filter" v-model="filterTerm" />
-          <button v-if="this.filterTerm.length > 0" class="margin-s-left cursor-pointer" v-on:click="this.resetResults()">Clear</button>
-        </form>
+      <div class="hstack margin-l-bottom">
+        <input class="width-full" type="text" placeholder="Filter..." @keyup="filter" v-model="filterTerm" />
+        <button v-if="this.filterTerm.length > 0" class="margin-s-left cursor-pointer" v-on:click="this.resetResults()">Clear</button>
       </div>
-      <span v-if="this.filterTerm.length !== 0">
+      <span v-if="this.filterTerm.length > 0">
         <h4 class="padding-s-bottom">Results ({{ result.length }} items)</h4>
         <div class="grid grid-gap-m grid-col-1 grid-col-auto-fit-640">
           <div class="grid-item list-freestyle">
@@ -89,6 +87,7 @@ export default {
       this.result = this.skills['programmingLangs'].concat(this.skills['frameworks']['frontend'], this.skills['frameworks']['backend'], this.skills['infrastructure']['database'], this.skills['infrastructure']['cloud'], this.skills['infrastructure']['ci']).filter(item => item.toLowerCase().includes(this.filterTerm.toLowerCase()));
     },
     resetResults: function () {
+      this.filterTerm = "";
       this.result = [];
     }
   }
