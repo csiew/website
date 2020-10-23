@@ -20,7 +20,7 @@
     font-size: inherit;
     font-weight: 700;
     margin: 0;
-    padding: 1.25rem;
+    padding: 1.5rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     transition: var(--TRANSITION);
@@ -124,11 +124,13 @@
     border-left-width: var(--BUTTON-BORDER-WIDTH);
     border-top-left-radius: var(--BUTTON-BORDER-RADIUS);
     border-bottom-left-radius: var(--BUTTON-BORDER-RADIUS);
+    padding-left: 1.25rem;
 }
 .tabbar-item:last-child {
     border-right-width: var(--BUTTON-BORDER-WIDTH);
     border-top-right-radius: var(--BUTTON-BORDER-RADIUS);
     border-bottom-right-radius: var(--BUTTON-BORDER-RADIUS);
+    padding-right: 1.25rem;
 }
 .tabbar-item:hover {
     color: var(--TABBAR-ITEM-FG-COLOR-HOVER);
@@ -167,7 +169,7 @@
     font-weight: 700;
     margin: 0;
     margin-bottom: 0.5rem;
-    padding: 1.25rem;
+    padding: 1.5rem;
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
     transition: var(--TRANSITION);
@@ -229,6 +231,7 @@
     border-style: solid;
     border-color: var(--LIST-FREESTYLE-ITEM-BORDER-COLOR);
     border-radius: var(--LIST-FREESTYLE-ITEM-BORDER-RADIUS);
+    box-shadow: var(--BUTTON-BOX-SHADOW);
     white-space: nowrap;
     font-family: var(--FONT-FAMILY-HEADER);
     font-size: 90%;
@@ -242,5 +245,6 @@
     color: var(--LIST-FREESTYLE-ITEM-FG-COLOR-HOVER);
     background: var(--LIST-FREESTYLE-ITEM-BG-COLOR-HOVER);
     border-color: var(--LIST-FREESTYLE-ITEM-BORDER-COLOR-HOVER);
+    box-shadow: var(--BUTTON-BOX-SHADOW-HOVER);
     transition: var(--TRANSITION);
 }
