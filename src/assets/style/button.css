@@ -222,9 +222,9 @@
     margin: 0 !important;
     margin-right: 0.5rem !important;
     margin-bottom: 0.5rem !important;
-    padding: 0.25rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding: 1rem;
+    padding-top: 0.325rem;
+    padding-bottom: 0.325rem;
     color: var(--LIST-FREESTYLE-ITEM-FG-COLOR);
     background: var(--LIST-FREESTYLE-ITEM-BG-COLOR);
     border-width: var(--LIST-FREESTYLE-ITEM-BORDER-WIDTH);
