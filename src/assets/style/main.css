@@ -293,7 +293,7 @@ hr {
 
 .hello h1 {
     font-size: 5.125vmax !important;
-    letter-spacing: -0.25rem;
+    letter-spacing: -0.0625rem;
     text-transform: uppercase;
 }
 
