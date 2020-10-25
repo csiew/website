@@ -4,7 +4,7 @@
             "id": "cast",
             "name": "Cast",
             "timeRange": "2020-Present",
-            "description": "A podcast web app that allows you to manage your podcast subscriptions and bookmarks with an intuitive, well-organised interface.\n\nIt uses Node/Express for its backend API service. Its frontend uses Node/Express for server and routing functionality, whilst EJS is used for basic server-side templating and my own custom frontend library is used for single-page application functionality.\n\nPublic beta access will be available in the near future!",
+            "description": "A podcast web app that allows you to manage your podcast subscriptions and bookmarks with an intuitive, well-organised interface.\n\nIt uses the Node.js runtime with the Express framework for its backend API service.\n\nThe initial version of Cast used my own custom frontend library, Cardo. However I have since started work on a version of the frontend that uses the Vue.js framework, just like this site.",
             "imgUrl": "cast.png",
             "url": "",
             "github": ""
@@ -13,7 +13,7 @@
             "id": "cardo",
             "name": "Cardo",
             "timeRange": "2020-Present",
-            "description": "A client-side web frontend library (more so a collection of functions to enable single-page web apps). The previous version of my site and my 'Hoddle' Javascript window manager contain the foundational work for this library. My upcoming podcast app uses this yet-to-be-named library extensively. I will publish this library on GitHub once it reaches some level of maturity.",
+            "description": "A client-side web frontend library (more so a collection of functions to enable single-page web apps). The previous version of my site and my 'Hoddle' Javascript window manager contain the foundational work for this library. The initial version of my upcoming podcast app used this library extensively.\n\nIt does not add additional syntactic sugar to the existing HTML syntax of a site (unlike _Vue.js_, _Svelte_, or _Lucia_). It is largely made up of utility functions written in vanilla JavaScript with some JQuery thrown-in (for stuff like changing out contents of an element, performing data calls, etc). My own custom utility CSS stylesheets also work hand-in-hand with this library to provide pre-designed UI elements.",
             "imgUrl": "",
             "url": "",
             "github": ""
