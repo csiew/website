@@ -13,7 +13,7 @@
             "id": "cardo",
             "name": "Cardo",
             "timeRange": "2020-Present",
-            "description": "A client-side web frontend library (more so a collection of functions to enable single-page web apps). The previous version of my site and my 'Hoddle' Javascript window manager contain the foundational work for this library. The initial version of my upcoming podcast app used this library extensively.\n\nIt does not add additional syntactic sugar to the existing HTML syntax of a site (unlike _Vue.js_, _Svelte_, or _Lucia_). It is largely made up of utility functions written in vanilla JavaScript with some JQuery thrown-in (for stuff like changing out contents of an element, performing data calls, etc). My own custom utility CSS stylesheets also work hand-in-hand with this library to provide pre-designed UI elements.",
+            "description": "A client-side web frontend library (more so a collection of functions to enable single-page web apps). The previous version of my site and my 'Hoddle' Javascript window manager contain the foundational work for this library. The initial version of my upcoming podcast app used this library extensively.\n\nIt does not add additional syntactic sugar to the existing HTML syntax of a site (unlike _Vue.js_ or _Svelte_). It is largely made up of utility functions written in vanilla JavaScript with some JQuery thrown-in (for stuff like changing out contents of an element, performing data calls, etc). My own custom utility CSS stylesheets also work hand-in-hand with this library to provide pre-designed UI elements.",
             "imgUrl": "",
             "url": "",
             "github": ""
