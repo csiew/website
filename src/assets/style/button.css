@@ -34,7 +34,8 @@
               user-select: none; /* Non-prefixed version, currently
                                     supported by Chrome, Edge, Opera and Firefox */
 }
-.button:hover, button:hover {
+.button:hover, button:hover,
+.button:focus, button:focus {
     color: var(--BUTTON-FG-COLOR-HOVER);
     background: var(--BUTTON-BG-COLOR-HOVER);
     border-color: var(--BUTTON-BORDER-COLOR-HOVER);
@@ -52,8 +53,8 @@
     transition: var(--TRANSITION);
 }
 .button:focus, button:focus {
-    outline: none;
-    border-color: var(--BUTTON-BORDER-COLOR-FOCUS);
+    outline: none !important;
+    border-color: var(--BUTTON-BORDER-COLOR-FOCUS) !important;
 }
 .button-selected, .button-selected:hover {
     color: var(--BUTTON-FG-COLOR-SELECTED);
@@ -140,7 +141,8 @@
     border-bottom-right-radius: var(--BUTTON-BORDER-RADIUS);
     padding-right: 1.25rem;
 }
-.tabbar-item:hover {
+.tabbar-item:hover,
+.tabbar-item:focus {
     color: var(--TABBAR-ITEM-FG-COLOR-HOVER);
     background: var(--TABBAR-ITEM-BG-COLOR-HOVER);
     border-color: var(--TABBAR-ITEM-BORDER-COLOR-HOVER);
@@ -158,7 +160,8 @@
     transition: var(--TRANSITION);
 }
 .tabbar-item:focus {
-    border-color: var(--TABBAR-ITEM-BORDER-COLOR-FOCUS);
+    outline: none !important;
+    border-color: var(--TABBAR-ITEM-BORDER-COLOR-FOCUS) !important;
     transition: var(--TRANSITION);
 }
 .tabbar-item.router-link-active,
@@ -197,7 +200,8 @@
 .tabbar-vertical-item:last-child {
     margin-bottom: 0;
 }
-.tabbar-vertical-item:hover {
+.tabbar-vertical-item:hover,
+.tabbar-vertical-item:focus {
     color: var(--TABBAR-VERTICAL-ITEM-FG-COLOR-HOVER);
     background: var(--TABBAR-VERTICAL-ITEM-BG-COLOR-HOVER);
     box-shadow: var(--BUTTON-BOX-SHADOW-HOVER);
@@ -211,6 +215,9 @@
     box-shadow: var(--BUTTON-BOX-SHADOW-ACTIVE);
     transform: scale(1);
     transition: var(--TRANSITION);
+}
+.tabbar-vertical-item:focus {
+    outline: none !important;
 }
 .tabbar-vertical-item.router-link-active {
     color: var(--TABBAR-VERTICAL-ITEM-FG-COLOR-SELECTED);
