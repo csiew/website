@@ -64,10 +64,12 @@
     padding: 0;
     color: var(--CARD-LIST-ITEM-FG-COLOR);
     background: var(--CARD-LIST-ITEM-BG-COLOR);
+    transition: var(--TRANSITION);
 }
 .card-list li:hover {
     color: var(--CARD-LIST-ITEM-FG-COLOR-HOVER);
     background: var(--CARD-LIST-ITEM-BG-COLOR-HOVER);
+    transition: var(--TRANSITION);
 }
 .card-list-static li:hover {
     color: var(--CARD-LIST-ITEM-FG-COLOR) !important;

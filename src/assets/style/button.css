@@ -23,6 +23,7 @@
     padding: 1.5rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
+    transform: scale(1);
     transition: var(--TRANSITION);
 
     -webkit-touch-callout: none; /* iOS Safari */
@@ -39,6 +40,7 @@
     border-color: var(--BUTTON-BORDER-COLOR-HOVER);
     box-shadow: var(--BUTTON-BOX-SHADOW-HOVER);
     text-decoration: none !important;
+    transform: scale(1.0325);
     transition: var(--TRANSITION);
 }
 .button:active, button:active {
@@ -46,6 +48,7 @@
     background: var(--BUTTON-BG-COLOR-ACTIVE);
     border-color: var(--BUTTON-BORDER-COLOR-ACTIVE);
     box-shadow: var(--BUTTON-BOX-SHADOW-ACTIVE);
+    transform: scale(1);
     transition: var(--TRANSITION);
 }
 .button:focus, button:focus {
@@ -57,6 +60,7 @@
     background: var(--BUTTON-BG-COLOR-SELECTED);
     border-color: var(--BUTTON-BORDER-COLOR-SELECTED);
     box-shadow: var(--BUTTON-BOX-SHADOW-ACTIVE);
+    transform: scale(1.0325);
     transition: var(--TRANSITION);
 }
 
@@ -71,6 +75,7 @@
     background: var(--BUTTON-BG-COLOR-DISABLED);
     border-color: var(--BUTTON-BORDER-COLOR-DISABLED);
     box-shadow: none;
+    transform: scale(1);
 }
 
 .row .button, .row button {
@@ -87,10 +92,12 @@
     align-items: stretch;
     border-radius: var(--BUTTON-BORDER-RADIUS);
     box-shadow: var(--BUTTON-BOX-SHADOW);
+    transform: scale(1);
     transition: var(--TRANSITION);
 }
 .tabbar:hover {
     box-shadow: var(--BUTTON-BOX-SHADOW-HOVER);
+    transform: scale(1.0325);
     transition: var(--TRANSITION);
 }
 .tabbar-item {
@@ -110,6 +117,7 @@
     padding: 1rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
+    transform: scale(1);
     transition: var(--TRANSITION);
 
     -webkit-touch-callout: none; /* iOS Safari */
@@ -138,6 +146,7 @@
     border-color: var(--TABBAR-ITEM-BORDER-COLOR-HOVER);
     box-shadow: none;
     text-decoration: none !important;
+    transform: scale(1);
     transition: var(--TRANSITION);
 }
 .tabbar-item:active {
@@ -145,6 +154,7 @@
     background: var(--TABBAR-ITEM-BG-COLOR-ACTIVE);
     border-color: var(--TABBAR-ITEM-BORDER-COLOR-ACTIVE);
     box-shadow: none;
+    transform: scale(1);
     transition: var(--TRANSITION);
 }
 .tabbar-item:focus {
@@ -157,6 +167,7 @@
     background: var(--TABBAR-ITEM-BG-COLOR-SELECTED);
     border-color: var(--TABBAR-ITEM-BORDER-COLOR-SELECTED);
     box-shadow: none;
+    transform: scale(1);
 }
 
 .tabbar-vertical-item {
@@ -172,6 +183,7 @@
     padding: 1.5rem;
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
+    transform: scale(1);
     transition: var(--TRANSITION);
 
     -webkit-touch-callout: none; /* iOS Safari */
@@ -190,16 +202,21 @@
     background: var(--TABBAR-VERTICAL-ITEM-BG-COLOR-HOVER);
     box-shadow: var(--BUTTON-BOX-SHADOW-HOVER);
     text-decoration: none !important;
+    transform: scale(1.0325);
+    transition: var(--TRANSITION);
 }
 .tabbar-vertical-item:active {
     color: var(--TABBAR-VERTICAL-ITEM-FG-COLOR-ACTIVE);
     background: var(--TABBAR-VERTICAL-ITEM-BG-COLOR-ACTIVE);
     box-shadow: var(--BUTTON-BOX-SHADOW-ACTIVE);
+    transform: scale(1);
+    transition: var(--TRANSITION);
 }
 .tabbar-vertical-item.router-link-active {
     color: var(--TABBAR-VERTICAL-ITEM-FG-COLOR-SELECTED);
     background: var(--TABBAR-VERTICAL-ITEM-BG-COLOR-SELECTED);
-    box-shadow: var(--BUTTON-BOX-SHADOW-ACTIVE);
+    box-shadow: var(--BUTTON-BOX-SHADOW);
+    transition: var(--TRANSITION);
 }
 
 .list-freestyle ul {
@@ -236,6 +253,7 @@
     font-family: var(--FONT-FAMILY-HEADER);
     font-size: 90%;
     font-weight: bold;
+    transform: scale(1);
     transition: var(--TRANSITION);
 }
 .list-freestyle li:last-child {
@@ -246,5 +264,10 @@
     background: var(--LIST-FREESTYLE-ITEM-BG-COLOR-HOVER);
     border-color: var(--LIST-FREESTYLE-ITEM-BORDER-COLOR-HOVER);
     box-shadow: var(--BUTTON-BOX-SHADOW-HOVER);
+    transform: scale(1.0325);
+    transition: var(--TRANSITION);
+}
+.list-freestyle li:active {
+    transform: scale(1);
     transition: var(--TRANSITION);
 }
