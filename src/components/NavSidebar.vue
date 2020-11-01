@@ -1,12 +1,23 @@
 <template>
   <div id="navSidebar" class="nav navsidebar">
-    <div class="vstack vstack-space-between">
-      <router-link class="navbar-wordmark margin-l-top margin-s-bottom" to="/">
-        <img class="profile-img profile-img-m nodrag noselect border-radius-100pct" src="@/assets/images/profile.jpg" />
-      </router-link>
-      <div class="width-full text-align-left padding-s">
-        <div class="vstack margin-none">
-          <router-link v-for="item in this.pages" v-bind:key="item.id" class="tabbar-vertical-item" v-bind:to="item.route">{{ item.label }}</router-link>
+    <div class="vstack vstack-space-between height-full">
+      <div class="vstack">
+        <router-link class="navbar-wordmark margin-l-top margin-s-bottom" to="/">
+          <img class="profile-img profile-img-m nodrag noselect border-radius-100pct" src="@/assets/images/profile.jpg" />
+        </router-link>
+        <div class="width-full text-align-left padding-s">
+          <div class="vstack margin-none">
+            <router-link v-for="item in this.pages" v-bind:key="item.id" class="tabbar-vertical-item" v-bind:to="item.route">{{ item.label }}</router-link>
+          </div>
+        </div>
+      </div>
+      <div class="flex-inline flex-flow-row align-center justify-start width-full padding-s">
+        <button class="toggle-switch" v-bind:class="darkModeState === true ? 'toggle-switch-active' : ''" v-on:click="this.toggleDarkMode()" title="Toggle dark mode (requires refresh)">
+          <div class="toggle-switch-knob"></div>
+        </button>
+        <div class="vstack width-auto margin-s-left text-color-secondary noselect">
+          <span>Dark mode</span>
+          <span class="font-scale-xxs">Requires page refresh</span>
         </div>
       </div>
     </div>
@@ -16,6 +27,7 @@
 <script>
 export default {
   name: 'NavSidebar',
+  inject: ['SettingsProvider'],
   data() {
     return {
       pages: [
@@ -46,6 +58,11 @@ export default {
         }
       ]
     };
+  },
+  computed: {
+    darkModeState: function () {
+      return this.SettingsProvider.getDarkModeState();
+    }
   },
   methods: {
     isMobile() {
@@ -88,6 +105,9 @@ export default {
     hideNavLinks() {
       document.getElementById("navbarLinks").style.visibility = "hidden";
       document.getElementById("navbarLinks").style.display = "none";
+    },
+    toggleDarkMode() {
+      this.SettingsProvider.toggleDarkModeState();
     }
   }
 }
