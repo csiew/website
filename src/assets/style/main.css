@@ -275,7 +275,17 @@ hr {
 }
 
 .profile-img {
+    transform: scale(1);
+    transition: var(--TRANSITION);
+}
+.profile-img:hover {
     box-shadow: var(--PROFILE-IMAGE-SHADOW);
+    transform: scale(1.0325);
+    transition: var(--TRANSITION);
+}
+.profile-img:active {
+    transform: scale(1);
+    transition: var(--TRANSITION);
 }
 .profile-img-s {
     width: 3rem;
@@ -291,7 +301,7 @@ hr {
 }
 
 .hello h1 {
-    font-size: 5.125vmax !important;
+    font-size: 5.25vmax !important;
     letter-spacing: -0.0625rem;
     text-transform: uppercase;
 }
