@@ -3,14 +3,14 @@
     <div class="section-header">
       <h3>Featured projects</h3>
     </div>
-    <div class="section card width-full width-max-800 margin-auto-horizontal text-align-center padding-l">
+    <div class="section card width-full width-max-800 margin-auto-horizontal text-align-center padding-m">
       <div class="vstack align-start justify-center width-full height-full">
         <div class="vstack width-full align-start justify-center text-align-center">
           <div class="hstack hstack-responsive hstack-space-between width-full align-start text-align-center padding-s-bottom">
             <div class="hstack width-auto align-center justify-start padding-xs-bottom">
-              <img v-bind:src="this.getImgUrl(projects[currentIndex].logoUrl)" class="margin-s-right nodrag noselect" style="max-width: 2.5rem; max-height: 2.5rem;" />
+              <img v-bind:src="this.getImgUrl(projects[currentIndex].logoUrl)" class="margin-s-right nodrag noselect" style="max-width: 2.75rem; max-height: 2.75rem;" />
               <div class="vstack width-auto text-align-left align-start justify-center">
-                <h1 class="margin-none padding-xs-top">{{ projects[currentIndex].name }}</h1>
+                <h1 class="margin-none-top margin-xxs-bottom">{{ projects[currentIndex].name }}</h1>
                 <small class="text-color-secondary">{{ projects[currentIndex].description }}</small>
               </div>
             </div>

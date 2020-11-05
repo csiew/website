@@ -4,7 +4,7 @@ input[type=search],
 input[type=email],
 input[type=password] {
     margin: 0;
-    padding: 1.25rem;
+    padding: 1rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     color: var(--TEXT-FIELD-FG-COLOR);
@@ -14,7 +14,7 @@ input[type=password] {
     border-color: var(--TEXT-FIELD-BORDER-COLOR);
     border-radius: var(--TEXT-FIELD-BORDER-RADIUS);
     box-shadow: var(--TEXT-FIELD-BOX-SHADOW);
-    font-family: inherit;
+    font-family: var(--FONT-FAMILY-HEADER);
     font-size: inherit;
     transition: var(--TRANSITION);
 }

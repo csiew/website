@@ -2,26 +2,21 @@
   <div class="card">
     <div class="hstack hstack-responsive hstack-space-between align-start">
       <div>
-        <h3>{{ project.name }}</h3>
-        <p class="text-color-secondary">
-          <small>{{ project.timeRange }}</small>
-        </p>
+        <h3 class="font-scale-xl">{{ project.name }}</h3>
+        <small class="timestamp text-color-secondary">{{ project.timeRange }}</small>
       </div>
       <div>
-        <div v-if="project.url || project.github">
-          <small>
-            <div class="grid grid-col-2 grid-gap-m">
-              <a v-if="project.url" class="button" v-bind:href="project.url" target="_blank">Website</a>
-              <a v-else class="button button-disabled">Website</a>
-              <a v-if="project.github" class="button" v-bind:href="project.github" target="_blank">GitHub</a>
-              <a v-else class="button button-disabled">GitHub</a>
-            </div>
-          </small>
-        </div>
+        <small>
+          <div class="grid grid-col-2 grid-gap-m">
+            <a class="button" v-bind:class="!project.url ? 'button-disabled' : ''" v-bind:href="project.url ? project.url : null" target="_blank" v-bind:title="project.url ? 'Visit project website' : 'Project does not have a website'">Website</a>
+            <a class="button" v-bind:class="!project.github ? 'button-disabled' : ''" v-bind:href="project.github ? project.github : null" target="_blank" v-bind:title="project.url ? 'Visit project website' : 'Project does not have a website'">GitHub</a>
+          </div>
+        </small>
       </div>
     </div>
+    <hr class="margin-s-top margin-s-bottom padding-none" />
     <span v-if="project.imgUrl">
-      <a v-bind:href="getProjectImgUrl(project.imgUrl)"><img v-bind:alt="project.imgUrl" class="card card-img margin-s-top margin-s-bottom" v-bind:src="getProjectImgUrl(project.imgUrl)" style="width: 100%; height: auto;" /></a>
+      <a v-bind:href="getProjectImgUrl(project.imgUrl)"><img v-bind:alt="project.imgUrl" class="card card-img margin-xs-top margin-s-bottom" v-bind:src="getProjectImgUrl(project.imgUrl)" style="width: 100%; height: auto;" /></a>
     </span>
     <div v-html="contentMarkdown"></div>
   </div>

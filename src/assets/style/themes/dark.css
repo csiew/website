@@ -9,7 +9,7 @@
     --NAVBAR-FG-COLOR: var(--FG-COLOR);
     --NAVBAR-BG-COLOR: var(--BG-COLOR);
     --NAVBAR-BG-COLOR-GRADIENT: linear-gradient(to bottom, var(--NAVBAR-BG-COLOR), var(--BG-SECONDARY-COLOR));
-    --NAVBAR-BG-COLOR-TRANSLUCENT: linear-gradient(to bottom, rgba(47,47,47,1.0), rgba(47,47,47,0.8));
+    --NAVBAR-BG-COLOR-TRANSLUCENT: rgba(47,47,47,0.8);
     --NAVBAR-SHADOW: 0px 0px 16px rgba(0,0,0,0.25);
 
     --HR-BORDER-COLOR: #555555;
@@ -44,6 +44,15 @@
     --BUTTON-BOX-SHADOW: none;
     --BUTTON-BOX-SHADOW-HOVER: 0px 4px 8px rgba(0,0,0,0.25);
     --BUTTON-BOX-SHADOW-ACTIVE: 0px 4px 8px rgba(0,0,0,0.25) inset;
+
+    --TOGGLE-SWITCH-BG-COLOR: var(--BG-TERTIARY-COLOR);
+    --TOGGLE-SWITCH-BG-COLOR-ACTIVE: var(--ACCENT-PRIMARY-COLOR);
+    --TOGGLE-SWITCH-KNOB-BG-COLOR: var(--BG-COLOR);
+    --TOGGLE-SWITCH-BORDER-RADIUS: 32px;
+    --TOGGLE-SWITCH-BOX-SHADOW: none;
+    --TOGGLE-SWITCH-BOX-SHADOW-HOVER: 0px 2px 4px rgba(0,0,0,0.5) inset;
+    --TOGGLE-SWITCH-KNOB-BOX-SHADOW: none;
+    --TOGGLE-SWITCH-KNOB-BOX-SHADOW-HOVER: 0px 2px 4px rgba(0,0,0,0.5);
 
     --TABBAR-ITEM-FG-COLOR: var(--BUTTON-FG-COLOR);
     --TABBAR-ITEM-FG-COLOR-HOVER: var(--BUTTON-FG-COLOR-HOVER);
@@ -89,9 +98,9 @@
     --TEXT-FIELD-BORDER-COLOR-HOVER: var(--FG-SECONDARY-COLOR);
     --TEXT-FIELD-BORDER-COLOR-ACTIVE: var(--FG-COLOR);
     --TEXT-FIELD-BORDER-COLOR-FOCUS: var(--ACCENT-PRIMARY-COLOR);
-    --TEXT-FIELD-BOX-SHADOW: 0px 1px 2px rgba(0,0,0,0.125) inset;
+    --TEXT-FIELD-BOX-SHADOW: none;
     --TEXT-FIELD-BOX-SHADOW-HOVER: 0px 1px 2px rgba(0,0,0,0.125) inset;
-    --TEXT-FIELD-BOX-SHADOW-ACTIVE: 0px 1px 2px rgba(0,0,0,0.25) inset;
+    --TEXT-FIELD-BOX-SHADOW-ACTIVE: 0px 2px 4px rgba(0,0,0,0.125) inset;
 
     /* Card styling */
     --CARD-BORDER-COLOR: var(--HR-BORDER-COLOR);

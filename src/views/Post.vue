@@ -1,13 +1,13 @@
 <template>
-  <div id="postNavbar" class="nav flex-inline flex-flow-row align-center justify-start width-full padding-s">
-    <router-link v-bind:to="{ name: 'Blog' }" class="button">&#10094;</router-link>
+  <div id="postNavbar" class="nav nav-translucent position-sticky anchor-top flex-inline flex-flow-row align-center justify-start width-full padding-none">
+    <router-link v-bind:to="{ name: 'Blog' }" class="button button-toolbar">&#10094;</router-link>
   </div>
   <div class="width-max-800 width-full margin-auto-horizontal padding-l">
     <div class="section">
       <div v-if="isLoading.postItem === false && isLoading.content === false" class="card padding-m">
         <div class="width-full flex-inline flex-flow-column padding-xs-bottom">
           <h1 class="margin-xs-top margin-xs-bottom" style="line-height: 1.125;">{{ postItem.title }}</h1>
-          <small class="text-color-secondary">{{ this.formatTimestamp(postItem.date) }}</small>
+          <small class="timestamp text-color-secondary">{{ this.formatTimestamp(postItem.date) }}</small>
         </div>
         <hr class="margin-xs-top margin-m-bottom padding-none" />
         <div v-html="postMarkdown"></div>
@@ -85,5 +85,20 @@ export default {
 <style scoped>
 #postNavbar {
   border-bottom: var(--CARD-BORDER-WIDTH) solid var(--HR-BORDER-COLOR);
+}
+
+.button-toolbar {
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+.button-toolbar:hover,
+.button-toolbar:active {
+  background: var(--BUTTON-BG-COLOR-HOVER);
+  border-radius: 0;
+  box-shadow: none;
+}
+.button-toolbar:active {
+  background: var(--BUTTON-BG-COLOR-ACTIVE);
 }
 </style>
