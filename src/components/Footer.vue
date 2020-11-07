@@ -1,5 +1,5 @@
 <template>
-  <div class="footer padding-l margin-xxl-top">
+  <div class="footer padding-l margin-s-top">
     <p class="text-color-secondary">
       &copy; 2020 Clarence Siew
     </p>
