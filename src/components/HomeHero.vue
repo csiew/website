@@ -7,13 +7,15 @@
       <div class="vstack align-start justify-center width-full height-full">
         <div class="vstack width-full align-start justify-center text-align-center">
           <div class="hstack hstack-responsive hstack-space-between width-full align-start text-align-center padding-s-bottom">
-            <div class="hstack width-auto align-center justify-start padding-xs-bottom">
-              <img v-bind:src="this.getImgUrl(projects[currentIndex].logoUrl)" class="margin-s-right nodrag noselect" style="max-width: 2.75rem; max-height: 2.75rem;" />
-              <div class="vstack width-auto text-align-left align-start justify-center">
-                <h1 class="margin-none-top margin-xxs-bottom">{{ projects[currentIndex].name }}</h1>
-                <small class="text-color-secondary">{{ projects[currentIndex].description }}</small>
+            <transition name="slide-fade">
+              <div v-if="isVisible.projectTitle === true" class="hstack width-auto align-center justify-start padding-xs-bottom">
+                <img v-bind:src="this.getImgUrl(projects[currentIndex].logoUrl)" class="margin-s-right nodrag noselect" style="max-width: 2.75rem; max-height: 2.75rem;" />
+                <div class="vstack width-auto text-align-left align-start justify-center">
+                  <h1 class="margin-none-top margin-xxs-bottom">{{ projects[currentIndex].name }}</h1>
+                  <small class="text-color-secondary">{{ projects[currentIndex].description }}</small>
+                </div>
               </div>
-            </div>
+            </transition>
             <div class="hstack width-auto align-start justify-end">
               <div class="tabbar width-auto">
                 <button v-for="(item, index) in this.projects" v-bind:key="item.name" class="tabbar-item" v-bind:class="currentIndex === index ? 'tabbar-item-current' : ''" v-on:click="this.setIndex(index)">{{ index + 1 }}</button>
@@ -24,7 +26,9 @@
               </div>
             </div>
           </div>
-          <img v-bind:src="this.getImgUrl(projects[currentIndex].imageUrl)" v-bind:alt="projects[currentIndex].name" class="card card-img nodrag noselect" style="width: 100%; height: auto;" />
+          <transition name="slide-fade">
+            <img v-if="isVisible.projectScreenshot === true" v-bind:src="this.getImgUrl(projects[currentIndex].imageUrl)" v-bind:alt="projects[currentIndex].name" class="card card-img nodrag noselect" style="width: 100%; height: auto;" />
+          </transition>
           <div class="hstack width-full align-center justify-center padding-m-top">
             <router-link class="button" v-bind:to="{ name: 'Projects' }">See all projects &#10132;</router-link>
           </div>
@@ -39,6 +43,10 @@ export default {
   name: 'HomeHero',
   data() {
     return {
+      isVisible: {
+        projectTitle: true,
+        projectScreenshot: true
+      },
       projects: [
         {
           id: "cast",
@@ -79,6 +87,7 @@ export default {
       } else {
         this.currentIndex -= 1;
       }
+      this.transitionToggle();
     },
     nextIndex: function () {
       if (this.currentIndex === this.projects.length - 1) {
@@ -86,12 +95,44 @@ export default {
       } else {
         this.currentIndex += 1;
       }
+      this.transitionToggle();
     },
     setIndex: function (newIndex) {
       if (newIndex < this.projects.length && newIndex >= 0) {
         this.currentIndex = newIndex;
       }
+      this.transitionToggle();
+    },
+    transitionToggle: function () {
+      this.isVisible.projectTitle = false;
+      this.isVisible.projectScreenshot = false;
+      setTimeout(() => {
+        this.isVisible.projectTitle = true;
+        this.isVisible.projectScreenshot = true;
+      }, 0);
     }
   }
 }
 </script>
+
+<style scoped>
+.slide-fade-enter-active,
+.slide-fade-leave-to-active {
+  transition: all 0.25s ease-in-out;
+}
+.slide-fade-enter-from {
+  opacity: 0%;
+  filter: saturate(0%) blur(5px) drop-shadow(0px 4px 8px rgba(0,0,0,0.5));
+  transform: translateX(10%) scale(0.98);
+}
+.slide-fade-leave-to {
+  opacity: 0%;
+  filter: saturate(0%) blur(5px) drop-shadow(0px 4px 8px rgba(0,0,0,0.5));
+  transform: translateX(-10%) scale(0.98);
+}
+.slide-fade-enter-to {
+  opacity: 100%;
+  filter: saturate(100%) blur(0px) drop-shadow(none);
+  transform: translateX(0%) scale(1);
+}
+</style>

@@ -18,9 +18,9 @@
     box-shadow: var(--BUTTON-BOX-SHADOW);
     font-family: var(--FONT-FAMILY-HEADER);
     font-size: inherit;
-    font-weight: 700;
+    font-weight: inherit;
     margin: 0;
-    padding: 1rem;
+    padding: 1.25rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     transition: var(--TRANSITION);
@@ -58,6 +58,7 @@
     background: var(--BUTTON-BG-COLOR-SELECTED);
     border-color: var(--BUTTON-BORDER-COLOR-SELECTED);
     box-shadow: var(--BUTTON-BOX-SHADOW-ACTIVE);
+    font-weight: 700;
     transition: var(--TRANSITION);
 }
 
@@ -106,7 +107,7 @@
     box-shadow: none;
     font-family: inherit;
     font-size: inherit;
-    font-weight: 700;
+    font-weight: inherit;
     margin: 0;
     padding: 1rem;
     padding-top: 0.5rem;
@@ -125,11 +126,13 @@
     border-left-width: var(--BUTTON-BORDER-WIDTH);
     border-top-left-radius: var(--BUTTON-BORDER-RADIUS);
     border-bottom-left-radius: var(--BUTTON-BORDER-RADIUS);
+    padding-left: 1.25rem;
 }
 .tabbar-item:last-child {
     border-right-width: var(--BUTTON-BORDER-WIDTH);
     border-top-right-radius: var(--BUTTON-BORDER-RADIUS);
     border-bottom-right-radius: var(--BUTTON-BORDER-RADIUS);
+    padding-right: 1.25rem;
 }
 .tabbar-item:hover,
 .tabbar-item:focus {
@@ -158,19 +161,23 @@
     background: var(--TABBAR-ITEM-BG-COLOR-SELECTED);
     border-color: var(--TABBAR-ITEM-BORDER-COLOR-SELECTED);
     box-shadow: none;
+    font-weight: 700;
 }
 
 .tabbar-vertical-item {
     color: var(--TABBAR-VERTICAL-ITEM-FG-COLOR);
     background: var(--TABBAR-VERTICAL-ITEM-BG-COLOR);
+    border-color: var(--TABBAR-VERTICAL-ITEM-BORDER-COLOR);
+    border-width: var(--TABBAR-VERTICAL-ITEM-BORDER-WIDTH);
+    border-style: solid;
     border-radius: var(--BUTTON-BORDER-RADIUS);
     box-shadow: none;
     font-family: var(--FONT-FAMILY-HEADER);
     font-size: inherit;
-    font-weight: 700;
+    font-weight: inherit;
     margin: 0;
     margin-bottom: 0.5rem;
-    padding: 1.25rem;
+    padding: 1.75rem;
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
     transition: var(--TRANSITION);
@@ -190,6 +197,7 @@
 .tabbar-vertical-item:focus {
     color: var(--TABBAR-VERTICAL-ITEM-FG-COLOR-HOVER);
     background: var(--TABBAR-VERTICAL-ITEM-BG-COLOR-HOVER);
+    border-color: var(--TABBAR-VERTICAL-ITEM-BORDER-COLOR-HOVER);
     box-shadow: var(--BUTTON-BOX-SHADOW-HOVER);
     text-decoration: none !important;
     transition: var(--TRANSITION);
@@ -197,6 +205,7 @@
 .tabbar-vertical-item:active {
     color: var(--TABBAR-VERTICAL-ITEM-FG-COLOR-ACTIVE);
     background: var(--TABBAR-VERTICAL-ITEM-BG-COLOR-ACTIVE);
+    border-color: var(--TABBAR-VERTICAL-ITEM-BORDER-COLOR-ACTIVE);
     box-shadow: var(--BUTTON-BOX-SHADOW-ACTIVE);
     transition: var(--TRANSITION);
 }
@@ -206,7 +215,9 @@
 .tabbar-vertical-item.router-link-active {
     color: var(--TABBAR-VERTICAL-ITEM-FG-COLOR-SELECTED);
     background: var(--TABBAR-VERTICAL-ITEM-BG-COLOR-SELECTED);
+    border-color: var(--TABBAR-VERTICAL-ITEM-BORDER-COLOR-SELECTED);
     box-shadow: var(--BUTTON-BOX-SHADOW);
+    font-weight: 700;
     transition: var(--TRANSITION);
 }
 
@@ -268,7 +279,9 @@
     justify-content: flex-start;
     background: var(--TOGGLE-SWITCH-BG-COLOR);
     outline: none;
-    border: none;
+    border-width: var(--BUTTON-BORDER-WIDTH);
+    border-style: solid;
+    border-color: var(--TOGGLE-SWITCH-BORDER-COLOR);
     border-radius: var(--TOGGLE-SWITCH-BORDER-RADIUS);
     box-shadow: var(--TOGGLE-SWITCH-BOX-SHADOW);
     cursor: pointer;
@@ -278,6 +291,8 @@
     transition: var(--TRANSITION);
 }
 .toggle-switch:hover {
+    background: var(--TOGGLE-SWITCH-BG-COLOR-HOVER);
+    border-color: var(--TOGGLE-SWITCH-BORDER-COLOR-HOVER);
     box-shadow: var(--TOGGLE-SWITCH-BOX-SHADOW-HOVER);
 }
 .toggle-switch:focus {
@@ -294,6 +309,9 @@
 .toggle-switch-knob {
     z-index: 20;
     background: var(--TOGGLE-SWITCH-KNOB-BG-COLOR);
+    border-width: var(--BUTTON-BORDER-WIDTH);
+    border-style: solid;
+    border-color: var(--TOGGLE-SWITCH-BORDER-COLOR);
     border-radius: var(--TOGGLE-SWITCH-BORDER-RADIUS);
     box-shadow: var(--TOGGLE-SWITCH-KNOB-BOX-SHADOW);
     width: 1.75rem;
@@ -301,8 +319,10 @@
     transition: var(--TRANSITION);
 }
 .toggle-switch:hover .toggle-switch-knob {
+    background: var(--TOGGLE-SWITCH-KNOB-BG-COLOR-HOVER);
+    border-color: var(--TOGGLE-SWITCH-BORDER-COLOR-HOVER);
     box-shadow: var(--TOGGLE-SWITCH-KNOB-BOX-SHADOW-HOVER);
 }
 .toggle-switch-active .toggle-switch-knob {
-    background: var(--BG-COLOR);
+    background: var(--TOGGLE-SWITCH-KNOB-BG-COLOR);
 }
