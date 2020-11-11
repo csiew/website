@@ -18,7 +18,7 @@
     box-shadow: var(--BUTTON-BOX-SHADOW);
     font-family: var(--FONT-FAMILY-HEADER);
     font-size: inherit;
-    font-weight: inherit;
+    font-weight: 700;
     margin: 0;
     padding: 1.25rem;
     padding-top: 0.5rem;
@@ -58,7 +58,6 @@
     background: var(--BUTTON-BG-COLOR-SELECTED);
     border-color: var(--BUTTON-BORDER-COLOR-SELECTED);
     box-shadow: var(--BUTTON-BOX-SHADOW-ACTIVE);
-    font-weight: 700;
     transition: var(--TRANSITION);
 }
 
@@ -107,7 +106,7 @@
     box-shadow: none;
     font-family: inherit;
     font-size: inherit;
-    font-weight: inherit;
+    font-weight: 700;
     margin: 0;
     padding: 1rem;
     padding-top: 0.5rem;
@@ -126,13 +125,13 @@
     border-left-width: var(--BUTTON-BORDER-WIDTH);
     border-top-left-radius: var(--BUTTON-BORDER-RADIUS);
     border-bottom-left-radius: var(--BUTTON-BORDER-RADIUS);
-    padding-left: 1.25rem;
+    padding-left: 1.125rem;
 }
 .tabbar-item:last-child {
     border-right-width: var(--BUTTON-BORDER-WIDTH);
     border-top-right-radius: var(--BUTTON-BORDER-RADIUS);
     border-bottom-right-radius: var(--BUTTON-BORDER-RADIUS);
-    padding-right: 1.25rem;
+    padding-right: 1.125rem;
 }
 .tabbar-item:hover,
 .tabbar-item:focus {
@@ -161,7 +160,6 @@
     background: var(--TABBAR-ITEM-BG-COLOR-SELECTED);
     border-color: var(--TABBAR-ITEM-BORDER-COLOR-SELECTED);
     box-shadow: none;
-    font-weight: 700;
 }
 
 .tabbar-vertical-item {
@@ -174,7 +172,7 @@
     box-shadow: none;
     font-family: var(--FONT-FAMILY-HEADER);
     font-size: inherit;
-    font-weight: inherit;
+    font-weight: 700;
     margin: 0;
     margin-bottom: 0.5rem;
     padding: 1.75rem;
@@ -217,7 +215,6 @@
     background: var(--TABBAR-VERTICAL-ITEM-BG-COLOR-SELECTED);
     border-color: var(--TABBAR-VERTICAL-ITEM-BORDER-COLOR-SELECTED);
     box-shadow: var(--BUTTON-BOX-SHADOW);
-    font-weight: 700;
     transition: var(--TRANSITION);
 }
 
@@ -241,7 +238,7 @@
     margin: 0 !important;
     margin-right: 0.5rem !important;
     margin-bottom: 0.5rem !important;
-    padding: 1rem;
+    padding: 1.25rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     color: var(--LIST-FREESTYLE-ITEM-FG-COLOR);
@@ -254,7 +251,7 @@
     white-space: nowrap;
     font-family: var(--FONT-FAMILY-HEADER);
     font-size: 90%;
-    font-weight: bold;
+    font-weight: 700;
     transition: var(--TRANSITION);
 }
 .list-freestyle li:last-child {

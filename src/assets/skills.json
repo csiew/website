@@ -28,7 +28,8 @@
             "Firestore (NoSQL)"
         ],
         "cloud": [
-            "Amazon AWS (EC2, CloudWatch)",
+            "Amazon EC2",
+            "Amazon CloudWatch",
             "Google Firebase"
         ],
         "ci": [

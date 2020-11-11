@@ -6,7 +6,7 @@
     <div class="section card width-full width-max-800 margin-auto-horizontal text-align-center padding-m">
       <div class="vstack align-start justify-center width-full height-full">
         <div class="vstack width-full align-start justify-center text-align-center">
-          <div class="hstack hstack-responsive hstack-space-between width-full align-start text-align-center padding-s-bottom">
+          <div class="grid grid-col-auto-fill-256 grid-gap-m width-full align-start text-align-center padding-s-bottom">
             <transition name="slide-fade">
               <div v-if="isVisible.projectTitle === true" class="hstack width-auto align-center justify-start padding-xs-bottom">
                 <img v-bind:src="this.getImgUrl(projects[currentIndex].logoUrl)" class="margin-s-right nodrag noselect" style="max-width: 2.75rem; max-height: 2.75rem;" />
@@ -30,7 +30,7 @@
             <img v-if="isVisible.projectScreenshot === true" v-bind:src="this.getImgUrl(projects[currentIndex].imageUrl)" v-bind:alt="projects[currentIndex].name" class="card card-img nodrag noselect" style="width: 100%; height: auto;" />
           </transition>
           <div class="hstack width-full align-center justify-center padding-m-top">
-            <router-link class="button" v-bind:to="{ name: 'Projects' }">See all projects &#10132;</router-link>
+            <router-link class="button" v-bind:to="{ name: 'Projects' }">See all projects &#8594;</router-link>
           </div>
         </div>
       </div>
@@ -123,16 +123,16 @@ export default {
 .slide-fade-enter-from {
   opacity: 0%;
   filter: saturate(0%) blur(5px) drop-shadow(0px 4px 8px rgba(0,0,0,0.5));
-  transform: translateX(10%) scale(0.98);
+  transform: translateY(-5%) scale(0.95);
 }
 .slide-fade-leave-to {
   opacity: 0%;
   filter: saturate(0%) blur(5px) drop-shadow(0px 4px 8px rgba(0,0,0,0.5));
-  transform: translateX(-10%) scale(0.98);
+  transform: translateY(-5%) scale(0.95);
 }
 .slide-fade-enter-to {
   opacity: 100%;
   filter: saturate(100%) blur(0px) drop-shadow(none);
-  transform: translateX(0%) scale(1);
+  transform: translateY(0%) scale(1);
 }
 </style>
