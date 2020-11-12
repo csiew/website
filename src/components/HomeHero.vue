@@ -6,7 +6,7 @@
     <div class="section card width-full width-max-800 margin-auto-horizontal text-align-center padding-m">
       <div class="vstack align-start justify-center width-full height-full">
         <div class="vstack width-full align-start justify-center text-align-center">
-          <div class="grid grid-col-auto-fill-256 grid-gap-m width-full align-start text-align-center padding-s-bottom">
+          <div class="flex-inline flex-flow-row-wrap align-start justify-space-between width-full text-align-center padding-s-bottom">
             <transition name="slide-fade">
               <div v-if="isVisible.projectTitle === true" class="hstack width-auto align-center justify-start padding-xs-bottom">
                 <img v-bind:src="this.getImgUrl(projects[currentIndex].logoUrl)" class="margin-s-right nodrag noselect" style="max-width: 2.75rem; max-height: 2.75rem;" />
@@ -117,14 +117,10 @@ export default {
 
 <style scoped>
 .slide-fade-enter-active,
-.slide-fade-leave-to-active {
+.slide-fade-leave-active {
   transition: all 0.25s ease-in-out;
 }
-.slide-fade-enter-from {
-  opacity: 0%;
-  filter: saturate(0%) blur(5px) drop-shadow(0px 4px 8px rgba(0,0,0,0.5));
-  transform: translateY(-5%) scale(0.95);
-}
+.slide-fade-enter-from,
 .slide-fade-leave-to {
   opacity: 0%;
   filter: saturate(0%) blur(5px) drop-shadow(0px 4px 8px rgba(0,0,0,0.5));

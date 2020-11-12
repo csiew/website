@@ -57,5 +57,5 @@ export default {
 /* @import './assets/style/themes/dark.css' all and (prefers-color-scheme: dark);
 @import './assets/style/themes/light.css' all and (prefers-color-scheme: light); */
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;0,800;1,300;1,400;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300;0,400;0,700;0,800;1,300;1,400;1,700;1,800&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 </style>

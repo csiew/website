@@ -4,8 +4,8 @@
     --BG-COLOR: white;
     --BG-SECONDARY-COLOR: whitesmoke;
     --BG-TERTIARY-COLOR: lightgray;
-    --ACCENT-PRIMARY-COLOR: #336666;
-    --ACCENT-SECONDARY-COLOR: #558888;
+    --ACCENT-PRIMARY-COLOR: royalblue;
+    --ACCENT-SECONDARY-COLOR: cornflowerblue;
     --NAVBAR-FG-COLOR: var(--FG-COLOR);
     --NAVBAR-BG-COLOR: var(--BG-COLOR);
     --NAVBAR-BG-COLOR-GRADIENT: linear-gradient(to bottom, var(--BG-COLOR), var(--BG-SECONDARY-COLOR));

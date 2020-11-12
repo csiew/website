@@ -16,6 +16,7 @@ input[type=password] {
     box-shadow: var(--TEXT-FIELD-BOX-SHADOW);
     font-family: var(--FONT-FAMILY-HEADER);
     font-size: inherit;
+    font-weight: 400;
     transition: var(--TRANSITION);
 }
 input[type=text]:hover,
