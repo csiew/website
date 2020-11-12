@@ -38,7 +38,7 @@
 html, body {
     font-family: var(--FONT-FAMILY-BODY);
     font-size: var(--FONT-SIZE);
-    font-weight: 300;
+    font-weight: 400;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     line-height: var(--LINE-HEIGHT);
@@ -178,7 +178,7 @@ hr {
 .section-header h1, .navbar-wordmark h1 {
     font-size: 3.5rem;
     font-weight: 900;
-    letter-spacing: -0.125rem;
+    letter-spacing: -0.125rem !important;
 }
 .section-header h1 {
     color: var(--FG-COLOR);
@@ -187,27 +187,23 @@ hr {
     color: var(--ACCENT-PRIMARY-COLOR);
     font-size: 3rem;
     font-weight: 800;
-    letter-spacing: -0.125rem;
-    text-transform: uppercase;
 }
 .section-header h3 {
     color: var(--FG-SECONDARY-COLOR);
     font-size: 2rem;
     font-weight: 700;
-    letter-spacing: -0.0625rem;
 }
 .section-header h4 {
     color: var(--FG-SECONDARY-COLOR);
     font-size: 1.5rem;
     font-weight: 400;
-    letter-spacing: -0.0625rem;
 }
 .section-header h1,
 .section-header h2,
 .section-header h3,
 .section-header h4 {
+    letter-spacing: -0.0625rem;
     text-align: center !important;
-    text-transform: uppercase;
     align-self: center !important;
     justify-self: center !important;
     width: 100%;
@@ -306,7 +302,7 @@ hr {
 
 .hello h1 {
     font-size: 5.25vmax !important;
-    letter-spacing: -0.0625rem;
+    letter-spacing: -0.0625rem !important;
     text-transform: uppercase;
 }
 
