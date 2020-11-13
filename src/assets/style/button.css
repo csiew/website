@@ -20,7 +20,7 @@
     font-size: inherit;
     font-weight: 400;
     margin: 0;
-    padding: 1.25rem;
+    padding: 1rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     transition: var(--TRANSITION);
@@ -62,7 +62,8 @@
     transition: var(--TRANSITION);
 }
 
-.button-borderless {
+.button-borderless,
+.button-borderless:hover {
     border-width: 0 !important;
 }
 
@@ -73,6 +74,23 @@
     background: var(--BUTTON-BG-COLOR-DISABLED);
     border-color: var(--BUTTON-BORDER-COLOR-DISABLED);
     box-shadow: none;
+}
+
+.button-toolbar {
+  background: none;
+  border-width: 0;
+  border-radius: 0;
+  box-shadow: none;
+  height: 100%;
+}
+.button-toolbar:hover,
+.button-toolbar:active {
+  background: var(--BUTTON-BG-COLOR-HOVER);
+  border-radius: 0;
+  box-shadow: none;
+}
+.button-toolbar:active {
+  background: var(--BUTTON-BG-COLOR-ACTIVE);
 }
 
 .row .button, .row button {
@@ -126,13 +144,11 @@
     border-left-width: var(--BUTTON-BORDER-WIDTH);
     border-top-left-radius: var(--BUTTON-BORDER-RADIUS);
     border-bottom-left-radius: var(--BUTTON-BORDER-RADIUS);
-    padding-left: 1.125rem;
 }
 .tabbar-item:last-child {
     border-right-width: var(--BUTTON-BORDER-WIDTH);
     border-top-right-radius: var(--BUTTON-BORDER-RADIUS);
     border-bottom-right-radius: var(--BUTTON-BORDER-RADIUS);
-    padding-right: 1.125rem;
 }
 .tabbar-item:hover,
 .tabbar-item:focus {
@@ -177,7 +193,7 @@
     font-weight: 400;
     margin: 0;
     margin-bottom: 0.5rem;
-    padding: 1.75rem;
+    padding: 1.25rem;
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
     transition: var(--TRANSITION);
@@ -241,7 +257,7 @@
     margin: 0 !important;
     margin-right: 0.5rem !important;
     margin-bottom: 0.5rem !important;
-    padding: 1.25rem;
+    padding: 1rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     color: var(--LIST-FREESTYLE-ITEM-FG-COLOR);

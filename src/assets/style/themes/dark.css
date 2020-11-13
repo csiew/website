@@ -4,8 +4,8 @@
     --BG-COLOR: #2f2f2f;
     --BG-SECONDARY-COLOR: #222222;
     --BG-TERTIARY-COLOR: #1e1e1e;
-    --ACCENT-PRIMARY-COLOR: cornflowerblue;
-    --ACCENT-SECONDARY-COLOR: cornflowerblue;
+    --ACCENT-PRIMARY-COLOR: deepskyblue;
+    --ACCENT-SECONDARY-COLOR: deepskyblue;
     --NAVBAR-FG-COLOR: var(--FG-COLOR);
     --NAVBAR-BG-COLOR: var(--BG-COLOR);
     --NAVBAR-BG-COLOR-GRADIENT: linear-gradient(to bottom, var(--NAVBAR-BG-COLOR), var(--BG-SECONDARY-COLOR));

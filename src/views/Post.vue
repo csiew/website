@@ -89,21 +89,4 @@ export default {
   min-height: 3rem;
   max-height: 3rem;
 }
-
-.button-toolbar {
-  background: none;
-  border-width: 0;
-  border-radius: 0;
-  box-shadow: none;
-  height: 100%;
-}
-.button-toolbar:hover,
-.button-toolbar:active {
-  background: var(--BUTTON-BG-COLOR-HOVER);
-  border-radius: 0;
-  box-shadow: none;
-}
-.button-toolbar:active {
-  background: var(--BUTTON-BG-COLOR-ACTIVE);
-}
 </style>
