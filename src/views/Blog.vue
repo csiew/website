@@ -8,7 +8,7 @@
         <ul>
           <li v-for="post in this.posts" v-bind:key="post.id" class="width-full">
             <router-link v-bind:to="{ name: 'Post', params: { id: post.id } }" class="width-full flex-inline flex-flow-column align-start justify-start padding-s padding-xs-top padding-xs-bottom">
-              <h3 style="line-height: 1.125;">{{ post.title }}</h3>
+              <h3 class="ambigious-link" style="line-height: 1.125;">{{ post.title }}</h3>
               <small class="timestamp text-color-secondary">{{ this.formatTimestamp(post.date) }}</small>
             </router-link>
           </li>

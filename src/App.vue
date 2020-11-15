@@ -57,5 +57,5 @@ export default {
 /* @import './assets/style/themes/dark.css' all and (prefers-color-scheme: dark);
 @import './assets/style/themes/light.css' all and (prefers-color-scheme: light); */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@300;400;700;800;900&display=swap');
 </style>
