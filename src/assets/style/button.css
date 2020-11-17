@@ -304,7 +304,7 @@
   box-shadow: var(--TOGGLE-SWITCH-BOX-SHADOW);
   cursor: pointer;
   width: 3.5rem;
-  height: 2.125rem;
+  height: auto;
   padding: 0.25rem;
   transition: var(--TRANSITION);
 }
@@ -332,8 +332,8 @@
   border-color: var(--TOGGLE-SWITCH-BORDER-COLOR);
   border-radius: var(--TOGGLE-SWITCH-BORDER-RADIUS);
   box-shadow: var(--TOGGLE-SWITCH-KNOB-BOX-SHADOW);
-  width: 1.75rem;
-  height: 1.75rem;
+  width: 1.5rem;
+  height: 1.5rem;
   transition: var(--TRANSITION);
 }
 .toggle-switch:hover .toggle-switch-knob {

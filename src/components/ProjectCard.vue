@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div class="card width-full padding-m">
     <div class="grid grid-col-auto-fill-256 grid-gap-l">
       <div class="align-start">
         <h3 class="margin-xxs-top margin-xxs-bottom font-scale-xl">{{ project.name }}</h3>
@@ -10,9 +10,9 @@
         <a class="button" v-bind:class="!project.github ? 'button-disabled' : ''" v-bind:href="project.github ? project.github : null" target="_blank" v-bind:title="project.url ? 'Visit project repository' : 'Project does not have a repository'">GitHub</a>
       </div>
     </div>
-    <hr class="margin-s-top margin-s-bottom padding-none" />
+    <hr class="margin-m-top margin-m-bottom" />
     <span v-if="project.imgUrl">
-      <a v-bind:href="getProjectImgUrl(project.imgUrl)"><img v-bind:alt="project.imgUrl" class="card card-img margin-xs-top margin-s-bottom" v-bind:src="getProjectImgUrl(project.imgUrl)" style="width: 100%; height: auto;" /></a>
+      <a v-bind:href="getProjectImgUrl(project.imgUrl)"><img v-bind:alt="project.imgUrl" class="card card-img margin-m-bottom" v-bind:src="getProjectImgUrl(project.imgUrl)" style="width: 100%; height: auto;" /></a>
     </span>
     <div v-html="contentMarkdown"></div>
   </div>
