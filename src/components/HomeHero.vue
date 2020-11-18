@@ -10,19 +10,19 @@
             <transition name="slide-fade">
               <div v-if="isVisible.projectTitle === true" class="hstack width-auto align-center justify-start padding-xs-bottom">
                 <img v-bind:src="this.getImgUrl(projects[currentIndex].logoUrl)" class="margin-s-right nodrag noselect" style="max-width: 2.75rem; max-height: 2.75rem;" />
-                <div class="vstack width-auto text-align-left align-start justify-center">
+                <div class="vstack width-full text-align-left align-start justify-center">
                   <h1 class="margin-none-top margin-xxs-bottom">{{ projects[currentIndex].name }}</h1>
                   <small class="text-color-secondary">{{ projects[currentIndex].description }}</small>
                 </div>
               </div>
             </transition>
-            <div class="hstack width-auto align-start justify-end">
+            <div class="hstack width-auto align-start justify-space-between">
               <div class="tabbar width-auto">
                 <button v-for="(item, index) in this.projects" v-bind:key="item.name" class="tabbar-item" v-bind:class="currentIndex === index ? 'tabbar-item-current' : ''" v-on:click="this.setIndex(index)">{{ index + 1 }}</button>
               </div>
-              <div class="tabbar width-auto margin-s-left">
-                <button class="tabbar-item" v-on:click="this.prevIndex">&#10094;</button>
-                <button class="tabbar-item" v-on:click="this.nextIndex">&#10095;</button>
+              <div class="grid grid-col-2 grid-gap-xl align-center justify-center width-auto margin-m-left">
+                <button class="button-borderless cursor-pointer padding-none-left padding-none-right" v-on:click="this.prevIndex">&#10094;</button>
+                <button class="button-borderless cursor-pointer padding-none-left padding-none-right" v-on:click="this.nextIndex">&#10095;</button>
               </div>
             </div>
           </div>
@@ -122,13 +122,13 @@ export default {
 }
 .slide-fade-enter-from,
 .slide-fade-leave-to {
-  opacity: 0%;
-  filter: saturate(0%) blur(5px) drop-shadow(0px 4px 8px rgba(0,0,0,0.5));
-  transform: translateY(-5%) scale(0.95);
+  opacity: 0;
+  filter: saturate(0) blur(5px) drop-shadow(0px 4px 8px rgba(0,0,0,0.5));
+  transform: translateY(-0.05) scale(0.95);
 }
 .slide-fade-enter-to {
-  opacity: 100%;
-  filter: saturate(100%) blur(0px) drop-shadow(none);
-  transform: translateY(0%) scale(1);
+  opacity: 1;
+  filter: saturate(1) blur(0px) drop-shadow(none);
+  transform: translateY(0) scale(1);
 }
 </style>
