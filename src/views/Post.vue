@@ -1,6 +1,6 @@
 <template>
-  <div id="postNavbar" class="nav position-sticky anchor-top flex-inline flex-flow-row align-center justify-start width-full padding-none">
-    <router-link v-bind:to="{ name: 'Blog' }" class="button button-toolbar font-scale-xl line-height-1">&#8592;</router-link>
+  <div id="postNavbar" class="nav nav-border-bottom position-sticky anchor-top flex-inline flex-flow-row align-center justify-start width-full padding-none">
+    <router-link v-bind:to="{ name: 'Blog' }" class="button button-borderless font-scale-xl">&#8592;</router-link>
   </div>
   <div class="width-max-800 width-full anchor-top margin-auto-horizontal padding-l">
     <div class="section">
@@ -81,12 +81,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-#postNavbar {
-  border-bottom: var(--CARD-BORDER-WIDTH) solid var(--HR-BORDER-COLOR);
-  height: 100%;
-  min-height: 3rem;
-  max-height: 3rem;
-}
-</style>

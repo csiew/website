@@ -1,5 +1,5 @@
 .button, button, .tabbar, .tabbar-item, .tabbar-vertical-item, .list-freestyle li {
-  font-family: var(--FONT-FAMILY-BODY);
+  font-family: var(--FONT-FAMILY-HEADER);
   font-weight: bold;
 }
 
@@ -65,7 +65,83 @@
 }
 
 .button-borderless {
+  color: var(--FG-COLOR) !important;
+  background: none !important;
+  border-width: 0 !important;
+  box-shadow: none !important;
+}
+.button-borderless:hover img {
+  filter: none;
+}
+
+.button-hv-reveal {
     color: var(--FG-COLOR) !important;
+    background: none !important;
+    border-width: 0 !important;
+    box-shadow: none !important;
+    font-size: inherit;
+    margin: 0;
+    padding: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    transition: var(--TRANSITION);
+}
+.button-hv-reveal:hover {
+    color: var(--BG-COLOR) !important;
+    background: var(--ACCENT-PRIMARY-COLOR) !important;
+    transition: var(--TRANSITION);
+}
+.button-hv-reveal:active {
+    color: var(--BG-COLOR) !important;
+    background: var(--FG-COLOR) !important;
+    transition: var(--TRANSITION);
+}
+.button-hv-reveal:hover .icon {
+    filter: invert(1);
+}
+.button-hv-reveal:disabled:hover {
+    color: var(--BUTTON-FG-COLOR-DISABLED) !important;
+    background: var(--BUTTON-BG-COLOR-DISABLED) !important;
+    cursor: default !important;
+}
+.button-hv-reveal-selected {
+    color: var(--BUTTON-FG-COLOR-SELECTED) !important;
+    background: var(--BUTTON-BG-COLOR-SELECTED) !important;
+}
+
+.button-red {
+    background: firebrick;
+    color: white;
+    border-color: darkred;
+}
+.button-red:hover {
+    background: #a11b1b;
+    color: white;
+    border-color: darkred;
+}
+.button-red:active {
+    background: darkred;
+    color: white;
+    border-color: darkred;
+}
+
+.button-green {
+    background: green;
+    color: white;
+    border-color: darkgreen;
+}
+.button-green:hover {
+    background: #007500;
+    color: white;
+    border-color: darkgreen;
+}
+.button-green:active {
+    background: darkgreen;
+    color: white;
+    border-color: darkgreen;
+}
+
+.button-borderless {
     background: none !important;
     border-width: 0 !important;
     box-shadow: none !important;
@@ -81,6 +157,31 @@
   background: var(--BUTTON-BG-COLOR-DISABLED);
   border-color: var(--BUTTON-BORDER-COLOR-DISABLED);
   box-shadow: none;
+}
+
+.button-circle {
+    border-radius: 100% !important;
+    line-height: 1 !important;
+}
+.button-circle-s {
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+}
+.button-circle-m {
+    width: 1.75rem !important;
+    height: 1.75rem !important;
+}
+.button-circle-l {
+    width: 2.25rem !important;
+    height: 2.25rem !important;
+}
+.button-circle-xl {
+    width: 3rem !important;
+    height: 3rem !important;
+}
+.button-circle-xxl {
+    width: 3.5rem !important;
+    height: 3.5rem !important;
 }
 
 .button-toolbar {
@@ -193,11 +294,12 @@
   border-radius: var(--BUTTON-BORDER-RADIUS);
   box-shadow: none;
   font-size: inherit;
+  font-weight: 400;
   margin: 0;
-  margin-bottom: 0.5rem;
-  padding: 1.25rem;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
+  margin-bottom: 0.25rem;
+  padding: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   transition: var(--TRANSITION);
   
   -webkit-touch-callout: none; /* iOS Safari */
@@ -230,11 +332,13 @@
 .tabbar-vertical-item:focus {
   outline: none !important;
 }
+.tabbar-vertical-item-selected,
 .tabbar-vertical-item.router-link-active {
   color: var(--TABBAR-VERTICAL-ITEM-FG-COLOR-SELECTED);
   background: var(--TABBAR-VERTICAL-ITEM-BG-COLOR-SELECTED);
   border-color: var(--TABBAR-VERTICAL-ITEM-BORDER-COLOR-SELECTED);
   box-shadow: var(--BUTTON-BOX-SHADOW);
+  font-weight: 700;
   transition: var(--TRANSITION);
 }
 
@@ -259,8 +363,8 @@
   margin-right: 0.5rem !important;
   margin-bottom: 0.5rem !important;
   padding: 1rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding-top: 0.325rem;
+  padding-bottom: 0.325rem;
   color: var(--LIST-FREESTYLE-ITEM-FG-COLOR);
   background: var(--LIST-FREESTYLE-ITEM-BG-COLOR);
   border-width: var(--LIST-FREESTYLE-ITEM-BORDER-WIDTH);
