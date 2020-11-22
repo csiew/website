@@ -9,6 +9,10 @@
           <div class="vstack margin-none">
             <router-link v-for="item in this.pages" v-bind:key="item.id" class="tabbar-vertical-item" v-bind:to="item.route">{{ item.label }}</router-link>
           </div>
+          <hr class="margin-s-top margin-s-bottom">
+          <div class="vstack margin-none">
+            <a class="tabbar-vertical-item" href="https://csiew-portfolio.netlify.app/" target="_blank">Portfolio</a>
+          </div>
         </div>
       </div>
       <div class="flex-inline flex-flow-row align-center justify-start width-full padding-s">
