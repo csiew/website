@@ -35,15 +35,18 @@
     box-sizing: border-box !important;
 }
 
-html, body {
+html, body, #app, #appDelegate {
+    color: var(--FG-COLOR);
+    background: var(--BG-SECONDARY-COLOR);
     font-family: var(--FONT-FAMILY-BODY);
     font-size: var(--FONT-SIZE);
     font-weight: 400;
+    line-height: var(--LINE-HEIGHT);
+}
+
+html, body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    line-height: var(--LINE-HEIGHT);
-    color: var(--FG-COLOR);
-    background: var(--BG-SECONDARY-COLOR);
     display: inline-flex;
     flex-flow: column;
     align-items: stretch;

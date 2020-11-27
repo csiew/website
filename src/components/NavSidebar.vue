@@ -16,12 +16,11 @@
         </div>
       </div>
       <div class="flex-inline flex-flow-row align-center justify-start width-full padding-s">
-        <button class="toggle-switch" v-bind:class="darkModeState === true ? 'toggle-switch-active' : ''" v-on:click="this.toggleDarkMode()" title="Toggle dark mode (requires refresh)">
+        <button class="toggle-switch" v-bind:class="isDarkMode === true ? 'toggle-switch-active' : ''" v-on:click="this.toggleDarkMode()" title="Toggle dark mode (requires refresh)">
           <div class="toggle-switch-knob"></div>
         </button>
         <div class="vstack width-auto margin-s-left text-color-secondary noselect">
           <h4 class="margin-none-top margin-xxs-bottom padding-none">Dark mode</h4>
-          <span class="font-scale-xxs">Requires page refresh</span>
         </div>
       </div>
     </div>
@@ -64,7 +63,7 @@ export default {
     };
   },
   computed: {
-    darkModeState: function () {
+    isDarkMode: function () {
       return this.SettingsProvider.getDarkModeState();
     }
   },
