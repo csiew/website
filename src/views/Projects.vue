@@ -1,4 +1,5 @@
 <template>
+  <div id="top"></div>
   <div class="width-max-800 width-full margin-auto-horizontal padding-l">
     <div class="section-header">
       <h2>Projects</h2>
@@ -20,21 +21,40 @@
       </div>
     </div>
   </div>
+  <ProjectsNav v-bind:recent="recent" v-bind:previous="previous" @scroll-to-section="scrollToSection" />
 </template>
 
 <script>
+import ProjectsNav from '@/components/ProjectsNav.vue';
 import ProjectCard from '@/components/ProjectCard.vue';
 import projectsJSON from '@/assets/projects.json';
 
 export default {
   name: 'Projects',
   components: {
+    ProjectsNav,
     ProjectCard
   },
   data() {
     return {
+      state: {
+        showNavMenu: false
+      },
       recent: projectsJSON.recent,
       previous: projectsJSON.previous
+    }
+  },
+  methods: {
+    scrollToSection: function (sectionId) {
+      try {
+        const el = document.getElementById(sectionId);
+        el && el.scrollIntoView({
+          block: 'start',
+          behavior: 'smooth'
+        });
+      } catch (err) {
+        console.warn(err);
+      }
     }
   }
 }

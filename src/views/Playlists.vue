@@ -1,11 +1,12 @@
 <template>
+  <div id="top"></div>
   <div class="width-max-800 width-full margin-auto-horizontal padding-l">
     <div class="section width-full">
       <div class="section-header">
         <h2>Playlists</h2>
       </div>
       <div class="grid grid-col-1 grid-gap-l width-full">
-        <div v-for="year in this.playlists" v-bind:key="year.title" class="card width-full padding-m">
+        <div v-for="year in this.playlists" v-bind:key="year.title" v-bind:id="year.title" class="card width-full padding-m">
           <h3 class="margin-xxs-top margin-xxs-bottom font-scale-xl">{{ year.title }}</h3>
           <hr class="margin-m-top margin-m-bottom padding-none" />
           <span v-if="year.playlists.standard.length !== 0">
@@ -23,16 +24,34 @@
       </div>
     </div>
   </div>
+  <PlaylistsNav v-bind:playlists="playlists" @scroll-to-section="scrollToSection" />
 </template>
 
 <script>
+import PlaylistsNav from '@/components/PlaylistsNav.vue';
 import playlistsJSON from '@/assets/playlists.json'
 
 export default {
   name: 'Playlists',
+  components: {
+    PlaylistsNav
+  },
   data() {
     return {
       playlists: playlistsJSON.collection
+    }
+  },
+  methods: {
+    scrollToSection: function (sectionId) {
+      try {
+        const el = document.getElementById(sectionId);
+        el && el.scrollIntoView({
+          block: 'start',
+          behavior: 'smooth'
+        });
+      } catch (err) {
+        console.warn(err);
+      }
     }
   }
 }

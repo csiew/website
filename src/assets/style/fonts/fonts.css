@@ -107,3 +107,66 @@
     font-weight: 900;
     src: url('public_sans/PublicSans-BlackItalic.ttf');
 }
+
+
+/* Brisa Sans */
+@font-face {
+    font-family: 'Brisa Sans';
+    font-style: normal;
+    font-weight: 100;
+    src: url('brisa_sans/BrisaSans-Thin.otf');
+}
+@font-face {
+    font-family: 'Brisa Sans';
+    font-style: italic;
+    font-weight: 100;
+    src: url('brisa_sans/BrisaSans-ThinItalic.otf');
+}
+@font-face {
+    font-family: 'Brisa Sans';
+    font-style: normal;
+    font-weight: 300;
+    src: url('brisa_sans/BrisaSans-Light.otf');
+}
+@font-face {
+    font-family: 'Brisa Sans';
+    font-style: italic;
+    font-weight: 300;
+    src: url('brisa_sans/BrisaSans-LightItalic.otf');
+}
+@font-face {
+    font-family: 'Brisa Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('brisa_sans/BrisaSans-Regular.otf');
+}
+@font-face {
+    font-family: 'Brisa Sans';
+    font-style: italic;
+    font-weight: 400;
+    src: url('brisa_sans/BrisaSans-Italic.otf');
+}
+@font-face {
+    font-family: 'Brisa Sans';
+    font-style: normal;
+    font-weight: 500;
+    src: url('brisa_sans/BrisaSans-Medium.otf');
+}
+@font-face {
+    font-family: 'Brisa Sans';
+    font-style: italic;
+    font-weight: 500;
+    src: url('brisa_sans/BrisaSans-MediumItalic.otf');
+}
+@font-face {
+    font-family: 'Brisa Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: url('brisa_sans/BrisaSans-Bold.otf');
+}
+@font-face {
+    font-family: 'Brisa Sans';
+    font-style: italic;
+    font-weight: 700;
+    src: url('brisa_sans/BrisaSans-BoldItalic.otf');
+}

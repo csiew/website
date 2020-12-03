@@ -1,5 +1,5 @@
 <template>
-  <div class="card width-full padding-m">
+  <div v-bind:id="project.id" class="card width-full padding-m">
     <div class="grid grid-col-auto-fill-256 grid-gap-l">
       <div class="align-start">
         <h3 class="margin-xxs-top margin-xxs-bottom font-scale-xl">{{ project.name }}</h3>

@@ -273,6 +273,13 @@
 
 .text-line-height-1 { line-height: 1 !important; }
 
+.overflow-auto { overflow: auto !important; }
+.overflow-x-auto { overflow-x: auto !important; }
+.overflow-y-auto { overflow-y: auto !important; }
+.overflow-hidden { overflow: hidden !important; }
+.overflow-x-hidden { overflow-x: hidden !important; }
+.overflow-y-hidden { overflow-y: hidden !important; }
+
 .hstack {
     display: inline-flex;
     flex-flow: row;
@@ -405,6 +412,9 @@
     visibility: hidden;
     display: none
 }
+.z-index-50 { z-index: 50 !important; }
+.z-index-100 { z-index: 100 !important; }
+.z-index-200 { z-index: 200 !important; }
 
 .cursor-pointer {
     cursor: pointer;
