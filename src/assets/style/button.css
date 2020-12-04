@@ -13,6 +13,18 @@
   flex-flow: row;
 }
 
+.button, button, .tabbar-vertical-item,
+.button:hover, button:hover, .tabbar-vertical-item:hover,
+.button:focus, button:focus, .tabbar-vertical-item:focus {
+  transform: scale(1);
+}
+.button:active, button:active, .tabbar-vertical-item:active {
+  transform: scale(0.98);
+}
+.tabbar-item, .tabbar-item:hover, .tabbar-item:focus, .tabbar-item:active {
+  transform: none;
+}
+
 .button, button {
   color: var(--BUTTON-FG-COLOR);
   background: var(--BUTTON-BG-COLOR);
@@ -133,9 +145,9 @@
   border-color: var(--FG-COLOR);
 }
 .button-fg:hover {
-  background: var(--ACCENT-PRIMARY-COLOR);
-  color: var(--BG-COLOR);
-  border-color: var(--ACCENT-PRIMARY-COLOR);
+  background: var(--BG-COLOR);
+  color: var(--FG-COLOR);
+  border-color: var(--BG-COLOR);
 }
 .button-fg:active {
   background: var(--FG-COLOR);
