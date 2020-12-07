@@ -20,9 +20,9 @@
               <div class="tabbar width-auto">
                 <button v-for="(item, index) in this.projects" v-bind:key="item.name" class="tabbar-item" v-bind:class="currentIndex === index ? 'tabbar-item-current' : ''" v-on:click="this.setIndex(index)">{{ index + 1 }}</button>
               </div>
-              <div class="grid grid-col-2 grid-gap-xl align-center justify-center width-auto margin-m-left">
-                <button class="button-borderless cursor-pointer padding-none-left padding-none-right" v-on:click="this.prevIndex">&#10094;</button>
-                <button class="button-borderless cursor-pointer padding-none-left padding-none-right" v-on:click="this.nextIndex">&#10095;</button>
+              <div class="grid grid-col-2 grid-gap-none align-center justify-center width-auto margin-m-left">
+                <button class="button-hv-reveal cursor-pointer" v-on:click="this.prevIndex">&#10094;</button>
+                <button class="button-hv-reveal cursor-pointer" v-on:click="this.nextIndex">&#10095;</button>
               </div>
             </div>
           </div>
