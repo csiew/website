@@ -1,7 +1,7 @@
 <template>
   <div class="vstack width-auto height-auto align-end justify-end z-index-200 position-fixed margin-auto-top margin-s-bottom margin-auto-left margin-m-right padding-xs anchor-bottom anchor-right overflow-auto">
     <transition name="fade">
-      <div v-show="state.showNavMenu === true" class="card margin-s-bottom overflow-auto height-auto">
+      <div v-if="state.showNavMenu === true" class="card margin-s-bottom overflow-auto height-auto">
         <div class="padding-s padding-xs-bottom text-align-right">
           <h4>Playlists</h4>
         </div>

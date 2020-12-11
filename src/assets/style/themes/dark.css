@@ -6,7 +6,7 @@
     --BG-TERTIARY-COLOR: #111124;
     --ACCENT-PRIMARY-COLOR: #7f9fef;
     --ACCENT-SECONDARY-COLOR: #aecefe;
-    --ACCENT-TERTIARY-COLOR: #4f6fbf;
+    --ACCENT-TERTIARY-COLOR: #2f4f8f;
     --NAVBAR-FG-COLOR: var(--FG-COLOR);
     --NAVBAR-BG-COLOR: var(--BG-COLOR);
     --NAVBAR-BG-COLOR-GRADIENT: linear-gradient(to bottom, var(--NAVBAR-BG-COLOR), var(--BG-SECONDARY-COLOR));
