@@ -13,18 +13,6 @@
   flex-flow: row;
 }
 
-.button, button, .tabbar-vertical-item,
-.button:hover, button:hover, .tabbar-vertical-item:hover,
-.button:focus, button:focus, .tabbar-vertical-item:focus {
-  transform: scale(1);
-}
-.button:active, button:active, .tabbar-vertical-item:active {
-  transform: scale(0.98);
-}
-.tabbar-item, .tabbar-item:hover, .tabbar-item:focus, .tabbar-item:active {
-  transform: none;
-}
-
 .button, button {
   color: var(--BUTTON-FG-COLOR);
   background: var(--BUTTON-BG-COLOR);
@@ -452,9 +440,9 @@
   border-radius: var(--TOGGLE-SWITCH-BORDER-RADIUS);
   box-shadow: var(--TOGGLE-SWITCH-BOX-SHADOW);
   cursor: pointer;
-  width: 3.5rem;
+  width: 3rem;
   height: auto;
-  padding: 0.25rem;
+  padding: 0.125rem;
   transition: var(--TRANSITION);
 }
 .toggle-switch:hover {
@@ -481,7 +469,7 @@
   border-color: var(--TOGGLE-SWITCH-BORDER-COLOR);
   border-radius: var(--TOGGLE-SWITCH-BORDER-RADIUS);
   box-shadow: var(--TOGGLE-SWITCH-KNOB-BOX-SHADOW);
-  width: 1.5rem;
+  width: 1.25rem;
   height: 1.5rem;
   transition: var(--TRANSITION);
 }

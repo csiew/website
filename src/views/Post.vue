@@ -1,6 +1,6 @@
 <template>
   <div id="postNavbar" class="nav nav-border-bottom position-sticky anchor-top flex-inline flex-flow-row align-center justify-start width-full padding-xs">
-    <router-link v-bind:to="{ name: 'Blog' }" class="button button-circle button-circle-l button-hv-reveal line-height-1 font-scale-l">&#8592;</router-link>
+    <router-link v-bind:to="{ name: 'Blog' }" class="button button-hv-reveal line-height-1 font-scale-l">&#10094;</router-link>
   </div>
   <div class="width-max-800 width-full anchor-top margin-auto-horizontal padding-l">
     <div class="section">

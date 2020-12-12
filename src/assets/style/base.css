@@ -390,18 +390,12 @@
 .bg-color-tertiary { background: var(--BG-TERTIARY-COLOR) !important; }
 
 .invert {
-    filter: invert(1) !important;
-    -webkit-filter: invert(1) !important;
-}
-.invert-dark-mode {
     filter: invert(0) !important;
     -webkit-filter: invert(0) !important;
 }
-@media all and (prefers-color-scheme: dark) {
-    .invert-dark-mode {
-        filter: invert(1) !important;
-        -webkit-filter: invert(1) !important;
-    }
+.dark-mode .invert {
+    filter: invert(1) !important;
+    -webkit-filter: invert(1) !important;
 }
 
 .opacity-25 { opacity: 25% !important; }

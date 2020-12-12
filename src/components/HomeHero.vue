@@ -30,7 +30,7 @@
             <img v-if="isVisible.projectScreenshot === true" v-bind:src="this.getImgUrl(projects[currentIndex].imageUrl)" v-bind:alt="projects[currentIndex].name" class="card card-img nodrag noselect" style="width: 100%; height: auto;" />
           </transition>
           <div class="hstack width-full align-center justify-center padding-m-top">
-            <router-link class="button" v-bind:to="{ name: 'Projects' }">See all projects &#8594;</router-link>
+            <router-link class="button" v-bind:to="{ name: 'Projects' }">See all projects &#10095;</router-link>
           </div>
         </div>
       </div>
