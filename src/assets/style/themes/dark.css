@@ -11,7 +11,7 @@
     --NAVBAR-BG-COLOR: var(--BG-COLOR);
     --NAVBAR-BG-COLOR-GRADIENT: linear-gradient(to bottom, var(--NAVBAR-BG-COLOR), var(--BG-SECONDARY-COLOR));
     --NAVBAR-BG-COLOR-TRANSLUCENT: rgba(47,47,47,0.8);
-    --NAVBAR-SHADOW: 0px 0px 16px rgba(0,0,0,0.25);
+    --NAVBAR-SHADOW: 0px 0px 4px rgba(0,0,0,0.25);
 
     --HR-BORDER-COLOR: #555555;
 
@@ -110,7 +110,7 @@
 
     /* Card styling */
     --CARD-BORDER-COLOR: var(--HR-BORDER-COLOR);
-    --CARD-BOX-SHADOW: 0px 4px 16px rgba(0,0,0,0.25);
+    --CARD-BOX-SHADOW: 0px 2px 4px rgba(0,0,0,0.25);
     --CARD-IMG-BORDER-COLOR: var(--HR-BORDER-COLOR);
 
     --CARD-LIST-ITEM-FG-COLOR: var(--FG-COLOR);

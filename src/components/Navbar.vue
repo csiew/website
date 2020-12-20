@@ -12,6 +12,7 @@
           <small>
             <div id="navbarLinks" class="tabbar">
               <router-link v-for="item in this.pages" v-bind:key="item.id" class="tabbar-item" v-bind:to="item.route">{{ item.label }}</router-link>
+              <a class="tabbar-item" href="https://csiew-portfolio.netlify.app/" target="_blank">Portfolio</a>
             </div>
           </small>
         </div>
@@ -22,7 +23,7 @@
     </div>
   </div>
   <transition name="fade">
-    <div v-if="isVisible.navMenu === true" id="navbarMenu" class="nav nav-translucent navmenu vstack width-full text-align-left">
+    <div v-if="isVisible.navMenu === true" id="navbarMenu" class="nav navmenu vstack width-full text-align-left">
       <div class="flex-inline flex-flow-column height-full align-center justify-space-between">
         <div class="width-full">
           <div class="hstack hstack-space-between padding-s-top padding-s-bottom padding-m-left padding-m-right">
@@ -33,6 +34,7 @@
           </div>
           <div class="vstack padding-m">
             <router-link v-for="item in this.pages" v-bind:key="item.id" class="tabbar-vertical-item text-align-center font-scale-xl" v-bind:to="item.route" v-on:click="isVisible.navMenu = false">{{ item.label }}</router-link>
+            <a class="tabbar-vertical-item text-align-center font-scale-xl" href="https://csiew-portfolio.netlify.app/" target="_blank">Portfolio</a>
           </div>
         </div>
         <div class="flex-inline flex-flow-row align-center justify-start width-full padding-s">

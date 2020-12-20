@@ -21,8 +21,8 @@
                 <button v-for="(item, index) in this.projects" v-bind:key="item.name" class="tabbar-item" v-bind:class="currentIndex === index ? 'tabbar-item-current' : ''" v-on:click="this.setIndex(index)">{{ index + 1 }}</button>
               </div>
               <div class="grid grid-col-2 grid-gap-none align-center justify-center width-auto margin-m-left">
-                <button class="button-hv-reveal cursor-pointer" v-on:click="this.prevIndex">&#10094;</button>
-                <button class="button-hv-reveal cursor-pointer" v-on:click="this.nextIndex">&#10095;</button>
+                <button class="button-hv-reveal cursor-pointer" v-on:click="this.prevIndex">&#8592;</button>
+                <button class="button-hv-reveal cursor-pointer" v-on:click="this.nextIndex">&#8594;</button>
               </div>
             </div>
           </div>
@@ -30,7 +30,7 @@
             <img v-if="isVisible.projectScreenshot === true" v-bind:src="this.getImgUrl(projects[currentIndex].imageUrl)" v-bind:alt="projects[currentIndex].name" class="card card-img nodrag noselect" style="width: 100%; height: auto;" />
           </transition>
           <div class="hstack width-full align-center justify-center padding-m-top">
-            <router-link class="button" v-bind:to="{ name: 'Projects' }">See all projects &#10095;</router-link>
+            <router-link class="button" v-bind:to="{ name: 'Projects' }">See all projects &#8594;</router-link>
           </div>
         </div>
       </div>

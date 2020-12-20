@@ -21,22 +21,22 @@
       <span v-else>
         <h4 class="padding-s-bottom">Programming Languages</h4>
         <div class="grid grid-gap-m grid-col-1 grid-col-auto-fit-640">
-          <div class="grid-item list-freestyle">
+          <div class="grid-item list-freestyle card card-inset padding-s">
             <ul>
               <li v-for="item in this.skills['programmingLangs']" v-bind:key="item">{{ item }}</li>
             </ul>
           </div>
         </div>
         <hr />
-        <h4 class="padding-s-bottom">Frameworks</h4>
+        <h4 class="padding-s-bottom">Frameworks and Libraries</h4>
         <div class="grid grid-gap-m grid-col-2 grid-col-auto-fit-640">
-          <div class="grid-item list-freestyle">
+          <div class="grid-item list-freestyle card card-inset padding-s">
             <h5>Frontend</h5>
             <ul>
               <li v-for="item in this.skills['frameworks']['frontend']" v-bind:key="item">{{ item }}</li>
             </ul>
           </div>
-          <div class="grid-item list-freestyle">
+          <div class="grid-item list-freestyle card card-inset padding-s">
             <h5>Backend</h5>
             <ul>
               <li v-for="item in this.skills['frameworks']['backend']" v-bind:key="item">{{ item }}</li>
@@ -46,19 +46,19 @@
         <hr />
         <h4 class="padding-s-bottom">Infrastructure</h4>
         <div class="grid grid-gap-m grid-col-2 grid-col-auto-fit-640">
-          <div class="grid-item list-freestyle">
+          <div class="grid-item list-freestyle card card-inset padding-s">
             <h5>Database</h5>
             <ul>
               <li v-for="item in this.skills['infrastructure']['database']" v-bind:key="item">{{ item }}</li>
             </ul>
           </div>
-          <div class="grid-item list-freestyle">
+          <div class="grid-item list-freestyle card card-inset padding-s">
             <h5>Cloud</h5>
             <ul>
               <li v-for="item in this.skills['infrastructure']['cloud']" v-bind:key="item">{{ item }}</li>
             </ul>
           </div>
-          <div class="grid-item list-freestyle">
+          <div class="grid-item list-freestyle card card-inset padding-s">
             <h5>Continuous Integration</h5>
             <ul>
               <li v-for="item in this.skills['infrastructure']['ci']" v-bind:key="item">{{ item }}</li>

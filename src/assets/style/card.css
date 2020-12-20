@@ -8,6 +8,10 @@
     box-shadow: var(--CARD-BOX-SHADOW);
 }
 
+.card-inset {
+    box-shadow: var(--CARD-BOX-SHADOW) inset;
+}
+
 .card-transparent {
     background: none !important;
     box-shadow: none !important;

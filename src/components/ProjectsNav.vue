@@ -22,7 +22,7 @@
     </transition>
     <div class="grid grid-auto-flow-column grid-gap-s">
       <button class="button-accent button-circle button-circle-xl nav-shadow cursor-pointer" v-on:click="scrollToSection('top'); state.showNavMenu = false;">
-        &UpArrowBar;
+        &#8593;
       </button>
       <button class="button-circle button-circle-xl nav-shadow cursor-pointer" v-bind:class="state.showNavMenu === true ? 'button-fg' : 'button-accent'" v-on:click="state.showNavMenu = !state.showNavMenu">
         &#9776;

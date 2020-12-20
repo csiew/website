@@ -1,19 +1,21 @@
 {
     "programmingLangs": [
+        "HTML5",
+        "CSS3",
         "JavaScript",
         "Python",
         "Swift",
         "Java",
         "Kotlin",
-        "HTML",
-        "CSS",
         "Bash"
     ],
     "frameworks": {
         "frontend": [
             "React",
             "Vue",
-            "SwiftUI"
+            "SwiftUI",
+            "jQuery",
+            "Bootstrap"
         ],
         "backend": [
             "Node.js",
