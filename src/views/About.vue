@@ -22,7 +22,7 @@
           </div>
         </div>
         <p>
-          Post-punk &amp; surf rock (The National, IDLES, Heavy Lungs, Good Boy, Hockey Dad, shame) and caffeine (coffee in the day, tea at night) are the best brain fuel for software development. Some of his hobbies include programming (of course), playing Minecraft (specifically planning and building cities), and graphic design (pixel art).
+          Post-punk &amp; surf rock (The National, IDLES, Protomartyr, TRAAMS, Heavy Lungs, Good Boy, Hockey Dad, shame) and caffeine (coffee in the day, tea at night) are the best brain fuel for software development. Some of his hobbies include programming (of course), playing Minecraft (specifically planning and building cities), and graphic design (pixel art).
         </p>
       </div>
     </div>

@@ -1,12 +1,12 @@
 .dark-mode {
     --FG-COLOR: whitesmoke;
     --FG-SECONDARY-COLOR: lightgray;
-    --BG-COLOR: #2e2e36;
-    --BG-SECONDARY-COLOR: #1e1e20;
-    --BG-TERTIARY-COLOR: #111124;
-    --ACCENT-PRIMARY-COLOR: #7f9fef;
-    --ACCENT-SECONDARY-COLOR: #aecefe;
-    --ACCENT-TERTIARY-COLOR: #2f4f8f;
+    --BG-COLOR: #2e2e3e;
+    --BG-SECONDARY-COLOR: #1e1e2e;
+    --BG-TERTIARY-COLOR: #0e0e1e;
+    --ACCENT-PRIMARY-COLOR: gold;
+    --ACCENT-SECONDARY-COLOR: goldenrod;
+    --ACCENT-TERTIARY-COLOR: darkgoldenrod;
     --NAVBAR-FG-COLOR: var(--FG-COLOR);
     --NAVBAR-BG-COLOR: var(--BG-COLOR);
     --NAVBAR-BG-COLOR-GRADIENT: linear-gradient(to bottom, var(--NAVBAR-BG-COLOR), var(--BG-SECONDARY-COLOR));
@@ -28,8 +28,8 @@
     /* Button styling */
     --BUTTON-FG-COLOR: var(--BG-COLOR);
     --BUTTON-FG-COLOR-HOVER: var(--BG-COLOR);
-    --BUTTON-FG-COLOR-ACTIVE: var(--FG-COLOR);
-    --BUTTON-FG-COLOR-SELECTED: var(--FG-COLOR);
+    --BUTTON-FG-COLOR-ACTIVE: var(--BG-COLOR);
+    --BUTTON-FG-COLOR-SELECTED: var(--BG-COLOR);
     --BUTTON-FG-COLOR-DISABLED: var(--BG-COLOR);
     --BUTTON-BG-COLOR: var(--ACCENT-PRIMARY-COLOR);
     --BUTTON-BG-COLOR-HOVER: var(--ACCENT-SECONDARY-COLOR);
