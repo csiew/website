@@ -14,7 +14,7 @@ input[type=password] {
     border-color: var(--TEXT-FIELD-BORDER-COLOR);
     border-radius: var(--TEXT-FIELD-BORDER-RADIUS);
     box-shadow: var(--TEXT-FIELD-BOX-SHADOW);
-    font-family: var(--FONT-FAMILY-HEADER);
+    font-family: var(--FONT-FAMILY-BODY);
     font-size: inherit;
     font-weight: 400;
     transition: var(--TRANSITION);

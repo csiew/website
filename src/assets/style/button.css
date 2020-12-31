@@ -1,5 +1,5 @@
 .button, button, .tabbar, .tabbar-item, .tabbar-vertical-item, .list-freestyle li {
-  font-family: var(--FONT-FAMILY-HEADER);
+  font-family: var(--FONT-FAMILY-BODY);
   font-weight: bold;
 }
 

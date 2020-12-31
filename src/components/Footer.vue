@@ -1,7 +1,7 @@
 <template>
   <div class="footer anchor-bottom padding-xl margin-auto-top">
     <p class="text-color-secondary">
-      &copy; 2020 Clarence Siew
+      &copy; 2021 Clarence Siew
     </p>
   </div>
 </template>

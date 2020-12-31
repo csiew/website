@@ -20,7 +20,7 @@
           <div class="toggle-switch-knob"></div>
         </button>
         <div class="vstack width-auto margin-s-left text-color-secondary noselect">
-          <h4 class="margin-none padding-none">Dark mode</h4>
+          <span class="margin-none padding-none">Dark mode</span>
         </div>
       </div>
     </div>
