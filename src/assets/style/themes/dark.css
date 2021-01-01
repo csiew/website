@@ -1,9 +1,9 @@
 .dark-mode {
     --FG-COLOR: whitesmoke;
     --FG-SECONDARY-COLOR: lightgray;
-    --BG-COLOR: #2e2e3e;
-    --BG-SECONDARY-COLOR: #1e1e2e;
-    --BG-TERTIARY-COLOR: #0e0e1e;
+    --BG-COLOR: #1e1e2e;
+    --BG-SECONDARY-COLOR: #0e0e1e;
+    --BG-TERTIARY-COLOR: black;
     --ACCENT-PRIMARY-COLOR: gold;
     --ACCENT-SECONDARY-COLOR: goldenrod;
     --ACCENT-TERTIARY-COLOR: darkgoldenrod;

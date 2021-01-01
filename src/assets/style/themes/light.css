@@ -1,9 +1,9 @@
 :root {
     --FG-COLOR: #333333;
-    --FG-SECONDARY-COLOR: dimgray;
-    --BG-COLOR: #efefef;
-    --BG-SECONDARY-COLOR: #dfdfdf;
-    --BG-TERTIARY-COLOR: #cfcfcf;
+    --FG-SECONDARY-COLOR: gray;
+    --BG-COLOR: white;
+    --BG-SECONDARY-COLOR: #efefef;
+    --BG-TERTIARY-COLOR: #dfdfdf;
     --ACCENT-PRIMARY-COLOR: navy;
     --ACCENT-SECONDARY-COLOR: blue;
     --ACCENT-TERTIARY-COLOR: mediumblue;
@@ -13,7 +13,7 @@
     --NAVBAR-BG-COLOR-TRANSLUCENT:  rgba(255,255,255,0.8);
     --NAVBAR-SHADOW: 0px 0px 4px rgba(0,0,0,0.125);
 
-    --HR-BORDER-COLOR: #b9b9b9;
+    --HR-BORDER-COLOR: #cccccc;
 
     --SCROLLBAR-WIDTH: 1.0625rem;
     --SCROLLBAR-THUMB-COLOR: rgba(51,51,51,0.25);
