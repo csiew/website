@@ -2,7 +2,7 @@
   <div id="postNavbar" class="nav nav-border-bottom position-sticky anchor-top flex-inline flex-flow-row align-center justify-start width-full padding-xs">
     <router-link v-bind:to="{ name: 'Blog' }" class="button button-hv-reveal line-height-1">&#8592; See all posts</router-link>
   </div>
-  <div class="width-max-800 width-full anchor-top margin-auto-horizontal padding-l">
+  <div class="width-max-960 width-full anchor-top margin-auto-horizontal padding-l">
     <div class="section">
       <div v-if="isLoading.postItem === false && isLoading.content === false" class="card padding-m">
         <div class="width-full flex-inline flex-flow-column padding-xs-bottom">

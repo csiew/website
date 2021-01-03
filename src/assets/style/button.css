@@ -437,8 +437,8 @@
   box-shadow: var(--TOGGLE-SWITCH-BOX-SHADOW);
   cursor: pointer;
   width: 3rem;
-  height: auto;
-  padding: 0.125rem;
+  height: 1rem;
+  padding: 0;
   transition: var(--TRANSITION);
 }
 .toggle-switch:hover {
@@ -459,13 +459,14 @@
 }
 .toggle-switch-knob {
   z-index: 20;
+  color: var(--TOGGLE-SWITCH-KNOB-FG-COLOR);
   background: var(--TOGGLE-SWITCH-KNOB-BG-COLOR);
   border-width: var(--BUTTON-BORDER-WIDTH);
   border-style: solid;
   border-color: var(--TOGGLE-SWITCH-BORDER-COLOR);
-  border-radius: var(--TOGGLE-SWITCH-BORDER-RADIUS);
+  border-radius: var(--TOGGLE-SWITCH-KNOB-BORDER-RADIUS);
   box-shadow: var(--TOGGLE-SWITCH-KNOB-BOX-SHADOW);
-  width: 1.25rem;
+  width: 1.5rem;
   height: 1.5rem;
   transition: var(--TRANSITION);
 }

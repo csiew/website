@@ -421,3 +421,203 @@
     font-variation-settings: 'wght' 900;
     src: url('orbitron/Orbitron-VariableFont_wght.ttf');
 }
+
+/* iA Writer Quattro */
+@font-face {
+    font-family: 'iA Writer Quattro';
+    font-style: normal;
+    font-weight: 300;
+    font-variation-settings: 'wght' 300;
+    src: url('ia_writer_quattro/iAWriterQuattroV.ttf');
+}
+@font-face {
+    font-family: 'iA Writer Quattro';
+    font-style: normal;
+    font-weight: 400;
+    font-variation-settings: 'wght' 400;
+    src: url('ia_writer_quattro/iAWriterQuattroV.ttf');
+}
+@font-face {
+    font-family: 'iA Writer Quattro';
+    font-style: normal;
+    font-weight: 500;
+    font-variation-settings: 'wght' 500;
+    src: url('ia_writer_quattro/iAWriterQuattroV.ttf');
+}
+@font-face {
+    font-family: 'iA Writer Quattro';
+    font-style: normal;
+    font-weight: 600;
+    font-variation-settings: 'wght' 600;
+    src: url('ia_writer_quattro/iAWriterQuattroV.ttf');
+}
+@font-face {
+    font-family: 'iA Writer Quattro';
+    font-style: normal;
+    font-weight: 700;
+    font-variation-settings: 'wght' 700;
+    src: url('ia_writer_quattro/iAWriterQuattroV.ttf');
+}
+@font-face {
+    font-family: 'iA Writer Quattro';
+    font-style: normal;
+    font-weight: 800;
+    font-variation-settings: 'wght' 800;
+    src: url('ia_writer_quattro/iAWriterQuattroV.ttf');
+}
+@font-face {
+    font-family: 'iA Writer Quattro';
+    font-style: normal;
+    font-weight: 900;
+    font-variation-settings: 'wght' 900;
+    src: url('ia_writer_quattro/iAWriterQuattroV.ttf');
+}
+@font-face {
+    font-family: 'iA Writer Quattro';
+    font-style: italic;
+    font-weight: 300;
+    font-variation-settings: 'wght' 300;
+    src: url('ia_writer_quattro/iAWriterQuattroV-Italic.ttf');
+}
+@font-face {
+    font-family: 'iA Writer Quattro';
+    font-style: italic;
+    font-weight: 400;
+    font-variation-settings: 'wght' 400;
+    src: url('ia_writer_quattro/iAWriterQuattroV-Italic.ttf');
+}
+@font-face {
+    font-family: 'iA Writer Quattro';
+    font-style: italic;
+    font-weight: 500;
+    font-variation-settings: 'wght' 500;
+    src: url('ia_writer_quattro/iAWriterQuattroV-Italic.ttf');
+}
+@font-face {
+    font-family: 'iA Writer Quattro';
+    font-style: italic;
+    font-weight: 600;
+    font-variation-settings: 'wght' 600;
+    src: url('ia_writer_quattro/iAWriterQuattroV-Italic.ttf');
+}
+@font-face {
+    font-family: 'iA Writer Quattro';
+    font-style: italic;
+    font-weight: 700;
+    font-variation-settings: 'wght' 700;
+    src: url('ia_writer_quattro/iAWriterQuattroV-Italic.ttf');
+}
+@font-face {
+    font-family: 'iA Writer Quattro';
+    font-style: italic;
+    font-weight: 800;
+    font-variation-settings: 'wght' 800;
+    src: url('ia_writer_quattro/iAWriterQuattroV-Italic.ttf');
+}
+@font-face {
+    font-family: 'iA Writer Quattro';
+    font-style: italic;
+    font-weight: 900;
+    font-variation-settings: 'wght' 900;
+    src: url('ia_writer_quattro/iAWriterQuattroV-Italic.ttf');
+}
+
+/* iA Writer Duo */
+@font-face {
+    font-family: 'iA Writer Duo';
+    font-style: normal;
+    font-weight: 300;
+    font-variation-settings: 'wght' 300;
+    src: url('ia_writer_duo/iAWriterDuoV.ttf');
+}
+@font-face {
+    font-family: 'iA Writer Duo';
+    font-style: normal;
+    font-weight: 400;
+    font-variation-settings: 'wght' 400;
+    src: url('ia_writer_duo/iAWriterDuoV.ttf');
+}
+@font-face {
+    font-family: 'iA Writer Duo';
+    font-style: normal;
+    font-weight: 500;
+    font-variation-settings: 'wght' 500;
+    src: url('ia_writer_duo/iAWriterDuoV.ttf');
+}
+@font-face {
+    font-family: 'iA Writer Duo';
+    font-style: normal;
+    font-weight: 600;
+    font-variation-settings: 'wght' 600;
+    src: url('ia_writer_duo/iAWriterDuoV.ttf');
+}
+@font-face {
+    font-family: 'iA Writer Duo';
+    font-style: normal;
+    font-weight: 700;
+    font-variation-settings: 'wght' 700;
+    src: url('ia_writer_duo/iAWriterDuoV.ttf');
+}
+@font-face {
+    font-family: 'iA Writer Duo';
+    font-style: normal;
+    font-weight: 800;
+    font-variation-settings: 'wght' 800;
+    src: url('ia_writer_duo/iAWriterDuoV.ttf');
+}
+@font-face {
+    font-family: 'iA Writer Duo';
+    font-style: normal;
+    font-weight: 900;
+    font-variation-settings: 'wght' 900;
+    src: url('ia_writer_duo/iAWriterDuoV.ttf');
+}
+@font-face {
+    font-family: 'iA Writer Duo';
+    font-style: italic;
+    font-weight: 300;
+    font-variation-settings: 'wght' 300;
+    src: url('ia_writer_duo/iAWriterDuoV-Italic.ttf');
+}
+@font-face {
+    font-family: 'iA Writer Duo';
+    font-style: italic;
+    font-weight: 400;
+    font-variation-settings: 'wght' 400;
+    src: url('ia_writer_duo/iAWriterDuoV-Italic.ttf');
+}
+@font-face {
+    font-family: 'iA Writer Duo';
+    font-style: italic;
+    font-weight: 500;
+    font-variation-settings: 'wght' 500;
+    src: url('ia_writer_duo/iAWriterDuoV-Italic.ttf');
+}
+@font-face {
+    font-family: 'iA Writer Duo';
+    font-style: italic;
+    font-weight: 600;
+    font-variation-settings: 'wght' 600;
+    src: url('ia_writer_duo/iAWriterDuoV-Italic.ttf');
+}
+@font-face {
+    font-family: 'iA Writer Duo';
+    font-style: italic;
+    font-weight: 700;
+    font-variation-settings: 'wght' 700;
+    src: url('ia_writer_duo/iAWriterDuoV-Italic.ttf');
+}
+@font-face {
+    font-family: 'Orbitron';
+    font-style: italic;
+    font-weight: 800;
+    font-variation-settings: 'wght' 800;
+    src: url('ia_writer_duo/iAWriterDuoV-Italic.ttf');
+}
+@font-face {
+    font-family: 'iA Writer Duo';
+    font-style: italic;
+    font-weight: 900;
+    font-variation-settings: 'wght' 900;
+    src: url('ia_writer_duo/iAWriterDuoV-Italic.ttf');
+}

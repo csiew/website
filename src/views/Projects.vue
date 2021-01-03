@@ -1,6 +1,6 @@
 <template>
   <div id="top"></div>
-  <div class="width-max-800 width-full margin-auto-horizontal padding-l">
+  <div class="width-max-960 width-full margin-auto-horizontal padding-l">
     <div class="section-header">
       <h2>Projects</h2>
     </div>

@@ -1,5 +1,5 @@
 <template>
-  <div class="width-full width-max-800 margin-auto-horizontal padding-l">
+  <div class="width-full width-max-960 margin-auto-horizontal padding-l">
     <Hello />
     <HomeHero />
     <Contact />
