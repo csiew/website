@@ -1,5 +1,5 @@
 <template>
-  <div class="vstack width-auto height-auto align-end justify-end z-index-200 position-fixed margin-auto-top margin-s-bottom margin-auto-left margin-m-right padding-xs anchor-bottom anchor-right overflow-auto">
+  <div class="vstack width-auto height-auto align-end justify-end z-index-200 position-fixed margin-auto-top margin-none-bottom margin-auto-left margin-m-right padding-xs padding-none-bottom anchor-bottom anchor-right overflow-auto">
     <transition name="fade">
       <div v-if="state.showNavMenu === true" class="card margin-s-bottom overflow-auto height-auto">
         <div class="padding-s padding-xs-bottom text-align-right">
@@ -12,11 +12,11 @@
         </div>
       </div>
     </transition>
-    <div class="grid grid-auto-flow-column grid-gap-s">
-      <button class="button-accent button-circle button-circle-xl nav-shadow cursor-pointer" v-on:click="scrollToSection('top'); state.showNavMenu = false;">
+    <div class="grid grid-auto-flow-column grid-gap-none">
+      <button class="hug-bottom hug-right button-accent nav-shadow cursor-pointer padding-m-left padding-m-right" v-on:click="scrollToSection('top'); state.showNavMenu = false;">
         &#8593;
       </button>
-      <button class="button-circle button-circle-xl nav-shadow cursor-pointer" v-bind:class="state.showNavMenu === true ? 'button-fg' : 'button-accent'" v-on:click="state.showNavMenu = !state.showNavMenu">
+      <button class="hug-bottom hug-left nav-shadow cursor-pointer padding-m-left padding-m-right" v-bind:class="state.showNavMenu === true ? 'button-fg' : 'button-accent'" v-on:click="state.showNavMenu = !state.showNavMenu">
         &#9776;
       </button>
     </div>

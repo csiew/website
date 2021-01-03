@@ -189,6 +189,20 @@
 @font-face {
     font-family: 'Bitter';
     font-style: normal;
+    font-weight: 500;
+    font-variation-settings: 'wght' 500;
+    src: url('bitter/Bitter-VariableFont_wght.ttf');
+}
+@font-face {
+    font-family: 'Bitter';
+    font-style: normal;
+    font-weight: 600;
+    font-variation-settings: 'wght' 600;
+    src: url('bitter/Bitter-VariableFont_wght.ttf');
+}
+@font-face {
+    font-family: 'Bitter';
+    font-style: normal;
     font-weight: 700;
     font-variation-settings: 'wght' 700;
     src: url('bitter/Bitter-VariableFont_wght.ttf');
@@ -219,6 +233,20 @@
     font-style: italic;
     font-weight: 400;
     font-variation-settings: 'wght' 400;
+    src: url('bitter/Bitter-Italic-VariableFont_wght.ttf');
+}
+@font-face {
+    font-family: 'Bitter';
+    font-style: italic;
+    font-weight: 500;
+    font-variation-settings: 'wght' 500;
+    src: url('bitter/Bitter-Italic-VariableFont_wght.ttf');
+}
+@font-face {
+    font-family: 'Bitter';
+    font-style: italic;
+    font-weight: 600;
+    font-variation-settings: 'wght' 600;
     src: url('bitter/Bitter-Italic-VariableFont_wght.ttf');
 }
 @font-face {
@@ -261,6 +289,20 @@
 @font-face {
     font-family: 'JetBrains Mono';
     font-style: normal;
+    font-weight: 500;
+    font-variation-settings: 'wght' 500;
+    src: url('jetbrains_mono/JetBrainsMono-VariableFont_wght.ttf');
+}
+@font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 600;
+    font-variation-settings: 'wght' 600;
+    src: url('jetbrains_mono/JetBrainsMono-VariableFont_wght.ttf');
+}
+@font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
     font-weight: 700;
     font-variation-settings: 'wght' 700;
     src: url('jetbrains_mono/JetBrainsMono-VariableFont_wght.ttf');
@@ -296,6 +338,20 @@
 @font-face {
     font-family: 'JetBrains Mono';
     font-style: italic;
+    font-weight: 500;
+    font-variation-settings: 'wght' 500;
+    src: url('jetbrains_mono/JetBrainsMono-Italic-VariableFont_wght.ttf');
+}
+@font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    font-weight: 600;
+    font-variation-settings: 'wght' 600;
+    src: url('jetbrains_mono/JetBrainsMono-Italic-VariableFont_wght.ttf');
+}
+@font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
     font-weight: 700;
     font-variation-settings: 'wght' 700;
     src: url('jetbrains_mono/JetBrainsMono-Italic-VariableFont_wght.ttf');
@@ -313,4 +369,55 @@
     font-weight: 900;
     font-variation-settings: 'wght' 900;
     src: url('jetbrains_mono/JetBrainsMono-Italic-VariableFont_wght.ttf');
+}
+
+/* Orbitron */
+@font-face {
+    font-family: 'Orbitron';
+    font-style: normal;
+    font-weight: 300;
+    font-variation-settings: 'wght' 300;
+    src: url('orbitron/Orbitron-VariableFont_wght.ttf');
+}
+@font-face {
+    font-family: 'Orbitron';
+    font-style: normal;
+    font-weight: 400;
+    font-variation-settings: 'wght' 400;
+    src: url('orbitron/Orbitron-VariableFont_wght.ttf');
+}
+@font-face {
+    font-family: 'Orbitron';
+    font-style: normal;
+    font-weight: 500;
+    font-variation-settings: 'wght' 500;
+    src: url('orbitron/Orbitron-VariableFont_wght.ttf');
+}
+@font-face {
+    font-family: 'Orbitron';
+    font-style: normal;
+    font-weight: 600;
+    font-variation-settings: 'wght' 600;
+    src: url('orbitron/Orbitron-VariableFont_wght.ttf');
+}
+@font-face {
+    font-family: 'Orbitron';
+    font-style: normal;
+    font-weight: 700;
+    font-variation-settings: 'wght' 700;
+    src: url('orbitron/Orbitron-VariableFont_wght.ttf');
+}
+@font-face {
+    font-family: 'Orbitron';
+    font-style: normal;
+    font-weight: 800;
+    font-variation-settings: 'wght' 800;
+    src: url('orbitron/Orbitron-VariableFont_wght.ttf');
+}
+@font-face {
+    font-family: 'Orbitron';
+    font-style: normal;
+    font-weight: 900;
+    font-variation-settings: 'wght' 900;
+    src: url('orbitron/Orbitron-VariableFont_wght.ttf');
 }
