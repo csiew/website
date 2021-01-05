@@ -4,7 +4,7 @@
       <router-link class="navbar-wordmark" to="/">
         <img class="profile-img profile-img-s nodrag noselect border-radius-100pct" src="@/assets/images/profile.jpg" />
       </router-link>
-      <button id="navbarMenuButton" class="button-borderless padding-none line-height-1 font-scale-xl" v-on:click="isVisible.navMenu = !isVisible.navMenu">&#9776;</button>
+      <button id="navbarMenuButton" class="button-borderless padding-s line-height-1 font-scale-xl cursor-pointer" v-on:click="isVisible.navMenu = !isVisible.navMenu">&#9776;</button>
     </div>
   </div>
   <transition name="fade">
@@ -15,7 +15,7 @@
             <router-link class="navbar-wordmark" to="/">
               <img class="profile-img profile-img-s nodrag noselect border-radius-100pct" src="@/assets/images/profile.jpg" />
             </router-link>
-            <button class="button-borderless padding-none line-height-1 font-scale-xl" v-on:click="isVisible.navMenu = false">&#10005;</button>
+            <button class="button-borderless padding-s line-height-1 font-scale-xl cursor-pointer" v-on:click="isVisible.navMenu = false">&#10005;</button>
           </div>
           <div class="vstack padding-m">
             <router-link v-for="item in this.pages" v-bind:key="item.id" class="tabbar-vertical-item text-align-center font-scale-xl" v-bind:to="item.route" v-on:click="isVisible.navMenu = false">{{ item.label }}</router-link>

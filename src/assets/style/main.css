@@ -1,9 +1,9 @@
 :root {
-    --FONT-SIZE: 0.96rem;
+    --FONT-SIZE: 1.0325rem;
     --FONT-FAMILY-SYSTEM: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    --FONT-FAMILY-HEADER: 'Orbitron', 'Public Sans', var(--FONT-FAMILY-SYSTEM);
-    --FONT-FAMILY-BODY: 'iA Writer Duo', 'Public Sans', var(--FONT-FAMILY-SYSTEM);
-    --LINE-HEIGHT: 1.5;
+    --FONT-FAMILY-HEADER: 'Public Sans', var(--FONT-FAMILY-SYSTEM);
+    --FONT-FAMILY-BODY: 'Bitter', var(--FONT-FAMILY-SYSTEM);
+    --LINE-HEIGHT: 1.625;
     --TRANSITION: 0.25s;
 
     --COVER-ART-BORDER-WIDTH: 1px;
@@ -46,8 +46,8 @@ html, body, #app, #appDelegate {
 }
 
 html, body {
-    -webkit-font-smoothing: auto;
-    -moz-osx-font-smoothing: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     display: inline-flex;
     flex-flow: column;
     align-items: stretch;
@@ -72,7 +72,6 @@ html, body {
 h1, h2, h3, h4, h5 {
     font-family: var(--FONT-FAMILY-HEADER);
     line-height: 1;
-    letter-spacing: 0.0625rem;
 }
 
 p {
@@ -176,7 +175,6 @@ hr {
     margin: none;
     margin-bottom: 2rem;
     text-align: center;
-    text-transform: uppercase;
 }
 .section-header:first-child {
     margin-top: 2rem;
@@ -207,7 +205,7 @@ hr {
 .section-header h2,
 .section-header h3,
 .section-header h4 {
-    letter-spacing: 0.125rem;
+    letter-spacing: -0.0825rem;
     text-align: center !important;
     align-self: center !important;
     justify-self: center !important;
@@ -310,7 +308,7 @@ hr {
 
 .hello h1 {
     font-size: 7vmax !important;
-    letter-spacing: -0.0625rem !important;
+    letter-spacing: -0.25rem !important;
 }
 
 .cover-art {
