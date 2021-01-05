@@ -608,7 +608,7 @@
     src: url('ia_writer_duo/iAWriterDuoV-Italic.ttf');
 }
 @font-face {
-    font-family: 'Orbitron';
+    font-family: 'iA Writer Duo';
     font-style: italic;
     font-weight: 800;
     font-variation-settings: 'wght' 800;
@@ -620,4 +620,113 @@
     font-weight: 900;
     font-variation-settings: 'wght' 900;
     src: url('ia_writer_duo/iAWriterDuoV-Italic.ttf');
+}
+
+/* Encode Sans */
+@font-face {
+    font-family: 'Encode Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-variation-settings: 'wght' 300;
+    src: url('encode_sans/EncodeSans-VariableFont_wdth\,wght.ttf');
+}
+@font-face {
+    font-family: 'Encode Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-variation-settings: 'wght' 400;
+    src: url('encode_sans/EncodeSans-VariableFont_wdth\,wght.ttf');
+}
+@font-face {
+    font-family: 'Encode Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-variation-settings: 'wght' 500;
+    src: url('encode_sans/EncodeSans-VariableFont_wdth\,wght.ttf');
+}
+@font-face {
+    font-family: 'Encode Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-variation-settings: 'wght' 600;
+    src: url('encode_sans/EncodeSans-VariableFont_wdth\,wght.ttf');
+}
+@font-face {
+    font-family: 'Encode Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-variation-settings: 'wght' 700;
+    src: url('encode_sans/EncodeSans-VariableFont_wdth\,wght.ttf');
+}
+@font-face {
+    font-family: 'Encode Sans';
+    font-style: normal;
+    font-weight: 800;
+    font-variation-settings: 'wght' 800;
+    src: url('encode_sans/EncodeSans-VariableFont_wdth\,wght.ttf');
+}
+@font-face {
+    font-family: 'Encode Sans';
+    font-style: normal;
+    font-weight: 900;
+    font-variation-settings: 'wght' 900;
+    src: url('encode_sans/EncodeSans-VariableFont_wdth\,wght.ttf');
+}
+
+/* Encode Sans Condensed */
+@font-face {
+    font-family: 'Encode Sans Condensed';
+    font-style: normal;
+    font-weight: 300;
+    font-stretch: 75%;
+    font-variation-settings: 'wght' 300 'wdth' 75;
+    src: url('encode_sans/EncodeSans-VariableFont_wdth\,wght.ttf');
+}
+@font-face {
+    font-family: 'Encode Sans Condensed';
+    font-style: normal;
+    font-weight: 400;
+    font-stretch: 75%;
+    font-variation-settings: 'wght' 400 'wdth' 75;
+    src: url('encode_sans/EncodeSans-VariableFont_wdth\,wght.ttf');
+}
+@font-face {
+    font-family: 'Encode Sans Condensed';
+    font-style: normal;
+    font-weight: 500;
+    font-stretch: 75%;
+    font-variation-settings: 'wght' 500 'wdth' 75;
+    src: url('encode_sans/EncodeSans-VariableFont_wdth\,wght.ttf');
+}
+@font-face {
+    font-family: 'Encode Sans Condensed';
+    font-style: normal;
+    font-weight: 600;
+    font-stretch: 75%;
+    font-variation-settings: 'wght' 600 'wdth' 75;
+    src: url('encode_sans/EncodeSans-VariableFont_wdth\,wght.ttf');
+}
+@font-face {
+    font-family: 'Encode Sans Condensed';
+    font-style: normal;
+    font-weight: 700;
+    font-stretch: 75%;
+    font-variation-settings: 'wght' 700 'wdth' 75;
+    src: url('encode_sans/EncodeSans-VariableFont_wdth\,wght.ttf');
+}
+@font-face {
+    font-family: 'Encode Sans Condensed';
+    font-style: normal;
+    font-weight: 800;
+    font-stretch: 75%;
+    font-variation-settings: 'wght' 800 'wdth' 75;
+    src: url('encode_sans/EncodeSans-VariableFont_wdth\,wght.ttf');
+}
+@font-face {
+    font-family: 'Encode Sans Condensed';
+    font-style: normal;
+    font-weight: 900;
+    font-stretch: 75%;
+    font-variation-settings: 'wght' 900 'wdth' 75;
+    src: url('encode_sans/EncodeSans-VariableFont_wdth\,wght.ttf');
 }

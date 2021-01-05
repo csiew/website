@@ -4,22 +4,7 @@
       <router-link class="navbar-wordmark" to="/">
         <img class="profile-img profile-img-s nodrag noselect border-radius-100pct" src="@/assets/images/profile.jpg" />
       </router-link>
-      <div>
-        <div v-if="!this.isMobile()" class="hstack width-auto align-center">
-          <button class="toggle-switch margin-m-right" v-bind:class="isDarkMode === true ? 'toggle-switch-active' : ''" v-on:click="this.toggleDarkMode()" title="Toggle dark mode (requires refresh)">
-            <div class="toggle-switch-knob">&#9790;</div>
-          </button>
-          <small>
-            <div id="navbarLinks" class="tabbar">
-              <router-link v-for="item in this.pages" v-bind:key="item.id" class="tabbar-item" v-bind:to="item.route">{{ item.label }}</router-link>
-              <a class="tabbar-item" href="https://csiew-portfolio.netlify.app/" target="_blank">Portfolio</a>
-            </div>
-          </small>
-        </div>
-        <div v-else>
-          <button id="navbarMenuButton" class="button-borderless padding-none line-height-1 font-scale-xl" v-on:click="isVisible.navMenu = !isVisible.navMenu">&#9776;</button>
-        </div>
-      </div>
+      <button id="navbarMenuButton" class="button-borderless padding-none line-height-1 font-scale-xl" v-on:click="isVisible.navMenu = !isVisible.navMenu">&#9776;</button>
     </div>
   </div>
   <transition name="fade">
@@ -34,6 +19,7 @@
           </div>
           <div class="vstack padding-m">
             <router-link v-for="item in this.pages" v-bind:key="item.id" class="tabbar-vertical-item text-align-center font-scale-xl" v-bind:to="item.route" v-on:click="isVisible.navMenu = false">{{ item.label }}</router-link>
+            <hr class="width-max-380 margin-xs-top margin-xs-bottom margin-auto-horizontal" />
             <a class="tabbar-vertical-item text-align-center font-scale-xl" href="https://csiew-portfolio.netlify.app/" target="_blank">Portfolio</a>
           </div>
         </div>
