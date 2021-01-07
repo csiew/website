@@ -20,11 +20,11 @@
         </div>
       </div>
     </transition>
-    <div class="grid grid-auto-flow-column grid-gap-none nav-shadow">
-      <button class="hug-bottom hug-right button-accent cursor-pointer padding-m-left padding-m-right" v-on:click="scrollToSection('top'); state.showNavMenu = false;">
+    <div class="grid grid-auto-flow-column grid-gap-none nav-shadow-drop">
+      <button class="border-radius-card hug-bottom hug-right button-accent cursor-pointer padding-m-left padding-m-right" v-on:click="scrollToSection('top'); state.showNavMenu = false;">
         &#8593;
       </button>
-      <button class="hug-bottom hug-left cursor-pointer padding-m-left padding-m-right" v-bind:class="state.showNavMenu === true ? 'button-fg' : 'button-accent'" v-on:click="state.showNavMenu = !state.showNavMenu">
+      <button class="border-radius-card hug-bottom hug-left cursor-pointer padding-m-left padding-m-right" v-bind:class="state.showNavMenu === true ? 'button-fg' : 'button-accent'" v-on:click="state.showNavMenu = !state.showNavMenu">
         &#9776;
       </button>
     </div>

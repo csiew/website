@@ -79,3 +79,5 @@
     color: var(--CARD-LIST-ITEM-FG-COLOR) !important;
     background: var(--CARD-LIST-ITEM-BG-COLOR) !important;
 }
+
+.border-radius-card { border-radius: var(--CARD-BORDER-RADIUS); }

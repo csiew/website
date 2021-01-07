@@ -421,6 +421,15 @@
     box-shadow: none !important;
 }
 
+.border-radius-3 { border-radius: 3px !important; }
+.border-radius-5 { border-radius: 5px !important; }
+.border-radius-8 { border-radius: 8px !important; }
+.border-radius-11 { border-radius: 11px !important; }
+.border-radius-16 { border-radius: 16px !important; }
+.border-radius-32 { border-radius: 32px !important; }
+.border-radius-64 { border-radius: 64px !important; }
+.border-radius-full { border-radius: 100% !important; }
+
 /* From: https://stackoverflow.com/a/16771693 */
 .animate-rotate {
     -webkit-animation: spin 2s linear infinite;

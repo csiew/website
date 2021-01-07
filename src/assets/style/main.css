@@ -10,20 +10,20 @@
     --COVER-ART-BORDER-RADIUS: 3px;
 
     --BUTTON-BORDER-WIDTH: 1px;
-    --BUTTON-BORDER-RADIUS: 3px;
-    --TOGGLE-SWITCH-BORDER-RADIUS: 16px;
+    --BUTTON-BORDER-RADIUS: 11px;
+    --TOGGLE-SWITCH-BORDER-RADIUS: 11px;
     --TOGGLE-SWITCH-KNOB-BORDER-RADIUS: 100%;
 
     --TABBAR-VERTICAL-ITEM-BORDER-WIDTH: var(--BUTTON-BORDER-WIDTH);
 
     --LIST-FREESTYLE-ITEM-BORDER-WIDTH: var(--BUTTON-BORDER-WIDTH);
-    --LIST-FREESTYLE-ITEM-BORDER-RADIUS: 3px;
+    --LIST-FREESTYLE-ITEM-BORDER-RADIUS: 11px;
 
     --TEXT-FIELD-BORDER-WIDTH: var(--BUTTON-BORDER-WIDTH);
-    --TEXT-FIELD-BORDER-RADIUS: 3px;
+    --TEXT-FIELD-BORDER-RADIUS: 11px;
 
     --CARD-BORDER-WIDTH: 1px;
-    --CARD-BORDER-RADIUS: 3px;
+    --CARD-BORDER-RADIUS: 11px;
     --CARD-IMG-BORDER-WIDTH: 1px;
 }
 @media only screen and (max-width: 720px) {
@@ -225,6 +225,9 @@ hr {
 }
 .nav-shadow {
     box-shadow: var(--NAVBAR-SHADOW) !important;
+}
+.nav-shadow-drop {
+    filter: drop-shadow(var(--NAVBAR-SHADOW)) !important;
 }
 .nav-gradient {
     background: var(--NAVBAR-BG-COLOR-GRADIENT);

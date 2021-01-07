@@ -1,5 +1,5 @@
 <template>
-  <div id="navbar" class="nav navbar vstack justify-stretch align-stretch width-full">
+  <div id="navbar" class="nav navbar dark-mode vstack justify-stretch align-stretch width-full">
     <div class="hstack hstack-space-between padding-s-top padding-s-bottom padding-m-left padding-m-right">
       <router-link class="navbar-wordmark" to="/">
         <img class="profile-img profile-img-s nodrag noselect border-radius-100pct" src="@/assets/images/profile.jpg" />
@@ -8,7 +8,7 @@
     </div>
   </div>
   <transition name="fade">
-    <div v-if="isVisible.navMenu === true" id="navbarMenu" class="nav navmenu vstack width-full text-align-left">
+    <div v-if="isVisible.navMenu === true" id="navbarMenu" class="nav navmenu dark-mode vstack width-full text-align-left">
       <div class="flex-inline flex-flow-column height-full align-center justify-space-between">
         <div class="width-full">
           <div class="hstack hstack-space-between padding-s-top padding-s-bottom padding-m-left padding-m-right">

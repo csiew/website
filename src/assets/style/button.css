@@ -65,6 +65,9 @@
 }
 
 .button-borderless {
+  padding: 0.75rem !important;
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
   color: var(--FG-COLOR) !important;
   background: none !important;
   border-width: 0 !important;
@@ -281,11 +284,13 @@
   supported by Chrome, Edge, Opera and Firefox */
 }
 .tabbar-item:first-child {
+  padding-left: 1.125rem !important;
   border-left-width: var(--BUTTON-BORDER-WIDTH);
   border-top-left-radius: var(--BUTTON-BORDER-RADIUS);
   border-bottom-left-radius: var(--BUTTON-BORDER-RADIUS);
 }
 .tabbar-item:last-child {
+  padding-right: 1.125rem !important;
   border-right-width: var(--BUTTON-BORDER-WIDTH);
   border-top-right-radius: var(--BUTTON-BORDER-RADIUS);
   border-bottom-right-radius: var(--BUTTON-BORDER-RADIUS);
