@@ -1,5 +1,5 @@
 <template>
-  <div id="navSidebar" class="nav navsidebar dark-mode">
+  <div id="navSidebar" class="nav navsidebar">
     <div class="vstack vstack-space-between height-full">
       <div class="vstack">
         <router-link class="navbar-wordmark margin-l-top margin-s-bottom" to="/">
