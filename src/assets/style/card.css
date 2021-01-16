@@ -81,3 +81,49 @@
 }
 
 .border-radius-card { border-radius: var(--CARD-BORDER-RADIUS); }
+
+.card-enter {
+    animation: card-enter-right-transition ease 0.25s !important;
+}
+.card-enter-up {
+    animation: card-enter-up-transition ease 0.325s !important;
+}
+.card-enter-down {
+    animation: card-enter-down-transition ease 0.325s !important;
+}
+.card-enter-right {
+    animation: card-enter-right-transition ease 0.325s !important;
+}
+
+@keyframes card-enter-right-transition {
+    from {
+        opacity: 0;
+        transform: translateX(5%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+@keyframes card-enter-up-transition {
+    from {
+        opacity: 0;
+        transform: translateY(10%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+@keyframes card-enter-down-transition {
+    from {
+        opacity: 0;
+        transform: translateY(-10%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}

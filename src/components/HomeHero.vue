@@ -3,7 +3,7 @@
     <div class="section-header">
       <h3>Featured projects</h3>
     </div>
-    <div class="section card width-full width-max-800 margin-auto-horizontal text-align-center padding-m">
+    <div class="section card card-enter width-full width-max-800 margin-auto-horizontal text-align-center padding-m">
       <div class="vstack align-start justify-center width-full height-full">
         <div class="vstack width-full align-start justify-center text-align-center">
           <div class="flex-inline flex-flow-row-wrap align-start justify-space-between width-full text-align-center padding-s-bottom">

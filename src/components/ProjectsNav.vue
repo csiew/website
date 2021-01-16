@@ -1,5 +1,5 @@
 <template>
-  <div class="vstack width-auto height-auto align-end justify-end z-index-200 position-fixed margin-auto-top margin-none-bottom margin-auto-left margin-m-right padding-xs padding-none-bottom anchor-bottom anchor-right overflow-auto">
+  <div class="vstack width-auto height-auto align-end justify-end z-index-200 position-fixed margin-auto-top margin-none-bottom margin-auto-left margin-m-right padding-xs padding-none-bottom anchor-bottom anchor-right overflow-auto card-enter-up">
     <transition name="fade">
       <div v-if="state.showNavMenu === true" class="card margin-s-bottom overflow-auto height-auto">
         <div class="padding-s padding-xs-bottom text-align-right">
