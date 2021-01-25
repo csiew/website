@@ -1,6 +1,6 @@
 .button, button, .tabbar, .tabbar-item, .tabbar-vertical-item, .list-freestyle li {
   font-family: var(--FONT-FAMILY-BODY);
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 .button, button, .tabbar, .tabbar-item {
@@ -329,7 +329,7 @@
   border-width: var(--TABBAR-VERTICAL-ITEM-BORDER-WIDTH);
   border-style: solid;
   border-radius: var(--BUTTON-BORDER-RADIUS);
-  box-shadow: none;
+  box-shadow: none !important;
   font-size: inherit;
   font-weight: 400;
   margin: 0;
