@@ -54,6 +54,8 @@
 }
 .button:focus, button:focus {
   outline: none !important;
+  color: var(--BUTTON-FG-COLOR-ACTIVE);
+  background: var(--BUTTON-BG-COLOR-ACTIVE);
   border-color: var(--BUTTON-BORDER-COLOR-FOCUS) !important;
 }
 .button-selected, .button-selected:hover {
@@ -334,9 +336,9 @@
   font-weight: 400;
   margin: 0;
   margin-bottom: 0.25rem;
-  padding: 0.5rem;
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
+  padding: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   transition: var(--TRANSITION);
   
   -webkit-touch-callout: none; /* iOS Safari */
@@ -355,7 +357,7 @@
   color: var(--TABBAR-VERTICAL-ITEM-FG-COLOR-HOVER);
   background: var(--TABBAR-VERTICAL-ITEM-BG-COLOR-HOVER);
   border-color: var(--TABBAR-VERTICAL-ITEM-BORDER-COLOR-HOVER);
-  box-shadow: var(--BUTTON-BOX-SHADOW-HOVER);
+  box-shadow: var(--BUTTON-BOX-SHADOW-HOVER) !important;
   text-decoration: none !important;
   transition: var(--TRANSITION);
 }
@@ -363,7 +365,7 @@
   color: var(--TABBAR-VERTICAL-ITEM-FG-COLOR-ACTIVE);
   background: var(--TABBAR-VERTICAL-ITEM-BG-COLOR-ACTIVE);
   border-color: var(--TABBAR-VERTICAL-ITEM-BORDER-COLOR-ACTIVE);
-  box-shadow: var(--BUTTON-BOX-SHADOW-ACTIVE);
+  box-shadow: var(--BUTTON-BOX-SHADOW-ACTIVE) !important;
   transition: var(--TRANSITION);
 }
 .tabbar-vertical-item:focus {
@@ -374,8 +376,8 @@
   color: var(--TABBAR-VERTICAL-ITEM-FG-COLOR-SELECTED);
   background: var(--TABBAR-VERTICAL-ITEM-BG-COLOR-SELECTED);
   border-color: var(--TABBAR-VERTICAL-ITEM-BORDER-COLOR-SELECTED);
-  box-shadow: var(--BUTTON-BOX-SHADOW);
-  font-weight: 700;
+  box-shadow: var(--BUTTON-BOX-SHADOW-ACTIVE) !important;
+  /* font-weight: 700; */
   transition: var(--TRANSITION);
 }
 
