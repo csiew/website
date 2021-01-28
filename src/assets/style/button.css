@@ -444,8 +444,8 @@
   box-shadow: var(--TOGGLE-SWITCH-BOX-SHADOW);
   cursor: pointer;
   width: 3rem;
-  height: 1rem;
-  padding: 0;
+  height: auto;
+  padding: 0.125rem;
   transition: var(--TRANSITION);
 }
 .toggle-switch:hover {
@@ -466,6 +466,10 @@
 }
 .toggle-switch-knob {
   z-index: 20;
+  display: inline-flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
   color: var(--TOGGLE-SWITCH-KNOB-FG-COLOR);
   background: var(--TOGGLE-SWITCH-KNOB-BG-COLOR);
   border-width: var(--BUTTON-BORDER-WIDTH);
@@ -473,8 +477,8 @@
   border-color: var(--TOGGLE-SWITCH-BORDER-COLOR);
   border-radius: var(--TOGGLE-SWITCH-KNOB-BORDER-RADIUS);
   box-shadow: var(--TOGGLE-SWITCH-KNOB-BOX-SHADOW);
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.25rem;
+  height: 1.75rem;
   transition: var(--TRANSITION);
 }
 .toggle-switch:hover .toggle-switch-knob {
