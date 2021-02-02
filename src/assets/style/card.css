@@ -95,6 +95,8 @@
     animation: card-enter-right-transition ease 0.325s !important;
 }
 
+
+
 @keyframes card-enter-right-transition {
     from {
         opacity: 0;
@@ -126,4 +128,19 @@
         opacity: 1;
         transform: translateY(0%);
     }
+}
+
+.card-marked {
+  border-left: 0.25rem solid var(--ACCENT-PRIMARY-COLOR);
+  box-shadow: none;
+  transition: var(--TRANSITION);
+}
+.card-marked:hover {
+  box-shadow: var(--CARD-BOX-SHADOW);
+  transform: scale(1.0125);
+  transition: var(--TRANSITION);
+}
+
+.card-shadow {
+    box-shadow: var(--CARD-BOX-SHADOW);
 }

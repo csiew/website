@@ -1,6 +1,6 @@
 .button, button, .tabbar, .tabbar-item, .tabbar-vertical-item, .list-freestyle li {
   font-family: var(--FONT-FAMILY-BODY);
-  /* font-weight: bold; */
+  font-weight: bold;
 }
 
 .button, button, .tabbar, .tabbar-item {
@@ -54,8 +54,6 @@
 }
 .button:focus, button:focus {
   outline: none !important;
-  color: var(--BUTTON-FG-COLOR-ACTIVE);
-  background: var(--BUTTON-BG-COLOR-ACTIVE);
   border-color: var(--BUTTON-BORDER-COLOR-FOCUS) !important;
 }
 .button-selected, .button-selected:hover {
@@ -331,14 +329,14 @@
   border-width: var(--TABBAR-VERTICAL-ITEM-BORDER-WIDTH);
   border-style: solid;
   border-radius: var(--BUTTON-BORDER-RADIUS);
-  box-shadow: none !important;
+  box-shadow: none;
   font-size: inherit;
   font-weight: 400;
   margin: 0;
   margin-bottom: 0.25rem;
-  padding: 1rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding: 0.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
   transition: var(--TRANSITION);
   
   -webkit-touch-callout: none; /* iOS Safari */
@@ -357,7 +355,7 @@
   color: var(--TABBAR-VERTICAL-ITEM-FG-COLOR-HOVER);
   background: var(--TABBAR-VERTICAL-ITEM-BG-COLOR-HOVER);
   border-color: var(--TABBAR-VERTICAL-ITEM-BORDER-COLOR-HOVER);
-  box-shadow: var(--BUTTON-BOX-SHADOW-HOVER) !important;
+  box-shadow: var(--BUTTON-BOX-SHADOW-HOVER);
   text-decoration: none !important;
   transition: var(--TRANSITION);
 }
@@ -365,7 +363,7 @@
   color: var(--TABBAR-VERTICAL-ITEM-FG-COLOR-ACTIVE);
   background: var(--TABBAR-VERTICAL-ITEM-BG-COLOR-ACTIVE);
   border-color: var(--TABBAR-VERTICAL-ITEM-BORDER-COLOR-ACTIVE);
-  box-shadow: var(--BUTTON-BOX-SHADOW-ACTIVE) !important;
+  box-shadow: var(--BUTTON-BOX-SHADOW-ACTIVE);
   transition: var(--TRANSITION);
 }
 .tabbar-vertical-item:focus {
@@ -376,8 +374,8 @@
   color: var(--TABBAR-VERTICAL-ITEM-FG-COLOR-SELECTED);
   background: var(--TABBAR-VERTICAL-ITEM-BG-COLOR-SELECTED);
   border-color: var(--TABBAR-VERTICAL-ITEM-BORDER-COLOR-SELECTED);
-  box-shadow: var(--BUTTON-BOX-SHADOW-ACTIVE) !important;
-  /* font-weight: 700; */
+  box-shadow: var(--BUTTON-BOX-SHADOW);
+  font-weight: 700;
   transition: var(--TRANSITION);
 }
 
@@ -444,8 +442,8 @@
   box-shadow: var(--TOGGLE-SWITCH-BOX-SHADOW);
   cursor: pointer;
   width: 3rem;
-  height: auto;
-  padding: 0.125rem;
+  height: 1rem;
+  padding: 0;
   transition: var(--TRANSITION);
 }
 .toggle-switch:hover {
@@ -466,10 +464,6 @@
 }
 .toggle-switch-knob {
   z-index: 20;
-  display: inline-flex;
-  flex-flow: column;
-  align-items: center;
-  justify-content: center;
   color: var(--TOGGLE-SWITCH-KNOB-FG-COLOR);
   background: var(--TOGGLE-SWITCH-KNOB-BG-COLOR);
   border-width: var(--BUTTON-BORDER-WIDTH);
@@ -477,8 +471,8 @@
   border-color: var(--TOGGLE-SWITCH-BORDER-COLOR);
   border-radius: var(--TOGGLE-SWITCH-KNOB-BORDER-RADIUS);
   box-shadow: var(--TOGGLE-SWITCH-KNOB-BOX-SHADOW);
-  width: 1.25rem;
-  height: 1.75rem;
+  width: 1.5rem;
+  height: 1.5rem;
   transition: var(--TRANSITION);
 }
 .toggle-switch:hover .toggle-switch-knob {
