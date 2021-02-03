@@ -38,7 +38,14 @@
             "GitHub Pages",
             "Travis CI",
             "Netlify",
-            "GoCD"
+            "GoCD",
+            "Maven",
+            "Gradle"
+        ],
+        "operatingSystems": [
+            "Linux",
+            "macOS",
+            "Windows"
         ]
     }
 }
