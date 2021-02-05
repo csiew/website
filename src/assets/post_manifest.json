@@ -16,6 +16,19 @@
                 "mins": "22",
                 "sec": "06"
             }
+        },
+        {
+            "id": "43445e7f-f18e-4715-8a1c-b7f9b31d3efc",
+            "title": "Building a webdev automation tool",
+            "path": "/posts/building-webdev-automation-tool.md",
+            "date": {
+                "year": "2021",
+                "month": "02",
+                "day": "05",
+                "hr": "14",
+                "mins": "58",
+                "sec": "08"
+            }
         }
     ]
 }
