@@ -65,7 +65,7 @@
             </ul>
           </div>
           <div class="grid-item list-freestyle card card-inset padding-s">
-            <h4>Platforms / Operating Systems</h4>
+            <h5>Platforms / Operating Systems</h5>
             <ul>
               <li v-for="item in skills['infrastructure']['operatingSystems']" v-bind:key="item">{{ item }}</li>
             </ul>

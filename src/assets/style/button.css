@@ -442,8 +442,8 @@
   box-shadow: var(--TOGGLE-SWITCH-BOX-SHADOW);
   cursor: pointer;
   width: 3rem;
-  height: 1rem;
-  padding: 0;
+  height: auto;
+  padding: 0.125rem;
   transition: var(--TRANSITION);
 }
 .toggle-switch:hover {
