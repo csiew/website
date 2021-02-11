@@ -23,14 +23,14 @@
             <a class="tabbar-vertical-item text-align-center font-scale-xl" href="https://csiew-portfolio.netlify.app/" target="_blank">Portfolio</a>
           </div>
         </div>
-        <div class="flex-inline flex-flow-row align-center justify-start width-full padding-s">
+        <!-- <div class="flex-inline flex-flow-row align-center justify-start width-full padding-s">
           <button class="toggle-switch" v-bind:class="isDarkMode === true ? 'toggle-switch-active' : ''" v-on:click="this.toggleDarkMode()" title="Toggle dark mode (requires refresh)">
             <div class="toggle-switch-knob">&#9790;</div>
           </button>
           <div class="vstack width-auto margin-s-left text-color-secondary noselect">
             <span class="margin-none-top margin-xxs-bottom padding-none">Dark mode</span>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </transition>

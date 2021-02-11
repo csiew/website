@@ -397,6 +397,12 @@
     filter: invert(1) !important;
     -webkit-filter: invert(1) !important;
 }
+@media (prefers-color-scheme: dark) {
+    .invert-auto {
+        filter: invert(1) !important;
+        -webkit-filter: invert(1) !important;
+    }
+}
 
 .opacity-25 { opacity: 25% !important; }
 .opacity-50 { opacity: 50% !important; }

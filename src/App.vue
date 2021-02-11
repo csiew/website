@@ -1,5 +1,5 @@
 <template>
-  <div id="appDelegate" class="vstack height-full" v-bind:class="isDarkMode ? 'dark-mode' : ''">
+  <div id="appDelegate" class="vstack height-full">
     <Navbar />
     <div class="hstack hstack-height-full">
       <NavSidebar class="hstack-column width-full width-max-256" />
@@ -30,11 +30,11 @@ export default {
     Footer
   },
   computed: {
-    isDarkMode: function () {
+    isDarkMode() {
       return SettingsProvider.getDarkModeState();
     }
   },
-  mounted: function () {
+  mounted() {
     var darkModeCookie = VueCookies.get('dark_mode');
     if (darkModeCookie) {
       SettingsProvider.setDarkModeState(darkModeCookie === 'true' ? true : false);

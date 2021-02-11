@@ -42,7 +42,7 @@ export default {
     }
   },
   methods: {
-    scrollToSection: function (sectionId) {
+    scrollToSection(sectionId) {
       try {
         const el = document.getElementById(sectionId);
         el && el.scrollIntoView({
@@ -53,6 +53,9 @@ export default {
         console.warn(err);
       }
     }
+  },
+  mounted() {
+    this.scrollToSection('top');
   }
 }
 </script>
