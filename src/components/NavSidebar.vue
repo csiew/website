@@ -7,7 +7,7 @@
         </router-link>
         <div class="width-full text-align-left padding-s">
           <div class="vstack margin-none">
-            <router-link v-for="item in this.pages" v-bind:key="item.id" class="tabbar-vertical-item" v-bind:to="item.route">{{ item.label }}</router-link>
+            <router-link v-for="item in pages" v-bind:key="item.id" class="tabbar-vertical-item" v-bind:to="item.route">{{ item.label }}</router-link>
           </div>
           <hr class="margin-xs-top margin-xs-bottom">
           <div class="vstack margin-none">

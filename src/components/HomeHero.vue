@@ -9,7 +9,7 @@
           <div class="flex-inline flex-flow-row-wrap align-start justify-space-between width-full text-align-center padding-s-bottom">
             <transition name="slide-fade">
               <div v-if="isVisible.projectTitle === true" class="hstack width-auto align-center justify-start padding-xs-bottom">
-                <img v-bind:src="this.getImgUrl(projects[currentIndex].logoUrl)" class="margin-s-right nodrag noselect" style="max-width: 2.75rem; max-height: 2.75rem;" />
+                <img v-bind:src="getImgUrl(projects[currentIndex].logoUrl)" class="margin-s-right nodrag noselect" style="max-width: 2.75rem; max-height: 2.75rem;" />
                 <div class="vstack width-full text-align-left align-start justify-center">
                   <h1 class="margin-none-top margin-xxs-bottom">{{ projects[currentIndex].name }}</h1>
                   <small class="text-color-secondary">{{ projects[currentIndex].description }}</small>
@@ -18,16 +18,16 @@
             </transition>
             <div class="hstack width-auto align-start justify-space-between">
               <div class="tabbar width-auto">
-                <button v-for="(item, index) in this.projects" v-bind:key="item.name" class="tabbar-item" v-bind:class="currentIndex === index ? 'tabbar-item-current' : ''" v-on:click="this.setIndex(index)">{{ index + 1 }}</button>
+                <button v-for="(item, index) in projects" v-bind:key="item.name" class="tabbar-item" v-bind:class="currentIndex === index ? 'tabbar-item-current' : ''" v-on:click="setIndex(index)">{{ index + 1 }}</button>
               </div>
               <div class="tabbar width-auto margin-xs-left">
-                <button class="tabbar-item" v-on:click="this.prevIndex">&#10094;</button>
-                <button class="tabbar-item" v-on:click="this.nextIndex">&#10095;</button>
+                <button class="tabbar-item" v-on:click="prevIndex">&#10094;</button>
+                <button class="tabbar-item" v-on:click="nextIndex">&#10095;</button>
               </div>
             </div>
           </div>
           <transition name="slide-fade">
-            <img v-if="isVisible.projectScreenshot === true" v-bind:src="this.getImgUrl(projects[currentIndex].imageUrl)" v-bind:alt="projects[currentIndex].name" class="card card-img nodrag noselect" style="width: 100%; height: auto;" />
+            <img v-if="isVisible.projectScreenshot === true" v-bind:src="getImgUrl(projects[currentIndex].imageUrl)" v-bind:alt="projects[currentIndex].name" class="card card-img nodrag noselect" style="width: 100%; height: auto;" />
           </transition>
           <div class="hstack width-full align-center justify-center padding-m-top">
             <router-link class="button padding-m-left padding-m-right" v-bind:to="{ name: 'Projects' }">See all projects &#10095;</router-link>

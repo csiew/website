@@ -7,7 +7,7 @@
       <div v-if="isLoading.postItem === false && isLoading.content === false" class="card card-enter padding-m">
         <div class="width-full flex-inline flex-flow-column padding-xs-bottom">
           <h1 class="margin-xs-top margin-xs-bottom" style="line-height: 1.125;">{{ postItem.title }}</h1>
-          <small class="timestamp text-color-secondary">{{ this.formatTimestamp(postItem.date) }}</small>
+          <small class="timestamp text-color-secondary">{{ formatTimestamp(postItem.date) }}</small>
         </div>
         <hr class="margin-xs-top margin-m-bottom padding-none" />
         <div v-html="postMarkdown"></div>
