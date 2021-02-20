@@ -18,7 +18,7 @@
             <button class="button-borderless padding-s line-height-1 font-scale-xl cursor-pointer" v-on:click="isVisible.navMenu = false">&#10005;</button>
           </div>
           <div class="vstack padding-m">
-            <router-link v-for="item in this.pages" v-bind:key="item.id" class="tabbar-vertical-item text-align-center font-scale-xl" v-bind:to="item.route" v-on:click="isVisible.navMenu = false">{{ item.label }}</router-link>
+            <router-link v-for="item in pages" v-bind:key="item.id" class="tabbar-vertical-item text-align-center font-scale-xl" v-bind:to="item.route" v-on:click="isVisible.navMenu = false">{{ item.label }}</router-link>
             <hr class="width-max-380 margin-xs-top margin-xs-bottom margin-auto-horizontal" />
             <a class="tabbar-vertical-item text-align-center font-scale-xl" href="https://csiew-portfolio.netlify.app/" target="_blank">Portfolio</a>
           </div>
