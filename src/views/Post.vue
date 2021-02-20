@@ -1,6 +1,6 @@
 <template>
-  <div id="postNavbar" class="nav nav-border-bottom position-sticky anchor-top flex-inline flex-flow-row align-center justify-start width-full padding-xs card-enter-down">
-    <router-link v-bind:to="{ name: 'Blog' }" class="button line-height-1">&#10094; See all posts</router-link>
+  <div id="postNavbar" class="position-sticky anchor-top flex-inline flex-flow-row align-center justify-start width-full padding-xs padding-none-left card-enter-left">
+    <router-link v-bind:to="{ name: 'Blog' }" class="button border-radius-64 hug-left line-height-1 font-scale-xs">&#10094; See all posts</router-link>
   </div>
   <div class="width-max-960 width-full anchor-top margin-auto-horizontal padding-l">
     <article class="section">

@@ -91,6 +91,9 @@
 .card-enter-down {
     animation: card-enter-down-transition ease 0.325s !important;
 }
+.card-enter-left {
+    animation: card-enter-left-transition ease 0.325s !important;
+}
 .card-enter-right {
     animation: card-enter-right-transition ease 0.325s !important;
 }
@@ -103,6 +106,17 @@
     to {
         opacity: 1;
         transform: scale(1);
+    }
+}
+
+@keyframes card-enter-left-transition {
+    from {
+        opacity: 0;
+        transform: translateX(-5%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0%);
     }
 }
 
