@@ -1,7 +1,7 @@
 <template>
   <div class="width-max-960 width-full margin-auto-horizontal padding-l">
     <div v-if="isLoading.posts === false" class="section width-full">
-      <div class="section-header">
+      <div class="section-header transition-enter-down">
         <h2>Blog</h2>
       </div>
       <div v-if="Object.values(posts).length > 0" class="card card-list">

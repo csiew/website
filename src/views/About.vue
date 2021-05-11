@@ -1,7 +1,7 @@
 <template>
   <div class="width-max-960 width-full margin-auto-horizontal padding-l">
     <div class="section width-full">
-      <div class="section-header">
+      <div class="section-header transition-enter-down">
         <h2>About</h2>
       </div>
       <div class="card padding-m">
@@ -28,7 +28,7 @@
     </div>
     <Skills />
     <div class="section width-full">
-      <div class="section-header">
+      <div class="section-header transition-enter-pop">
         <h3>This Site</h3>
       </div>
       <div class="card padding-m">

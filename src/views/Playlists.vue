@@ -2,7 +2,7 @@
   <div id="top"></div>
   <div class="width-max-960 width-full margin-auto-horizontal padding-l">
     <div class="section width-full">
-      <div class="section-header">
+      <div class="section-header transition-enter-down">
         <h2>Playlists</h2>
       </div>
       <div class="grid grid-col-1 grid-gap-l width-full">

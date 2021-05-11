@@ -1,6 +1,6 @@
 <template>
   <div class="section width-full">
-    <div class="section-header">
+    <div class="section-header transition-enter-pop">
       <h3>Skills</h3>
     </div>
     <div class="card padding-m">

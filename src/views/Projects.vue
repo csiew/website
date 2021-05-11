@@ -1,11 +1,11 @@
 <template>
   <div id="top"></div>
   <div class="width-max-960 width-full margin-auto-horizontal padding-l">
-    <div class="section-header">
+    <div class="section-header transition-enter-down">
       <h2>Projects</h2>
     </div>
     <div class="section width-full">
-      <div class="section-header">
+      <div class="section-header transition-enter-pop">
         <h3>Recent projects</h3>
       </div>
       <div class="width-full width-max-800 grid grid-gap-m grid-col-1 margin-auto-horizontal margin-xl-top margin-xl-bottom">
@@ -13,7 +13,7 @@
       </div>
     </div>
     <div class="section width-full">
-      <div class="section-header">
+      <div class="section-header transition-enter-pop">
         <h3>Past projects</h3>
       </div>
       <div class="width-full width-max-800 grid grid-gap-m grid-col-1 margin-auto-horizontal margin-xl-top">
