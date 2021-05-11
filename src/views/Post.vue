@@ -1,10 +1,10 @@
 <template>
-  <div id="postNavbar" class="position-sticky anchor-top flex-inline flex-flow-row align-center justify-start width-full padding-xs padding-none-left card-enter-left">
+  <div id="postNavbar" class="position-sticky anchor-top flex-inline flex-flow-row align-center justify-start width-full padding-xs padding-none-left transition-enter-left">
     <router-link v-bind:to="{ name: 'Blog' }" class="button border-radius-64 hug-left line-height-1 font-scale-xs">&#10094; See all posts</router-link>
   </div>
   <div class="width-max-960 width-full anchor-top margin-auto-horizontal padding-l">
     <article class="section">
-      <div v-if="isLoading.postItem === false && isLoading.content === false" class="card card-enter padding-m">
+      <div v-if="isLoading.postItem === false && isLoading.content === false" class="card padding-m">
         <div class="post-header width-full flex-inline flex-flow-column padding-xs-bottom">
           <h1 class="margin-xs-top margin-xs-bottom" style="line-height: 1.125;">{{ postItem.title }}</h1>
           <small class="timestamp text-color-secondary">{{ formatTimestamp(postItem.date) }}</small>
@@ -83,23 +83,8 @@ export default {
 </script>
 
 <style scoped>
-article {
-  font-family: 'Newsreader', var(--FONT-FAMILY-SYSTEM);
-}
-
 .post-header h1 {
-  font-family: 'Newsreader', var(--FONT-FAMILY-SYSTEM);
-  font-weight: 400;
   font-size: 3rem;
   letter-spacing: -1px;
-}
-.post-content {
-  font-size: 1.5rem;
-  line-height: 1.25;
-  letter-spacing: -0.25px;
-}
-
-.timestamp {
-  font-size: 0.9rem;
 }
 </style>

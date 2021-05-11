@@ -48,6 +48,7 @@ export default {
 
 <style>
 @import './assets/style/base.css';
+@import './assets/style/animation.css';
 @import './assets/style/main.css';
 @import './assets/style/button.css';
 @import './assets/style/form.css';

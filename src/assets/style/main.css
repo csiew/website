@@ -1,16 +1,16 @@
 :root {
-    --FONT-SIZE: 1.0625rem;
+    --FONT-SIZE: 1.125rem;
     --FONT-FAMILY-SYSTEM: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    --FONT-FAMILY-HEADER: 'Fira Sans', var(--FONT-FAMILY-SYSTEM);
-    --FONT-FAMILY-BODY: 'Fira Sans', var(--FONT-FAMILY-SYSTEM);
+    --FONT-FAMILY-HEADER: 'Oswald', var(--FONT-FAMILY-SYSTEM);
+    --FONT-FAMILY-BODY: 'Manuale', var(--FONT-FAMILY-SYSTEM);
     --LINE-HEIGHT: 1.5;
     --TRANSITION: 0.25s;
 
     --COVER-ART-BORDER-WIDTH: 1px;
     --COVER-ART-BORDER-RADIUS: var(--BUTTON-BORDER-RADIUS);
 
-    --BUTTON-BORDER-WIDTH: 1px;
-    --BUTTON-BORDER-RADIUS: 3px;
+    --BUTTON-BORDER-WIDTH: 2px;
+    --BUTTON-BORDER-RADIUS: 8px;
     --TOGGLE-SWITCH-BORDER-RADIUS: var(--BUTTON-BORDER-RADIUS);
     --TOGGLE-SWITCH-KNOB-BORDER-RADIUS: var(--BUTTON-BORDER-RADIUS);
 
@@ -190,13 +190,15 @@ hr {
 }
 .section-header h2 {
     color: var(--ACCENT-PRIMARY-COLOR);
-    font-size: 3rem;
-    font-weight: 700;
+    font-size: 4rem;
+    font-weight: 900;
+    letter-spacing: -0.125rem;
 }
 .section-header h3 {
     color: var(--FG-SECONDARY-COLOR);
-    font-size: 2rem;
-    font-weight: 600;
+    font-size: 2.5rem;
+    font-weight: 200;
+    letter-spacing: -0.0825rem;
 }
 .section-header h4 {
     color: var(--FG-SECONDARY-COLOR);
@@ -207,7 +209,6 @@ hr {
 .section-header h2,
 .section-header h3,
 .section-header h4 {
-    letter-spacing: -0.0825rem;
     text-align: center !important;
     align-self: center !important;
     justify-self: center !important;
@@ -485,25 +486,4 @@ hr {
   font-size: 0.8rem !important;
   margin-top: 0.5rem !important;
   transition: var(--TRANSITION);
-}
-
-.hug-bottom {
-    border-bottom: none !important;
-    border-bottom-left-radius: 0 !important;
-    border-bottom-right-radius: 0 !important;
-}
-.hug-top {
-    border-top: none !important;
-    border-top-left-radius: 0 !important;
-    border-top-right-radius: 0 !important;
-}
-.hug-left {
-    border-left: none !important;
-    border-top-left-radius: 0 !important;
-    border-bottom-left-radius: 0 !important;
-}
-.hug-right {
-    border-right: none !important;
-    border-top-right-radius: 0 !important;
-    border-bottom-right-radius: 0 !important;
 }

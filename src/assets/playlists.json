@@ -1,6 +1,35 @@
 {
     "collection": [
         {
+            "title": "2021",
+            "playlists": {
+                "standard": [
+                    {
+                        "name": "Summer",
+                        "url": "https://open.spotify.com/playlist/7IpO4I5hcIswR0YAu3zKjA"
+                    },
+                    {
+                        "name": "Autumn",
+                        "url": "https://open.spotify.com/playlist/4X6IYO385hN9ggNze7bod4"
+                    }
+                ],
+                "special": [
+                    {
+                        "name": "Evolution",
+                        "url": "https://open.spotify.com/playlist/0nH2EBeklu5I4n80gayf4a"
+                    },
+                    {
+                        "name": "Chill",
+                        "url": "https://open.spotify.com/playlist/1WMYTQvVlXb6twi0WUrxye"
+                    },
+                    {
+                        "name": "Zeitgeist",
+                        "url": "https://open.spotify.com/playlist/1s0EFqNUwgFpMkNTrWM0fK"
+                    }
+                ]
+            }
+        },
+        {
             "title": "2020",
             "playlists": {
                 "standard": [

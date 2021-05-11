@@ -284,13 +284,11 @@
   supported by Chrome, Edge, Opera and Firefox */
 }
 .tabbar-item:first-child {
-  padding-left: 1.125rem !important;
   border-left-width: var(--BUTTON-BORDER-WIDTH);
   border-top-left-radius: var(--BUTTON-BORDER-RADIUS);
   border-bottom-left-radius: var(--BUTTON-BORDER-RADIUS);
 }
 .tabbar-item:last-child {
-  padding-right: 1.125rem !important;
   border-right-width: var(--BUTTON-BORDER-WIDTH);
   border-top-right-radius: var(--BUTTON-BORDER-RADIUS);
   border-bottom-right-radius: var(--BUTTON-BORDER-RADIUS);
@@ -329,7 +327,6 @@
   border-width: var(--TABBAR-VERTICAL-ITEM-BORDER-WIDTH);
   border-style: solid;
   border-radius: var(--BUTTON-BORDER-RADIUS);
-  box-shadow: none;
   font-size: inherit;
   font-weight: 400;
   margin: 0;
@@ -355,7 +352,6 @@
   color: var(--TABBAR-VERTICAL-ITEM-FG-COLOR-HOVER);
   background: var(--TABBAR-VERTICAL-ITEM-BG-COLOR-HOVER);
   border-color: var(--TABBAR-VERTICAL-ITEM-BORDER-COLOR-HOVER);
-  box-shadow: var(--BUTTON-BOX-SHADOW-HOVER);
   text-decoration: none !important;
   transition: var(--TRANSITION);
 }
@@ -363,7 +359,6 @@
   color: var(--TABBAR-VERTICAL-ITEM-FG-COLOR-ACTIVE);
   background: var(--TABBAR-VERTICAL-ITEM-BG-COLOR-ACTIVE);
   border-color: var(--TABBAR-VERTICAL-ITEM-BORDER-COLOR-ACTIVE);
-  box-shadow: var(--BUTTON-BOX-SHADOW-ACTIVE);
   transition: var(--TRANSITION);
 }
 .tabbar-vertical-item:focus {
@@ -399,9 +394,9 @@
   margin: 0 !important;
   margin-right: 0.5rem !important;
   margin-bottom: 0.5rem !important;
-  padding: 1rem;
-  padding-top: 0.325rem;
-  padding-bottom: 0.325rem;
+  padding: 0.75rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
   color: var(--LIST-FREESTYLE-ITEM-FG-COLOR);
   background: var(--LIST-FREESTYLE-ITEM-BG-COLOR);
   border-width: var(--LIST-FREESTYLE-ITEM-BORDER-WIDTH);

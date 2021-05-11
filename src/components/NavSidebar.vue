@@ -124,21 +124,12 @@ export default {
 #navSidebar {
   visibility: visible;
   display: inline-flex;
-  animation: nav-sidebar-transition ease 0.5s !important;
+  animation: enter-left-transition ease 0.5s !important;
 }
 @media only screen and (max-width: 1024px) {
   #navSidebar {
     visibility: hidden;
     display: none;
-  }
-}
-
-@keyframes nav-sidebar-transition {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(0%);
   }
 }
 </style>

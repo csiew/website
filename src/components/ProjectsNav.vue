@@ -1,5 +1,5 @@
 <template>
-  <div class="vstack width-auto height-auto align-end justify-end z-index-200 position-fixed margin-auto-top margin-none-bottom margin-auto-left margin-m-right padding-xs padding-none-bottom anchor-bottom anchor-right overflow-auto card-enter-up">
+  <div class="vstack width-auto height-auto align-end justify-end z-index-200 position-fixed margin-auto-top margin-none-bottom margin-auto-left margin-m-right padding-xs padding-none-bottom anchor-bottom anchor-right overflow-auto transition-enter-up">
     <transition name="fade">
       <div v-if="state.showNavMenu === true" class="card margin-s-bottom overflow-auto height-auto">
         <div class="padding-s padding-xs-bottom text-align-right">
@@ -21,10 +21,10 @@
       </div>
     </transition>
     <div class="grid grid-auto-flow-column grid-gap-none nav-shadow-drop">
-      <button class="border-radius-card hug-bottom hug-right cursor-pointer padding-m-left padding-m-right" v-on:click="scrollToSection('top'); state.showNavMenu = false;">
+      <button class="border-radius-card hug-bottom hug-right cursor-pointer shadow-none padding-m-left padding-m-right" v-on:click="scrollToSection('top'); state.showNavMenu = false;">
         &UpArrowBar;
       </button>
-      <button class="border-radius-card hug-bottom hug-left cursor-pointer padding-m-left padding-m-right" v-bind:class="state.showNavMenu === true ? 'button-selected' : ''" v-on:click="state.showNavMenu = !state.showNavMenu">
+      <button class="border-radius-card hug-bottom hug-left cursor-pointer shadow-none padding-m-left padding-m-right" v-bind:class="state.showNavMenu === true ? 'button-selected' : ''" v-on:click="state.showNavMenu = !state.showNavMenu">
         &#9776;
       </button>
     </div>

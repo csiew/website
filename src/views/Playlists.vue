@@ -6,7 +6,7 @@
         <h2>Playlists</h2>
       </div>
       <div class="grid grid-col-1 grid-gap-l width-full">
-        <div v-for="year in this.playlists" v-bind:key="year.title" v-bind:id="year.title" class="card card-enter width-full padding-m">
+        <div v-for="year in this.playlists" v-bind:key="year.title" v-bind:id="year.title" class="card width-full padding-m">
           <h3 class="margin-xxs-top margin-xxs-bottom font-scale-xl">{{ year.title }}</h3>
           <hr class="margin-m-top margin-m-bottom padding-none" />
           <span v-if="year.playlists.standard.length !== 0">

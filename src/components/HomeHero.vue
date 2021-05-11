@@ -3,7 +3,7 @@
     <div class="section-header">
       <h3>Featured projects</h3>
     </div>
-    <div class="section card card-enter width-full width-max-800 margin-auto-horizontal text-align-center padding-m">
+    <div class="section card width-full width-max-800 margin-auto-horizontal text-align-center padding-m">
       <div class="vstack align-start justify-center width-full height-full">
         <div class="vstack width-full align-start justify-center text-align-center">
           <div class="flex-inline flex-flow-row-wrap align-start justify-space-between width-full text-align-center padding-s-bottom">
@@ -21,8 +21,8 @@
                 <button v-for="(item, index) in projects" v-bind:key="item.name" class="tabbar-item" v-bind:class="currentIndex === index ? 'tabbar-item-current' : ''" v-on:click="setIndex(index)">{{ index + 1 }}</button>
               </div>
               <div class="tabbar width-auto margin-xs-left">
-                <button class="tabbar-item" v-on:click="prevIndex">&#10094;</button>
-                <button class="tabbar-item" v-on:click="nextIndex">&#10095;</button>
+                <button class="tabbar-item" v-on:click="prevIndex">&xlarr;</button>
+                <button class="tabbar-item" v-on:click="nextIndex">&xrarr;</button>
               </div>
             </div>
           </div>
@@ -30,7 +30,7 @@
             <img v-if="isVisible.projectScreenshot === true" v-bind:src="getImgUrl(projects[currentIndex].imageUrl)" v-bind:alt="projects[currentIndex].name" class="card card-img nodrag noselect" style="width: 100%; height: auto;" />
           </transition>
           <div class="hstack width-full align-center justify-center padding-m-top">
-            <router-link class="button padding-m-left padding-m-right" v-bind:to="{ name: 'Projects' }">See all projects &#10095;</router-link>
+            <router-link class="button padding-m-left padding-m-right" v-bind:to="{ name: 'Projects' }">See all projects &xrarr;</router-link>
           </div>
         </div>
       </div>
