@@ -1,6 +1,6 @@
 <template>
   <div class="section">
-    <div class="section-header transition-enter-pop">
+    <div class="section-header">
       <h3>Featured projects</h3>
     </div>
     <div class="section card width-full width-max-800 margin-auto-horizontal text-align-center padding-m">
