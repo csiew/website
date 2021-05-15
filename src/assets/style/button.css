@@ -369,7 +369,6 @@
   color: var(--TABBAR-VERTICAL-ITEM-FG-COLOR-SELECTED);
   background: var(--TABBAR-VERTICAL-ITEM-BG-COLOR-SELECTED);
   border-color: var(--TABBAR-VERTICAL-ITEM-BORDER-COLOR-SELECTED);
-  box-shadow: var(--BUTTON-BOX-SHADOW);
   font-weight: 700;
   transition: var(--TRANSITION);
 }
