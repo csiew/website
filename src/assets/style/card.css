@@ -76,6 +76,13 @@
     background: var(--CARD-LIST-ITEM-BG-COLOR-HOVER);
     transition: var(--TRANSITION);
 }
+.card-list li:active {
+    color: var(--CARD-LIST-ITEM-FG-COLOR-ACTIVE);
+    background: var(--CARD-LIST-ITEM-BG-COLOR-ACTIVE);
+    border-radius: var(--CARD-BORDER-RADIUS);
+    transform: scale(0.99);
+    transition: var(--TRANSITION);
+}
 .card-list-static li:hover {
     color: var(--CARD-LIST-ITEM-FG-COLOR) !important;
     background: var(--CARD-LIST-ITEM-BG-COLOR) !important;

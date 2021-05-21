@@ -1,5 +1,5 @@
 <template>
-  <div id="navbar" class="nav navbar enter-down-transition vstack justify-stretch align-stretch width-full">
+  <div id="navbar" class="nav navbar transition-enter-down vstack justify-stretch align-stretch width-full">
     <div class="hstack hstack-space-between padding-s-top padding-s-bottom padding-m-left padding-m-right">
       <router-link class="navbar-wordmark" to="/">
         <img class="profile-img profile-img-s nodrag noselect border-radius-100pct" src="@/assets/images/profile.jpg" />
@@ -23,14 +23,6 @@
             <a class="tabbar-vertical-item text-align-center font-scale-xl" href="https://csiew-portfolio.netlify.app/" target="_blank">Portfolio</a>
           </div>
         </div>
-        <!-- <div class="flex-inline flex-flow-row align-center justify-start width-full padding-s">
-          <button class="toggle-switch" v-bind:class="isDarkMode === true ? 'toggle-switch-active' : ''" v-on:click="this.toggleDarkMode()" title="Toggle dark mode (requires refresh)">
-            <div class="toggle-switch-knob">&#9790;</div>
-          </button>
-          <div class="vstack width-auto margin-s-left text-color-secondary noselect">
-            <span class="margin-none-top margin-xxs-bottom padding-none">Dark mode</span>
-          </div>
-        </div> -->
       </div>
     </div>
   </transition>
@@ -123,8 +115,7 @@ export default {
     display: inline-flex;
   }
 }
-.fade-enter-active,
-.fade-leave-active {
+.fade-enter-active {
   transition: all 0.25s ease-in-out;
 }
 .fade-enter-from,
