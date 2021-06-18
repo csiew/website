@@ -1,0 +1,15 @@
+/* FRAUNCES */
+@font-face {
+	font-family: 'Fraunces';
+	src: url('./fraunces/Fraunces-VariableFont_SOFT\,WONK\,opsz\,wght.ttf');
+	font-weight: 100 1000;
+  font-style: normal;
+	font-stretch: 25% 151%;
+}
+@font-face {
+	font-family: 'Fraunces';
+	src: url('./fraunces/Fraunces-Italic-VariableFont_SOFT\,WONK\,opsz\,wght.ttf');
+	font-weight: 100 1000;
+  font-style: italic;
+	font-stretch: 25% 151%;
+}

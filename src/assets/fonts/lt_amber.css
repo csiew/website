@@ -1,0 +1,159 @@
+/* LT AMBER */
+@font-face {
+  font-family: 'LT Amber';
+  font-weight: 300;
+  font-style: normal;
+  src: url('./lt_amber/LT Amber Light.otf');
+}
+@font-face {
+  font-family: 'LT Amber';
+  font-weight: 400;
+  font-style: normal;
+  src: url('./lt_amber/LT Amber Regular.otf'),;
+}
+@font-face {
+  font-family: 'LT Amber';
+  font-weight: 500;
+  font-style: normal;
+  src: url('./lt_amber/LT Amber Medium.otf');
+}
+@font-face {
+  font-family: 'LT Amber';
+  font-weight: 600;
+  font-style: normal;
+  src: url('./lt_amber/LT Amber Demibold.otf');
+}
+@font-face {
+  font-family: 'LT Amber';
+  font-weight: 700;
+  font-style: normal;
+  src: url('./lt_amber/LT Amber Bold.otf');
+}
+
+/* LT AMBER COMPRESSED */
+@font-face {
+  font-family: 'LT Amber Compressed';
+  font-weight: 300;
+  font-style: normal;
+  src: url('./lt_amber/LT Amber Comp Light.otf');
+}
+@font-face {
+  font-family: 'LT Amber Compressed';
+  font-weight: 400;
+  font-style: normal;
+  src: url('./lt_amber/LT Amber Comp.otf'),;
+}
+@font-face {
+  font-family: 'LT Amber Compressed';
+  font-weight: 500;
+  font-style: normal;
+  src: url('./lt_amber/LT Amber Comp Medium.otf');
+}
+@font-face {
+  font-family: 'LT Amber Compressed';
+  font-weight: 600;
+  font-style: normal;
+  src: url('./lt_amber/LT Amber Comp Demibold.otf');
+}
+@font-face {
+  font-family: 'LT Amber Compressed';
+  font-weight: 700;
+  font-style: normal;
+  src: url('./lt_amber/LT Amber Comp Bold.otf');
+}
+
+/* LT AMBER CONDENSED */
+@font-face {
+  font-family: 'LT Amber Condensed';
+  font-weight: 300;
+  font-style: normal;
+  src: url('./lt_amber/LT Amber Cond Light.otf');
+}
+@font-face {
+  font-family: 'LT Amber Condensed';
+  font-weight: 400;
+  font-style: normal;
+  src: url('./lt_amber/LT Amber Cond.otf'),;
+}
+@font-face {
+  font-family: 'LT Amber Condensed';
+  font-weight: 500;
+  font-style: normal;
+  src: url('./lt_amber/LT Amber Cond Medium.otf');
+}
+@font-face {
+  font-family: 'LT Amber Condensed';
+  font-weight: 600;
+  font-style: normal;
+  src: url('./lt_amber/LT Amber Cond Demibold.otf');
+}
+@font-face {
+  font-family: 'LT Amber Condensed';
+  font-weight: 700;
+  font-style: normal;
+  src: url('./lt_amber/LT Amber Cond Bold.otf');
+}
+
+/* LT AMBER EXTENDED */
+@font-face {
+  font-family: 'LT Amber Extended';
+  font-weight: 300;
+  font-style: normal;
+  src: url('./lt_amber/LT Amber Ext Light.otf');
+}
+@font-face {
+  font-family: 'LT Amber Extended';
+  font-weight: 400;
+  font-style: normal;
+  src: url('./lt_amber/LT Amber Ext.otf'),;
+}
+@font-face {
+  font-family: 'LT Amber Extended';
+  font-weight: 500;
+  font-style: normal;
+  src: url('./lt_amber/LT Amber Ext Medium.otf');
+}
+@font-face {
+  font-family: 'LT Amber Extended';
+  font-weight: 600;
+  font-style: normal;
+  src: url('./lt_amber/LT Amber Ext Demibold.otf');
+}
+@font-face {
+  font-family: 'LT Amber Extended';
+  font-weight: 700;
+  font-style: normal;
+  src: url('./lt_amber/LT Amber Ext Bold.otf');
+}
+
+/* LT AMBER WIDE */
+@font-face {
+  font-family: 'LT Amber Wide';
+  font-weight: 300;
+  font-style: normal;
+  src: url('./lt_amber/LT Amber Wide Light.otf');
+}
+@font-face {
+  font-family: 'LT Amber Wide';
+  font-weight: 400;
+  font-style: normal;
+  src: url('./lt_amber/LT Amber Wide.otf'),;
+}
+@font-face {
+  font-family: 'LT Amber Wide';
+  font-weight: 500;
+  font-style: normal;
+  src: url('./lt_amber/LT Amber Wide Medium.otf');
+}
+@font-face {
+  font-family: 'LT Amber Wide';
+  font-weight: 600;
+  font-style: normal;
+  src: url('./lt_amber/LT Amber Wide Demibold.otf');
+}
+@font-face {
+  font-family: 'LT Amber Wide';
+  font-weight: 700;
+  font-style: normal;
+  src: url('./lt_amber/LT Amber Wide Bold.otf');
+}
