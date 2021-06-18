@@ -1,0 +1,15 @@
+{
+  "short_name": "Clarence Siew",
+  "name": "Clarence Siew",
+  "icons": [
+    {
+      "src": "profile.jpg",
+      "type": "image/jpg",
+      "sizes": "600x600"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "steelblue",
+  "background_color": "#ffffff"
+}
