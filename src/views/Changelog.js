@@ -6,6 +6,7 @@ import { scrollToTop } from '../utils/Scroll.js';
 import versionHistoryDoc from '../assets/data/version_history.md';
 
 function ChangelogContent() {
+  const [isLoading, setIsLoading] = useState(true);
   const [content, setContent] = useState(null);
 
   useEffect(() => {
@@ -13,9 +14,20 @@ function ChangelogContent() {
       .then((r) => r.text())
       .then(text  => {
         setContent(text);
+        setIsLoading(false);
       })
       .catch(e => console.debug(e));
   }, []);
+
+  if (isLoading) {
+    return (
+      <Card>
+        <CardBody className="hstack align-center justify-center">
+          <span className="text-color-secondary">Loading...</span>
+        </CardBody>
+      </Card>
+    );
+  }
 
   return (
     <Card className="width-max-800 img-respect-bounds nodrag">
