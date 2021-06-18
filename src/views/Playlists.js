@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { generateId } from '../utils/Strings.js';
 import { scrollFocus, scrollToTop } from '../utils/Scroll.js';
 import { DynamicPageView } from '../components/PageLayout.js';
@@ -7,12 +7,6 @@ import playlists from '../assets/data/playlists.json';
 
 function PlaylistGroupCard(props) {
   const sectionId = generateId(props.subcollection.title);
-
-  useEffect(() => {
-    if (props.currentSection === sectionId) {
-      scrollFocus(sectionId);
-    }
-  });
 
   const standardPlaylists = (playlists) => {
     if (playlists.length > 0) {
@@ -64,8 +58,6 @@ function PlaylistGroupCard(props) {
 }
 
 function Playlists() {
-  const [currentSection, setCurrentSection] = useState(null);
-
   useEffect(() => {
     scrollToTop();
   }, []);
@@ -83,7 +75,6 @@ function Playlists() {
                 <PlaylistGroupCard
                   key={generateId(item.title)}
                   subcollection={item}
-                  currentSection={currentSection}
                 />
               );
             })
@@ -100,7 +91,7 @@ function Playlists() {
                     <span
                       key={generateId(item.title)}
                       className="item"
-                      onClick={() => setCurrentSection(generateId(item.title))}
+                      onClick={() => scrollFocus(generateId(item.title))}
                     >
                       {item.title}
                     </span>

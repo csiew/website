@@ -8,14 +8,6 @@ import { Card, CardTitle, CardBody } from '../components/Card.js';
 import projects from '../assets/data/projects.json';
 
 function ProjectCard(props) {
-  const sectionId = props.project.id;
-
-  useEffect(() => {
-    if (props.currentSection === sectionId) {
-      scrollFocus(sectionId);
-    }
-  });
-
   const getProjectImg = (imgUrl) => {
     if (imgUrl.length > 0) {
       return (
@@ -101,7 +93,6 @@ function ProjectImageModalView(props) {
 }
 
 function Projects() {
-  const [currentSection, setCurrentSection] = useState(null);
   const [isImgViewVisible, setIsImgViewVisible] = useState(false);
   const [imgUrl, setImgUrl] = useState(null);
 
@@ -127,7 +118,6 @@ function Projects() {
                 <ProjectCard
                   key={item.id}
                   project={item}
-                  currentSection={currentSection}
                   viewImg={() => toggleImgView(true, item.imgUrl)}
                 />
               );
@@ -149,7 +139,7 @@ function Projects() {
                       <div
                         key={item.id}
                         className="item flex-inline flex-flow-row-wrap align-center justify-space-between"
-                        onClick={() => setCurrentSection(item.id)}
+                        onClick={() => scrollFocus(item.id)}
                       >
                         <span className="width-auto">{item.name}</span>
                         <span className="width-auto font-scale-xs text-color-secondary">{item.timeRange}</span>
