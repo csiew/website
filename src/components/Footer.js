@@ -1,12 +1,14 @@
+import { NavLink } from "react-router-dom";
+
 function Footer() {
 
   return (
     <footer>
       <p className="font-weight-600">
-        Version 3.0
+        <NavLink to="/changelog">Version 3.0</NavLink>
       </p>
       <p>
-        This site was built using React, and is hosted on Netlify.
+        This site was built using React and is hosted on Netlify.
       </p>
       <p>
         &copy; 2021 Clarence Siew

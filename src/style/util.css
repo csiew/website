@@ -29,6 +29,10 @@
   -o-user-drag: none;
 }
 
+.img-respect-bounds img {
+  width: 100%;
+}
+
 .position-sticky { position: sticky !important; }
 .position-fixed { position: fixed !important; }
 

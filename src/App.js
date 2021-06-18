@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { Switch, Route } from 'react-router-dom';
-import { MdArrowUpward } from 'react-icons/md';
 import Navbar from './components/Navbar.js';
 import Footer from './components/Footer.js';
 import Home from './views/Home.js';
@@ -8,31 +7,8 @@ import Blog from './views/Blog.js';
 import Post from './views/Post.js';
 import Projects from './views/Projects.js';
 import Playlists from './views/Playlists.js';
-import { scrollToTop } from './utils/Scroll.js';
-
-function BackToTop(props) {
-  return (
-    <>
-      {
-        props.isVisible ?
-          <div className="z-index-200 position-fixed padding-l anchor-bottom anchor-right transition-enter-up">
-            <button
-              className="button-primary border-radius-100pct padding-none"
-              style={{
-                width: "2.5rem",
-                height: "2.5rem"
-              }}
-              onClick={scrollToTop}
-            >
-              <MdArrowUpward size="1.5rem" />
-            </button>
-          </div>
-        :
-          null
-      }
-    </>
-  );
-}
+import Changelog from './views/Changelog.js';
+import BackToTop from './components/BackToTop.js';
 
 function App() {
   const [isAwayFromTop, setIsAwayFromTop] = useState(true);
@@ -58,6 +34,7 @@ function App() {
           <Route path="/post/:id" component={Post} />
           <Route path="/projects" component={Projects} />
           <Route path="/playlists" component={Playlists} />
+          <Route path="/changelog" component={Changelog} />
         </Switch>
         <Footer />
       </main>
