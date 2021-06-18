@@ -1,0 +1,38 @@
+@media (prefers-color-scheme: dark) {
+  :root {
+    --PRIMARY-COLOR: #9fdcff;
+    --SECONDARY-COLOR: #87c5e9;
+  
+    --FG-COLOR: #f5f5f5;
+    --FG-COLOR-SECONDARY: #e5e5e5;
+    --FG-COLOR-TERTIARY: #d5d5d5;
+    --BG-COLOR: #2e2e2e;
+    --BG-COLOR-SECONDARY: #1e1e1e;
+  
+    --BORDER-COLOR: #4e4e4e;
+    --BORDER-COLOR-HOVER: #555555;
+  
+    --BUTTON-FG-COLOR: #f5f5f5;
+    --BUTTON-FG-COLOR-DISABLED: #9e9e9e;
+    --BUTTON-BG-COLOR: #3e3e3e;
+    --BUTTON-BG-COLOR-HOVER: #4e4e4e;
+    --BUTTON-BG-COLOR-ACTIVE: #1e1e1e;
+    --BUTTON-BG-COLOR-DISABLED: #2e2e2e;
+  
+    --INPUT-FG-COLOR: #f5f5f5;
+    --INPUT-BG-COLOR: #3e3e3e;
+    --INPUT-BG-COLOR-HOVER: #555555;
+    --INPUT-BG-COLOR-ACTIVE: #1e1e1e;
+    --INPUT-BG-COLOR-DISABLED: #2e2e2e;
+  
+    --NAV-MENU-FG-COLOR: #f5f5f5;
+    --NAV-MENU-BG-COLOR: none;
+    --NAV-MENU-BG-COLOR-HOVER: #3e3e3e;
+    --NAV-MENU-BG-COLOR-ACTIVE: #1e1e1e;
+  
+    --HEADER-FG-COLOR: var(--FG-COLOR);
+    --HEADER-BG-COLOR: var(--BG-COLOR);
+    --FOOTER-FG-COLOR: var(--FG-COLOR-SECONDARY);
+    --FOOTER-BG-COLOR: none;
+  }
+}

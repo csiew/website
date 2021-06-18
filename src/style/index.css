@@ -1,44 +1,6 @@
 :root {
-  --PRIMARY-COLOR: #4682c4;
-  --SECONDARY-COLOR: #5692d4;
-
-  --FG-COLOR: #333333;
-  --FG-COLOR-SECONDARY: #6e6e6e;
-  --FG-COLOR-TERTIARY: #aeaeae;
-  --BG-COLOR: white;
-  --BG-COLOR-SECONDARY: #f5f5f8;
-
-  --BORDER-COLOR: #cccccc;
-  --BORDER-COLOR-HOVER: #aaaaaa;
   --BORDER-RADIUS: 8px;
   --BUTTON-BORDER-RADIUS: 32px;
-
-  --BUTTON-FG-COLOR: #333333;
-  --BUTTON-FG-COLOR-DISABLED: #9e9e9e;
-  --BUTTON-BG-COLOR: #eeeeee;
-  --BUTTON-BG-COLOR-HOVER: #cecece;
-  --BUTTON-BG-COLOR-ACTIVE: #aeaeae;
-  --BUTTON-BG-COLOR-DISABLED: #f5f5f5;
-
-  --INPUT-FG-COLOR: #333333;
-  --INPUT-BG-COLOR: #f1f1f1;
-  --INPUT-BG-COLOR-HOVER: #f5f5f5;
-  --INPUT-BG-COLOR-ACTIVE: white;
-  --INPUT-BG-COLOR-DISABLED: #eeeeee;
-
-  --NAV-MENU-FG-COLOR: #333333;
-  --NAV-MENU-BG-COLOR: none;
-  --NAV-MENU-BG-COLOR-HOVER: #f5f5f5;
-  --NAV-MENU-BG-COLOR-ACTIVE: #eeeeee;
-
-  --HEADER-FG-COLOR: var(--FG-COLOR);
-  --HEADER-BG-COLOR: var(--BG-COLOR);
-  --FOOTER-FG-COLOR: var(--FG-COLOR-SECONDARY);
-  --FOOTER-BG-COLOR: none;
-  --BG-GRADIENT-1: linear-gradient(to bottom right, palegreen, honeydew, aquamarine);
-  --BG-GRADIENT-2: linear-gradient(to bottom, beige, whitesmoke, white);
-  --BG-GRADIENT-3: linear-gradient(to bottom left, powderblue, white, lightblue);
-
   --BASE-FONT-FAMILY: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   --HEADER-FONT-FAMILY: var(--BASE-FONT-FAMILY);
   --TRANSITION: 0.25s;
@@ -481,15 +443,13 @@ header .button-icon-only {
   transition: var(--TRANSITION);
 }
 .tab-bar a.active,
-.tab-bar .item.active {
-  color: var(--FG-COLOR) !important;
-  background: var(--BG-COLOR);
-  box-shadow: 0px 2px 8px rgba(0,0,0,0.125);
-  transition: var(--TRANSITION);
-}
+.tab-bar .item.active,
 .tab-bar a.active:hover,
 .tab-bar .item.active:hover {
-  color: var(--PRIMARY-COLOR) !important;
+  color: var(--BG-COLOR) !important;
+  background: var(--PRIMARY-COLOR);
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.125);
+  transition: var(--TRANSITION);
 }
 
 @media only screen and (max-width: 600px) {

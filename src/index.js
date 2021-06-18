@@ -6,6 +6,8 @@ import { Router } from 'react-router';
 import './style/index.css';
 import './style/animation.css';
 import './style/util.css';
+import './style/themes/default.css';
+import './style/themes/dark.css';
 import './assets/fonts/lt_amber.css';
 import './assets/fonts/fraunces.css';
 import App from './App';

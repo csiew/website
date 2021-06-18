@@ -11,11 +11,11 @@ function Places(props) {
       <CardBody>
         <div className="width-full margin-auto-horizontal padding-l grid grid-col-1 grid-gap-xl nodrag noselect">
           <div className="vstack align-center justify-center">
-            <img src={penang} alt="Penang" style={{ margin: "auto", width: "100%", maxWidth: "200px" }} />
+            <img src={penang} alt="Penang" className="invert-auto" style={{ margin: "auto", width: "100%", maxWidth: "200px" }} />
             <span className="text-color-secondary font-scale-xs">Penang, Malaysia</span>
           </div>
           <div className="vstack align-center justify-center">
-            <img src={victoria} alt="Victoria" style={{ margin: "auto", width: "100%", maxWidth: "300px" }} />
+            <img src={victoria} alt="Victoria" className="invert-auto" style={{ margin: "auto", width: "100%", maxWidth: "300px" }} />
             <span className="text-color-secondary font-scale-xs">Victoria, Australia</span>
           </div>
         </div>
