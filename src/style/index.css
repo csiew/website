@@ -699,6 +699,22 @@ footer {
   box-shadow: 0px 2px 8px rgba(0,0,0,0.125);
 }
 
+article {
+  font-family: 'Newsreader', var(--BASE-FONT-FAMILY);
+  font-size: 1.325rem;
+}
+article code {
+  color: var(--FG-COLOR);
+  background: var(--BG-COLOR-SECONDARY);
+  border-radius: var(--BORDER-RADIUS);
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.03125rem;
+  font-weight: 700;
+  padding: 0.125rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
 @media only screen and (max-width: 1024px) {
   html, body {
     font-size: 1rem;

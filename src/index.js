@@ -8,8 +8,8 @@ import './style/animation.css';
 import './style/util.css';
 import './style/themes/default.css';
 import './style/themes/dark.css';
-import './assets/fonts/lt_amber.css';
-import './assets/fonts/fraunces.css';
+import './assets/fonts/newsreader.css';
+import './assets/fonts/roboto_mono.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 

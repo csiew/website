@@ -24,7 +24,9 @@ function PostContent(props) {
   return (
     <Card>
       <CardBody>
-        <ReactMarkdown children={props.postBody} />
+        <article>
+          <ReactMarkdown children={props.postBody} />
+        </article>
       </CardBody>
     </Card>
   );
@@ -69,7 +71,7 @@ function Post() {
             <MdArrowBack size="1.75rem" />
           </NavLink>
           <div className="vstack align-start justify-center">
-            <h2>{postMetadata.title}</h2>
+            <h2 className="font-scale-xxl">{postMetadata.title}</h2>
             <span className="font-scale-s text-color-secondary">{new Date(postMetadata.date.year, postMetadata.date.month, postMetadata.date.day, postMetadata.date.hr, postMetadata.date.mins, postMetadata.date.sec).toDateString()}</span>
           </div>
         </div>
