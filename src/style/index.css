@@ -172,6 +172,10 @@ input[type=submit]:disabled {
   color: var(--PRIMARY-COLOR);
 }
 
+.button-card-radius {
+  border-radius: var(--BORDER-RADIUS);
+}
+
 input[type=text],
 input[type=email] {
   color: var(--INPUT-FG-COLOR);
@@ -201,6 +205,18 @@ input[type=email]:focus {
   transition: var(--TRANSITION);
 }
 
+.toolbar {
+  color: var(--HEADER-FG-COLOR);
+  background: var(--HEADER-BG-COLOR);
+  border-bottom: 0px solid var(--BORDER-COLOR);
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.125);
+  z-index: 20;
+  flex-flow: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
 header {
   color: var(--HEADER-FG-COLOR);
   background: var(--HEADER-BG-COLOR);
@@ -216,8 +232,8 @@ header {
   margin: 0;
   top: 0;
   padding: 0rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
   -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
      -khtml-user-select: none; /* Konqueror HTML */
@@ -690,7 +706,6 @@ footer {
 
   main {
     margin: 0;
-    padding: 1rem;
   }
 
   header {

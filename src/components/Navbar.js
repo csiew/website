@@ -44,7 +44,7 @@ function Navbar(props) {
   }
 
   return (
-    <div className="z-index-200 width-full position-sticky anchor-top">
+    <div className="z-index-200 width-full position-sticky anchor-top margin-none-top">
       <header className={props.className ? props.className : null}>
         <NavLink onClick={closeNavMenu} to="/" className="title">
           <img

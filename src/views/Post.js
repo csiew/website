@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+import { NavLink } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import axios from 'axios';
 import { DynamicPageView } from '../components/PageLayout.js';
-import { Card, CardBody, CardTitle } from '../components/Card.js';
+import { Card, CardBody } from '../components/Card.js';
 import BlogSidebar from '../components/BlogSidebar.js';
 import { scrollToTop } from '../utils/Scroll.js';
 import postManifest from '../assets/post_manifest.json';
+import { MdArrowBack } from 'react-icons/md';
 
 function PostContent(props) {
   if (!props.post) {
@@ -21,10 +23,6 @@ function PostContent(props) {
 
   return (
     <Card>
-      <CardTitle className="grid grid-col-1 grid-gap-xs align-start justify-center">
-        <h2 className="font-scale-xl">{props.post.title}</h2>
-        <span className="font-scale-s text-color-secondary">{new Date(props.post.date.year, props.post.date.month, props.post.date.day, props.post.date.hr, props.post.date.mins, props.post.date.sec).toDateString()}</span>
-      </CardTitle>
       <CardBody>
         <ReactMarkdown children={props.postBody} />
       </CardBody>
@@ -61,18 +59,34 @@ function Post() {
   }
 
   return (
-    <DynamicPageView
-      className="width-max-1280"
-      sidebarClassName="width-min-240 position-sticky anchor-top"
-      main={(
-        <div className="width-full grid grid-col-1 grid-gap-xl">
-          <PostContent post={postMetadata} postBody={postBody} />
+    <>
+      <div className="toolbar anchor-top padding-none">
+        <div className="width-max-1280 hstack align-center justify-start margin-auto-horizontal padding-s padding-m-left padding-m-right">
+          <NavLink
+            className="button button-icon-only margin-m-right padding-none"
+            to="/blog"
+          >
+            <MdArrowBack size="1.75rem" />
+          </NavLink>
+          <div className="vstack align-start justify-center">
+            <h2>{postMetadata.title}</h2>
+            <span className="font-scale-s text-color-secondary">{new Date(postMetadata.date.year, postMetadata.date.month, postMetadata.date.day, postMetadata.date.hr, postMetadata.date.mins, postMetadata.date.sec).toDateString()}</span>
+          </div>
         </div>
-      )}
-      sidebar={(
-        <BlogSidebar isViewingPost={true} />
-      )}
-    />
+      </div>
+      <DynamicPageView
+        className="width-max-1280 anchor-top margin-none-top margin-auto-bottom"
+        sidebarClassName="width-min-240 position-sticky anchor-top"
+        main={(
+          <div className="width-full grid grid-col-1 grid-gap-xl">
+            <PostContent post={postMetadata} postBody={postBody} />
+          </div>
+        )}
+        sidebar={(
+          <BlogSidebar isViewingPost={true} />
+        )}
+      />
+    </>
   );
 }
 
