@@ -31,7 +31,7 @@ function Skills(props) {
     if (filterTerm.length > 0) {
       return (
         <div id="searchResults" className="tag-list">
-          <h3>Results - {itemCount} item{itemCount === 1 ? '' : 's'}</h3>
+          <h4>Results - {itemCount} item{itemCount === 1 ? '' : 's'}</h4>
           <ul>{ filterResults.map(item => <li key={ keyify(item) }>{ item }</li>) }</ul>
         </div>
       );
@@ -46,42 +46,42 @@ function Skills(props) {
         <div id="allSkillsList">
           <div className="tag-list">
             <div className="grid grid-col-1 grid-gap-s">
-              <h3>Programming Languages</h3>
+              <h4>Programming Languages</h4>
               <div className="tag-list-sub">
                 <ul>{ skills.programmingLangs.map(item => <li key={ keyify(item) }>{ item }</li>) }</ul>
               </div>
             </div>
           </div>
           <div className="tag-list">
-            <h3>Frameworks</h3>
+            <h4>Frameworks</h4>
             <div className="grid grid-col-2 grid-col-responsive grid-gap-s">
               <div className="tag-list-sub">
-                <h4>Frontend</h4>
+                <h5>Frontend</h5>
                 <ul>{ skills.frameworks.frontend.map(item => <li key={ keyify(item) }>{ item }</li>) }</ul>
               </div>
               <div className="tag-list-sub">
-                <h4>Backend</h4>
+                <h5>Backend</h5>
                 <ul>{ skills.frameworks.backend.map(item => <li key={ keyify(item) }>{ item }</li>) }</ul>
               </div>
             </div>
           </div>
           <div className="tag-list">
-            <h3>Infrastructure</h3>
+            <h4>Infrastructure</h4>
             <div className="grid grid-col-2 grid-col-responsive grid-gap-s">
               <div className="tag-list-sub">
-                <h4>Database</h4>
+                <h5>Database</h5>
                 <ul>{ skills.infrastructure.database.map(item => <li key={ keyify(item) }>{ item }</li>) }</ul>
               </div>
               <div className="tag-list-sub">
-                <h4>Cloud</h4>
+                <h5>Cloud</h5>
                 <ul>{ skills.infrastructure.cloud.map(item => <li key={ keyify(item) }>{ item }</li>) }</ul>
               </div>
               <div className="tag-list-sub">
-                <h4>Continuous Integration</h4>
+                <h5>Continuous Integration</h5>
                 <ul>{ skills.infrastructure.ci.map(item => <li key={ keyify(item) }>{ item }</li>) }</ul>
               </div>
               <div className="tag-list-sub">
-                <h4>Operating Systems</h4>
+                <h5>Operating Systems</h5>
                 <ul>{ skills.infrastructure.operatingSystems.map(item => <li key={ keyify(item) }>{ item }</li>) }</ul>
               </div>
             </div>
