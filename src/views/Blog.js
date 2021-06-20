@@ -31,7 +31,7 @@ function BlogPostPreview(props) {
       >
         <CardTitle className="grid grid-col-1 grid-gap-xs align-start justify-center">
           <h3 className="font-scale-xl">{props.post.title}</h3>
-          <span className="font-scale-s text-color-secondary">{new Date(props.post.date.year, props.post.date.month, props.post.date.day, props.post.date.hr, props.post.date.mins, props.post.date.sec).toDateString()}</span>
+          <sub>{new Date(props.post.date.year, props.post.date.month, props.post.date.day, props.post.date.hr, props.post.date.mins, props.post.date.sec).toDateString()}</sub>
         </CardTitle>
       </NavLink>
       <CardBody>
