@@ -77,6 +77,7 @@
 .width-max-380 { max-width: 380px !important; }
 .width-max-420 { max-width: 420px !important; }
 .width-max-480 { max-width: 480px !important; }
+.width-max-600 { max-width: 600px !important; }
 .width-max-640 { max-width: 640px !important; }
 .width-max-720 { max-width: 720px !important; }
 .width-max-780 { max-width: 720px !important; }
@@ -102,6 +103,39 @@
 
 .height-auto { height: auto !important; }
 .height-full { height: 100% !important; }
+
+.height-max-128 { max-height: 128px !important; }
+.height-max-200 { max-height: 200px !important; }
+.height-max-240 { max-height: 240px !important; }
+.height-max-256 { max-height: 256px !important; }
+.height-max-300 { max-height: 300px !important; }
+.height-max-320 { max-height: 320px !important; }
+.height-max-380 { max-height: 380px !important; }
+.height-max-420 { max-height: 420px !important; }
+.height-max-480 { max-height: 480px !important; }
+.height-max-600 { max-height: 600px !important; }
+.height-max-640 { max-height: 640px !important; }
+.height-max-720 { max-height: 720px !important; }
+.height-max-780 { max-height: 720px !important; }
+.height-max-800 { max-height: 800px !important; }
+.height-max-960 { max-height: 960px !important; }
+.height-max-1024 { max-height: 1024px !important; }
+.height-max-1280 { max-height: 1280px !important; }
+.height-max-1680 { max-height: 1680px !important; }
+
+.height-min-256 { min-height: 256px !important; }
+.height-min-320 { min-height: 320px !important; }
+.height-min-380 { min-height: 380px !important; }
+.height-min-420 { min-height: 420px !important; }
+.height-min-480 { min-height: 480px !important; }
+.height-min-640 { min-height: 640px !important; }
+.height-min-720 { min-height: 720px !important; }
+.height-min-780 { min-height: 720px !important; }
+.height-min-800 { min-height: 800px !important; }
+.height-min-960 { min-height: 960px !important; }
+.height-min-1024 { min-height: 1024px !important; }
+.height-min-1280 { min-height: 1280px !important; }
+.height-min-1680 { min-height: 1680px !important; }
 
 .flex-inline { display: inline-flex !important; }
 .flex-flow-row { flex-flow: row !important; }

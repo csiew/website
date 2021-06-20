@@ -9,6 +9,7 @@ import Projects from './views/Projects.js';
 import Playlists from './views/Playlists.js';
 import Changelog from './views/Changelog.js';
 import BackToTop from './components/BackToTop.js';
+import NotFound from './views/NotFound.js';
 
 function App() {
   const [isAwayFromTop, setIsAwayFromTop] = useState(true);
@@ -35,6 +36,7 @@ function App() {
           <Route path="/projects" component={Projects} />
           <Route path="/playlists" component={Playlists} />
           <Route path="/changelog" component={Changelog} />
+          <Route path="*" component={NotFound} />
         </Switch>
         <Footer />
       </main>
