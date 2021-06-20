@@ -1,8 +1,8 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { generateId } from '../utils/Strings.js';
 import { scrollFocus, scrollToTop } from '../utils/Scroll.js';
 import { DynamicPageView } from '../components/PageLayout.js';
-import { Card, CardTitle, CardBody } from '../components/Card.js';
+import { Card, CardTitle, CardBody, CardToggleButton } from '../components/Card.js';
 import playlists from '../assets/data/playlists.json';
 
 function PlaylistGroupCard(props) {
@@ -58,9 +58,28 @@ function PlaylistGroupCard(props) {
 }
 
 function Playlists() {
+  const [isPlaylistListVisible, setIsPlaylistListVisible] = useState(true);
+  const [isFeaturedPlaylistVisible, setIsFeaturedPlaylistVisible] = useState(true);
+  const [loadFeaturedPlaylist, setLoadFeaturedPlaylist] = useState(false);
+
   useEffect(() => {
     scrollToTop();
   }, []);
+
+  const togglePlaylistList = () => {
+    setIsPlaylistListVisible(!isPlaylistListVisible);
+  }
+
+  const toggleFeaturedPlaylist = () => {
+    if (isFeaturedPlaylistVisible === true) {
+      setLoadFeaturedPlaylist(false);
+    }
+    setIsFeaturedPlaylistVisible(!isFeaturedPlaylistVisible);
+  }
+
+  const toggleLoadFeaturedPlaylist = () => {
+    setLoadFeaturedPlaylist(!loadFeaturedPlaylist);
+  }
 
   return (
     <DynamicPageView
@@ -82,25 +101,66 @@ function Playlists() {
         </div>
       )}
       sidebar={(
-        <Card className="position-sticky anchor-top">
-          <CardBody className="padding-none-left padding-none-right padding-s-top padding-s-bottom">
-            <div className="list-selectable">
-              {
-                playlists["collection"].map(item => {
-                  return (
-                    <span
-                      key={generateId(item.title)}
-                      className="item"
-                      onClick={() => scrollFocus(generateId(item.title))}
-                    >
-                      {item.title}
-                    </span>
-                  );
-                })
-              }
-            </div>
-          </CardBody>
-        </Card>
+        <>
+          <Card>
+            <CardTitle className={isPlaylistListVisible ? '' : 'card-border-radius padding-s-bottom'}>
+              <h3>All playlists</h3>
+              <CardToggleButton cardName="Playlist List" isVisible={isPlaylistListVisible} toggle={togglePlaylistList} />
+            </CardTitle>
+            {
+              isPlaylistListVisible ?
+                <CardBody className="padding-none-left padding-none-right padding-none-top padding-s-bottom">
+                  <div className="list-selectable">
+                    {
+                      playlists["collection"].map(item => {
+                        return (
+                          <span
+                            key={generateId(item.title)}
+                            className="item"
+                            onClick={() => scrollFocus(generateId(item.title))}
+                          >
+                            {item.title}
+                          </span>
+                        );
+                      })
+                    }
+                  </div>
+                </CardBody>
+              :
+                ''
+            }
+          </Card>
+          <Card>
+            <CardTitle className={isFeaturedPlaylistVisible ? '' : 'card-border-radius padding-s-bottom'}>
+              <div className="grid grid-col-1">
+                <h3>Winter 2021</h3>
+                <sub className="text-color-secondary">Featured playlist</sub>
+              </div>
+              <CardToggleButton cardName="Featured Playlist" isVisible={isFeaturedPlaylistVisible} toggle={toggleFeaturedPlaylist} />
+            </CardTitle>
+            {
+              isFeaturedPlaylistVisible ?
+                <CardBody>
+                  {
+                    loadFeaturedPlaylist ?
+                      <iframe title="Spotify" className="card-border-radius" src="https://open.spotify.com/embed/playlist/3GPJP97e46YnzDWjQcYfv9?theme=0" width="100%" height="380" frameBorder="0" allowtransparency="false" allow="encrypted-media"></iframe>
+                    :
+                      <div
+                        className="width-full padding-xl vstack align-center justify-center card-border-radius nodrag noselect"
+                        style={{
+                          color: "lightgray",
+                          background: "dimgray"
+                        }}>
+                          <button title="Load featured playlist" onClick={toggleLoadFeaturedPlaylist}>Load featured playlist</button>
+                          <sub className="text-align-center margin-s-top">Loading a featured playlist will load a Spotify <code>iframe</code> within this card.</sub>
+                      </div>
+                  }
+                </CardBody>
+              :
+                ''
+            }
+          </Card>
+        </>
       )}
     />
   );

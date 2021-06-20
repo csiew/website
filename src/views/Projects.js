@@ -4,7 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import { MdClose } from 'react-icons/md';
 import { useOutsideAlerter } from '../hooks/useOutsideAlerter.js';
 import { DynamicPageView } from '../components/PageLayout.js';
-import { Card, CardTitle, CardBody } from '../components/Card.js';
+import { Card, CardTitle, CardBody, CardToggleButton } from '../components/Card.js';
 import projects from '../assets/data/projects.json';
 
 function ProjectCard(props) {
@@ -14,7 +14,7 @@ function ProjectCard(props) {
         <img
           src={`/assets/img/projects/${imgUrl}`}
           alt="Project"
-          className="project-img cursor-pointer nodrag noselect"
+          className="bordered-img cursor-pointer nodrag noselect"
           width="100%"
           onClick={props.viewImg}
         />
@@ -29,7 +29,7 @@ function ProjectCard(props) {
       <CardTitle className="flex-inline flex-flow-row-wrap">
         <div className="flex-inline flex-flow-column align-start justify-center">
           <h4 className="font-scale-xxl">{props.project.name}</h4>
-          <span className="subtitle">{props.project.timeRange}</span>
+          <sub>{props.project.timeRange}</sub>
         </div>
         <div className="grid grid-col-2 grid-gap-s">
           <a href={props.project.github} rel="noreferrer" target="_blank" className={ "button" + (props.project.github.length === 0 ? ' disabled' : '') } disabled={props.project.github.length === 0}>Repository</a>
@@ -48,9 +48,9 @@ function ProjectCard(props) {
   );
 }
 
-function ProjectImageModalView(props) {
+function ImagePopoutModal(props) {
   const imgViewRef = useRef(null);
-  useOutsideAlerter(imgViewRef, () => props.toggleImgView(false));
+  useOutsideAlerter(imgViewRef, () => props.toggle(false));
 
   return (
     <div
@@ -61,9 +61,10 @@ function ProjectImageModalView(props) {
       }}
     >
       <div ref={imgViewRef} className="card width-auto transition-enter-pop">
-        <CardTitle className="padding-xs hstack align-center justify-end">
+        <CardTitle className="padding-xs hstack align-center justify-space-between">
+          <h3>{props.alt}</h3>
           <button
-            onClick={() => props.toggleImgView(false)}
+            onClick={() => props.toggle(false)}
             className="padding-none border-radius-100pct"
             style={{
               width: "1.75rem",
@@ -75,9 +76,9 @@ function ProjectImageModalView(props) {
         </CardTitle>
         <CardBody className="padding-xs padding-none-top">
           <img
-            src={`/assets/img/projects/${props.imgUrl}`}
-            alt="Project"
-            className="project-img nodrag noselect"
+            src={props.src}
+            alt={props.alt ? props.alt : 'No alt text provided'}
+            className="bordered-img nodrag noselect"
             width="100%"
             height="100%"
             style={{
@@ -93,16 +94,23 @@ function ProjectImageModalView(props) {
 }
 
 function Projects() {
-  const [isImgViewVisible, setIsImgViewVisible] = useState(false);
+  const [isImagePopoutModalVisible, setIsImagePopoutModalVisible] = useState(false);
   const [imgUrl, setImgUrl] = useState(null);
+  const [imgAltText, setImgAltText] = useState(null);
+  const [isProjectListVisible, setIsProjectListVisible] = useState(true);
 
   useEffect(() => {
     scrollToTop();
   }, []);
 
-  const toggleImgView = (newState=false, url=null) => {
-    setIsImgViewVisible(newState);
+  const toggleImagePopoutModal = (newState=false, url=null, altText=null) => {
     setImgUrl(url);
+    setImgAltText(altText);
+    setIsImagePopoutModalVisible(newState);
+  }
+
+  const toggleProjectList = () => {
+    setIsProjectListVisible(!isProjectListVisible);
   }
 
   return (
@@ -118,7 +126,7 @@ function Projects() {
                 <ProjectCard
                   key={item.id}
                   project={item}
-                  viewImg={() => toggleImgView(true, item.imgUrl)}
+                  viewImg={() => toggleImagePopoutModal(true, `/assets/img/projects/${item.imgUrl}`, item.name)}
                 />
               );
             })
@@ -127,37 +135,44 @@ function Projects() {
       )}
       sidebar={(
         <>
-          <Card className="position-sticky anchor-top">
-            <CardTitle>
+          <Card>
+            <CardTitle className={isProjectListVisible ? '' : 'card-border-radius padding-s-bottom'}>
               <h3>All projects</h3>
+              <CardToggleButton cardName="Project List" isVisible={isProjectListVisible} toggle={toggleProjectList} />
             </CardTitle>
-            <CardBody className="padding-none-left padding-none-right padding-none-top padding-s-bottom">
-              <div className="list-selectable">
-                {
-                  projects["projects"].map(item => {
-                    return (
-                      <div
-                        key={item.id}
-                        className="item flex-inline flex-flow-row-wrap align-center justify-space-between"
-                        onClick={() => scrollFocus(item.id)}
-                      >
-                        <span className="width-auto">{item.name}</span>
-                        <span className="width-auto font-scale-xs text-color-secondary">{item.timeRange}</span>
-                      </div>
-                    );
-                  })
-                }
-              </div>
-            </CardBody>
+            {
+              isProjectListVisible ?
+                <CardBody className="padding-none-left padding-none-right padding-none-top padding-s-bottom">
+                <div className="list-selectable">
+                  {
+                    projects["projects"].map(item => {
+                      return (
+                        <div
+                          key={item.id}
+                          className="item flex-inline flex-flow-row-wrap align-center justify-space-between"
+                          onClick={() => scrollFocus(item.id)}
+                        >
+                          <span className="width-auto">{item.name}</span>
+                          <span className="width-auto font-scale-xs text-color-secondary">{item.timeRange}</span>
+                        </div>
+                      );
+                    })
+                  }
+                </div>
+                </CardBody>
+              :
+                ''
+            }
           </Card>
         </>
       )}
     >
       {
-        isImgViewVisible ?
-          <ProjectImageModalView
-            toggleImgView={toggleImgView}
-            imgUrl={imgUrl}
+        isImagePopoutModalVisible ?
+          <ImagePopoutModal
+            toggle={toggleImagePopoutModal}
+            src={imgUrl}
+            alt={imgAltText}
           />
         :
           ''

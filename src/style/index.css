@@ -564,6 +564,10 @@ footer {
   font-weight: 300;
 }
 
+.card-border-radius {
+  border-radius: var(--BORDER-RADIUS) !important;
+}
+
 .card {
   color: var(--FG-COLOR);
   background: var(--BG-COLOR);
@@ -594,9 +598,9 @@ footer {
   font-size: 1.5rem;
   font-weight: 700;
 }
-.card .title .subtitle {
+.card .title sub {
   color: var(--FG-COLOR-SECONDARY);
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 400;
 }
 
@@ -693,10 +697,15 @@ footer {
   right: 0;
 }
 
-.project-img {
+.bordered-img {
   border: 1px solid var(--BORDER-COLOR);
   border-radius: 5px;
   box-shadow: 0px 2px 8px rgba(0,0,0,0.125);
+}
+
+code {
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 700;
 }
 
 article {
@@ -709,9 +718,7 @@ article code {
   color: var(--FG-COLOR);
   background: var(--BG-COLOR-SECONDARY);
   border-radius: var(--BORDER-RADIUS);
-  font-family: 'Roboto Mono', monospace;
   font-size: 1.03125rem;
-  font-weight: 700;
   padding: 0.125rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;

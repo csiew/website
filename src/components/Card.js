@@ -1,4 +1,26 @@
 import { useRef, useState } from 'react';
+import { MdArrowDropDown, MdArrowDropUp } from 'react-icons/md';
+
+export function CardToggleButton(props) {
+  return (
+    <button
+      title={props.isVisible ? `Hide ${props.cardName}` : `Show ${props.cardName}`}
+      className="border-radius-100pct padding-none"
+      style={{
+        width: "2rem",
+        height: "2rem"
+      }}
+      onClick={props.toggle}
+    >
+      {
+        props.isVisible ?
+          <MdArrowDropUp size="1.5rem" />
+        :
+          <MdArrowDropDown size="1.5rem" />
+      }
+    </button>
+  );
+}
 
 export function Card(props) {
   return (
