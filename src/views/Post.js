@@ -3,12 +3,12 @@ import { useParams } from 'react-router';
 import { NavLink } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import axios from 'axios';
+import { MdArrowBack } from 'react-icons/md';
 import { DynamicPageView } from '../components/PageLayout.js';
 import { Card, CardBody } from '../components/Card.js';
 import BlogSidebar from '../components/BlogSidebar.js';
 import { scrollToTop } from '../utils/Scroll.js';
 import postManifest from '../assets/post_manifest.json';
-import { MdArrowBack } from 'react-icons/md';
 
 function PostContent(props) {
   if (!props.post) {
@@ -49,6 +49,8 @@ function Post() {
         .catch(e => {
           console.warn(e)
         });
+    } else {
+      window.location.href = "/404";
     }
   }, [id, postMetadata]);
 
