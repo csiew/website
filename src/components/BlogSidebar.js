@@ -27,7 +27,7 @@ function RecentPostsList(props) {
                   title={post.title}
                 >
                   <span>{post.title}</span>
-                  <span className="font-scale-s text-color-secondary">{new Date(post.date.year, post.date.month, post.date.day, post.date.hr, post.date.mins, post.date.sec).toDateString()}</span>
+                  <sub className="font-scale-s text-color-secondary">{new Date(post.date.year, post.date.month, post.date.day, post.date.hr, post.date.mins, post.date.sec).toDateString()}</sub>
                 </NavLink>
               );
             })
