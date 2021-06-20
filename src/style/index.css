@@ -172,10 +172,6 @@ input[type=submit]:disabled {
   color: var(--PRIMARY-COLOR);
 }
 
-.button-card-radius {
-  border-radius: var(--BORDER-RADIUS);
-}
-
 input[type=text],
 input[type=email] {
   color: var(--INPUT-FG-COLOR);
@@ -567,6 +563,26 @@ footer {
 .card-border-radius {
   border-radius: var(--BORDER-RADIUS) !important;
 }
+.card-border-top-left-radius {
+  border-top-left-radius: var(--BORDER-RADIUS) !important;
+}
+.card-border-top-right-radius {
+  border-top-right-radius: var(--BORDER-RADIUS) !important;
+}
+.card-border-bottom-left-radius {
+  border-bottom-left-radius: var(--BORDER-RADIUS) !important;
+}
+.card-border-bottom-right-radius {
+  border-bottom-right-radius: var(--BORDER-RADIUS) !important;
+}
+.card-border-top-radius {
+  border-top-left-radius: var(--BORDER-RADIUS) !important;
+  border-top-right-radius: var(--BORDER-RADIUS) !important;
+}
+.card-border-bottom-radius {
+  border-bottom-left-radius: var(--BORDER-RADIUS) !important;
+  border-bottom-right-radius: var(--BORDER-RADIUS) !important;
+}
 
 .card {
   color: var(--FG-COLOR);
@@ -722,6 +738,19 @@ article code {
   padding: 0.125rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+}
+
+.blog-post-preview-body {
+  position: relative;
+}
+.blog-post-preview-body::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to bottom, transparent 0%,var(--BG-COLOR) 100%);
 }
 
 @media only screen and (max-width: 1024px) {

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import axios from 'axios';
+import { MdArrowForward } from 'react-icons/md';
 import { DynamicPageView } from '../components/PageLayout.js';
 import { Card, CardBody, CardTitle } from '../components/Card.js';
 import BlogSidebar from '../components/BlogSidebar.js';
@@ -24,7 +25,6 @@ function BlogPostPreview(props) {
   return (
     <Card>
       <NavLink
-        key={props.post.id}
         className="link-no-decoration text-color-primary"
         to={`/post/${props.post.id}`}
         title={`${props.post.title}`}
@@ -34,17 +34,16 @@ function BlogPostPreview(props) {
           <sub>{new Date(props.post.date.year, props.post.date.month, props.post.date.day, props.post.date.hr, props.post.date.mins, props.post.date.sec).toDateString()}</sub>
         </CardTitle>
       </NavLink>
-      <CardBody>
+      <CardBody className="blog-post-preview-body padding-none-bottom">
         <ReactMarkdown children={postBody} className="pointer-events-none" />
-        <NavLink
-          key={props.post.id}
-          className="button width-full margin-s-top"
-          to={`/post/${props.post.id}`}
-          title={`${props.post.title}`}
-        >
-          Read more
-        </NavLink>
       </CardBody>
+      <NavLink
+        className="button button-icon-only padding-s width-full"
+        to={`/post/${props.post.id}`}
+        title={`${props.post.title}`}
+      >
+        <span>Read more</span><MdArrowForward className="margin-xxs-left" size="1rem" />
+      </NavLink>
     </Card>
   );
 }

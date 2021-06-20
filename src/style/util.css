@@ -33,6 +33,8 @@
   width: 100%;
 }
 
+.position-absolute { position: absolute !important; }
+.position-relative { position: relative !important; }
 .position-sticky { position: sticky !important; }
 .position-fixed { position: fixed !important; }
 

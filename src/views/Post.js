@@ -62,7 +62,7 @@ function Post() {
 
   return (
     <>
-      <div className="toolbar anchor-top padding-none">
+      <div className="toolbar anchor-top padding-none transition-enter-down">
         <div className="width-max-1280 hstack align-center justify-start margin-auto-horizontal padding-s padding-m-left padding-m-right">
           <NavLink
             className="button button-icon-only margin-m-right padding-none"
