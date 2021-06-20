@@ -8,7 +8,7 @@ Another overhaul of the website, but using React this time. I wanted to practice
 ## Vue era
 
 ### Version 2.0 (24/09/2020 - 19/06/2021)
-A complete overhaul of the website as a playground to learn Vue. Like version 1.0, this iteration of the site went through drastical design changes throughout its lifetime. The CSS stylesheets I developed for this site largely came from my abandoned podcast app project.
+A complete overhaul of the website as a playground to learn Vue. Like version 1.0, this iteration of the site went through drastical design changes throughout its lifetime. The CSS stylesheets I developed for this site largely came from my abandoned podcast app project. [Click here to visit this version of the site.](https://v2.clarencesiew.com)
 
 ![Version 2.0](/assets/img/site-v2.png "Version 2.0")
 

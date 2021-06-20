@@ -61,19 +61,19 @@ function ProjectImageModalView(props) {
       }}
     >
       <div ref={imgViewRef} className="card width-auto transition-enter-pop">
-        <CardTitle className="hstack align-center justify-end">
+        <CardTitle className="padding-xs hstack align-center justify-end">
           <button
             onClick={() => props.toggleImgView(false)}
             className="padding-none border-radius-100pct"
             style={{
-              width: "2rem",
-              height: "2rem"
+              width: "1.75rem",
+              height: "1.75rem"
             }}
           >
             <MdClose size="1.25rem" />
           </button>
         </CardTitle>
-        <CardBody className="padding-xs">
+        <CardBody className="padding-xs padding-none-top">
           <img
             src={`/assets/img/projects/${props.imgUrl}`}
             alt="Project"

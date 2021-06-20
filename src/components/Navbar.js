@@ -61,7 +61,7 @@ function Navbar(props) {
             <NavLink to="/blog" title="Blog">Blog</NavLink>
             <NavLink to="/projects" title="Projects">Projects</NavLink>
             <NavLink to="/playlists" title="Playlists">Playlists</NavLink>
-            <a href="https://csiew-portfolio.netlify.app/" target="_blank" rel="noreferrer" title="Portfolio">Portfolio</a>
+            <a href="https://portfolio.clarencesiew.com/" target="_blank" rel="noreferrer" title="Portfolio">Portfolio</a>
           </div>
           {
             isNavMenuOpen ?
