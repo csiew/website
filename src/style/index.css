@@ -610,6 +610,14 @@ footer {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
 }
+.card .title h2,
+.card .title h3,
+.card .title h4 {
+  margin: 0;
+  margin-top: 0.125rem;
+  margin-bottom: 0.25rem;
+  padding: 0 !important;
+}
 .card .title h2 {
   font-size: 1.5rem;
   font-weight: 700;
@@ -750,7 +758,7 @@ article code {
   height: 100%;
   top: 0;
   left: 0;
-  background: linear-gradient(to bottom, transparent 0%,var(--BG-COLOR) 100%);
+  background: linear-gradient(to bottom, transparent 0%,var(--BG-COLOR) 120%);
 }
 
 @media only screen and (max-width: 1024px) {

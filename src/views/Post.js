@@ -74,7 +74,7 @@ function Post() {
           </NavLink>
           <div className="vstack align-start justify-center">
             <h2 className="font-scale-xxl">{postMetadata.title}</h2>
-            <sub className="font-scale-s text-color-secondary">{new Date(postMetadata.date.year, postMetadata.date.month, postMetadata.date.day, postMetadata.date.hr, postMetadata.date.mins, postMetadata.date.sec).toDateString()}</sub>
+            <sub className="font-scale-s text-color-secondary">{new Date(postMetadata.date.year, postMetadata.date.month, postMetadata.date.day, postMetadata.date.hr, postMetadata.date.mins, postMetadata.date.sec).toLocaleString()}</sub>
           </div>
         </div>
       </div>

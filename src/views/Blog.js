@@ -15,7 +15,7 @@ function BlogPostPreview(props) {
   useEffect(() => {
     axios.get(props.post.path)
       .then(response => {
-        setPostBody(`${response.data.slice(0, 255)}...`);
+        setPostBody(`${response.data.slice(0, 499)}...`);
       })
       .catch(e => {
         console.warn(e)
@@ -31,7 +31,7 @@ function BlogPostPreview(props) {
       >
         <CardTitle className="grid grid-col-1 grid-gap-xs align-start justify-center">
           <h3 className="font-scale-xl">{props.post.title}</h3>
-          <sub>{new Date(props.post.date.year, props.post.date.month, props.post.date.day, props.post.date.hr, props.post.date.mins, props.post.date.sec).toDateString()}</sub>
+          <sub>{new Date(props.post.date.year, props.post.date.month, props.post.date.day, props.post.date.hr, props.post.date.mins, props.post.date.sec).toLocaleString()}</sub>
         </CardTitle>
       </NavLink>
       <CardBody className="blog-post-preview-body padding-none-bottom">
