@@ -455,13 +455,24 @@ hyphens: auto !important;
 word-break: break-word !important;
 }
 
-.text-color-accent-primary { color: var(--PRIMARY-COLOR) !important; }
+.text-color-accent, .text-color-accent-primary { color: var(--PRIMARY-COLOR) !important; }
 .text-color-accent-secondary { color: var(--SECONDARY-COLOR) !important; }
-.text-color-primary { color: var(--FG-COLOR) !important; }
+.text-color, .text-color-primary { color: var(--FG-COLOR) !important; }
 .text-color-secondary { color: var(--FG-COLOR-SECONDARY) !important; }
 .text-color-tertiary { color: var(--FG-COLOR-TERTIARY) !important; }
-.bg-color-primary { background: var(--BG-COLOR) !important; }
+.bg-color, .bg-color-primary { background: var(--BG-COLOR) !important; }
 .bg-color-secondary { background: var(--BG-COLOR-SECONDARY) !important; }
+
+.bg-color-acryllic {
+  background: rgba(255,255,255,0.5);
+  backdrop-filter: blur(8px);
+}
+
+@media (prefers-color-scheme: dark) {
+  .bg-color-acryllic {
+    background: rgba(30,30,30,0.5);
+  }
+}
 
 .bg-color-none {
   background: none !important;
