@@ -4,7 +4,7 @@ import { DynamicPageView } from '../components/PageLayout.js';
 import { Card, CardBody } from '../components/Card.js';
 import { scrollToTop } from '../utils/Scroll.js';
 import versionHistoryDoc from '../assets/data/version_history.md';
-import githubApiRepository from '../repositories/githubApiRepository.js';
+import githubApiRepository from '../repositories/GitHubApiRepository.js';
 
 function ChangelogSummary(props) {
   return (
