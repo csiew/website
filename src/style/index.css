@@ -412,6 +412,16 @@ header .button-icon-only {
 .list-selectable .item.active {
   font-weight: 700;
 }
+.list-selectable h1,
+.list-selectable h2,
+.list-selectable h3,
+.list-selectable h4,
+.list-selectable h5 {
+  margin: 0;
+  padding: 0;
+  padding-top: 0.125rem !important;
+  padding-bottom: 0.25rem !important;
+}
 
 @media (prefers-color-scheme: dark) {
   .list-selectable a:hover,
@@ -606,17 +616,19 @@ footer {
   width: 100%;
   margin: 0;
   padding-top: 1rem;
-  padding-bottom: 0.5rem;
+  padding-bottom: 1rem;
   padding-left: 1.25rem;
   padding-right: 1.25rem;
 }
+.card .title h1,
 .card .title h2,
 .card .title h3,
-.card .title h4 {
+.card .title h4,
+.card .title h5 {
   margin: 0;
-  margin-top: 0.125rem;
-  margin-bottom: 0.25rem;
-  padding: 0 !important;
+  padding: 0;
+  padding-top: 0.0625rem !important;
+  padding-bottom: 0.125rem !important;
 }
 .card .title h2 {
   font-size: 1.5rem;
@@ -631,6 +643,7 @@ footer {
 .card .body {
   margin: 0;
   padding: 1.25rem;
+  padding-top: 0;
 }
 .card .body h1,
 .card .body h2,
@@ -735,8 +748,8 @@ code {
 article {
   font-family: 'Newsreader', var(--BASE-FONT-FAMILY);
   font-size: 1.325rem;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
+  padding-top: 1.5rem;
+  padding-bottom: 0;
 }
 article code {
   color: var(--FG-COLOR);
