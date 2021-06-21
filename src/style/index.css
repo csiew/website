@@ -610,6 +610,14 @@ footer {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
 }
+.card .title h2,
+.card .title h3,
+.card .title h4 {
+  margin: 0;
+  margin-top: 0.125rem;
+  margin-bottom: 0.25rem;
+  padding: 0 !important;
+}
 .card .title h2 {
   font-size: 1.5rem;
   font-weight: 700;
