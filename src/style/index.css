@@ -74,12 +74,15 @@ a:focus, button:focus, .button:focus, input:focus {
 a {
   color: var(--PRIMARY-COLOR);
   text-decoration: none;
+  transition: var(--TRANSITION);
 }
 a:hover {
   text-decoration: underline;
+  transition: var(--TRANSITION);
 }
 a:active {
   color: var(--SECONDARY-COLOR);
+  transition: var(--TRANSITION);
 }
 
 button,
@@ -121,6 +124,7 @@ button:active,
 input[type=submit]:active {
   background: var(--BUTTON-BG-COLOR-ACTIVE);
   border-color: var(--BUTTON-BG-COLOR-ACTIVE);
+  transform: scale(0.98);
   transition: var(--TRANSITION);
 }
 button:disabled,
@@ -371,6 +375,9 @@ header .button-icon-only {
   animation: enter-down-transition ease 0.25s !important;
 }
 
+.card .body:has() > .list-selectable {
+  padding-top: 0;
+}
 .list-selectable {
   width: 100%;
   height: 100%;
@@ -390,10 +397,12 @@ header .button-icon-only {
   padding: 0.5rem;
   padding-left: 1rem;
   padding-right: 1rem;
+  transition: var(--TRANSITION);
 }
 .list-selectable a:hover,
 .list-selectable .item:hover {
   background: var(--NAV-MENU-BG-COLOR-HOVER);
+  transition: var(--TRANSITION);
 }
 .list-selectable a:hover,
 .list-selectable .item:hover,
@@ -403,10 +412,13 @@ header .button-icon-only {
 .list-selectable .item.active:hover {
   text-decoration: none;
   text-transform: none;
+  transition: var(--TRANSITION);
 }
 .list-selectable a:active,
 .list-selectable .item:active {
   background: var(--NAV-MENU-BG-COLOR-ACTIVE);
+  transform: scale(0.99);
+  transition: var(--TRANSITION);
 }
 .list-selectable .active
 .list-selectable .item.active {
@@ -465,6 +477,7 @@ header .button-icon-only {
 .tab-bar a:active,
 .tab-bar .item:active {
   background: var(--BUTTON-BG-COLOR-ACTIVE);
+  transform: scale(0.98);
   transition: var(--TRANSITION);
 }
 .tab-bar a.active,
@@ -481,7 +494,7 @@ header .button-icon-only {
   #navMenuButton {
     display: inline-flex;
   }
-  .tab-bar {
+  .nav-tab-bar {
     display: none;
   }
 }
@@ -607,6 +620,7 @@ footer {
 
 .card .title {
   background: var(--BG-COLOR);
+  border-bottom: 1px solid var(--BORDER-COLOR);
   border-top-left-radius: var(--BORDER-RADIUS);
   border-top-right-radius: var(--BORDER-RADIUS);
   display: inline-flex;
@@ -643,7 +657,6 @@ footer {
 .card .body {
   margin: 0;
   padding: 1.25rem;
-  padding-top: 0;
 }
 .card .body h1,
 .card .body h2,
@@ -740,6 +753,20 @@ footer {
   box-shadow: 0px 2px 8px rgba(0,0,0,0.125);
 }
 
+.border-all,
+.border-top,
+.border-bottom,
+.border-left,
+.border-right {
+  border-style: solid;
+  border-color: var(--BORDER-COLOR);
+}
+.border-all { border-width: 1px; }
+.border-top { border-width: 1px 0px 0px 0px; }
+.border-bottom { border-width: 0px 0px 1px 0px; }
+.border-left { border-width: 0px 0px 0px 1px; }
+.border-right { border-width: 0px 1px 0px 0px; }
+
 code {
   font-family: 'Roboto Mono', monospace;
   font-weight: 700;
@@ -748,8 +775,7 @@ code {
 article {
   font-family: 'Newsreader', var(--BASE-FONT-FAMILY);
   font-size: 1.325rem;
-  padding-top: 1.5rem;
-  padding-bottom: 0;
+  padding-top: 0.5rem;
 }
 article code {
   color: var(--FG-COLOR);

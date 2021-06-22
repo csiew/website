@@ -136,7 +136,7 @@ function Projects() {
       sidebar={(
         <>
           <Card>
-            <CardTitle className={isProjectListVisible ? '' : 'card-border-radius padding-s-bottom'}>
+            <CardTitle className={isProjectListVisible ? '' : 'card-border-radius'}>
               <h3>All projects</h3>
               <CardToggleButton cardName="Project List" isVisible={isProjectListVisible} toggle={toggleProjectList} />
             </CardTitle>
