@@ -103,7 +103,7 @@ function Playlists() {
       sidebar={(
         <>
           <Card>
-            <CardTitle className={isPlaylistListVisible ? '' : 'card-border-radius padding-s-bottom'}>
+            <CardTitle className={isPlaylistListVisible ? '' : 'card-border-radius'}>
               <h3>All playlists</h3>
               <CardToggleButton cardName="Playlist List" isVisible={isPlaylistListVisible} toggle={togglePlaylistList} />
             </CardTitle>
@@ -131,7 +131,7 @@ function Playlists() {
             }
           </Card>
           <Card>
-            <CardTitle className={isFeaturedPlaylistVisible ? '' : 'card-border-radius padding-s-bottom'}>
+            <CardTitle className={isFeaturedPlaylistVisible ? '' : 'card-border-radius'}>
               <div className="grid grid-col-1">
                 <h3>Winter 2021</h3>
                 <sub className="text-color-secondary">Featured playlist</sub>

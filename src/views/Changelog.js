@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
+import { MdOpenInNew } from 'react-icons/md';
 import { DynamicPageView } from '../components/PageLayout.js';
 import { Card, CardBody } from '../components/Card.js';
 import { scrollToTop } from '../utils/Scroll.js';
@@ -27,9 +28,15 @@ function ChangelogPullRequests(props) {
               rel="noreferrer"
               className="item"
             >
-              <div className="grid grid-col-1">
-                <h3>{pullRequest.title}</h3>
-                <sub>{new Date(pullRequest.closed_at).toLocaleString()}</sub>
+              <div className="hstack align-center justify-space-between">
+                <div className="grid grid-col-1">
+                  <h3>{pullRequest.title}</h3>
+                  <sub className="text-color-secondary">{new Date(pullRequest.closed_at).toLocaleString()}</sub>
+                </div>
+                <MdOpenInNew
+                  size="1.5rem"
+                  className="text-color-secondary"
+                />
               </div>
             </a>
           )
@@ -127,7 +134,7 @@ function Changelog() {
             <Card className="width-max-800 img-respect-bounds nodrag">
               <CardBody className="padding-none grid grid-col-1 grid-gap-m">
                 <div
-                  className="card-border-top-radius bg-color-acryllic position-sticky anchor-top margin-none-top padding-s"
+                  className="card-border-top-radius border-bottom bg-color-acryllic position-sticky anchor-top margin-none-top padding-s"
                 >
                   <div className="tab-bar width-auto">
                     <ChangelogTab tabIndex="0" selectedTab={selectedTab} setSelectedTab={handleSelectTab} title="Summary" />

@@ -56,7 +56,7 @@ function Navbar(props) {
           <h1>Clarence Siew</h1>
         </NavLink>
         <div className="width-auto grid grid-auto-flow-column grid-gap-s align-center">
-          <div className="tab-bar">
+          <div className="tab-bar nav-tab-bar">
             <NavLink to="/" title="Home" exact={true}>Home</NavLink>
             <NavLink to="/blog" title="Blog">Blog</NavLink>
             <NavLink to="/projects" title="Projects">Projects</NavLink>

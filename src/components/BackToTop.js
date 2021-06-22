@@ -6,7 +6,7 @@ function BackToTop(props) {
     <>
       {
         props.isVisible ?
-          <div className="z-index-200 position-fixed margin-l anchor-bottom anchor-right transition-enter-up" title="Back to top">
+          <div className="z-index-200 position-fixed margin-l anchor-bottom anchor-right transition-enter-pop-bounce" title="Back to top">
             <button
               className="button-primary border-radius-100pct padding-none"
               style={{

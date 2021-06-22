@@ -464,13 +464,13 @@ word-break: break-word !important;
 .bg-color-secondary { background: var(--BG-COLOR-SECONDARY) !important; }
 
 .bg-color-acryllic {
-  background: rgba(255,255,255,0.5);
+  background: rgba(255,255,255,0.8);
   backdrop-filter: blur(8px);
 }
 
 @media (prefers-color-scheme: dark) {
   .bg-color-acryllic {
-    background: rgba(30,30,30,0.5);
+    background: rgba(30,30,30,0.8);
   }
 }
 
