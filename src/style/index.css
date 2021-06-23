@@ -642,6 +642,10 @@ footer {
   padding-bottom: 1rem;
 }
 
+.card-window {
+  display: floating;
+}
+
 .tag-list {
   width: 100%;
   margin: 0;

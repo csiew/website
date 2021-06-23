@@ -513,6 +513,9 @@ word-break: break-word !important;
 .z-index-50 { z-index: 50 !important; }
 .z-index-100 { z-index: 100 !important; }
 .z-index-200 { z-index: 200 !important; }
+.z-index-500 { z-index: 500 !important; }
+.z-index-1000 { z-index: 1000 !important; }
+.z-index-2000 { z-index: 2000 !important; }
 
 .link-no-decoration {
   text-decoration: none !important;
@@ -521,6 +524,14 @@ word-break: break-word !important;
 .cursor-pointer {
   cursor: pointer;
 }
+
+.cursor-move:hover {
+  cursor: grab;
+}
+.cursor-move:active {
+  cursor: grabbing;
+}
+
 .pointer-events-none {
   pointer-events: none !important;
 }
