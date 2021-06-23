@@ -8,13 +8,14 @@ import { Card, CardTitle, CardBody, CardToggleButton } from '../components/Card.
 import projects from '../assets/data/projects.json';
 
 function ProjectCard(props) {
+
   const getProjectImg = (imgUrl) => {
     if (imgUrl.length > 0) {
       return (
         <img
           src={`/assets/img/projects/${imgUrl}`}
           alt="Project"
-          className="bordered-img cursor-pointer nodrag noselect"
+          className="bordered-img cursor-pointer transition active-scale-down-subtle nodrag noselect"
           width="100%"
           onClick={props.viewImg}
         />
@@ -49,45 +50,49 @@ function ProjectCard(props) {
 }
 
 function ImagePopoutModal(props) {
+  const toolbarRef = useRef(null);
   const imgViewRef = useRef(null);
+  useOutsideAlerter(toolbarRef, () => props.toggle(false));
   useOutsideAlerter(imgViewRef, () => props.toggle(false));
 
   return (
     <div
-      className="modal-container padding-xl vstack align-center justify-center transition-enter-fade"
+      className="modal-container vstack align-stretch justify-stretch transition-enter-fade"
       style={{
         height: `${document.querySelector('main').getBoundingClientRect().height}px`,
         top: `${document.querySelector('header').getBoundingClientRect().height}px`
       }}
     >
-      <div ref={imgViewRef} className="card width-auto transition-enter-pop">
-        <CardTitle className="padding-xs hstack align-center justify-space-between">
-          <h3>{props.alt}</h3>
-          <button
-            onClick={() => props.toggle(false)}
-            className="padding-none border-radius-100pct"
-            style={{
-              width: "1.75rem",
-              height: "1.75rem"
-            }}
-          >
-            <MdClose size="1.25rem" />
-          </button>
-        </CardTitle>
-        <CardBody className="padding-xs padding-none-top">
-          <img
-            src={props.src}
-            alt={props.alt ? props.alt : 'No alt text provided'}
-            className="bordered-img nodrag noselect"
-            width="100%"
-            height="100%"
-            style={{
-              width: "auto",
-              height: "auto",
-              maxHeight: `${document.querySelector('main').getBoundingClientRect().height * 0.75}px`
-            }}
-          />
-        </CardBody>
+      <div className="padding-xl vstack align-center justify-center">
+        <div ref={imgViewRef} className="card width-auto transition-enter-pop">
+          <CardTitle className="hstack align-center justify-space-between padding-s padding-xs-top padding-xs-bottom">
+            <h3>{props.alt}</h3>
+            <button
+              onClick={() => props.toggle(false)}
+              className="padding-none border-radius-100pct"
+              style={{
+                width: "1.75rem",
+                height: "1.75rem"
+              }}
+            >
+              <MdClose size="1.25rem" />
+            </button>
+          </CardTitle>
+          <CardBody className="padding-xs">
+            <img
+              src={props.src}
+              alt={props.alt ? props.alt : 'No alt text provided'}
+              className="bordered-img nodrag noselect"
+              width="100%"
+              height="100%"
+              style={{
+                width: "auto",
+                height: "auto",
+                maxHeight: `${document.querySelector('main').getBoundingClientRect().height * 0.75}px`
+              }}
+            />
+          </CardBody>
+        </div>
       </div>
     </div>
   );
@@ -142,7 +147,7 @@ function Projects() {
             </CardTitle>
             {
               isProjectListVisible ?
-                <CardBody className="padding-none-left padding-none-right padding-none-top padding-s-bottom">
+                <CardBody className="padding-none">
                 <div className="list-selectable">
                   {
                     projects["projects"].map(item => {

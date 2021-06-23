@@ -109,7 +109,7 @@ function Playlists() {
             </CardTitle>
             {
               isPlaylistListVisible ?
-                <CardBody className="padding-none-left padding-none-right padding-none-top padding-s-bottom">
+                <CardBody className="padding-none">
                   <div className="list-selectable">
                     {
                       playlists["collection"].map(item => {

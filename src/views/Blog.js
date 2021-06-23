@@ -38,7 +38,7 @@ function BlogPostPreview(props) {
         <ReactMarkdown children={postBody} className="pointer-events-none" />
       </CardBody>
       <NavLink
-        className="button button-icon-only padding-s width-full"
+        className="button button-icon-only padding-s width-full transition scale-subtle"
         to={`/post/${props.post.id}`}
         title={`${props.post.title}`}
       >

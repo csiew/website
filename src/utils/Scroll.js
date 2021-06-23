@@ -1,17 +1,23 @@
-export function scrollFocus(sectionId) {
+export function scrollToTop(smooth=false) {
+  document.querySelector('main').scrollTo({
+    top: 0,
+    behavior: smooth === true ? "smooth" : "auto"
+  });
+}
+
+export function scrollFocus(sectionId, smooth=false) {
   const navbar = document.querySelector('header');
   const main = document.querySelector('main');
   const section = document.getElementById(sectionId);
-  main.scrollTo(0, 0);
+  scrollToTop();
   if (sectionId) {
     try {
-      main.scrollTo(0, section.getBoundingClientRect().top - navbar.getBoundingClientRect().height - 24);
+      main.scrollTo({
+        top: section.getBoundingClientRect().top - navbar.getBoundingClientRect().height - 24,
+        behavior: smooth === true ? "smooth" : "auto"
+      });
     } catch (e) {
       console.warn(e);
     }
   }
-}
-
-export function scrollToTop() {
-  document.querySelector('main').scrollTo(0, 0);
 }
