@@ -3,9 +3,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router } from 'react-router';
 
+import './style/util.css';
 import './style/index.css';
 import './style/animation.css';
-import './style/util.css';
+import './style/interactive.css';
 import './style/themes/default.css';
 import './style/themes/dark.css';
 import './assets/fonts/newsreader.css';

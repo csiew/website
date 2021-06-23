@@ -4,7 +4,6 @@ import { MdArrowDropDown, MdArrowDropUp } from 'react-icons/md';
 export function CardToggleButton(props) {
   return (
     <button
-      {...props}
       title={props.isVisible ? `Hide ${props.cardName}` : `Show ${props.cardName}`}
       className="border-radius-100pct padding-none"
       style={{
@@ -25,10 +24,7 @@ export function CardToggleButton(props) {
 
 export function Card(props) {
   return (
-    <div
-      {...props}
-      className={`card width-full ${props.className ? props.className : ''}`}
-    >
+    <div id={props.id} className={`card width-full ${props.className ? props.className : ''}`}>
       {props.children}
     </div>
   );
@@ -36,7 +32,7 @@ export function Card(props) {
 
 export function CardTitle(props) {
   return (
-    <div {...props} className={`title width-full ${props.className ? props.className : ''}`}>
+    <div className={`title width-full ${props.className ? props.className : ''}`}>
       {props.children}
     </div>
   );
@@ -44,7 +40,7 @@ export function CardTitle(props) {
 
 export function CardBody(props) {
   return (
-    <div {...props} className={`body width-full ${props.className ? props.className : ''}`}>
+    <div className={`body width-full ${props.className ? props.className : ''}`}>
       {props.children}
     </div>
   );

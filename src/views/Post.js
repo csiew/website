@@ -37,7 +37,7 @@ function PostHeader(props) {
     <div className="toolbar anchor-top margin-none-top padding-none transition-enter-down">
       <div className="width-max-1280 hstack align-center justify-start margin-auto-horizontal padding-s padding-m-left padding-m-right">
         <NavLink
-          className="button button-icon-only margin-m-right padding-none"
+          className="button button-icon-only margin-m-right padding-none transition scale-subtle"
           to="/blog"
         >
           <MdArrowBack size="1.75rem" />

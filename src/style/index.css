@@ -3,7 +3,6 @@
   --BUTTON-BORDER-RADIUS: 32px;
   --BASE-FONT-FAMILY: 'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   --HEADER-FONT-FAMILY: var(--BASE-FONT-FAMILY);
-  --TRANSITION: 0.25s;
 }
 
 * {
