@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { generateId } from '../utils/Strings.js';
 import { scrollFocus, scrollToTop } from '../utils/Scroll.js';
 import { DynamicPageView } from '../components/PageLayout.js';
-import { Card, CardTitle, CardBody, CardToggleButton, CardToggleFloatingButton } from '../components/Card.js';
+import { Card, CardTitle, CardBody, CardToggleButton } from '../components/Card.js';
 import playlists from '../assets/data/playlists.json';
 
 function PlaylistGroupCard(props) {
@@ -61,7 +61,6 @@ function Playlists() {
   const [isPlaylistListVisible, setIsPlaylistListVisible] = useState(true);
   const [isFeaturedPlaylistVisible, setIsFeaturedPlaylistVisible] = useState(true);
   const [loadFeaturedPlaylist, setLoadFeaturedPlaylist] = useState(false);
-  const [isFeaturedPlaylistFloating, setIsFeaturedPlaylistFloating] = useState(false);
 
   useEffect(() => {
     scrollToTop();
@@ -80,10 +79,6 @@ function Playlists() {
 
   const toggleLoadFeaturedPlaylist = () => {
     setLoadFeaturedPlaylist(!loadFeaturedPlaylist);
-  }
-
-  const toggleFeaturedPlaylistFloating = () => {
-    setIsFeaturedPlaylistFloating(!isFeaturedPlaylistFloating);
   }
 
   return (
@@ -135,16 +130,13 @@ function Playlists() {
                 ''
             }
           </Card>
-          <Card isFloating={isFeaturedPlaylistFloating} toggleFloating={toggleFeaturedPlaylistFloating} className={isFeaturedPlaylistFloating ? 'card-window' : ''}>
-            <CardTitle className={`${isFeaturedPlaylistVisible ? '' : 'card-border-radius'} ${isFeaturedPlaylistFloating ? 'cursor-move' : ''}`}>
+          <Card>
+            <CardTitle className={isFeaturedPlaylistVisible ? '' : 'card-border-radius'}>
               <div className="grid grid-col-1">
                 <h3>Winter 2021</h3>
                 <sub className="text-color-secondary">Featured playlist</sub>
               </div>
-              <div className="grid grid-col-2 grid-gap-s">
-                <CardToggleFloatingButton toggle={toggleFeaturedPlaylistFloating} />
-                <CardToggleButton cardName="Featured Playlist" isVisible={isFeaturedPlaylistVisible} toggle={toggleFeaturedPlaylist} />
-              </div>
+              <CardToggleButton cardName="Featured Playlist" isVisible={isFeaturedPlaylistVisible} toggle={toggleFeaturedPlaylist} />
             </CardTitle>
             {
               isFeaturedPlaylistVisible ?
