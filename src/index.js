@@ -10,6 +10,7 @@ import './style/themes/default.css';
 import './style/themes/dark.css';
 import './assets/fonts/newsreader.css';
 import './assets/fonts/roboto_mono.css';
+import './assets/fonts/public_sans.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 

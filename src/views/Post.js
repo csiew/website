@@ -32,6 +32,25 @@ function PostContent(props) {
   );
 }
 
+function PostHeader(props) {
+  return (
+    <div className="toolbar anchor-top margin-none-top padding-none transition-enter-down">
+      <div className="width-max-1280 hstack align-center justify-start margin-auto-horizontal padding-s padding-m-left padding-m-right">
+        <NavLink
+          className="button button-icon-only margin-m-right padding-none"
+          to="/blog"
+        >
+          <MdArrowBack size="1.75rem" />
+        </NavLink>
+        <div className="vstack align-start justify-center">
+          <h2 className="font-scale-xxl">{props.title}</h2>
+          <sub className="font-scale-s text-color-secondary">{new Date(props.date.year, props.date.month, props.date.day, props.date.hr, props.date.mins, props.date.sec).toLocaleString()}</sub>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function Post() {
   const { id } = useParams();
   const [postMetadata, setPostMetadata] = useState(null);
@@ -64,20 +83,7 @@ function Post() {
 
   return (
     <>
-      <div className="toolbar anchor-top padding-none transition-enter-down">
-        <div className="width-max-1280 hstack align-center justify-start margin-auto-horizontal padding-s padding-m-left padding-m-right">
-          <NavLink
-            className="button button-icon-only margin-m-right padding-none"
-            to="/blog"
-          >
-            <MdArrowBack size="1.75rem" />
-          </NavLink>
-          <div className="vstack align-start justify-center">
-            <h2 className="font-scale-xxl">{postMetadata.title}</h2>
-            <sub className="font-scale-s text-color-secondary">{new Date(postMetadata.date.year, postMetadata.date.month, postMetadata.date.day, postMetadata.date.hr, postMetadata.date.mins, postMetadata.date.sec).toLocaleString()}</sub>
-          </div>
-        </div>
-      </div>
+      <PostHeader title={postMetadata.title} date={postMetadata.date} />
       <DynamicPageView
         className="width-max-1280 anchor-top margin-none-top margin-auto-bottom"
         sidebarClassName="width-min-240 position-sticky anchor-top"
