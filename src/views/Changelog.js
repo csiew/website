@@ -92,7 +92,7 @@ function Changelog() {
 
   const handleSelectTab = (tabIndex=0) => {
     setSelectedTab(tabIndex);
-    switch (tabIndex) {
+    switch (Number(tabIndex)) {
       case 1:
         window.history.pushState("", "", "/changelog/pull_requests");
         break;
