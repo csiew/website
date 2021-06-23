@@ -387,8 +387,7 @@ header .button-icon-only {
   justify-content: flex-start;
   padding: 0.5rem;
 }
-.list-selectable a,
-.list-selectable .item {
+:is(.list-selectable) :is(a, .item) {
   color: var(--NAV-MENU-FG-COLOR);
   background: var(--NAV-MENU-BG-COLOR);
   border-radius: var(--BORDER-RADIUS);
@@ -399,36 +398,24 @@ header .button-icon-only {
   padding-right: 1rem;
   transition: var(--TRANSITION);
 }
-.list-selectable a:hover,
-.list-selectable .item:hover {
+:is(.list-selectable) :is(a:hover, .item:hover) {
   background: var(--NAV-MENU-BG-COLOR-HOVER);
   transition: var(--TRANSITION);
 }
-.list-selectable a:hover,
-.list-selectable .item:hover,
-.list-selectable .active,
-.list-selectable .active:hover,
-.list-selectable .item.active,
-.list-selectable .item.active:hover {
+:is(.list-selectable) :is(a:hover, .item:hover, .active, .active:hover, .item.active, .item.active:hover) {
   text-decoration: none;
   text-transform: none;
   transition: var(--TRANSITION);
 }
-.list-selectable a:active,
-.list-selectable .item:active {
+:is(.list-selectable) :is(a:active, .item:active) {
   background: var(--NAV-MENU-BG-COLOR-ACTIVE);
   transform: scale(0.99);
   transition: var(--TRANSITION);
 }
-.list-selectable .active
-.list-selectable .item.active {
+:is(.list-selectable) :is(.active, .item.active) {
   font-weight: 700;
 }
-.list-selectable h1,
-.list-selectable h2,
-.list-selectable h3,
-.list-selectable h4,
-.list-selectable h5 {
+:is(.list-selectable) :is(h1, h2, h3, h4, h5) {
   margin: 0;
   padding: 0;
   padding-top: 0.125rem !important;
@@ -457,8 +444,7 @@ header .button-icon-only {
   margin: 0;
   padding: 0.25rem;
 }
-.tab-bar a,
-.tab-bar .item {
+:is(.tab-bar) :is(a, .item) {
   color: var(--BUTTON-FG-COLOR) !important;
   background: none;
   border-radius: var(--BUTTON-BORDER-RADIUS);
@@ -469,21 +455,16 @@ header .button-icon-only {
   padding-right: 1rem;
   transition: var(--TRANSITION);
 }
-.tab-bar a:hover,
-.tab-bar .item:hover {
+:is(.tab-bar) :is(a:hover, .item:hover) {
   background: var(--BUTTON-BG-COLOR-HOVER);
   transition: var(--TRANSITION);
 }
-.tab-bar a:active,
-.tab-bar .item:active {
+:is(.tab-bar) :is(a:active, .item:active) {
   background: var(--BUTTON-BG-COLOR-ACTIVE);
   transform: scale(0.98);
   transition: var(--TRANSITION);
 }
-.tab-bar a.active,
-.tab-bar .item.active,
-.tab-bar a.active:hover,
-.tab-bar .item.active:hover {
+:is(.tab-bar) :is(a.active, .item:active, a.active:hover, .item.active:hover) {
   color: var(--BG-COLOR) !important;
   background: var(--PRIMARY-COLOR);
   box-shadow: 0px 2px 8px rgba(0,0,0,0.125);
@@ -684,11 +665,7 @@ footer {
   justify-content: flex-start;
   padding: 1rem;
 }
-.tag-list-sub h1,
-.tag-list-sub h2,
-.tag-list-sub h3,
-.tag-list-sub h4,
-.tag-list-sub h5 {
+:is(.tag-list-sub) :is(h1, h2, h3, h4, h5) {
   color: var(--FG-COLOR-SECONDARY) !important;
   font-size: 0.8rem;
   font-weight: 400;
