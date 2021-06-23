@@ -109,27 +109,20 @@ input[type=submit] {
   padding-right: 1rem;
   transition: var(--TRANSITION);
 }
-button:hover,
-.button:hover,
-input[type=submit]:hover {
+:is(button, .button, input[type=submit]):hover {
   color: var(--BUTTON-FG-COLOR);
   background: var(--BUTTON-BG-COLOR-HOVER);
   border-color: var(--BUTTON-BG-COLOR-HOVER);
   text-decoration: none;
   transition: var(--TRANSITION);
 }
-button:active,
-.button:active,
-input[type=submit]:active {
+:is(button, .button, input[type=submit]):hover:active {
   background: var(--BUTTON-BG-COLOR-ACTIVE);
   border-color: var(--BUTTON-BG-COLOR-ACTIVE);
   transform: scale(0.98);
   transition: var(--TRANSITION);
 }
-button:disabled,
-.button:disabled,
-.button.disabled,
-input[type=submit]:disabled {
+:is(button, .button, input[type=submit]):disabled :is(.disabled) {
   color: var(--BUTTON-FG-COLOR-DISABLED);
   background: var(--BUTTON-BG-COLOR-DISABLED);
   border-color: var(--BUTTON-BG-COLOR-DISABLED);
@@ -140,25 +133,25 @@ input[type=submit]:disabled {
 
 .button-selected,
 .button-selected:hover {
-  color: var(--BG-COLOR);
-  background: var(--PRIMARY-COLOR);
-  border-color: var(--PRIMARY-COLOR);
+  color: var(--BG-COLOR) !important;
+  background: var(--PRIMARY-COLOR) !important;
+  border-color: var(--PRIMARY-COLOR) !important;
 }
 
 .button-primary {
-  color: var(--BG-COLOR);
-  background: var(--PRIMARY-COLOR);
-  border-color: var(--PRIMARY-COLOR);
+  color: var(--BG-COLOR) !important;
+  background: var(--PRIMARY-COLOR) !important;
+  border-color: var(--PRIMARY-COLOR) !important;
 }
 .button-primary:hover {
-  color: var(--BG-COLOR);
-  background: var(--SECONDARY-COLOR);
-  border-color: var(--SECONDARY-COLOR);
+  color: var(--BG-COLOR) !important;
+  background: var(--SECONDARY-COLOR) !important;
+  border-color: var(--SECONDARY-COLOR) !important;
 }
 .button-primary:active {
-  color: var(--BG-COLOR);
-  background: var(--FG-COLOR);
-  border-color: var(--FG-COLOR);
+  color: var(--BG-COLOR) !important;
+  background: var(--FG-COLOR) !important;
+  border-color: var(--FG-COLOR) !important;
 }
 
 .button-icon-only {
@@ -260,17 +253,14 @@ header .title:active {
   transform: scale(0.98);
   transition: var(--TRANSITION);
 }
-header .title h1,
-header .title h2,
-header .title h3 {
+:is(header) :is(.title) :is(h1, h2, h3) {
   font-weight: 900;
   line-height: 1;
 }
 header .title h1 {
   font-size: 2.125rem;
 }
-header .title a,
-header .title a:hover {
+:is(header) :is(.title) :is(a, a:hover) {
   color: var(--HEADER-FG-COLOR);
   text-decoration: none;
 }
@@ -341,8 +331,7 @@ header .links .active:hover {
     background: var(--SECONDARY-COLOR);
     border-bottom-color: var(--BG-COLOR);
   }
-  header .links .active,
-  header .links .active:hover {
+  :is(header) :is(.links) :is(.active, .active:hover) {
     color: var(--BG-COLOR);
     border-bottom-color: var(--BG-COLOR);
   }

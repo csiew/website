@@ -13,7 +13,7 @@ function BackToTop(props) {
                 width: "2.5rem",
                 height: "2.5rem"
               }}
-              onClick={scrollToTop}
+              onClick={() => scrollToTop(true)}
             >
               <MdArrowUpward size="1.5rem" />
             </button>
