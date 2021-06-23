@@ -147,7 +147,7 @@ function Projects() {
             </CardTitle>
             {
               isProjectListVisible ?
-                <CardBody className="padding-none-left padding-none-right padding-none-top padding-s-bottom">
+                <CardBody className="padding-none">
                 <div className="list-selectable">
                   {
                     projects["projects"].map(item => {
