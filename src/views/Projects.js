@@ -135,7 +135,7 @@ function ProjectsList(props) {
 
   return (
     <Card>
-      <CardTitle className={isProjectListVisible ? '' : 'card-border-radius'}>
+      <CardTitle className={isProjectListVisible ? '' : 'card-border-radius hug-bottom'}>
         <h3>All projects</h3>
         <CardToggleButton cardName="Project List" isVisible={isProjectListVisible} toggle={toggleProjectList} />
       </CardTitle>
@@ -179,7 +179,7 @@ function ProjectsFilter(props) {
 
   return (
     <Card>
-      <CardTitle className={isProjectsFilterVisible ? '' : 'card-border-radius'}>
+      <CardTitle className={isProjectsFilterVisible ? '' : 'card-border-radius hug-bottom'}>
         <h3>Filter by status</h3>
         <div className="width-auto hstack align-center justify-end">
           <sub className="margin-xs-right">{props.projectStatus[props.selectedStatus] ? props.projectStatus[props.selectedStatus] : "All"}</sub>
