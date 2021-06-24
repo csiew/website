@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { scrollFocus, scrollToTop } from '../utils/Scroll.js';
 import ReactMarkdown from 'react-markdown';
-import { MdClose } from 'react-icons/md';
+import { MdCheck, MdClose } from 'react-icons/md';
 import { useOutsideAlerter } from '../hooks/useOutsideAlerter.js';
 import { DynamicPageView } from '../components/PageLayout.js';
 import { Card, CardTitle, CardBody, CardToggleButton } from '../components/Card.js';
@@ -24,13 +24,29 @@ function ProjectCard(props) {
       return null;
     }
   }
+
+  const getStatusTagStyleClass = (statusCode) => {
+    switch (statusCode) {
+      case 2:
+        return "status-tag-active";
+      case 1:
+        return "status-tag-hiatus";
+      case 0:
+        return "status-tag-discontinued";
+      default:
+        return "";
+    }
+  }
   
   return (
     <Card id={props.project.id}>
       <CardTitle className="flex-inline flex-flow-row-wrap">
         <div className="flex-inline flex-flow-column align-start justify-center">
           <h4 className="font-scale-xxl">{props.project.name}</h4>
-          <sub>{props.project.timeRange}</sub>
+          <div className="grid grid-auto-flow-column grid-gap-s align-center">
+            <span className={`status-tag ${getStatusTagStyleClass(props.project.status)}`}>{projects["projectStatus"][props.project.status]}</span>
+            <sub>{props.project.timeRange}</sub>
+          </div>
         </div>
         <div className="grid grid-col-2 grid-gap-s">
           <a href={props.project.github} rel="noreferrer" target="_blank" className={ "button" + (props.project.github.length === 0 ? ' disabled' : '') } disabled={props.project.github.length === 0}>Repository</a>
@@ -39,6 +55,18 @@ function ProjectCard(props) {
       </CardTitle>
       <CardBody className="grid grid-col-1 grid-gap-xl">
         { getProjectImg(props.project.imgUrl) }
+        {
+          Object.keys(props.project).includes("note") ?
+            <Card className="note">
+              <CardBody>
+                <ReactMarkdown>
+                  {props.project.note}
+                </ReactMarkdown>
+              </CardBody>
+            </Card>
+          :
+            ""
+        }
         <div>
           <ReactMarkdown>
             {props.project.description}
@@ -98,15 +126,106 @@ function ImagePopoutModal(props) {
   );
 }
 
+function ProjectsList(props) {
+  const [isProjectListVisible, setIsProjectListVisible] = useState(true);
+
+  const toggleProjectList = () => {
+    setIsProjectListVisible(!isProjectListVisible);
+  }
+
+  return (
+    <Card>
+      <CardTitle className={isProjectListVisible ? '' : 'card-border-radius'}>
+        <h3>All projects</h3>
+        <CardToggleButton cardName="Project List" isVisible={isProjectListVisible} toggle={toggleProjectList} />
+      </CardTitle>
+      {
+        isProjectListVisible ?
+          <CardBody className="padding-none">
+          <div className="list-selectable">
+            {
+              props.projects.map(item => {
+                return (
+                  <div
+                    key={item.id}
+                    className="item flex-inline flex-flow-row-wrap align-center justify-space-between"
+                    onClick={() => scrollFocus(item.id)}
+                  >
+                    <span className="width-auto">{item.name}</span>
+                    <span className="width-auto font-scale-xs text-color-secondary">{item.timeRange}</span>
+                  </div>
+                );
+              })
+            }
+          </div>
+          </CardBody>
+        :
+          ''
+      }
+    </Card>
+  );
+}
+
+function ProjectsFilter(props) {
+  const [isProjectsFilterVisible, setIsProjectsFilterVisible] = useState(true);
+
+  const toggleProjectsFilter = () => {
+    setIsProjectsFilterVisible(!isProjectsFilterVisible);
+  }
+
+  const generateCheckmark = (enable=false) => {
+    if (enable) return <MdCheck size="1.5rem" />
+  }
+
+  return (
+    <Card>
+      <CardTitle className={isProjectsFilterVisible ? '' : 'card-border-radius'}>
+        <h3>Filter by status</h3>
+        <CardToggleButton cardName="Project List" isVisible={isProjectsFilterVisible} toggle={toggleProjectsFilter} />
+      </CardTitle>
+      {
+        isProjectsFilterVisible ?
+          <CardBody className="padding-none">
+          <div className="list-selectable">
+            <div
+              className={`item flex-inline flex-flow-row align-center justify-space-between ${props.selectedStatus === null ? 'active' : ''}`}
+              onClick={() => props.handleSelectStatus(null)}
+            >
+              <span className="width-auto">All</span>
+              {generateCheckmark(props.selectedStatus === null)}
+            </div>
+            {
+              Object.values(props.projectStatus).reverse().map(item => {
+                return (
+                  <div
+                    key={item[0]}
+                    className={`item flex-inline flex-flow-row align-center justify-space-between ${props.selectedStatus === item ? 'active' : ''}`}
+                    onClick={() => props.handleSelectStatus(item)}
+                  >
+                    <span className="width-auto">{item}</span>
+                    {generateCheckmark(props.selectedStatus === item)}
+                  </div>
+                );
+              })
+            }
+          </div>
+          </CardBody>
+        :
+          ''
+      }
+    </Card>
+  );
+}
+
 function Projects() {
   const [isImagePopoutModalVisible, setIsImagePopoutModalVisible] = useState(false);
   const [imgUrl, setImgUrl] = useState(null);
   const [imgAltText, setImgAltText] = useState(null);
-  const [isProjectListVisible, setIsProjectListVisible] = useState(true);
+  const [selectedStatus, setSelectedStatus] = useState(null);
 
-  useEffect(() => {
-    scrollToTop();
-  }, []);
+  const handleSelectStatus = (status) => {
+    setSelectedStatus(status);
+  }
 
   const toggleImagePopoutModal = (newState=false, url=null, altText=null) => {
     setImgUrl(url);
@@ -114,9 +233,59 @@ function Projects() {
     setIsImagePopoutModalVisible(newState);
   }
 
-  const toggleProjectList = () => {
-    setIsProjectListVisible(!isProjectListVisible);
+  const filterBySelectedStatus = () => {
+    let filterResults = [];
+    switch (selectedStatus) {
+      case "Active":
+        filterResults = projects["projects"].filter(item => item.status === 2);
+        break;
+      case "Hiatus":
+        filterResults = projects["projects"].filter(item => item.status === 1);
+        break;
+      case "Discontinued":
+        filterResults = projects["projects"].filter(item => item.status === 0);
+        break;
+      default:
+        filterResults = projects["projects"];
+    }
+    return filterResults;
   }
+
+  const generateProjectsContent = () => {
+    if (selectedStatus !== null) {
+      let filterResults = filterBySelectedStatus();
+      if (filterResults.length === 0) {
+        return (
+          <div className="width-full height-full padding-xxl hstack align-center justify-center text-color-secondary">
+            <span>No projects found with status '{selectedStatus}'.</span>
+          </div>
+        );
+      }
+      return filterResults.map(item => {
+        return (
+          <ProjectCard
+            key={item.id}
+            project={item}
+            viewImg={() => toggleImagePopoutModal(true, `/assets/img/projects/${item.imgUrl}`, item.name)}
+          />
+        );
+      });
+    } else {
+      return projects["projects"].map(item => {
+        return (
+          <ProjectCard
+            key={item.id}
+            project={item}
+            viewImg={() => toggleImagePopoutModal(true, `/assets/img/projects/${item.imgUrl}`, item.name)}
+          />
+        );
+      });
+    }
+  }
+
+  useEffect(() => {
+    scrollToTop();
+  }, []);
 
   return (
     <DynamicPageView
@@ -125,50 +294,13 @@ function Projects() {
       sidebarClassName="width-min-240 position-sticky anchor-top"
       main={(
         <div className="width-full margin-auto grid grid-col-1 grid-gap-xl">
-          {
-            projects["projects"].map(item => {
-              return (
-                <ProjectCard
-                  key={item.id}
-                  project={item}
-                  viewImg={() => toggleImagePopoutModal(true, `/assets/img/projects/${item.imgUrl}`, item.name)}
-                />
-              );
-            })
-          }
+          {generateProjectsContent()}
         </div>
       )}
       sidebar={(
         <>
-          <Card>
-            <CardTitle className={isProjectListVisible ? '' : 'card-border-radius'}>
-              <h3>All projects</h3>
-              <CardToggleButton cardName="Project List" isVisible={isProjectListVisible} toggle={toggleProjectList} />
-            </CardTitle>
-            {
-              isProjectListVisible ?
-                <CardBody className="padding-none">
-                <div className="list-selectable">
-                  {
-                    projects["projects"].map(item => {
-                      return (
-                        <div
-                          key={item.id}
-                          className="item flex-inline flex-flow-row-wrap align-center justify-space-between"
-                          onClick={() => scrollFocus(item.id)}
-                        >
-                          <span className="width-auto">{item.name}</span>
-                          <span className="width-auto font-scale-xs text-color-secondary">{item.timeRange}</span>
-                        </div>
-                      );
-                    })
-                  }
-                </div>
-                </CardBody>
-              :
-                ''
-            }
-          </Card>
+          <ProjectsFilter projectStatus={projects["projectStatus"]} selectedStatus={selectedStatus} handleSelectStatus={handleSelectStatus} />
+          <ProjectsList projects={projects["projects"]} />
         </>
       )}
     >
