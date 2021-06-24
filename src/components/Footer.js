@@ -5,7 +5,7 @@ function Footer() {
   return (
     <footer>
       <p className="font-weight-600">
-        <NavLink to="/changelog">Version 3.2.1</NavLink>
+        <NavLink to="/changelog">Version 3.3</NavLink>
       </p>
       <p>
         This site was built using React and is hosted on Netlify.

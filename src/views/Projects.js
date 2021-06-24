@@ -221,7 +221,7 @@ function Projects() {
   const [isImagePopoutModalVisible, setIsImagePopoutModalVisible] = useState(false);
   const [imgUrl, setImgUrl] = useState(null);
   const [imgAltText, setImgAltText] = useState(null);
-  const [selectedStatus, setSelectedStatus] = useState(null);
+  const [selectedStatus, setSelectedStatus] = useState(-1);
 
   const handleSelectStatus = (status) => {
     setSelectedStatus(status);
