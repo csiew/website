@@ -8,10 +8,6 @@ function NavMenu(props) {
   const navMenuRef = useRef(null);
   useOutsideAlerter(navMenuRef, props.closeNavMenu);
 
-  if (!props.isNavMenuOpen) {
-    return null;
-  }
-
   return (
     <div ref={navMenuRef} className="menu-dropdown">
       <div className="list-selectable">
@@ -74,7 +70,12 @@ function Navbar(props) {
           </button>
         </div>
       </header>
-      <NavMenu isNavMenuOpen={isNavMenuOpen} closeNavMenu={closeNavMenu} />
+      {
+        isNavMenuOpen ?
+          <NavMenu closeNavMenu={closeNavMenu} />
+        :
+          ""
+      }
     </div>
   );
 }

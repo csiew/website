@@ -341,29 +341,6 @@ header .button-icon-only {
   display: none;
 }
 
-.menu-dropdown {
-  color: var(--FG-COLOR);
-  background: var(--BG-COLOR);
-  box-shadow: 0px 0px 8px rgba(0,0,0,0.125);
-  border-radius: var(--BORDER-RADIUS);
-  font-family: var(--HEADER-FONT-FAMILY);
-  text-align: right;
-  z-index: 100;
-  position: fixed;
-  width: auto;
-  min-width: 240px;
-  height: auto;
-  margin: 0;
-  margin-top: -0.5rem;
-  margin-left: auto;
-  margin-right: 1.5rem;
-  right: 0;
-  padding: 0rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  animation: enter-down-transition ease 0.25s !important;
-}
-
 .card .body:has() > .list-selectable {
   padding-top: 0;
 }
@@ -462,13 +439,34 @@ header .button-icon-only {
   transition: var(--TRANSITION);
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
   #navMenuButton {
     display: inline-flex;
   }
   .nav-tab-bar {
     display: none;
   }
+}
+
+.menu-dropdown {
+  color: var(--FG-COLOR);
+  background: var(--BG-COLOR);
+  box-shadow: 0px 0px 8px rgba(0,0,0,0.125);
+  border-radius: var(--BORDER-RADIUS);
+  font-family: var(--HEADER-FONT-FAMILY);
+  text-align: right;
+  z-index: 100;
+  position: fixed;
+  width: auto;
+  min-width: 240px;
+  height: auto;
+  margin: 0;
+  margin-top: -0.5rem;
+  margin-left: auto;
+  margin-right: 1.5rem;
+  right: 0;
+  padding: 0rem;
+  animation: down-transition ease-out 0.25s !important;
 }
 
 @media only screen and (max-width: 480px) {
@@ -483,7 +481,7 @@ header .button-icon-only {
     margin: 0rem;
     left: 0;
     overflow-y: auto;
-    animation: enter-pop-transition ease 0.25s !important;
+    animation: fade-transition ease 0.25s !important;
   }
   .list-selectable {
     height: auto;
@@ -780,7 +778,7 @@ article code {
 .status-tag-hiatus {
   color: #694e0b;
   background: gold;
-  border-color: #694e0b;
+  border-color: #bb8600;
 }
 .status-tag-discontinued {
   color: firebrick;
@@ -791,7 +789,7 @@ article code {
 .note {
   color: #694e0b;
   background: #ffffd0;
-  border-color: #c7a651;
+  border-color: #e6b949;
   border-width: 1px;
   border-style: solid;
   font-size: 0.9rem;

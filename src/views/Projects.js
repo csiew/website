@@ -167,14 +167,14 @@ function ProjectsList(props) {
 }
 
 function ProjectsFilter(props) {
-  const [isProjectsFilterVisible, setIsProjectsFilterVisible] = useState(false);
+  const [isProjectsFilterVisible, setIsProjectsFilterVisible] = useState(true);
 
   const toggleProjectsFilter = () => {
     setIsProjectsFilterVisible(!isProjectsFilterVisible);
   }
 
   const generateCheckmark = (enable=false) => {
-    if (enable) return <MdCheck size="1.5rem" />
+    if (enable) return <MdCheck size="1.5rem" className="transition-enter-pop-bounce" />
   }
 
   return (
@@ -182,7 +182,7 @@ function ProjectsFilter(props) {
       <CardTitle className={isProjectsFilterVisible ? '' : 'card-border-radius hug-bottom'}>
         <h3>Filter by status</h3>
         <div className="width-auto hstack align-center justify-end">
-          <sub className="margin-xs-right">{props.projectStatus[props.selectedStatus] ? props.projectStatus[props.selectedStatus] : "All"}</sub>
+          <sub hidden={isProjectsFilterVisible} className="margin-xs-right">{props.projectStatus[props.selectedStatus] ? props.projectStatus[props.selectedStatus] : "All"}</sub>
           <CardToggleButton cardName="Project List" isVisible={isProjectsFilterVisible} toggle={toggleProjectsFilter} />
         </div>
       </CardTitle>

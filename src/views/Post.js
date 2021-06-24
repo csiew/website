@@ -11,16 +11,6 @@ import { scrollToTop } from '../utils/Scroll.js';
 import postManifest from '../assets/post_manifest.json';
 
 function PostContent(props) {
-  if (!props.post) {
-    return (
-      <Card>
-        <CardBody className="hstack align-center justify-center">
-          <span className="text-color-secondary">Loading...</span>
-        </CardBody>
-      </Card>
-    );
-  }
-
   return (
     <Card>
       <CardBody>
@@ -34,7 +24,7 @@ function PostContent(props) {
 
 function PostHeader(props) {
   return (
-    <div className="toolbar anchor-top margin-none-top padding-none transition-enter-down">
+    <div className="toolbar anchor-top margin-none-top padding-none">
       <div className="width-max-1280 hstack align-center justify-start margin-auto-horizontal padding-s padding-m-left padding-m-right">
         <NavLink
           className="button button-icon-only margin-m-right padding-none transition scale-subtle"
