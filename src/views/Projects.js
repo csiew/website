@@ -167,7 +167,7 @@ function ProjectsList(props) {
 }
 
 function ProjectsFilter(props) {
-  const [isProjectsFilterVisible, setIsProjectsFilterVisible] = useState(true);
+  const [isProjectsFilterVisible, setIsProjectsFilterVisible] = useState(false);
 
   const toggleProjectsFilter = () => {
     setIsProjectsFilterVisible(!isProjectsFilterVisible);
@@ -181,7 +181,10 @@ function ProjectsFilter(props) {
     <Card>
       <CardTitle className={isProjectsFilterVisible ? '' : 'card-border-radius'}>
         <h3>Filter by status</h3>
-        <CardToggleButton cardName="Project List" isVisible={isProjectsFilterVisible} toggle={toggleProjectsFilter} />
+        <div className="width-auto hstack align-center justify-end">
+          <sub className="margin-xs-right">{props.projectStatus[props.selectedStatus] ? props.projectStatus[props.selectedStatus] : "All"}</sub>
+          <CardToggleButton cardName="Project List" isVisible={isProjectsFilterVisible} toggle={toggleProjectsFilter} />
+        </div>
       </CardTitle>
       {
         isProjectsFilterVisible ?
@@ -256,9 +259,11 @@ function Projects() {
       let filterResults = filterBySelectedStatus();
       if (filterResults.length === 0) {
         return (
-          <div className="width-full height-full padding-xxl hstack align-center justify-center text-color-secondary">
-            <span>No projects matching filter criteria found.</span>
-          </div>
+          <Card className="note">
+            <CardBody className="width-full height-full padding-xxl hstack align-center justify-center">
+              <span>No projects matching filter criteria found.</span>
+            </CardBody>
+          </Card>
         );
       }
       return filterResults.map(item => {

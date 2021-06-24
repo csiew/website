@@ -767,6 +767,7 @@ article code {
   border: 1px solid var(--BORDER-COLOR);
   border-radius: var(--BUTTON-BORDER-RADIUS);
   font-size: 0.8rem;
+  font-weight: 600;
   padding: 0.125rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -790,7 +791,7 @@ article code {
 .note {
   color: #694e0b;
   background: #ffffd0;
-  border-color: darkgoldenrod;
+  border-color: #c7a651;
   border-width: 1px;
   border-style: solid;
   font-size: 0.9rem;
