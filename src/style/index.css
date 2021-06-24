@@ -66,7 +66,7 @@ p {
   padding-bottom: 0.75rem;
 }
 
-a:focus, button:focus, .button:focus, input:focus {
+:is(a, button, .button, input):focus {
   outline: none !important;
 }
 
@@ -84,9 +84,7 @@ a:active {
   transition: var(--TRANSITION);
 }
 
-button,
-.button,
-input[type=submit] {
+button, .button, input[type=submit] {
   color: var(--BUTTON-FG-COLOR);
   background: var(--BUTTON-BG-COLOR);
   border-width: 2px;
@@ -185,18 +183,19 @@ select {
   padding-right: 1rem;
   transition: var(--TRANSITION);
 }
-input[type=text]:hover,
-input[type=email]:hover,
-select:hover {
+:is(input[type=text], input[type=email], select):hover {
   background: var(--INPUT-BG-COLOR-HOVER);
   border-color: var(--BORDER-COLOR-HOVER);
   transition: var(--TRANSITION);
 }
-input[type=text]:focus,
-input[type=email]:focus,
-select:focus {
+:is(input[type=text], input[type=email], select):focus {
   background: var(--INPUT-BG-COLOR-ACTIVE);
   border-color: var(--PRIMARY-COLOR);
+  transition: var(--TRANSITION);
+}
+:is(input[type=text], input[type=email], select):disabled {
+  background: var(--INPUT-BG-COLOR-DISABLED);
+  border-color: var(--BORDER-COLOR);
   transition: var(--TRANSITION);
 }
 
@@ -341,9 +340,6 @@ header .button-icon-only {
   display: none;
 }
 
-.card .body:has() > .list-selectable {
-  padding-top: 0;
-}
 .list-selectable {
   width: 100%;
   height: 100%;
@@ -756,7 +752,13 @@ article code {
   height: 100%;
   top: 0;
   left: 0;
-  background: linear-gradient(to bottom, transparent 0%,var(--BG-COLOR) 120%);
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, var(--BG-COLOR) 120%);
+}
+
+@media (prefers-color-scheme: dark) {
+  .blog-post-preview-body::after {
+    background: linear-gradient(to bottom, rgba(30,30,30,0) 0%, var(--BG-COLOR) 120%);
+  }
 }
 
 .status-tag {

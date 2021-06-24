@@ -99,7 +99,7 @@ function Skills(props) {
         <h3>Skills</h3>
       </CardTitle>
       <CardBody className="grid grid-col-1 grid-gap-m">
-        <input type="text" className="width-full" name="filterSkills" placeholder="Filter..." onInput={filterSkills} />
+        <input type="text" id="filterSkills" name="filterSkills" className="width-full" placeholder="Filter..." onInput={filterSkills} />
         { filterResultsSection() }
         { allSkillsList() }
       </CardBody>
