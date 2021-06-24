@@ -188,22 +188,22 @@ function ProjectsFilter(props) {
           <CardBody className="padding-none">
           <div className="list-selectable">
             <div
-              className={`item flex-inline flex-flow-row align-center justify-space-between ${props.selectedStatus === null ? 'active' : ''}`}
-              onClick={() => props.handleSelectStatus(null)}
+              className={`item flex-inline flex-flow-row align-center justify-space-between ${props.selectedStatus === -1 ? 'active' : ''}`}
+              onClick={() => props.handleSelectStatus(-1)}
             >
               <span className="width-auto">All</span>
-              {generateCheckmark(props.selectedStatus === null)}
+              {generateCheckmark(props.selectedStatus === -1)}
             </div>
             {
-              Object.values(props.projectStatus).reverse().map(item => {
+              Object.entries(props.projectStatus).reverse().map(item => {
                 return (
                   <div
-                    key={item[0]}
-                    className={`item flex-inline flex-flow-row align-center justify-space-between ${props.selectedStatus === item ? 'active' : ''}`}
-                    onClick={() => props.handleSelectStatus(item)}
+                    key={Number(item[0])}
+                    className={`item flex-inline flex-flow-row align-center justify-space-between ${props.selectedStatus === Number(item[0]) ? 'active' : ''}`}
+                    onClick={() => props.handleSelectStatus(Number(item[0]))}
                   >
-                    <span className="width-auto">{item}</span>
-                    {generateCheckmark(props.selectedStatus === item)}
+                    <span className="width-auto">{item[1]}</span>
+                    {generateCheckmark(props.selectedStatus === Number(item[0]))}
                   </div>
                 );
               })
@@ -236,13 +236,13 @@ function Projects() {
   const filterBySelectedStatus = () => {
     let filterResults = [];
     switch (selectedStatus) {
-      case "Active":
+      case 2:
         filterResults = projects["projects"].filter(item => item.status === 2);
         break;
-      case "Hiatus":
+      case 1:
         filterResults = projects["projects"].filter(item => item.status === 1);
         break;
-      case "Discontinued":
+      case 0:
         filterResults = projects["projects"].filter(item => item.status === 0);
         break;
       default:
@@ -252,12 +252,12 @@ function Projects() {
   }
 
   const generateProjectsContent = () => {
-    if (selectedStatus !== null) {
+    if (selectedStatus !== -1) {
       let filterResults = filterBySelectedStatus();
       if (filterResults.length === 0) {
         return (
           <div className="width-full height-full padding-xxl hstack align-center justify-center text-color-secondary">
-            <span>No projects found with status '{selectedStatus}'.</span>
+            <span>No projects matching filter criteria found.</span>
           </div>
         );
       }
@@ -270,17 +270,17 @@ function Projects() {
           />
         );
       });
-    } else {
-      return projects["projects"].map(item => {
-        return (
-          <ProjectCard
-            key={item.id}
-            project={item}
-            viewImg={() => toggleImagePopoutModal(true, `/assets/img/projects/${item.imgUrl}`, item.name)}
-          />
-        );
-      });
     }
+
+    return projects["projects"].map(item => {
+      return (
+        <ProjectCard
+          key={item.id}
+          project={item}
+          viewImg={() => toggleImagePopoutModal(true, `/assets/img/projects/${item.imgUrl}`, item.name)}
+        />
+      );
+    });
   }
 
   useEffect(() => {
