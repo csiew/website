@@ -8,10 +8,6 @@ function NavMenu(props) {
   const navMenuRef = useRef(null);
   useOutsideAlerter(navMenuRef, props.closeNavMenu);
 
-  if (!props.isNavMenuOpen) {
-    return null;
-  }
-
   return (
     <div ref={navMenuRef} className="menu-dropdown">
       <div className="list-selectable">
@@ -29,14 +25,8 @@ function Navbar(props) {
   const iconSize = "1.75rem";
   const [isNavMenuOpen, setIsNavMenuOpen] = useState(false);
 
-  const scrollToTop = (e) => {
-    e.preventDefault();
-    document.querySelector('main').scrollTo(0, 0);
-  }
-
   const toggleNavMenu = () => {
-    const prevState = isNavMenuOpen;
-    setIsNavMenuOpen(!prevState);
+    setIsNavMenuOpen(!isNavMenuOpen);
   }
 
   const closeNavMenu = () => {
@@ -51,7 +41,6 @@ function Navbar(props) {
             src={profile}
             className="nodrag noselect margin-xs-right"
             alt="profile"
-            onContextMenu={scrollToTop}
           />
           <h1>Clarence Siew</h1>
         </NavLink>
@@ -63,35 +52,30 @@ function Navbar(props) {
             <NavLink to="/playlists" title="Playlists">Playlists</NavLink>
             <a href="https://portfolio.clarencesiew.com/" target="_blank" rel="noreferrer" title="Portfolio">Portfolio</a>
           </div>
-          {
-            isNavMenuOpen ?
-              <button
-                id="navMenuButton"
-                className="button-selected border-radius-100pct padding-none hstack align-center justify-center"
-                onClick={closeNavMenu}
-                style={{
-                  width: "2.5rem",
-                  height: "2.5rem"
-                }}
-              >
+          <button
+            id="navMenuButton"
+            className={`${isNavMenuOpen ? 'button-selected' : ''} border-radius-100pct padding-none hstack align-center justify-center`}
+            onClick={toggleNavMenu}
+            style={{
+              width: "2.5rem",
+              height: "2.5rem"
+            }}
+          >
+            {
+              isNavMenuOpen ?
                 <MdArrowDropUp size={iconSize} />
-              </button>
-            :
-              <button
-                id="navMenuButton"
-                className="border-radius-100pct padding-none hstack align-center justify-center"
-                onClick={toggleNavMenu}
-                style={{
-                  width: "2.5rem",
-                  height: "2.5rem"
-                }}
-              >
+              :
                 <MdArrowDropDown size={iconSize} />
-              </button>
-          }
+            }
+          </button>
         </div>
       </header>
-      <NavMenu isNavMenuOpen={isNavMenuOpen} closeNavMenu={closeNavMenu} />
+      {
+        isNavMenuOpen ?
+          <NavMenu closeNavMenu={closeNavMenu} />
+        :
+          ""
+      }
     </div>
   );
 }

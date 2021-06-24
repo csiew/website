@@ -26,8 +26,8 @@ function App() {
 
   return (
     <div id="App" className="vstack width-full height-full overflow-hidden">
-      <Navbar className="transition-enter-down" />
-      <main className="overflow-y-auto transition-enter-pop" onScroll={detectAwayFromTop}>
+      <Navbar />
+      <main className="overflow-y-auto" onScroll={detectAwayFromTop}>
         <BackToTop isVisible={isAwayFromTop} />
         <Switch>
           <Route path="/" component={Home} exact />
