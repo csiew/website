@@ -8,7 +8,6 @@ import { Card, CardTitle, CardBody, CardToggleButton } from '../components/Card.
 import projects from '../assets/data/projects.json';
 
 function ProjectCard(props) {
-
   const getProjectImg = (imgUrl) => {
     if (imgUrl.length > 0) {
       return (
@@ -182,7 +181,7 @@ function ProjectsFilter(props) {
       <CardTitle className={isProjectsFilterVisible ? '' : 'card-border-radius hug-bottom'}>
         <h3>Filter by status</h3>
         <div className="width-auto hstack align-center justify-end">
-          <sub hidden={isProjectsFilterVisible} className="margin-xs-right">{props.projectStatus[props.selectedStatus] ? props.projectStatus[props.selectedStatus] : "All"}</sub>
+          <sub hidden={isProjectsFilterVisible} className="margin-xs-right transition-enter-right">{props.projectStatus[props.selectedStatus] ? props.projectStatus[props.selectedStatus] : "All"}</sub>
           <CardToggleButton cardName="Project List" isVisible={isProjectsFilterVisible} toggle={toggleProjectsFilter} />
         </div>
       </CardTitle>

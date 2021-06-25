@@ -20,14 +20,14 @@ function App() {
   });
 
   const detectAwayFromTop = () => {
-    const main = document.querySelector('main');
+    const main = document.querySelector("main");
     setIsAwayFromTop(main.scrollTop > main.getBoundingClientRect().top);
   }
 
   return (
     <div id="App" className="vstack width-full height-full overflow-hidden">
       <Navbar />
-      <main className="overflow-y-auto" onScroll={detectAwayFromTop}>
+      <main className="overflow-auto" onScroll={detectAwayFromTop}>
         <BackToTop isVisible={isAwayFromTop} />
         <Switch>
           <Route path="/" component={Home} exact />
