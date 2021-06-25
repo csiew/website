@@ -86,7 +86,7 @@ export function Card(props) {
         top: props.isFloating ? `${y}px` : null
       }}
       onDoubleClick={(e) => props.isFloating ? props.toggleFloating(e) : undefined}
-      onMouseDown={handleMouseDown}
+      onMouseDown={(e) => props.isWindowMode ? handleMouseDown(e) : undefined}
     >
       {props.children}
     </div>

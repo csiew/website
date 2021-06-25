@@ -1,7 +1,6 @@
 import { NavLink } from "react-router-dom";
 
 function Footer() {
-
   return (
     <footer>
       <p className="font-weight-600">

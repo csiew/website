@@ -8,7 +8,6 @@ import { Card, CardTitle, CardBody, CardToggleButton } from '../components/Card.
 import projects from '../assets/data/projects.json';
 
 function ProjectCard(props) {
-
   const getProjectImg = (imgUrl) => {
     if (imgUrl.length > 0) {
       return (

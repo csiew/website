@@ -15,9 +15,8 @@ function Skills(props) {
     ...skills.infrastructure.operatingSystems,
   ];
 
-  const filterSkills = (e) => {
-    e.preventDefault();
-    setFilterTerm(e.target.value);
+  const filterSkills = (value) => {
+    setFilterTerm(value);
     let results = allSkills.filter(item => item.toLowerCase().includes(filterTerm.toLowerCase()));
     setFilterResults(results.length > 0 ? results : []);
   }
@@ -99,7 +98,7 @@ function Skills(props) {
         <h3>Skills</h3>
       </CardTitle>
       <CardBody className="grid grid-col-1 grid-gap-m">
-        <input type="text" id="filterSkills" name="filterSkills" className="width-full" placeholder="Filter..." onInput={filterSkills} />
+        <input type="text" className="width-full" placeholder="Filter..." value={filterTerm} onChange={(e) => filterSkills(e.target.value)} />
         { filterResultsSection() }
         { allSkillsList() }
       </CardBody>
