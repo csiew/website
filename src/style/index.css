@@ -13,7 +13,7 @@ html, body, #root, #App {
   color: var(--FG-COLOR);
   background: var(--BG-COLOR-SECONDARY);
   font-family: var(--BASE-FONT-FAMILY);
-  font-size: 1rem;
+  font-size: 0.96rem;
   font-weight: 400;
   font-display: swap;
   -webkit-font-smoothing: antialiased;
@@ -374,7 +374,7 @@ header .button-icon-only {
   transform: scale(0.99);
   transition: var(--TRANSITION);
 }
-.list-selectable :is(.active, .item.active) {
+.list-selectable :is(.active, .item.active, .active:hover, .item.active:hover) {
   color: var(--PRIMARY-COLOR);
   background: var(--TERTIARY-COLOR);
   font-weight: 700;

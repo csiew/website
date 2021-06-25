@@ -1,24 +1,24 @@
 @media (prefers-color-scheme: dark) {
   :root {
-    --PRIMARY-COLOR: #9fdcff;
-    --SECONDARY-COLOR: #87c5e9;
+    --PRIMARY-COLOR: #7aceff;
+    --SECONDARY-COLOR: #5aaedf;
     --TERTIARY-COLOR: #15435e;
   
-    --FG-COLOR: #f5f5f5;
+    --FG-COLOR: #f3f3f3;
     --FG-COLOR-SECONDARY: #e5e5e5;
     --FG-COLOR-TERTIARY: #d5d5d5;
-    --BG-COLOR: #2e2e2e;
-    --BG-COLOR-SECONDARY: #1e1e1e;
+    --BG-COLOR: #1e1e1e;
+    --BG-COLOR-SECONDARY: #000000;
   
     --BORDER-COLOR: #4e4e4e;
     --BORDER-COLOR-HOVER: #555555;
   
-    --BUTTON-FG-COLOR: #f5f5f5;
+    --BUTTON-FG-COLOR: #f3f3f3;
     --BUTTON-FG-COLOR-DISABLED: #9e9e9e;
-    --BUTTON-BG-COLOR: #3e3e3e;
-    --BUTTON-BG-COLOR-HOVER: #4e4e4e;
+    --BUTTON-BG-COLOR: #2e2e2e;
+    --BUTTON-BG-COLOR-HOVER: #3e3e3e;
     --BUTTON-BG-COLOR-ACTIVE: #1e1e1e;
-    --BUTTON-BG-COLOR-DISABLED: #2e2e2e;
+    --BUTTON-BG-COLOR-DISABLED: #1e1e1e;
   
     --INPUT-FG-COLOR: #f5f5f5;
     --INPUT-BG-COLOR: #3e3e3e;
