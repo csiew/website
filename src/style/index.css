@@ -13,7 +13,7 @@ html, body, #root, #App {
   color: var(--FG-COLOR);
   background: var(--BG-COLOR-SECONDARY);
   font-family: var(--BASE-FONT-FAMILY);
-  font-size: 0.96rem;
+  font-size: 0.98rem;
   font-weight: 400;
   font-display: swap;
   -webkit-font-smoothing: antialiased;
