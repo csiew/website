@@ -1,6 +1,6 @@
 {
-  "name": "website-v2",
-  "version": "0.1.0",
+  "name": "website",
+  "version": "3.3.2",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",

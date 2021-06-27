@@ -9,6 +9,7 @@ import './style/animation.css';
 import './style/interactive.css';
 import './style/themes/default.css';
 import './style/themes/dark.css';
+import './assets/fonts/gelasio.css';
 import './assets/fonts/newsreader.css';
 import './assets/fonts/roboto_mono.css';
 import './assets/fonts/public_sans.css';
