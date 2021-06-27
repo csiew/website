@@ -7,6 +7,7 @@ import { DynamicPageView } from '../components/PageLayout.js';
 import { Card, CardBody, CardTitle } from '../components/Card.js';
 import BlogSidebar from '../components/BlogSidebar.js';
 import { scrollToTop } from '../utils/Scroll.js';
+import { friendlyTimestamp } from '../utils/Timestamp.js';
 import postManifest from '../assets/post_manifest.json';
 
 function BlogPostPreview(props) {
@@ -31,7 +32,7 @@ function BlogPostPreview(props) {
       >
         <CardTitle className="grid grid-col-1 grid-gap-xs align-start justify-center">
           <h3 className="font-scale-xl">{props.post.title}</h3>
-          <sub>{new Date(props.post.date).toLocaleString()}</sub>
+          <sub>{friendlyTimestamp(props.post.date)}</sub>
         </CardTitle>
       </NavLink>
       <CardBody className="position-relative padding-none">
@@ -53,8 +54,11 @@ function BlogPostPreview(props) {
 }
 
 function Blog() {
+  const [posts, setPosts] = useState([]);
+
   useEffect(() => {
     scrollToTop();
+    setPosts(postManifest.posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()));
   }, []);
 
   return (
@@ -65,7 +69,7 @@ function Blog() {
       main={(
         <div className="width-full grid grid-col-1 grid-gap-xl">
           {
-            postManifest.posts.map(post => {
+            posts.map(post => {
               return (
                 <BlogPostPreview key={post.id} post={post} disallowedElements={["hyperlink", "a", "p"]} />
               );

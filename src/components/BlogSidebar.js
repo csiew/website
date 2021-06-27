@@ -1,9 +1,16 @@
+import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Card, CardBody, CardTitle } from './Card.js';
 import postManifest from '../assets/post_manifest.json';
 import archivedBlogs from '../assets/data/archived_blogs.json';
 
 function RecentPostsList(props) {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    setPosts(postManifest.posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()));
+  }, []);
+
   return (
     <Card>
       <CardTitle className="hstack align-center justify-space-between">
@@ -18,7 +25,7 @@ function RecentPostsList(props) {
       <CardBody className="padding-none">
         <div className="list-selectable">
           {
-            postManifest.posts.slice(0, 5).map(post => {
+            posts.slice(0, 5).map(post => {
               return (
                 <NavLink
                   key={post.id}
@@ -27,7 +34,7 @@ function RecentPostsList(props) {
                   title={post.title}
                 >
                   <span>{post.title}</span>
-                  <sub className="font-scale-s text-color-secondary">{new Date(post.date.year, post.date.month, post.date.day, post.date.hr, post.date.mins, post.date.sec).toLocaleString()}</sub>
+                  <sub className="font-scale-s text-color-secondary">{new Date(post.date).toLocaleDateString()}</sub>
                 </NavLink>
               );
             })
