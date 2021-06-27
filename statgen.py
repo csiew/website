@@ -8,14 +8,7 @@ class Post:
     id = ""
     title = ""
     path = ""
-    date = {
-        'year': '',
-        'month': '',
-        'day': '',
-        'hr': '',
-        'mins': '',
-        'sec': ''
-    }
+    date = ""
 
     def __init__(self, post_id=None, title="", path="", date=None):
         if post_id is None:
@@ -25,17 +18,7 @@ class Post:
         self.title = title
         self.path = path
         if date is None:
-            timestamp = datetime.today().strftime('%Y-%m-%d %H:%M:%S')
-            timestamp_date = timestamp.split(" ")[0].split("-")
-            timestamp_time = timestamp.split(" ")[1].split(":")
-            self.date = {
-                "year": timestamp_date[0],
-                "month": timestamp_date[1],
-                "day": timestamp_date[2],
-                "hr": timestamp_time[0],
-                "mins": timestamp_time[1],
-                "sec": timestamp_time[2]
-            }
+            self.date = datetime.today().strftime('%Y-%m-%dT%H:%M:%S')
         else:
             self.date = date
     

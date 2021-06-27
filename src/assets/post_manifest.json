@@ -8,27 +8,13 @@
             "id": "b5873d60-299f-4b24-a41c-b0b858a43f72",
             "title": "New blog - a new blog, a new static site generator ...ish",
             "path": "/posts/new-blog.md",
-            "date": {
-                "year": "2020",
-                "month": "10",
-                "day": "19",
-                "hr": "17",
-                "mins": "22",
-                "sec": "06"
-            }
+            "date": "2020-10-19T17:22:06"
         },
         {
             "id": "43445e7f-f18e-4715-8a1c-b7f9b31d3efc",
             "title": "Building a webdev automation tool",
             "path": "/posts/building-webdev-automation-tool.md",
-            "date": {
-                "year": "2021",
-                "month": "02",
-                "day": "05",
-                "hr": "14",
-                "mins": "58",
-                "sec": "08"
-            }
+            "date": "2021-02-05T14:58:08"
         }
     ]
 }
