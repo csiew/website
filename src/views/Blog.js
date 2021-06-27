@@ -31,7 +31,7 @@ function BlogPostPreview(props) {
       >
         <CardTitle className="grid grid-col-1 grid-gap-xs align-start justify-center">
           <h3 className="font-scale-xl">{props.post.title}</h3>
-          <sub>{new Date(props.post.date.year, props.post.date.month, props.post.date.day, props.post.date.hr, props.post.date.mins, props.post.date.sec).toLocaleString()}</sub>
+          <sub>{new Date(props.post.date).toLocaleString()}</sub>
         </CardTitle>
       </NavLink>
       <CardBody className="position-relative padding-none">

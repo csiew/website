@@ -34,7 +34,7 @@ function PostHeader(props) {
         </NavLink>
         <div className="vstack align-start justify-center">
           <h2 className="font-scale-xxl">{props.title}</h2>
-          <sub className="font-scale-s text-color-secondary">{new Date(props.date.year, props.date.month, props.date.day, props.date.hr, props.date.mins, props.date.sec).toLocaleString()}</sub>
+          <sub className="font-scale-s text-color-secondary">{new Date(props.date).toLocaleString()}</sub>
         </div>
       </div>
     </div>
