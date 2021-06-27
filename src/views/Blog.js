@@ -15,7 +15,7 @@ function BlogPostPreview(props) {
   useEffect(() => {
     axios.get(props.post.path)
       .then(response => {
-        setPostBody(`${response.data.slice(0, 499)}...`);
+        setPostBody(response.data);
       })
       .catch(e => {
         console.warn(e)
@@ -34,16 +34,20 @@ function BlogPostPreview(props) {
           <sub>{new Date(props.post.date.year, props.post.date.month, props.post.date.day, props.post.date.hr, props.post.date.mins, props.post.date.sec).toLocaleString()}</sub>
         </CardTitle>
       </NavLink>
-      <CardBody className="blog-post-preview-body padding-none-bottom">
-        <ReactMarkdown children={postBody} className="pointer-events-none" />
+      <CardBody className="position-relative padding-none">
+        <article className="blog-post-preview-body card-border-bottom-radius padding-s">
+          <ReactMarkdown children={postBody} className="pointer-events-none" />
+        </article>
+        <NavLink
+          className="flex-inline flex-flow-column align-center justify-end position-absolute anchor-top anchor-bottom margin-none padding-none width-full height-full"
+          to={`/post/${props.post.id}`}
+          title={`${props.post.title}`}
+        >
+          <button className="button-primary position-absolute anchor-bottom margin-l-bottom margin-auto-top transition scale-subtle">
+            <span>Read more</span><MdArrowForward className="margin-xxs-left" size="1rem" />
+          </button>
+        </NavLink>
       </CardBody>
-      <NavLink
-        className="button button-icon-only padding-s width-full transition scale-subtle"
-        to={`/post/${props.post.id}`}
-        title={`${props.post.title}`}
-      >
-        <span>Read more</span><MdArrowForward className="margin-xxs-left" size="1rem" />
-      </NavLink>
     </Card>
   );
 }

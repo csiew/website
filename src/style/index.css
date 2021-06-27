@@ -13,7 +13,7 @@ html, body, #root, #App {
   color: var(--FG-COLOR);
   background: var(--BG-COLOR-SECONDARY);
   font-family: var(--BASE-FONT-FAMILY);
-  font-size: 0.98rem;
+  font-size: 1rem;
   font-weight: 400;
   font-display: swap;
   -webkit-font-smoothing: antialiased;
@@ -588,8 +588,7 @@ footer {
   justify-content: space-between;
   width: 100%;
   margin: 0;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding: 1rem;
   padding-left: 1.25rem;
   padding-right: 1.25rem;
 }
@@ -728,7 +727,7 @@ code {
 }
 
 article {
-  font-family: 'Newsreader', var(--BASE-FONT-FAMILY);
+  font-family: 'Gelasio', 'Newsreader', var(--BASE-FONT-FAMILY);
   font-size: 1.325rem;
   padding-top: 0.5rem;
 }
@@ -744,6 +743,8 @@ article code {
 
 .blog-post-preview-body {
   position: relative;
+  max-height: 192px;
+  overflow: hidden;
 }
 .blog-post-preview-body::after {
   position: absolute;
@@ -752,12 +753,12 @@ article code {
   height: 100%;
   top: 0;
   left: 0;
-  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, var(--BG-COLOR) 120%);
+  background: linear-gradient(to bottom, rgba(255,255,255,0) -25%, var(--BG-COLOR) 75%);
 }
 
 @media (prefers-color-scheme: dark) {
   .blog-post-preview-body::after {
-    background: linear-gradient(to bottom, rgba(30,30,30,0) 0%, var(--BG-COLOR) 120%);
+    background: linear-gradient(to bottom, rgba(30,30,30,0) -25%, var(--BG-COLOR) 75%);
   }
 }
 

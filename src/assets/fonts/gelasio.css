@@ -1,0 +1,15 @@
+/* GELASIO */
+@font-face {
+	font-family: 'Gelasio';
+	src: url('./gelasio/gelasio-vf.ttf');
+	font-weight: 100 1000;
+  font-style: normal;
+	font-stretch: 25% 151%;
+}
+@font-face {
+	font-family: 'Gelasio';
+	src: url('./gelasio/gelasio-italic-vf.ttf');
+	font-weight: 100 1000;
+  font-style: italic;
+	font-stretch: 25% 151%;
+}
