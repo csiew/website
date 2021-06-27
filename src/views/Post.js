@@ -8,6 +8,7 @@ import { DynamicPageView } from '../components/PageLayout.js';
 import { Card, CardBody } from '../components/Card.js';
 import BlogSidebar from '../components/BlogSidebar.js';
 import { scrollToTop } from '../utils/Scroll.js';
+import { friendlyTimestamp } from '../utils/Timestamp.js';
 import postManifest from '../assets/post_manifest.json';
 
 function PostContent(props) {
@@ -34,7 +35,7 @@ function PostHeader(props) {
         </NavLink>
         <div className="vstack align-start justify-center">
           <h2 className="font-scale-xxl">{props.title}</h2>
-          <sub className="font-scale-s text-color-secondary">{new Date(props.date).toLocaleString()}</sub>
+          <sub className="font-scale-s text-color-secondary">{friendlyTimestamp(props.date)}</sub>
         </div>
       </div>
     </div>

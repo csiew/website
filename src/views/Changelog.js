@@ -6,6 +6,7 @@ import { Card, CardBody } from '../components/Card.js';
 import { scrollToTop } from '../utils/Scroll.js';
 import versionHistoryDoc from '../assets/data/version_history.md';
 import githubApiRepository from '../repositories/GitHubApiRepository.js';
+import { friendlyTimestamp } from '../utils/Timestamp.js';
 
 function ChangelogSummary(props) {
   return (
@@ -31,7 +32,7 @@ function ChangelogPullRequests(props) {
               <div className="hstack align-center justify-space-between">
                 <div className="grid grid-col-1">
                   <h3>{pullRequest.title}</h3>
-                  <sub className="text-color-secondary">{new Date(pullRequest.closed_at).toLocaleString()}</sub>
+                  <sub className="text-color-secondary">{friendlyTimestamp(pullRequest.closed_at)}</sub>
                 </div>
                 <MdOpenInNew
                   size="1.5rem"
