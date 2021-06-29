@@ -33,7 +33,7 @@ function RecentPostsList(props) {
                   to={`/post/${post.id}`}
                   title={post.title}
                 >
-                  <span>{post.title}</span>
+                  <h4>{post.title}</h4>
                   <sub className="font-scale-s text-color-secondary">{new Date(post.date).toLocaleDateString()}</sub>
                 </NavLink>
               );

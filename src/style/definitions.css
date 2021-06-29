@@ -1,0 +1,7 @@
+:root {
+  --BORDER-RADIUS: 8px;
+  --BUTTON-BORDER-RADIUS: 8px;
+  --BASE-FONT-FAMILY: 'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --HEADER-FONT-FAMILY: 'Bitter', var(--BASE-FONT-FAMILY);
+  --ARTICLE-FONT-FAMILY: 'Bitter', var(--BASE-FONT-FAMILY);
+}
