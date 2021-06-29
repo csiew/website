@@ -12,7 +12,6 @@ export function ListItem(props) {
   if (props.to) {
     return (
       <NavLink
-        key={props.key}
         title={props.title}
         className={`item ${props.selected ? 'active' : ''} ${props.className ? props.className : ''}`}
         to={props.to}
@@ -24,7 +23,6 @@ export function ListItem(props) {
   } else if (props.href) {
     return (
       <a
-        key={props.key}
         title={props.title}
         href={props.href}
         target={props.openInNewTab ? '_blank' : ''}
@@ -37,7 +35,6 @@ export function ListItem(props) {
   } else {
     return (
       <div
-        key={props.key}
         title={props.title}
         className={`item ${props.selected ? 'active' : ''} ${props.className ? props.className : ''}`}
         onClick={props.onClick}
