@@ -5,6 +5,7 @@ import { MdCheck, MdClose } from 'react-icons/md';
 import { useOutsideAlerter } from '../hooks/useOutsideAlerter.js';
 import { DynamicPageView } from '../components/PageLayout.js';
 import { Card, CardTitle, CardBody, CardToggleButton } from '../components/Card.js';
+import { List, ListItem } from '../components/List.js';
 import projects from '../assets/data/projects.json';
 
 function ProjectCard(props) {
@@ -141,22 +142,22 @@ function ProjectsList(props) {
       {
         isProjectListVisible ?
           <CardBody className="padding-none">
-          <div className="list-selectable">
-            {
-              props.projects.map(item => {
-                return (
-                  <div
-                    key={item.id}
-                    className="item flex-inline flex-flow-row-wrap align-center justify-space-between"
-                    onClick={() => scrollFocus(item.id)}
-                  >
-                    <span className="width-auto">{item.name}</span>
-                    <span className="width-auto font-scale-xs text-color-secondary">{item.timeRange}</span>
-                  </div>
-                );
-              })
-            }
-          </div>
+            <List>
+              {
+                props.projects.map(item => {
+                  return (
+                    <ListItem
+                      key={item.id}
+                      className="flex-inline flex-flow-row-wrap align-center justify-space-between"
+                      onClick={() => scrollFocus(item.id)}
+                    >
+                      <span className="width-auto">{item.name}</span>
+                      <span className="width-auto font-scale-xs text-color-secondary">{item.timeRange}</span>
+                    </ListItem>
+                  );
+                })
+              }
+            </List>
           </CardBody>
         :
           ''
@@ -188,29 +189,31 @@ function ProjectsFilter(props) {
       {
         isProjectsFilterVisible ?
           <CardBody className="padding-none">
-          <div className="list-selectable">
-            <div
-              className={`item flex-inline flex-flow-row align-center justify-space-between ${props.selectedStatus === -1 ? 'active' : ''}`}
-              onClick={() => props.handleSelectStatus(-1)}
-            >
-              <span className="width-auto">All</span>
-              {generateCheckmark(props.selectedStatus === -1)}
-            </div>
-            {
-              Object.entries(props.projectStatus).reverse().map(item => {
-                return (
-                  <div
-                    key={Number(item[0])}
-                    className={`item flex-inline flex-flow-row align-center justify-space-between ${props.selectedStatus === Number(item[0]) ? 'active' : ''}`}
-                    onClick={() => props.handleSelectStatus(Number(item[0]))}
-                  >
-                    <span className="width-auto">{item[1]}</span>
-                    {generateCheckmark(props.selectedStatus === Number(item[0]))}
-                  </div>
-                );
-              })
-            }
-          </div>
+            <List>
+              <ListItem
+                className="flex-inline flex-flow-row align-center justify-space-between"
+                selected={props.selectedStatus === -1}
+                onClick={() => props.handleSelectStatus(-1)}
+              >
+                <span className="width-auto">All</span>
+                {generateCheckmark(props.selectedStatus === -1)}
+              </ListItem>
+              {
+                Object.entries(props.projectStatus).reverse().map(item => {
+                  return (
+                    <ListItem
+                      key={Number(item[0])}
+                      className="item flex-inline flex-flow-row align-center justify-space-between"
+                      selected={props.selectedStatus === Number(item[0])}
+                      onClick={() => props.handleSelectStatus(Number(item[0]))}
+                    >
+                      <span className="width-auto">{item[1]}</span>
+                      {generateCheckmark(props.selectedStatus === Number(item[0]))}
+                    </ListItem>
+                  );
+                })
+              }
+            </List>
           </CardBody>
         :
           ''

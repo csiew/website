@@ -17,8 +17,8 @@ button, .button, input[type=submit] {
   justify-content: center;
   margin: 0;
   padding: 0.25rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
   transition: var(--TRANSITION);
 }
 :is(button, .button, input[type=submit]):hover {
@@ -116,25 +116,30 @@ select {
 .tab-bar {
   color: var(--BUTTON-FG-COLOR);
   background: var(--BG-COLOR-SECONDARY);
-  box-shadow: 0px 2px 8px rgba(0,0,0,0.125) inset;
+  box-shadow: none;
   border-radius: var(--BUTTON-BORDER-RADIUS);
   font-weight: 600;
   display: grid;
   grid-auto-flow: column;
-  gap: 0.125rem;
+  gap: 0.25rem;
   align-items: center;
   margin: 0;
   padding: 0.25rem;
+  transition: var(--TRANSITION);
+}
+.tab-bar:hover {
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.125) inset;
+  transition: var(--TRANSITION);
 }
 .tab-bar :is(a, .item) {
-  color: var(--BUTTON-FG-COLOR) !important;
+  color: var(--BUTTON-FG-COLOR);
   background: none;
   border-radius: var(--BUTTON-BORDER-RADIUS);
   text-decoration: none !important;
   margin: 0;
   padding: 0.25rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
   transition: var(--TRANSITION);
 }
 .tab-bar :is(a:hover, .item:hover) {

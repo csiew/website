@@ -7,6 +7,7 @@ import { scrollToTop } from '../utils/Scroll.js';
 import versionHistoryDoc from '../assets/data/version_history.md';
 import githubApiRepository from '../repositories/GitHubApiRepository.js';
 import { friendlyTimestamp } from '../utils/Timestamp.js';
+import { TabBar, TabBarItem, TabBarStickyContainer } from '../components/TabBar.js';
 
 function ChangelogSummary(props) {
   return (
@@ -57,14 +58,15 @@ function ChangelogContent(props) {
   }
 }
 
-function ChangelogTab(props) {
+function ChangelogTabBarItem(props) {
   return (
-    <span
-      className={`item text-align-center cursor-pointer noselect ${String(props.selectedTab) === props.tabIndex ? 'active' : ''}`}
+    <TabBarItem
+      title={props.title}
+      className={String(props.selectedTab) === props.tabIndex ? 'active' : ''}
       onClick={() => props.setSelectedTab(props.tabIndex)}
     >
       {props.title}
-    </span>
+    </TabBarItem>
   );
 }
 
@@ -134,14 +136,12 @@ function Changelog() {
           <div className="width-full grid grid-col-1 grid-gap-xl">
             <Card className="width-max-800 img-respect-bounds nodrag">
               <CardBody className="padding-none grid grid-col-1 grid-gap-m">
-                <div
-                  className="card-border-top-radius border-bottom bg-color-acryllic position-sticky anchor-top margin-none-top padding-s"
-                >
-                  <div className="tab-bar width-auto">
-                    <ChangelogTab tabIndex="0" selectedTab={selectedTab} setSelectedTab={handleSelectTab} title="Summary" />
-                    <ChangelogTab tabIndex="1" selectedTab={selectedTab} setSelectedTab={handleSelectTab} title="Pull Requests" />
-                  </div>
-                </div>
+                <TabBarStickyContainer>
+                  <TabBar className="width-auto">
+                    <ChangelogTabBarItem tabIndex="0" selectedTab={selectedTab} setSelectedTab={handleSelectTab} title="Summary" />
+                    <ChangelogTabBarItem tabIndex="1" selectedTab={selectedTab} setSelectedTab={handleSelectTab} title="Pull Requests" />
+                  </TabBar>
+                </TabBarStickyContainer>
                 <ChangelogContent selectedTab={selectedTab} summary={summary} pullRequests={pullRequests} />
               </CardBody>
             </Card>

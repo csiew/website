@@ -3,6 +3,7 @@ import { generateId } from '../utils/Strings.js';
 import { scrollFocus, scrollToTop } from '../utils/Scroll.js';
 import { DynamicPageView } from '../components/PageLayout.js';
 import { Card, CardTitle, CardBody, CardToggleButton } from '../components/Card.js';
+import { List, ListItem } from '../components/List.js';
 import playlists from '../assets/data/playlists.json';
 
 function PlaylistGroupCard(props) {
@@ -110,21 +111,20 @@ function Playlists() {
             {
               isPlaylistListVisible ?
                 <CardBody className="padding-none">
-                  <div className="list-selectable">
+                  <List>
                     {
                       playlists["collection"].map(item => {
                         return (
-                          <span
+                          <ListItem
                             key={generateId(item.title)}
-                            className="item"
                             onClick={() => scrollFocus(generateId(item.title))}
                           >
                             {item.title}
-                          </span>
+                          </ListItem>
                         );
                       })
                     }
-                  </div>
+                  </List>
                 </CardBody>
               :
                 ''

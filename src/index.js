@@ -15,6 +15,7 @@ import './style/themes/dark.css';
 import './style/controls.css';
 import './style/surfaces.css';
 import './style/lists.css';
+import './style/article.css';
 import './style/main.css';
 
 // Animation
