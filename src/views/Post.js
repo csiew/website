@@ -6,6 +6,7 @@ import axios from 'axios';
 import { MdArrowBack } from 'react-icons/md';
 import { DynamicPageView } from '../components/PageLayout.js';
 import { Card, CardBody } from '../components/Card.js';
+import { Toolbar } from '../components/Toolbar.js';
 import BlogSidebar from '../components/BlogSidebar.js';
 import { scrollToTop } from '../utils/Scroll.js';
 import { friendlyTimestamp } from '../utils/Timestamp.js';
@@ -25,7 +26,7 @@ function PostContent(props) {
 
 function PostHeader(props) {
   return (
-    <div className="toolbar anchor-top margin-none-top padding-none">
+    <Toolbar>
       <div className="width-max-1280 hstack align-center justify-start margin-auto-horizontal padding-s padding-m-left padding-m-right">
         <NavLink
           className="button button-icon-only margin-m-right padding-none transition scale-subtle"
@@ -38,7 +39,7 @@ function PostHeader(props) {
           <sub className="font-scale-s text-color-secondary">{friendlyTimestamp(props.date)}</sub>
         </div>
       </div>
-    </div>
+    </Toolbar>
   );
 }
 

@@ -1,0 +1,159 @@
+button, .button, input[type=submit] {
+  color: var(--BUTTON-FG-COLOR);
+  background: var(--BUTTON-BG-COLOR);
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--BUTTON-BG-COLOR);
+  border-radius: var(--BUTTON-BORDER-RADIUS);
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  display: inline-flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0.25rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  transition: var(--TRANSITION);
+}
+:is(button, .button, input[type=submit]):hover {
+  color: var(--BUTTON-FG-COLOR);
+  background: var(--BUTTON-BG-COLOR-HOVER);
+  border-color: var(--BUTTON-BG-COLOR-HOVER);
+  text-decoration: none;
+  transition: var(--TRANSITION);
+}
+:is(button, .button, input[type=submit]):hover:active {
+  background: var(--BUTTON-BG-COLOR-ACTIVE);
+  border-color: var(--BUTTON-BG-COLOR-ACTIVE);
+  transform: scale(0.98);
+  transition: var(--TRANSITION);
+}
+:is(button, .button, input[type=submit]):disabled :is(.disabled) {
+  color: var(--BUTTON-FG-COLOR-DISABLED);
+  background: var(--BUTTON-BG-COLOR-DISABLED);
+  border-color: var(--BUTTON-BG-COLOR-DISABLED);
+  cursor: default;
+  transform: none !important;
+  transition: var(--TRANSITION);
+}
+
+.button-selected,
+.button-selected:hover {
+  color: var(--BG-COLOR) !important;
+  background: var(--PRIMARY-COLOR) !important;
+  border-color: var(--PRIMARY-COLOR) !important;
+}
+
+.button-primary {
+  color: var(--BG-COLOR) !important;
+  background: var(--PRIMARY-COLOR) !important;
+  border-color: var(--PRIMARY-COLOR) !important;
+}
+.button-primary:hover {
+  color: var(--BG-COLOR) !important;
+  background: var(--SECONDARY-COLOR) !important;
+  border-color: var(--SECONDARY-COLOR) !important;
+}
+.button-primary:active {
+  color: var(--BG-COLOR) !important;
+  background: var(--FG-COLOR) !important;
+  border-color: var(--FG-COLOR) !important;
+}
+
+.button-icon-only {
+  color: var(--FG-COLOR);
+  background: none !important;
+  border: none !important;
+  padding: none !important;
+  box-shadow: none !important;
+}
+.button-icon-only:hover {
+  color: var(--SECONDARY-COLOR);
+}
+.button-icon-only:active {
+  color: var(--PRIMARY-COLOR);
+}
+
+input[type=text],
+input[type=email],
+select {
+  color: var(--INPUT-FG-COLOR);
+  background: var(--INPUT-BG-COLOR);
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--BORDER-COLOR);
+  border-radius: var(--BORDER-RADIUS);
+  font-size: inherit;
+  font-family: inherit;
+  margin: 0;
+  padding: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  transition: var(--TRANSITION);
+}
+:is(input[type=text], input[type=email], select):hover {
+  background: var(--INPUT-BG-COLOR-HOVER);
+  border-color: var(--BORDER-COLOR-HOVER);
+  transition: var(--TRANSITION);
+}
+:is(input[type=text], input[type=email], select):focus {
+  background: var(--INPUT-BG-COLOR-ACTIVE);
+  border-color: var(--PRIMARY-COLOR);
+  transition: var(--TRANSITION);
+}
+:is(input[type=text], input[type=email], select):disabled {
+  background: var(--INPUT-BG-COLOR-DISABLED);
+  border-color: var(--BORDER-COLOR);
+  transition: var(--TRANSITION);
+}
+
+.tab-bar {
+  color: var(--BUTTON-FG-COLOR);
+  background: var(--BG-COLOR-SECONDARY);
+  box-shadow: none;
+  border-radius: var(--BUTTON-BORDER-RADIUS);
+  font-weight: 600;
+  display: grid;
+  grid-auto-flow: column;
+  gap: 0.25rem;
+  align-items: center;
+  margin: 0;
+  padding: 0.25rem;
+  transition: var(--TRANSITION);
+}
+.tab-bar:hover {
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.125) inset;
+  transition: var(--TRANSITION);
+}
+.tab-bar :is(a, .item) {
+  color: var(--BUTTON-FG-COLOR);
+  background: none;
+  border-radius: var(--BUTTON-BORDER-RADIUS);
+  text-decoration: none !important;
+  margin: 0;
+  padding: 0.25rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  transition: var(--TRANSITION);
+}
+.tab-bar :is(a:hover, .item:hover) {
+  background: var(--BUTTON-BG-COLOR-HOVER);
+  transition: var(--TRANSITION);
+}
+.tab-bar :is(a:active, .item:active) {
+  background: var(--BUTTON-BG-COLOR-ACTIVE);
+  transform: scale(0.98);
+  transition: var(--TRANSITION);
+}
+.tab-bar :is(a.active, .item.active, a.active:hover, .item.active:hover) {
+  color: var(--BG-COLOR) !important;
+  background: var(--PRIMARY-COLOR);
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.125);
+  transition: var(--TRANSITION);
+}

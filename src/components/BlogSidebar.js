@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Card, CardBody, CardTitle } from './Card.js';
+import { List, ListItem } from './List.js';
 import postManifest from '../assets/post_manifest.json';
 import archivedBlogs from '../assets/data/archived_blogs.json';
 
@@ -23,23 +24,23 @@ function RecentPostsList(props) {
         }
       </CardTitle>
       <CardBody className="padding-none">
-        <div className="list-selectable">
+        <List>
           {
             posts.slice(0, 5).map(post => {
               return (
-                <NavLink
+                <ListItem
                   key={post.id}
                   className="vstack align-start justify-center"
                   to={`/post/${post.id}`}
                   title={post.title}
                 >
-                  <span>{post.title}</span>
+                  <h4>{post.title}</h4>
                   <sub className="font-scale-s text-color-secondary">{new Date(post.date).toLocaleDateString()}</sub>
-                </NavLink>
+                </ListItem>
               );
             })
           }
-        </div>
+        </List>
       </CardBody>
     </Card>
   )

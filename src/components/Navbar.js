@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { MdArrowDropUp, MdArrowDropDown } from 'react-icons/md';
 import profile from '../assets/img/profile.jpg';
 import { useOutsideAlerter } from '../hooks/useOutsideAlerter';
+import { TabBar, TabBarItem } from './TabBar';
 
 function NavMenu(props) {
   const navMenuRef = useRef(null);
@@ -45,13 +46,13 @@ function Navbar(props) {
           <h1>Clarence Siew</h1>
         </NavLink>
         <div className="width-auto grid grid-auto-flow-column grid-gap-s align-center">
-          <div className="tab-bar nav-tab-bar">
-            <NavLink to="/" title="Home" exact={true}>Home</NavLink>
-            <NavLink to="/blog" title="Blog">Blog</NavLink>
-            <NavLink to="/projects" title="Projects">Projects</NavLink>
-            <NavLink to="/playlists" title="Playlists">Playlists</NavLink>
-            <a href="https://portfolio.clarencesiew.com/" target="_blank" rel="noreferrer" title="Portfolio">Portfolio</a>
-          </div>
+          <TabBar className="nav-tab-bar">
+            <TabBarItem to="/" title="Home" exact={true}>Home</TabBarItem>
+            <TabBarItem to="/blog" title="Blog">Blog</TabBarItem>
+            <TabBarItem to="/projects" title="Projects">Projects</TabBarItem>
+            <TabBarItem to="/playlists" title="Playlists">Playlists</TabBarItem>
+            <TabBarItem href="https://portfolio.clarencesiew.com/" openInNewTab={true} title="Portfolio">Portfolio</TabBarItem>
+          </TabBar>
           <button
             id="navMenuButton"
             className={`${isNavMenuOpen ? 'button-selected' : ''} border-radius-100pct padding-none hstack align-center justify-center`}
