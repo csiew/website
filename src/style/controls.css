@@ -34,7 +34,8 @@ button, .button, input[type=submit] {
   transform: scale(0.98);
   transition: var(--TRANSITION);
 }
-:is(button, .button, input[type=submit]):disabled :is(.disabled) {
+:is(button, .button, input[type=submit]):disabled,
+:is(button, .button, input[type=submit]).disabled {
   color: var(--BUTTON-FG-COLOR-DISABLED);
   background: var(--BUTTON-BG-COLOR-DISABLED);
   border-color: var(--BUTTON-BG-COLOR-DISABLED);

@@ -35,9 +35,7 @@ export function DynamicPageView(props) {
     <div className={`width-full margin-auto-horizontal grid grid-col-1 ${props.className ? props.className : ''}`}>
       {
         props.title ?
-          <PageHeader>
-            <h2>{props.title}</h2>
-          </PageHeader>
+          <PageHeader title={props.title} isItalic={true} isTextured={true} />
         :
           ''
       }

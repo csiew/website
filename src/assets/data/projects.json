@@ -6,6 +6,16 @@
     },
     "projects": [
         {
+            "id": "brioche",
+            "name": "Brioche",
+            "timeRange": "2021",
+            "status": 2,
+            "description": "Brioche is a React UI component library based off the reusable components and stylesheets that were developed via my personal website over the years. It is currently under heavy development and may not have all commonly-used UI components.\n\nIt is the successor to Cardo, my previous attempt at building a UI component library.",
+            "imgUrl": "",
+            "url": "https://www.npmjs.com/package/brioche",
+            "github": "https://github.com/csiew/brioche"
+        },
+        {
             "id": "cast",
             "name": "Cast",
             "timeRange": "2020",
