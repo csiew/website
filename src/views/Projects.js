@@ -49,8 +49,8 @@ function ProjectCard(props) {
           </div>
         </div>
         <div className="grid grid-col-2 grid-gap-s">
-          <a href={props.project.github} rel="noreferrer" target="_blank" className={ "button" + (props.project.github.length === 0 ? ' disabled' : '') } disabled={props.project.github.length === 0}>Repository</a>
-          <a href={props.project.url} rel="noreferrer" target="_blank" className={ "button" + (props.project.url.length === 0 ? ' disabled' : '') } disabled={props.project.url.length === 0}>Website</a>
+          <a href={props.project.github} rel="noreferrer" target="_blank" className={`button ${props.project.github.length === 0 ? 'disabled' : ''}`}>Repository</a>
+          <a href={props.project.url} rel="noreferrer" target="_blank" className={`button ${props.project.url.length === 0 ? 'disabled' : ''}`}>Website</a>
         </div>
       </CardTitle>
       <CardBody className="grid grid-col-1 grid-gap-xl">
