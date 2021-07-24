@@ -3,13 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router } from 'react-router';
 
-import './style/index.css';
-import './style/animation.css';
-import './style/util.css';
-import './style/themes/default.css';
-import './style/themes/dark.css';
-import './assets/fonts/newsreader.css';
-import './assets/fonts/roboto_mono.css';
+import 'brioche/dist/App.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 

@@ -3,8 +3,7 @@ import { scrollFocus, scrollToTop } from '../utils/Scroll.js';
 import ReactMarkdown from 'react-markdown';
 import { MdClose } from 'react-icons/md';
 import { useOutsideAlerter } from '../hooks/useOutsideAlerter.js';
-import { DynamicPageView } from '../components/PageLayout.js';
-import { Card, CardTitle, CardBody, CardToggleButton } from '../components/Card.js';
+import { Card, CardTitle, CardBody, PageLayout, List, ListItem, Button } from 'brioche';
 import projects from '../assets/data/projects.json';
 
 function ProjectCard(props) {
@@ -32,8 +31,18 @@ function ProjectCard(props) {
           <sub>{props.project.timeRange}</sub>
         </div>
         <div className="grid grid-col-2 grid-gap-s">
-          <a href={props.project.github} rel="noreferrer" target="_blank" className={ "button" + (props.project.github.length === 0 ? ' disabled' : '') } disabled={props.project.github.length === 0}>Repository</a>
-          <a href={props.project.url} rel="noreferrer" target="_blank" className={ "button" + (props.project.url.length === 0 ? ' disabled' : '') } disabled={props.project.url.length === 0}>Website</a>
+          <Button
+            href={props.project.github}
+            openInNewTab
+            disabled={props.project.github.length === 0}
+            label="Repository"
+          />
+          <Button
+            href={props.project.url}
+            openInNewTab
+            disabled={props.project.url.length === 0}
+            label="Website"
+          />
         </div>
       </CardTitle>
       <CardBody className="grid grid-col-1 grid-gap-xl">
@@ -97,7 +106,6 @@ function Projects() {
   const [isImagePopoutModalVisible, setIsImagePopoutModalVisible] = useState(false);
   const [imgUrl, setImgUrl] = useState(null);
   const [imgAltText, setImgAltText] = useState(null);
-  const [isProjectListVisible, setIsProjectListVisible] = useState(true);
 
   useEffect(() => {
     scrollToTop();
@@ -109,12 +117,8 @@ function Projects() {
     setIsImagePopoutModalVisible(newState);
   }
 
-  const toggleProjectList = () => {
-    setIsProjectListVisible(!isProjectListVisible);
-  }
-
   return (
-    <DynamicPageView
+    <PageLayout
       title="Projects"
       className="width-max-1280"
       sidebarClassName="width-min-240 position-sticky anchor-top"
@@ -135,34 +139,32 @@ function Projects() {
       )}
       sidebar={(
         <>
-          <Card>
-            <CardTitle className={isProjectListVisible ? '' : 'card-border-radius padding-s-bottom'}>
+          <Card
+            isCollapsedValue="Show"
+            isNotCollapsedValue="Hide"
+            isCollapsible
+          >
+            <CardTitle>
               <h3>All projects</h3>
-              <CardToggleButton cardName="Project List" isVisible={isProjectListVisible} toggle={toggleProjectList} />
             </CardTitle>
-            {
-              isProjectListVisible ?
-                <CardBody className="padding-none-left padding-none-right padding-none-top padding-s-bottom">
-                <div className="list-selectable">
-                  {
-                    projects["projects"].map(item => {
-                      return (
-                        <div
-                          key={item.id}
-                          className="item flex-inline flex-flow-row-wrap align-center justify-space-between"
-                          onClick={() => scrollFocus(item.id)}
-                        >
-                          <span className="width-auto">{item.name}</span>
-                          <span className="width-auto font-scale-xs text-color-secondary">{item.timeRange}</span>
-                        </div>
-                      );
-                    })
-                  }
-                </div>
-                </CardBody>
-              :
-                ''
-            }
+            <CardBody className="padding-none">
+              <List>
+                {
+                  projects["projects"].map(item => {
+                    return (
+                      <ListItem
+                        key={item.id}
+                        className="flex-inline flex-flow-row-wrap align-center justify-space-between"
+                        onClick={() => scrollFocus(item.id)}
+                      >
+                        <span className="width-auto">{item.name}</span>
+                        <span className="width-auto font-scale-xs text-color-secondary">{item.timeRange}</span>
+                      </ListItem>
+                    );
+                  })
+                }
+              </List>
+            </CardBody>
           </Card>
         </>
       )}
@@ -177,7 +179,7 @@ function Projects() {
         :
           ''
       }
-    </DynamicPageView>
+    </PageLayout>
   );
 }
 

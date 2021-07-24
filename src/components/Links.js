@@ -1,4 +1,4 @@
-import { Card, CardBody, CardTitle } from './Card.js';
+import { Card, CardBody, CardTitle, List, ListItem } from 'brioche';
 import links from '../assets/data/links.json';
 
 function Links(props) {
@@ -7,14 +7,16 @@ function Links(props) {
       <CardTitle>
         <h3>Elsewhere</h3>
       </CardTitle>
-      <CardBody className="grid grid-col-3 grid-col-responsive grid-gap-s">
-        {
-          links["links"].map(link => {
-            return (
-              <a href={link["url"]} target="_blank" className="button" rel="noreferrer" key={link["id"]}>{link["name"]}</a>
-            );
-          })
-        }
+      <CardBody className="padding-none">
+        <List>
+          {
+            links["links"].map((link, index) => {
+              return (
+                <ListItem href={link["url"]} key={index} openInNewTab>{link["name"]}</ListItem>
+              );
+            })
+          }
+        </List>
       </CardBody>
     </Card>
   );
