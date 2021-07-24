@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState } from 'react';
+import {  useEffect, useRef, useState } from 'react';
 import { scrollFocus, scrollToTop } from '../utils/Scroll.js';
 import ReactMarkdown from 'react-markdown';
-import { MdClose } from 'react-icons/md';
+import { MdCheck, MdClose } from 'react-icons/md';
 import { useOutsideAlerter } from '../hooks/useOutsideAlerter.js';
 import { Card, CardTitle, CardBody, PageLayout, List, ListItem, Button } from 'brioche';
 import projects from '../assets/data/projects.json';
@@ -13,7 +13,7 @@ function ProjectCard(props) {
         <img
           src={`/assets/img/projects/${imgUrl}`}
           alt="Project"
-          className="bordered-img cursor-pointer nodrag noselect"
+          className="bordered-img cursor-pointer transition active-scale-down-subtle nodrag noselect"
           width="100%"
           onClick={props.viewImg}
         />
@@ -22,13 +22,29 @@ function ProjectCard(props) {
       return null;
     }
   }
+
+  const getStatusTagStyleClass = (statusCode) => {
+    switch (statusCode) {
+      case 2:
+        return "status-tag-active";
+      case 1:
+        return "status-tag-hiatus";
+      case 0:
+        return "status-tag-discontinued";
+      default:
+        return "";
+    }
+  }
   
   return (
     <Card id={props.project.id}>
       <CardTitle className="flex-inline flex-flow-row-wrap">
         <div className="flex-inline flex-flow-column align-start justify-center">
           <h4 className="font-scale-xxl">{props.project.name}</h4>
-          <sub>{props.project.timeRange}</sub>
+          <div className="grid grid-auto-flow-column grid-gap-s align-center">
+            <span className={`status-tag ${getStatusTagStyleClass(props.project.status)}`}>{projects["projectStatus"][props.project.status]}</span>
+            <sub>{props.project.timeRange}</sub>
+          </div>
         </div>
         <div className="grid grid-col-2 grid-gap-s">
           <Button
@@ -47,6 +63,18 @@ function ProjectCard(props) {
       </CardTitle>
       <CardBody className="grid grid-col-1 grid-gap-xl">
         { getProjectImg(props.project.imgUrl) }
+        {
+          Object.keys(props.project).includes("note") ?
+            <Card className="note">
+              <CardBody>
+                <ReactMarkdown>
+                  {props.project.note}
+                </ReactMarkdown>
+              </CardBody>
+            </Card>
+          :
+            ""
+        }
         <div>
           <ReactMarkdown>
             {props.project.description}
@@ -58,47 +86,141 @@ function ProjectCard(props) {
 }
 
 function ImagePopoutModal(props) {
+  const toolbarRef = useRef(null);
   const imgViewRef = useRef(null);
+  useOutsideAlerter(toolbarRef, () => props.toggle(false));
   useOutsideAlerter(imgViewRef, () => props.toggle(false));
 
   return (
     <div
-      className="modal-container padding-xl vstack align-center justify-center transition-enter-fade"
+      className="modal-container vstack align-stretch justify-stretch transition-enter-fade"
       style={{
         height: `${document.querySelector('main').getBoundingClientRect().height}px`,
         top: `${document.querySelector('header').getBoundingClientRect().height}px`
       }}
     >
-      <div ref={imgViewRef} className="card width-auto transition-enter-pop">
-        <CardTitle className="padding-xs hstack align-center justify-space-between">
-          <h3>{props.alt}</h3>
-          <button
-            onClick={() => props.toggle(false)}
-            className="padding-none border-radius-100pct"
-            style={{
-              width: "1.75rem",
-              height: "1.75rem"
-            }}
-          >
-            <MdClose size="1.25rem" />
-          </button>
-        </CardTitle>
-        <CardBody className="padding-xs padding-none-top">
-          <img
-            src={props.src}
-            alt={props.alt ? props.alt : 'No alt text provided'}
-            className="bordered-img nodrag noselect"
-            width="100%"
-            height="100%"
-            style={{
-              width: "auto",
-              height: "auto",
-              maxHeight: `${document.querySelector('main').getBoundingClientRect().height * 0.75}px`
-            }}
-          />
-        </CardBody>
+      <div className="padding-xl vstack align-center justify-center">
+        <div ref={imgViewRef} className="card width-auto transition-enter-pop">
+          <CardTitle className="hstack align-center justify-space-between padding-s padding-xs-top padding-xs-bottom">
+            <h3>{props.alt}</h3>
+            <button
+              onClick={() => props.toggle(false)}
+              className="padding-none border-radius-100pct"
+              style={{
+                width: "1.75rem",
+                height: "1.75rem"
+              }}
+            >
+              <MdClose size="1.25rem" />
+            </button>
+          </CardTitle>
+          <CardBody className="padding-xs">
+            <img
+              src={props.src}
+              alt={props.alt ? props.alt : 'No alt text provided'}
+              className="bordered-img nodrag noselect"
+              width="100%"
+              height="100%"
+              style={{
+                width: "auto",
+                height: "auto",
+                maxHeight: `${document.querySelector('main').getBoundingClientRect().height * 0.75}px`
+              }}
+            />
+          </CardBody>
+        </div>
       </div>
     </div>
+  );
+}
+
+function ProjectsList(props) {
+  const [isProjectListVisible, setIsProjectListVisible] = useState(true);
+
+  const toggleProjectList = () => {
+    setIsProjectListVisible(!isProjectListVisible);
+  }
+
+  return (
+    <Card
+      isCollapsedValue="Show"
+      isNotCollapsedValue="Hide"
+      isCollapsible
+    >
+      <CardTitle>
+        <h3>All projects</h3>
+      </CardTitle>
+      <CardBody className="padding-none">
+        <List>
+          {
+            projects["projects"].map(item => {
+              return (
+                <ListItem
+                  key={item.id}
+                  className="flex-inline flex-flow-row-wrap align-center justify-space-between"
+                  onClick={() => scrollFocus(item.id)}
+                >
+                  <span className="width-auto">{item.name}</span>
+                  <span className="width-auto font-scale-xs text-color-secondary">{item.timeRange}</span>
+                </ListItem>
+              );
+            })
+          }
+        </List>
+      </CardBody>
+    </Card>
+  );
+}
+
+function ProjectsFilter(props) {
+  const [isProjectsFilterVisible, setIsProjectsFilterVisible] = useState(true);
+
+  const toggleProjectsFilter = () => {
+    setIsProjectsFilterVisible(!isProjectsFilterVisible);
+  }
+
+  const generateCheckmark = (enable=false) => {
+    if (enable) return <MdCheck size="1.5rem" className="transition-enter-pop-bounce" />
+  }
+
+  return (
+    <Card isCollapsible>
+      <CardTitle className={isProjectsFilterVisible ? '' : 'card-border-radius hug-bottom'}>
+        <h3>Filter by status</h3>
+      </CardTitle>
+      {
+        isProjectsFilterVisible ?
+          <CardBody className="padding-none">
+            <List>
+              <ListItem
+                className="flex-inline flex-flow-row align-center justify-space-between"
+                selected={props.selectedStatus === -1}
+                onClick={() => props.handleSelectStatus(-1)}
+              >
+                <span className="width-auto">All</span>
+                {generateCheckmark(props.selectedStatus === -1)}
+              </ListItem>
+              {
+                Object.entries(props.projectStatus).reverse().map(item => {
+                  return (
+                    <ListItem
+                      key={Number(item[0])}
+                      className="item flex-inline flex-flow-row align-center justify-space-between"
+                      selected={props.selectedStatus === Number(item[0])}
+                      onClick={() => props.handleSelectStatus(Number(item[0]))}
+                    >
+                      <span className="width-auto">{item[1]}</span>
+                      {generateCheckmark(props.selectedStatus === Number(item[0]))}
+                    </ListItem>
+                  );
+                })
+              }
+            </List>
+          </CardBody>
+        :
+          ''
+      }
+    </Card>
   );
 }
 
@@ -106,16 +228,73 @@ function Projects() {
   const [isImagePopoutModalVisible, setIsImagePopoutModalVisible] = useState(false);
   const [imgUrl, setImgUrl] = useState(null);
   const [imgAltText, setImgAltText] = useState(null);
+  const [selectedStatus, setSelectedStatus] = useState(null);
 
-  useEffect(() => {
-    scrollToTop();
-  }, []);
+  const handleSelectStatus = (status) => {
+    setSelectedStatus(status);
+  }
 
   const toggleImagePopoutModal = (newState=false, url=null, altText=null) => {
     setImgUrl(url);
     setImgAltText(altText);
     setIsImagePopoutModalVisible(newState);
   }
+
+  const filterBySelectedStatus = () => {
+    let filterResults = [];
+    switch (selectedStatus) {
+      case 2:
+        filterResults = projects["projects"].filter(item => item.status === 2);
+        break;
+      case 1:
+        filterResults = projects["projects"].filter(item => item.status === 1);
+        break;
+      case 0:
+        filterResults = projects["projects"].filter(item => item.status === 0);
+        break;
+      default:
+        filterResults = projects["projects"];
+    }
+    return filterResults;
+  }
+
+  const generateProjectsContent = () => {
+    if (selectedStatus !== -1) {
+      let filterResults = filterBySelectedStatus();
+      if (filterResults.length === 0) {
+        return (
+          <Card className="note">
+            <CardBody className="width-full height-full padding-xxl hstack align-center justify-center">
+              <span>No projects matching filter criteria found.</span>
+            </CardBody>
+          </Card>
+        );
+      }
+      return filterResults.map(item => {
+        return (
+          <ProjectCard
+            key={item.id}
+            project={item}
+            viewImg={() => toggleImagePopoutModal(true, `/assets/img/projects/${item.imgUrl}`, item.name)}
+          />
+        );
+      });
+    }
+
+    return projects["projects"].map(item => {
+      return (
+        <ProjectCard
+          key={item.id}
+          project={item}
+          viewImg={() => toggleImagePopoutModal(true, `/assets/img/projects/${item.imgUrl}`, item.name)}
+        />
+      );
+    });
+  }
+
+  useEffect(() => {
+    scrollToTop();
+  }, []);
 
   return (
     <PageLayout
@@ -124,48 +303,13 @@ function Projects() {
       sidebarClassName="width-min-240 position-sticky anchor-top"
       main={(
         <div className="width-full margin-auto grid grid-col-1 grid-gap-xl">
-          {
-            projects["projects"].map(item => {
-              return (
-                <ProjectCard
-                  key={item.id}
-                  project={item}
-                  viewImg={() => toggleImagePopoutModal(true, `/assets/img/projects/${item.imgUrl}`, item.name)}
-                />
-              );
-            })
-          }
+          {generateProjectsContent()}
         </div>
       )}
       sidebar={(
         <>
-          <Card
-            isCollapsedValue="Show"
-            isNotCollapsedValue="Hide"
-            isCollapsible
-          >
-            <CardTitle>
-              <h3>All projects</h3>
-            </CardTitle>
-            <CardBody className="padding-none">
-              <List>
-                {
-                  projects["projects"].map(item => {
-                    return (
-                      <ListItem
-                        key={item.id}
-                        className="flex-inline flex-flow-row-wrap align-center justify-space-between"
-                        onClick={() => scrollFocus(item.id)}
-                      >
-                        <span className="width-auto">{item.name}</span>
-                        <span className="width-auto font-scale-xs text-color-secondary">{item.timeRange}</span>
-                      </ListItem>
-                    );
-                  })
-                }
-              </List>
-            </CardBody>
-          </Card>
+          <ProjectsFilter projectStatus={projects["projectStatus"]} selectedStatus={selectedStatus} handleSelectStatus={handleSelectStatus} />
+          <ProjectsList projects={projects["projects"]} />
         </>
       )}
     >

@@ -2,7 +2,7 @@ import PageHeader from "./PageHeader";
 
 export function MainSidebarView(props) {
   return (
-    <div className={`width-full responsive-row margin-auto-horizontal ${props.className ? props.className : ''}`}>
+    <div className={`width-full responsive-row margin-auto-horizontal padding-s-left padding-s-right ${props.className ? props.className : ''}`}>
       <div
         className={`width-full height-auto padding-s padding-m-top grid grid-col-1 grid-gap-xl ${props.mainClassName ? props.mainClassName : ''}`}
         style={{
@@ -32,12 +32,10 @@ export function MainSidebarView(props) {
 
 export function DynamicPageView(props) {
   return (
-    <div className={`width-full margin-auto-horizontal grid grid-col-1 ${props.title ? '' : 'margin-m-top'} ${props.className ? props.className : ''}`}>
+    <div className={`width-full margin-auto-horizontal grid grid-col-1 ${props.className ? props.className : ''}`}>
       {
         props.title ?
-          <PageHeader>
-            <h2>{props.title}</h2>
-          </PageHeader>
+          <PageHeader title={props.title} isItalic={true} isTextured={true} />
         :
           ''
       }

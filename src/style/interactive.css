@@ -1,0 +1,91 @@
+:root {
+  --TRANSITION: 0.25s;
+
+  --SCALE-UP-SUBTLE: scale(1.02);
+  --SCALE-UP-MEDIUM: scale(1.06);
+  --SCALE-UP-STRONG: scale(1.1);
+
+  --SCALE-DOWN-SUBTLE: scale(0.98);
+  --SCALE-DOWN-MEDIUM: scale(0.98);
+  --SCALE-DOWN-STRONG: scale(0.98);
+}
+
+.transition {
+  transition: var(--TRANSITION);
+}
+
+:is(
+  .hover-scale-up,
+  .hover-scale-up-subtle,
+  .hover-scale-up-medium,
+  .hover-scale-up-strong,
+  .active-scale-down,
+  .active-scale-down-subtle,
+  .active-scale-down-medium,
+  .active-scale-down-strong
+) {
+  transition: var(--TRANSITION);
+}
+
+.hover-scale-up:hover,
+.hover-scale-up-subtle:hover {
+  transform: var(--SCALE-UP-SUBTLE);
+}
+.hover-scale-up-medium:hover {
+  transform: var(--SCALE-UP-MEDIUM);
+}
+.hover-scale-up-strong:hover {
+  transform: var(--SCALE-UP-STRONG);
+}
+
+.hover-scale-down:hover,
+.hover-scale-down-subtle:hover {
+  transform: var(--SCALE-DOWN-SUBTLE);
+}
+.hover-scale-down-medium:hover {
+  transform: var(--SCALE-DOWN-MEDIUM);
+}
+.hover-scale-down-strong:hover {
+  transform: var(--SCALE-DOWN-STRONG);
+}
+
+.active-scale-up:active,
+.active-scale-up-subtle:active {
+  transform: var(--SCALE-UP-SUBTLE);
+}
+.active-scale-up-medium:active {
+  transform: var(--SCALE-UP-MEDIUM);
+}
+.active-scale-up-strong:active {
+  transform: var(--SCALE-UP-STRONG);
+}
+
+.active-scale-down:active,
+.active-scale-down-subtle:active {
+  transform: var(--SCALE-DOWN-SUBTLE);
+}
+.active-scale-down-medium:active {
+  transform: var(--SCALE-DOWN-MEDIUM);
+}
+.active-scale-down-strong:active {
+  transform: var(--SCALE-DOWN-STRONG);
+}
+
+.scale:hover, .scale-subtle:hover {
+  transform: var(--SCALE-UP-SUBTLE);
+}
+.scale:active, .scale-subtle:active {
+  transform:  var(--SCALE-DOWN-SUBTLE);
+}
+.scale-medium:hover {
+  transform: var(--SCALE-UP-MEDIUM);
+}
+.scale-medium:active {
+  transform:  var(--SCALE-DOWN-MEDIUM);
+}
+.scale-strong:hover {
+  transform: var(--SCALE-UP-STRONG);
+}
+.scale-strong:active {
+  transform:  var(--SCALE-DOWN-STRONG);
+}

@@ -6,21 +6,13 @@ import axios from 'axios';
 import { MdArrowBack } from 'react-icons/md';
 import { DynamicPageView } from '../components/PageLayout.js';
 import { Card, CardBody } from '../components/Card.js';
+import { Toolbar } from '../components/Toolbar.js';
 import BlogSidebar from '../components/BlogSidebar.js';
 import { scrollToTop } from '../utils/Scroll.js';
+import { friendlyTimestamp } from '../utils/Timestamp.js';
 import postManifest from '../assets/post_manifest.json';
 
 function PostContent(props) {
-  if (!props.post) {
-    return (
-      <Card>
-        <CardBody className="hstack align-center justify-center">
-          <span className="text-color-secondary">Loading...</span>
-        </CardBody>
-      </Card>
-    );
-  }
-
   return (
     <Card>
       <CardBody>
@@ -29,6 +21,25 @@ function PostContent(props) {
         </article>
       </CardBody>
     </Card>
+  );
+}
+
+function PostHeader(props) {
+  return (
+    <Toolbar>
+      <div className="width-max-1280 hstack align-center justify-start margin-auto-horizontal padding-s padding-m-left padding-m-right">
+        <NavLink
+          className="button button-icon-only margin-m-right padding-none transition scale-subtle"
+          to="/blog"
+        >
+          <MdArrowBack size="1.75rem" />
+        </NavLink>
+        <div className="vstack align-start justify-center">
+          <h2 className="font-scale-xxl">{props.title}</h2>
+          <sub className="font-scale-s text-color-secondary">{friendlyTimestamp(props.date)}</sub>
+        </div>
+      </div>
+    </Toolbar>
   );
 }
 
@@ -64,20 +75,7 @@ function Post() {
 
   return (
     <>
-      <div className="toolbar anchor-top padding-none transition-enter-down">
-        <div className="width-max-1280 hstack align-center justify-start margin-auto-horizontal padding-s padding-m-left padding-m-right">
-          <NavLink
-            className="button button-icon-only margin-m-right padding-none"
-            to="/blog"
-          >
-            <MdArrowBack size="1.75rem" />
-          </NavLink>
-          <div className="vstack align-start justify-center">
-            <h2 className="font-scale-xxl">{postMetadata.title}</h2>
-            <sub className="font-scale-s text-color-secondary">{new Date(postMetadata.date.year, postMetadata.date.month, postMetadata.date.day, postMetadata.date.hr, postMetadata.date.mins, postMetadata.date.sec).toDateString()}</sub>
-          </div>
-        </div>
-      </div>
+      <PostHeader title={postMetadata.title} date={postMetadata.date} />
       <DynamicPageView
         className="width-max-1280 anchor-top margin-none-top margin-auto-bottom"
         sidebarClassName="width-min-240 position-sticky anchor-top"

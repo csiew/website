@@ -3,6 +3,7 @@ import { generateId } from '../utils/Strings.js';
 import { scrollFocus, scrollToTop } from '../utils/Scroll.js';
 import { DynamicPageView } from '../components/PageLayout.js';
 import { Card, CardTitle, CardBody, CardToggleButton } from '../components/Card.js';
+import { List, ListItem } from '../components/List.js';
 import playlists from '../assets/data/playlists.json';
 
 function PlaylistGroupCard(props) {
@@ -103,35 +104,34 @@ function Playlists() {
       sidebar={(
         <>
           <Card>
-            <CardTitle className={isPlaylistListVisible ? '' : 'card-border-radius padding-s-bottom'}>
+            <CardTitle className={isPlaylistListVisible ? '' : 'card-border-radius hug-bottom'}>
               <h3>All playlists</h3>
               <CardToggleButton cardName="Playlist List" isVisible={isPlaylistListVisible} toggle={togglePlaylistList} />
             </CardTitle>
             {
               isPlaylistListVisible ?
-                <CardBody className="padding-none-left padding-none-right padding-none-top padding-s-bottom">
-                  <div className="list-selectable">
+                <CardBody className="padding-none">
+                  <List>
                     {
                       playlists["collection"].map(item => {
                         return (
-                          <span
+                          <ListItem
                             key={generateId(item.title)}
-                            className="item"
                             onClick={() => scrollFocus(generateId(item.title))}
                           >
                             {item.title}
-                          </span>
+                          </ListItem>
                         );
                       })
                     }
-                  </div>
+                  </List>
                 </CardBody>
               :
                 ''
             }
           </Card>
           <Card>
-            <CardTitle className={isFeaturedPlaylistVisible ? '' : 'card-border-radius padding-s-bottom'}>
+            <CardTitle className={isFeaturedPlaylistVisible ? '' : 'card-border-radius hug-bottom'}>
               <div className="grid grid-col-1">
                 <h3>Winter 2021</h3>
                 <sub className="text-color-secondary">Featured playlist</sub>

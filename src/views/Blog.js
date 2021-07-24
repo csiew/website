@@ -7,6 +7,7 @@ import { DynamicPageView } from '../components/PageLayout.js';
 import { Card, CardBody, CardTitle } from '../components/Card.js';
 import BlogSidebar from '../components/BlogSidebar.js';
 import { scrollToTop } from '../utils/Scroll.js';
+import { friendlyTimestamp } from '../utils/Timestamp.js';
 import postManifest from '../assets/post_manifest.json';
 
 function BlogPostPreview(props) {
@@ -15,7 +16,7 @@ function BlogPostPreview(props) {
   useEffect(() => {
     axios.get(props.post.path)
       .then(response => {
-        setPostBody(`${response.data.slice(0, 255)}...`);
+        setPostBody(response.data);
       })
       .catch(e => {
         console.warn(e)
@@ -31,26 +32,33 @@ function BlogPostPreview(props) {
       >
         <CardTitle className="grid grid-col-1 grid-gap-xs align-start justify-center">
           <h3 className="font-scale-xl">{props.post.title}</h3>
-          <sub>{new Date(props.post.date.year, props.post.date.month, props.post.date.day, props.post.date.hr, props.post.date.mins, props.post.date.sec).toDateString()}</sub>
+          <sub>{friendlyTimestamp(props.post.date)}</sub>
         </CardTitle>
       </NavLink>
-      <CardBody className="blog-post-preview-body padding-none-bottom">
-        <ReactMarkdown children={postBody} className="pointer-events-none" />
+      <CardBody className="position-relative padding-none">
+        <article className="blog-post-preview-body card-border-bottom-radius padding-s">
+          <ReactMarkdown children={postBody} className="pointer-events-none" />
+        </article>
+        <NavLink
+          className="flex-inline flex-flow-column align-center justify-end position-absolute anchor-top anchor-bottom margin-none padding-none width-full height-full"
+          to={`/post/${props.post.id}`}
+          title={`${props.post.title}`}
+        >
+          <button className="button-primary position-absolute anchor-bottom margin-l-bottom margin-auto-top transition scale-subtle">
+            <span>Read more</span><MdArrowForward className="margin-xxs-left" size="1rem" />
+          </button>
+        </NavLink>
       </CardBody>
-      <NavLink
-        className="button button-icon-only padding-s width-full"
-        to={`/post/${props.post.id}`}
-        title={`${props.post.title}`}
-      >
-        <span>Read more</span><MdArrowForward className="margin-xxs-left" size="1rem" />
-      </NavLink>
     </Card>
   );
 }
 
 function Blog() {
+  const [posts, setPosts] = useState([]);
+
   useEffect(() => {
     scrollToTop();
+    setPosts(postManifest.posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()));
   }, []);
 
   return (
@@ -61,7 +69,7 @@ function Blog() {
       main={(
         <div className="width-full grid grid-col-1 grid-gap-xl">
           {
-            postManifest.posts.map(post => {
+            posts.map(post => {
               return (
                 <BlogPostPreview key={post.id} post={post} disallowedElements={["hyperlink", "a", "p"]} />
               );

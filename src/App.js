@@ -34,7 +34,7 @@ function App() {
   }
 
   const detectAwayFromTop = () => {
-    const main = document.querySelector('main');
+    const main = document.querySelector("main");
     setIsAwayFromTop(main.scrollTop > main.getBoundingClientRect().top);
   }
 

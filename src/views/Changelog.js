@@ -1,57 +1,152 @@
 import { useEffect, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
+import { MdOpenInNew } from 'react-icons/md';
 import { DynamicPageView } from '../components/PageLayout.js';
 import { Card, CardBody } from '../components/Card.js';
 import { scrollToTop } from '../utils/Scroll.js';
 import versionHistoryDoc from '../assets/data/version_history.md';
+import githubApiRepository from '../repositories/GitHubApiRepository.js';
+import { friendlyTimestamp } from '../utils/Timestamp.js';
+import { TabBar, TabBarItem, TabBarStickyContainer } from '../components/TabBar.js';
 
-function ChangelogContent() {
-  const [isLoading, setIsLoading] = useState(true);
-  const [content, setContent] = useState(null);
-
-  useEffect(() => {
-    fetch(versionHistoryDoc)
-      .then((r) => r.text())
-      .then(text  => {
-        setContent(text);
-        setIsLoading(false);
-      })
-      .catch(e => console.debug(e));
-  }, []);
-
-  if (isLoading) {
-    return (
-      <Card>
-        <CardBody className="hstack align-center justify-center">
-          <span className="text-color-secondary">Loading...</span>
-        </CardBody>
-      </Card>
-    );
-  }
-
+function ChangelogSummary(props) {
   return (
-    <Card className="width-max-800 img-respect-bounds nodrag">
-      <CardBody>
-        <ReactMarkdown children={content} />
-      </CardBody>
-    </Card>
+    <div className="padding-l padding-none-top grid grid-col-1">
+      <ReactMarkdown children={props.summary} />
+    </div>
+  );
+}
+
+function ChangelogPullRequests(props) {
+  return (
+    <div className="list-selectable padding-s padding-none-top">
+      {
+        props.pullRequests.map(pullRequest => {
+          return (
+            <a
+              key={pullRequest.id}
+              href={pullRequest.html_url}
+              target="_blank"
+              rel="noreferrer"
+              className="item"
+            >
+              <div className="hstack align-center justify-space-between">
+                <div className="grid grid-col-1">
+                  <h3>{pullRequest.title}</h3>
+                  <sub className="text-color-secondary">{friendlyTimestamp(pullRequest.closed_at)}</sub>
+                </div>
+                <MdOpenInNew
+                  size="1.5rem"
+                  className="text-color-secondary"
+                />
+              </div>
+            </a>
+          )
+        })
+      }
+    </div>
+  );
+}
+
+function ChangelogContent(props) {
+  switch (Number(props.selectedTab)) {
+    case 1:
+      return <ChangelogPullRequests pullRequests={props.pullRequests} />
+    default:
+    case 0:
+      return <ChangelogSummary summary={props.summary} />
+  }
+}
+
+function ChangelogTabBarItem(props) {
+  return (
+    <TabBarItem
+      title={props.title}
+      className={String(props.selectedTab) === props.tabIndex ? 'active' : ''}
+      onClick={() => props.setSelectedTab(props.tabIndex)}
+    >
+      {props.title}
+    </TabBarItem>
   );
 }
 
 function Changelog() {
+  const [isLoading, setIsLoading] = useState(true);
+  const [selectedTab, setSelectedTab] = useState(0);
+  const [summary, setSummary] = useState(null);
+  const [pullRequests, setPullRequests] = useState([]);
+
+  const getSummary = () => {
+    return fetch(versionHistoryDoc)
+      .then((r) => r.text())
+      .then(text  => {
+        setSummary(text);
+      })
+      .catch(e => console.debug(e));
+  }
+
+  const getPullRequests = () => {
+    return githubApiRepository.getClosedPullRequests()
+      .then(result => {
+        setPullRequests(result.data);
+      })
+      .catch(e => console.debug(e));
+  }
+
+  const handleSelectTab = (tabIndex=0) => {
+    setSelectedTab(tabIndex);
+    switch (Number(tabIndex)) {
+      case 1:
+        window.history.pushState("", "", "/changelog/pull_requests");
+        break;
+      default:
+      case 0:
+        window.history.pushState("", "", "/changelog/summary");
+    }
+  }
+
   useEffect(() => {
     scrollToTop();
+    let path = window.location.pathname.split('/');
+    if (path[1] === "changelog") {
+      switch (path[2]) {
+        case "pull_requests":
+          setSelectedTab(1);
+          break;
+        default:
+        case "summary":
+          setSelectedTab(0);
+      }
+    }
+    getSummary()
+      .then(() => getPullRequests())
+      .then(() => setIsLoading(false));
   }, []);
 
   return (
     <DynamicPageView
       title="Changelog"
       className="width-max-800"
-      main={(
-        <div className="width-full grid grid-col-1 grid-gap-xl">
-          <ChangelogContent />
-        </div>
-      )}
+      main={
+        isLoading ?
+          <div className="width-full height-full hstack align-center justify-center">
+            <span className="font-scale-s text-color-secondary">Loading...</span>
+          </div>
+        :
+          <div className="width-full grid grid-col-1 grid-gap-xl">
+            <Card className="width-max-800 img-respect-bounds nodrag">
+              <CardBody className="padding-none grid grid-col-1 grid-gap-m">
+                <TabBarStickyContainer>
+                  <TabBar className="width-auto">
+                    <ChangelogTabBarItem tabIndex="0" selectedTab={selectedTab} setSelectedTab={handleSelectTab} title="Summary" />
+                    <ChangelogTabBarItem tabIndex="1" selectedTab={selectedTab} setSelectedTab={handleSelectTab} title="Pull Requests" />
+                  </TabBar>
+                </TabBarStickyContainer>
+                <ChangelogContent selectedTab={selectedTab} summary={summary} pullRequests={pullRequests} />
+              </CardBody>
+            </Card>
+          </div>
+      }
     />
   );
 }

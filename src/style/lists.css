@@ -1,0 +1,162 @@
+.list-selectable {
+  width: 100%;
+  height: 100%;
+  display: inline-flex;
+  flex-flow: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  padding: 0.5rem;
+}
+.list-selectable :is(a, .item) {
+  color: var(--NAV-MENU-FG-COLOR);
+  background: var(--NAV-MENU-BG-COLOR);
+  border-radius: var(--BORDER-RADIUS);
+  cursor: pointer;
+  width: 100%;
+  padding: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  transition: var(--TRANSITION);
+}
+.list-selectable :is(a:hover, .item:hover) {
+  background: var(--NAV-MENU-BG-COLOR-HOVER);
+  transition: var(--TRANSITION);
+}
+.list-selectable :is(a:hover, .item:hover, .active, .active:hover, .item.active, .item.active:hover) {
+  text-decoration: none;
+  text-transform: none;
+  transition: var(--TRANSITION);
+}
+.list-selectable :is(a:active, .item:active) {
+  background: var(--NAV-MENU-BG-COLOR-ACTIVE);
+  transform: scale(0.99);
+  transition: var(--TRANSITION);
+}
+.list-selectable :is(.active, .item.active, .active:hover, .item.active:hover) {
+  color: var(--PRIMARY-COLOR);
+  background: var(--TERTIARY-COLOR);
+  font-weight: 700;
+}
+.list-selectable :is(.active, .item.active, .active:hover, .item.active:hover) :is(h1, h2, h3, h4) {
+  color: var(--PRIMARY-COLOR);
+}
+.list-selectable :is(.active, .item.active, .active:hover, .item.active:hover) :is(sub) {
+  font-weight: normal;
+}
+.list-selectable :is(h1, h2, h3, h4, h5) {
+  margin: 0;
+  padding: 0;
+  padding-top: 0.125rem !important;
+  padding-bottom: 0.25rem !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  .list-selectable a:hover,
+  .list-selectable .active,
+  .list-selectable .active:hover {
+    color: var(--PRIMARY-COLOR);
+    background: var(--BG-COLOR);
+  }
+}
+
+.menu-dropdown {
+  color: var(--FG-COLOR);
+  background: var(--BG-COLOR);
+  box-shadow: 0px 0px 8px rgba(0,0,0,0.125);
+  border-radius: var(--BORDER-RADIUS);
+  font-family: var(--HEADER-FONT-FAMILY);
+  text-align: right;
+  z-index: 100;
+  position: fixed;
+  width: auto;
+  min-width: 240px;
+  height: auto;
+  margin: 0;
+  margin-top: -0.5rem;
+  margin-left: auto;
+  margin-right: 1.5rem;
+  right: 0;
+  padding: 0rem;
+  animation: down-transition ease-out 0.25s !important;
+}
+
+@media only screen and (max-width: 480px) {
+  .menu-dropdown {
+    box-shadow: none;
+    border-radius: 0;
+    font-size: 2rem;
+    text-align: center;
+    width: 100%;
+    min-width: none;
+    height: 100%;
+    margin: 0rem;
+    left: 0;
+    overflow-y: auto;
+    animation: fade-transition ease 0.25s !important;
+  }
+  .list-selectable {
+    height: auto;
+    margin: auto;
+  }
+}
+
+.tag-list {
+  width: 100%;
+  margin: 0;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+  padding: 0;
+}
+.tag-list-sub {
+  border: 1px solid var(--BORDER-COLOR);
+  border-radius: var(--BORDER-RADIUS);
+  display: inline-flex;
+  flex-flow: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 1rem;
+}
+:is(.tag-list-sub) :is(h1, h2, h3, h4, h5) {
+  color: var(--FG-COLOR-SECONDARY) !important;
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.125rem;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+}
+.tag-list ul {
+  list-style: none;
+  display: inline-flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 0;
+}
+.tag-list li {
+  color: var(--FG-COLOR-SECONDARY);
+  background: var(--BUTTON-BG-COLOR);
+  border-radius: var(--BORDER-RADIUS);
+  font-weight: 600;
+  cursor: default;
+  display: inline-flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0.125rem;
+  padding: 0.25rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  transition: var(--TRANSITION);
+}
+.tag-list li:last {
+  margin-right: 0;
+}
+.tag-list li:hover {
+  color: var(--BG-COLOR);
+  background: var(--PRIMARY-COLOR);
+  box-shadow: 0px 2px 8px var(--PRIMARY-COLOR);
+  z-index: 100;
+  transition: var(--TRANSITION);
+}

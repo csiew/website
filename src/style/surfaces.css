@@ -1,0 +1,113 @@
+.card-border-radius {
+  border-radius: var(--BORDER-RADIUS) !important;
+}
+.card-border-top-left-radius {
+  border-top-left-radius: var(--BORDER-RADIUS) !important;
+}
+.card-border-top-right-radius {
+  border-top-right-radius: var(--BORDER-RADIUS) !important;
+}
+.card-border-bottom-left-radius {
+  border-bottom-left-radius: var(--BORDER-RADIUS) !important;
+}
+.card-border-bottom-right-radius {
+  border-bottom-right-radius: var(--BORDER-RADIUS) !important;
+}
+.card-border-top-radius {
+  border-top-left-radius: var(--BORDER-RADIUS) !important;
+  border-top-right-radius: var(--BORDER-RADIUS) !important;
+}
+.card-border-bottom-radius {
+  border-bottom-left-radius: var(--BORDER-RADIUS) !important;
+  border-bottom-right-radius: var(--BORDER-RADIUS) !important;
+}
+
+.card {
+  color: var(--FG-COLOR);
+  background: var(--BG-COLOR);
+  border: none;
+  border-radius: var(--BORDER-RADIUS);
+  box-shadow: 0px 1px 8px rgba(0,0,0,0.25);
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+@media only screen and (max-width: 1024px) {
+  .card {
+    width: 100%;
+    max-width: auto;
+  }
+}
+
+.card .title {
+  background: var(--BG-COLOR);
+  border-bottom: 1px solid var(--BORDER-COLOR);
+  border-top-left-radius: var(--BORDER-RADIUS);
+  border-top-right-radius: var(--BORDER-RADIUS);
+  display: inline-flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0;
+  padding: 1rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+.card .title h1,
+.card .title h2,
+.card .title h3,
+.card .title h4,
+.card .title h5 {
+  margin: 0;
+  padding: 0;
+  padding-top: 0.0625rem !important;
+  padding-bottom: 0.125rem !important;
+}
+.card .title h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.card .title sub {
+  color: var(--FG-COLOR-SECONDARY);
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.card .body {
+  margin: 0;
+  padding: 1.25rem;
+}
+.card .body h1,
+.card .body h2,
+.card .body h3,
+.card .body h4,
+.card .body h5 {
+  color: var(--FG-COLOR-SECONDARY);
+  padding-top: 0.25rem;
+  padding-bottom: 1rem;
+}
+
+.modal-container {
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(16px);
+  z-index: 1000;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.note {
+  color: #694e0b;
+  background: #ffffd0;
+  border-color: #e6b949;
+  border-width: 1px;
+  border-style: solid;
+  font-size: 0.9rem;
+}
