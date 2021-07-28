@@ -1,13 +1,11 @@
 import { useEffect, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { MdOpenInNew } from 'react-icons/md';
-import { DynamicPageView } from '../components/PageLayout.js';
-import { Card, CardBody } from '../components/Card.js';
 import { scrollToTop } from '../utils/Scroll.js';
 import versionHistoryDoc from '../assets/data/version_history.md';
 import githubApiRepository from '../repositories/GitHubApiRepository.js';
 import { friendlyTimestamp } from '../utils/Timestamp.js';
-import { TabBar, TabBarItem, TabBarStickyContainer } from '../components/TabBar.js';
+import { Card, CardBody, HStack, List, ListItem, PageHeader, PageLayout, TabBar, TabBarItem } from 'brioche';
 
 function ChangelogSummary(props) {
   return (
@@ -19,18 +17,16 @@ function ChangelogSummary(props) {
 
 function ChangelogPullRequests(props) {
   return (
-    <div className="list-selectable padding-s padding-none-top">
+    <List>
       {
         props.pullRequests.map(pullRequest => {
           return (
-            <a
+            <ListItem
               key={pullRequest.id}
               href={pullRequest.html_url}
-              target="_blank"
-              rel="noreferrer"
-              className="item"
+              openInNewTab
             >
-              <div className="hstack align-center justify-space-between">
+              <HStack align="center" justify="space-between" className="width-full">
                 <div className="grid grid-col-1">
                   <h3>{pullRequest.title}</h3>
                   <sub className="text-color-secondary">{friendlyTimestamp(pullRequest.closed_at)}</sub>
@@ -39,12 +35,12 @@ function ChangelogPullRequests(props) {
                   size="1.5rem"
                   className="text-color-secondary"
                 />
-              </div>
-            </a>
+              </HStack>
+            </ListItem>
           )
         })
       }
-    </div>
+    </List>
   );
 }
 
@@ -124,9 +120,9 @@ function Changelog() {
   }, []);
 
   return (
-    <DynamicPageView
-      title="Changelog"
+    <PageLayout
       className="width-max-800"
+      header={<PageHeader title="Changelog" />}
       main={
         isLoading ?
           <div className="width-full height-full hstack align-center justify-center">
@@ -136,12 +132,15 @@ function Changelog() {
           <div className="width-full grid grid-col-1 grid-gap-xl">
             <Card className="width-max-800 img-respect-bounds nodrag">
               <CardBody className="padding-none grid grid-col-1 grid-gap-m">
-                <TabBarStickyContainer>
-                  <TabBar className="width-auto">
-                    <ChangelogTabBarItem tabIndex="0" selectedTab={selectedTab} setSelectedTab={handleSelectTab} title="Summary" />
-                    <ChangelogTabBarItem tabIndex="1" selectedTab={selectedTab} setSelectedTab={handleSelectTab} title="Pull Requests" />
-                  </TabBar>
-                </TabBarStickyContainer>
+                <Card
+                  className="position-sticky anchor-top hug-bottom padding-xs"
+                  body={
+                    <TabBar className="width-auto">
+                      <ChangelogTabBarItem tabIndex="0" selectedTab={selectedTab} setSelectedTab={handleSelectTab} title="Summary" />
+                      <ChangelogTabBarItem tabIndex="1" selectedTab={selectedTab} setSelectedTab={handleSelectTab} title="Pull Requests" />
+                    </TabBar>
+                  }
+                />
                 <ChangelogContent selectedTab={selectedTab} summary={summary} pullRequests={pullRequests} />
               </CardBody>
             </Card>

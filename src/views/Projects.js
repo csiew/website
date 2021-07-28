@@ -1,9 +1,9 @@
 import {  useEffect, useRef, useState } from 'react';
 import { scrollFocus, scrollToTop } from '../utils/Scroll.js';
 import ReactMarkdown from 'react-markdown';
-import { MdCheck, MdClose } from 'react-icons/md';
+import { MdArrowDropDown, MdArrowDropUp, MdCheck, MdClose } from 'react-icons/md';
 import { useOutsideAlerter } from '../hooks/useOutsideAlerter.js';
-import { Card, CardTitle, CardBody, PageLayout, List, ListItem, Button } from 'brioche';
+import { Card, CardTitle, CardBody, PageHeader, PageLayout, List, ListItem, Button } from 'brioche';
 import projects from '../assets/data/projects.json';
 
 function ProjectCard(props) {
@@ -93,11 +93,8 @@ function ImagePopoutModal(props) {
 
   return (
     <div
-      className="modal-container vstack align-stretch justify-stretch transition-enter-fade"
-      style={{
-        height: `${document.querySelector('main').getBoundingClientRect().height}px`,
-        top: `${document.querySelector('header').getBoundingClientRect().height}px`
-      }}
+      className="modal-container position-fixed anchor-bottom vstack height-full align-center justify-center transition-enter-fade"
+      style={{ height: `${document.querySelector('main').getBoundingClientRect().height}px` }}
     >
       <div className="padding-xl vstack align-center justify-center">
         <div ref={imgViewRef} className="card width-auto transition-enter-pop">
@@ -134,30 +131,27 @@ function ImagePopoutModal(props) {
   );
 }
 
-function ProjectsList(props) {
-  const [isProjectListVisible, setIsProjectListVisible] = useState(true);
-
-  const toggleProjectList = () => {
-    setIsProjectListVisible(!isProjectListVisible);
-  }
-
+function ProjectsList() {
   return (
     <Card
-      isCollapsedValue="Show"
-      isNotCollapsedValue="Hide"
       isCollapsible
-    >
-      <CardTitle>
-        <h3>All projects</h3>
-      </CardTitle>
-      <CardBody className="padding-none">
+      collapseButtonClassName="border-radius-100pct padding-none"
+      collapseButtonStyle={{
+        width: "2.5rem",
+        height: "2.5rem",
+      }}
+      isCollapsedValue={<MdArrowDropDown size="1.5rem" />}
+      isNotCollapsedValue={<MdArrowDropUp size="1.5rem" />}
+      title="All projects"
+      bodyClassName="padding-none"
+      body={
         <List>
           {
             projects["projects"].map(item => {
               return (
                 <ListItem
                   key={item.id}
-                  className="flex-inline flex-flow-row-wrap align-center justify-space-between"
+                  className="flex-inline flex-flow-row-wrap align-center justify-space-between cursor-pointer"
                   onClick={() => scrollFocus(item.id)}
                 >
                   <span className="width-auto">{item.name}</span>
@@ -167,65 +161,60 @@ function ProjectsList(props) {
             })
           }
         </List>
-      </CardBody>
-    </Card>
+      }
+    />
   );
 }
 
 function ProjectsFilter(props) {
-  const [isProjectsFilterVisible, setIsProjectsFilterVisible] = useState(true);
-
-  const toggleProjectsFilter = () => {
-    setIsProjectsFilterVisible(!isProjectsFilterVisible);
-  }
-
   const generateCheckmark = (enable=false) => {
     if (enable) return <MdCheck size="1.5rem" className="transition-enter-pop-bounce" />
   }
 
   return (
-    <Card isCollapsible>
-      <CardTitle className={isProjectsFilterVisible ? '' : 'card-border-radius hug-bottom'}>
-        <h3>Filter by status</h3>
-      </CardTitle>
-      {
-        isProjectsFilterVisible ?
-          <CardBody className="padding-none">
-            <List>
-              <ListItem
-                className="flex-inline flex-flow-row align-center justify-space-between"
-                selected={props.selectedStatus === -1}
-                onClick={() => props.handleSelectStatus(-1)}
-              >
-                <span className="width-auto">All</span>
-                {generateCheckmark(props.selectedStatus === -1)}
-              </ListItem>
-              {
-                Object.entries(props.projectStatus).reverse().map(item => {
-                  return (
-                    <ListItem
-                      key={Number(item[0])}
-                      className="item flex-inline flex-flow-row align-center justify-space-between"
-                      selected={props.selectedStatus === Number(item[0])}
-                      onClick={() => props.handleSelectStatus(Number(item[0]))}
-                    >
-                      <span className="width-auto">{item[1]}</span>
-                      {generateCheckmark(props.selectedStatus === Number(item[0]))}
-                    </ListItem>
-                  );
-                })
-              }
-            </List>
-          </CardBody>
-        :
-          ''
+    <Card
+      isCollapsible
+      collapseButtonClassName="border-radius-100pct padding-none"
+      collapseButtonStyle={{
+        width: "2.5rem",
+        height: "2.5rem",
+      }}
+      isCollapsedValue={<MdArrowDropDown size="1.5rem" />}
+      isNotCollapsedValue={<MdArrowDropUp size="1.5rem" />}
+      title="Filter by status"
+      bodyClassName="padding-none"
+      body={
+        <List>
+          <ListItem
+            className="flex-inline flex-flow-row align-center justify-space-between cursor-pointer"
+            selected={props.selectedStatus === -1}
+            onClick={() => props.handleSelectStatus(-1)}
+          >
+            <span className="width-auto">All</span>
+            {generateCheckmark(props.selectedStatus === -1)}
+          </ListItem>
+          {
+            Object.entries(props.projectStatus).reverse().map(item => {
+              return (
+                <ListItem
+                  key={Number(item[0])}
+                  className="item flex-inline flex-flow-row align-center justify-space-between cursor-pointer"
+                  selected={props.selectedStatus === Number(item[0])}
+                  onClick={() => props.handleSelectStatus(Number(item[0]))}
+                >
+                  <span className="width-auto">{item[1]}</span>
+                  {generateCheckmark(props.selectedStatus === Number(item[0]))}
+                </ListItem>
+              );
+            })
+          }
+        </List>
       }
-    </Card>
+    />
   );
 }
 
 function Projects() {
-  const [isImagePopoutModalVisible, setIsImagePopoutModalVisible] = useState(false);
   const [imgUrl, setImgUrl] = useState(null);
   const [imgAltText, setImgAltText] = useState(null);
   const [selectedStatus, setSelectedStatus] = useState(null);
@@ -234,10 +223,9 @@ function Projects() {
     setSelectedStatus(status);
   }
 
-  const toggleImagePopoutModal = (newState=false, url=null, altText=null) => {
+  const toggleImagePopoutModal = (url=null, altText=null) => {
     setImgUrl(url);
     setImgAltText(altText);
-    setIsImagePopoutModalVisible(newState);
   }
 
   const filterBySelectedStatus = () => {
@@ -275,7 +263,7 @@ function Projects() {
           <ProjectCard
             key={item.id}
             project={item}
-            viewImg={() => toggleImagePopoutModal(true, `/assets/img/projects/${item.imgUrl}`, item.name)}
+            viewImg={() => toggleImagePopoutModal(`/assets/img/projects/${item.imgUrl}`, item.name)}
           />
         );
       });
@@ -297,24 +285,9 @@ function Projects() {
   }, []);
 
   return (
-    <PageLayout
-      title="Projects"
-      className="width-max-1280"
-      sidebarClassName="width-min-240 position-sticky anchor-top"
-      main={(
-        <div className="width-full margin-auto grid grid-col-1 grid-gap-xl">
-          {generateProjectsContent()}
-        </div>
-      )}
-      sidebar={(
-        <>
-          <ProjectsFilter projectStatus={projects["projectStatus"]} selectedStatus={selectedStatus} handleSelectStatus={handleSelectStatus} />
-          <ProjectsList projects={projects["projects"]} />
-        </>
-      )}
-    >
+    <>
       {
-        isImagePopoutModalVisible ?
+        imgUrl ?
           <ImagePopoutModal
             toggle={toggleImagePopoutModal}
             src={imgUrl}
@@ -323,7 +296,25 @@ function Projects() {
         :
           ''
       }
-    </PageLayout>
+      <PageLayout
+        className="width-max-1280"
+        sidebarClassName="width-min-240 position-sticky anchor-top"
+        header={
+          <PageHeader title="Projects" />
+        }
+        main={(
+          <div className="width-full margin-auto grid grid-col-1 grid-gap-xl">
+            {generateProjectsContent()}
+          </div>
+        )}
+        sidebar={(
+          <>
+            <ProjectsFilter projectStatus={projects["projectStatus"]} selectedStatus={selectedStatus} handleSelectStatus={handleSelectStatus} />
+            <ProjectsList projects={projects["projects"]} />
+          </>
+        )}
+      />
+    </>
   );
 }
 

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Switch, Route, NavLink } from 'react-router-dom';
-import { AppContainer, Navbar, TabBar, TabBarItem } from 'brioche';
+import { AppContainer, Navbar, TabBar, TabBarItem, VStack } from 'brioche';
 import Footer from './components/Footer.js';
 import Home from './views/Home.js';
 import Blog from './views/Blog.js';
@@ -44,17 +44,16 @@ function App() {
   });
 
   return (
-    <AppContainer styleOverride={{ fontSize: "1.0625rem" }}>
-      <NavMenu isNavMenuOpen={isNavMenuOpen} closeNavMenu={closeNavMenu} />
-      <main className="overflow-auto transition-enter-pop" onScroll={detectAwayFromTop}>
+    <AppContainer styleOverride={{ fontSize: "1.0625rem" }} className="overflow-hidden">
+      <VStack align="stretch" justify="space-between" fullWidth fullHeight>
         <Navbar
           className="position-sticky anchor-top"
+          style={{ zIndex: 2000 }}
           left={
             <NavLink
               onClick={closeNavMenu}
               to="/"
-              className="title hstack align-center"
-              style={{ color: "black", textDecoration: "none" }}
+              className="title hstack align-center fg-color-primary link-no-decoration"
             >
               <img
                 src={profile}
@@ -108,18 +107,21 @@ function App() {
             </>
           }
         />
-        <BackToTop isVisible={isAwayFromTop} />
-        <Switch>
-          <Route path="/" component={Home} exact />
-          <Route path="/blog" component={Blog} />
-          <Route path="/post/:id" component={Post} />
-          <Route path="/projects" component={Projects} />
-          <Route path="/playlists" component={Playlists} />
-          <Route path="/changelog" component={Changelog} />
-          <Route path="*" component={NotFound} />
-        </Switch>
-        <Footer />
-      </main>
+        <NavMenu isNavMenuOpen={isNavMenuOpen} closeNavMenu={closeNavMenu} />
+        <main className="overflow-auto transition-enter-pop" onScroll={detectAwayFromTop}>
+          <BackToTop isVisible={isAwayFromTop} />
+          <Switch>
+            <Route path="/" component={Home} exact />
+            <Route path="/blog" component={Blog} />
+            <Route path="/post/:id" component={Post} />
+            <Route path="/projects" component={Projects} />
+            <Route path="/playlists" component={Playlists} />
+            <Route path="/changelog" component={Changelog} />
+            <Route path="*" component={NotFound} />
+          </Switch>
+          <Footer />
+        </main>
+      </VStack>
     </AppContainer>
   );
 }

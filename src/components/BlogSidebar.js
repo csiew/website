@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import { Card, CardBody, CardTitle } from './Card.js';
-import { List, ListItem } from './List.js';
+import { Card, CardBody, CardTitle } from 'brioche';
+import { List, ListItem } from 'brioche';
 import postManifest from '../assets/post_manifest.json';
 import archivedBlogs from '../assets/data/archived_blogs.json';
+import { MdArrowDropDown, MdArrowDropUp } from 'react-icons/md';
 
 function RecentPostsList(props) {
   const [posts, setPosts] = useState([]);
@@ -13,17 +13,18 @@ function RecentPostsList(props) {
   }, []);
 
   return (
-    <Card>
-      <CardTitle className="hstack align-center justify-space-between">
-        <h3>Recent Posts</h3>
-        {
-          props.isViewingPost ?
-            <NavLink className="button button-small padding-xs padding-none-top padding-none-bottom font-scale-s" to="/blog" title="See all posts">See all</NavLink>
-          :
-            ''
-        }
-      </CardTitle>
-      <CardBody className="padding-none">
+    <Card
+      isCollapsible
+      collapseButtonClassName="border-radius-100pct padding-none"
+      collapseButtonStyle={{
+        width: "2.5rem",
+        height: "2.5rem",
+      }}
+      isCollapsedValue={<MdArrowDropDown size="1.5rem" />}
+      isNotCollapsedValue={<MdArrowDropUp size="1.5rem" />}
+      title="Recent Posts"
+      bodyClassName="padding-none"
+      body={
         <List>
           {
             posts.slice(0, 5).map(post => {
@@ -32,7 +33,7 @@ function RecentPostsList(props) {
                   key={post.id}
                   className="vstack align-start justify-center"
                   to={`/post/${post.id}`}
-                  title={post.title}
+                  tooltip={post.title}
                 >
                   <h4>{post.title}</h4>
                   <sub className="font-scale-s text-color-secondary">{new Date(post.date).toLocaleDateString()}</sub>
@@ -41,8 +42,8 @@ function RecentPostsList(props) {
             })
           }
         </List>
-      </CardBody>
-    </Card>
+      }
+    />
   )
 }
 

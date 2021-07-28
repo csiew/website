@@ -6,14 +6,13 @@ export function scrollToTop(smooth=false) {
 }
 
 export function scrollFocus(sectionId, smooth=false) {
-  const navbar = document.querySelector('header');
   const main = document.querySelector('main');
   const section = document.getElementById(sectionId);
   scrollToTop();
   if (sectionId) {
     try {
       main.scrollTo({
-        top: section.getBoundingClientRect().top - navbar.getBoundingClientRect().height - 24,
+        top: section.getBoundingClientRect().top - 96,
         behavior: smooth === true ? "smooth" : "auto"
       });
     } catch (e) {

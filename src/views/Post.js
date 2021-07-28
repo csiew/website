@@ -4,13 +4,11 @@ import { NavLink } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import axios from 'axios';
 import { MdArrowBack } from 'react-icons/md';
-import { DynamicPageView } from '../components/PageLayout.js';
-import { Card, CardBody } from '../components/Card.js';
-import { Toolbar } from '../components/Toolbar.js';
 import BlogSidebar from '../components/BlogSidebar.js';
 import { scrollToTop } from '../utils/Scroll.js';
 import { friendlyTimestamp } from '../utils/Timestamp.js';
 import postManifest from '../assets/post_manifest.json';
+import { Card, CardBody, PageLayout, Toolbar } from 'brioche';
 
 function PostContent(props) {
   return (
@@ -27,7 +25,7 @@ function PostContent(props) {
 function PostHeader(props) {
   return (
     <Toolbar>
-      <div className="width-max-1280 hstack align-center justify-start margin-auto-horizontal padding-s padding-m-left padding-m-right">
+      <div className="width-full width-max-1280 hstack align-center justify-start margin-auto-horizontal padding-s padding-m-left padding-m-right">
         <NavLink
           className="button button-icon-only margin-m-right padding-none transition scale-subtle"
           to="/blog"
@@ -76,7 +74,7 @@ function Post() {
   return (
     <>
       <PostHeader title={postMetadata.title} date={postMetadata.date} />
-      <DynamicPageView
+      <PageLayout
         className="width-max-1280 anchor-top margin-none-top margin-auto-bottom"
         sidebarClassName="width-min-240 position-sticky anchor-top"
         main={(

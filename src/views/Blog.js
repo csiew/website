@@ -3,12 +3,11 @@ import { NavLink } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import axios from 'axios';
 import { MdArrowForward } from 'react-icons/md';
-import { DynamicPageView } from '../components/PageLayout.js';
-import { Card, CardBody, CardTitle } from '../components/Card.js';
 import BlogSidebar from '../components/BlogSidebar.js';
 import { scrollToTop } from '../utils/Scroll.js';
 import { friendlyTimestamp } from '../utils/Timestamp.js';
 import postManifest from '../assets/post_manifest.json';
+import { Card, CardBody, CardTitle, Button, PageHeader, PageLayout } from 'brioche';
 
 function BlogPostPreview(props) {
   const [postBody, setPostBody] = useState("");
@@ -44,9 +43,16 @@ function BlogPostPreview(props) {
           to={`/post/${props.post.id}`}
           title={`${props.post.title}`}
         >
-          <button className="button-primary position-absolute anchor-bottom margin-l-bottom margin-auto-top transition scale-subtle">
-            <span>Read more</span><MdArrowForward className="margin-xxs-left" size="1rem" />
-          </button>
+          <Button
+            primary
+            className="position-absolute anchor-bottom margin-l-bottom margin-auto-top transition scale-subtle"
+            label={
+              <>
+                <span>Read more</span>
+                <MdArrowForward className="margin-xxs-left" size="1rem" />
+              </>
+            }
+          />
         </NavLink>
       </CardBody>
     </Card>
@@ -62,10 +68,12 @@ function Blog() {
   }, []);
 
   return (
-    <DynamicPageView
-      title="Blog"
+    <PageLayout
       className="width-max-1280"
       sidebarClassName="width-min-240 position-sticky anchor-top"
+      header={
+        <PageHeader title="Blog" />
+      }
       main={(
         <div className="width-full grid grid-col-1 grid-gap-xl">
           {
