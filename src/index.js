@@ -3,9 +3,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router } from 'react-router';
 
-import 'brioche/dist/App.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+
+import 'brioche/dist/App.css';
+import './styles/main.css';
+import './assets/fonts/BlueberrySans.css';
+import './assets/fonts/Lato.css';
 
 const history = createBrowserHistory();
 

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Switch, Route, NavLink } from 'react-router-dom';
-import { AppContainer, Navbar, TabBar, TabBarItem, VStack } from 'brioche';
+import { AppContainer, Button, Navbar, TabBar, TabBarItem, VStack } from 'brioche';
 import Footer from './components/Footer.js';
 import Home from './views/Home.js';
 import Blog from './views/Blog.js';
@@ -11,7 +11,7 @@ import Changelog from './views/Changelog.js';
 import BackToTop from './components/BackToTop.js';
 import NotFound from './views/NotFound.js';
 import profile from './assets/img/profile.jpg';
-import { MdArrowDropDown, MdArrowDropUp } from 'react-icons/md';
+import { MdMenu } from 'react-icons/md';
 import NavMenu from './components/NavMenu.js';
 
 function App() {
@@ -44,7 +44,14 @@ function App() {
   });
 
   return (
-    <AppContainer styleOverride={{ fontSize: "1.0625rem" }} className="overflow-hidden">
+    <AppContainer
+      className="overflow-hidden"
+      styleOverride={{
+        fontSize: "1.0625rem",
+        baseFontFamily: "Lato, 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+        headerFontFamily: "'Blueberry Sans', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+      }}
+    >
       <VStack align="stretch" justify="space-between" fullWidth fullHeight>
         <Navbar
           className="position-sticky anchor-top"
@@ -57,7 +64,7 @@ function App() {
             >
               <img
                 src={profile}
-                className="nodrag noselect margin-xs-right"
+                className="nodrag noselect margin-s-right"
                 alt="profile"
                 onContextMenu={scrollToTop}
                 style={{
@@ -66,48 +73,44 @@ function App() {
                   borderRadius: "100%",
                 }}
               />
-              <h1>Clarence Siew</h1>
+              <h1
+                className="only-desktop"
+                style={{ fontWeight: 900 }}
+              >
+                Clarence Siew
+              </h1>
             </NavLink>
           }
+          center={null}
           right={
             <>
-              <TabBar>
+              <TabBar className="only-desktop">
                 <TabBarItem to="/" title="Home" exact={true}>Home</TabBarItem>
                 <TabBarItem to="/blog" title="Blog">Blog</TabBarItem>
                 <TabBarItem to="/projects" title="Projects">Projects</TabBarItem>
                 <TabBarItem to="/playlists" title="Playlists">Playlists</TabBarItem>
                 <TabBarItem href="https://portfolio.clarencesiew.com/" openInNewTab>Portfolio</TabBarItem>
               </TabBar>
-              {
-                isNavMenuOpen ?
-                  <button
-                    id="navMenuButton"
-                    className="button-selected border-radius-100pct padding-none hstack align-center justify-center"
-                    onClick={closeNavMenu}
-                    style={{
-                      width: "2.5rem",
-                      height: "2.5rem"
-                    }}
-                  >
-                    <MdArrowDropUp size={iconSize} />
-                  </button>
-                :
-                  <button
-                    id="navMenuButton"
-                    className="border-radius-100pct padding-none hstack align-center justify-center"
-                    onClick={toggleNavMenu}
-                    style={{
-                      width: "2.5rem",
-                      height: "2.5rem"
-                    }}
-                  >
-                    <MdArrowDropDown size={iconSize} />
-                  </button>
-              }
+              <Button
+                className="nav-menu-button border-radius-100pct padding-none hstack align-center justify-center"
+                onClick={isNavMenuOpen ? closeNavMenu : toggleNavMenu}
+                style={{
+                  width: "2.5rem",
+                  height: "2.5rem"
+                }}
+                iconOnly
+                selected={isNavMenuOpen}
+                label={<MdMenu size={iconSize} />}
+              />
             </>
           }
         />
-        <NavMenu isNavMenuOpen={isNavMenuOpen} closeNavMenu={closeNavMenu} />
+        {
+          isNavMenuOpen ?
+            <NavMenu closeNavMenu={closeNavMenu} />
+          :
+            ""
+        }
         <main className="overflow-auto transition-enter-pop" onScroll={detectAwayFromTop}>
           <BackToTop isVisible={isAwayFromTop} />
           <Switch>
