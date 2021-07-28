@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { DynamicPageView } from '../components/PageLayout.js';
+import { PageLayout } from 'brioche';
 import HelloWorld from '../components/HelloWorld.js';
 import Skills from '../components/Skills.js';
 import Places from '../components/Places.js';
@@ -12,7 +12,7 @@ function Home() {
   }, []);
 
   return (
-    <DynamicPageView
+    <PageLayout
       className="width-max-1280"
       sidebarClassName="width-min-240"
       main={(

@@ -1,4 +1,4 @@
-import { Card, CardTitle, CardBody } from './Card.js';
+import { Card, CardTitle, CardBody } from 'brioche';
 
 function HelloWorld(props) {
   return (

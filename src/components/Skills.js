@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Card, CardTitle, CardBody } from './Card.js';
+import { Card, CardTitle, CardBody } from 'brioche';
 import skills from '../assets/data/skills.json';
 
 function Skills(props) {

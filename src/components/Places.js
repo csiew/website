@@ -1,4 +1,4 @@
-import { Card, CardBody, CardTitle } from './Card.js';
+import { Card, CardBody, CardTitle } from 'brioche';
 import penang from '../assets/img/Penang.png';
 import victoria from '../assets/img/Victoria.png';
 
