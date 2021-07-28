@@ -133,7 +133,7 @@ function Changelog() {
             <Card className="width-max-800 img-respect-bounds nodrag">
               <CardBody className="padding-none grid grid-col-1 grid-gap-m">
                 <Card
-                  className="position-sticky anchor-top hug-bottom padding-xs"
+                  className="position-sticky anchor-top hug-bottom padding-xs shadow-none"
                   body={
                     <TabBar className="width-auto">
                       <ChangelogTabBarItem tabIndex="0" selectedTab={selectedTab} setSelectedTab={handleSelectTab} title="Summary" />

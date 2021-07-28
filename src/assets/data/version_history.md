@@ -1,7 +1,14 @@
 ## React era
 
-### Version 3.0 (19/06/2021 - Present)
+### Version 4.0 (28/07/2021 - Present)
+It is identical in appearance, layout, and content to version 3.0, however it is the first version to use the [Brioche](https://github.com/csiew/brioche) UI library.
+
+---
+
+### Version 3.0 (19/06/2021 - 28/07/2021)
 Another overhaul of the website, but using React this time. I wanted to practice using functional components rather than class components, and to take advantage of React Hooks. The CSS from the previous site was getting huge and unwieldy too, so it's high-time to simplify it.
+
+This was the most short-lived major version of the site. Its custom components and CSS stylesheets formed the basis of the [Brioche](https://github.com/csiew/brioche) UI library for React. The following version of this site was the first to use the library rather than internal custom components.
 
 ---
 

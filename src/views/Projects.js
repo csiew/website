@@ -188,7 +188,10 @@ function ProjectsFilter(props) {
           <ListItem
             className="flex-inline flex-flow-row align-center justify-space-between cursor-pointer"
             selected={props.selectedStatus === -1}
-            onClick={() => props.handleSelectStatus(-1)}
+            onClick={() => {
+              props.handleSelectStatus(-1);
+              scrollToTop();
+            }}
           >
             <span className="width-auto">All</span>
             {generateCheckmark(props.selectedStatus === -1)}
@@ -200,7 +203,10 @@ function ProjectsFilter(props) {
                   key={Number(item[0])}
                   className="item flex-inline flex-flow-row align-center justify-space-between cursor-pointer"
                   selected={props.selectedStatus === Number(item[0])}
-                  onClick={() => props.handleSelectStatus(Number(item[0]))}
+                  onClick={() => {
+                    props.handleSelectStatus(Number(item[0]));
+                    scrollToTop();
+                  }}
                 >
                   <span className="width-auto">{item[1]}</span>
                   {generateCheckmark(props.selectedStatus === Number(item[0]))}
@@ -217,7 +223,7 @@ function ProjectsFilter(props) {
 function Projects() {
   const [imgUrl, setImgUrl] = useState(null);
   const [imgAltText, setImgAltText] = useState(null);
-  const [selectedStatus, setSelectedStatus] = useState(null);
+  const [selectedStatus, setSelectedStatus] = useState(-1);
 
   const handleSelectStatus = (status) => {
     setSelectedStatus(status);
@@ -274,7 +280,7 @@ function Projects() {
         <ProjectCard
           key={item.id}
           project={item}
-          viewImg={() => toggleImagePopoutModal(true, `/assets/img/projects/${item.imgUrl}`, item.name)}
+          viewImg={() => toggleImagePopoutModal(`/assets/img/projects/${item.imgUrl}`, item.name)}
         />
       );
     });
