@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { MdArrowDropDown, MdArrowDropUp } from 'react-icons/md';
 import playlists from '../assets/data/playlists.json';
 import { generateId } from '../utils/Strings.js';
 import { scrollFocus, scrollToTop } from '../utils/Scroll.js';
@@ -92,15 +91,6 @@ function Playlists() {
       sidebar={(
         <>
           <Card
-            isCollapsible
-            collapseButtonClassName="border-radius-100pct padding-none"
-            collapseButtonStyle={{
-              width: "2.5rem",
-              height: "2.5rem",
-            }}
-            isCollapsedValue={<MdArrowDropDown size="1.5rem" />}
-            isNotCollapsedValue={<MdArrowDropUp size="1.5rem" />}
-            title="All playlists"
             bodyClassName="padding-none"
             body={
               <List>
@@ -121,15 +111,7 @@ function Playlists() {
             }
           />
           <Card
-            isCollapsible
-            collapseButtonClassName="border-radius-100pct padding-none"
-            collapseButtonStyle={{
-              width: "2.5rem",
-              height: "2.5rem",
-            }}
-            isCollapsedValue={<MdArrowDropDown size="1.5rem" />}
-            isNotCollapsedValue={<MdArrowDropUp size="1.5rem" />}
-            title="Winter 2021"
+            bodyClassName="padding-none"
             body={
               loadFeaturedPlaylist ?
                 <iframe title="Spotify" className="card-border-radius" src="https://open.spotify.com/embed/playlist/3GPJP97e46YnzDWjQcYfv9?theme=0" width="100%" height="380" frameBorder="0" allowtransparency="false" allow="encrypted-media"></iframe>
@@ -138,7 +120,7 @@ function Playlists() {
                   className="width-full padding-xl vstack align-center justify-center card-border-radius nodrag noselect"
                   style={{
                     color: "lightgray",
-                    background: "#333333"
+                    background: "radial-gradient(ellipse at top left, #222222, #9a9a9a), radial-gradient(ellipse at bottom right, #333333, #7e7e7e)",
                   }}>
                     <button title="Load featured playlist" onClick={toggleFeaturedPlaylist}>Load featured playlist</button>
                     <sub className="text-align-center margin-s-top">Loading a featured playlist will load a Spotify <code>iframe</code> within this card.</sub>
