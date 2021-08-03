@@ -8,7 +8,8 @@ import reportWebVitals from './reportWebVitals';
 
 import 'brioche/dist/App.css';
 import './styles/main.css';
-import './assets/fonts/PublicSans.css';
+import './assets/fonts/Roboto.css';
+import './assets/fonts/RobotoMono.css';
 
 const history = createBrowserHistory();
 

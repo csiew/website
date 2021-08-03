@@ -3,9 +3,8 @@ import { Card, CardBody, CardTitle } from 'brioche';
 import { List, ListItem } from 'brioche';
 import postManifest from '../assets/post_manifest.json';
 import archivedBlogs from '../assets/data/archived_blogs.json';
-import { MdArrowDropDown, MdArrowDropUp } from 'react-icons/md';
 
-function RecentPostsList(props) {
+function RecentPostsList() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
@@ -13,18 +12,11 @@ function RecentPostsList(props) {
   }, []);
 
   return (
-    <Card
-      isCollapsible
-      collapseButtonClassName="border-radius-100pct padding-none"
-      collapseButtonStyle={{
-        width: "2.5rem",
-        height: "2.5rem",
-      }}
-      isCollapsedValue={<MdArrowDropDown size="1.5rem" />}
-      isNotCollapsedValue={<MdArrowDropUp size="1.5rem" />}
-      title="Recent Posts"
-      bodyClassName="padding-none"
-      body={
+    <Card>
+      <CardTitle>
+        <h3>Recent Posts</h3>
+      </CardTitle>
+      <CardBody className="padding-none">
         <List>
           {
             posts.slice(0, 5).map(post => {
@@ -42,8 +34,8 @@ function RecentPostsList(props) {
             })
           }
         </List>
-      }
-    />
+      </CardBody>
+    </Card>
   )
 }
 

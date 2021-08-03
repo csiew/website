@@ -1,7 +1,7 @@
 import {  useEffect, useRef, useState } from 'react';
 import { scrollFocus, scrollToTop } from '../utils/Scroll.js';
 import ReactMarkdown from 'react-markdown';
-import { MdArrowDropDown, MdArrowDropUp, MdCheck, MdClose } from 'react-icons/md';
+import { MdCheck, MdClose } from 'react-icons/md';
 import { useOutsideAlerter } from '../hooks/useOutsideAlerter.js';
 import { Card, CardTitle, CardBody, PageHeader, PageLayout, List, ListItem, Button } from 'brioche';
 import projects from '../assets/data/projects.json';
@@ -134,15 +134,6 @@ function ImagePopoutModal(props) {
 function ProjectsList() {
   return (
     <Card
-      isCollapsible
-      collapseButtonClassName="border-radius-100pct padding-none"
-      collapseButtonStyle={{
-        width: "2.5rem",
-        height: "2.5rem",
-      }}
-      isCollapsedValue={<MdArrowDropDown size="1.5rem" />}
-      isNotCollapsedValue={<MdArrowDropUp size="1.5rem" />}
-      title="All projects"
       bodyClassName="padding-none"
       body={
         <List>
@@ -173,15 +164,6 @@ function ProjectsFilter(props) {
 
   return (
     <Card
-      isCollapsible
-      collapseButtonClassName="border-radius-100pct padding-none"
-      collapseButtonStyle={{
-        width: "2.5rem",
-        height: "2.5rem",
-      }}
-      isCollapsedValue={<MdArrowDropDown size="1.5rem" />}
-      isNotCollapsedValue={<MdArrowDropUp size="1.5rem" />}
-      title="Filter by status"
       bodyClassName="padding-none"
       body={
         <List>

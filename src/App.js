@@ -47,9 +47,12 @@ function App() {
     <AppContainer
       className="overflow-hidden"
       styleOverride={{
-        fontSize: "1rem",
-        baseFontFamily: "'Public Sans', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
-        headerFontFamily: "'Public Sans', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+        fontSize: "1.0625rem",
+        baseFontFamily: "Roboto, 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+        headerFontFamily: "Roboto, 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+        monospaceFontFamily: "'Roboto Mono', 'Source Code Pro', Monaco, Menlo, Cascadia, Consolas, Courier, monospace",
+        borderRadius: "5px",
+        buttonBorderRadius: "5px",
       }}
     >
       <VStack align="stretch" justify="space-between" fullWidth fullHeight>
