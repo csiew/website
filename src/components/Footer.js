@@ -23,7 +23,7 @@ function Footer() {
       </div>
       <span>&copy; 2021 Clarence Siew</span>
     </footer>
-  )
+  );
 }
 
 export default Footer;

@@ -48,9 +48,9 @@ function App() {
       className="overflow-hidden"
       styleOverride={{
         fontSize: "1.125rem",
-        baseFontFamily: "Helvetica, Arial, sans-serif",
-        headerFontFamily: "Helvetica, Arial, sans-serif",
-        articleFontFamily: "Helvetica, Arial, sans-serif",
+        baseFontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+        headerFontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+        articleFontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
         monospaceFontFamily: "Menlo, Consolas, Courier, monospace",
         borderRadius: "9px",
         buttonBorderRadius: "9px",
