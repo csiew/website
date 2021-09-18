@@ -16,6 +16,7 @@ import NavMenu from './components/NavMenu.js';
 
 function App() {
   const iconSize = "1.75rem";
+  const systemFontFamily = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'";
   const [isAwayFromTop, setIsAwayFromTop] = useState(true);
   const [isNavMenuOpen, setIsNavMenuOpen] = useState(false);
 
@@ -48,9 +49,9 @@ function App() {
       className="overflow-hidden"
       styleOverride={{
         fontSize: "1.125rem",
-        baseFontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
-        headerFontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
-        articleFontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+        baseFontFamily: systemFontFamily,
+        headerFontFamily: systemFontFamily,
+        articleFontFamily: systemFontFamily,
         monospaceFontFamily: "Menlo, Consolas, Courier, monospace",
         borderRadius: "9px",
         buttonBorderRadius: "9px",
