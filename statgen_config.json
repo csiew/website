@@ -1,4 +1,0 @@
-{
-    "post_store": "public/posts",
-    "post_store_manifest": "src/assets/post_manifest.json"
-}
