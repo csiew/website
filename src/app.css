@@ -1,49 +1,107 @@
 @import '@fontsource/fira-mono';
 
 :root {
-	--font-family: Bitter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
-	Cantarell, 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+	--font-family: Helvetica, Arial, sans-serif;
 	--font-heading: var(--font-family);
 	--font-mono: 'Fira Mono', monospace;
 	font-family: var(--font-family);
 	--pure-white: #ffffff;
-	--primary-color: whitesmoke;
+	--primary-color: #dcdcd6;
 	--secondary-color: lightgray;
 	--tertiary-color: darkgray;
-	--accent-color: #357cd8;
+	--accent-color: sienna;
 	--heading-color: #6e6e6e;
 	--footer-color: #5e5e5e;
-	--text-color: #3e3e3e;
-	--border-color: #cccccc;
-	--footer-background: #dedede;
-	--column-width: 42rem;
-	--column-margin-top: 4rem;
+	--text-color: #2e2e26;
+	--border-color: #bbbbbb;
+	--selection-background: #87ceeb;
+	--footer-background: none;
 }
 
 * {
 	box-sizing: border-box;
 }
 
-body, #app {
+body, #svelte {
 	width: 100%;
 	min-height: 100vh;
 	margin: 0;
 	display: inline-flex;
 	flex-flow: column;
-	justify-content: stretch;
-	align-items: stretch;
-	background-color: var(--primary-color);
+	justify-content: flex-start;
+	align-items: space-between;
+	background: var(--primary-color);
 	color: var(--text-color);
 	font-size: 1.125rem;
+	font-weight: 400;
 	line-height: 1.5;
+}
+	
+main {
+	display: flex;
+	flex-direction: column;
+	padding: 1rem;
+	width: 100%;
+	max-width: 1024px;
+	margin: 0 auto;
+	box-sizing: border-box;
+}
+
+footer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+	padding: 3rem;
+	background: var(--footer-background);
+	color: var(--footer-color);
+}
+
+footer a {
+	font-weight: bold;
+}
+
+.content {
+	margin: 2rem auto;
+	width: 100%;
+	max-width: 720px;
+}
+.content .heading h1 {
+	margin: 2rem 0;
+	color: var(--text-color);
+	font-size: 4rem;
+	line-height: 1;
+	text-align: center;
 }
 
 h1, h2, h3, h4, h5 {
+	--size: 1;
 	margin: 0.5rem 0;
 	color: var(--heading-color);
+	font-size: calc(--size)rem;
 	font-family: var(--font-heading);
 	font-weight: bold;
-	font-variant: small-caps;
+}
+h1 {
+	font-size: 3rem;
+	font-weight: 900;
+}
+h2 {
+	font-size: 2.25rem;
+	font-weight: 800;
+}
+h3 {
+	font-size: 1.75rem;
+	font-weight: 700;
+}
+h4 {
+	font-size: 1.5rem;
+	font-weight: 600;
+}
+h5 {
+	font-size: 1.25rem;
+	font-weight: 500;
 }
 
 a {
@@ -52,15 +110,6 @@ a {
 }
 a:hover {
 	text-decoration: underline;
-}
-
-h1 {
-	font-size: 2rem;
-	text-align: center;
-}
-
-h2 {
-	font-size: 1rem;
 }
 
 pre {
@@ -80,36 +129,118 @@ button {
 	font-family: inherit;
 }
 
-button:focus:not(:focus-visible) {
+button, .button {
+	margin: 0;
+	padding: 0.5rem 1rem;
+	background: goldenrod;
+	color: #1e1e1e;
+	text-shadow: 0px 1px 1px white;
+	text-align: center;
+	white-space: nowrap;
+	border-radius: 9px;
+	box-shadow: 0px 2px 1px rgba(0,0,0,0.5), 0px 2px 2px rgba(255,255,255,0.75), 0px -2px 2px rgba(0,0,0,0.5) inset, 0px 2px 2px white inset, 0px 16px 12px rgba(255,255,255,0.5) inset;
+	border: none;
+	cursor: pointer;
+	transition: 0.2s ease-in-out;
+}
+:is(button, .button):hover {
+	background: orange;
+	text-decoration: none;
+}
+:is(button, .button):active,
+:is(button, .button):focus:active {
+	background: darkgoldenrod;
+	box-shadow: 0px -2px 2px rgba(0,0,0,0.25), 0px -2px 2px rgba(255,255,255,0.75), 0px 2px 2px rgba(0,0,0,0.5) inset, 0px 2px 2px white inset, 0px 8px 16px rgba(255,255,255,0.5) inset;
+	outline: 3px solid darkgoldenrod;
+	animation: none;
+}
+:is(button, .button):focus {
 	outline: none;
+	animation: button-throbber 1s alternate-reverse infinite;
+}
+button:disabled, .button.disabled {
+	background: darkgray;
+	opacity: 0.5;
+	cursor: not-allowed;
+	pointer-events: none;
+}
+
+@keyframes button-throbber {
+	0% {
+		background: goldenrod;
+		outline: 3px solid var(--tertiary-color);
+	}
+	100% {
+		background: orange;
+		outline: 3px solid darkgoldenrod;
+	}
 }
 
 section {
-	display: flex-inline;
+	display: inline-flex;
 	flex-flow: column;
-	justify-content: center;
-	align-items: center;
+	justify-content: flex-start;
+	align-items: stretch;
 	margin: 0 auto;
 	padding: 0;
 	width: 100%;
 }
 
-.card {
-	display: flex-inline;
+.card, .engrave {
+	display: inline-flex;
 	flex-flow: column;
 	justify-content: flex-start;
-	align-items: center;
-	margin: 0.5rem;
+	align-items: flex-start;
+	margin: 0;
 	padding: 1rem;
 	width: 100%;
-	max-width: 540px;
-	border: 1px solid var(--border-color);
 	border-radius: 9px;
 }
 
-.page {
-	margin: auto;
-	max-width: 600px;
+.card {
+	background: rgba(255,255,255,0.5);
+	box-shadow: 0px 2px 8px rgba(0,0,0,0.5), 0px 2px 1px white inset, 0px -2px 1px dimgray inset;
+}
+.card .heading {
+	display: inline-flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 0 1rem 0;
+	inset: 0;
+	padding: 0.25rem 0.5rem 1rem 0.5rem;
+	width: 100%;
+	border-bottom: 3px solid var(--border-color);
+}
+.card .heading .title {
+	display: inline-flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: flex-start;
+	margin: 0.25rem 0 0 0;
+}
+.card .heading .title h2 {
+	margin: 0;
+	line-height: 1;
+}
+.card .heading .title sub {
+	margin: 0;
+	font-size: 1rem;
+	font-weight: lighter;
+}
+.card .heading .accessories {
+	display: grid;
+	grid-auto-flow: column;
+	gap: 0.5rem;
+	align-items: center;
+}
+.card .body {
+	padding: 0.25rem 0.5rem 0.5rem 0.5rem;
+}
+
+.engrave {
+	background: rgba(0,0,0,0.03);
+	box-shadow: 0px -2px 2px white inset, 0px 2px 4px dimgray inset;
 }
 
 .slide {
@@ -118,7 +249,18 @@ section {
 	justify-content: center;
 	align-items: center;
 	margin: 1rem 0;
-	min-height: 25vh;
+	width: 100%;
+}
+.slide .heading {
+	margin-bottom: 1rem;
+	border-bottom: 3px solid var(--tertiary-color);
+}
+.slide .heading.toggle {
+	display: inline-flex;
+	flex-flow: row;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
 }
 
 .showcase {
@@ -151,6 +293,33 @@ section {
 }
 
 @media (max-width: 720px) {
+	body, #svelte {
+		flex-flow: column;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		font-size: 1rem;
+	}
+
+	footer {
+		padding: 1rem 0;
+	}
+
+	.card .heading,
+	.card .heading :is(.title, .accessories) {
+		flex-flow: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.card .heading .title {
+		margin: 0 0 1rem 0;
+	}
+	.card .heading .accessories {
+		grid-auto-columns: 1fr;
+		justify-content: stretch;
+		width: 100%;
+	}
+
 	.slide {
 		min-height: none;
 		margin: 0.5rem 0;

@@ -1,42 +1,40 @@
 <script lang="ts">
-	import { page } from '$app/stores';
-	import profile from './profile.jpg';
+	import NavMenu from "./NavMenu.svelte";
+
 </script>
 
 <header>
 	<div class="title">
 		<a href="/">
-			<img src={profile} alt="Clarence" />
 			<h1>Clarence Siew</h1>
 		</a>
 	</div>
 
-	<nav>
-		<ul>
-			<li class:active={$page.path === '/'}><a sveltekit:prefetch href="/">Home</a></li>
-			<li class:active={$page.path === '/about'}><a sveltekit:prefetch href="/about">About</a></li>
-		</ul>
-	</nav>
+	<NavMenu />
 </header>
 
 <style>
 	header {
-		--header-background: #333333;
+		z-index: 100;
 		position: sticky;
 		display: inline-flex;
 		flex-flow: row;
 		justify-content: space-between;
-		align-items: center;
+		align-self: stretch;
 		margin: 0;
-		top: 0;
-		padding: 0.5rem;
-		color: var(--secondary-color);
-		background: var(--header-background);
+		inset: 0;
+		padding: 0;
+		width: 100%;
+		min-width: 300px;
+		background: var(--text-color);
+		color: var(--primary-color);
+		border-bottom: 5px solid goldenrod;
 	}
 
 	.title {
-		width: auto;
+		margin: 1rem 0;
 		padding: 0;
+		width: auto;
 	}
 	.title a {
 		display: grid;
@@ -47,69 +45,32 @@
 		height: 100%;
 		text-decoration: none;
 	}
-	.title img {
-		width: 2em;
-		height: 2em;
-		object-fit: contain;
-		border-radius: 100%;
-	}
 	.title h1 {
 		margin: 0;
-		color: var(--primary-color);
-		font-size: 1.75rem;
+		padding: 0 1.5rem;
+		color: white;
+		font-size: 200%;
 		font-weight: 700;
 		line-height: 1;
+		text-align: right;
+		transition: 0.2s linear;
 	}
-
-	nav {
-		height: 100%;
-		display: inline-flex;
-		flex-flow: row;
-		justify-content: center;
-		align-items: stretch;
-		margin: 0;
-		padding: 0;
-	}
-	nav ul {
-		position: relative;
-		padding: 0;
-		margin: 0;
-		height: 100%;
-		display: inline-flex;
-		flex-flow: row;
-		justify-content: flex-end;
-		align-items: stretch;
-		list-style: none;
-	}
-	nav li {
-		position: relative;
-		height: 100%;
-	}
-	nav a {
-		height: 100%;
-		display: inline-flex;
-		flex-flow: row;
-		justify-content: center;
-		align-items: stretch;
-		padding: 0.25rem 0.5rem;
-		color: var(--tertiary-color);
-		font-weight: 700;
-		font-size: 1rem;
-		text-transform: uppercase;
-		letter-spacing: 0.1em;
-		text-decoration: none;
-		transition: color 0.2s linear;
-	}
-	nav a:hover, nav li.active a {
-		color: white;
-	}
-	nav a:active {
-		color: var(--accent-color);
+	.title h1:hover {
+		text-shadow: 0px 0px 2px var(--tertiary-color);
 	}
 
 	@media (max-width: 720px) {
+		header {
+			flex-flow: column;
+			justify-content: center;
+			align-items: center;
+			min-width: 100%;
+			height: auto;
+			padding: 0.25rem 0 0 0;
+		}
 		.title h1 {
-			display: none;
+			padding: 0;
+			text-align: center;
 		}
 	}
 </style>
