@@ -104,15 +104,21 @@
 		font-size: 0.9rem;
 	}
 	.card.construction .heading {
+		--accent-1: rgba(0,0,0,0.5);
+		--accent-2: goldenrod;
 		justify-content: center;
 		margin: 0;
 		padding: 0.5rem 1rem 0 1rem;
-		background: linear-gradient(-45deg, rgba(0,0,0,0.5) 25%, goldenrod 25%, goldenrod 50%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.5) 75%, goldenrod 75%);
+		background: linear-gradient(-45deg, var(--accent-1) 25%, var(--accent-2) 25%, var(--accent-2) 50%, var(--accent-1) 50%, var(--accent-1) 75%, var(--accent-2) 75%);
 		background-size: 27px 27px;
 		border: none;
 		border-radius: 9px 9px 0 0;
 		box-shadow: 0px -2px 2px rgba(0,0,0,0.125) inset, 0px -8px 16px rgba(0,0,0,0.75) inset, 0px 8px 16px rgba(255,255,255,0.75) inset, 0px -12px 16px rgba(255,255,255,0.5) inset;
 		animation: barberpole 25s infinite linear;
+	}
+	.card.construction:hover .heading {
+		--accent-1: green;
+		--accent-2: limegreen;
 	}
 	.card.construction .heading h2 {
 		margin: 0;
@@ -120,7 +126,7 @@
 		background: linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(0,0,0,0.75));
 		border: 1px solid #333333;
 		border-radius: 9px 9px 0 0;
-		color: goldenrod;
+		color: white;
 		font-size: 1rem;
 		text-transform: uppercase;
 		text-shadow: 0px 1px 8px rgba(0,0,0,0.25);

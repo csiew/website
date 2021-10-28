@@ -1,8 +1,8 @@
 <script lang="ts">
 	import NavMenu from "./NavMenu.svelte";
+	import MobileNavMenu from "./MobileNavMenu.svelte";
 	import Profile from "../Profile.svelte";
 
-	let hide: boolean = false;
 </script>
 
 <header>
@@ -11,11 +11,13 @@
 			<Profile width="2.5rem" height="2.5rem" />
 			<h1>Clarence Siew</h1>
 		</a>
-		<button class="navbar-toggle" on:click|preventDefault={() => hide = !hide}>Menu</button>
 	</div>
 
 	<span class="navbar">
-		<NavMenu bind:hide />
+		<NavMenu />
+	</span>
+	<span class="mobile-navbar">
+		<MobileNavMenu />
 	</span>
 </header>
 
@@ -80,11 +82,11 @@
 		padding: 0;
 		height: 100%;
 	}
-	.navbar-toggle,
-	.navbar-toggle :is(:hover, :active, :focus) {
+
+	.mobile-navbar {
 		display: none;
-		margin: 0 0.5rem;
-		text-transform: uppercase;
+		margin: 0;
+		width: 100%;
 	}
 
 	@media (max-width: 720px) {
@@ -105,10 +107,12 @@
 		}
 
 		.navbar {
-			width: 100%;
+			display: none;
+			visibility: hidden;
 		}
-		.navbar-toggle {
-			display: inline-block;
+
+		.mobile-navbar {
+			display: inline-flex;
 		}
 	}
 </style>

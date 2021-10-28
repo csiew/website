@@ -1,21 +1,22 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-  import { fly } from 'svelte/transition';
 
-  export let hide: boolean = true;
+  const navLinks = [
+    { name: "Home", url: "/" },
+    { name: "Blog", url: "/blog" },
+    { name: "Projects", url: "/projects" },
+    { name: "Playlists", url: "/playlists" },
+  ];
 </script>
 
-{#if !hide}
-  <nav in:fly={{ x: -500, duration: 500 }} out:fly={{ x: 500, duration: 500 }}>
-    <ul>
-      <li class:active={$page.path === '/'}><a sveltekit:prefetch href="/">Home</a></li>
-      <li class:active={$page.path === '/blog'}><a sveltekit:prefetch href="/blog">Blog</a></li>
-      <li class:active={$page.path === '/projects'}><a sveltekit:prefetch href="/projects">Projects</a></li>
-      <li class:active={$page.path === '/playlists'}><a sveltekit:prefetch href="/playlists">Playlists</a></li>
-      <li><a href="https://portfolio.clarencesiew.com/" target="_blank">Portfolio</a></li>
-    </ul>
-  </nav>
-{/if}
+<nav>
+  <ul>
+    {#each navLinks as navLink}
+      <li class:active={$page.path === navLink.url}><a sveltekit:prefetch href={navLink.url}>{navLink.name}</a></li>
+    {/each}
+    <li><a href="https://portfolio.clarencesiew.com/" target="_blank">Portfolio</a></li>
+  </ul>
+</nav>
 
 <style>
   :root {
