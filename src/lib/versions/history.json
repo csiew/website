@@ -31,9 +31,9 @@
       {
         "type": "version",
         "title": "Version 4.0",
-        "date": "28/07/21 - Present",
+        "date": "28/07/2021 - Present",
         "body": [
-          "It is identical in appearance, layout, and content to version 3.0, however it is the first version to use the [Brioche](https://github.com/csiew/brioche) UI library."
+          "It was identical in appearance, layout, and content to version 3.0, however it was the first version to use the [Brioche](https://github.com/csiew/brioche) UI library. [Click here to visit this version of the site.](https://v4.clarencesiew.com)"
         ]
       }
     ]

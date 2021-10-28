@@ -1,0 +1,39 @@
+{
+    "links": [
+        {
+            "id": "github",
+            "name": "GitHub",
+            "url": "https://github.com/csiew"
+        },
+        {
+            "id": "gitlab",
+            "name": "GitLab",
+            "url": "https://gitlab.com/csiew"
+        },
+        {
+            "id": "linkedin",
+            "name": "LinkedIn",
+            "url": "https://www.linkedin.com/in/clarencesiew/"
+        },
+        {
+            "id": "instagram",
+            "name": "Instagram",
+            "url": "https://instagram.com/clarence_siew"
+        },
+        {
+            "id": "arena",
+            "name": "are.na",
+            "url": "https://www.are.na/clarence-siew"
+        },
+        {
+            "id": "twitter",
+            "name": "Twitter",
+            "url": "https://twitter.com/clarence_siew"
+        },
+        {
+            "id": "email",
+            "name": "Email",
+            "url": "mailto:clarence.siew@gmail.com"
+        }
+    ]
+}

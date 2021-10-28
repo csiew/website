@@ -1,16 +1,22 @@
 <script lang="ts">
 	import NavMenu from "./NavMenu.svelte";
+	import Profile from "../Profile.svelte";
 
+	let hide: boolean = false;
 </script>
 
 <header>
 	<div class="title">
 		<a href="/">
+			<Profile width="2.5rem" height="2.5rem" />
 			<h1>Clarence Siew</h1>
 		</a>
+		<button class="navbar-toggle" on:click|preventDefault={() => hide = !hide}>Menu</button>
 	</div>
 
-	<NavMenu />
+	<span class="navbar">
+		<NavMenu bind:hide />
+	</span>
 </header>
 
 <style>
@@ -33,6 +39,10 @@
 	}
 
 	.title {
+		display: inline-flex;
+		flex-flow: row;
+		justify-content: space-between;
+		align-items: center;
 		margin: 1rem 0;
 		padding: 0;
 		width: auto;
@@ -40,15 +50,16 @@
 	.title a {
 		display: grid;
 		grid-auto-flow: column;
-		gap: 0.5rem;
+		gap: 1rem;
 		align-items: center;
-		width: 100%;
+		padding: 0 1.5rem;
+		width: auto;
 		height: 100%;
 		text-decoration: none;
 	}
 	.title h1 {
 		margin: 0;
-		padding: 0 1.5rem;
+		padding: 0;
 		color: white;
 		font-size: 200%;
 		font-weight: 700;
@@ -60,6 +71,22 @@
 		text-shadow: 0px 0px 2px var(--tertiary-color);
 	}
 
+	.navbar {
+		display: inline-flex;
+		flex-flow: column;
+		justify-content: flex-end;
+		align-items: flex-end;
+		margin: auto 0 0 0;
+		padding: 0;
+		height: 100%;
+	}
+	.navbar-toggle,
+	.navbar-toggle :is(:hover, :active, :focus) {
+		display: none;
+		margin: 0 0.5rem;
+		text-transform: uppercase;
+	}
+
 	@media (max-width: 720px) {
 		header {
 			flex-flow: column;
@@ -69,9 +96,19 @@
 			height: auto;
 			padding: 0.25rem 0 0 0;
 		}
+
+		.title {
+			width: 100%;
+		}
 		.title h1 {
-			padding: 0;
-			text-align: center;
+			display: none;
+		}
+
+		.navbar {
+			width: 100%;
+		}
+		.navbar-toggle {
+			display: inline-block;
 		}
 	}
 </style>

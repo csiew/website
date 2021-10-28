@@ -1,14 +1,21 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+  import { fly } from 'svelte/transition';
+
+  export let hide: boolean = true;
 </script>
 
-<nav>
-  <ul>
-    <li class:active={$page.path === '/'}><a sveltekit:prefetch href="/">Home</a></li>
-    <li class:active={$page.path === '/projects'}><a sveltekit:prefetch href="/projects">Projects</a></li>
-    <li class:active={$page.path === '/playlists'}><a sveltekit:prefetch href="/playlists">Playlists</a></li>
-  </ul>
-</nav>
+{#if !hide}
+  <nav in:fly={{ x: -500, duration: 500 }} out:fly={{ x: 500, duration: 500 }}>
+    <ul>
+      <li class:active={$page.path === '/'}><a sveltekit:prefetch href="/">Home</a></li>
+      <li class:active={$page.path === '/blog'}><a sveltekit:prefetch href="/blog">Blog</a></li>
+      <li class:active={$page.path === '/projects'}><a sveltekit:prefetch href="/projects">Projects</a></li>
+      <li class:active={$page.path === '/playlists'}><a sveltekit:prefetch href="/playlists">Playlists</a></li>
+      <li><a href="https://portfolio.clarencesiew.com/" target="_blank">Portfolio</a></li>
+    </ul>
+  </nav>
+{/if}
 
 <style>
   :root {
@@ -75,23 +82,32 @@
 	}
 
   @media (max-width: 720px) {
+    :root {
+      --padding: 0.75rem;
+    }
+
     nav {
       margin: 0;
       width: 100%;
     }
     nav ul {
-      flex-flow: row;
-      justify-content: center;
-      align-items: flex-start;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(96px, 1fr));
       gap: 0.25rem;
+      padding: 1rem;
+      width: 100%;
     }
     nav li {
-      width: min-content;
+      width: 100%;
     }
-    nav a {
+    nav li a {
       align-items: center;
-      padding: 0.25rem 0.75rem;
-      border-radius: var(--link-border-radius) var(--link-border-radius) 0 0;
+      width: 100%;
+      padding: var(--padding);
+      border-radius: var(--link-border-radius);
+    }
+    nav li a:is(:active, :focus) {
+      padding: var(--padding);
     }
     nav a:hover {
       padding: 0.25rem 0.75rem;

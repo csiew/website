@@ -221,7 +221,7 @@ section {
 }
 
 .card {
-	background: rgba(255,255,255,0.5);
+	background: rgba(255,255,255,0.75);
 	border: 1px solid darkgray;
 	box-shadow: 0px 2px 2px rgba(0,0,0,0.25), 0px 2px 1px white inset, 0px -2px 1px rgba(0,0,0,0.125) inset;
 }
@@ -320,7 +320,7 @@ section {
 	border-top: none;
 	border-color: peru;
 	border-radius: 0 0 9px 9px;
-	box-shadow: 0px -1px 1px rgba(0,0,0,0.25), 0px 1px 1px rgba(255,255,255,0.125), 0px 2px 2px rgba(255,255,255,0.75), 0px -2px 2px rgba(0,0,0,0.125) inset, 0px 2px 2px white inset, 0px 12px 8px rgba(255,255,255,0.25) inset;
+	box-shadow: 0px -1px 1px rgba(0,0,0,0.25), 0px 1px 2px rgba(255,255,255,0.75), 0px -2px 2px rgba(0,0,0,0.25) inset, 0px 2px 2px white inset, 0px 12px 8px rgba(255,255,255,0.25) inset, 0px 8px 4px rgba(0,0,0,0.25) inset;
 }
 .toast-window .body {
 	margin: 0;

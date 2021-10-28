@@ -8,11 +8,15 @@
 
 <script lang="ts">
 	import Skills from "../lib/skills/Skills.svelte";
-
-	import Profile from "../lib/home/Profile.jpg";
+	import Links from '$lib/contact/Links.svelte';
+	import Profile from "$lib/Profile.svelte";
 	import Penang from "../lib/home/Penang.png";
 	import Victoria from "../lib/home/Victoria.png";
 </script>
+
+<svelte:head>
+	<title>Home | Clarence Siew</title>
+</svelte:head>
 
 <div class="content">
 	<div class="heading">
@@ -21,7 +25,7 @@
 	<div class="slide">
 		<div class="showcase showcase-right">
 			<div class="profile-container">
-				<img src={Profile} class="profile" alt="Clarence" />
+				<Profile />
 			</div>
 			<section class="card">
 				<div class="body">
@@ -70,6 +74,10 @@
 	<div class="slide">
 		<Skills />
 	</div>
+
+	<div class="slide">
+		<Links />
+	</div>
 </div>
 
 <style>
@@ -77,29 +85,5 @@
 		position: relative;
 		drag: none;
 		-webkit-user-drag: none;
-	}
-
-	.profile-container {
-		position: relative;
-		width: 12rem;
-		height: 12rem;
-	}
-	img.profile {
-		width: inherit;
-		height: inherit;
-		border: 1px solid darkgray;
-		border-radius: 100%;
-		filter: drop-shadow(0px 2px 2px rgba(0,0,0,0.5) inset);
-	}
-	.profile-container::after {
-		content: '';
-		position: absolute;
-		margin: 0;
-		inset: 0;
-		width: inherit;
-		height: inherit;
-		background: transparent;
-		border-radius: 100%;
-		box-shadow: 0px -2px 1px white inset, 0px 2px 8px rgba(0,0,0,0.75) inset;
 	}
 </style>

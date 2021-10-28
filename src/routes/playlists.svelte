@@ -11,6 +11,10 @@
 	import playlistsJson from "../lib/playlists/playlists.json";
 </script>
 
+<svelte:head>
+	<title>Playlists | Clarence Siew</title>
+</svelte:head>
+
 <div class="content">
 	<div class="heading">
 		<h1>Playlists</h1>

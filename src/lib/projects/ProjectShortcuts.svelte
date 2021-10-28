@@ -3,7 +3,7 @@
 
   export let projects: Project[];
 
-  let hide: boolean = false;
+  let hide: boolean = true;
 </script>
 
 <div class="toast-window">

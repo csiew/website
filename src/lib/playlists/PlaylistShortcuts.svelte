@@ -3,7 +3,7 @@
 
   export let playlistYears: PlaylistYear[];
 
-  let hide: boolean = false;
+  let hide: boolean = true;
 </script>
 
 <div class="toast-window">

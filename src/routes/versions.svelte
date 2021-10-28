@@ -7,8 +7,13 @@
 </script>
 
 <script lang="ts">
+	import SvelteMarkdown from "svelte-markdown";
 	import versionHistoryJson from "../lib/versions/history.json";
 </script>
+
+<svelte:head>
+	<title>Versions | Clarence Siew</title>
+</svelte:head>
 
 <div class="content">
 	<div class="heading">
@@ -30,7 +35,7 @@
 							</div>
 							<div class="body">
 								{#each version.body as paragraph}
-									<p>{paragraph}</p>
+									<p><SvelteMarkdown source={paragraph} /></p>
 								{/each}
 							</div>
 						</section>
