@@ -41,9 +41,7 @@ main {
 	display: flex;
 	flex-direction: column;
 	margin: 0 auto;
-	padding: 1rem;
 	width: 100%;
-	max-width: 1024px;
 	box-sizing: border-box;
 }
 
@@ -62,10 +60,23 @@ footer a {
 	font-weight: bold;
 }
 
-.content {
-	margin: 2rem auto;
+.content-sidebar {
+	display: grid;
+	grid-template-columns: 2fr minmax(320px, 1fr);
+	gap: 1rem;
 	width: 100%;
+}
+.content,
+.content-sidebar .sidebar {
+	margin: 2rem auto;
+	padding: 1rem;
+	width: 100%;
+}
+.content {
 	max-width: 720px;
+}
+.content .heading {
+	margin: 0 0 4rem 0;
 }
 .content .heading h1 {
 	margin: 2rem 0;
@@ -232,8 +243,7 @@ section {
 	align-items: flex-start;
 	margin: 0.25rem 0 0 0;
 }
-.card .heading .title h2 {
-	margin: 0;
+.card .heading .title :is(h1, h2, h3, h4) {
 	line-height: 1;
 }
 .card .heading .title sub {
@@ -249,11 +259,107 @@ section {
 }
 .card .body {
 	padding: 0.25rem 0.5rem 0.5rem 0.5rem;
+	width: 100%;
 }
 
 .engrave {
 	background: rgba(0,0,0,0.03);
 	box-shadow: 0px -2px 2px white inset, 0px 2px 4px dimgray inset;
+}
+
+.toast-window {
+	position: fixed;
+	display: inline-flex;
+	flex-flow: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	margin: auto 1rem auto 0;
+	bottom: 0;
+	right: 0.5rem;
+	padding: 0;
+	width: 100%;
+	max-width: 240px;
+	max-height: 33vh;
+	background: var(--pure-white);
+	color: var(--text-color);
+	font-size: 0.9rem;
+	border-radius: 9px 9px 0 0;
+	box-shadow: 0px 2px 4px rgba(0,0,0,0.5);
+}
+.toast-window .heading {
+	display: inline-flex;
+	flex-flow: row;
+	justify-content: space-between;
+	align-items: flex-start;
+	margin: 0;
+	padding: 0 1rem;
+	width: 100%;
+	background: goldenrod;
+	border: 1px solid darkgoldenrod;
+	border-radius: 9px 9px 0 0;
+	box-shadow: 0px 2px 2px rgba(255,255,255,0.75) inset, 0px 4px 4px rgba(255,255,255,0.25) inset, 0px 4px 8px rgba(0,0,0,0.25) inset;
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+}
+.toast-window .heading .title {
+	--padding: 0.5rem;
+	padding-top: var(--padding);
+	padding-bottom: var(--padding);
+	text-shadow: 0px 1px 1px white;
+	font-weight: bold;
+}
+.toast-window .heading .accessories {
+	--padding: 0.25rem;
+	padding-bottom: var(--padding);
+}
+.toast-window .heading .accessories :is(button, .button) {
+	padding: 0.25rem 0.5rem;
+	font-size: 0.625rem;
+	text-transform: uppercase;
+	border-top: none;
+	border-color: peru;
+	border-radius: 0 0 9px 9px;
+	box-shadow: 0px -1px 1px rgba(0,0,0,0.25), 0px 1px 1px rgba(255,255,255,0.125), 0px 2px 2px rgba(255,255,255,0.75), 0px -2px 2px rgba(0,0,0,0.125) inset, 0px 2px 2px white inset, 0px 12px 8px rgba(255,255,255,0.25) inset;
+}
+.toast-window .body {
+	margin: 0;
+	padding: 0.5rem 0;
+	width: 100%;
+	border: solid var(--border-color);
+	border-width: 0 1px;
+	overflow-y: auto;
+}
+.toast-window .body ul {
+	display: inline-flex;
+	flex-flow: column;
+	justify-content: stretch;
+	align-items: stretch;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	list-style: none;
+}
+.toast-window .body li {
+	display: inline-flex;
+	flex-flow: row;
+	justify-content: stretch;
+	align-items: center;
+	width: 100%;
+}
+.toast-window .body a {
+	padding: 0.25rem 1rem;
+	width: 100%;
+	border-bottom: 1px solid var(--border-color);
+	drag: none;
+	-webkit-user-drag: none;
+}
+.toast-window .body a:hover {
+	background: lightgray;
+	text-decoration: none;
+}
+.toast-window .body a:last-child {
+	border-bottom: none;
 }
 
 .slide {
@@ -330,7 +436,12 @@ section {
 		align-items: center;
 	}
 	.card .heading .title {
-		margin: 0 0 1rem 0;
+		margin: 0.75rem 0;
+		width: 100%;
+		text-align: center;
+	}
+	.card .heading .title :is(h1, h2, h3, h4, h5) {
+		line-height: 1.325;
 	}
 	.card .heading .accessories {
 		grid-auto-columns: 1fr;

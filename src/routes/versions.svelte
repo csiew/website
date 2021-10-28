@@ -23,7 +23,10 @@
 					{#each era.versions.reverse() as version}
 						<section class="card">
 							<div class="heading">
-								<h3>{version.title}</h3>
+								<span class="title">
+									<h3>{version.title}</h3>
+									<sub>{version.date}</sub>
+								</span>
 							</div>
 							<div class="body">
 								{#each version.body as paragraph}
@@ -49,6 +52,8 @@
 		margin: 2rem 0;
 		padding: 1rem 0;
 		border-bottom: 3px solid var(--border-color);
+		color: var(--text-color);
+		font-weight: lighter;
 		text-align: center;
 	}
 </style>

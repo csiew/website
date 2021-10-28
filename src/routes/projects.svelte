@@ -7,6 +7,7 @@
 </script>
 
 <script lang="ts">
+	import ProjectShortcuts from "../lib/projects/ProjectShortcuts.svelte";
 	import projectsJson from "../lib/projects/projects.json";
 </script>
 
@@ -17,7 +18,7 @@
 
 	<div class="list">
 		{#each projectsJson.projects as project}
-			<section class="card">
+			<section class="card" id={project.id}>
 				<div class="heading">
 					<span class="title">
 						<h2>{project.name}</h2>
@@ -37,6 +38,7 @@
 		{/each}
 	</div>
 </div>
+<ProjectShortcuts projects={projectsJson.projects} />
 
 <style>
 	.list {
