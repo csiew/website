@@ -19,6 +19,14 @@
 </svelte:head>
 
 <div class="content">
+	<div class="card construction">
+		<div class="heading">
+			<h2>Under construction</h2>
+		</div>
+		<div class="body">
+			Welcome to version 5.0 of my site! It is still under heavy development and a lot may change within a short span of time. This new iteration uses the Svelte framework (with SvelteKit) and the aesthetic is inspired by late 2000s and early 2010s skeumorphic UI (it's nostalgia season).
+		</div>
+	</div>
 	<div class="heading">
 		<h1>Hello World</h1>
 	</div>
@@ -85,5 +93,51 @@
 		position: relative;
 		drag: none;
 		-webkit-user-drag: none;
+	}
+
+	.card.construction {
+		margin: 0 0 3rem 0;
+		padding: 0;
+		background: rgba(0,0,0,0.75);
+		color: lightgray;
+		border-color: black;
+		font-size: 0.9rem;
+	}
+	.card.construction .heading {
+		justify-content: center;
+		margin: 0;
+		padding: 0.5rem 1rem 0 1rem;
+		background: linear-gradient(-45deg, rgba(0,0,0,0.5) 25%, goldenrod 25%, goldenrod 50%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.5) 75%, goldenrod 75%);
+		background-size: 27px 27px;
+		border: none;
+		border-radius: 9px 9px 0 0;
+		box-shadow: 0px -2px 2px rgba(0,0,0,0.125) inset, 0px -8px 16px rgba(0,0,0,0.75) inset, 0px 8px 16px rgba(255,255,255,0.75) inset, 0px -12px 16px rgba(255,255,255,0.5) inset;
+		animation: barberpole 25s infinite linear;
+	}
+	.card.construction .heading h2 {
+		margin: 0;
+		padding: 0.5rem 1rem;
+		background: linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(0,0,0,0.75));
+		border: 1px solid #333333;
+		border-radius: 9px 9px 0 0;
+		color: goldenrod;
+		font-size: 1rem;
+		text-transform: uppercase;
+		text-shadow: 0px 1px 8px rgba(0,0,0,0.25);
+		box-shadow: 0px 2px 2px rgba(0,0,0,0.25) inset, 0px -4px 8px rgba(255,255,255,0.25) inset;
+		backdrop-filter: blur(4px);
+	}
+	.card.construction .body {
+		padding: 1rem;
+		box-shadow: 0px 2px 4px rgba(0,0,0,0.75) inset;
+	}
+
+	@keyframes barberpole {
+		from {
+			background-position: 0%;
+		}
+		to {
+			background-position: 100%;
+		}
 	}
 </style>
