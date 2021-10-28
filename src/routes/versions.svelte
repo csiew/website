@@ -1,0 +1,54 @@
+<script context="module" lang="ts">
+	import { browser, dev } from '$app/env';
+	
+	export const hydrate = dev;
+	export const router = browser;
+	export const prerender = true;
+</script>
+
+<script lang="ts">
+	import versionHistoryJson from "../lib/versions/history.json";
+</script>
+
+<div class="content">
+	<div class="heading">
+		<h1>Versions</h1>
+	</div>
+
+	<div class="list">
+		{#each versionHistoryJson as era}
+			<div class="era">
+				<h2>{era.title}</h2>
+				<div class="list">
+					{#each era.versions.reverse() as version}
+						<section class="card">
+							<div class="heading">
+								<h3>{version.title}</h3>
+							</div>
+							<div class="body">
+								{#each version.body as paragraph}
+									<p>{paragraph}</p>
+								{/each}
+							</div>
+						</section>
+					{/each}
+				</div>
+			</div>
+		{/each}
+	</div>
+</div>
+
+<style>
+	.list {
+		display: grid;
+		grid-auto-flow: row;
+		gap: 2rem;
+	}
+
+	.era h2 {
+		margin: 2rem 0;
+		padding: 1rem 0;
+		border-bottom: 3px solid var(--border-color);
+		text-align: center;
+	}
+</style>

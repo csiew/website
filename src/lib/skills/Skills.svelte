@@ -11,7 +11,9 @@
       <h2>Skills</h2>
     </span>
     <span class="accessories">
-      <button on:click|preventDefault={() => hide = !hide}>{hide ? 'Show' : 'Hide'}</button>
+      <small>
+        <button on:click|preventDefault={() => hide = !hide}>{hide ? 'Show' : 'Hide'}</button>
+      </small>
     </span>
   </div>
   {#if !hide}
@@ -64,6 +66,9 @@
   section :is(h1, h2, h3, h4) {
     margin: 0 0 0.5rem 0;
   }
+  .card .heading .title h2 {
+    margin: 0;
+  }
 
   .showcase,
   .showcase :is(:first-child, :last-child) {
@@ -79,5 +84,8 @@
 
   .engrave {
     margin: 0 0 1rem 0;
+  }
+  .showcase section.engrave {
+    padding: 0.75rem;
   }
 </style>

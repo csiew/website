@@ -23,9 +23,9 @@
 }
 
 body, #svelte {
-	width: 100%;
-	min-height: 100vh;
 	margin: 0;
+	top: 0;
+	width: 100%;
 	display: inline-flex;
 	flex-flow: column;
 	justify-content: flex-start;
@@ -40,10 +40,10 @@ body, #svelte {
 main {
 	display: flex;
 	flex-direction: column;
+	margin: 0 auto;
 	padding: 1rem;
 	width: 100%;
 	max-width: 1024px;
-	margin: 0 auto;
 	box-sizing: border-box;
 }
 
@@ -112,6 +112,13 @@ a:hover {
 	text-decoration: underline;
 }
 
+p {
+	margin: 0 0 0.75rem 0;
+}
+p:last-child {
+	margin-bottom: 0;
+}
+
 pre {
 	font-size: 16px;
 	font-family: var(--font-mono);
@@ -134,12 +141,13 @@ button, .button {
 	padding: 0.5rem 1rem;
 	background: goldenrod;
 	color: #1e1e1e;
+	font-weight: bold;
 	text-shadow: 0px 1px 1px white;
 	text-align: center;
 	white-space: nowrap;
+	border: 1px solid goldenrod;
 	border-radius: 9px;
-	box-shadow: 0px 2px 1px rgba(0,0,0,0.5), 0px 2px 2px rgba(255,255,255,0.75), 0px -2px 2px rgba(0,0,0,0.5) inset, 0px 2px 2px white inset, 0px 16px 12px rgba(255,255,255,0.5) inset;
-	border: none;
+	box-shadow: 0px 2px 2px rgba(0,0,0,0.5), 0px 2px 2px rgba(255,255,255,0.75), 0px -2px 2px rgba(0,0,0,0.125) inset, 0px 2px 2px white inset, 0px 16px 12px rgba(255,255,255,0.5) inset;
 	cursor: pointer;
 	transition: 0.2s ease-in-out;
 }
@@ -160,9 +168,13 @@ button, .button {
 }
 button:disabled, .button.disabled {
 	background: darkgray;
+	border-color: dimgray;
 	opacity: 0.5;
 	cursor: not-allowed;
 	pointer-events: none;
+}
+small :is(button, .button) {
+	padding: 0.325rem 0.75rem;
 }
 
 @keyframes button-throbber {
@@ -199,7 +211,8 @@ section {
 
 .card {
 	background: rgba(255,255,255,0.5);
-	box-shadow: 0px 2px 8px rgba(0,0,0,0.5), 0px 2px 1px white inset, 0px -2px 1px dimgray inset;
+	border: 1px solid darkgray;
+	box-shadow: 0px 2px 2px rgba(0,0,0,0.25), 0px 2px 1px white inset, 0px -2px 1px rgba(0,0,0,0.125) inset;
 }
 .card .heading {
 	display: inline-flex;
@@ -311,6 +324,11 @@ section {
 		justify-content: center;
 		align-items: center;
 	}
+	.card .heading.toggle {
+		flex-flow: row;
+		justify-content: space-between;
+		align-items: center;
+	}
 	.card .heading .title {
 		margin: 0 0 1rem 0;
 	}
@@ -318,6 +336,11 @@ section {
 		grid-auto-columns: 1fr;
 		justify-content: stretch;
 		width: 100%;
+	}
+
+	.card .heading.toggle :is(.title, .accessories) {
+		margin: 0;
+		width: min-content;
 	}
 
 	.slide {

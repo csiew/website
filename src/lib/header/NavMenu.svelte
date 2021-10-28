@@ -54,15 +54,15 @@
 		background: var(--background);
 		color: var(--color);
     text-shadow: 0px 1px 1px white;
-    box-shadow: 0px -4px 8px dimgray inset, 0px 2px 1px white inset;
+    box-shadow: 0px -4px 8px dimgray inset, 0px 2px 2px white inset, 0px 4px 8px gray inset;
     border-radius: var(--link-border-radius) var(--link-border-radius) 0 0;
     font-weight: bold;
 		text-decoration: none;
-		transition: 0.2s linear;
+		transition: 0.1s linear;
 	}
 	nav a:hover {
     --background: var(--secondary-color);
-    box-shadow: 0px -2px 8px gray inset, 0px 2px 1px white inset;
+    box-shadow: 0px -2px 8px gray inset, 0px 2px 1px white inset, 0px 4px 8px gray inset;
   }
   nav li.active :is(a, a:hover) {
     --background: goldenrod;
@@ -71,7 +71,7 @@
 	}
 	nav a:active {
     --background: var(--primary-color);
-		--color: var(--accent-color);
+    padding-bottom: 0.325rem;
 	}
 
   @media (max-width: 720px) {
@@ -90,8 +90,11 @@
     }
     nav a {
       align-items: center;
-      padding: 0.125rem 0.75rem;;
+      padding: 0.25rem 0.75rem;
       border-radius: var(--link-border-radius) var(--link-border-radius) 0 0;
+    }
+    nav a:hover {
+      padding: 0.25rem 0.75rem;
     }
   }
 </style>

@@ -28,6 +28,7 @@
 		min-width: 300px;
 		background: var(--text-color);
 		color: var(--primary-color);
+		box-shadow: 0px 8px 16px rgba(0,0,0,0.5) inset, 0px 2px 8px rgba(0,0,0,0.25), 0px 1px 2px rgba(0,0,0,0.5);
 		border-bottom: 5px solid goldenrod;
 	}
 
