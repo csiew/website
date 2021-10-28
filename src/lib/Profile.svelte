@@ -1,12 +1,10 @@
 <script lang="ts">
-	import Profile from "./home/Profile.jpg";
-
   export let width: string = "12rem";
   export let height: string = "12rem";
 </script>
 
 <div class="profile-container" style={`width: ${width}; height: ${height}`}>
-  <img src={Profile} class="profile" alt="Clarence" />
+  <img src="/profile.jpg" class="profile" alt="Clarence" />
 </div>
 
 <style>

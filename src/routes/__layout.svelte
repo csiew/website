@@ -4,7 +4,8 @@
 </script>
 
 <svelte:head>
-	<title>Clarence Siew</title>
+	<link rel="icon" href="/profile.jpg" />
+	<link rel="apple-touch-icon" href="/profile.jpg" />
 </svelte:head>
 
 <Header />
