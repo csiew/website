@@ -1,9 +1,8 @@
 <script context="module" lang="ts">
-	import { browser, dev } from '$app/env';
+	import { dev } from '$app/env';
 	
 	export const hydrate = dev;
-	export const router = browser;
-	export const prerender = false;
+	export const prerender = true;
 </script>
 
 <svelte:head>
