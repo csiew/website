@@ -454,6 +454,10 @@ section {
 		width: min-content;
 	}
 
+	.toast-window {
+		display: none;
+	}
+
 	.slide {
 		min-height: none;
 		margin: 0.5rem 0;

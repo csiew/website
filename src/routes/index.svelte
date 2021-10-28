@@ -3,7 +3,7 @@
 
 	export const hydrate = dev;
 	export const router = browser;
-	export const prerender = true;
+	export const prerender = false;
 </script>
 
 <script lang="ts">
