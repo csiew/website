@@ -68,7 +68,8 @@
       },
       {
         "type": "version",
-        "title": "Version 1.1 (2020 - 24/09/2020)",
+        "title": "Version 1.1",
+        "date": "2020 - 24/09/2020",
         "body": [
           "Stripped back to just a single landing page. It had nothing more than links to my social media accounts and side projects. [Click here to visit this version of the site.](https://csiew.github.io/index.html)"
         ]

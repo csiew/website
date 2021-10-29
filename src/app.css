@@ -88,29 +88,33 @@ footer a {
 
 h1, h2, h3, h4, h5 {
 	--size: 1;
-	margin: 0.5rem 0;
 	color: var(--heading-color);
 	font-size: calc(--size)rem;
 	font-family: var(--font-heading);
 	font-weight: bold;
 }
 h1 {
+	margin: 0.325rem 0;
 	font-size: 3rem;
 	font-weight: 900;
 }
 h2 {
+	margin: 0.25rem 0;
 	font-size: 2.25rem;
 	font-weight: 800;
 }
 h3 {
+	margin: 0.25rem 0;
 	font-size: 1.75rem;
 	font-weight: 700;
 }
 h4 {
+	margin: 0.125rem 0;
 	font-size: 1.5rem;
 	font-weight: 600;
 }
 h5 {
+	margin: 0.125rem 0;
 	font-size: 1.25rem;
 	font-weight: 500;
 }
@@ -221,9 +225,9 @@ section {
 }
 
 .card {
-	background: rgba(255,255,255,0.75);
+	background: rgba(255,255,255,0.5);
 	border: 1px solid darkgray;
-	box-shadow: 0px 2px 2px rgba(0,0,0,0.25), 0px 2px 1px white inset, 0px -2px 1px rgba(0,0,0,0.125) inset;
+	box-shadow: 0px 2px 4px rgba(0,0,0,0.25), 0px 2px 1px white inset, 0px -2px 1px rgba(0,0,0,0.125) inset;
 }
 .card .heading {
 	display: inline-flex;
@@ -279,7 +283,7 @@ section {
 	padding: 0;
 	width: 100%;
 	max-width: 240px;
-	max-height: 33vh;
+	max-height: 75vh;
 	background: var(--pure-white);
 	color: var(--text-color);
 	font-size: 0.9rem;
@@ -298,12 +302,19 @@ section {
 	border: 1px solid darkgoldenrod;
 	border-radius: 9px 9px 0 0;
 	box-shadow: 0px 2px 2px rgba(255,255,255,0.75) inset, 0px 4px 4px rgba(255,255,255,0.25) inset, 0px 4px 8px rgba(0,0,0,0.25) inset;
+	transition: 0.2s linear;
 	user-select: none;
 	-webkit-user-select: none;
 	-moz-user-select: none;
 }
+.toast-window .heading:hover {
+	background: orange;
+}
+.toast-window .heading:active {
+	background: darkgoldenrod;
+}
 .toast-window .heading .title {
-	--padding: 0.5rem;
+	--padding: 0.75rem;
 	padding-top: var(--padding);
 	padding-bottom: var(--padding);
 	text-shadow: 0px 1px 1px white;
@@ -441,6 +452,7 @@ section {
 		text-align: center;
 	}
 	.card .heading .title :is(h1, h2, h3, h4, h5) {
+		margin: 0 0 1rem 0;
 		line-height: 1.325;
 	}
 	.card .heading .accessories {
