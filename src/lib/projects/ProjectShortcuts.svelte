@@ -2,7 +2,6 @@
   import { fade } from 'svelte/transition';
 
   export let projects: Project[];
-
   let hide: boolean = true;
 </script>
 

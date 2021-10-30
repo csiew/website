@@ -1,9 +1,7 @@
-@import '@fontsource/fira-mono';
-
 :root {
-	--font-family: Helvetica, Arial, sans-serif;
+	--font-family: 'Public Sans', Helvetica, Arial, sans-serif;
 	--font-heading: var(--font-family);
-	--font-mono: 'Fira Mono', monospace;
+	--font-mono: 'Source Code Pro', monospace;
 	font-family: var(--font-family);
 	--pure-white: #ffffff;
 	--primary-color: #dcdcd6;
@@ -60,12 +58,6 @@ footer a {
 	font-weight: bold;
 }
 
-.content-sidebar {
-	display: grid;
-	grid-template-columns: 2fr minmax(320px, 1fr);
-	gap: 1rem;
-	width: 100%;
-}
 .content,
 .content-sidebar .sidebar {
 	margin: 2rem auto;
@@ -73,7 +65,7 @@ footer a {
 	width: 100%;
 }
 .content {
-	max-width: 720px;
+	max-width: 800px;
 }
 .content .heading {
 	margin: 0 0 4rem 0;
@@ -84,6 +76,12 @@ footer a {
 	font-size: 4rem;
 	line-height: 1;
 	text-align: center;
+}
+.content-sidebar {
+	display: grid;
+	grid-template-columns: 2fr minmax(320px, 1fr);
+	gap: 1rem;
+	width: 100%;
 }
 
 h1, h2, h3, h4, h5 {
@@ -138,7 +136,7 @@ pre {
 	font-size: 16px;
 	font-family: var(--font-mono);
 	background-color: rgba(255, 255, 255, 0.45);
-	border-radius: 3px;
+	border-radius: 9px;
 	box-shadow: 2px 2px 6px rgb(255 255 255 / 25%);
 	padding: 0.5em;
 	overflow-x: auto;
@@ -189,7 +187,7 @@ button:disabled, .button.disabled {
 	pointer-events: none;
 }
 small :is(button, .button) {
-	padding: 0.325rem 0.75rem;
+	padding: 0.325rem 0.5rem;
 }
 
 @keyframes button-throbber {
@@ -286,7 +284,7 @@ section {
 	max-height: 75vh;
 	background: rgba(255,255,255,0.75);
 	color: var(--text-color);
-	font-size: 0.9rem;
+	font-size: 0.98rem;
 	border-radius: 9px 9px 0 0;
 	box-shadow: 0px 2px 4px rgba(0,0,0,0.5);
 	backdrop-filter: blur(8px);
@@ -367,6 +365,7 @@ section {
 .toast-window .body a {
 	padding: 0.5rem 0.75rem;
 	width: 100%;
+	border: 1px solid transparent;
 	border-radius: 9px;
 	transition: 0.2s linear;
 	drag: none;
@@ -375,6 +374,7 @@ section {
 .toast-window .body a:hover {
 	background: goldenrod;
 	color: var(--text-color);
+	border-color: darkgoldenrod;
 	text-shadow: 0px 1px 2px rgba(255,255,255,0.75);
 	box-shadow: 0px 2px 2px rgba(0,0,0,0.5), 0px 2px 2px rgba(255,255,255,0.75), 0px -2px 2px rgba(0,0,0,0.125) inset, 0px 2px 2px white inset, 0px 16px 12px rgba(255,255,255,0.5) inset;
 	text-decoration: none;

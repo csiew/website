@@ -63,6 +63,9 @@
 		color: var(--color);
     text-shadow: 0px 1px 1px white;
     box-shadow: 0px -4px 8px dimgray inset, 0px 2px 2px white inset, 0px 4px 8px gray inset;
+    border-width: 1px 1px 0 1px;
+    border-style: solid;
+    border-color: gray;
     border-radius: var(--link-border-radius) var(--link-border-radius) 0 0;
     font-weight: bold;
 		text-decoration: none;
@@ -75,7 +78,8 @@
   nav li.active :is(a, a:hover) {
     --background: goldenrod;
 		--color: #1e1e1e;
-    box-shadow: 0px 2px 2px white inset, 0px 24px 12px rgba(255,255,255,0.5) inset;
+    border-color: darkgoldenrod;
+    box-shadow: 0px 2px 2px white inset, 0px 16px 8px rgba(255,255,255,0.25) inset;
 	}
 	nav a:active {
     --background: var(--primary-color);

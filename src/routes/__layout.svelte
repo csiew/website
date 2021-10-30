@@ -1,6 +1,8 @@
 <script lang="ts">
 	import Header from '$lib/header/Header.svelte';
 	import '../app.css';
+	import '../fonts/PublicSans.css';
+	import '../fonts/SourceCodePro.css';
 </script>
 
 <svelte:head>

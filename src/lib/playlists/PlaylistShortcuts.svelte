@@ -2,7 +2,6 @@
   import { fade } from 'svelte/transition';
 
   export let playlistYears: PlaylistYear[];
-
   let hide: boolean = true;
 </script>
 
