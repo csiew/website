@@ -14,7 +14,7 @@
 		background: rgba(0,0,0,0.75);
 		color: lightgray;
 		border-color: black;
-		font-size: 0.9rem;
+		font-size: 1rem;
 	}
 	.card.construction .heading {
 		--accent-1: rgba(0,0,0,0.5);

@@ -31,6 +31,7 @@
 		margin: 1rem 1rem 0 1rem;
     bottom: 0;
 		padding: 0;
+    font-family: var(--font-heading);
 	}
 	nav ul {
 		position: relative;

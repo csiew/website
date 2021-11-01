@@ -1,7 +1,8 @@
 :root {
-	--font-family: 'Public Sans', Helvetica, Arial, sans-serif;
-	--font-heading: var(--font-family);
+	--font-family: 'Gandhi Serif', Helvetica, Arial, sans-serif;
+	--font-heading: 'Gandhi Sans', var(--font-family);
 	--font-mono: 'Source Code Pro', monospace;
+	--font-control: var(--font-heading);
 	font-family: var(--font-family);
 	--pure-white: #ffffff;
 	--primary-color: #dcdcd6;
@@ -30,7 +31,7 @@ body, #svelte {
 	align-items: space-between;
 	background: var(--primary-color);
 	color: var(--text-color);
-	font-size: 1.125rem;
+	font-size: 1.25rem;
 	font-weight: 400;
 	line-height: 1.5;
 }
@@ -52,6 +53,7 @@ footer {
 	padding: 3rem;
 	background: var(--footer-background);
 	color: var(--footer-color);
+	font-size: 1rem;
 }
 
 footer a {
@@ -76,6 +78,7 @@ footer a {
 	font-size: 4rem;
 	line-height: 1;
 	text-align: center;
+	text-transform: uppercase;
 }
 .content-sidebar {
 	display: grid;
@@ -84,12 +87,15 @@ footer a {
 	width: 100%;
 }
 
+h1, h2, h3, h4, h5, sub {
+	font-family: var(--font-heading);
+	font-weight: bold;
+}
+
 h1, h2, h3, h4, h5 {
 	--size: 1;
 	color: var(--heading-color);
 	font-size: calc(--size)rem;
-	font-family: var(--font-heading);
-	font-weight: bold;
 }
 h1 {
 	margin: 0.325rem 0;
@@ -119,17 +125,18 @@ h5 {
 
 a {
 	color: var(--accent-color);
-	text-decoration: none;
+	text-decoration: 3px underline var(--secondary-color);
+	transition: 0.2s linear;
 }
 a:hover {
-	text-decoration: underline;
+	text-decoration-color: var(--accent-color);
 }
 
 p {
-	margin: 0 0 0.75rem 0;
+	margin: 0.25rem 0 0.75rem 0;
 }
 p:last-child {
-	margin-bottom: 0;
+	margin-bottom: 0.25rem;
 }
 
 pre {
@@ -143,10 +150,10 @@ pre {
 	color: var(--text-color);
 }
 
-input,
-button {
+input, button, .button {
 	font-size: inherit;
-	font-family: inherit;
+	font-family: var(--font-control);
+	text-decoration: none;
 }
 
 button, .button {
@@ -166,12 +173,11 @@ button, .button {
 }
 :is(button, .button):hover {
 	background: orange;
-	text-decoration: none;
 }
 :is(button, .button):active,
 :is(button, .button):focus:active {
 	background: darkgoldenrod;
-	box-shadow: 0px -2px 2px rgba(0,0,0,0.25), 0px -2px 2px rgba(255,255,255,0.75), 0px 2px 2px rgba(0,0,0,0.5) inset, 0px 2px 2px white inset, 0px 8px 16px rgba(255,255,255,0.5) inset;
+	box-shadow: 0px 4px 8px rgba(0,0,0,0.75) inset, 0px 2px 2px rgba(0,0,0,0.5), 0px 2px 2px rgba(255,255,255,0.75), 0px -2px 2px rgba(0,0,0,0.125) inset, 0px 2px 2px white inset, 0px 16px 12px rgba(255,255,255,0.5) inset;
 	outline: 3px solid darkgoldenrod;
 	animation: none;
 }
@@ -284,7 +290,8 @@ section {
 	max-height: 75vh;
 	background: rgba(255,255,255,0.75);
 	color: var(--text-color);
-	font-size: 0.98rem;
+	font-size: 1rem;
+	font-family: var(--font-control);
 	border-radius: 9px 9px 0 0;
 	box-shadow: 0px 2px 4px rgba(0,0,0,0.5);
 	backdrop-filter: blur(8px);
@@ -365,6 +372,7 @@ section {
 .toast-window .body a {
 	padding: 0.5rem 0.75rem;
 	width: 100%;
+	text-decoration: none;
 	border: 1px solid transparent;
 	border-radius: 9px;
 	transition: 0.2s linear;
