@@ -17,6 +17,7 @@
 <div class="content">
 	<div class="heading">
 		<h1>Versions</h1>
+		<sub><a href="https://github.com/csiew/website" target="_blank">Visit the GitHub repository</a></sub>
 	</div>
 
 	<div class="list">

@@ -66,10 +66,11 @@ footer {
 	max-width: 800px;
 }
 .content .heading {
-	margin: 0 0 4rem 0;
+	margin: 2rem 0 5rem 0;
+	text-align: center;
 }
 .content .heading h1 {
-	margin: 2rem 0;
+	margin: 1rem 0;
 	color: var(--text-color);
 	font-size: 4rem;
 	font-weight: 600;
