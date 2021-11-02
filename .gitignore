@@ -4,5 +4,6 @@ node_modules
 /build
 /functions
 /.svelte-kit
+/.netlify
 /package
 package-lock.json
