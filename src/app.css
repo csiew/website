@@ -54,6 +54,7 @@ footer {
 	background: var(--footer-background);
 	color: var(--footer-color);
 	font-size: 1rem;
+	text-align: center;
 }
 
 .content,
