@@ -1,0 +1,20 @@
+{
+    "info": {
+        "title": "",
+        "description": ""
+    },
+    "posts": [
+        {
+            "id": "b5873d60-299f-4b24-a41c-b0b858a43f72",
+            "title": "New blog - a new blog, a new static site generator ...ish",
+            "path": "/posts/new-blog.md",
+            "date": "2020-10-19T17:22:06"
+        },
+        {
+            "id": "43445e7f-f18e-4715-8a1c-b7f9b31d3efc",
+            "title": "Building a webdev automation tool",
+            "path": "/posts/building-webdev-automation-tool.md",
+            "date": "2021-02-05T14:58:08"
+        }
+    ]
+}

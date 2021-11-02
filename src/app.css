@@ -1,6 +1,6 @@
 :root {
-	--font-family: 'Gandhi Serif', Helvetica, Arial, sans-serif;
-	--font-heading: 'Gandhi Sans', var(--font-family);
+	--font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+	--font-heading: var(--font-family);
 	--font-mono: 'Source Code Pro', monospace;
 	--font-control: var(--font-heading);
 	font-family: var(--font-family);
@@ -56,10 +56,6 @@ footer {
 	font-size: 1rem;
 }
 
-footer a {
-	font-weight: bold;
-}
-
 .content,
 .content-sidebar .sidebar {
 	margin: 2rem auto;
@@ -76,9 +72,9 @@ footer a {
 	margin: 2rem 0;
 	color: var(--text-color);
 	font-size: 4rem;
+	font-weight: 600;
 	line-height: 1;
 	text-align: center;
-	text-transform: uppercase;
 }
 .content-sidebar {
 	display: grid;
@@ -87,9 +83,14 @@ footer a {
 	width: 100%;
 }
 
+hr {
+	width: 100%;
+	border: none;
+	border-bottom: 3px solid var(--border-color);
+}
+
 h1, h2, h3, h4, h5, sub {
 	font-family: var(--font-heading);
-	font-weight: bold;
 }
 
 h1, h2, h3, h4, h5 {
@@ -100,12 +101,12 @@ h1, h2, h3, h4, h5 {
 h1 {
 	margin: 0.325rem 0;
 	font-size: 3rem;
-	font-weight: 900;
+	font-weight: 800;
 }
 h2 {
 	margin: 0.25rem 0;
 	font-size: 2.25rem;
-	font-weight: 800;
+	font-weight: 700;
 }
 h3 {
 	margin: 0.25rem 0;
@@ -120,7 +121,10 @@ h4 {
 h5 {
 	margin: 0.125rem 0;
 	font-size: 1.25rem;
-	font-weight: 500;
+	font-weight: 600;
+}
+sub {
+	font-weight: 600;
 }
 
 a {
@@ -161,9 +165,9 @@ button, .button {
 	padding: 0.5rem 1rem;
 	background: goldenrod;
 	color: #1e1e1e;
-	font-weight: bold;
 	text-shadow: 0px 1px 1px white;
 	text-align: center;
+	font-weight: 600;
 	white-space: nowrap;
 	border: 1px solid goldenrod;
 	border-radius: 9px;
@@ -257,7 +261,6 @@ section {
 .card .heading .title sub {
 	margin: 0;
 	font-size: 1rem;
-	font-weight: lighter;
 }
 .card .heading .accessories {
 	display: grid;

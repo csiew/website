@@ -1,9 +1,8 @@
 <script lang="ts">
 	import Header from '$lib/header/Header.svelte';
 	import '../app.css';
+	import '../fonts/SourceSansPro.css';
 	import '../fonts/SourceCodePro.css';
-	import '../fonts/GandhiSans.css';
-	import '../fonts/GandhiSerif.css';
 </script>
 
 <svelte:head>
