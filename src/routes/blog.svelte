@@ -44,7 +44,7 @@
 				{#each postManifest.posts as post}
 					<span class="item" class:active={activePost === post} on:click|preventDefault={() => selectPost(post)}>
 						<h3>{post.title}</h3>
-						<sub>{post.date}</sub>
+						<sub>{new Date(post.date).toLocaleString()}</sub>
 					</span>
 				{/each}
 			</div>
@@ -56,7 +56,7 @@
 				</div>
 				<article>
 					<h1>{activePost.title}</h1>
-					<sub>{activePost.date}</sub>
+					<sub>{new Date(activePost.date).toLocaleString()}</sub>
 					<hr />
 					<SvelteMarkdown source={postContent} />
 				</article>
