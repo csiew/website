@@ -150,7 +150,8 @@
 		justify-content: center;
 		align-items: flex-start;
 		gap: 0.125rem;
-		padding: 0.5rem 1rem;
+		padding: 0.5rem 1rem 0.5rem 0.75rem;
+		border-left: 0.25rem solid transparent;
 		border-bottom: var(--border);
 		cursor: pointer;
 		-webkit-user-select: none;
@@ -173,10 +174,11 @@
 		font-weight: 400;
 	}
 	.sidebar .list .item.active {
-		background: var(--accent-color);
+		background: white;
+		border-left-color: var(--accent-color);
 	}
 	.sidebar .list .item.active :is(h3, sub) {
-		color: white;
+		color: var(--text-color);
 	}
 
 	.body {
