@@ -10,6 +10,11 @@
 	import SvelteMarkdown from "svelte-markdown";
 	import postManifest from "../lib/blog/post_manifest.json";
 
+	let posts = postManifest.posts.sort((a: PostEntry, b: PostEntry) => {
+		let dateA = new Date(a.date).getTime();
+		let dateB = new Date(b.date).getTime();
+		return dateB > dateA ? 1 : dateA > dateB ? -1 : 0;
+	});
 	let activePost: PostEntry | null = null;
 	let postContent = "";
 
@@ -41,7 +46,7 @@
 				<h4>Posts</h4>
 			</div>
 			<div class="list">
-				{#each postManifest.posts as post}
+				{#each posts as post}
 					<span class="item" class:active={activePost === post} on:click|preventDefault={() => selectPost(post)}>
 						<h3>{post.title}</h3>
 						<sub>{new Date(post.date).toLocaleString()}</sub>
