@@ -57,7 +57,7 @@
 		<div class="body">
 			{#if activePost}
 				<div class="article-nav toolbar">
-					<button on:click|preventDefault={clearActivePost}>Close</button>
+					<button on:click|preventDefault={clearActivePost}>&leftarrow; Back</button>
 				</div>
 				<article>
 					<h1>{activePost.title}</h1>
@@ -214,7 +214,6 @@
 	.body .article-nav {
 		position: sticky;
 		top: 0;
-		justify-content: flex-end;
 		border-top-right-radius: 9px;
 	}
 
