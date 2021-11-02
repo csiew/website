@@ -7,9 +7,10 @@
       {
         "type": "version",
         "title": "Version 5.0",
-        "date": "Coming soon",
+        "date": "2/10/2021 - Present",
         "body": [
-          "The website was migrated to yet another frontend framework, Svelte. The original plan was to use this version as a chance to learn Tailwind CSS as well, but I just couldn't help playing around with some custom CSS to achieve this mid-2010s skeumorphic aesthetic."
+          "The website was migrated to yet another frontend framework, Svelte. The original plan was to use this version as a chance to learn Tailwind CSS as well, but I just couldn't help playing around with some custom CSS to achieve this mid-2010s skeumorphic aesthetic.",
+          "Unlike the previous version of the website, version 5.0 does not use the Brioche UI library."
         ]
       }
     ]
@@ -31,7 +32,7 @@
       {
         "type": "version",
         "title": "Version 4.0",
-        "date": "28/07/2021 - Present",
+        "date": "28/07/2021 - 2/10/2021",
         "body": [
           "It was identical in appearance, layout, and content to version 3.0, however it was the first version to use the [Brioche](https://github.com/csiew/brioche) UI library. [Click here to visit this version of the site.](https://v4.clarencesiew.com)"
         ]
