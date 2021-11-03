@@ -83,9 +83,8 @@
 		display: grid;
 		grid-template-columns: 1fr;
 		width: 100%;
-		padding: 0.5rem 1rem 0.5rem 0.75rem;
+		padding: 1rem;
 		text-decoration: none;
-		border-left: 0.25rem solid transparent;
 		border-bottom: 1px solid var(--border-color);
 		cursor: pointer;
 		-webkit-user-select: none;
@@ -110,5 +109,6 @@
 		color: gray;
 		font-size: 0.9rem;
 		font-weight: 400;
+		line-height: 1;
 	}
 </style>

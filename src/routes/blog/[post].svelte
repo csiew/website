@@ -4,7 +4,7 @@
   import postManifest from './post_manifest.json';
 	import SvelteMarkdown from "svelte-markdown";
 
-  let postId = $page.params.slug;
+  let postId = $page.params.post;
   let postMetadata = postManifest.posts.filter(p => p.id === postId)[0] ?? undefined;
   let postContent = '';
 
