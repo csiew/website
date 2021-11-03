@@ -1,3 +1,10 @@
+<script context="module" lang="ts">
+	import { dev } from '$app/env';
+	
+	export const hydrate = dev;
+	export const prerender = true;
+</script>
+
 <script lang="ts">
   import { page } from '$app/stores';
   import type { PostEntry } from '../../types/PostEntry';
