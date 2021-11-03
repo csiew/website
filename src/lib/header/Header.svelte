@@ -90,7 +90,7 @@
 		width: 100%;
 	}
 
-	@media (max-width: 720px) {
+	@media (max-width: 960px) {
 		header {
 			position: relative;
 			flex-flow: column;

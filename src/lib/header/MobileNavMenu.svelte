@@ -34,7 +34,7 @@
     position: relative;
     display: inline-flex;
     flex-flow: row;
-    justify-content: flex-start;
+    justify-content: stretch;
     align-items: center;
     gap: 0;
     margin: 0;
@@ -49,23 +49,27 @@
   nav li {
     display: inline-flex;
     flex-flow: row;
-    justify-content: stretch;
+    justify-content: center;
     align-items: stretch;
-    width: max-content;
+    width: 100%;
     height: max-content;
+    text-align: center;
   }
   nav a {
+    width: 100%;
     padding: 0.25rem 1rem;
     color: darkgray;
-    font-size: 1.5rem;
-    font-weight: 300;
+    font-weight: 400;
     text-decoration: none;
     border: 1px solid rgba(0,0,0,0.5);
-    box-shadow: 0px 1px 1px rgba(255,255,255,0.5) inset, 0px 8px 8px rgba(255,255,255,0.25) inset, 0px -2px 2px rgba(0,0,0,0.75) inset;
+    box-shadow: 0px 2px 2px rgba(255,255,255,0.5) inset, 0px 4px 8px rgba(255,255,255,0.25) inset, 0px -2px 2px rgba(0,0,0,0.75) inset;
   }
-  nav a.active {
+  nav a:hover {
+    box-shadow: 0px 2px 2px rgba(255,255,255,0.5) inset, 0px 4px 8px rgba(255,255,255,0.5) inset, 0px -2px 2px rgba(0,0,0,0.75) inset, 0px -4px 8px rgba(0,0,0,0.5) inset;
+  }
+  nav a:is(:active, .active) {
     color: goldenrod;
-    font-weight: 500;
-    box-shadow: 0px -2px 2px rgba(255,255,255,0.25) inset, 0px 4px 8px rgba(0,0,0,0.75) inset;
+    font-weight: 600;
+    box-shadow: 0px -4px 8px rgba(0,0,0,0.5) inset, 0px -2px 2px rgba(255,255,255,0.5) inset, 0px 4px 8px rgba(0,0,0,0.75) inset;
   }
 </style>
