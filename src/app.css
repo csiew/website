@@ -15,6 +15,8 @@
 	--border-color: #bbbbbb;
 	--selection-background: #87ceeb;
 	--footer-background: none;
+	--toolbar-gradient: linear-gradient(to bottom, whitesmoke, lightgray);
+	--toolbar-shadow: 0px 2px 2px rgba(255,255,255,0.75) inset, 0px -2px 2px rgba(0,0,0,0.125) inset;
 }
 
 * {
@@ -447,6 +449,27 @@ section {
 }
 .showcase-left section {
 	text-align: right;
+}
+
+.toolbar {
+	position: sticky;
+	display: inline-flex;
+	flex-flow: row;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0;
+	top: 0;
+	padding: 0.25rem;
+	width: 100%;
+	height: 3.5rem;
+	background: var(--toolbar-gradient);
+	border-bottom: 1px solid var(--border-color);
+	box-shadow: var(--toolbar-shadow);
+}
+.toolbar :is(button, .button) {
+	background: var(--toolbar-gradient);
+	border: 1px solid var(--border-color);
+	box-shadow: var(--toolbar-shadow);
 }
 
 @media (max-width: 720px) {
