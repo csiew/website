@@ -16,6 +16,7 @@
 	<span class="navbar">
 		<NavMenu />
 	</span>
+	
 	<span class="mobile-navbar">
 		<MobileNavMenu />
 	</span>
@@ -91,6 +92,7 @@
 
 	@media (max-width: 720px) {
 		header {
+			position: relative;
 			flex-flow: column;
 			justify-content: center;
 			align-items: center;
@@ -100,6 +102,7 @@
 		}
 
 		.title {
+			justify-content: center;
 			width: 100%;
 		}
 		.title h1 {
