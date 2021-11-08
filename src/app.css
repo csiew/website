@@ -1,6 +1,6 @@
 :root {
-	--font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
-	--font-heading: var(--font-family);
+	--font-family: Jost, 'Source Sans Pro', Helvetica, Arial, sans-serif;
+	--font-heading: Cabin, var(--font-family);
 	--font-mono: 'Source Code Pro', monospace;
 	--font-control: var(--font-heading);
 	font-family: var(--font-family);
@@ -9,7 +9,8 @@
 	--secondary-color: lightgray;
 	--tertiary-color: darkgray;
 	--accent-color: sienna;
-	--heading-color: #6e6e6e;
+	--heading-color: #5e5e5e;
+	--subtitle-color: #7e7e7e;
 	--footer-color: #5e5e5e;
 	--text-color: #2e2e26;
 	--border-color: #bbbbbb;
@@ -17,6 +18,7 @@
 	--footer-background: none;
 	--toolbar-gradient: linear-gradient(to bottom, whitesmoke, lightgray);
 	--toolbar-shadow: 0px 2px 2px rgba(255,255,255,0.75) inset, 0px -2px 2px rgba(0,0,0,0.125) inset;
+	--border-radius: 6px;
 }
 
 * {
@@ -128,6 +130,7 @@ h5 {
 	font-weight: 600;
 }
 sub {
+	color: var(--subtitle-color);
 	font-weight: 600;
 }
 
@@ -147,13 +150,14 @@ p:last-child {
 	margin-bottom: 0.25rem;
 }
 
-pre {
+code, pre {
 	font-size: 16px;
+	font-weight: bold;
 	font-family: var(--font-mono);
-	background-color: rgba(255, 255, 255, 0.45);
-	border-radius: 9px;
-	box-shadow: 2px 2px 6px rgb(255 255 255 / 25%);
-	padding: 0.5em;
+	background: rgba(0, 0, 0, 0.125);
+	border-radius: var(--border-radius);
+	box-shadow: 0px 2px 2px rgba(0,0,0,0.25);
+	padding: 0.25rem 0.5rem;
 	overflow-x: auto;
 	color: var(--text-color);
 }
@@ -164,7 +168,7 @@ input, button, .button {
 	text-decoration: none;
 }
 
-button, .button {
+:is(button, .button, input[type="submit"]) {
 	margin: 0;
 	padding: 0.5rem 1rem;
 	background: goldenrod;
@@ -174,33 +178,33 @@ button, .button {
 	font-weight: 600;
 	white-space: nowrap;
 	border: 1px solid goldenrod;
-	border-radius: 9px;
+	border-radius: var(--border-radius);
 	box-shadow: 0px 2px 2px rgba(0,0,0,0.5), 0px 2px 2px rgba(255,255,255,0.75), 0px -2px 2px rgba(0,0,0,0.125) inset, 0px 2px 2px white inset, 0px 16px 12px rgba(255,255,255,0.5) inset;
 	cursor: pointer;
 	transition: 0.2s ease-in-out;
 }
-:is(button, .button):hover {
+:is(button, .button, input[type="submit"]):hover {
 	background: orange;
 }
-:is(button, .button):active,
-:is(button, .button):focus:active {
+:is(button, .button, input[type="submit"]):active,
+:is(button, .button, input[type="submit"]):focus:active {
 	background: darkgoldenrod;
 	box-shadow: 0px 4px 8px rgba(0,0,0,0.75) inset, 0px 2px 2px rgba(0,0,0,0.5), 0px 2px 2px rgba(255,255,255,0.75), 0px -2px 2px rgba(0,0,0,0.125) inset, 0px 2px 2px white inset, 0px 16px 12px rgba(255,255,255,0.5) inset;
 	outline: 3px solid darkgoldenrod;
 	animation: none;
 }
-:is(button, .button):focus {
+:is(button, .button, input[type="submit"]):focus {
 	outline: none;
 	animation: button-throbber 1s alternate-reverse infinite;
 }
-button:disabled, .button.disabled {
+button:disabled, .button.disabled, , input[type="submit"]:disabled {
 	background: darkgray;
 	border-color: dimgray;
 	opacity: 0.5;
 	cursor: not-allowed;
 	pointer-events: none;
 }
-small :is(button, .button) {
+small :is(button, .button, input[type="submit"]) {
 	padding: 0.325rem 0.5rem;
 }
 
@@ -233,7 +237,7 @@ section {
 	margin: 0;
 	padding: 1rem;
 	width: 100%;
-	border-radius: 9px;
+	border-radius: var(--border-radius);
 }
 
 .card {
@@ -299,7 +303,7 @@ section {
 	color: var(--text-color);
 	font-size: 1rem;
 	font-family: var(--font-control);
-	border-radius: 9px 9px 0 0;
+	border-radius: var(--border-radius) var(--border-radius) 0 0;
 	box-shadow: 0px 2px 4px rgba(0,0,0,0.5);
 	backdrop-filter: blur(8px);
 }
@@ -313,7 +317,7 @@ section {
 	width: 100%;
 	background: goldenrod;
 	border: 1px solid darkgoldenrod;
-	border-radius: 9px 9px 0 0;
+	border-radius: var(--border-radius) var(--border-radius) 0 0;
 	box-shadow: 0px 2px 2px rgba(255,255,255,0.75) inset, 0px 4px 4px rgba(255,255,255,0.25) inset, 0px 4px 8px rgba(0,0,0,0.25) inset;
 	transition: 0.2s linear;
 	user-select: none;
@@ -346,7 +350,7 @@ section {
 	text-transform: uppercase;
 	border-top: none;
 	border-color: peru;
-	border-radius: 0 0 9px 9px;
+	border-radius: 0 0 var(--border-radius) var(--border-radius);
 	box-shadow: 0px -1px 1px rgba(0,0,0,0.25), 0px 1px 2px rgba(255,255,255,0.75), 0px -2px 2px rgba(0,0,0,0.25) inset, 0px 2px 2px white inset, 0px 12px 8px rgba(255,255,255,0.25) inset, 0px 8px 4px rgba(0,0,0,0.25) inset;
 }
 .toast-window .body {
@@ -355,7 +359,7 @@ section {
 	width: 100%;
 	border: solid var(--border-color);
 	border-width: 1px 1px 0 1px;
-	border-radius: 9px 9px 0 0;
+	border-radius: var(--border-radius) var(--border-radius) 0 0;
 	box-shadow: 0px 2px 2px rgba(255,255,255,0.75) inset, 0px -2px 16px rgba(0,0,0,0.25) inset;
 	overflow-y: auto;
 }
@@ -381,7 +385,7 @@ section {
 	width: 100%;
 	text-decoration: none;
 	border: 1px solid transparent;
-	border-radius: 9px;
+	border-radius: var(--border-radius);
 	transition: 0.2s linear;
 	drag: none;
 	-webkit-user-drag: none;
@@ -466,10 +470,18 @@ section {
 	border-bottom: 1px solid var(--border-color) !important;
 	box-shadow: var(--toolbar-shadow);
 }
-.toolbar :is(button, .button) {
+.toolbar :is(button, .button, input[type="submit"]) {
 	background: var(--toolbar-gradient);
 	border: 1px solid var(--border-color);
 	box-shadow: var(--toolbar-shadow);
+}
+.toolbar :is(button, .button, input[type="submit"]):hover {
+	background: var(--toolbar-gradient);
+	box-shadow: 0px 2px 2px rgba(255,255,255,0.75) inset, 0px -2px 2px rgba(0,0,0,0.5) inset;
+}
+.toolbar :is(button, .button, input[type="submit"]):is(:active, :focus) {
+	background: var(--toolbar-gradient);
+	box-shadow: 0px -2px 2px rgba(255,255,255,0.75) inset, 0px 2px 2px rgba(0,0,0,0.5) inset;
 }
 .toolbar h4 {
 	color: dimgray;

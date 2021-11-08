@@ -20,7 +20,7 @@
 
 <style>
   :root {
-    --link-border-radius: 9px;
+    --link-border-radius: var(--border-radius);
   }
 
   nav {
@@ -62,7 +62,7 @@
     padding: 0.5rem 1rem;
 		background: var(--background);
 		color: var(--color);
-    font-weight: 600;
+    font-weight: bold;
     text-shadow: 0px 1px 1px white;
     box-shadow: 0px -4px 8px dimgray inset, 0px 2px 2px white inset, 0px 4px 8px gray inset;
     border-width: 1px 1px 0 1px;

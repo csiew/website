@@ -57,7 +57,7 @@
     width: 100%;
     max-width: 100vh;
     height: 50vh;
-    border-radius: 9px;
+    border-radius: var(--border-radius);
     box-shadow: 0px 4px 8px rgba(0,0,0,0.25), 0px 2px 2px rgba(255,255,255,0.5) inset, 0px -2px 2px rgba(0,0,0,0.5) inset;
   }
 

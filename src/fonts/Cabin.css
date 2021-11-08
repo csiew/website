@@ -1,0 +1,15 @@
+/* Cabin */
+@font-face {
+	font-family: 'Cabin';
+	src: url('./cabin/Cabin-VariableFont.ttf');
+	font-weight: 100 1000;
+  font-style: normal;
+	font-stretch: 25% 151%;
+}
+@font-face {
+	font-family: 'Cabin';
+	src: url('./cabin/Cabin-Italic-VariableFont.ttf');
+	font-weight: 100 1000;
+  font-style: italic;
+	font-stretch: 25% 151%;
+}

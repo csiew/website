@@ -3,6 +3,8 @@
 	import '../app.css';
 	import '../fonts/SourceSansPro.css';
 	import '../fonts/SourceCodePro.css';
+	import '../fonts/Jost.css';
+	import '../fonts/Cabin.css';
 </script>
 
 <svelte:head>

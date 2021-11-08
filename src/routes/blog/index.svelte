@@ -52,7 +52,7 @@
 	.card .heading {
 		margin: 0;
 		padding: 0.5rem 1rem;
-		border-radius: 9px 9px 0 0;
+		border-radius: var(--border-radius) var(--border-radius) 0 0;
 	}
 	.card .body {
 		margin: 0;

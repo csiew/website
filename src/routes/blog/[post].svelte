@@ -62,7 +62,7 @@
   }
 
   .toolbar {
-    border-radius: 9px 9px 0 0;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
   }
 
   article {
@@ -72,8 +72,9 @@
 		align-items: flex-start;
 		width: 100%;
     padding: 2rem 2.5rem 3rem 2.5rem;
+    font-size: 1.325rem;
     background: white;
-    border-radius: 0 0 9px 9px;
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
   }
 
   article h1 {
