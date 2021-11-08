@@ -17,6 +17,6 @@
 	<slot />
 </main>
 <footer>
-	<p>Version 5.0.2<br/><a sveltekit:prefetch href="/versions">Version history</a></p>
+	<p>Version 5.0.3<br/><a sveltekit:prefetch href="/versions">Version history</a></p>
 	<p>&copy; 2021 Clarence Siew</p>
 </footer>
