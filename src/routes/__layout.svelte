@@ -1,10 +1,8 @@
 <script lang="ts">
 	import Header from '$lib/header/Header.svelte';
 	import '../app.css';
-	import '../fonts/SourceSansPro.css';
-	import '../fonts/SourceCodePro.css';
-	import '../fonts/Jost.css';
-	import '../fonts/Cabin.css';
+	import '../fonts/PublicSans.css';
+	import '../fonts/JetBrainsMono.css';
 </script>
 
 <svelte:head>
@@ -17,6 +15,6 @@
 	<slot />
 </main>
 <footer>
-	<p>Version 5.0.3<br/><a sveltekit:prefetch href="/versions">Version history</a></p>
+	<p>Version 5.0.4<br/><a sveltekit:prefetch href="/versions">Version history</a></p>
 	<p>&copy; 2021 Clarence Siew</p>
 </footer>

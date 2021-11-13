@@ -27,37 +27,24 @@
 		border: none;
 		border-radius: var(--border-radius) var(--border-radius) 0 0;
 		box-shadow: 0px 4px 4px rgba(255,255,255,0.5) inset, 0px -2px 2px rgba(0,0,0,0.125) inset, 0px -8px 16px rgba(0,0,0,0.75) inset, 0px 8px 16px rgba(255,255,255,0.75) inset, 0px -12px 16px rgba(255,255,255,0.5) inset;
-		animation: barberpole 25s infinite linear;
-	}
-	.card.construction:hover .heading {
-		--accent-1: green;
-		--accent-2: limegreen;
 	}
 	.card.construction .heading h2 {
 		margin: 0;
 		padding: 0.5rem 1rem;
 		background: linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(0,0,0,0.75));
 		border: 1px solid #333333;
+		border-bottom: none;
 		border-radius: var(--border-radius) var(--border-radius) 0 0;
 		color: white;
 		font-size: 1rem;
 		text-transform: uppercase;
 		text-shadow: 0px 1px 8px rgba(0,0,0,0.25);
-		box-shadow: 0px 2px 2px rgba(0,0,0,0.25) inset, 0px -4px 8px rgba(255,255,255,0.25) inset;
+		box-shadow: 0px 2px 2px rgba(0,0,0,0.25) inset, 0px 8px 16px rgba(0,0,0,0.5) inset, 0px -4px 8px rgba(255,255,255,0.25) inset;
 		backdrop-filter: blur(4px);
 	}
 	.card.construction .body {
 		padding: 1rem;
     border-radius: 0 0 var(--border-radius) var(--border-radius);
 		box-shadow: 0px 2px 4px rgba(0,0,0,0.75) inset;
-	}
-
-	@keyframes barberpole {
-		from {
-			background-position: 0%;
-		}
-		to {
-			background-position: 100%;
-		}
 	}
 </style>

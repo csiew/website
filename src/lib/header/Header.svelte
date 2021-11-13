@@ -68,7 +68,6 @@
 		font-weight: 700;
 		line-height: 1;
 		text-align: right;
-		text-transform: uppercase;
 		transition: 0.2s linear;
 	}
 	.title h1:hover {
