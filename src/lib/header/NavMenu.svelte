@@ -1,20 +1,33 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-
-  const navLinks = [
-    { name: "Home", url: "/" },
-    { name: "Blog", url: "/blog" },
-    { name: "Projects", url: "/projects" },
-    { name: "Playlists", url: "/playlists" },
-  ];
+  import IoMdHome from 'svelte-icons/io/IoMdHome.svelte';
+  import IoMdMail from 'svelte-icons/io/IoMdMail.svelte';
+  import IoMdGitCompare from 'svelte-icons/io/IoMdGitCompare.svelte';
+  import IoMdMusicalNote from 'svelte-icons/io/IoMdMusicalNote.svelte';
 </script>
 
 <nav>
   <ul>
-    {#each navLinks as navLink}
-      <li class:active={$page.path === navLink.url}><a sveltekit:prefetch href={navLink.url}>{navLink.name}</a></li>
-    {/each}
-    <li><a href="https://portfolio.clarencesiew.com/" target="_blank">Portfolio</a></li>
+    <li class:active={$page.path === '/'}>
+      <a sveltekit:prefetch href="/">
+        <span class="icon" title="Home"><IoMdHome /></span>
+      </a>
+    </li>
+    <li class:active={$page.path === '/blog'}>
+      <a sveltekit:prefetch href="/blog">
+        <span class="icon" title="Blog"><IoMdMail /></span>
+      </a>
+    </li>
+    <li class:active={$page.path === '/projects'}>
+      <a sveltekit:prefetch href="/projects">
+        <span class="icon" title="Projects"><IoMdGitCompare /></span>
+      </a>
+    </li>
+    <li class:active={$page.path === '/playlists'}>
+      <a sveltekit:prefetch href="/playlists">
+        <span class="icon" title="Playlists"><IoMdMusicalNote /></span>
+      </a>
+    </li>
   </ul>
 </nav>
 
@@ -23,12 +36,19 @@
     --link-border-radius: var(--border-radius);
   }
 
+  .icon {
+    padding: 0.125rem;
+    width: 2rem;
+    height: 2rem;
+    color: var(--text-color);
+  }
+
   nav {
 		display: inline-flex;
 		flex-flow: row;
 		justify-content: flex-end;
 		align-items: flex-start;
-		margin: 1rem 1rem 0 1rem;
+		margin: 1rem;
     bottom: 0;
 		padding: 0;
     font-family: var(--font-control);
@@ -43,7 +63,7 @@
 		display: inline-flex;
 		flex-flow: row;
 		justify-content: flex-end;
-		align-items: flex-end;
+		align-items: center;
     gap: 0.5rem;
 		list-style: none;
 	}
@@ -51,8 +71,6 @@
 		position: relative;
 	}
 	nav a {
-    --background: var(--tertiary-color);
-    --color: var(--text-color);
 		width: min-content;
 		display: inline-flex;
     flex-flow: column;
@@ -60,36 +78,34 @@
     align-items: center;
     margin: 0;
     padding: 0.5rem 1rem;
-		background: var(--background);
-		color: var(--color);
+		background: none;
+		color: var(--text-color);
     font-weight: bold;
-    text-shadow: 0px 1px 1px white;
-    box-shadow: 0px -4px 8px dimgray inset, 0px 2px 2px white inset, 0px 4px 8px gray inset;
-    border-width: 1px 1px 0 1px;
-    border-style: solid;
-    border-color: gray;
-    border-radius: var(--link-border-radius) var(--link-border-radius) 0 0;
+    border: none;
+    border-radius: var(--link-border-radius);
 		text-decoration: none;
 		transition: 0.1s linear;
 	}
 	nav a:hover {
-    --background: var(--secondary-color);
-    box-shadow: 0px -2px 8px gray inset, 0px 2px 1px white inset, 0px 4px 8px gray inset;
+    background: var(--tertiary-color);
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.75);
   }
   nav li.active :is(a, a:hover) {
-    --background: goldenrod;
-		--color: #1e1e1e;
-    border-color: darkgoldenrod;
-    box-shadow: 0px 2px 2px white inset, 0px 16px 8px rgba(255,255,255,0.25) inset;
+    background: var(--accent-color);
+		color: var(--secondary-color);
 	}
+  nav li.active a .icon {
+		color: var(--secondary-color);
+  }
 	nav a:active {
-    --background: var(--primary-color);
-    padding-bottom: 0.325rem;
+    background: var(--primary-color);
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.75) inset;
 	}
 
   @media (max-width: 720px) {
-    :root {
-      --padding: 0.75rem;
+    .icon {
+      width: 1.75rem;
+      height: 1.75rem;
     }
 
     nav {
@@ -97,10 +113,12 @@
       width: 100%;
     }
     nav ul {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(96px, 1fr));
+      display: inline-flex;
+      flex-flow: row;
+      justify-content: center;
+      align-items: center;
       gap: 0.25rem;
-      padding: 1rem;
+      padding: 0.5rem;
       width: 100%;
     }
     nav li {
@@ -109,14 +127,11 @@
     nav li a {
       align-items: center;
       width: 100%;
-      padding: var(--padding);
+      padding: 0.5rem;
       border-radius: var(--link-border-radius);
     }
-    nav li a:is(:active, :focus) {
-      padding: var(--padding);
-    }
-    nav a:hover {
-      padding: 0.25rem 0.75rem;
+    nav li a:is(:hover, :active) {
+      box-shadow: none;
     }
   }
 </style>

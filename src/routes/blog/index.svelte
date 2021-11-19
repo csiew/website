@@ -52,7 +52,6 @@
 	.card .heading {
 		margin: 0;
 		padding: 0.5rem 1rem;
-		border-radius: var(--border-radius) var(--border-radius) 0 0;
 	}
 	.card .body {
 		margin: 0;
@@ -67,7 +66,7 @@
 		width: 100%;
 		height: 100%;
 		margin: 0;
-		padding: 0;
+		padding: 0.5rem;
 		box-shadow: 0px 2px 2px rgba(0,0,0,0.125) inset;
 		list-style: none;
 	}
@@ -84,17 +83,19 @@
 		grid-template-columns: 1fr;
 		width: 100%;
 		padding: 1rem;
+		border-radius: var(--border-radius);
 		text-decoration: none;
-		border-bottom: 1px solid var(--border-color);
 		cursor: pointer;
 		-webkit-user-select: none;
 		-moz-user-select: none;
 	}
 	.card .body a:hover {
-		background: rgba(255,255,255,0.25);
+		background: rgba(255,255,255,0.0625);
+		box-shadow: 0px 2px 8px rgba(0,0,0,0.25);
 	}
 	.card .body a:active {
 		background: rgba(0,0,0,0.125);
+		box-shadow: 0px 2px 4px rgba(0,0,0,0.5) inset;
 	}
 	.card .body h3 {
 		margin: 0;

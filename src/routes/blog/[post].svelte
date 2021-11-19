@@ -72,8 +72,8 @@
 		align-items: flex-start;
 		width: 100%;
     padding: 2rem 2.5rem 3rem 2.5rem;
-    font-size: 1.325rem;
-    background: white;
+    color: var(--text-color);
+    background: var(--secondary-color);
     border-radius: 0 0 var(--border-radius) var(--border-radius);
   }
 

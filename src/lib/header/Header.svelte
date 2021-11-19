@@ -1,10 +1,10 @@
 <script lang="ts">
 	import NavMenu from "./NavMenu.svelte";
-	import MobileNavMenu from "./MobileNavMenu.svelte";
 	import Profile from "../Profile.svelte";
 
 </script>
 
+<div class="torse"></div>
 <header>
 	<div class="title">
 		<a href="/">
@@ -15,10 +15,6 @@
 
 	<span class="navbar">
 		<NavMenu />
-	</span>
-	
-	<span class="mobile-navbar">
-		<MobileNavMenu />
 	</span>
 </header>
 
@@ -35,10 +31,10 @@
 		padding: 0;
 		width: 100%;
 		min-width: 300px;
-		background: var(--text-color);
-		color: var(--primary-color);
-		box-shadow: 0px 8px 16px rgba(0,0,0,0.5) inset, 0px 2px 8px rgba(0,0,0,0.25), 0px 1px 2px rgba(0,0,0,0.5);
-		border-bottom: 5px solid goldenrod;
+		background: var(--secondary-color);
+		color: var(--text-color);
+		box-shadow: 0px 2px 8px rgba(0,0,0,0.25), 0px 1px 2px rgba(0,0,0,0.5);
+		border-bottom: 1px solid var(--border-color);
 	}
 
 	.title {
@@ -84,38 +80,47 @@
 		height: 100%;
 	}
 
-	.mobile-navbar {
-		display: none;
+	.torse {
+		--accent-1: rgba(0,0,0,0.5);
+		--accent-2: goldenrod;
 		margin: 0;
+		padding: 0;
 		width: 100%;
+		height: 1rem;
+		background: linear-gradient(-45deg, var(--accent-1) 25%, var(--accent-2) 25%, var(--accent-2) 50%, var(--accent-1) 50%, var(--accent-1) 75%, var(--accent-2) 75%);
+		background-size: 27px 27px;
+		border: none;
+		box-shadow: 0px 2px 8px rgba(0,0,0,0.75), 0px -2px 2px rgba(0,0,0,0.125) inset, 0px -4px 8px rgba(0,0,0,0.75) inset, 0px 4px 8px rgba(255,255,255,0.5) inset;
 	}
 
 	@media (max-width: 960px) {
 		header {
-			position: relative;
-			flex-flow: column;
-			justify-content: center;
+			flex-flow: row;
+			justify-content: space-between;
 			align-items: center;
+			padding: 0.25rem 0 0 0;
 			min-width: 100%;
 			height: auto;
-			padding: 0.25rem 0 0 0;
 		}
 
 		.title {
 			justify-content: center;
-			width: 100%;
+			margin: 0;
+			width: auto;
 		}
 		.title h1 {
 			display: none;
 		}
 
 		.navbar {
-			display: none;
-			visibility: hidden;
-		}
-
-		.mobile-navbar {
 			display: inline-flex;
+			flex-flow: column;
+			justify-content: flex-end;
+			align-items: flex-end;
+			margin: auto;
+			padding: 0;
+			width: 100%;
+			height: auto;
 		}
 	}
 </style>

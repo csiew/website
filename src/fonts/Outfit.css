@@ -1,0 +1,8 @@
+/* Outfit */
+@font-face {
+	font-family: 'Outfit';
+	src: url('./outfit/Outfit-VariableFont_wght.ttf');
+	font-weight: 100 1000;
+  font-style: normal;
+	font-stretch: 25% 151%;
+}

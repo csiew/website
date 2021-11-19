@@ -1,24 +1,22 @@
 :root {
 	--system-font-family: system-ui, 'system-ui', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-	--font-family: 'Public Sans', var(--system-font-family);
+	--font-family: 'Outfit', var(--system-font-family);
 	--font-heading: var(--font-family);
 	--font-mono: 'JetBrains Mono', Menlo, Monaco, 'Cascadia Code', Consolas, monospace;
 	--font-control: var(--font-family);
 	font-family: var(--font-family);
 	--pure-white: #ffffff;
-	--primary-color: #dcdcd6;
-	--secondary-color: lightgray;
-	--tertiary-color: darkgray;
-	--accent-color: sienna;
-	--heading-color: #5e5e5e;
-	--subtitle-color: #7e7e7e;
-	--footer-color: #5e5e5e;
-	--text-color: #2e2e26;
-	--border-color: #bbbbbb;
+	--primary-color: #222222;
+	--secondary-color: #2e2e2e;
+	--tertiary-color: #3e3e3e;
+	--accent-color: goldenrod;
+	--heading-color: #eeeeee;
+	--subtitle-color: #cccccc;
+	--footer-color: #aaaaaa;
+	--text-color: #eeeeee;
+	--border-color: #3e3e3e;
 	--selection-background: #87ceeb;
 	--footer-background: none;
-	--toolbar-gradient: linear-gradient(to bottom, whitesmoke, lightgray);
-	--toolbar-shadow: 0px 2px 2px rgba(255,255,255,0.75) inset, 0px -2px 2px rgba(0,0,0,0.125) inset;
 	--border-radius: 9px;
 }
 
@@ -36,8 +34,8 @@ body, #svelte {
 	align-items: space-between;
 	background: var(--primary-color);
 	color: var(--text-color);
-	font-size: 1.125rem;
-	font-weight: 400;
+	font-size: 1.25rem;
+	font-weight: 350;
 	font-display: fallback;
 	text-rendering: geometricPrecision;
 	line-height: 1.625;
@@ -176,13 +174,11 @@ input, button, .button {
 	padding: 0.5rem 1rem;
 	background: goldenrod;
 	color: #1e1e1e;
-	text-shadow: 0px 1px 1px white;
 	text-align: center;
 	font-weight: 600;
 	white-space: nowrap;
 	border: 1px solid goldenrod;
 	border-radius: var(--border-radius);
-	box-shadow: 0px 2px 2px rgba(0,0,0,0.5), 0px 2px 2px rgba(255,255,255,0.75), 0px -2px 2px rgba(0,0,0,0.125) inset, 0px 2px 2px white inset, 0px 16px 12px rgba(255,255,255,0.5) inset;
 	cursor: pointer;
 	transition: 0.2s ease-in-out;
 }
@@ -192,7 +188,7 @@ input, button, .button {
 :is(button, .button, input[type="submit"]):active,
 :is(button, .button, input[type="submit"]):focus:active {
 	background: darkgoldenrod;
-	box-shadow: 0px 4px 8px rgba(0,0,0,0.75) inset, 0px 2px 2px rgba(0,0,0,0.5), 0px 2px 2px rgba(255,255,255,0.75), 0px -2px 2px rgba(0,0,0,0.125) inset, 0px 2px 2px white inset, 0px 16px 12px rgba(255,255,255,0.5) inset;
+	box-shadow: 0px 4px 8px rgba(0,0,0,0.5) inset;
 	outline: 3px solid darkgoldenrod;
 	animation: none;
 }
@@ -200,9 +196,8 @@ input, button, .button {
 	outline: none;
 	animation: button-throbber 1s alternate-reverse infinite;
 }
-button:disabled, .button.disabled, , input[type="submit"]:disabled {
-	background: darkgray;
-	border-color: dimgray;
+button:disabled, .button.disabled, input[type="submit"]:disabled {
+	filter: saturate(0);
 	opacity: 0.5;
 	cursor: not-allowed;
 	pointer-events: none;
@@ -244,9 +239,9 @@ section {
 }
 
 .card {
-	background: rgba(255,255,255,0.5);
-	border: 1px solid darkgray;
-	box-shadow: 0px 2px 4px rgba(0,0,0,0.25), 0px 2px 1px white inset, 0px -2px 1px rgba(0,0,0,0.125) inset;
+	background: var(--secondary-color);
+	border: 1px solid var(--border-color);
+	box-shadow: 0px 2px 8px rgba(0,0,0,0.25);
 }
 .card .heading {
 	display: inline-flex;
@@ -287,8 +282,8 @@ section {
 }
 
 .engrave {
-	background: rgba(0,0,0,0.015);
-	box-shadow: 0px -2px 2px rgba(255,255,255,0.8) inset, 0px 2px 4px rgba(0,0,0,0.5) inset;
+	background: rgba(0,0,0,0.125);
+	box-shadow: 0px 2px 8px rgba(0,0,0,0.25) inset;
 }
 
 .toast-window {
@@ -304,7 +299,7 @@ section {
 	width: 100%;
 	max-width: 240px;
 	max-height: 75vh;
-	background: white;
+	background: var(--secondary-color);
 	color: var(--text-color);
 	font-size: 1rem;
 	font-family: var(--font-control);
@@ -319,11 +314,9 @@ section {
 	margin: 0;
 	padding: 0 1rem;
 	width: 100%;
+	color: var(--primary-color);
 	background: goldenrod;
-	border: 1px solid darkgoldenrod;
-	border-bottom: none;
 	border-radius: var(--border-radius) var(--border-radius) 0 0;
-	box-shadow: 0px 2px 2px rgba(255,255,255,0.75) inset, 0px 4px 4px rgba(255,255,255,0.25) inset, 0px 4px 8px rgba(0,0,0,0.25) inset;
 	transition: 0.2s linear;
 	user-select: none;
 	-webkit-user-select: none;
@@ -342,7 +335,6 @@ section {
 	--padding: 0.75rem;
 	padding-top: var(--padding);
 	padding-bottom: var(--padding);
-	text-shadow: 0px 1px 1px white;
 	font-weight: bold;
 }
 .toast-window .heading .accessories {
@@ -356,16 +348,12 @@ section {
 	border-top: none;
 	border-color: peru;
 	border-radius: 0 0 var(--border-radius) var(--border-radius);
-	box-shadow: 0px -1px 1px rgba(0,0,0,0.25), 0px 1px 2px rgba(255,255,255,0.75), 0px -2px 2px rgba(0,0,0,0.25) inset, 0px 2px 2px white inset, 0px 12px 8px rgba(255,255,255,0.25) inset, 0px 8px 4px rgba(0,0,0,0.25) inset;
 }
 .toast-window .body {
 	margin: 0;
-	padding: 0.5rem 0.25rem;
+	padding: 0.25rem;
 	width: 100%;
-	border: solid var(--border-color);
-	border-width: 1px 1px 0 1px;
 	border-radius: var(--border-radius) var(--border-radius) 0 0;
-	box-shadow: 0px 2px 2px rgba(255,255,255,0.75) inset, 0px -2px 8px rgba(0,0,0,0.25) inset;
 	overflow-y: auto;
 }
 .toast-window .body ul {
@@ -388,24 +376,21 @@ section {
 .toast-window .body a {
 	padding: 0.5rem 0.75rem;
 	width: 100%;
+	color: var(--text-color);
 	text-decoration: none;
-	border: 1px solid transparent;
 	border-radius: var(--border-radius);
 	transition: 0.2s linear;
 	drag: none;
 	-webkit-user-drag: none;
 }
 .toast-window .body a:hover {
-	background: goldenrod;
-	color: var(--text-color);
-	border-color: darkgoldenrod;
-	text-shadow: 0px 1px 2px rgba(255,255,255,0.75);
-	box-shadow: 0px 2px 2px rgba(0,0,0,0.5), 0px 2px 2px rgba(255,255,255,0.75), 0px -2px 2px rgba(0,0,0,0.125) inset, 0px 2px 2px white inset, 0px 16px 12px rgba(255,255,255,0.5) inset;
+	background: rgba(255,255,255,0.0625);
+	box-shadow: 0px 2px 8px rgba(0,0,0,0.5);
 	text-decoration: none;
 }
 .toast-window .body a:active {
-	background: darkgoldenrod;
-	box-shadow: 0px -2px 2px rgba(0,0,0,0.25), 0px -2px 2px rgba(255,255,255,0.75), 0px 2px 2px rgba(0,0,0,0.5) inset, 0px 2px 2px white inset, 0px 8px 16px rgba(255,255,255,0.5) inset;
+	background: black;
+	box-shadow: 0px 2px 2px rgba(0,0,0,0.5) inset;
 }
 .toast-window .body a:last-child {
 	border-bottom: none;
@@ -471,29 +456,32 @@ section {
 	padding: 0.25rem;
 	width: 100%;
 	height: 3.5rem;
-	background: var(--toolbar-gradient);
+	background: var(--secondary-color);
 	border-bottom: 1px solid var(--border-color) !important;
-	box-shadow: var(--toolbar-shadow);
-}
-.toolbar :is(button, .button, input[type="submit"]) {
-	background: var(--toolbar-gradient);
-	border: 1px solid var(--border-color);
-	box-shadow: var(--toolbar-shadow);
-}
-.toolbar :is(button, .button, input[type="submit"]):hover {
-	background: var(--toolbar-gradient);
-	box-shadow: 0px 2px 2px rgba(255,255,255,0.75) inset, 0px -2px 2px rgba(0,0,0,0.5) inset;
-}
-.toolbar :is(button, .button, input[type="submit"]):is(:active, :focus) {
-	background: var(--toolbar-gradient);
-	box-shadow: 0px -2px 2px rgba(255,255,255,0.75) inset, 0px 2px 2px rgba(0,0,0,0.5) inset;
 }
 .toolbar h4 {
-	color: dimgray;
-	text-shadow: 0px 2px 1px white, 0px -2px 1px rgba(0,0,0,0.125);
+	color: var(--subtitle-color);
 	user-select: none;
 	-webkit-user-select: none;
 	-moz-user-select: none;
+}
+.toolbar :is(button, .button, input[type="submit"]) {
+	color: var(--text-color);
+	background: none;
+	border: none;
+}
+.toolbar :is(button, .button, input[type="submit"]):hover {
+	color: var(--text-color);
+	background: var(--tertiary-color);
+	box-shadow: 0px 2px 4px rgba(0,0,0,0.5);
+}
+.toolbar :is(button, .button, input[type="submit"]):active {
+	color: var(--primary-color);
+	background: var(--accent-color);
+}
+
+.inverted-filter {
+	filter: invert(1);
 }
 
 @media (max-width: 720px) {

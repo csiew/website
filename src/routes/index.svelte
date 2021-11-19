@@ -12,7 +12,6 @@
 	import Profile from "$lib/Profile.svelte";
 	import Penang from "../lib/home/Penang.png";
 	import Victoria from "../lib/home/Victoria.png";
-import Construction from "$lib/home/Construction.svelte";
 </script>
 
 <svelte:head>
@@ -20,7 +19,6 @@ import Construction from "$lib/home/Construction.svelte";
 </svelte:head>
 
 <div class="content">
-	<Construction />
 	<div class="heading">
 		<h1>Hello World</h1>
 	</div>
@@ -50,10 +48,10 @@ import Construction from "$lib/home/Construction.svelte";
 					</p>
 				</div>
 			</section>
-			<img src={Penang} alt="Penang" style="height: 12rem;" />
+			<img src={Penang} class="inverted-filter" alt="Penang" style="height: 12rem;" />
 		</div>
 		<div class="showcase showcase-right">
-			<img src={Victoria} alt="Victoria" style="height: 12rem;" />
+			<img src={Victoria} class="inverted-filter" alt="Victoria" style="height: 12rem;" />
 			<section class="card">
 				<div class="body">
 					<p>

@@ -11,9 +11,6 @@
   .card.construction {
 		margin: 0 0 3rem 0;
 		padding: 0;
-		background: rgba(0,0,0,0.75);
-		color: lightgray;
-		border-color: black;
 		font-size: 1rem;
 	}
 	.card.construction .heading {
@@ -26,12 +23,12 @@
 		background-size: 27px 27px;
 		border: none;
 		border-radius: var(--border-radius) var(--border-radius) 0 0;
-		box-shadow: 0px 4px 4px rgba(255,255,255,0.5) inset, 0px -2px 2px rgba(0,0,0,0.125) inset, 0px -8px 16px rgba(0,0,0,0.75) inset, 0px 8px 16px rgba(255,255,255,0.75) inset, 0px -12px 16px rgba(255,255,255,0.5) inset;
+		box-shadow: 0px -2px 2px rgba(0,0,0,0.125) inset, 0px -12px 24px rgba(0,0,0,0.75) inset, 0px 8px 16px rgba(255,255,255,0.5) inset;
 	}
 	.card.construction .heading h2 {
 		margin: 0;
 		padding: 0.5rem 1rem;
-		background: linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(0,0,0,0.75));
+		background: linear-gradient(to bottom, rgba(0,0,0,0.125), rgba(0,0,0,0.5));
 		border: 1px solid #333333;
 		border-bottom: none;
 		border-radius: var(--border-radius) var(--border-radius) 0 0;
@@ -42,9 +39,7 @@
 		box-shadow: 0px 2px 2px rgba(0,0,0,0.25) inset, 0px 8px 16px rgba(0,0,0,0.5) inset, 0px -4px 8px rgba(255,255,255,0.25) inset;
 		backdrop-filter: blur(4px);
 	}
-	.card.construction .body {
+	.card.card.construction .body {
 		padding: 1rem;
-    border-radius: 0 0 var(--border-radius) var(--border-radius);
-		box-shadow: 0px 2px 4px rgba(0,0,0,0.75) inset;
 	}
 </style>
