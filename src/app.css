@@ -10,6 +10,7 @@
 	--secondary-color: #2e2e2e;
 	--tertiary-color: #3e3e3e;
 	--accent-color: goldenrod;
+	--accent-secondary-color: darkgoldenrod;
 	--heading-color: #eeeeee;
 	--subtitle-color: #cccccc;
 	--footer-color: #aaaaaa;
@@ -77,7 +78,7 @@ footer {
 }
 .content .heading h1 {
 	margin: 1rem 0;
-	color: var(--text-color);
+	color: var(--accent-color);
 	font-size: 4rem;
 	font-weight: 600;
 	line-height: 1;
@@ -172,22 +173,23 @@ input, button, .button {
 :is(button, .button, input[type="submit"]) {
 	margin: 0;
 	padding: 0.5rem 1rem;
-	background: goldenrod;
+	background: var(--accent-color);
 	color: #1e1e1e;
 	text-align: center;
 	font-weight: 600;
 	white-space: nowrap;
-	border: 1px solid goldenrod;
+	border: none;
 	border-radius: var(--border-radius);
+	box-shadow: 0px 3px 0px rgba(255,255,255,0.5) inset, 0px -3px 0px rgba(0,0,0,0.25) inset, 0px 2px 4px rgba(0,0,0,0.5);
 	cursor: pointer;
 	transition: 0.2s ease-in-out;
 }
 :is(button, .button, input[type="submit"]):hover {
-	background: orange;
+	background: var(--accent-secondary-color);
 }
 :is(button, .button, input[type="submit"]):active,
 :is(button, .button, input[type="submit"]):focus:active {
-	background: darkgoldenrod;
+	background: var(--accent-secondary-color);
 	box-shadow: 0px 4px 8px rgba(0,0,0,0.5) inset;
 	outline: 3px solid darkgoldenrod;
 	animation: none;
@@ -241,7 +243,7 @@ section {
 .card {
 	background: var(--secondary-color);
 	border: 1px solid var(--border-color);
-	box-shadow: 0px 2px 8px rgba(0,0,0,0.25);
+	box-shadow: 8px 8px 64px rgba(255,255,255,0.0625) inset, -8px -8px 64px rgba(0,0,0,0.5) inset, 0px 2px 8px rgba(0,0,0,0.25);
 }
 .card .heading {
 	display: inline-flex;
@@ -304,7 +306,7 @@ section {
 	font-size: 1rem;
 	font-family: var(--font-control);
 	border-radius: var(--border-radius) var(--border-radius) 0 0;
-	box-shadow: 0px 2px 4px rgba(0,0,0,0.5);
+	box-shadow: 8px 8px 64px rgba(255,255,255,0.0625) inset, -8px -8px 64px rgba(0,0,0,0.5) inset, 0px 2px 8px rgba(0,0,0,0.25);
 }
 .toast-window .heading {
 	display: inline-flex;
@@ -317,6 +319,7 @@ section {
 	color: var(--primary-color);
 	background: goldenrod;
 	border-radius: var(--border-radius) var(--border-radius) 0 0;
+	box-shadow: 0px 3px 0px rgba(255,255,255,0.5) inset, 0px -3px 0px rgba(0,0,0,0.25) inset, 0px 2px 4px rgba(0,0,0,0.5);
 	transition: 0.2s linear;
 	user-select: none;
 	-webkit-user-select: none;
@@ -469,11 +472,11 @@ section {
 	color: var(--text-color);
 	background: none;
 	border: none;
+	box-shadow: none;
 }
 .toolbar :is(button, .button, input[type="submit"]):hover {
 	color: var(--text-color);
 	background: var(--tertiary-color);
-	box-shadow: 0px 2px 4px rgba(0,0,0,0.5);
 }
 .toolbar :is(button, .button, input[type="submit"]):active {
 	color: var(--primary-color);

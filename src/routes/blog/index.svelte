@@ -52,6 +52,8 @@
 	.card .heading {
 		margin: 0;
 		padding: 0.5rem 1rem;
+		background: none;
+		border-radius: var(--border-radius) var(--border-radius) 0 0;
 	}
 	.card .body {
 		margin: 0;
@@ -67,7 +69,6 @@
 		height: 100%;
 		margin: 0;
 		padding: 0.5rem;
-		box-shadow: 0px 2px 2px rgba(0,0,0,0.125) inset;
 		list-style: none;
 	}
 	.card .body li {

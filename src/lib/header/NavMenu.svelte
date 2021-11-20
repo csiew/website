@@ -87,15 +87,22 @@
 		transition: 0.1s linear;
 	}
 	nav a:hover {
+		color: var(--accent-color);
     background: var(--tertiary-color);
-    box-shadow: 0px 2px 8px rgba(0,0,0,0.75);
+    box-shadow: 0px 3px 0px rgba(255,255,255,0.25) inset, 0px -3px 0px rgba(0,0,0,0.25) inset, 0px 2px 4px rgba(0,0,0,0.5);
+  }
+  nav a:hover .icon {
+		color: var(--accent-color);
+		transition: 0.3s linear;
   }
   nav li.active :is(a, a:hover) {
-    background: var(--accent-color);
 		color: var(--secondary-color);
+    background: var(--accent-color);
+    box-shadow: 0px 3px 0px rgba(255,255,255,0.5) inset, 0px -3px 0px rgba(0,0,0,0.25) inset, 0px 2px 4px rgba(0,0,0,0.5);
 	}
   nav li.active a .icon {
 		color: var(--secondary-color);
+		transition: 0.3s linear;
   }
 	nav a:active {
     background: var(--primary-color);

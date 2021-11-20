@@ -33,7 +33,7 @@
 		min-width: 300px;
 		background: var(--secondary-color);
 		color: var(--text-color);
-		box-shadow: 0px 2px 8px rgba(0,0,0,0.25), 0px 1px 2px rgba(0,0,0,0.5);
+		box-shadow: 8px 8px 64px rgba(255,255,255,0.125) inset, -8px -8px 64px rgba(0,0,0,0.5) inset, 0px 2px 8px rgba(0,0,0,0.25);
 		border-bottom: 1px solid var(--border-color);
 	}
 
