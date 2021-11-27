@@ -58,7 +58,6 @@
 		padding: 1rem 0;
 		border-bottom: 3px solid var(--border-color);
 		color: var(--text-color);
-		font-weight: lighter;
 		text-align: center;
 	}
 </style>

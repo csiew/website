@@ -48,7 +48,7 @@
 		flex-flow: row;
 		justify-content: flex-end;
 		align-items: flex-start;
-		margin: 1rem;
+		margin: 0.5rem 1rem;
     bottom: 0;
 		padding: 0;
     font-family: var(--font-control);
@@ -78,10 +78,10 @@
     align-items: center;
     margin: 0;
     padding: 0.5rem 1rem;
-		background: none;
 		color: var(--text-color);
+		background: none;
     font-weight: bold;
-    border: none;
+    border: 1px solid transparent;
     border-radius: var(--link-border-radius);
 		text-decoration: none;
 		transition: 0.1s linear;
@@ -89,7 +89,8 @@
 	nav a:hover {
 		color: var(--accent-color);
     background: var(--tertiary-color);
-    box-shadow: 0px 3px 0px rgba(255,255,255,0.25) inset, 0px -3px 0px rgba(0,0,0,0.25) inset, 0px 2px 4px rgba(0,0,0,0.5);
+    border-color: var(--border-color);
+    box-shadow: 0px 3px 0px rgba(255,255,255,0.25) inset, 0px -3px 0px rgba(0,0,0,0.25) inset, 0px 2px 4px rgba(0,0,0,0.25);
   }
   nav a:hover .icon {
 		color: var(--accent-color);
@@ -98,7 +99,8 @@
   nav li.active :is(a, a:hover) {
 		color: var(--secondary-color);
     background: var(--accent-color);
-    box-shadow: 0px 3px 0px rgba(255,255,255,0.5) inset, 0px -3px 0px rgba(0,0,0,0.25) inset, 0px 2px 4px rgba(0,0,0,0.5);
+    border-color: var(--accent-color);
+    box-shadow: 0px 3px 0px rgba(255,255,255,0.5) inset, 0px -3px 0px rgba(0,0,0,0.25) inset, 0px 2px 4px rgba(0,0,0,0.25);
 	}
   nav li.active a .icon {
 		color: var(--secondary-color);
@@ -106,7 +108,8 @@
   }
 	nav a:active {
     background: var(--primary-color);
-    box-shadow: 0px 4px 8px rgba(0,0,0,0.75) inset;
+    border-color: var(--border-color);
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.5) inset;
 	}
 
   @media (max-width: 720px) {

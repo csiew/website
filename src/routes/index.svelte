@@ -48,10 +48,10 @@
 					</p>
 				</div>
 			</section>
-			<img src={Penang} class="inverted-filter" alt="Penang" style="height: 12rem;" />
+			<img src={Penang} alt="Penang" style="height: 12rem;" />
 		</div>
 		<div class="showcase showcase-right">
-			<img src={Victoria} class="inverted-filter" alt="Victoria" style="height: 12rem;" />
+			<img src={Victoria} alt="Victoria" style="height: 12rem;" />
 			<section class="card">
 				<div class="body">
 					<p>

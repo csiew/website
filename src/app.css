@@ -6,16 +6,16 @@
 	--font-control: var(--font-family);
 	font-family: var(--font-family);
 	--pure-white: #ffffff;
-	--primary-color: #222222;
-	--secondary-color: #2e2e2e;
-	--tertiary-color: #3e3e3e;
-	--accent-color: goldenrod;
-	--accent-secondary-color: darkgoldenrod;
-	--heading-color: #eeeeee;
-	--subtitle-color: #cccccc;
-	--footer-color: #aaaaaa;
-	--text-color: #eeeeee;
-	--border-color: #3e3e3e;
+	--primary-color: #eeeeee;
+	--secondary-color: #fefefe;
+	--tertiary-color: #ffffff;
+	--accent-color: dodgerblue;
+	--accent-secondary-color: steelblue;
+	--heading-color: #222222;
+	--subtitle-color: #555555;
+	--footer-color: #555555;
+	--text-color: #333333;
+	--border-color: #cccccc;
 	--selection-background: #87ceeb;
 	--footer-background: none;
 	--border-radius: 9px;
@@ -35,11 +35,11 @@ body, #svelte {
 	align-items: space-between;
 	background: var(--primary-color);
 	color: var(--text-color);
-	font-size: 1.25rem;
+	font-size: 1.125rem;
 	font-weight: 350;
 	font-display: fallback;
 	text-rendering: geometricPrecision;
-	line-height: 1.625;
+	line-height: 1.5;
 }
 	
 main {
@@ -78,7 +78,6 @@ footer {
 }
 .content .heading h1 {
 	margin: 1rem 0;
-	color: var(--accent-color);
 	font-size: 4rem;
 	font-weight: 600;
 	line-height: 1;
@@ -138,7 +137,7 @@ sub {
 
 a {
 	color: var(--accent-color);
-	text-decoration: 3px underline var(--secondary-color);
+	text-decoration: 3px underline var(--border-color);
 	transition: 0.2s linear;
 }
 a:hover {
@@ -153,13 +152,13 @@ p:last-child {
 }
 
 code, pre {
-	font-size: 16px;
+	font-size: 0.9rem;
 	font-weight: bold;
 	font-family: var(--font-mono);
 	background: rgba(0, 0, 0, 0.125);
 	border-radius: var(--border-radius);
 	box-shadow: 0px 2px 2px rgba(0,0,0,0.25);
-	padding: 0.25rem 0.5rem;
+	padding: 0.125rem 0.5rem;
 	overflow-x: auto;
 	color: var(--text-color);
 }
@@ -173,12 +172,12 @@ input, button, .button {
 :is(button, .button, input[type="submit"]) {
 	margin: 0;
 	padding: 0.5rem 1rem;
+	color: var(--secondary-color);
 	background: var(--accent-color);
-	color: #1e1e1e;
 	text-align: center;
 	font-weight: 600;
 	white-space: nowrap;
-	border: none;
+	border: 1px solid var(--accent-color);
 	border-radius: var(--border-radius);
 	box-shadow: 0px 3px 0px rgba(255,255,255,0.5) inset, 0px -3px 0px rgba(0,0,0,0.25) inset, 0px 2px 4px rgba(0,0,0,0.5);
 	cursor: pointer;
@@ -191,7 +190,7 @@ input, button, .button {
 :is(button, .button, input[type="submit"]):focus:active {
 	background: var(--accent-secondary-color);
 	box-shadow: 0px 4px 8px rgba(0,0,0,0.5) inset;
-	outline: 3px solid darkgoldenrod;
+	outline: 3px solid var(--accent-color);
 	animation: none;
 }
 :is(button, .button, input[type="submit"]):focus {
@@ -243,7 +242,7 @@ section {
 .card {
 	background: var(--secondary-color);
 	border: 1px solid var(--border-color);
-	box-shadow: 8px 8px 64px rgba(255,255,255,0.0625) inset, -8px -8px 64px rgba(0,0,0,0.5) inset, 0px 2px 8px rgba(0,0,0,0.25);
+	box-shadow: 0px 2px 4px rgba(0,0,0,0.25);
 }
 .card .heading {
 	display: inline-flex;
@@ -284,8 +283,8 @@ section {
 }
 
 .engrave {
-	background: rgba(0,0,0,0.125);
-	box-shadow: 0px 2px 8px rgba(0,0,0,0.25) inset;
+	background: rgba(0,0,0,0.03125);
+	box-shadow: 0px 2px 4px rgba(0,0,0,0.25) inset;
 }
 
 .toast-window {
@@ -301,12 +300,14 @@ section {
 	width: 100%;
 	max-width: 240px;
 	max-height: 75vh;
-	background: var(--secondary-color);
 	color: var(--text-color);
+	background: var(--secondary-color);
 	font-size: 1rem;
 	font-family: var(--font-control);
+	border: solid var(--border-color);
+	border-width: 1px 1px 0px 1px;
 	border-radius: var(--border-radius) var(--border-radius) 0 0;
-	box-shadow: 8px 8px 64px rgba(255,255,255,0.0625) inset, -8px -8px 64px rgba(0,0,0,0.5) inset, 0px 2px 8px rgba(0,0,0,0.25);
+	box-shadow: 0px 2px 8px rgba(0,0,0,0.25);
 }
 .toast-window .heading {
 	display: inline-flex;
@@ -316,8 +317,10 @@ section {
 	margin: 0;
 	padding: 0 1rem;
 	width: 100%;
-	color: var(--primary-color);
-	background: goldenrod;
+	color: var(--secondary-color);
+	background: var(--accent-color);
+	border: solid var(--accent-color);
+	border-width: 1px 1px 0px 1px;
 	border-radius: var(--border-radius) var(--border-radius) 0 0;
 	box-shadow: 0px 3px 0px rgba(255,255,255,0.5) inset, 0px -3px 0px rgba(0,0,0,0.25) inset, 0px 2px 4px rgba(0,0,0,0.5);
 	transition: 0.2s linear;
@@ -329,10 +332,10 @@ section {
 	border-radius: 0;
 }
 .toast-window .heading:hover {
-	background: orange;
+	background: var(--accent-secondary-color);
 }
 .toast-window .heading:active {
-	background: darkgoldenrod;
+	background: var(--accent-secondary-color);
 }
 .toast-window .heading .title {
 	--padding: 0.75rem;
@@ -349,7 +352,7 @@ section {
 	font-size: 0.625rem;
 	text-transform: uppercase;
 	border-top: none;
-	border-color: peru;
+	border-color: var(--accent-secondary-color);
 	border-radius: 0 0 var(--border-radius) var(--border-radius);
 }
 .toast-window .body {
@@ -387,12 +390,13 @@ section {
 	-webkit-user-drag: none;
 }
 .toast-window .body a:hover {
-	background: rgba(255,255,255,0.0625);
-	box-shadow: 0px 2px 8px rgba(0,0,0,0.5);
+	color: var(--secondary-color);
+	background: var(--accent-color);
 	text-decoration: none;
 }
 .toast-window .body a:active {
-	background: black;
+	color: var(--secondary-color);
+	background: var(--text-color);
 	box-shadow: 0px 2px 2px rgba(0,0,0,0.5) inset;
 }
 .toast-window .body a:last-child {
@@ -409,7 +413,7 @@ section {
 }
 .slide .heading {
 	margin-bottom: 1rem;
-	border-bottom: 3px solid var(--tertiary-color);
+	border-bottom: 3px solid var(--border-color);
 }
 .slide .heading.toggle {
 	display: inline-flex;
@@ -476,11 +480,12 @@ section {
 }
 .toolbar :is(button, .button, input[type="submit"]):hover {
 	color: var(--text-color);
-	background: var(--tertiary-color);
+	background: rgba(0,0,0,0.125);
 }
 .toolbar :is(button, .button, input[type="submit"]):active {
-	color: var(--primary-color);
-	background: var(--accent-color);
+	color: var(--secondary-color);
+	background: var(--text-color);
+	box-shadow: none;
 }
 
 .inverted-filter {

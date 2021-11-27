@@ -1,30 +1,20 @@
 <script lang="ts">
-  import { fade } from "svelte/transition";
   import linksJson from "./links.json";
-
-  let hide: boolean = false;
 </script>
 
 <section class="card">
-  <div class="heading toggle">
+  <div class="heading">
     <span class="title">
       <h2>Links</h2>
     </span>
-    <span class="accessories">
-      <small>
-        <button on:click|preventDefault={() => hide = !hide}>{hide ? 'Show' : 'Hide'}</button>
-      </small>
-    </span>
   </div>
-  {#if !hide}
-    <div class="body" in:fade={{ duration: 250 }} out:fade={{ duration: 250 }}>
-      <div class="link-grid">
-        {#each linksJson.links as link}
-          <a class="button" href={link.url} target="_blank">{link.name}</a>
-        {/each}
-      </div>
+  <div class="body">
+    <div class="link-grid">
+      {#each linksJson.links as link}
+        <a class="button" href={link.url} target="_blank">{link.name}</a>
+      {/each}
     </div>
-  {/if}
+  </div>
 </section>
 
 <style>

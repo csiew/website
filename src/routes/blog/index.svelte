@@ -91,12 +91,12 @@
 		-moz-user-select: none;
 	}
 	.card .body a:hover {
-		background: rgba(255,255,255,0.0625);
-		box-shadow: 0px 2px 8px rgba(0,0,0,0.25);
+		background: rgba(0,0,0,0.125);
 	}
 	.card .body a:active {
-		background: rgba(0,0,0,0.125);
-		box-shadow: 0px 2px 4px rgba(0,0,0,0.5) inset;
+		color: var(--secondary-color);
+		background: var(--text-color);
+		box-shadow: none;
 	}
 	.card .body h3 {
 		margin: 0;
@@ -108,9 +108,13 @@
 	.card .body sub {
 		margin: 0;
 		padding: 0;
-		color: gray;
+		color: var(--subtitle-color);
 		font-size: 0.9rem;
 		font-weight: 400;
 		line-height: 1;
+	}
+
+	.card .body a:active :is(h2, h3, sub) {
+		color: var(--secondary-color);
 	}
 </style>

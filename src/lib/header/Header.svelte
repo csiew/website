@@ -4,7 +4,6 @@
 
 </script>
 
-<div class="torse"></div>
 <header>
 	<div class="title">
 		<a href="/">
@@ -25,7 +24,7 @@
 		display: inline-flex;
 		flex-flow: row;
 		justify-content: space-between;
-		align-self: stretch;
+		align-self: center;
 		margin: 0;
 		inset: 0;
 		padding: 0;
@@ -33,7 +32,7 @@
 		min-width: 300px;
 		background: var(--secondary-color);
 		color: var(--text-color);
-		box-shadow: 8px 8px 64px rgba(255,255,255,0.125) inset, -8px -8px 64px rgba(0,0,0,0.5) inset, 0px 2px 8px rgba(0,0,0,0.25);
+		box-shadow: 0px 2px 8px rgba(0,0,0,0.25);
 		border-bottom: 1px solid var(--border-color);
 	}
 
@@ -59,7 +58,7 @@
 	.title h1 {
 		margin: 0;
 		padding: 0;
-		color: white;
+		color: var(--text-color);
 		font-size: 200%;
 		font-weight: 700;
 		line-height: 1;
@@ -75,22 +74,9 @@
 		flex-flow: column;
 		justify-content: flex-end;
 		align-items: flex-end;
-		margin: auto 0 0 0;
+		margin: auto 0;
 		padding: 0;
 		height: 100%;
-	}
-
-	.torse {
-		--accent-1: rgba(0,0,0,0.5);
-		--accent-2: goldenrod;
-		margin: 0;
-		padding: 0;
-		width: 100%;
-		height: 1rem;
-		background: linear-gradient(-45deg, var(--accent-1) 25%, var(--accent-2) 25%, var(--accent-2) 50%, var(--accent-1) 50%, var(--accent-1) 75%, var(--accent-2) 75%);
-		background-size: 27px 27px;
-		border: none;
-		box-shadow: 0px 2px 8px rgba(0,0,0,0.75), 0px -2px 2px rgba(0,0,0,0.125) inset, 0px -4px 8px rgba(0,0,0,0.75) inset, 0px 4px 8px rgba(255,255,255,0.5) inset;
 	}
 
 	@media (max-width: 960px) {
@@ -98,7 +84,7 @@
 			flex-flow: row;
 			justify-content: space-between;
 			align-items: center;
-			padding: 0.25rem 0 0 0;
+			padding: 0;
 			min-width: 100%;
 			height: auto;
 		}
