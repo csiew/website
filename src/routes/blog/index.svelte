@@ -91,7 +91,7 @@
 		-moz-user-select: none;
 	}
 	.card .body a:hover {
-		background: rgba(0,0,0,0.125);
+		background: rgba(0,0,0,0.0625);
 	}
 	.card .body a:active {
 		color: var(--secondary-color);

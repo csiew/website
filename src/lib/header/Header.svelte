@@ -8,7 +8,6 @@
 	<div class="title">
 		<a href="/">
 			<Profile width="2.5rem" height="2.5rem" />
-			<h1>Clarence Siew</h1>
 		</a>
 	</div>
 
@@ -20,78 +19,69 @@
 <style>
 	header {
 		z-index: 100;
-		position: sticky;
 		display: inline-flex;
-		flex-flow: row;
-		justify-content: space-between;
+		flex-flow: column;
+		justify-content: flex-start;
 		align-self: center;
 		margin: 0;
 		inset: 0;
-		padding: 0;
+		padding: 1.5rem 1rem;
+		gap: 1.5rem;
 		width: 100%;
-		min-width: 300px;
+		max-width: 96px;
+		height: 100vh;
 		background: var(--secondary-color);
 		color: var(--text-color);
-		box-shadow: 0px 2px 8px rgba(0,0,0,0.25);
-		border-bottom: 1px solid var(--border-color);
+		box-shadow: 0px 0px 4px rgba(0,0,0,0.25);
+		border: solid var(--border-color);
+		border-width: 0px 1px 0px 0px;
 	}
 
 	.title {
 		display: inline-flex;
-		flex-flow: row;
-		justify-content: space-between;
+		flex-flow: column;
+		justify-content: flex-start;
 		align-items: center;
-		margin: 1rem 0;
+		margin: 0;
 		padding: 0;
-		width: auto;
+		width: 100%;
 	}
 	.title a {
 		display: grid;
 		grid-auto-flow: column;
 		gap: 1rem;
 		align-items: center;
-		padding: 0 1.5rem;
+		padding: 0;
 		width: auto;
 		height: 100%;
 		text-decoration: none;
-	}
-	.title h1 {
-		margin: 0;
-		padding: 0;
-		color: var(--text-color);
-		font-size: 200%;
-		font-weight: 700;
-		line-height: 1;
-		text-align: right;
-		transition: 0.2s linear;
-	}
-	.title h1:hover {
-		text-shadow: 0px 0px 2px var(--tertiary-color);
 	}
 
 	.navbar {
 		display: inline-flex;
 		flex-flow: column;
-		justify-content: flex-end;
-		align-items: flex-end;
-		margin: auto 0;
+		justify-content: flex-start;
+		align-items: flex-start;
+		margin: 0;
 		padding: 0;
-		height: 100%;
+		width: 100%;
 	}
 
-	@media (max-width: 960px) {
+	@media (max-width: 767px) {
 		header {
 			flex-flow: row;
 			justify-content: space-between;
 			align-items: center;
-			padding: 0;
+			padding: 0.75rem 1rem;
 			min-width: 100%;
 			height: auto;
+			border-width: 0px 0px 1px 0px;
 		}
 
 		.title {
 			justify-content: center;
 			margin: 0;
+			padding: 0rem 0.5rem;
 			width: auto;
 		}
 		.title h1 {

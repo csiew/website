@@ -45,11 +45,10 @@
 
   nav {
 		display: inline-flex;
-		flex-flow: row;
-		justify-content: flex-end;
-		align-items: flex-start;
-		margin: 0.5rem 1rem;
-    bottom: 0;
+		flex-flow: column;
+		justify-content: flex-start;
+		align-items: center;
+		margin: auto;
 		padding: 0;
     font-family: var(--font-control);
 	}
@@ -58,11 +57,11 @@
 		margin: 0;
     bottom: 0;
 		padding: 0;
-		width: 100%;
+		width: min-content;
     height: 100%;
 		display: inline-flex;
-		flex-flow: row;
-		justify-content: flex-end;
+		flex-flow: column;
+		justify-content: flex-start;
 		align-items: center;
     gap: 0.5rem;
 		list-style: none;
@@ -81,38 +80,30 @@
 		color: var(--text-color);
 		background: none;
     font-weight: bold;
-    border: 1px solid transparent;
+    border: none;
     border-radius: var(--link-border-radius);
 		text-decoration: none;
 		transition: 0.1s linear;
 	}
 	nav a:hover {
-		color: var(--accent-color);
-    background: var(--tertiary-color);
-    border-color: var(--border-color);
-    box-shadow: 0px 3px 0px rgba(255,255,255,0.25) inset, 0px -3px 0px rgba(0,0,0,0.25) inset, 0px 2px 4px rgba(0,0,0,0.25);
+    background: rgba(0,0,0,0.03125);
   }
   nav a:hover .icon {
-		color: var(--accent-color);
 		transition: 0.3s linear;
   }
   nav li.active :is(a, a:hover) {
-		color: var(--secondary-color);
-    background: var(--accent-color);
-    border-color: var(--accent-color);
-    box-shadow: 0px 3px 0px rgba(255,255,255,0.5) inset, 0px -3px 0px rgba(0,0,0,0.25) inset, 0px 2px 4px rgba(0,0,0,0.25);
+		color: var(--accent-color);
+    background: rgba(0,0,0,0.0625);
 	}
   nav li.active a .icon {
-		color: var(--secondary-color);
+		color: var(--accent-color);
 		transition: 0.3s linear;
   }
 	nav a:active {
     background: var(--primary-color);
-    border-color: var(--border-color);
-    box-shadow: 0px 2px 4px rgba(0,0,0,0.5) inset;
 	}
 
-  @media (max-width: 720px) {
+  @media (max-width: 767px) {
     .icon {
       width: 1.75rem;
       height: 1.75rem;
@@ -120,6 +111,7 @@
 
     nav {
       margin: 0;
+      padding: 0;
       width: 100%;
     }
     nav ul {
@@ -128,8 +120,10 @@
       justify-content: center;
       align-items: center;
       gap: 0.25rem;
-      padding: 0.5rem;
+      padding: 0.125rem;
       width: 100%;
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius);
     }
     nav li {
       width: 100%;
