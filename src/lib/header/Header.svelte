@@ -34,7 +34,7 @@
 		color: var(--text-color);
 		box-shadow: 0px 0px 4px rgba(0,0,0,0.25);
 		border: solid var(--border-color);
-		border-width: 0px 1px 0px 0px;
+		border-width: 0px var(--border-width) 0px 0px;
 	}
 
 	.title {

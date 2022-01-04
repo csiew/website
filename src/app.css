@@ -1,7 +1,7 @@
 :root {
 	--system-font-family: system-ui, 'system-ui', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-	--font-family: 'Outfit', var(--system-font-family);
-	--font-heading: var(--font-family);
+	--font-family: 'Spline Sans', var(--system-font-family);
+	--font-heading: 'Outfit', var(--font-family);
 	--font-mono: 'JetBrains Mono', Menlo, Monaco, 'Cascadia Code', Consolas, monospace;
 	--font-control: var(--font-family);
 	font-family: var(--font-family);
@@ -9,8 +9,8 @@
 	--primary-color: #eeeeee;
 	--secondary-color: #fefefe;
 	--tertiary-color: #ffffff;
-	--accent-color: dodgerblue;
-	--accent-secondary-color: steelblue;
+	--accent-color: darkcyan;
+	--accent-secondary-color: teal;
 	--heading-color: #222222;
 	--subtitle-color: #555555;
 	--footer-color: #555555;
@@ -19,6 +19,7 @@
 	--selection-background: #87ceeb;
 	--footer-background: none;
 	--border-radius: 9px;
+	--border-width: 0px;
 }
 
 * {
@@ -38,10 +39,10 @@ body, #svelte {
 	background: var(--primary-color);
 	color: var(--text-color);
 	font-size: 1.125rem;
-	font-weight: 350;
+	font-weight: 400;
 	font-display: fallback;
 	text-rendering: geometricPrecision;
-	line-height: 1.5;
+	line-height: 1.625;
 	overflow: hidden;
 }
 	
@@ -181,7 +182,7 @@ input, button, .button {
 	text-align: center;
 	font-weight: 600;
 	white-space: nowrap;
-	border: 1px solid var(--accent-color);
+	border: var(--border-width) solid var(--accent-color);
 	border-radius: var(--border-radius);
 	cursor: pointer;
 	transition: 0.2s ease-in-out;
@@ -243,7 +244,7 @@ section {
 
 .card {
 	background: var(--secondary-color);
-	border: 1px solid var(--border-color);
+	border: var(--border-width) solid var(--border-color);
 	box-shadow: 0px 2px 4px rgba(0,0,0,0.25);
 }
 .card .heading {
@@ -307,7 +308,7 @@ section {
 	font-size: 1rem;
 	font-family: var(--font-control);
 	border: solid var(--border-color);
-	border-width: 1px 1px 0px 1px;
+	border-width: var(--border-width) var(--border-width) 0px var(--border-width);
 	border-radius: var(--border-radius) var(--border-radius) 0 0;
 	box-shadow: 0px 2px 8px rgba(0,0,0,0.25);
 }

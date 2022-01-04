@@ -3,6 +3,7 @@
 	import '../app.css';
 	import '../fonts/Outfit.css';
 	import '../fonts/JetBrainsMono.css';
+	import '../fonts/SplineSans.css';
 </script>
 
 <svelte:head>
@@ -14,7 +15,7 @@
 <main>
 	<slot />
 	<footer>
-		<p>Version 5.3.0<br/><a sveltekit:prefetch href="/versions">Version history</a></p>
-		<p>&copy; 2021 Clarence Siew</p>
+		<p>Version 5.3.1<br/><a sveltekit:prefetch href="/versions">Version history</a></p>
+		<p>&copy; 2022 Clarence Siew</p>
 	</footer>
 </main>
