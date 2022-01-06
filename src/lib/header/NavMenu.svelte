@@ -8,22 +8,22 @@
 
 <nav>
   <ul>
-    <li class:active={$page.path === '/'}>
+    <li class:active={$page.url.pathname === '/'}>
       <a sveltekit:prefetch href="/">
         <span class="icon" title="Home"><IoMdHome /></span>
       </a>
     </li>
-    <li class:active={$page.path === '/blog'}>
+    <li class:active={$page.url.pathname === '/blog'}>
       <a sveltekit:prefetch href="/blog">
         <span class="icon" title="Blog"><IoMdMail /></span>
       </a>
     </li>
-    <li class:active={$page.path === '/projects'}>
+    <li class:active={$page.url.pathname === '/projects'}>
       <a sveltekit:prefetch href="/projects">
         <span class="icon" title="Projects"><IoMdGitCompare /></span>
       </a>
     </li>
-    <li class:active={$page.path === '/playlists'}>
+    <li class:active={$page.url.pathname === '/playlists'}>
       <a sveltekit:prefetch href="/playlists">
         <span class="icon" title="Playlists"><IoMdMusicalNote /></span>
       </a>
