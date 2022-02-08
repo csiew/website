@@ -14,7 +14,7 @@
 <main>
 	<slot />
 	<footer>
-		<p>Version 5.4.0<br/><a sveltekit:prefetch href="/versions">Version history</a></p>
+		<p>Version 5.4.1<br/><a sveltekit:prefetch href="/versions">Version history</a></p>
 		<p>&copy; 2022 Clarence Siew</p>
 	</footer>
 </main>
