@@ -1,10 +1,13 @@
 :root {
+	/* FONTS */
 	--system-font-family: system-ui, 'system-ui', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-	--font-family: 'Spline Sans', var(--system-font-family);
-	--font-heading: 'Outfit', var(--font-family);
+	--font-family: 'Satoshi', var(--system-font-family);
+	--font-heading: 'Satoshi', var(--font-family);
 	--font-mono: 'JetBrains Mono', Menlo, Monaco, 'Cascadia Code', Consolas, monospace;
 	--font-control: var(--font-family);
 	font-family: var(--font-family);
+
+	/* COLORS */
 	--pure-white: #ffffff;
 	--primary-color: #eeeeee;
 	--secondary-color: #fefefe;
@@ -18,8 +21,33 @@
 	--border-color: #cccccc;
 	--selection-background: #87ceeb;
 	--footer-background: none;
+
+	/* MEASUREMENTS */
 	--border-radius: 9px;
 	--border-width: 0px;
+}
+
+@media only screen and (prefers-color-scheme: dark) {
+	:root {
+		/* COLORS */
+		--pure-white: #ffffff;
+		--primary-color: #111111;
+		--secondary-color: #1c1c1c;
+		--tertiary-color: #222222;
+		--accent-color: cyan;
+		--accent-secondary-color: rgb(0, 204, 204);
+		--heading-color: #eeeeee;
+		--subtitle-color: #cccccc;
+		--footer-color: #aaaaaa;
+		--text-color: #f3f3f3;
+		--border-color: #333333;
+		--selection-background: #87ceeb;
+		--footer-background: none;
+	}
+
+	.wireframe-dynamic-color {
+		filter: invert(1);
+	}
 }
 
 * {
@@ -39,9 +67,9 @@ body, #svelte {
 	background: var(--primary-color);
 	color: var(--text-color);
 	font-size: 1.125rem;
-	font-weight: 400;
+	font-weight: 425;
 	font-display: fallback;
-	text-rendering: geometricPrecision;
+	text-rendering: optimizeLegibility;
 	line-height: 1.625;
 	overflow: hidden;
 }
@@ -288,6 +316,13 @@ section {
 .engrave {
 	background: rgba(0,0,0,0.03125);
 	box-shadow: 0px 2px 4px rgba(0,0,0,0.25) inset;
+}
+
+@media only screen and (prefers-color-scheme: dark) {
+	.engrave {
+		background: rgba(255,255,255,0.03125);
+		box-shadow: none;
+	}
 }
 
 .toast-window {
