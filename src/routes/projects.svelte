@@ -58,6 +58,6 @@
 		margin: 0 0 2rem 0;
 		border: 1px solid var(--border-color);
 		border-radius: var(--border-radius);
-		box-shadow: 0px 2px 4px rgba(0,0,0,0.5);
+		box-shadow: var(--element-shadow);
 	}
 </style>

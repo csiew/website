@@ -2,7 +2,7 @@
 	/* FONTS */
 	--system-font-family: system-ui, 'system-ui', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	--font-family: 'Satoshi', var(--system-font-family);
-	--font-heading: 'Satoshi', var(--font-family);
+	--font-heading: var(--font-family);
 	--font-mono: 'JetBrains Mono', Menlo, Monaco, 'Cascadia Code', Consolas, monospace;
 	--font-control: var(--font-family);
 	font-family: var(--font-family);
@@ -23,8 +23,12 @@
 	--footer-background: none;
 
 	/* MEASUREMENTS */
-	--border-radius: 9px;
-	--border-width: 0px;
+	--border-radius: 7px;
+	--border-width: 1px;
+
+	/* MISC */
+	--element-shadow: 0px 2px 8px rgba(0,0,0,0.25);
+	--header-shadow: 0px 0px 8px rgba(0,0,0,0.25);
 }
 
 @media only screen and (prefers-color-scheme: dark) {
@@ -67,10 +71,10 @@ body, #svelte {
 	background: var(--primary-color);
 	color: var(--text-color);
 	font-size: 1.125rem;
-	font-weight: 425;
+	font-weight: 450;
 	font-display: fallback;
 	text-rendering: optimizeLegibility;
-	line-height: 1.625;
+	line-height: 1.6;
 	overflow: hidden;
 }
 	
@@ -113,7 +117,7 @@ footer {
 .content .heading h1 {
 	margin: 1rem 0;
 	font-size: 4rem;
-	font-weight: 600;
+	font-weight: 900;
 	line-height: 1;
 	text-align: center;
 }
@@ -268,12 +272,12 @@ section {
 	padding: 1rem;
 	width: 100%;
 	border-radius: var(--border-radius);
+	border: var(--border-width) solid var(--border-color);
 }
 
 .card {
 	background: var(--secondary-color);
-	border: var(--border-width) solid var(--border-color);
-	box-shadow: 0px 2px 4px rgba(0,0,0,0.25);
+	box-shadow: var(--element-shadow);
 }
 .card .heading {
 	display: inline-flex;
@@ -315,13 +319,12 @@ section {
 
 .engrave {
 	background: rgba(0,0,0,0.03125);
-	box-shadow: 0px 2px 4px rgba(0,0,0,0.25) inset;
+	box-shadow: var(--element-shadow) inset;
 }
 
 @media only screen and (prefers-color-scheme: dark) {
 	.engrave {
 		background: rgba(255,255,255,0.03125);
-		box-shadow: none;
 	}
 }
 
@@ -342,10 +345,10 @@ section {
 	background: var(--secondary-color);
 	font-size: 1rem;
 	font-family: var(--font-control);
-	border: solid var(--border-color);
+	border: solid var(--accent-color);
 	border-width: var(--border-width) var(--border-width) 0px var(--border-width);
 	border-radius: var(--border-radius) var(--border-radius) 0 0;
-	box-shadow: 0px 2px 8px rgba(0,0,0,0.25);
+	box-shadow: var(--element-shadow);
 }
 .toast-window .heading {
 	display: inline-flex;
@@ -523,10 +526,6 @@ section {
 	color: var(--secondary-color);
 	background: var(--text-color);
 	box-shadow: none;
-}
-
-.inverted-filter {
-	filter: invert(1);
 }
 
 @media (max-width: 767px) {
