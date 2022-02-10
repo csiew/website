@@ -20,7 +20,7 @@
 
 <div class="content">
 	<div class="heading">
-		<h1>Hello World</h1>
+		<h1>Clarence Siew</h1>
 	</div>
 	<div class="slide">
 		<div class="showcase showcase-right">

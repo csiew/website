@@ -1,6 +1,27 @@
 {
     "collection": [
         {
+            "title": "2022",
+            "playlists": {
+                "standard": [
+                    {
+                        "name": "January",
+                        "url": "https://open.spotify.com/playlist/4zgDrLNnLFrHvetHAMo8VM?si=64675839f5634417"
+                    },
+                    {
+                        "name": "February",
+                        "url": "https://open.spotify.com/playlist/3KEVPPdWWrYWPsnXdit95X?si=990c559909c74e76"
+                    }
+                ],
+                "special": [
+                    {
+                        "name": "Zeitgeist",
+                        "url": "https://open.spotify.com/playlist/58wd2UhwtMQwM0SFDPtsvP?si=5b8566294e4e480d"
+                    }
+                ]
+            }
+        },
+        {
             "title": "2021",
             "playlists": {
                 "standard": [
