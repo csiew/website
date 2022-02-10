@@ -59,10 +59,20 @@
 
   .card {
     padding: 0;
+    background: var(--primary-color);
   }
 
   .toolbar {
-    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    background: var(--primary-color);
+    border: none !important;
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    filter: opacity(75%);
+    backdrop-filter: blur(16px);
+    transition: 0.2s;
+  }
+  .toolbar:hover {
+    filter: opacity(90%);
+    transition: 0.2s;
   }
 
   article {
@@ -73,7 +83,6 @@
 		width: 100%;
     padding: 2rem 2.5rem 3rem 2.5rem;
     color: var(--text-color);
-    background: var(--secondary-color);
     border-radius: 0 0 var(--border-radius) var(--border-radius);
   }
 

@@ -30,11 +30,8 @@
 		width: 100%;
 		max-width: 96px;
 		height: 100vh;
-		background: var(--secondary-color);
-		color: var(--text-color);
 		border: solid var(--border-color);
 		border-width: 0px var(--border-width) 0px 0px;
-		box-shadow: var(--header-shadow);
 	}
 
 	.title {

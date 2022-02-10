@@ -88,15 +88,19 @@
 	nav a:hover {
     background: rgba(0,0,0,0.03125);
   }
+  nav a .icon {
+		transition: 0.1s linear;
+  }
   nav a:hover .icon {
+    transform: rotate(-5deg) scale(125%);
 		transition: 0.3s linear;
   }
   nav li.active :is(a, a:hover) {
-		color: var(--accent-color);
-    background: rgba(0,0,0,0.0625);
+		color: var(--primary-color);
+    background: var(--accent-color);
 	}
   nav li.active a .icon {
-		color: var(--accent-color);
+		color: var(--primary-color);
 		transition: 0.3s linear;
   }
 	nav a:active {
