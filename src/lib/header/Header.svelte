@@ -50,7 +50,7 @@
 		align-items: center;
 		padding: 0;
 		width: auto;
-		height: 100%;
+		height: min-content;
 		text-decoration: none;
 	}
 
