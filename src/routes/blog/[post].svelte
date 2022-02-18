@@ -64,14 +64,10 @@
 
   .toolbar {
     background: var(--primary-color);
-    border: none !important;
+    border-width: 0px 0px var(--border-width) 0px;
+    border-style: solid;
+    border-color: var(--border-color);
     border-radius: 0 0 var(--border-radius) var(--border-radius);
-    filter: opacity(75%);
-    backdrop-filter: blur(16px);
-    transition: 0.2s;
-  }
-  .toolbar:hover {
-    filter: opacity(90%);
     transition: 0.2s;
   }
 

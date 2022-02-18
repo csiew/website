@@ -25,10 +25,9 @@
 		align-self: center;
 		margin: 0;
 		inset: 0;
-		padding: 1.5rem 1rem;
+		padding: 1.5rem 0rem;
 		gap: 1.5rem;
-		width: 100%;
-		max-width: 96px;
+		width: min-content;
 		height: 100vh;
 		border: solid var(--border-color);
 		border-width: 0px var(--border-width) 0px 0px;
@@ -42,6 +41,7 @@
 		margin: 0;
 		padding: 0;
 		width: 100%;
+		min-width: 96px;
 	}
 	.title a {
 		display: grid;
