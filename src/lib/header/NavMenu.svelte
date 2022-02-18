@@ -50,6 +50,7 @@
 		align-items: center;
 		margin: auto;
 		padding: 0;
+		width: 100%;
     font-family: var(--font-control);
 	}
 	nav ul {
@@ -57,7 +58,7 @@
 		margin: 0;
     bottom: 0;
 		padding: 0;
-		width: min-content;
+		width: 100%;
     height: 100%;
 		display: inline-flex;
 		flex-flow: column;
@@ -68,9 +69,10 @@
 	}
 	nav li {
 		position: relative;
+		width: 100%;
 	}
 	nav a {
-		width: min-content;
+		width: 100%;
 		display: inline-flex;
     flex-flow: column;
     justify-content: center;
@@ -80,7 +82,9 @@
 		color: var(--text-color);
 		background: none;
     font-weight: bold;
-    border: none;
+    border-width: 0px 5px;
+    border-style: solid;
+    border-color: transparent;
     border-radius: var(--link-border-radius);
 		text-decoration: none;
 		transition: 0.1s linear;
@@ -92,19 +96,19 @@
 		transition: 0.1s linear;
   }
   nav a:hover .icon {
-    transform: rotate(-5deg) scale(125%);
+    transform: scale(110%);
 		transition: 0.3s linear;
   }
   nav li.active :is(a, a:hover) {
-		color: var(--primary-color);
-    background: var(--accent-color);
+		color: var(--accent-color);
+    border-left-color: var(--accent-color);
 	}
   nav li.active a .icon {
-		color: var(--primary-color);
+		color: var(--accent-color);
 		transition: 0.3s linear;
   }
 	nav a:active {
-    background: var(--primary-color);
+		color: var(--accent-color);
 	}
 
   @media (max-width: 767px) {
@@ -136,6 +140,7 @@
       align-items: center;
       width: 100%;
       padding: 0.5rem;
+      border-width: 0;
       border-radius: var(--link-border-radius);
     }
     nav li a:is(:hover, :active) {
