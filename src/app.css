@@ -1,25 +1,26 @@
 :root {
 	/* FONTS */
 	--system-font-family: system-ui, 'system-ui', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-	--font-family: 'Gambette', var(--system-font-family);
-	--font-heading: 'Amulya', var(--font-family);
+	--font-family: 'Amulya', var(--system-font-family);
+	--font-heading: var(--font-family);
 	--font-mono: 'JetBrains Mono', Menlo, Monaco, 'Cascadia Code', Consolas, monospace;
 	--font-control: var(--font-family);
 	font-family: var(--font-family);
 
 	/* MISC */
-	--border-radius: 0px;
+	--border-radius: 9px;
+	--button-border-radius: 9px;
 	--border-width: 1px;
-	--element-shadow: none;
+	--element-shadow: 0px 2px 4px rgba(0, 0, 0, 0.325);
 	--toast-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
 
 	/* COLORS */
 	--pure-white: #ffffff;
 	--primary-color: #ffffff;
-	--secondary-color: #f5f5f5;
+	--secondary-color: #f6f6f6;
 	--tertiary-color: #f1f1f1;
-	--accent-color: darkcyan;
-	--accent-secondary-color: teal;
+	--accent-color: slateblue;
+	--accent-secondary-color: mediumslateblue;
 	--heading-color: #222222;
 	--subtitle-color: #555555;
 	--footer-color: #555555;
@@ -36,8 +37,8 @@
 		--primary-color: #111111;
 		--secondary-color: #1e1e1e;
 		--tertiary-color: #222222;
-		--accent-color: cyan;
-		--accent-secondary-color: rgb(0, 204, 204);
+		--accent-color: rgba(166, 149, 253);
+		--accent-secondary-color: rgba(139, 119, 238);
 		--heading-color: #eeeeee;
 		--subtitle-color: #cccccc;
 		--footer-color: #aaaaaa;
@@ -72,10 +73,10 @@ body, #svelte {
 	align-items: stretch;
 	background: var(--primary-color);
 	color: var(--text-color);
-	font-size: 1.25rem;
-	font-weight: 375;
+	font-size: 1.125rem;
+	font-weight: 450;
 	font-display: fallback;
-	text-rendering: optimizeLegibility;
+	text-rendering: geometricPrecision;
 	line-height: 1.6;
 	overflow: hidden;
 }
@@ -210,19 +211,22 @@ input, button, .button {
 
 :is(button, .button, input[type="submit"]) {
 	margin: 0;
-	padding: 0.25rem 1rem;
+	padding: 0.5rem 1rem;
 	color: var(--secondary-color);
 	background: var(--accent-color);
 	text-align: center;
 	font-weight: 600;
 	white-space: nowrap;
 	border: var(--border-width) solid var(--accent-color);
-	border-radius: var(--border-radius);
+	border-radius: var(--button-border-radius);
 	cursor: pointer;
 	transition: 0.2s ease-in-out;
 }
 :is(button, .button, input[type="submit"]):hover {
 	background: var(--accent-secondary-color);
+	box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.25);
+	transform: scale(1.0125);
+	transition: 0.2s;
 }
 :is(button, .button, input[type="submit"]):active,
 :is(button, .button, input[type="submit"]):focus:active {
@@ -350,18 +354,18 @@ section {
 	border-width: var(--border-width) var(--border-width) 0px var(--border-width);
 	border-radius: var(--border-radius);
 	box-shadow: var(--toast-shadow);
-	filter: opacity(33%);
-	backdrop-filter: blur(32px);
+	filter: opacity(75%);
+	backdrop-filter: blur(16px);
 	transition: 0.2s;
 }
 .toast-window:hover {
-	filter: opacity(75%);
+	filter: opacity(90%);
 	transition: 0.2s;
 }
 .toast-window-open {
 	width: 100%;
 	max-width: 240px;
-	transition: 2s ease-in;
+	transition: 0.2s;
 }
 .toast-window .heading {
 	display: inline-flex;

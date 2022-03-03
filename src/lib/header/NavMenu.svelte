@@ -49,7 +49,7 @@
 		justify-content: flex-start;
 		align-items: center;
 		margin: auto;
-		padding: 0;
+		padding: 0rem 1rem;
 		width: 100%;
     font-family: var(--font-control);
 	}
@@ -82,9 +82,6 @@
 		color: var(--text-color);
 		background: none;
     font-weight: bold;
-    border-width: 0px 5px;
-    border-style: solid;
-    border-color: transparent;
     border-radius: var(--link-border-radius);
 		text-decoration: none;
 		transition: 0.1s linear;
@@ -101,7 +98,6 @@
   }
   nav li.active :is(a, a:hover) {
 		color: var(--accent-color);
-    border-left-color: var(--accent-color);
 	}
   nav li.active a .icon {
 		color: var(--accent-color);

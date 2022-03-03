@@ -67,7 +67,7 @@
     border-width: 0px 0px var(--border-width) 0px;
     border-style: solid;
     border-color: var(--border-color);
-    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
     transition: 0.2s;
   }
 

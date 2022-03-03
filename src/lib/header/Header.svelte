@@ -1,7 +1,15 @@
 <script lang="ts">
+	import { scale } from "svelte/transition";
+  import { quintOut } from "svelte/easing";
+	import IoMdArrowRoundUp from "svelte-icons/io/IoMdArrowRoundUp.svelte";
 	import NavMenu from "./NavMenu.svelte";
 	import Profile from "../Profile.svelte";
 
+	export let isAtTop;
+
+	function scrollToTop(): void {
+		document.getElementsByTagName("main")[0].scrollTo({ top: 0 });
+	}
 </script>
 
 <header>
@@ -11,9 +19,21 @@
 		</a>
 	</div>
 
-	<span class="navbar">
+	<div class="navbar">
 		<NavMenu />
-	</span>
+	</div>
+
+	<span class="v-spacer"></span>
+
+	{#if !isAtTop}
+		<button
+			transition:scale={{ delay: 100, duration: 200, easing: quintOut }}
+			class="scroll-top-shortcut"
+			on:click={() => scrollToTop()}
+		>
+			<span class="icon" title="Projects"><IoMdArrowRoundUp /></span>
+		</button>
+	{/if}
 </header>
 
 <style>
@@ -64,6 +84,42 @@
 		width: 100%;
 	}
 
+	.v-spacer {
+		height: 100%;
+	}
+
+	button.scroll-top-shortcut,
+	button.scroll-top-shortcut:focus {
+		display: inline-flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+		width: min-content;
+		height: min-content;
+    margin: auto;
+    padding: 0.5rem;
+		color: var(--text-color);
+		background: none;
+		border: none;
+		transition: 0.2s;
+	}
+	button.scroll-top-shortcut:hover {
+    background: rgba(0,0,0,0.03125);
+		box-shadow: none;
+		transition: 0.2s;
+	}
+	button.scroll-top-shortcut .icon {
+    padding: 0.125rem;
+    width: 2rem;
+    height: 2rem;
+		color: var(--text-color);
+		transition: 0.1s linear;
+	}
+	button.scroll-top-shortcut:hover .icon {
+    transform: scale(110%);
+		transition: 0.3s linear;
+	}
+
 	@media (max-width: 767px) {
 		header {
 			flex-flow: row;
@@ -94,6 +150,10 @@
 			padding: 0;
 			width: 100%;
 			height: auto;
+		}
+
+		.v-spacer, button.scroll-top-shortcut {
+			display: none;
 		}
 	}
 </style>
