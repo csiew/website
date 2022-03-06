@@ -1,146 +1,94 @@
 <script lang="ts">
-	import { page } from '$app/stores';
-  import IoMdHome from 'svelte-icons/io/IoMdHome.svelte';
-  import IoMdMail from 'svelte-icons/io/IoMdMail.svelte';
-  import IoMdGitCompare from 'svelte-icons/io/IoMdGitCompare.svelte';
-  import IoMdMusicalNote from 'svelte-icons/io/IoMdMusicalNote.svelte';
+	import { page } from "$app/stores";
+
+  import MdHome from "svelte-icons/md/MdHome.svelte";
+  import MdMessage from "svelte-icons/md/MdMessage.svelte";
+  import MdExplore from "svelte-icons/md/MdExplore.svelte";
+  import MdPlaylistPlay from "svelte-icons/md/MdPlaylistPlay.svelte";
+
+  import NavMenuLink from "./NavMenuLink.svelte";
+  import HoverTooltip from "./HoverTooltip.svelte";
+
+  let tooltipIsVisible = false;
+  let tooltipValue = "";
+  let tooltipXPos = "0px";
+  let tooltipYPos = "0px";
+
+  function setTooltip(e, value: string): void {
+    tooltipIsVisible = true;
+    tooltipValue = value;
+    tooltipXPos = `${e.clientX + 24}px`;
+    tooltipYPos = `${e.clientY}px`;
+  }
+
+  function unsetTooltip(): void {
+    tooltipIsVisible = false;
+  }
 </script>
 
+<HoverTooltip
+  bind:isVisible={tooltipIsVisible}
+  bind:value={tooltipValue}
+  bind:xPos={tooltipXPos}
+  bind:yPos={tooltipYPos}
+/>
 <nav>
   <ul>
-    <li class:active={$page.url.pathname === '/'}>
-      <a sveltekit:prefetch href="/">
-        <span class="icon" title="Home"><IoMdHome /></span>
-      </a>
+    <li
+      class:active={$page.url.pathname === "/"}
+      on:mouseover|preventDefault={(e) => setTooltip(e, "Home")}
+      on:mouseout|preventDefault={unsetTooltip}
+      on:focus={(e) => {}}
+      on:blur={(e) => {}}
+    >
+      <NavMenuLink
+        url="/"
+        title="Home"
+      >
+        <MdHome />
+      </NavMenuLink>
     </li>
-    <li class:active={$page.url.pathname === '/blog'}>
-      <a sveltekit:prefetch href="/blog">
-        <span class="icon" title="Blog"><IoMdMail /></span>
-      </a>
+    <li
+      class:active={$page.url.pathname === "/blog"}
+      on:mouseover|preventDefault={(e) => setTooltip(e, "Blog")}
+      on:mouseout|preventDefault={unsetTooltip}
+      on:focus={(e) => {}}
+      on:blur={(e) => {}}
+    >
+      <NavMenuLink
+        url="/blog"
+        title="Blog"
+      >
+        <MdMessage />
+      </NavMenuLink>
     </li>
-    <li class:active={$page.url.pathname === '/projects'}>
-      <a sveltekit:prefetch href="/projects">
-        <span class="icon" title="Projects"><IoMdGitCompare /></span>
-      </a>
+    <li
+      class:active={$page.url.pathname === "/projects"}
+      on:mouseover|preventDefault={(e) => setTooltip(e, "Projects")}
+      on:mouseout|preventDefault={unsetTooltip}
+      on:focus={(e) => {}}
+      on:blur={(e) => {}}
+    >
+      <NavMenuLink
+        url="/projects"
+        title="Projects"
+      >
+        <MdExplore />
+      </NavMenuLink>
     </li>
-    <li class:active={$page.url.pathname === '/playlists'}>
-      <a sveltekit:prefetch href="/playlists">
-        <span class="icon" title="Playlists"><IoMdMusicalNote /></span>
-      </a>
+    <li
+      class:active={$page.url.pathname === "/playlists"}
+      on:mouseover|preventDefault={(e) => setTooltip(e, "Playlists")}
+      on:mouseout|preventDefault={unsetTooltip}
+      on:focus={(e) => {}}
+      on:blur={(e) => {}}
+    >
+      <NavMenuLink
+        url="/playlists"
+        title="Playlists"
+      >
+        <MdPlaylistPlay />
+      </NavMenuLink>
     </li>
   </ul>
 </nav>
-
-<style>
-  :root {
-    --link-border-radius: var(--border-radius);
-  }
-
-  .icon {
-    padding: 0.125rem;
-    width: 2rem;
-    height: 2rem;
-    color: var(--text-color);
-  }
-
-  nav {
-		display: inline-flex;
-		flex-flow: column;
-		justify-content: flex-start;
-		align-items: center;
-		margin: auto;
-		padding: 0rem 1rem;
-		width: 100%;
-    font-family: var(--font-control);
-	}
-	nav ul {
-		position: relative;
-		margin: 0;
-    bottom: 0;
-		padding: 0;
-		width: 100%;
-    height: 100%;
-		display: inline-flex;
-		flex-flow: column;
-		justify-content: flex-start;
-		align-items: center;
-    gap: 0.5rem;
-		list-style: none;
-	}
-	nav li {
-		position: relative;
-		width: 100%;
-	}
-	nav a {
-		width: 100%;
-		display: inline-flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    padding: 0.5rem 1rem;
-		color: var(--text-color);
-		background: none;
-    font-weight: bold;
-    border-radius: var(--link-border-radius);
-		text-decoration: none;
-		transition: 0.1s linear;
-	}
-	nav a:hover {
-    background: rgba(0,0,0,0.03125);
-  }
-  nav a .icon {
-		transition: 0.1s linear;
-  }
-  nav a:hover .icon {
-    transform: scale(110%);
-		transition: 0.3s linear;
-  }
-  nav li.active :is(a, a:hover) {
-		color: var(--accent-color);
-	}
-  nav li.active a .icon {
-		color: var(--accent-color);
-		transition: 0.3s linear;
-  }
-	nav a:active {
-		color: var(--accent-color);
-	}
-
-  @media (max-width: 767px) {
-    .icon {
-      width: 1.75rem;
-      height: 1.75rem;
-    }
-
-    nav {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-    }
-    nav ul {
-      display: inline-flex;
-      flex-flow: row;
-      justify-content: center;
-      align-items: center;
-      gap: 0.25rem;
-      padding: 0.125rem;
-      width: 100%;
-      border: 1px solid var(--border-color);
-      border-radius: var(--border-radius);
-    }
-    nav li {
-      width: 100%;
-    }
-    nav li a {
-      align-items: center;
-      width: 100%;
-      padding: 0.5rem;
-      border-width: 0;
-      border-radius: var(--link-border-radius);
-    }
-    nav li a:is(:hover, :active) {
-      box-shadow: none;
-    }
-  }
-</style>

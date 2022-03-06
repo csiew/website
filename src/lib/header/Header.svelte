@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { scale } from "svelte/transition";
   import { quintOut } from "svelte/easing";
-	import IoMdArrowRoundUp from "svelte-icons/io/IoMdArrowRoundUp.svelte";
+	import MdArrowUpward from "svelte-icons/md/MdArrowUpward.svelte";
 	import NavMenu from "./NavMenu.svelte";
 	import Profile from "../Profile.svelte";
 
@@ -27,11 +27,11 @@
 
 	{#if !isAtTop}
 		<button
-			transition:scale={{ delay: 100, duration: 200, easing: quintOut }}
+			transition:scale={{ delay: 5, duration: 200, easing: quintOut }}
 			class="scroll-top-shortcut"
 			on:click={() => scrollToTop()}
 		>
-			<span class="icon" title="Projects"><IoMdArrowRoundUp /></span>
+			<span class="icon" title="Projects"><MdArrowUpward /></span>
 		</button>
 	{/if}
 </header>
@@ -116,8 +116,12 @@
 		transition: 0.1s linear;
 	}
 	button.scroll-top-shortcut:hover .icon {
-    transform: scale(110%);
+    transform: scale(115%);
 		transition: 0.3s linear;
+	}
+	button.scroll-top-shortcut:active .icon {
+    transform: scale(100%);
+		transition: 0.2s linear;
 	}
 
 	@media (max-width: 767px) {
