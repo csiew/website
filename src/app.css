@@ -614,12 +614,6 @@ section {
 .showcase-right {
 	grid-template-columns: 0fr 1fr;
 }
-.showcase-left section {
-	text-align: left;
-}
-.showcase-left section {
-	text-align: right;
-}
 
 .toolbar {
 	position: sticky;

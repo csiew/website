@@ -1,4 +1,7 @@
 <script lang="ts">
+	import { fade } from "svelte/transition";
+  import { quintOut } from "svelte/easing";
+
   export let isVisible: boolean;
   export let value: string;
   export let xPos: string = "0px";
@@ -9,6 +12,7 @@
   <div
     class="tooltip"
     style={`left: ${xPos}; top: ${yPos}`}
+    transition:fade={{ delay: 5, duration: 500, easing: quintOut }}
   >
     {`${value}`}
   </div>
