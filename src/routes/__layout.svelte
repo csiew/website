@@ -6,13 +6,13 @@
 	import '../fonts/Amulya.css';
 
 	let mainEl: HTMLElement;
-	let isAtTop;
+	let isAtTop = true;
 
 	function checkIsAtTop(): void {
 		isAtTop = mainEl.scrollTop === 0;
 	}
 
-	onMount(async () => checkIsAtTop());
+	onMount(() => checkIsAtTop());
 </script>
 
 <svelte:head>
@@ -24,7 +24,7 @@
 <main bind:this={mainEl} on:scroll={checkIsAtTop}>
 	<slot />
 	<footer>
-		<p>Version 5.5.2<br/><a sveltekit:prefetch href="/versions">Version history</a></p>
+		<p>Version 5.5.3<br/><a sveltekit:prefetch href="/versions">Version history</a></p>
 		<p>&copy; 2022 Clarence Siew</p>
 	</footer>
 </main>

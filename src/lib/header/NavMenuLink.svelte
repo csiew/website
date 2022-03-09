@@ -1,5 +1,5 @@
 <script lang="ts">
-  import HoverTooltip from "./HoverTooltip.svelte";
+  import HoverTooltip from "../ui/HoverTooltip.svelte";
 
   export let url: string;
   export let title: string;

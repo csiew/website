@@ -1,28 +1,21 @@
 <script context="module" lang="ts">
-	import { dev } from '$app/env';
+	import { dev } from "$app/env";
 	
 	export const hydrate = dev;
 	export const prerender = true;
 </script>
 
-<svelte:head>
-  <title>{postMetadata.title ?? 'Blog'} | Clarence Siew</title>
-  <meta charset="UTF-8">
-  <meta name="description" content={postContent.slice(0, 256) + '...'}>
-  <meta name="keywords" content="Clarence Siew, Clarence, Siew, HTML, CSS, JavaScript, React, Vue, Svelte, Node, Express, Penang, Malaysia, Melbourne, Australia">
-  <meta name="author" content="Clarence Siew">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</svelte:head>
-
 <script lang="ts">
-  import { page } from '$app/stores';
-  import type { PostEntry } from '../../types/PostEntry';
-  import postManifest from './post_manifest.json';
+  import { page } from "$app/stores";
+  import { onMount } from "svelte";
+  import type { PostEntry } from "../../types/PostEntry";
+  import postManifest from "./post_manifest.json";
 	import SvelteMarkdown from "svelte-markdown";
+  import MdArrowBack from "svelte-icons/md/MdArrowBack.svelte";
 
   let postId = $page.params.post;
   let postMetadata = postManifest.posts.filter(p => p.id === postId)[0] ?? undefined;
-  let postContent = '';
+  let postContent = "";
 
   async function getPostContent(metadata: PostEntry) {
     if (metadata) {
@@ -35,13 +28,24 @@
     }
   }
 
-  getPostContent(postMetadata);
+  onMount(() => getPostContent(postMetadata));
 </script>
+
+<svelte:head>
+  <title>{postMetadata.title ?? "Blog"} | Clarence Siew</title>
+  <meta charset="UTF-8">
+  <meta name="description" content={postContent.slice(0, 256) + "..."}>
+  <meta name="keywords" content="Clarence Siew, Clarence, Siew, HTML, CSS, JavaScript, React, Vue, Svelte, Node, Express, Penang, Malaysia, Melbourne, Australia">
+  <meta name="author" content="Clarence Siew">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</svelte:head>
 
 <div class="content">
   <div class="card">
     <div class="article-nav toolbar">
-      <a class="button" href="/blog">&leftarrow; Back</a>
+      <a id="blog-back-button" class="button" href="/blog" title="Back">
+        <span class="icon"><MdArrowBack /></span>
+      </a>
     </div>
     <article>
       <h1>{postMetadata.title}</h1>
@@ -55,6 +59,25 @@
 <style>
   hr {
     margin: 1.5rem 0;
+  }
+
+  #blog-back-button:global(.button) {
+    display: inline-flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.125rem;
+  }
+  #blog-back-button:global(span) {
+    margin: 0;
+    padding: 0;
+  }
+  #blog-back-button:global(.button .icon svg) {
+    margin: 0;
+    padding: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    color: var(--text-color);
   }
 
   .card {
