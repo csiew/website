@@ -29,8 +29,7 @@
             "Sequelize"
         ],
         "cloud": [
-            "Amazon EC2",
-            "Amazon CloudWatch",
+            "AWS (Lambda, S3, IAM, KMS, EC2, CloudWatch)",
             "Google Firebase"
         ],
         "cicd": [

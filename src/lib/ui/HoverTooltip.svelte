@@ -12,7 +12,7 @@
   <div
     class="tooltip"
     style={`left: ${xPos}; top: ${yPos}`}
-    transition:fade={{ delay: 5, duration: 500, easing: quintOut }}
+    transition:fade={{ delay: 100, duration: 500, easing: quintOut }}
   >
     {`${value}`}
   </div>

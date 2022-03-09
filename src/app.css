@@ -74,7 +74,7 @@ body, #svelte {
 	align-items: stretch;
 	background: var(--primary-color);
 	color: var(--text-color);
-	font-size: 1.125rem;
+	font-size: 1rem;
 	font-weight: 450;
 	font-display: fallback;
 	text-rendering: geometricPrecision;
@@ -101,7 +101,7 @@ footer {
 	padding: 3rem;
 	background: var(--footer-background);
 	color: var(--footer-color);
-	font-size: 1rem;
+	font-size: 0.95rem;
 	text-align: center;
 }
 
@@ -232,8 +232,10 @@ input, button, .button {
 :is(button, .button, input[type="submit"]):active,
 :is(button, .button, input[type="submit"]):focus:active {
 	background: var(--accent-secondary-color);
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
 	outline: 3px solid var(--accent-color);
 	animation: none;
+	transform: scale(0.98) !important;
 }
 :is(button, .button, input[type="submit"]):focus {
 	outline: none;
@@ -315,6 +317,7 @@ nav a:hover {
 }
 nav a .icon {
 	transition: 0.1s linear;
+	pointer-events: none;
 }
 nav a:hover .icon {
 	transform: scale(115%);
@@ -453,8 +456,8 @@ section {
 	flex-flow: column-reverse;
 	justify-content: flex-start;
 	align-items: flex-start;
-	margin: auto 0.75rem auto 0;
-	bottom: 0;
+	margin: auto 0.75rem 0.75rem auto;
+	bottom: 0.75rem;
 	right: 0.75rem;
 	padding: 0;
 	width: auto;
@@ -465,7 +468,7 @@ section {
 	font-family: var(--font-control);
 	border: solid var(--accent-color);
 	border-width: var(--border-width) var(--border-width) 0px var(--border-width);
-	border-radius: var(--border-radius) var(--border-radius) 0 0;
+	border-radius: var(--border-radius);
 	box-shadow: var(--toast-shadow);
 	transition: 0.2s;
 }
@@ -486,14 +489,14 @@ section {
 	background: var(--accent-color);
 	border: solid var(--accent-color);
 	border-width: var(--border-width) var(--border-width) 0px var(--border-width);
-	border-radius: var(--border-radius) var(--border-radius) 0 0;
+	border-radius: var(--border-radius);
 	transition: 0.2s linear;
 	user-select: none;
 	-webkit-user-select: none;
 	-moz-user-select: none;
 }
 .toast-window-open .heading {
-	border-radius: 0;
+	border-radius: 0 0 var(--border-radius) var(--border-radius);
 }
 .toast-window .heading:hover {
 	background: var(--accent-secondary-color);
