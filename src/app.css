@@ -1,27 +1,27 @@
 :root {
 	/* FONTS */
-	--system-font-family: system-ui, 'system-ui', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-	--font-family: 'Amulya', var(--system-font-family);
-	--font-heading: var(--font-family);
+	--system-font-family: ui-sans-serif, 'system-ui', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	--font-family: 'Supreme', var(--system-font-family);
+	--font-heading: 'Clash Grotesk', var(--font-family);
 	--font-mono: 'JetBrains Mono', Menlo, Monaco, 'Cascadia Code', Consolas, monospace;
 	--font-control: var(--font-family);
 	font-family: var(--font-family);
 
 	/* MISC */
-	--border-radius: 9px;
+	--border-radius: 12px;
 	--button-border-radius: 9px;
 	--link-border-radius: var(--border-radius);
-	--border-width: 1px;
-	--element-shadow: 0px 2px 4px rgba(0, 0, 0, 0.325);
-	--toast-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
+	--border-width: 0px;
+	--element-shadow: 0px 4px 16px rgba(0, 0, 0, 0.125);
+	--toast-shadow: 0px 2px 16px rgba(0, 0, 0, 0.125);
 
 	/* COLORS */
 	--pure-white: #ffffff;
-	--primary-color: #ffffff;
-	--secondary-color: #f6f6f6;
+	--primary-color: #f6f6f6;
+	--secondary-color: #ffffff;
 	--tertiary-color: #f1f1f1;
-	--accent-color: slateblue;
-	--accent-secondary-color: mediumslateblue;
+	--accent-color: rgb(70, 130, 180);
+	--accent-secondary-color: rgb(40, 100, 150);
 	--heading-color: #222222;
 	--subtitle-color: #555555;
 	--footer-color: #555555;
@@ -38,8 +38,8 @@
 		--primary-color: #111111;
 		--secondary-color: #1e1e1e;
 		--tertiary-color: #222222;
-		--accent-color: rgba(166, 149, 253);
-		--accent-secondary-color: rgba(139, 119, 238);
+		--accent-color: rgb(132, 165, 255);
+		--accent-secondary-color: rgba(102, 135, 225);
 		--heading-color: #eeeeee;
 		--subtitle-color: #cccccc;
 		--footer-color: #aaaaaa;
@@ -74,11 +74,12 @@ body, #svelte {
 	align-items: stretch;
 	background: var(--primary-color);
 	color: var(--text-color);
-	font-size: 1rem;
+	font-size: 1.25rem;
 	font-weight: 450;
 	font-display: fallback;
+	letter-spacing: -0.0325rem;
 	text-rendering: geometricPrecision;
-	line-height: 1.6;
+	line-height: 1.5;
 	overflow: hidden;
 }
 	
@@ -101,7 +102,7 @@ footer {
 	padding: 3rem;
 	background: var(--footer-background);
 	color: var(--footer-color);
-	font-size: 0.95rem;
+	font-size: 1rem;
 	text-align: center;
 }
 
@@ -138,14 +139,12 @@ hr {
 	border-bottom: 3px solid var(--border-color);
 }
 
-h1, h2, h3, h4, h5, sub {
-	font-family: var(--font-heading);
-}
-
 h1, h2, h3, h4, h5 {
 	--size: 1;
 	color: var(--heading-color);
+	font-family: var(--font-heading);
 	font-size: calc(--size)rem;
+	letter-spacing: 0.0125rem;
 }
 h1 {
 	margin: 0.325rem 0;
@@ -410,7 +409,7 @@ section {
 	inset: 0;
 	padding: 0.25rem 0.5rem 1rem 0.5rem;
 	width: 100%;
-	border-bottom: 3px solid var(--border-color);
+	border-bottom: var(--border-width) solid var(--border-color);
 }
 .card .heading .title {
 	display: inline-flex;
@@ -441,7 +440,6 @@ section {
 
 .engrave {
 	background: rgba(0,0,0,0.03125);
-	box-shadow: var(--element-shadow) inset;
 }
 
 @media only screen and (prefers-color-scheme: dark) {
@@ -558,7 +556,7 @@ section {
 	text-decoration: none;
 	border-radius: var(--border-radius);
 	transition: 0.2s linear;
-	drag: none;
+	user-drag: none;
 	-webkit-user-drag: none;
 }
 .toast-window .body a:hover {
@@ -580,7 +578,8 @@ section {
 	flex-flow: column;
 	justify-content: center;
 	align-items: center;
-	margin: 1rem 0;
+	gap: 2rem;
+	margin: 1rem 0rem;
 	width: 100%;
 }
 .slide .heading {
@@ -601,12 +600,12 @@ section {
 	gap: 3rem;
 	align-items: center;
 }
-.showcase :first-child {
+.showcase:first-child {
 	justify-content: flex-end;
 	margin-left: auto;
 	margin-right: 0;
 }
-.showcase :last-child {
+.showcase:last-child {
 	justify-content: flex-end;
 	margin-left: 0;
 	margin-right: auto;
@@ -630,7 +629,7 @@ section {
 	width: 100%;
 	height: 3.5rem;
 	background: var(--secondary-color);
-	border-bottom: 1px solid var(--border-color) !important;
+	border-bottom: var(--border-width) solid var(--border-color) !important;
 }
 .toolbar h4 {
 	color: var(--subtitle-color);
@@ -667,6 +666,9 @@ section {
 		padding: 1rem 0;
 	}
 
+	.content .heading {
+		margin: 1rem 0rem;
+	}
 	.content .heading h1 {
 		margin: 0;
 		font-size: 4rem;
@@ -712,8 +714,9 @@ section {
 	}
 
 	.slide {
+		gap: 1rem;
 		min-height: none;
-		margin: 0.5rem 0;
+		margin: 0.5rem 0rem 2rem 0rem;
 	}
 
 	.showcase {

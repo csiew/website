@@ -1,0 +1,8 @@
+/* Clash Grotesk */
+@font-face {
+	font-family: 'Clash Grotesk';
+	src: url('./clash-grotesk/ClashGrotesk-Variable.ttf');
+	font-weight: 100 1000;
+  font-style: normal;
+	font-stretch: 25% 151%;
+}

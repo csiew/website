@@ -6,9 +6,18 @@
   export let value: string;
   export let xPos: string = "0px";
   export let yPos: string = "0px";
+
+  let viewportWidth, viewportHeight;
+
+  function viewportIsBigEnough(width: number, height: number): boolean {
+    console.log(width, height);
+    return width > 768 && height > 390;
+  }
 </script>
 
-{#if isVisible}
+<svelte:window bind:innerWidth={viewportWidth} bind:innerHeight={viewportHeight} />
+
+{#if isVisible && viewportIsBigEnough(viewportWidth, viewportHeight)}
   <div
     class="tooltip"
     style={`left: ${xPos}; top: ${yPos}`}
