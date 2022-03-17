@@ -87,6 +87,7 @@
 		border-radius: var(--border-radius);
 		text-decoration: none;
 		cursor: pointer;
+		user-select: none;
 		-webkit-user-select: none;
 		-moz-user-select: none;
 	}
@@ -110,7 +111,6 @@
 		padding: 0;
 		color: var(--subtitle-color);
 		font-size: 0.9rem;
-		font-weight: 400;
 		line-height: 1;
 	}
 

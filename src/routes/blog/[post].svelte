@@ -79,14 +79,15 @@
     height: 1.5rem;
     color: var(--text-color);
   }
+  #blog-back-button:global(.button:active .icon svg) {
+    color: var(--secondary-color);
+  }
 
   .card {
     padding: 0;
-    background: var(--primary-color);
   }
 
   .toolbar {
-    background: var(--primary-color);
     border-width: 0px 0px var(--border-width) 0px;
     border-style: solid;
     border-color: var(--border-color);

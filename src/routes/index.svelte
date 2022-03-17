@@ -38,8 +38,6 @@
 				</div>
 			</section>
 		</div>
-	</div>
-	<div class="slide">
 		<div class="showcase showcase-left">
 			<section class="card">
 				<div class="body">
@@ -60,8 +58,6 @@
 				</div>
 			</section>
 		</div>
-	</div>
-	<div class="slide">
 		<section class="card">
 			<div class="body">
 				<p>
