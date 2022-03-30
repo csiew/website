@@ -2,9 +2,8 @@
 	import { onMount } from "svelte";
 	import Header from '$lib/header/Header.svelte';
 	import '../app.css';
+	import '../fonts/SplineSans.css';
 	import '../fonts/JetBrainsMono.css';
-	import '../fonts/Supreme.css';
-	import '../fonts/ClashGrotesk.css';
 
 	let mainEl: HTMLElement;
 	let isAtTop = true;
@@ -25,7 +24,7 @@
 <main bind:this={mainEl} on:scroll={checkIsAtTop}>
 	<slot />
 	<footer>
-		<p>Version 5.5.4<br/><a sveltekit:prefetch href="/versions">Version history</a></p>
-		<p>&copy; 2022 Clarence Siew</p>
+		<p>Version 5.6.0<br/><a sveltekit:prefetch href="/versions">Version history</a></p>
+		<p>Copyright &copy; 2022 Clarence Siew</p>
 	</footer>
 </main>

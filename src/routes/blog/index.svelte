@@ -24,11 +24,8 @@
 	<div class="heading">
 		<h1>Blog</h1>
 	</div>
-  <div class="card">
-		<div class="heading toolbar">
-			<h4>Posts</h4>
-		</div>
-		<div class="body">
+  <section class="posts">
+		<div class="post-list">
 			<ul>
 				{#each posts as post}
 					<li>
@@ -42,36 +39,29 @@
 				{/each}
 			</ul>
 		</div>
-  </div>
+  </section>
 </div>
 
 <style>
-	.card {
-		padding: 0;
-	}
-	.card .heading {
-		margin: 0;
-		padding: 0.5rem 1rem;
-		background: none;
-		border-radius: var(--border-radius) var(--border-radius) 0 0;
-	}
-	.card .body {
-		margin: 0;
-		padding: 0.5rem;
+	@media (max-width: 767px) {
+		.posts {
+			margin-top: 2rem;
+		}
 	}
 
-	.card .body ul {
+	.post-list ul {
 		display: inline-flex;
 		flex-flow: column;
 		justify-content: flex-start;
 		align-items: stretch;
+		gap: 0.5rem;
 		width: 100%;
 		height: 100%;
 		margin: 0;
 		padding: 0;
 		list-style: none;
 	}
-	.card .body li {
+	.post-list li {
 		display: inline-flex;
 		flex-flow: column;
 		justify-content: center;
@@ -79,11 +69,12 @@
 		margin: 0;
 		padding: 0;
 	}
-	.card .body a {
+	.post-list a {
 		display: grid;
 		grid-template-columns: 1fr;
 		width: 100%;
-		padding: 1rem;
+		padding: 1.5rem;
+		border: var(--border-width) solid transparent;
 		border-radius: var(--border-radius);
 		text-decoration: none;
 		cursor: pointer;
@@ -91,30 +82,35 @@
 		-webkit-user-select: none;
 		-moz-user-select: none;
 	}
-	.card .body a:hover {
-		background: rgba(0,0,0,0.0625);
+	.post-list a:hover {
+		background: var(--secondary-color);
+		border-color: var(--border-color);
+		box-shadow: var(--element-shadow);
+		transform: scale(1.00625);
 	}
-	.card .body a:active {
+	.post-list a:active {
 		color: var(--secondary-color);
 		background: var(--text-color);
 		box-shadow: none;
+		transform: scale(1);
 	}
-	.card .body h3 {
+	.post-list h3 {
 		margin: 0;
 		padding: 0;
-		font-size: 1.25rem;
-		font-weight: 600;
+		font-size: 1.5rem;
+		font-weight: 500;
 		line-height: 1;
 	}
-	.card .body sub {
+	.post-list sub {
 		margin: 0;
 		padding: 0;
 		color: var(--subtitle-color);
 		font-size: 0.9rem;
+		font-weight: 400;
 		line-height: 1;
 	}
 
-	.card .body a:active :is(h2, h3, sub) {
+	.post-list a:active :is(h2, h3, sub) {
 		color: var(--secondary-color);
 	}
 </style>

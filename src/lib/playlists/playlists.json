@@ -1,7 +1,8 @@
 {
     "collection": [
         {
-            "title": "2022",
+            "id": "2022",
+            "name": "2022",
             "playlists": {
                 "standard": [
                     {
@@ -26,7 +27,8 @@
             }
         },
         {
-            "title": "2021",
+            "id": "2021",
+            "name": "2021",
             "playlists": {
                 "standard": [
                     {
@@ -63,7 +65,8 @@
             }
         },
         {
-            "title": "2020",
+            "id": "2020",
+            "name": "2020",
             "playlists": {
                 "standard": [
                     {
@@ -96,7 +99,8 @@
             }
         },
         {
-            "title": "2019",
+            "id": "2019",
+            "name": "2019",
             "playlists": {
                 "standard": [
                     {
@@ -125,7 +129,8 @@
             }
         },
         {
-            "title": "2018",
+            "id": "2018",
+            "name": "2018",
             "playlists": {
                 "standard": [
                     {
@@ -186,7 +191,8 @@
             }
         },
         {
-            "title": "2017",
+            "id": "2017",
+            "name": "2017",
             "playlists": {
                 "standard": [
                     {
@@ -247,7 +253,8 @@
             }
         },
         {
-            "title": "2016",
+            "id": "2016",
+            "name": "2016",
             "playlists": {
                 "standard": [
                     {
@@ -300,7 +307,8 @@
             }
         },
         {
-            "title": "2015",
+            "id": "2015",
+            "name": "2015",
             "playlists": {
                 "standard": [],
                 "special": [

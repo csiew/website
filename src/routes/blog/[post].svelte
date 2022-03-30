@@ -16,12 +16,14 @@
   let postId = $page.params.post;
   let postMetadata = postManifest.posts.filter(p => p.id === postId)[0] ?? undefined;
   let postContent = "";
+  let isLoading = true;
 
   async function getPostContent(metadata: PostEntry) {
     if (metadata) {
       try {
         const response = await fetch(metadata.path);
         postContent = await response.text();
+        isLoading = false;
       } catch (err) {
         console.error(err);
       }
@@ -48,10 +50,16 @@
       </a>
     </div>
     <article>
-      <h1>{postMetadata.title}</h1>
-      <sub>{new Date(postMetadata.date).toLocaleString()}</sub>
-      <hr />
-      <SvelteMarkdown source={postContent} />
+      {#if !isLoading}
+        <h1>{postMetadata.title}</h1>
+        <sub>{new Date(postMetadata.date).toLocaleString()}</sub>
+        <hr />
+        <SvelteMarkdown source={postContent} />
+      {:else}
+        <span class="loading">
+          Loading
+        </span>
+      {/if}
     </article>
   </div>
 </div>
@@ -108,6 +116,21 @@
 
   article h1 {
     line-height: 1.125;
+  }
+
+  .loading {
+		display: inline-flex;
+		flex-flow: column;
+		justify-content: center;
+		align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 2rem;
+    background: var(--primary-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--element-shadow) inset;
+    text-shadow: 0px 1px 1px white;
+    text-align: center;
   }
 
 	@media (max-width: 720px) {
