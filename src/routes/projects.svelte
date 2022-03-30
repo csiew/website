@@ -7,20 +7,18 @@
 
 <script lang="ts">
 	import SvelteMarkdown from "svelte-markdown";
-	import ProjectShortcuts from "../lib/projects/ProjectShortcuts.svelte";
-	import projectsJson from "../lib/projects/projects.json";
+	import SectionedPage from "$lib/ui/SectionedPage.svelte";
+	import projectsJson from "$lib/projects/projects.json";
+
+	const noItemsMessage = "Could not retrieve projects. Try reloading the page."
 </script>
 
-<svelte:head>
-	<title>Projects | Clarence Siew</title>
-</svelte:head>
-
-<div class="content">
-	<div class="heading">
-		<h1>Projects</h1>
-	</div>
-
-	<div class="list">
+<SectionedPage
+	title="Projects"
+	sections={projectsJson.projects}
+	noItemsMessage={noItemsMessage}
+>
+	<svelte:fragment slot="section-list">
 		{#each projectsJson.projects as project}
 			<section class="card" id={project.id}>
 				<div class="heading">
@@ -35,29 +33,18 @@
 				</div>
 				<div class="body">
 					{#if project.imgUrl.length > 0}
-						<img src={`/img/${project.imgUrl}`} alt={project.name} width="100%" />
+						<img
+							loading="lazy"
+							decoding="async"
+							src={`/img/${project.imgUrl}`} alt={project.name}
+							width="100%"
+						/>
 					{/if}
 					<p><SvelteMarkdown source={project.description} /></p>
 				</div>
 			</section>
 		{:else}
-			<p>No projects</p>
+			<p>{noItemsMessage}</p>
 		{/each}
-	</div>
-</div>
-<ProjectShortcuts projects={projectsJson.projects} />
-
-<style>
-	.list {
-		display: grid;
-		grid-auto-flow: row;
-		gap: 2rem;
-	}
-	
-	.body img {
-		margin: 0 0 2rem 0;
-		border: 1px solid var(--border-color);
-		border-radius: var(--border-radius);
-		box-shadow: var(--element-shadow);
-	}
-</style>
+	</svelte:fragment>
+</SectionedPage>

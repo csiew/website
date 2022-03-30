@@ -9,6 +9,23 @@
 
   let viewportWidth, viewportHeight;
 
+  // https://stackoverflow.com/a/11381730/8665013
+  function detectMob() {
+    const toMatch = [
+      /Android/i,
+      /webOS/i,
+      /iPhone/i,
+      /iPad/i,
+      /iPod/i,
+      /BlackBerry/i,
+      /Windows Phone/i
+    ];
+    
+    return toMatch.some((toMatchItem) => {
+      return navigator.userAgent.match(toMatchItem);
+    });
+  }
+
   function viewportIsBigEnough(width: number, height: number): boolean {
     console.log(width, height);
     return width > 768 && height > 390;
@@ -17,7 +34,7 @@
 
 <svelte:window bind:innerWidth={viewportWidth} bind:innerHeight={viewportHeight} />
 
-{#if isVisible && viewportIsBigEnough(viewportWidth, viewportHeight)}
+{#if isVisible && viewportIsBigEnough(viewportWidth, viewportHeight) && !detectMob()}
   <div
     class="tooltip"
     style={`left: ${xPos}; top: ${yPos}`}

@@ -98,12 +98,13 @@
 		height: min-content;
     margin: auto;
     padding: 0.5rem;
-		color: var(--text-color);
+		color: var(--subtitle-color);
 		background: none;
 		border: none;
 		transition: 0.2s;
 	}
 	button.scroll-top-shortcut:hover {
+		color: var(--text-color);
     background: rgba(0,0,0,0.03125);
 		box-shadow: none;
 		transition: 0.2s;

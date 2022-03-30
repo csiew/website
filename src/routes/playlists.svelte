@@ -6,26 +6,28 @@
 </script>
 
 <script lang="ts">
-	import PlaylistShortcuts from "$lib/playlists/PlaylistShortcuts.svelte";
-	import playlistsJson from "../lib/playlists/playlists.json";
+	import SectionedPage from "$lib/ui/SectionedPage.svelte";
+	import playlistsJson from "$lib/playlists/playlists.json";
+
+	const noItemsMessage = "Could not retrieve playlists. Try reloading the page."
 </script>
 
 <svelte:head>
 	<title>Playlists | Clarence Siew</title>
 </svelte:head>
 
-<div class="content">
-	<div class="heading">
-		<h1>Playlists</h1>
-	</div>
-
-	<div class="list">
+<SectionedPage
+	title="Playlists"
+	sections={playlistsJson.collection}
+	noItemsMessage={noItemsMessage}
+>
+	<svelte:fragment slot="section-list">
 		{#each playlistsJson.collection as year}
 			{#if year.playlists.standard.length > 0 || year.playlists.special.length > 0}
-				<section class="card" id={year.title}>
+				<section class="card" id={year.name}>
 					<div class="heading">
 						<span class="title">
-							<h2>{year.title}</h2>
+							<h2>{year.name}</h2>
 						</span>
 					</div>
 					<div class="body">
@@ -51,33 +53,7 @@
 				</section>
 			{/if}
 		{:else}
-			<p>No playlists</p>
+			<p>{noItemsMessage}</p>
 		{/each}
-	</div>
-</div>
-<PlaylistShortcuts playlistYears={playlistsJson.collection} />
-
-<style>
-	.list {
-		display: grid;
-		grid-auto-flow: row;
-		gap: 2rem;
-	}
-
-	.link-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(196px, 1fr));
-		gap: 1rem;
-		margin: 0;
-		padding: 1.5rem 0;
-		width: 100%;
-		border-bottom: 3px solid var(--border-color);
-	}
-	.link-grid:first-child {
-		padding-top: 0;
-	}
-	.link-grid:last-child {
-		padding-bottom: 0;
-		border-bottom: none;
-	}
-</style>
+	</svelte:fragment>
+</SectionedPage>
