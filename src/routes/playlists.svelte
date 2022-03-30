@@ -18,7 +18,7 @@
 
 <SectionedPage
 	title="Playlists"
-	sections={playlistsJson.collection}
+	sections={playlistsJson.collection as { id: string; name: string; [k: string]: any }[]}
 	noItemsMessage={noItemsMessage}
 >
 	<svelte:fragment slot="section-list">
