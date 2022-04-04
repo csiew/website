@@ -6,8 +6,13 @@
 </script>
 
 <script lang="ts">
+	import { onMount } from "svelte";
 	import SvelteMarkdown from "svelte-markdown";
 	import versionHistoryJson from "../lib/versions/history.json";
+
+	onMount(() => {
+		document.getElementsByTagName("main")[0].scrollTo({ top: 0 });
+	});
 </script>
 
 <svelte:head>

@@ -79,18 +79,22 @@
 		width: min-content;
 		margin: 0;
 		padding: 0.25rem 0.5rem;
-		background: var(--secondary-color);
+		background: none;
 		border: var(--border-width) solid var(--border-color);
 		border-radius: var(--button-border-radius);
+		box-shadow: none;
+		font-weight: 600;
 		text-decoration: none;
 		white-space: nowrap;
 	}
 	.shortcuts a:hover {
-		border-color: var(--accent-color);
-	}
-	.shortcuts a:active {
 		color: var(--secondary-color);
 		background: var(--accent-color);
+		border-color: var(--accent-color);
+		box-shadow: var(--element-shadow);
+	}
+	.shortcuts a:active {
+		box-shadow: none;
 	}
 
 	.list {

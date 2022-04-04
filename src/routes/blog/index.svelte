@@ -6,6 +6,7 @@
 </script>
 
 <script lang="ts">
+	import { onMount } from "svelte";
 	import type { PostEntry } from "../../types/PostEntry";
 	import postManifest from "./post_manifest.json";
 
@@ -13,6 +14,10 @@
 		let dateA = new Date(a.date).getTime();
 		let dateB = new Date(b.date).getTime();
 		return dateB > dateA ? 1 : dateA > dateB ? -1 : 0;
+	});
+
+	onMount(() => {
+		document.getElementsByTagName("main")[0].scrollTo({ top: 0 });
 	});
 </script>
 

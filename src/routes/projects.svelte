@@ -6,11 +6,16 @@
 </script>
 
 <script lang="ts">
+	import { onMount } from "svelte";
 	import SvelteMarkdown from "svelte-markdown";
 	import SectionedPage from "$lib/ui/SectionedPage.svelte";
 	import projectsJson from "$lib/projects/projects.json";
 
-	const noItemsMessage = "Could not retrieve projects. Try reloading the page."
+	const noItemsMessage = "Could not retrieve projects. Try reloading the page.";
+
+	onMount(() => {
+		document.getElementsByTagName("main")[0].scrollTo({ top: 0 });
+	});
 </script>
 
 <SectionedPage

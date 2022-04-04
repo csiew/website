@@ -8,10 +8,10 @@
 	font-family: var(--font-family);
 
 	/* MISC */
+	--border-width: 1px;
 	--border-radius: 12px;
 	--button-border-radius: 9px;
 	--link-border-radius: var(--border-radius);
-	--border-width: 1px;
 	--element-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
 	--toast-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
 
@@ -26,7 +26,7 @@
 	--subtitle-color: #555555;
 	--footer-color: #555555;
 	--text-color: #333333;
-	--border-color: #d5d5d5;
+	--border-color: #cccccc;
 	--selection-background: #87ceeb;
 	--footer-background: none;
 }
@@ -34,7 +34,6 @@
 @media only screen and (prefers-color-scheme: dark) {
 	:root {
 		/* COLORS */
-		--pure-white: #ffffff;
 		--primary-color: #000000;
 		--secondary-color: #000000;
 		--tertiary-color: #222222;
@@ -44,7 +43,7 @@
 		--subtitle-color: #cccccc;
 		--footer-color: #aaaaaa;
 		--text-color: #f3f3f3;
-		--border-color: #333333;
+		--border-color: #4c4c4c;
 		--selection-background: #87ceeb;
 		--footer-background: none;
 	}
@@ -55,6 +54,53 @@
 
 	.wireframe-dynamic-color {
 		filter: invert(1);
+	}
+}
+
+@media only screen and (prefers-contrast: more) {
+	:root {
+		/* MISC */
+		--border-width: 3px;
+		--element-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+		/* COLORS */
+		--primary-color: #ffffff;
+		--secondary-color: #ffffff;
+		--tertiary-color: #f1f1f1;
+		--accent-color: #0000ff;
+		--accent-secondary-color: #000099;
+		--heading-color: #222222;
+		--subtitle-color: #333333;
+		--footer-color: black;
+		--text-color: black;
+		--border-color: black;
+		--selection-background: #87ceeb;
+		--footer-background: none;
+	}
+
+	#svelte {
+		font-weight: 450 !important;
+	}
+}
+
+@media only screen and (prefers-contrast: more) and (prefers-color-scheme: dark) {
+	:root {
+		/* MISC */
+		--element-shadow: 4px 4px 0px rgba(255, 255, 255, 0.5);
+
+		/* COLORS */
+		--primary-color: #000000;
+		--secondary-color: #000000;
+		--tertiary-color: #222222;
+		--accent-color: rgb(132, 165, 255);
+		--accent-secondary-color: rgba(102, 135, 225);
+		--heading-color: #ffffff;
+		--subtitle-color: #dddddd;
+		--footer-color: #ffffff;
+		--text-color: #ffffff;
+		--border-color: #ffffff;
+		--selection-background: #87ceeb;
+		--footer-background: none;
 	}
 }
 
