@@ -7,11 +7,16 @@
 </script>
 
 <script lang="ts">
+	import { onMount } from "svelte";
 	import Skills from "../lib/skills/Skills.svelte";
 	import Links from '$lib/contact/Links.svelte';
 	import Profile from "$lib/Profile.svelte";
 	import Penang from "../lib/home/Penang.png";
 	import Victoria from "../lib/home/Victoria.png";
+
+	onMount(() => {
+		document.getElementsByTagName("main")[0].scrollTo({ top: 0 });
+	});
 </script>
 
 <svelte:head>

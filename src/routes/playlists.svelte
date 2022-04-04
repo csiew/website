@@ -6,10 +6,15 @@
 </script>
 
 <script lang="ts">
+	import { onMount } from "svelte";
 	import SectionedPage from "$lib/ui/SectionedPage.svelte";
 	import playlistsJson from "$lib/playlists/playlists.json";
 
-	const noItemsMessage = "Could not retrieve playlists. Try reloading the page."
+	const noItemsMessage = "Could not retrieve playlists. Try reloading the page.";
+
+	onMount(() => {
+		document.getElementsByTagName("main")[0].scrollTo({ top: 0 });
+	});
 </script>
 
 <svelte:head>

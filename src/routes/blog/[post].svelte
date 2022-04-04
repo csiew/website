@@ -30,7 +30,10 @@
     }
   }
 
-  onMount(() => getPostContent(postMetadata));
+  onMount(() => {
+    getPostContent(postMetadata);
+		document.getElementsByTagName("main")[0].scrollTo({ top: 0 });
+  });
 </script>
 
 <svelte:head>

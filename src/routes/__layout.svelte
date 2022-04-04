@@ -12,7 +12,7 @@
 		isAtTop = mainEl.scrollTop === 0;
 	}
 
-	onMount(() => checkIsAtTop());
+	onMount(checkIsAtTop);
 </script>
 
 <svelte:head>
@@ -24,7 +24,7 @@
 <main bind:this={mainEl} on:scroll={checkIsAtTop}>
 	<slot />
 	<footer>
-		<p>Version 5.6.0<br/><a sveltekit:prefetch href="/versions">Version history</a></p>
+		<p>Version 5.6.1<br/><a sveltekit:prefetch href="/versions">Version history</a></p>
 		<p>Copyright &copy; 2022 Clarence Siew</p>
 	</footer>
 </main>
