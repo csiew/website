@@ -90,7 +90,7 @@
 	.post-list a:hover {
 		background: var(--secondary-color);
 		border-color: var(--border-color);
-		box-shadow: var(--element-shadow);
+		box-shadow: var(--3d-shadow), var(--element-shadow);
 		transform: scale(1.00625);
 	}
 	.post-list a:active {

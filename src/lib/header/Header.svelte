@@ -101,6 +101,7 @@
 		color: var(--subtitle-color);
 		background: none;
 		border: none;
+		box-shadow: none;
 		transition: 0.2s;
 	}
 	button.scroll-top-shortcut:hover {

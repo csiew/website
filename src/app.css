@@ -14,6 +14,7 @@
 	--link-border-radius: var(--border-radius);
 	--element-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
 	--toast-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+	--3d-shadow: 0px -3px 0px rgba(0, 0, 0, 0.125) inset;
 
 	/* COLORS */
 	--pure-white: #ffffff;
@@ -265,19 +266,20 @@ input, button, .button {
 	white-space: nowrap;
 	border: var(--border-width) solid var(--accent-color);
 	border-radius: var(--button-border-radius);
+	box-shadow: var(--3d-shadow), 0px 2px 8px rgba(0, 0, 0, 0.25);
 	cursor: pointer;
 	transition: 0.2s ease-in-out;
 }
 :is(button, .button, input[type="submit"]):hover {
 	background: var(--accent-secondary-color);
-	box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
+	box-shadow: var(--3d-shadow), 0px 2px 8px rgba(0, 0, 0, 0.5);
 	transform: scale(1.0125);
 	transition: 0.2s;
 }
 :is(button, .button, input[type="submit"]):active,
 :is(button, .button, input[type="submit"]):focus:active {
 	background: var(--accent-secondary-color);
-	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
 	outline: 3px solid var(--accent-color);
 	animation: none;
 	transform: scale(0.98) !important;
@@ -446,7 +448,7 @@ section {
 
 .card {
 	background: var(--secondary-color);
-	box-shadow: var(--element-shadow);
+	box-shadow: var(--3d-shadow), var(--element-shadow);
 }
 .card .heading {
 	display: inline-flex;
