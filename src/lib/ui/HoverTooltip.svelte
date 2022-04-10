@@ -48,9 +48,13 @@
   .tooltip {
     z-index: 100;
     position: fixed;
-    display: block;
+    display: inline-flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;
     margin: auto;
     padding: 0.25rem 0.5rem;
+    height: auto;
     color: var(--primary-color);
     background: var(--text-color);
     border-width: var(--border-width);
@@ -58,7 +62,7 @@
     border-color: var(--text-color);
     border-radius: var(--border-radius);
     box-shadow: var(--element-shadow);
-    font-size: 0.9rem;
+    font-size: 100%;
     font-weight: bold;
     pointer-events: none;
   }

@@ -58,7 +58,7 @@
 	.shortcuts {
 		position: sticky;
 		top: 0;
-		font-size: 0.9rem;
+		font-size: 80%;
 	}
 	.shortcuts ul {
 		list-style: none;

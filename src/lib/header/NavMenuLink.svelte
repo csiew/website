@@ -16,7 +16,7 @@
     tooltipIsVisible = true;
     tooltipValue = value;
     tooltipXPos = `${navLinkRect.width + 24}px`;
-    tooltipYPos = `${navLinkRect.y + (navLinkRect.height / 8)}px`;
+    tooltipYPos = `${navLinkRect.y + (navLinkRect.height / 16)}px`;
   }
 
   function unsetTooltip(): void {

@@ -1,9 +1,10 @@
 :root {
 	/* FONTS */
 	--system-font-family: ui-sans-serif, 'system-ui', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-	--font-family: 'Spline Sans', var(--system-font-family);
-	--font-heading: var(--font-family);
+	--font-family: 'Alegreya Sans', var(--system-font-family);
+	--font-heading: 'Alegreya Sans SC', var(--font-family);
 	--font-mono: 'JetBrains Mono', Menlo, Monaco, 'Cascadia Code', Consolas, monospace;
+	--font-article: Alegreya, var(--font-family);
 	--font-control: var(--font-family);
 	font-family: var(--font-family);
 
@@ -15,36 +16,41 @@
 	--element-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
 	--toast-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
 	--3d-shadow: 0px -3px 0px rgba(0, 0, 0, 0.125) inset;
+	--3d-shadow-active: 0px 3px 0px rgba(0, 0, 0, 0.125) inset;
 
 	/* COLORS */
 	--pure-white: #ffffff;
-	--primary-color: #f8f8f8;
-	--secondary-color: #ffffff;
-	--tertiary-color: #f1f1f1;
-	--accent-color: rgb(70, 130, 180);
-	--accent-secondary-color: rgb(80, 140, 190);
-	--heading-color: #222222;
-	--subtitle-color: #555555;
-	--footer-color: #555555;
-	--text-color: #333333;
-	--border-color: #cccccc;
-	--selection-background: #87ceeb;
+	--primary-color: rgb(255, 252, 245);
+	--secondary-color: rgb(255, 254, 248);
+	--tertiary-color: rgb(230, 225, 220);
+	--accent-color: rgb(30, 140, 130);
+	--accent-secondary-color: rgb(40, 150, 140);
+	--heading-color: rgb(70, 68, 65);
+	--subtitle-color: rgb(120, 118, 115);
+	--footer-color: rgb(120, 118, 115);
+	--text-color: rgb(80, 78, 75);
+	--text-color-secondary: rgb(100, 98, 95);
+	--text-color-tertiary: rgb(150, 148, 145);
+	--border-color: rgb(210, 205, 200);
+	--selection-background: rgb(210, 205, 200);
 	--footer-background: none;
 }
 
 @media only screen and (prefers-color-scheme: dark) {
 	:root {
 		/* COLORS */
-		--primary-color: #000000;
-		--secondary-color: #000000;
-		--tertiary-color: #222222;
-		--accent-color: rgb(132, 165, 255);
-		--accent-secondary-color: rgba(102, 135, 225);
-		--heading-color: #eeeeee;
-		--subtitle-color: #cccccc;
-		--footer-color: #aaaaaa;
-		--text-color: #f3f3f3;
-		--border-color: #4c4c4c;
+		--primary-color: rgb(30, 28, 25);
+		--secondary-color: rgb(40, 38, 35);
+		--tertiary-color: rgb(50, 48, 45);
+		--accent-color: rgb(50, 160, 150);
+		--accent-secondary-color: rgb(60, 170, 160);
+		--heading-color: rgb(190, 188, 185);
+		--subtitle-color: rgb(190, 188, 185);
+		--footer-color: rgb(160, 158, 155);
+		--text-color: rgb(230, 228, 225);
+		--text-color-secondary: rgb(210, 208, 205);
+		--text-color-tertiary: rgb(160, 158, 155);
+		--border-color: rgb(80, 75, 70);
 		--selection-background: #87ceeb;
 		--footer-background: none;
 	}
@@ -121,12 +127,12 @@ body, #svelte {
 	align-items: stretch;
 	background: var(--primary-color);
 	color: var(--text-color);
-	font-size: 1.25rem;
-	font-weight: 375;
+	font-size: 1.5rem;
+	font-weight: 400;
 	font-display: fallback;
 	letter-spacing: 0;
 	text-rendering: geometricPrecision;
-	line-height: 1.5;
+	line-height: 1.25;
 	overflow: hidden;
 }
 	
@@ -149,7 +155,7 @@ footer {
 	padding: 3rem;
 	background: var(--footer-background);
 	color: var(--footer-color);
-	font-size: 1rem;
+	font-size: 80%;
 	text-align: center;
 }
 
@@ -168,6 +174,7 @@ footer {
 }
 .content .heading h1 {
 	margin: 1rem 0rem;
+	color: var(--text-color-tertiary);
 	font-size: 6rem;
 	font-weight: 600;
 	line-height: 1;
@@ -190,7 +197,6 @@ h1, h2, h3, h4, h5 {
 	--size: 1;
 	color: var(--heading-color);
 	font-family: var(--font-heading);
-	font-size: calc(--size)rem;
 	letter-spacing: 0.0125rem;
 }
 h1 {
@@ -240,14 +246,17 @@ p:last-child {
 }
 
 code, pre {
-	font-size: 1rem;
-	font-weight: bold;
-	font-family: var(--font-mono);
-	background: rgba(0, 0, 0, 0.125);
-	border-radius: var(--border-radius);
-	padding: 0.125rem 0.5rem;
-	overflow-x: auto;
 	color: var(--text-color);
+	background: var(--tertiary-color);
+	padding: 0.0625rem 0.25rem;
+	font-size: 75%;
+	font-family: var(--font-mono);
+	font-weight: bold;
+	font-style: italic;
+	overflow-x: auto;
+}
+pre {
+	font-style: normal;
 }
 
 input, button, .button {
@@ -273,16 +282,14 @@ input, button, .button {
 :is(button, .button, input[type="submit"]):hover {
 	background: var(--accent-secondary-color);
 	box-shadow: var(--3d-shadow), 0px 2px 8px rgba(0, 0, 0, 0.5);
-	transform: scale(1.0125);
 	transition: 0.2s;
 }
 :is(button, .button, input[type="submit"]):active,
 :is(button, .button, input[type="submit"]):focus:active {
 	background: var(--accent-secondary-color);
-	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-	outline: 3px solid var(--accent-color);
+	box-shadow: var(--3d-shadow-active);
+	outline: 3px solid var(--tertiary-color);
 	animation: none;
-	transform: scale(0.98) !important;
 }
 :is(button, .button, input[type="submit"]):focus {
 	outline: none;
@@ -300,12 +307,12 @@ small :is(button, .button, input[type="submit"]) {
 
 @keyframes button-throbber {
 	0% {
-		background: goldenrod;
-		outline: 3px solid var(--tertiary-color);
+		background: var(--accent-color);
+		outline: 3px solid var(--accent-secondary-color);
 	}
 	100% {
-		background: orange;
-		outline: 3px solid darkgoldenrod;
+		background: var(--accent-secondary-color);
+		outline: 3px solid var(--border-color);
 	}
 }
 
@@ -698,11 +705,18 @@ section {
 		justify-content: center;
 		align-items: center;
 		width: 100%;
-		font-size: 1rem;
+		font-size: 1.25rem;
 	}
 
 	footer {
 		padding: 1rem 0;
+	}
+
+	p {
+		padding: 0.25rem 0rem 0.5rem 0rem;
+	}
+	p:last-child {
+		padding-bottom: 0rem;
 	}
 
 	.content .heading {
@@ -711,10 +725,13 @@ section {
 	.content .heading h1 {
 		margin: 0rem;
 		font-size: 4rem;
-		font-weight: 900;
+		font-weight: 600;
 		line-height: 1;
 	}
 
+	.card {
+		padding: 0.75rem;
+	}
 	.card .heading,
 	.card .heading :is(.title, .accessories) {
 		flex-flow: column;
