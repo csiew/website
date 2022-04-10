@@ -1,6 +1,6 @@
 {
   "name": "website",
-  "version": "5.6.3",
+  "version": "5.7.0",
   "scripts": {
     "dev": "svelte-kit dev --port 3001",
     "build": "svelte-kit build",

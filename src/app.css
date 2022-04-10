@@ -20,37 +20,37 @@
 
 	/* COLORS */
 	--pure-white: #ffffff;
-	--primary-color: #f8f8f8;
-	--secondary-color: #ffffff;
-	--tertiary-color: #f1f1f1;
+	--primary-color: rgb(255, 252, 245);
+	--secondary-color: rgb(255, 254, 248);
+	--tertiary-color: rgb(230, 225, 220);
 	--accent-color: rgb(30, 140, 130);
 	--accent-secondary-color: rgb(40, 150, 140);
-	--heading-color: #222222;
-	--subtitle-color: #555555;
-	--footer-color: #555555;
-	--text-color: #333333;
-	--text-color-secondary: #666666;
-	--text-color-tertiary: #aaaaaa;
-	--border-color: #cccccc;
-	--selection-background: #87ceeb;
+	--heading-color: rgb(70, 68, 65);
+	--subtitle-color: rgb(120, 118, 115);
+	--footer-color: rgb(120, 118, 115);
+	--text-color: rgb(80, 78, 75);
+	--text-color-secondary: rgb(100, 98, 95);
+	--text-color-tertiary: rgb(150, 148, 145);
+	--border-color: rgb(210, 205, 200);
+	--selection-background: rgb(210, 205, 200);
 	--footer-background: none;
 }
 
 @media only screen and (prefers-color-scheme: dark) {
 	:root {
 		/* COLORS */
-		--primary-color: #000000;
-		--secondary-color: #000000;
-		--tertiary-color: #222222;
+		--primary-color: rgb(30, 28, 25);
+		--secondary-color: rgb(40, 38, 35);
+		--tertiary-color: rgb(50, 48, 45);
 		--accent-color: rgb(50, 160, 150);
 		--accent-secondary-color: rgb(60, 170, 160);
-		--heading-color: #eeeeee;
-		--subtitle-color: #cccccc;
-		--footer-color: #aaaaaa;
-		--text-color: #f3f3f3;
-		--text-color-secondary: #c3c3c3;
-		--text-color-tertiary: #939393;
-		--border-color: #4c4c4c;
+		--heading-color: rgb(190, 188, 185);
+		--subtitle-color: rgb(190, 188, 185);
+		--footer-color: rgb(160, 158, 155);
+		--text-color: rgb(230, 228, 225);
+		--text-color-secondary: rgb(210, 208, 205);
+		--text-color-tertiary: rgb(160, 158, 155);
+		--border-color: rgb(80, 75, 70);
 		--selection-background: #87ceeb;
 		--footer-background: none;
 	}
@@ -705,11 +705,18 @@ section {
 		justify-content: center;
 		align-items: center;
 		width: 100%;
-		font-size: 1rem;
+		font-size: 1.25rem;
 	}
 
 	footer {
 		padding: 1rem 0;
+	}
+
+	p {
+		padding: 0.25rem 0rem 0.5rem 0rem;
+	}
+	p:last-child {
+		padding-bottom: 0rem;
 	}
 
 	.content .heading {
@@ -718,10 +725,13 @@ section {
 	.content .heading h1 {
 		margin: 0rem;
 		font-size: 4rem;
-		font-weight: 900;
+		font-weight: 600;
 		line-height: 1;
 	}
 
+	.card {
+		padding: 0.75rem;
+	}
 	.card .heading,
 	.card .heading :is(.title, .accessories) {
 		flex-flow: column;
