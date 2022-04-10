@@ -1,9 +1,10 @@
 :root {
 	/* FONTS */
 	--system-font-family: ui-sans-serif, 'system-ui', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-	--font-family: 'Spline Sans', var(--system-font-family);
-	--font-heading: var(--font-family);
+	--font-family: 'Alegreya Sans', var(--system-font-family);
+	--font-heading: 'Alegreya Sans SC', var(--font-family);
 	--font-mono: 'JetBrains Mono', Menlo, Monaco, 'Cascadia Code', Consolas, monospace;
+	--font-article: Alegreya, var(--font-family);
 	--font-control: var(--font-family);
 	font-family: var(--font-family);
 
@@ -15,18 +16,21 @@
 	--element-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
 	--toast-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
 	--3d-shadow: 0px -3px 0px rgba(0, 0, 0, 0.125) inset;
+	--3d-shadow-active: 0px 3px 0px rgba(0, 0, 0, 0.125) inset;
 
 	/* COLORS */
 	--pure-white: #ffffff;
 	--primary-color: #f8f8f8;
 	--secondary-color: #ffffff;
 	--tertiary-color: #f1f1f1;
-	--accent-color: rgb(70, 130, 180);
-	--accent-secondary-color: rgb(80, 140, 190);
+	--accent-color: rgb(30, 140, 130);
+	--accent-secondary-color: rgb(40, 150, 140);
 	--heading-color: #222222;
 	--subtitle-color: #555555;
 	--footer-color: #555555;
 	--text-color: #333333;
+	--text-color-secondary: #666666;
+	--text-color-tertiary: #aaaaaa;
 	--border-color: #cccccc;
 	--selection-background: #87ceeb;
 	--footer-background: none;
@@ -38,12 +42,14 @@
 		--primary-color: #000000;
 		--secondary-color: #000000;
 		--tertiary-color: #222222;
-		--accent-color: rgb(132, 165, 255);
-		--accent-secondary-color: rgba(102, 135, 225);
+		--accent-color: rgb(50, 160, 150);
+		--accent-secondary-color: rgb(60, 170, 160);
 		--heading-color: #eeeeee;
 		--subtitle-color: #cccccc;
 		--footer-color: #aaaaaa;
 		--text-color: #f3f3f3;
+		--text-color-secondary: #c3c3c3;
+		--text-color-tertiary: #939393;
 		--border-color: #4c4c4c;
 		--selection-background: #87ceeb;
 		--footer-background: none;
@@ -121,12 +127,12 @@ body, #svelte {
 	align-items: stretch;
 	background: var(--primary-color);
 	color: var(--text-color);
-	font-size: 1.25rem;
-	font-weight: 375;
+	font-size: 1.5rem;
+	font-weight: 400;
 	font-display: fallback;
 	letter-spacing: 0;
 	text-rendering: geometricPrecision;
-	line-height: 1.5;
+	line-height: 1.25;
 	overflow: hidden;
 }
 	
@@ -149,7 +155,7 @@ footer {
 	padding: 3rem;
 	background: var(--footer-background);
 	color: var(--footer-color);
-	font-size: 1rem;
+	font-size: 80%;
 	text-align: center;
 }
 
@@ -168,6 +174,7 @@ footer {
 }
 .content .heading h1 {
 	margin: 1rem 0rem;
+	color: var(--text-color-tertiary);
 	font-size: 6rem;
 	font-weight: 600;
 	line-height: 1;
@@ -190,7 +197,6 @@ h1, h2, h3, h4, h5 {
 	--size: 1;
 	color: var(--heading-color);
 	font-family: var(--font-heading);
-	font-size: calc(--size)rem;
 	letter-spacing: 0.0125rem;
 }
 h1 {
@@ -240,14 +246,17 @@ p:last-child {
 }
 
 code, pre {
-	font-size: 1rem;
-	font-weight: bold;
-	font-family: var(--font-mono);
-	background: rgba(0, 0, 0, 0.125);
-	border-radius: var(--border-radius);
-	padding: 0.125rem 0.5rem;
-	overflow-x: auto;
 	color: var(--text-color);
+	background: var(--tertiary-color);
+	padding: 0.0625rem 0.25rem;
+	font-size: 75%;
+	font-family: var(--font-mono);
+	font-weight: bold;
+	font-style: italic;
+	overflow-x: auto;
+}
+pre {
+	font-style: normal;
 }
 
 input, button, .button {
@@ -273,16 +282,14 @@ input, button, .button {
 :is(button, .button, input[type="submit"]):hover {
 	background: var(--accent-secondary-color);
 	box-shadow: var(--3d-shadow), 0px 2px 8px rgba(0, 0, 0, 0.5);
-	transform: scale(1.0125);
 	transition: 0.2s;
 }
 :is(button, .button, input[type="submit"]):active,
 :is(button, .button, input[type="submit"]):focus:active {
 	background: var(--accent-secondary-color);
-	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-	outline: 3px solid var(--accent-color);
+	box-shadow: var(--3d-shadow-active);
+	outline: 3px solid var(--tertiary-color);
 	animation: none;
-	transform: scale(0.98) !important;
 }
 :is(button, .button, input[type="submit"]):focus {
 	outline: none;
@@ -300,12 +307,12 @@ small :is(button, .button, input[type="submit"]) {
 
 @keyframes button-throbber {
 	0% {
-		background: goldenrod;
-		outline: 3px solid var(--tertiary-color);
+		background: var(--accent-color);
+		outline: 3px solid var(--accent-secondary-color);
 	}
 	100% {
-		background: orange;
-		outline: 3px solid darkgoldenrod;
+		background: var(--accent-secondary-color);
+		outline: 3px solid var(--border-color);
 	}
 }
 

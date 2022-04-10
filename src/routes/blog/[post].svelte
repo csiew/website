@@ -115,10 +115,18 @@
     padding: 2rem 2.5rem 3rem 2.5rem;
     color: var(--text-color);
     border-radius: 0 0 var(--border-radius) var(--border-radius);
+    font-family: var(--font-article);
+    line-height: 1.4;
   }
 
+  article :is(h1, sub) {
+    font-family: var(--font-family);
+  }
   article h1 {
     line-height: 1.125;
+  }
+  article sub {
+    font-weight: inherit;
   }
 
   .loading {

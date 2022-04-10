@@ -91,26 +91,25 @@
 		background: var(--secondary-color);
 		border-color: var(--border-color);
 		box-shadow: var(--3d-shadow), var(--element-shadow);
-		transform: scale(1.00625);
 	}
 	.post-list a:active {
 		color: var(--secondary-color);
 		background: var(--text-color);
 		box-shadow: none;
-		transform: scale(1);
 	}
 	.post-list h3 {
 		margin: 0;
 		padding: 0;
-		font-size: 1.5rem;
-		font-weight: 500;
+		font-size: 120%;
+    font-family: var(--font-family);
+		font-weight: 800;
 		line-height: 1;
 	}
 	.post-list sub {
 		margin: 0;
 		padding: 0;
 		color: var(--subtitle-color);
-		font-size: 0.9rem;
+		font-size: 80%;
 		font-weight: 400;
 		line-height: 1;
 	}
