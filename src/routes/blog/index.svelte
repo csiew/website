@@ -7,7 +7,7 @@
 
 <script lang="ts">
 	import { onDestroy, onMount } from "svelte";
-	import { type BlogPost, store } from "./journal.store";
+	import { type BlogPost, initialiseStore, store } from "./journal.store";
 
 	let posts: BlogPost[] = [];
 
@@ -20,6 +20,7 @@
 	});
 
 	onMount(() => {
+		initialiseStore();
 		document.getElementsByTagName("main")[0].scrollTo({ top: 0 });
 	});
 
