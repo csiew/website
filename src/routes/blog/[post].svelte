@@ -8,38 +8,30 @@
 <script lang="ts">
   import { page } from "$app/stores";
   import { onMount } from "svelte";
-  import type { PostEntry } from "../../types/PostEntry";
-  import postManifest from "./post_manifest.json";
+	import { type BlogPost, getPost } from "./journal.store";
 	import SvelteMarkdown from "svelte-markdown";
   import MdArrowBack from "svelte-icons/md/MdArrowBack.svelte";
 
   let postId = $page.params.post;
-  let postMetadata = postManifest.posts.filter(p => p.id === postId)[0] ?? undefined;
-  let postContent = "";
+  let post: BlogPost = {
+    id: "",
+    title: "",
+    date: "",
+    content: ""
+  };
   let isLoading = true;
-
-  async function getPostContent(metadata: PostEntry) {
-    if (metadata) {
-      try {
-        const response = await fetch(metadata.path);
-        postContent = await response.text();
-        isLoading = false;
-      } catch (err) {
-        console.error(err);
-      }
-    }
-  }
 
   onMount(async () => {
 		document.getElementsByTagName("main")[0].scrollTo({ top: 0 });
-    await getPostContent(postMetadata);
+    post = getPost(postId);
+    isLoading = false;
   });
 </script>
 
 <svelte:head>
-  <title>{postMetadata.title ?? "Blog"} | Clarence Siew</title>
+  <title>{post.title ?? "Blog"} | Clarence Siew</title>
   <meta charset="UTF-8">
-  <meta name="description" content={postContent.slice(0, 256) + "..."}>
+  <meta name="description" content={post.content.slice(0, 256) + "..."}>
   <meta name="keywords" content="Clarence Siew, Clarence, Siew, HTML, CSS, JavaScript, React, Vue, Svelte, Node, Express, Penang, Malaysia, Melbourne, Australia">
   <meta name="author" content="Clarence Siew">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -54,10 +46,10 @@
     </div>
     <article>
       {#if !isLoading}
-        <h1>{postMetadata.title}</h1>
-        <sub>{new Date(postMetadata.date).toLocaleString()}</sub>
+        <h1>{post.title}</h1>
+        <sub>{new Date(post.date).toLocaleString()}</sub>
         <hr />
-        <SvelteMarkdown source={postContent} />
+        <SvelteMarkdown source={post.content} />
       {:else}
         <span class="loading engrave">
           <span class="loading-text">Loading</span>
