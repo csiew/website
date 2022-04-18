@@ -30,9 +30,9 @@
     }
   }
 
-  onMount(() => {
-    getPostContent(postMetadata);
+  onMount(async () => {
 		document.getElementsByTagName("main")[0].scrollTo({ top: 0 });
+    await getPostContent(postMetadata);
   });
 </script>
 
@@ -59,8 +59,8 @@
         <hr />
         <SvelteMarkdown source={postContent} />
       {:else}
-        <span class="loading">
-          Loading
+        <span class="loading engrave">
+          <span class="loading-text">Loading</span>
         </span>
       {/if}
     </article>
@@ -137,11 +137,22 @@
     width: 100%;
     margin: 0;
     padding: 2rem;
-    background: var(--primary-color);
-    border-radius: var(--border-radius);
-    box-shadow: var(--element-shadow) inset;
-    text-shadow: 0px 1px 1px white;
     text-align: center;
+  }
+  .loading-text {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    animation: loading-throbber infinite alternate-reverse 0.5s;
+  }
+
+  @keyframes loading-throbber {
+    0% {
+      opacity: 100%;
+    }
+    100% {
+      opacity: 50%;
+    }
   }
 
 	@media (max-width: 720px) {

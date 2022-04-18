@@ -1,10 +1,10 @@
 :root {
 	/* FONTS */
 	--system-font-family: ui-sans-serif, 'system-ui', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-	--font-family: 'Alegreya Sans', var(--system-font-family);
-	--font-heading: 'Alegreya Sans SC', var(--font-family);
-	--font-mono: 'JetBrains Mono', Menlo, Monaco, 'Cascadia Code', Consolas, monospace;
-	--font-article: Alegreya, var(--font-family);
+	--font-family: 'Fira Sans', var(--system-font-family);
+	--font-heading: 'Fira Sans', var(--font-family);
+	--font-mono: 'Fira Code', Menlo, Monaco, 'Cascadia Code', Consolas, monospace;
+	--font-article: 'Fira Sans', var(--font-family);
 	--font-control: var(--font-family);
 	font-family: var(--font-family);
 
@@ -20,8 +20,8 @@
 
 	/* COLORS */
 	--pure-white: #ffffff;
-	--primary-color: rgb(255, 252, 245);
-	--secondary-color: rgb(255, 254, 248);
+	--primary-color: rgb(245, 242, 235);
+	--secondary-color: rgb(255, 254, 245);
 	--tertiary-color: rgb(230, 225, 220);
 	--accent-color: rgb(30, 140, 130);
 	--accent-secondary-color: rgb(40, 150, 140);
@@ -127,12 +127,12 @@ body, #svelte {
 	align-items: stretch;
 	background: var(--primary-color);
 	color: var(--text-color);
-	font-size: 1.5rem;
+	font-size: 1.25rem;
 	font-weight: 400;
 	font-display: fallback;
 	letter-spacing: 0;
 	text-rendering: geometricPrecision;
-	line-height: 1.25;
+	line-height: 1.5;
 	overflow: hidden;
 }
 	
@@ -249,10 +249,9 @@ code, pre {
 	color: var(--text-color);
 	background: var(--tertiary-color);
 	padding: 0.0625rem 0.25rem;
-	font-size: 75%;
+	font-size: 90%;
 	font-family: var(--font-mono);
 	font-weight: bold;
-	font-style: italic;
 	overflow-x: auto;
 }
 pre {
