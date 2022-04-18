@@ -32,13 +32,14 @@
         console.error(loadingText);
       }
     }, 30000);
-    getPost(postId)
-      .then((result) => {
-        post = result;
-        isLoading = false;
-        isSuccess = true;
-      })
-      .catch((err) => console.error(err));
+    try {
+      post = getPost(postId);
+      isSuccess = true;
+    } catch (err) {
+      console.error(err);
+    } finally {
+      isLoading = false;
+    }
   });
 </script>
 

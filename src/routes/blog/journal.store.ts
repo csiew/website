@@ -10,8 +10,8 @@ export type BlogPost = {
 
 export const store: Writable<BlogPost[]> = writable([]);
 
-export async function getPost(id: string): Promise<BlogPost | null> {
-  await initialiseStore();
+export function getPost(id: string): BlogPost | null {
+  initialiseStore();
   let result: BlogPost;
   store.update((posts: BlogPost[]) => {
     result = posts.find((post) => post.id === id);
@@ -20,7 +20,7 @@ export async function getPost(id: string): Promise<BlogPost | null> {
   return result;
 }
 
-export async function initialiseStore(): Promise<void> {
+export function initialiseStore(): void {
   store.update((posts) => {
     if (posts.length === 0) {
       return rawPosts.map((post) => {
@@ -32,5 +32,4 @@ export async function initialiseStore(): Promise<void> {
       return posts;
     }
   });
-  Promise.resolve();
 }

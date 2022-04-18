@@ -14,7 +14,7 @@
 	}
 
 	onMount(async () => {
-		await initBlogStore();
+		initBlogStore();
 		checkIsAtTop();
 	});
 </script>
