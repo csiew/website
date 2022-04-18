@@ -11,25 +11,31 @@ export type BlogPost = {
 export const store: Writable<BlogPost[]> = writable([]);
 
 export function getPost(id: string): BlogPost | null {
-  initialiseStore();
   let result: BlogPost;
   store.update((posts: BlogPost[]) => {
+    if (posts.length === 0) {
+      posts = initialiseStore();
+    }
     result = posts.find((post) => post.id === id);
     return posts;
   });
   return result;
 }
 
-export function initialiseStore(): void {
+export function initialiseStore(): BlogPost[] {
+  let result: BlogPost[];
   store.update((posts) => {
     if (posts.length === 0) {
-      return rawPosts.map((post) => {
-        const result = post as BlogPost;
-        result.content = decodeURI(result.content);
-        return result;
+      result = rawPosts.map((post) => {
+        return {
+          ...post,
+          content: decodeURI(post.content)
+        } as BlogPost;
       });
+      return result;
     } else {
       return posts;
     }
   });
+  return result;
 }
