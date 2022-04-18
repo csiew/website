@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from "svelte";
+	import { initialiseStore as initBlogStore } from "./blog/journal.store";
 	import Header from '$lib/header/Header.svelte';
 	import '../app.css';
 	import '../fonts/FiraSans.css';
@@ -12,7 +13,10 @@
 		isAtTop = mainEl.scrollTop === 0;
 	}
 
-	onMount(checkIsAtTop);
+	onMount(async () => {
+		await initBlogStore();
+		checkIsAtTop();
+	});
 </script>
 
 <svelte:head>

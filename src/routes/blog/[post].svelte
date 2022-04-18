@@ -14,17 +14,31 @@
 
   let postId = $page.params.post;
   let post: BlogPost = {
-    id: "",
+    id: postId,
     title: "",
     date: "",
     content: ""
   };
+  let loadingText = "Loading";
   let isLoading = true;
+  let isSuccess = false;
 
   onMount(async () => {
 		document.getElementsByTagName("main")[0].scrollTo({ top: 0 });
-    post = getPost(postId);
-    isLoading = false;
+    setTimeout(() => {
+      if (isLoading) {
+        isLoading = false;
+        loadingText = "Failed to load post";
+        console.error(loadingText);
+      }
+    }, 30000);
+    getPost(postId)
+      .then((result) => {
+        post = result;
+        isLoading = false;
+        isSuccess = true;
+      })
+      .catch((err) => console.error(err));
   });
 </script>
 
@@ -45,14 +59,16 @@
       </a>
     </div>
     <article>
-      {#if !isLoading}
+      {#if isSuccess && !isLoading}
         <h1>{post.title}</h1>
         <sub>{new Date(post.date).toLocaleString()}</sub>
         <hr />
         <SvelteMarkdown source={post.content} />
       {:else}
         <span class="loading engrave">
-          <span class="loading-text">Loading</span>
+          <span class:loading-text={isLoading}>
+            {loadingText}
+          </span>
         </span>
       {/if}
     </article>
