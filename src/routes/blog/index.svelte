@@ -1,8 +1,8 @@
 <script context="module" lang="ts">
-	import { dev } from '$app/env';
+	import { dev } from "$app/env";
 	
 	export const hydrate = dev;
-	export const prerender = true;
+	export const prerender = false;
 </script>
 
 <script lang="ts">
