@@ -26,12 +26,11 @@
   onMount(async () => {
 		document.getElementsByTagName("main")[0].scrollTo({ top: 0 });
     setTimeout(() => {
-      if (isLoading) {
-        isLoading = false;
+      if (!isSuccess) {
         loadingText = "Failed to load post";
-        console.error(loadingText);
+        isLoading = false;
       }
-    }, 30000);
+    }, 3000);
     try {
       post = getPost(postId);
       isSuccess = true;

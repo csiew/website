@@ -27,7 +27,6 @@
   }
 
   function viewportIsBigEnough(width: number, height: number): boolean {
-    console.log(width, height);
     return width > 768 && height > 390;
   }
 </script>

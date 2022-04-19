@@ -13,10 +13,10 @@
 
 	const unsubscribe = store.subscribe((value: BlogPost[]) => {
 		posts = value.sort((a: BlogPost, b: BlogPost) => {
-			let dateA = new Date(a.date).getTime();
-			let dateB = new Date(b.date).getTime();
-			return dateB > dateA ? 1 : dateA > dateB ? -1 : 0;
-		});
+        const dateA = new Date(a.date).getTime();
+        const dateB = new Date(b.date).getTime();
+        return dateB > dateA ? 1 : dateA > dateB ? -1 : 0;
+      });
 	});
 
 	onMount(() => {
