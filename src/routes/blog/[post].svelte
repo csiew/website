@@ -2,12 +2,12 @@
 	import { dev } from "$app/env";
 	
 	export const hydrate = dev;
-	export const prerender = false;
+	export const prerender = true;
 </script>
 
 <script lang="ts">
   import { page } from "$app/stores";
-  import { onDestroy, onMount } from "svelte";
+  import { onDestroy } from "svelte";
 	import SvelteMarkdown from "svelte-markdown";
   import MdArrowBack from "svelte-icons/md/MdArrowBack.svelte";
 	import { type BlogPost, store } from "./journal.store";
@@ -28,20 +28,13 @@
 
   const unsubscribe = store.subscribe((value: BlogPost[]) => {
     posts = value.sort(sortPosts);
-  });
-
-  onMount(async () => {
-		document.getElementsByTagName("main")[0].scrollTo({ top: 0 });
-    try {
-      post = posts.find((post) => post.id === postId);
-      if (post) {
-        isSuccess = true;
-      }
-    } catch (err) {
-      console.error(err);
-    } finally {
-      isLoading = false;
+    post = posts.find((post) => post.id === postId);
+    if (post) {
+      isSuccess = true;
+    } else {
+      console.error("Could not load blog post");
     }
+    isLoading = false;
   });
 
   onDestroy(unsubscribe);
