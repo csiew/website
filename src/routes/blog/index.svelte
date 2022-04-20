@@ -8,15 +8,12 @@
 <script lang="ts">
 	import { onDestroy, onMount } from "svelte";
 	import { type BlogPost, store } from "./journal.store";
+	import sortPosts from "./sortPosts";
 
 	let posts: BlogPost[] = [];
 
 	const unsubscribe = store.subscribe((value: BlogPost[]) => {
-		posts = value.sort((a: BlogPost, b: BlogPost) => {
-        const dateA = new Date(a.date).getTime();
-        const dateB = new Date(b.date).getTime();
-        return dateB > dateA ? 1 : dateA > dateB ? -1 : 0;
-      });
+		posts = value.sort(sortPosts);
 	});
 
 	onMount(() => {
@@ -95,7 +92,7 @@
 	.post-list a:hover {
 		background: var(--secondary-color);
 		border-color: var(--border-color);
-		box-shadow: var(--3d-shadow), var(--element-shadow);
+		box-shadow: var(--element-shadow);
 	}
 	.post-list a:active {
 		color: var(--secondary-color);

@@ -91,7 +91,7 @@
 		color: var(--secondary-color);
 		background: var(--accent-color);
 		border-color: var(--accent-color);
-		box-shadow: var(--3d-shadow), var(--element-shadow);
+		box-shadow: var(--element-shadow);
 	}
 	.shortcuts a:active {
 		box-shadow: none;

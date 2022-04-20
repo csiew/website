@@ -7,10 +7,11 @@
 
 <script lang="ts">
   import { page } from "$app/stores";
-  import { onMount } from "svelte";
-	import { type BlogPost, getPost } from "./journal.store";
+  import { onDestroy, onMount } from "svelte";
 	import SvelteMarkdown from "svelte-markdown";
   import MdArrowBack from "svelte-icons/md/MdArrowBack.svelte";
+	import { type BlogPost, store } from "./journal.store";
+  import sortPosts from "./sortPosts";
 
   let postId = $page.params.post;
   let post: BlogPost = {
@@ -23,23 +24,27 @@
   let isLoading = true;
   let isSuccess = false;
 
+  let posts: BlogPost[] = [];
+
+  const unsubscribe = store.subscribe((value: BlogPost[]) => {
+    posts = value.sort(sortPosts);
+  });
+
   onMount(async () => {
 		document.getElementsByTagName("main")[0].scrollTo({ top: 0 });
-    setTimeout(() => {
-      if (!isSuccess) {
-        loadingText = "Failed to load post";
-        isLoading = false;
-      }
-    }, 3000);
     try {
-      post = getPost(postId);
-      isSuccess = true;
+      post = posts.find((post) => post.id === postId);
+      if (post) {
+        isSuccess = true;
+      }
     } catch (err) {
       console.error(err);
     } finally {
       isLoading = false;
     }
   });
+
+  onDestroy(unsubscribe);
 </script>
 
 <svelte:head>
@@ -124,7 +129,7 @@
     color: var(--text-color);
     border-radius: 0 0 var(--border-radius) var(--border-radius);
     font-family: var(--font-article);
-    line-height: 1.4;
+    line-height: inherit;
   }
 
   article :is(h1, sub) {

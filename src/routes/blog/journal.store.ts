@@ -16,12 +16,3 @@ export const store: Writable<BlogPost[]> = writable(
     } as BlogPost;
   })
 );
-
-export function getPost(id: string): BlogPost | null {
-  let result: BlogPost;
-  store.update((posts: BlogPost[]) => {
-    result = posts.find((post) => post.id === id);
-    return posts;
-  });
-  return result;
-}

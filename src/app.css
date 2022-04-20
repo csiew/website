@@ -15,8 +15,14 @@
 	--link-border-radius: var(--border-radius);
 	--element-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
 	--toast-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
-	--3d-shadow: 0px -3px 0px rgba(0, 0, 0, 0.125) inset;
-	--3d-shadow-active: 0px 3px 0px rgba(0, 0, 0, 0.125) inset;
+	--3d-shadow:
+		0px 2px 2px rgba(255, 255, 255, 0.5) inset,
+		0px 8px 8px rgba(255, 255, 255, 0.25) inset,
+		0px -2px 8px rgba(0, 0, 0, 0.25) inset,
+		0px -20px 16px rgba(0, 0, 0, 0.125) inset;
+	--3d-shadow-active:
+		0px 8px 16px rgba(0, 0, 0, 0.5) inset,
+		var(--3d-shadow);
 
 	/* COLORS */
 	--pure-white: #ffffff;
@@ -80,7 +86,7 @@ body, #svelte {
 	align-items: stretch;
 	background: var(--primary-color);
 	color: var(--text-color);
-	font-size: 1.25rem;
+	font-size: 1.125rem;
 	font-weight: 400;
 	font-display: fallback;
 	letter-spacing: 0;
@@ -227,19 +233,19 @@ input, button, .button {
 	white-space: nowrap;
 	border: var(--border-width) solid var(--accent-secondary-color);
 	border-radius: var(--button-border-radius);
-	box-shadow: var(--3d-shadow), 0px 2px 8px rgba(0, 0, 0, 0.25);
+	box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
 	cursor: pointer;
 	transition: 0.2s ease-in-out;
 }
 :is(button, .button, input[type="submit"]):hover {
 	background: var(--accent-secondary-color);
-	box-shadow: var(--3d-shadow), 0px 2px 8px rgba(0, 0, 0, 0.5);
+	box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
 	transition: 0.2s;
 }
 :is(button, .button, input[type="submit"]):active,
 :is(button, .button, input[type="submit"]):focus:active {
 	background: var(--accent-secondary-color);
-	box-shadow: var(--3d-shadow-active);
+	box-shadow: none;
 	outline: 3px solid var(--tertiary-color);
 	animation: none;
 }
@@ -407,7 +413,7 @@ section {
 
 .card {
 	background: var(--secondary-color);
-	box-shadow: var(--3d-shadow), var(--element-shadow);
+	box-shadow: var(--element-shadow);
 }
 .card .heading {
 	display: inline-flex;
@@ -657,7 +663,7 @@ section {
 		justify-content: center;
 		align-items: center;
 		width: 100%;
-		font-size: 1.25rem;
+		font-size: 1.125rem;
 	}
 
 	footer {
