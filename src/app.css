@@ -20,38 +20,38 @@
 
 	/* COLORS */
 	--pure-white: #ffffff;
-	--primary-color: rgb(245, 242, 235);
-	--secondary-color: rgb(255, 254, 245);
-	--tertiary-color: rgb(230, 225, 220);
-	--accent-color: rgb(30, 140, 130);
-	--accent-secondary-color: rgb(40, 150, 140);
-	--heading-color: rgb(70, 68, 65);
-	--subtitle-color: rgb(120, 118, 115);
-	--footer-color: rgb(120, 118, 115);
-	--text-color: rgb(80, 78, 75);
-	--text-color-secondary: rgb(100, 98, 95);
-	--text-color-tertiary: rgb(150, 148, 145);
-	--border-color: rgb(210, 205, 200);
-	--selection-background: rgb(210, 205, 200);
+	--primary-color: var(--material-color-brown-50);
+	--secondary-color: var(--material-color-grey-50);
+	--tertiary-color: var(--material-color-grey-100);
+	--accent-color: var(--material-color-deep-orange-900);
+	--accent-secondary-color: var(--material-color-deep-orange-800);
+	--heading-color: var(--material-color-grey-700);
+	--subtitle-color: var(--material-color-grey-600);
+	--footer-color: var(--material-color-grey-700);
+	--text-color: var(--material-color-grey-900);
+	--text-color-secondary: var(--material-color-grey-800);
+	--text-color-tertiary: var(--material-color-grey-700);
+	--border-color: var(--material-color-grey-400);
+	--selection-background: var(--material-color-teal);
 	--footer-background: none;
 }
 
 @media only screen and (prefers-color-scheme: dark) {
 	:root {
 		/* COLORS */
-		--primary-color: rgb(30, 28, 25);
-		--secondary-color: rgb(40, 38, 35);
-		--tertiary-color: rgb(50, 48, 45);
-		--accent-color: rgb(50, 160, 150);
-		--accent-secondary-color: rgb(60, 170, 160);
-		--heading-color: rgb(190, 188, 185);
-		--subtitle-color: rgb(190, 188, 185);
-		--footer-color: rgb(160, 158, 155);
-		--text-color: rgb(230, 228, 225);
-		--text-color-secondary: rgb(210, 208, 205);
-		--text-color-tertiary: rgb(160, 158, 155);
-		--border-color: rgb(80, 75, 70);
-		--selection-background: #87ceeb;
+		--primary-color: var(--material-color-blue-grey-900);
+		--secondary-color: var(--material-color-blue-grey-800);
+		--tertiary-color: var(--material-color-blue-grey-700);
+		--accent-color: var(--material-color-teal-200);
+		--accent-secondary-color: var(--material-color-teal-300);
+		--heading-color: var(--material-color-blue-grey-200);
+		--subtitle-color: var(--material-color-blue-grey-300);
+		--footer-color: var(--material-color-grey-400);
+		--text-color: var(--material-color-grey-200);
+		--text-color-secondary: var(--material-color-grey-300);
+		--text-color-tertiary: var(--material-color-grey-400);
+		--border-color: var(--material-color-blue-grey-700);
+		--selection-background: var(--material-color-blue-grey-300);
 		--footer-background: none;
 	}
 
@@ -61,53 +61,6 @@
 
 	.wireframe-dynamic-color {
 		filter: invert(1);
-	}
-}
-
-@media only screen and (prefers-contrast: more) {
-	:root {
-		/* MISC */
-		--border-width: 3px;
-		--element-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
-
-		/* COLORS */
-		--primary-color: #ffffff;
-		--secondary-color: #ffffff;
-		--tertiary-color: #f1f1f1;
-		--accent-color: #0000ff;
-		--accent-secondary-color: #000099;
-		--heading-color: #222222;
-		--subtitle-color: #333333;
-		--footer-color: black;
-		--text-color: black;
-		--border-color: black;
-		--selection-background: #87ceeb;
-		--footer-background: none;
-	}
-
-	#svelte {
-		font-weight: 450 !important;
-	}
-}
-
-@media only screen and (prefers-contrast: more) and (prefers-color-scheme: dark) {
-	:root {
-		/* MISC */
-		--element-shadow: 4px 4px 0px rgba(255, 255, 255, 0.5);
-
-		/* COLORS */
-		--primary-color: #000000;
-		--secondary-color: #000000;
-		--tertiary-color: #222222;
-		--accent-color: rgb(132, 165, 255);
-		--accent-secondary-color: rgba(102, 135, 225);
-		--heading-color: #ffffff;
-		--subtitle-color: #dddddd;
-		--footer-color: #ffffff;
-		--text-color: #ffffff;
-		--border-color: #ffffff;
-		--selection-background: #87ceeb;
-		--footer-background: none;
 	}
 }
 
@@ -272,7 +225,7 @@ input, button, .button {
 	text-align: center;
 	font-weight: 600;
 	white-space: nowrap;
-	border: var(--border-width) solid var(--accent-color);
+	border: var(--border-width) solid var(--accent-secondary-color);
 	border-radius: var(--button-border-radius);
 	box-shadow: var(--3d-shadow), 0px 2px 8px rgba(0, 0, 0, 0.25);
 	cursor: pointer;
