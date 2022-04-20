@@ -1,11 +1,10 @@
 <script lang="ts">
 	import { onMount } from "svelte";
 	import Header from '$lib/header/Header.svelte';
+	import '../colors.css';
 	import '../app.css';
-	import '../fonts/JetBrainsMono.css';
-	import '../fonts/Alegreya.css';
-	import '../fonts/AlegreyaSans.css';
-	import '../fonts/AlegreyaSansSC.css';
+	import '../fonts/FiraSans.css';
+	import '../fonts/FiraCode.css';
 
 	let mainEl: HTMLElement;
 	let isAtTop = true;
@@ -26,7 +25,7 @@
 <main bind:this={mainEl} on:scroll={checkIsAtTop}>
 	<slot />
 	<footer>
-		<p>Version 5.7.0<br/><a sveltekit:prefetch href="/versions">Version history</a></p>
+		<p>Version 5.8.0<br/><a sveltekit:prefetch href="/versions">Version history</a></p>
 		<p>Copyright &copy; 2022 Clarence Siew</p>
 	</footer>
 </main>

@@ -1,24 +1,26 @@
 <script context="module" lang="ts">
-	import { dev } from '$app/env';
+	import { dev } from "$app/env";
 	
 	export const hydrate = dev;
-	export const prerender = true;
+	export const prerender = false;
 </script>
 
 <script lang="ts">
-	import { onMount } from "svelte";
-	import type { PostEntry } from "../../types/PostEntry";
-	import postManifest from "./post_manifest.json";
+	import { onDestroy, onMount } from "svelte";
+	import { type BlogPost, store } from "./journal.store";
+	import sortPosts from "./sortPosts";
 
-	let posts = postManifest.posts.sort((a: PostEntry, b: PostEntry) => {
-		let dateA = new Date(a.date).getTime();
-		let dateB = new Date(b.date).getTime();
-		return dateB > dateA ? 1 : dateA > dateB ? -1 : 0;
+	let posts: BlogPost[] = [];
+
+	const unsubscribe = store.subscribe((value: BlogPost[]) => {
+		posts = value.sort(sortPosts);
 	});
 
 	onMount(() => {
 		document.getElementsByTagName("main")[0].scrollTo({ top: 0 });
 	});
+
+	onDestroy(unsubscribe);
 </script>
 
 <svelte:head>
@@ -90,7 +92,7 @@
 	.post-list a:hover {
 		background: var(--secondary-color);
 		border-color: var(--border-color);
-		box-shadow: var(--3d-shadow), var(--element-shadow);
+		box-shadow: var(--element-shadow);
 	}
 	.post-list a:active {
 		color: var(--secondary-color);

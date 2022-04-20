@@ -21,6 +21,11 @@
 
 <svelte:head>
 	<title>Home | Clarence Siew</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="Software engineer based in Melbourne.">
+  <meta name="keywords" content="Clarence Siew, Clarence, Siew, HTML, CSS, JavaScript, React, Vue, Svelte, Node, Express, Penang, Malaysia, Melbourne, Australia">
+  <meta name="author" content="Clarence Siew">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </svelte:head>
 
 <div class="content">

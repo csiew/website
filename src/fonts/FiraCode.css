@@ -1,0 +1,8 @@
+/* Fira Code */
+@font-face {
+	font-family: 'Fira Code';
+	src: url('./fira-code/FiraCode-VariableFont_wght.ttf');
+	font-weight: 100 1000;
+  font-style: normal;
+	font-stretch: 25% 151%;
+}

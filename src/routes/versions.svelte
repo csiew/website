@@ -17,6 +17,7 @@
 
 <svelte:head>
 	<title>Versions | Clarence Siew</title>
+	<meta name="description" content="Clarence has been building his personal site since 2018.">
 </svelte:head>
 
 <div class="content">

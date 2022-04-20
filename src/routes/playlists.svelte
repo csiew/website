@@ -17,12 +17,9 @@
 	});
 </script>
 
-<svelte:head>
-	<title>Playlists | Clarence Siew</title>
-</svelte:head>
-
 <SectionedPage
 	title="Playlists"
+	description="Clarence has been building Spotify playlists for every month or season since 2015."
 	sections={playlistsJson.collection}
 	noItemsMessage={noItemsMessage}
 >

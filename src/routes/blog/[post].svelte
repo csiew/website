@@ -7,39 +7,43 @@
 
 <script lang="ts">
   import { page } from "$app/stores";
-  import { onMount } from "svelte";
-  import type { PostEntry } from "../../types/PostEntry";
-  import postManifest from "./post_manifest.json";
+  import { onDestroy } from "svelte";
 	import SvelteMarkdown from "svelte-markdown";
   import MdArrowBack from "svelte-icons/md/MdArrowBack.svelte";
+	import { type BlogPost, store } from "./journal.store";
+  import sortPosts from "./sortPosts";
 
   let postId = $page.params.post;
-  let postMetadata = postManifest.posts.filter(p => p.id === postId)[0] ?? undefined;
-  let postContent = "";
+  let post: BlogPost = {
+    id: postId,
+    title: "",
+    date: "",
+    content: ""
+  };
+  let loadingText = "Loading";
   let isLoading = true;
+  let isSuccess = false;
 
-  async function getPostContent(metadata: PostEntry) {
-    if (metadata) {
-      try {
-        const response = await fetch(metadata.path);
-        postContent = await response.text();
-        isLoading = false;
-      } catch (err) {
-        console.error(err);
-      }
+  let posts: BlogPost[] = [];
+
+  const unsubscribe = store.subscribe((value: BlogPost[]) => {
+    posts = value.sort(sortPosts);
+    post = posts.find((post) => post.id === postId);
+    if (post) {
+      isSuccess = true;
+    } else {
+      console.error("Could not load blog post");
     }
-  }
-
-  onMount(() => {
-    getPostContent(postMetadata);
-		document.getElementsByTagName("main")[0].scrollTo({ top: 0 });
+    isLoading = false;
   });
+
+  onDestroy(unsubscribe);
 </script>
 
 <svelte:head>
-  <title>{postMetadata.title ?? "Blog"} | Clarence Siew</title>
+  <title>{post.title ?? "Blog"} | Clarence Siew</title>
   <meta charset="UTF-8">
-  <meta name="description" content={postContent.slice(0, 256) + "..."}>
+  <meta name="description" content={post.content.slice(0, 256) + "..."}>
   <meta name="keywords" content="Clarence Siew, Clarence, Siew, HTML, CSS, JavaScript, React, Vue, Svelte, Node, Express, Penang, Malaysia, Melbourne, Australia">
   <meta name="author" content="Clarence Siew">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -53,14 +57,16 @@
       </a>
     </div>
     <article>
-      {#if !isLoading}
-        <h1>{postMetadata.title}</h1>
-        <sub>{new Date(postMetadata.date).toLocaleString()}</sub>
+      {#if isSuccess && !isLoading}
+        <h1>{post.title}</h1>
+        <sub>{new Date(post.date).toLocaleString()}</sub>
         <hr />
-        <SvelteMarkdown source={postContent} />
+        <SvelteMarkdown source={post.content} />
       {:else}
-        <span class="loading">
-          Loading
+        <span class="loading engrave">
+          <span class:loading-text={isLoading}>
+            {loadingText}
+          </span>
         </span>
       {/if}
     </article>
@@ -116,7 +122,7 @@
     color: var(--text-color);
     border-radius: 0 0 var(--border-radius) var(--border-radius);
     font-family: var(--font-article);
-    line-height: 1.4;
+    line-height: inherit;
   }
 
   article :is(h1, sub) {
@@ -137,11 +143,22 @@
     width: 100%;
     margin: 0;
     padding: 2rem;
-    background: var(--primary-color);
-    border-radius: var(--border-radius);
-    box-shadow: var(--element-shadow) inset;
-    text-shadow: 0px 1px 1px white;
     text-align: center;
+  }
+  .loading-text {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    animation: loading-throbber infinite alternate-reverse 0.5s;
+  }
+
+  @keyframes loading-throbber {
+    0% {
+      opacity: 100%;
+    }
+    100% {
+      opacity: 50%;
+    }
   }
 
 	@media (max-width: 720px) {
