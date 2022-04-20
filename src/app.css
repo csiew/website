@@ -39,19 +39,19 @@
 @media only screen and (prefers-color-scheme: dark) {
 	:root {
 		/* COLORS */
-		--primary-color: var(--material-color-blue-grey-900);
-		--secondary-color: var(--material-color-blue-grey-800);
-		--tertiary-color: var(--material-color-blue-grey-700);
-		--accent-color: var(--material-color-teal-200);
-		--accent-secondary-color: var(--material-color-teal-300);
-		--heading-color: var(--material-color-blue-grey-200);
-		--subtitle-color: var(--material-color-blue-grey-300);
+		--primary-color: var(--material-color-grey-900);
+		--secondary-color: var(--material-color-grey-900);
+		--tertiary-color: var(--material-color-grey-800);
+		--accent-color: var(--material-color-teal-300);
+		--accent-secondary-color: var(--material-color-teal-400);
+		--heading-color: var(--material-color-grey-200);
+		--subtitle-color: var(--material-color-grey-300);
 		--footer-color: var(--material-color-grey-400);
 		--text-color: var(--material-color-grey-200);
 		--text-color-secondary: var(--material-color-grey-300);
 		--text-color-tertiary: var(--material-color-grey-400);
-		--border-color: var(--material-color-blue-grey-700);
-		--selection-background: var(--material-color-blue-grey-300);
+		--border-color: var(--material-color-grey-700);
+		--selection-background: var(--material-color-grey-300);
 		--footer-background: none;
 	}
 
