@@ -91,7 +91,7 @@ body, #svelte {
 	font-display: fallback;
 	letter-spacing: 0;
 	text-rendering: geometricPrecision;
-	line-height: 1.5;
+	line-height: 1.25;
 	overflow: hidden;
 }
 	
