@@ -20,6 +20,7 @@
 
 <SectionedPage
 	title="Projects"
+	description="A selection of personal projects."
 	sections={projectsJson.projects}
 	noItemsMessage={noItemsMessage}
 >

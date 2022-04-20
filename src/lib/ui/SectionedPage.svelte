@@ -1,11 +1,13 @@
 <script lang="ts">
   export let title: string;
+	export let description: string;
   export let sections: { id: string; name: string; [k: string]: any; }[];
   export let noItemsMessage: string = "Nothing to see here";
 </script>
 
 <svelte:head>
 	<title>{title} | Clarence Siew</title>
+	<meta name="description" content={description}>
 </svelte:head>
 
 <div class="content">
