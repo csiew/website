@@ -33,8 +33,8 @@
 						<sub>{project.timeRange}</sub>
 					</span>
 					<span class="accessories">
-						<a class="button" href={project.url ?? undefined} target={project.url ? "_blank" : undefined} class:disabled={!project.url}>Website</a>
-						<a class="button" href={project.github ?? undefined} target={project.url ? "_blank" : undefined} class:disabled={!project.github}>Repository</a>
+						<a class="button button-small" href={project.url ?? undefined} target={project.url ? "_blank" : undefined} class:disabled={!project.url}>Website</a>
+						<a class="button button-small" href={project.github ?? undefined} target={project.url ? "_blank" : undefined} class:disabled={!project.github}>Repository</a>
 					</span>
 				</div>
 				<div class="body">
