@@ -1,19 +1,14 @@
 <script lang="ts">
-	import { onMount } from "svelte";
-	import Header from '$lib/header/Header.svelte';
-	import '../colors.css';
-	import '../app.css';
-	import '../fonts/FiraSans.css';
-	import '../fonts/FiraCode.css';
+	import "../fonts/FiraSans.css";
+	import "../fonts/FiraCode.css";
+	import "../colors.css";
+	import "../app.css";
+	import "$lib/header/nav.css";
+	import Header from "$lib/header/Header.svelte";
 
-	let mainEl: HTMLElement;
-	let isAtTop = true;
+	let y: number;
 
-	function checkIsAtTop(): void {
-		isAtTop = mainEl.scrollTop === 0;
-	}
-
-	onMount(checkIsAtTop);
+	$: isAtTop = (y === 0);
 </script>
 
 <svelte:head>
@@ -21,11 +16,13 @@
 	<link rel="apple-touch-icon" href="/profile.jpg" />
 </svelte:head>
 
+<svelte:window bind:scrollY={y} />
+
 <Header {isAtTop} />
-<main bind:this={mainEl} on:scroll={checkIsAtTop}>
+<main>
 	<slot />
 	<footer>
-		<p>Version 5.8.0<br/><a sveltekit:prefetch href="/versions">Version history</a></p>
+		<p>Version 5.8.1<br/><a sveltekit:prefetch href="/versions">Version history</a></p>
 		<p>Copyright &copy; 2022 Clarence Siew</p>
 	</footer>
 </main>
