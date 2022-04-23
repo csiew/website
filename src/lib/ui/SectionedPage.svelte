@@ -68,7 +68,7 @@
 		flex-flow: column;
 		align-items: flex-start;
 		justify-content: flex-start;
-		gap: 0.25rem;
+		gap: 0.5rem;
 		margin: 0;
 		padding: 1rem;
 	}
@@ -81,22 +81,26 @@
 		width: min-content;
 		margin: 0;
 		padding: 0.25rem 0.5rem;
-		background: none;
-		border: var(--border-width) solid var(--border-color);
+		color: var(--button-fg-color);
+		background: var(--button-bg-color);
+		border: var(--border-width) solid var(--button-border-color);
 		border-radius: var(--button-border-radius);
-		box-shadow: none;
+		box-shadow: var(--button-shadow);
 		font-weight: 600;
 		text-decoration: none;
 		white-space: nowrap;
 	}
 	.shortcuts a:hover {
-		color: var(--secondary-color);
-		background: var(--accent-color);
-		border-color: var(--accent-color);
-		box-shadow: var(--button-shadow);
+		color: var(--button-fg-color-hover);
+		background: var(--button-bg-color-hover);
+		box-shadow: var(--button-shadow-hover);
+		transform: translate(var(--button-hover-transform-x), var(--button-hover-transform-y)) scale(var(--button-hover-transform-scale));
 	}
 	.shortcuts a:active {
-		box-shadow: none;
+		color: var(--button-fg-color-active);
+		background: var(--button-bg-color-active);
+		box-shadow: var(--button-shadow-active);
+		transform: translate(var(--button-active-transform-x), var(--button-active-transform-y)) scale(var(--button-active-transform-scale));
 	}
 
 	.list {
@@ -112,7 +116,7 @@
     margin: 0;
     padding: 1.5rem 0;
     width: 100%;
-    border-bottom: 3px solid var(--border-color);
+    border-bottom: var(--hr-border);
   }
   :global(.nav-view .link-grid:first-child) {
     padding-top: 0;

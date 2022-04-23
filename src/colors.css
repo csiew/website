@@ -1,5 +1,10 @@
-/* https://gist.github.com/MrGrigri/9b11ab71117a30a7ecfc85055f203be2 */
+
 :root {
+	--pure-white: #ffffff;
+	--pure-black: #000000;
+
+	/* https://gist.github.com/MrGrigri/9b11ab71117a30a7ecfc85055f203be2 */
+	
 	--material-color-red: #f44336;
 	--material-color-red-50: #ffebee;
 	--material-color-red-100: #ffcdd2;

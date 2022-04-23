@@ -1,6 +1,6 @@
 <script lang="ts">
-	import "../fonts/FiraSans.css";
-	import "../fonts/FiraCode.css";
+	import "../fonts/SplineSans.css";
+	import "../fonts/JetBrainsMono.css";
 	import "../colors.css";
 	import "../app.css";
 	import "$lib/header/nav.css";
@@ -22,7 +22,7 @@
 <main>
 	<slot />
 	<footer>
-		<p>Version 5.8.1<br/><a sveltekit:prefetch href="/versions">Version history</a></p>
+		<p>Version 5.9.0<br/><a sveltekit:prefetch href="/versions">Version history</a></p>
 		<p>Copyright &copy; 2022 Clarence Siew</p>
 	</footer>
 </main>

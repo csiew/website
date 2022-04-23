@@ -1,61 +1,6 @@
 [
   {
     "type": "era",
-    "title": "Svelte era",
-    "body": null,
-    "versions": [
-      {
-        "type": "version",
-        "title": "Version 5.0",
-        "date": "2/10/2021 - Present",
-        "body": [
-          "The website was migrated to yet another frontend framework, Svelte. The original plan was to use this version as a chance to learn Tailwind CSS as well, but I just couldn't help playing around with some custom CSS to achieve this mid-2010s skeumorphic aesthetic.",
-          "Unlike the previous version of the website, version 5.0 does not use the Brioche UI library."
-        ]
-      }
-    ]
-  },
-  {
-    "type": "era",
-    "title": "React era",
-    "body": null,
-    "versions": [
-      {
-        "type": "version",
-        "title": "Version 3.0",
-        "date": "19/06/2021 - 28/07/2021",
-        "body": [
-          "Another overhaul of the website, but using React this time. I wanted to practice using functional components rather than class components, and to take advantage of React Hooks. The CSS from the previous site was getting huge and unwieldy too, so it's high-time to simplify it.",
-          "This was the most short-lived major version of the site. Its custom components and CSS stylesheets formed the basis of the [Brioche](https://github.com/csiew/brioche) UI library for React. The following version of this site was the first to use the library rather than internal custom components."
-        ]
-      },
-      {
-        "type": "version",
-        "title": "Version 4.0",
-        "date": "28/07/2021 - 2/10/2021",
-        "body": [
-          "It was identical in appearance, layout, and content to version 3.0, however it was the first version to use the [Brioche](https://github.com/csiew/brioche) UI library. [Click here to visit this version of the site.](https://v4.clarencesiew.com)"
-        ]
-      }
-    ]
-  },
-  {
-    "type": "era",
-    "title": "Vue era",
-    "body": null,
-    "versions": [
-      {
-        "type": "version",
-        "title": "Version 2.0",
-        "date": "24/09/2020 - 19/06/2021",
-        "body": [
-          "A complete overhaul of the website as a playground to learn Vue. Like version 1.0, this iteration of the site went through drastical design changes throughout its lifetime. The CSS stylesheets I developed for this site largely came from my abandoned podcast app project. [Click here to visit this version of the site.](https://v2.clarencesiew.com)"
-        ]
-      }
-    ]
-  },
-  {
-    "type": "era",
     "title": "Pre-framework era",
     "body": null,
     "versions": [
@@ -73,6 +18,62 @@
         "date": "2020 - 24/09/2020",
         "body": [
           "Stripped back to just a single landing page. It had nothing more than links to my social media accounts and side projects. [Click here to visit this version of the site.](https://csiew.github.io/index.html)"
+        ]
+      }
+    ]
+  },
+  {
+    "type": "era",
+    "title": "Vue era",
+    "body": null,
+    "versions": [
+      {
+        "type": "version",
+        "title": "Version 2.x",
+        "date": "24/09/2020 - 19/06/2021",
+        "body": [
+          "A complete overhaul of the website as a playground to learn Vue. Like version 1.0, this iteration of the site went through drastical design changes throughout its lifetime. The CSS stylesheets I developed for this site largely came from my abandoned podcast app project. [Click here to visit this version of the site.](https://v2.clarencesiew.com)"
+        ]
+      }
+    ]
+  },
+  {
+    "type": "era",
+    "title": "React era",
+    "body": null,
+    "versions": [
+      {
+        "type": "version",
+        "title": "Version 3.x",
+        "date": "19/06/2021 - 28/07/2021",
+        "body": [
+          "Another overhaul of the website, but using React this time. I wanted to practice using functional components rather than class components, and to take advantage of React Hooks. The CSS from the previous site was getting huge and unwieldy too, so it's high-time to simplify it.",
+          "This was the most short-lived major version of the site. Its custom components and CSS stylesheets formed the basis of the [Brioche](https://github.com/csiew/brioche) UI library for React. The following version of this site was the first to use the library rather than internal custom components."
+        ]
+      },
+      {
+        "type": "version",
+        "title": "Version 4.x",
+        "date": "28/07/2021 - 2/10/2021",
+        "body": [
+          "It was identical in appearance, layout, and content to version 3.0, however it was the first version to use the [Brioche](https://github.com/csiew/brioche) UI library. [Click here to visit this version of the site.](https://v4.clarencesiew.com)"
+        ]
+      }
+    ]
+  },
+  {
+    "type": "era",
+    "title": "Svelte era",
+    "body": null,
+    "versions": [
+      {
+        "type": "version",
+        "title": "Version 5.x",
+        "date": "2/10/2021 - Present",
+        "body": [
+          "The website was migrated to yet another frontend framework, Svelte. The original plan was to use this version as a chance to learn Tailwind CSS as well, but I just couldn't help playing around with some custom CSS to achieve some mid-2010s skeumorphic aesthetic.",
+          "Eventually in later minor updates to version 5, I've removed the skeumorphic aspects. I'm even considering experimenting with neobrutalist design.",
+          "Unlike the previous version of the website, version 5.0 does not use the Brioche UI library."
         ]
       }
     ]
