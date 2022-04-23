@@ -1,57 +1,76 @@
 :root {
 	/* FONTS */
-	--system-font-family: ui-sans-serif, 'system-ui', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-	--font-family: 'Fira Sans', var(--system-font-family);
-	--font-heading: 'Fira Sans', var(--font-family);
-	--font-mono: 'Fira Code', Menlo, Monaco, 'Cascadia Code', Consolas, monospace;
-	--font-article: 'Fira Sans', var(--font-family);
+	--system-font-family: ui-sans-serif, 'system-ui', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Fira Sans', 'Helvetica Neue', sans-serif;
+	--font-family: 'Spline Sans', var(--system-font-family);
+	--font-heading: var(--font-family);
+	--font-mono: 'JetBrains Mono', Menlo, Monaco, 'Cascadia Code', Consolas, monospace;
+	--font-article: var(--font-family);
 	--font-control: var(--font-family);
 	font-family: var(--font-family);
 
 	/* MISC */
 	--border-width: 1px;
 	--border-radius: 12px;
-	--button-border-radius: 8px;
+	--button-border-radius: 9px;
 	--link-border-radius: var(--border-radius);
+	--hr-border: 3px solid var(--tertiary-color);
+
+	--button-hover-transform-x: -2px;
+	--button-hover-transform-y: -2px;
+	--button-hover-transform-scale: 1;
+	--button-active-transform-x: 2px;
+	--button-active-transform-y: 2px;
+	--button-active-transform-scale: 1;
 
 	/* SHADOWS */
-	--3d-shadow: 0px -4px 0px rgba(0, 0, 0, 0.125) inset;
-	--3d-shadow-inverse: 0px 4px 0px rgba(0, 0, 0, 0.0625) inset;
-	--3d-shadow-active: 0px -2px 0px rgba(0, 0, 0, 0.25) inset;
-	--button-shadow: var(--3d-shadow), 0px 2px 4px rgba(0, 0, 0, 0.25);
-	--button-shadow-hover: var(--3d-shadow), 0px 2px 6px rgba(0, 0, 0, 0.5);
-	--button-shadow-active: var(--3d-shadow-active), 0px 1px 2px rgba(0, 0, 0, 0.5);
-	--element-shadow: var(--3d-shadow), 0px 2px 4px rgba(0, 0, 0, 0.25);
-	--element-shadow-inverse: var(--3d-shadow-inverse), 0px 2px 8px rgba(0, 0, 0, 0.25) inset;
+	--button-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
+	--button-shadow-hover: 6px 6px 0px rgba(0, 0, 0, 0.25);
+	--button-shadow-active: 1px 1px 0px rgba(0, 0, 0, 0.5);
+	--element-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
+	--element-shadow-inverse: 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
 	--toast-shadow: var(--element-shadow);
 
 	/* COLORS */
-	--pure-white: #ffffff;
-	--primary-color: var(--material-color-grey-50);
-	--secondary-color: var(--material-color-grey-100);
-	--tertiary-color: var(--material-color-grey-200);
+
+	/* LIGHT THEME */
+	--primary-color: var(--material-color-grey-200);
+	--secondary-color: var(--pure-white);
+	--tertiary-color: var(--material-color-grey-400);
+
 	--accent-color: var(--material-color-teal-700);
 	--accent-secondary-color: var(--material-color-teal-600);
-	--heading-color: var(--material-color-grey-700);
+
+	--heading-color: var(--material-color-grey-900);
 	--subtitle-color: var(--material-color-grey-600);
 	--footer-color: var(--material-color-grey-700);
 	--text-color: var(--material-color-grey-900);
 	--text-secondary-color: var(--material-color-grey-800);
 	--text-tertiary-color: var(--material-color-grey-700);
-	--border-color: var(--material-color-grey-400);
-	--button-border-color: var(--accent-color);
+
+	--border-color: var(--material-color-grey-900);
+	--button-border-color: var(--border-color);
+
+	--button-fg-color: var(--pure-white);
+	--button-fg-color-hover: var(--pure-white);
+	--button-fg-color-active: var(--pure-white);
+	--button-bg-color: var(--accent-color);
+	--button-bg-color-hover: var(--accent-secondary-color);
+	--button-bg-color-active: var(--text-color);
+
 	--nav-link-bg-color-hover: rgba(0, 0, 0, 0.125);
 	--nav-link-bg-color-active: rgba(0, 0, 0, 0.0625);
+
 	--selection-background: var(--material-color-teal);
 	--footer-background: none;
 }
 
 @media only screen and (prefers-color-scheme: dark) {
 	:root {
-		/* COLORS */
-		--primary-color: #000000;
+		/* DARK THEME */
+		--primary-color: #2e2e2e;
 		--secondary-color: var(--material-color-grey-900);
 		--tertiary-color: var(--material-color-grey-800);
+
 		--accent-color: var(--material-color-teal-300);
 		--accent-secondary-color: var(--material-color-teal-400);
 		--heading-color: var(--material-color-grey-200);
@@ -60,10 +79,20 @@
 		--text-color: var(--material-color-grey-200);
 		--text-secondary-color: var(--material-color-grey-300);
 		--text-tertiary-color: var(--material-color-grey-400);
-		--border-color: var(--material-color-grey-700);
-		--button-border-color: var(--accent-color);
+
+		--border-color: var(--pure-black);
+		--button-border-color: var(--border-color);
+
+		--button-fg-color: var(--pure-black);
+		--button-fg-color-hover: var(--pure-black);
+		--button-fg-color-active: var(--accent-color);
+		--button-bg-color: var(--accent-color);
+		--button-bg-color-hover: var(--accent-secondary-color);
+		--button-bg-color-active: var(--primary-color);
+
 		--nav-link-bg-color-hover: rgba(255, 255, 255, 0.25);
 		--nav-link-bg-color-active: rgba(255, 255, 255, 0.125);
+
 		--selection-background: var(--material-color-grey-300);
 		--footer-background: none;
 	}
@@ -87,8 +116,8 @@ body, #svelte {
 	width: 100%;
 	display: inline-flex;
 	flex-flow: row;
-	justify-content: stretch;
-	align-items: stretch;
+	justify-content: flex-start;
+	align-items: flex-start;
 	background: var(--primary-color);
 	color: var(--text-color);
 	font-size: 1.125rem;
@@ -137,7 +166,7 @@ footer {
 }
 .content .heading h1 {
 	margin: 1rem 0rem;
-	color: var(--text-tertiary-color);
+	color: var(--heading-color);
 	font-size: 6rem;
 	font-weight: 600;
 	line-height: 1;
@@ -153,14 +182,13 @@ footer {
 hr {
 	width: 100%;
 	border: none;
-	border-bottom: 3px solid var(--border-color);
+	border-bottom: var(--hr-border);
 }
 
 h1, h2, h3, h4, h5 {
 	--size: 1;
 	color: var(--heading-color);
 	font-family: var(--font-heading);
-	letter-spacing: 0.0125rem;
 }
 h1 {
 	margin: 0.325rem 0;
@@ -230,8 +258,8 @@ input, button, .button {
 :is(button, .button, input[type="submit"]) {
 	margin: 0;
 	padding: 0.5rem 1rem;
-	color: var(--secondary-color);
-	background: var(--accent-color);
+	color: var(--button-fg-color);
+	background: var(--button-bg-color);
 	text-align: center;
 	font-weight: 600;
 	white-space: nowrap;
@@ -242,16 +270,20 @@ input, button, .button {
 	transition: 0.2s ease-in-out;
 }
 :is(button, .button, input[type="submit"]):hover {
-	background: var(--accent-secondary-color);
+	color: var(--button-fg-color-hover);
+	background: var(--button-bg-color-hover);
 	box-shadow: var(--button-shadow-hover);
 	transition: 0.2s;
+	transform: translate(var(--button-hover-transform-x), var(--button-hover-transform-y)) scale(var(--button-hover-transform-scale));
 }
 :is(button, .button, input[type="submit"]):active,
 :is(button, .button, input[type="submit"]):focus:active {
-	background: var(--accent-secondary-color);
+	color: var(--button-fg-color-active);
+	background: var(--button-bg-color-active);
 	box-shadow: var(--button-shadow-active);
 	outline: 3px solid var(--tertiary-color);
 	animation: none;
+	transform: translate(var(--button-active-transform-x), var(--button-active-transform-y)) scale(var(--button-active-transform-scale));
 }
 :is(button, .button, input[type="submit"]):focus {
 	outline: none;
@@ -271,28 +303,20 @@ small :is(button, .button, input[type="submit"]),
 
 /* width */
 ::-webkit-scrollbar {
-  width: 1.25rem;
+  width: 1.03125rem;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--secondary-color);
-	box-shadow: 0.325rem 0px 0px var(--primary-color) inset;
-}
-::-webkit-scrollbar-track:hover {
   background: var(--tertiary-color);
 }
 
 ::-webkit-scrollbar-thumb {
 	margin: 0;
 	padding: 0;
-  background: var(--accent-color);
-	border-radius:
-		var(--button-border-radius) 0
-		0 var(--button-border-radius);
-	box-shadow: var(--element-shadow), 4px 0px 16px var(--primary-color);
+  background: var(--text-tertiary-color);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-secondary-color);
+  background: var(--text-secondary-color);
 }
 ::-webkit-scrollbar-thumb:active {
   background: var(--text-color);
@@ -580,6 +604,7 @@ section {
 .toolbar :is(button, .button, input[type="submit"]):hover {
 	color: var(--text-color);
 	background: var(--nav-link-bg-color-hover);
+	transform: none;
 }
 .toolbar :is(button, .button, input[type="submit"]):active {
 	color: var(--text-color);

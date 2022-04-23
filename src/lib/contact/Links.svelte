@@ -23,15 +23,7 @@
 		grid-template-columns: repeat(auto-fill, minmax(196px, 1fr));
 		gap: 1rem;
 		margin: 0;
-		padding: 1.5rem 0;
+		padding: 0;
 		width: 100%;
-		border-bottom: 3px solid var(--border-color);
-	}
-	.link-grid:first-child {
-		padding-top: 0;
-	}
-	.link-grid:last-child {
-		padding-bottom: 0;
-		border-bottom: none;
 	}
 </style>

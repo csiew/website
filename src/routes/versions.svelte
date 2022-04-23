@@ -31,7 +31,7 @@
 			<div class="era">
 				<h2>{era.title}</h2>
 				<div class="list">
-					{#each era.versions.reverse() as version}
+					{#each era.versions as version}
 						<section class="card">
 							<div class="heading">
 								<span class="title">
