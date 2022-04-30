@@ -3,7 +3,7 @@ header {
   position: sticky;
   margin: 0;
   top: 0;
-  padding: 0.5rem;
+  padding: 0;
   width: auto;
   height: 100vh;
 }
@@ -14,14 +14,16 @@ header {
   justify-content: flex-start;
   align-self: center;
   margin: 0;
-  padding: 1.5rem 0rem;
+  padding: 1.5rem 1rem;
   gap: 1.5rem;
   width: min-content;
   height: 100%;
-  background: var(--secondary-color);
-  border: var(--border-width) solid var(--border-color);
-  border-radius: var(--border-radius);
-  box-shadow: var(--element-shadow);
+  color: var(--header-fg-color);
+  background: var(--header-bg-color);
+  border: solid var(--border-color);
+  border-width: 0px var(--border-width) 0px 0px;
+  border-radius: 0px;
+  box-shadow: var(--header-shadow);
 }
 
 .title {
@@ -32,7 +34,6 @@ header {
   margin: 0;
   padding: 0;
   width: 100%;
-  min-width: 96px;
 }
 .title a {
   display: grid;
@@ -65,25 +66,12 @@ button.scroll-top-shortcut:focus {
   flex-flow: column;
   justify-content: center;
   align-items: center;
-  width: min-content;
+  width: 100%;
   height: min-content;
   margin: auto;
   padding: 0.5rem;
-  color: var(--subtitle-color);
-  background: none;
-  border: none;
-  box-shadow: none;
   transition: 0.2s;
   transform: none !important;
-}
-button.scroll-top-shortcut:hover {
-  color: var(--text-color);
-  background: var(--nav-link-bg-color-hover);
-  box-shadow: none;
-  transition: 0.2s;
-}
-button.scroll-top-shortcut:active {
-  background: var(--nav-link-bg-color-active);
 }
 button.scroll-top-shortcut .icon {
   padding: 0.125rem;
@@ -103,6 +91,10 @@ button.scroll-top-shortcut:active .icon {
 
 @media (max-width: 767px) {
   header {
+    position: sticky;
+    margin: auto 0 0 0;
+    top: auto;
+    bottom: 0;
     padding: 0;
     width: 100%;
     height: auto;
@@ -116,9 +108,9 @@ button.scroll-top-shortcut:active .icon {
     padding: 0.75rem 1rem;
     width: 100%;
     height: auto;
-    border-width: 0px 0px var(--border-width) 0px;
+    border-width: var(--border-width) 0px 0px 0px;
     border-radius: 0;
-    box-shadow: none;
+    box-shadow: var(--header-shadow-responsve);
   }
 
   .title {
@@ -153,7 +145,7 @@ nav {
   justify-content: flex-start;
   align-items: center;
   margin: auto;
-  padding: 0rem 1rem;
+  padding: 0;
   width: 100%;
   font-family: var(--font-control);
 }
@@ -185,16 +177,23 @@ nav a {
   padding: 0.5rem 1rem;
   color: var(--text-color);
   background: none;
-  font-weight: bold;
+  border: var(--border-width) solid transparent;
   border-radius: var(--link-border-radius);
+  font-weight: bold;
   text-decoration: none;
   transition: 0.1s linear;
 }
 nav a:hover {
-  background: var(--nav-link-bg-color-hover);
+  border-color: var(--button-border-color);
+  box-shadow: var(--button-shadow-hover);
 }
-nav :is(a:active, li.active a) {
-  background: var(--nav-link-bg-color-active);
+nav a:active {
+  border-color: var(--button-border-color);
+  box-shadow: var(--button-shadow-active);
+}
+nav li.active a {
+  border-color: var(--button-border-color);
+  box-shadow: var(--button-shadow);
 }
 nav a .icon {
   transition: 0.1s linear;
@@ -210,6 +209,7 @@ nav li.active :is(a, a:hover) {
 }
 nav li.active a .icon {
   color: var(--accent-color);
+  filter: drop-shadow(0px 2px 1px rgba(0, 0, 0, 0.25));
   transition: 0.3s linear;
 }
 nav a:active {
@@ -254,5 +254,13 @@ nav a:active .icon {
   }
   nav li a:is(:hover, :active) {
     box-shadow: none;
+  }
+  nav :is(a:active, li.active a) {
+    border-color: transparent;
+    box-shadow: none;
+  }
+  nav a .icon {
+    filter: none !important;
+    transform: none !important;
   }
 }

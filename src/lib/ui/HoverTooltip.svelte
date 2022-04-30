@@ -54,12 +54,13 @@
     margin: auto;
     padding: 0.25rem 0.5rem;
     height: auto;
-    color: var(--primary-color);
-    background: var(--text-color);
+    color: var(--tooltip-fg-color);
+    background: var(--tooltip-bg-color);
     border-width: var(--border-width);
     border-style: solid;
-    border-color: var(--text-color);
+    border-color: var(--tooltip-border-color);
     border-radius: var(--border-radius);
+    text-shadow: none;
     box-shadow: var(--element-shadow);
     font-size: 100%;
     font-weight: bold;
