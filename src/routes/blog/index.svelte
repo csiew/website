@@ -90,13 +90,14 @@
 		-moz-user-select: none;
 	}
 	.post-list a:hover {
-		background: var(--secondary-color);
-		border-color: var(--border-color);
+		color: var(--button-fg-color-hover);
+		background: var(--button-bg-color-hover);
+		border-color: var(--button-border-color);
 		box-shadow: var(--element-shadow);
 	}
 	.post-list a:active {
-		color: var(--secondary-color);
-		background: var(--text-color);
+		color: var(--button-fg-color-active);
+		background: var(--button-bg-color-active);
 		box-shadow: none;
 	}
 	.post-list h3 {
@@ -117,6 +118,6 @@
 	}
 
 	.post-list a:active :is(h2, h3, sub) {
-		color: var(--secondary-color);
+		color: var(--button-fg-color-active);
 	}
 </style>

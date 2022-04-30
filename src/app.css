@@ -1,6 +1,6 @@
 :root {
 	/* FONTS */
-	--system-font-family: ui-sans-serif, 'system-ui', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Fira Sans', 'Helvetica Neue', sans-serif;
+	--system-font-family: ui-sans-serif, 'system-ui', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Fira Sans', Helvetica, 'Helvetica Neue', Arial, sans-serif;
 	--font-family: 'Spline Sans', var(--system-font-family);
 	--font-heading: var(--font-family);
 	--font-mono: 'JetBrains Mono', Menlo, Monaco, 'Cascadia Code', Consolas, monospace;
@@ -12,28 +12,42 @@
 	--border-width: 1px;
 	--border-radius: 12px;
 	--button-border-radius: 9px;
-	--link-border-radius: var(--border-radius);
-	--hr-border: 3px solid var(--tertiary-color);
+	--link-border-radius: var(--button-border-radius);
 
-	--button-hover-transform-x: -2px;
-	--button-hover-transform-y: -2px;
+	--button-hover-transform-x: 0px;
+	--button-hover-transform-y: 0px;
 	--button-hover-transform-scale: 1;
-	--button-active-transform-x: 2px;
-	--button-active-transform-y: 2px;
+	--button-active-transform-x: 0px;
+	--button-active-transform-y: 0px;
 	--button-active-transform-scale: 1;
 
 	/* SHADOWS */
-	--button-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
-	--button-shadow-hover: 6px 6px 0px rgba(0, 0, 0, 0.25);
-	--button-shadow-active: 1px 1px 0px rgba(0, 0, 0, 0.5);
-	--element-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
-	--element-shadow-inverse: 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+	--global-text-shadow: 0px 1px 0px rgba(255, 255, 255, 1);
+	--footer-text-shadow: 0px 1px 0px rgba(255, 255, 255, 1);
+	--element-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+	--element-shadow-inverse: 0px 2px 4px rgba(0, 0, 0, 0.125) inset;
+	--button-shadow:
+		0px 1px 2px rgba(125, 125, 125, 0.5) inset,
+		0px 8px 16px rgba(255, 255, 255, 1) inset,
+		0px -8px 16px rgba(125, 125, 125, 0.25) inset;
+	--button-shadow-hover:
+		0px 1px 4px rgba(125, 125, 125, 0.5) inset,
+		0px 8px 16px rgba(255, 255, 255, 1) inset,
+		0px -8px 16px rgba(125, 125, 125, 0.325) inset;
+	--button-shadow-active:
+		0px 4px 8px rgba(0, 0, 0, 0.25) inset,
+		var(--button-shadow-hover);
+	--header-shadow: -2px 0px 8px rgba(0, 0, 0, 0.25) inset;
+	--header-shadow-responsve:
+		0px 2px 4px rgba(0, 0, 0, 0.25) inset,
+		0px 4px 16px rgba(255, 255, 255, 0.75) inset,
+		0px -2px 32px rgba(0, 0, 0, 0.25) inset;
 	--toast-shadow: var(--element-shadow);
 
 	/* COLORS */
 
 	/* LIGHT THEME */
-	--primary-color: var(--material-color-grey-200);
+	--primary-color: var(--material-color-grey-100);
 	--secondary-color: var(--pure-white);
 	--tertiary-color: var(--material-color-grey-400);
 
@@ -47,18 +61,23 @@
 	--text-secondary-color: var(--material-color-grey-800);
 	--text-tertiary-color: var(--material-color-grey-700);
 
-	--border-color: var(--material-color-grey-900);
-	--button-border-color: var(--border-color);
+	--border-color: var(--material-color-grey-400);
+	--hr-border: 3px solid var(--material-color-grey-200);
 
-	--button-fg-color: var(--pure-white);
-	--button-fg-color-hover: var(--pure-white);
-	--button-fg-color-active: var(--pure-white);
-	--button-bg-color: var(--accent-color);
-	--button-bg-color-hover: var(--accent-secondary-color);
-	--button-bg-color-active: var(--text-color);
+	--button-fg-color: var(--text-color);
+	--button-fg-color-hover: var(--text-color);
+	--button-fg-color-active: var(--text-color);
+	--button-bg-color: var(--material-color-grey-50);
+	--button-bg-color-hover: var(--material-color-grey-100);
+	--button-bg-color-active: var(--material-color-grey-200);
+	--button-border-color: var(--material-color-grey-400);
 
-	--nav-link-bg-color-hover: rgba(0, 0, 0, 0.125);
-	--nav-link-bg-color-active: rgba(0, 0, 0, 0.0625);
+	--tooltip-fg-color: var(--pure-black);
+	--tooltip-bg-color: linear-gradient(to bottom, var(--material-color-yellow-100), var(--material-color-yellow-200));
+	--tooltip-border-color: var(--material-color-lime-700);
+
+	--header-fg-color: var(--text-color);
+	--header-bg-color: var(--material-color-grey-200);
 
 	--selection-background: var(--material-color-teal);
 	--footer-background: none;
@@ -66,13 +85,35 @@
 
 @media only screen and (prefers-color-scheme: dark) {
 	:root {
+		/* SHADOWS */
+		--global-text-shadow: 0px -2px 0px rgba(0, 0, 0, 0.5);
+		--footer-text-shadow: 0px -2px 0px rgba(0, 0, 0, 0.5);
+		--element-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+		--element-shadow-inverse: 0px 2px 4px rgba(0, 0, 0, 0.5) inset;
+		--button-shadow:
+			0px 1px 2px rgba(0, 0, 0, 0.5) inset,
+			0px 8px 16px rgba(255, 255, 255, 0.0625) inset,
+			0px -8px 16px rgba(0, 0, 0, 0.25) inset;
+		--button-shadow-hover:
+			0px 1px 4px rgba(0, 0, 0, 0.5) inset,
+			0px 8px 16px rgba(255, 255, 255, 0.0625) inset,
+			0px -8px 16px rgba(0, 0, 0, 0.325) inset;
+		--button-shadow-active:
+			0px 4px 8px rgba(0, 0, 0, 0.25) inset,
+			var(--button-shadow-hover);
+		--header-shadow: -2px 0px 8px rgba(0, 0, 0, 0.25) inset;
+		--header-shadow-responsve:
+			0px 2px 4px rgba(0, 0, 0, 0.25) inset,
+			0px -2px 32px rgba(0, 0, 0, 0.25) inset;
+
 		/* DARK THEME */
-		--primary-color: #2e2e2e;
+		--primary-color: #2a2a2a;
 		--secondary-color: var(--material-color-grey-900);
 		--tertiary-color: var(--material-color-grey-800);
 
 		--accent-color: var(--material-color-teal-300);
 		--accent-secondary-color: var(--material-color-teal-400);
+
 		--heading-color: var(--material-color-grey-200);
 		--subtitle-color: var(--material-color-grey-300);
 		--footer-color: var(--material-color-grey-400);
@@ -81,17 +122,18 @@
 		--text-tertiary-color: var(--material-color-grey-400);
 
 		--border-color: var(--pure-black);
-		--button-border-color: var(--border-color);
+		--hr-border: 3px solid var(--material-color-grey-900);
 
-		--button-fg-color: var(--pure-black);
-		--button-fg-color-hover: var(--pure-black);
-		--button-fg-color-active: var(--accent-color);
-		--button-bg-color: var(--accent-color);
-		--button-bg-color-hover: var(--accent-secondary-color);
-		--button-bg-color-active: var(--primary-color);
-
-		--nav-link-bg-color-hover: rgba(255, 255, 255, 0.25);
-		--nav-link-bg-color-active: rgba(255, 255, 255, 0.125);
+		--button-fg-color: var(--text-color);
+		--button-fg-color-hover: var(--text-color);
+		--button-fg-color-active: var(--text-color);
+		--button-bg-color: var(--material-color-grey-900);
+		--button-bg-color-hover: var(--material-color-grey-900);
+		--button-bg-color-active: var(--material-color-grey-900);
+		--button-border-color: var(--pure-black);
+	
+		--header-fg-color: var(--text-color);
+		--header-bg-color: var(--material-color-grey-900);
 
 		--selection-background: var(--material-color-grey-300);
 		--footer-background: none;
@@ -120,6 +162,7 @@ body, #svelte {
 	align-items: flex-start;
 	background: var(--primary-color);
 	color: var(--text-color);
+	text-shadow: var(--global-text-shadow);
 	font-size: 1.125rem;
 	font-weight: 400;
 	font-display: fallback;
@@ -145,8 +188,9 @@ footer {
 	align-items: center;
 	margin: 0;
 	padding: 3rem;
-	background: var(--footer-background);
 	color: var(--footer-color);
+	background: var(--footer-background);
+	text-shadow: var(--footer-text-shadow);
 	font-size: 80%;
 	text-align: center;
 }
@@ -168,7 +212,7 @@ footer {
 	margin: 1rem 0rem;
 	color: var(--heading-color);
 	font-size: 6rem;
-	font-weight: 600;
+	font-weight: 700;
 	line-height: 1;
 	text-align: center;
 }
@@ -261,7 +305,7 @@ input, button, .button {
 	color: var(--button-fg-color);
 	background: var(--button-bg-color);
 	text-align: center;
-	font-weight: 600;
+	font-weight: 700;
 	white-space: nowrap;
 	border: var(--border-width) solid var(--button-border-color);
 	border-radius: var(--button-border-radius);
@@ -284,6 +328,10 @@ input, button, .button {
 	outline: 3px solid var(--tertiary-color);
 	animation: none;
 	transform: translate(var(--button-active-transform-x), var(--button-active-transform-y)) scale(var(--button-active-transform-scale));
+}
+:is(button, .button, input[type="submit"]):active .icon svg,
+:is(button, .button, input[type="submit"]):focus:active .icon svg {
+	color: var(--button-fg-color-active) !important;
 }
 :is(button, .button, input[type="submit"]):focus {
 	outline: none;
@@ -324,11 +372,9 @@ small :is(button, .button, input[type="submit"]),
 
 @keyframes button-throbber {
 	0% {
-		background: var(--accent-color);
 		outline: 3px solid var(--accent-secondary-color);
 	}
 	100% {
-		background: var(--accent-secondary-color);
 		outline: 3px solid var(--border-color);
 	}
 }
@@ -595,34 +641,20 @@ section {
 	-webkit-user-select: none;
 	-moz-user-select: none;
 }
-.toolbar :is(button, .button, input[type="submit"]) {
-	color: var(--text-color);
-	background: none;
-	border: none;
-	box-shadow: none;
-}
-.toolbar :is(button, .button, input[type="submit"]):hover {
-	color: var(--text-color);
-	background: var(--nav-link-bg-color-hover);
-	transform: none;
-}
-.toolbar :is(button, .button, input[type="submit"]):active {
-	color: var(--text-color);
-	background: var(--nav-link-bg-color-active);
-	box-shadow: none;
-}
-.toolbar :is(button, .button, input[type="submit"]):active .icon svg {
-	color: var(--text-color) !important;
-}
 
 @media (max-width: 767px) {
 	body, #svelte {
-		flex-flow: column;
-		justify-content: center;
+		flex-flow: column-reverse !important;
+		justify-content: space-between;
 		align-items: center;
 		width: 100%;
-		height: auto;
+		height: 100vh;
 		font-size: 1.125rem;
+		overflow: hidden;
+	}
+	
+	main {
+		overflow: auto;
 	}
 
 	footer {

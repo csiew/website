@@ -71,8 +71,8 @@
         "title": "Version 5.x",
         "date": "2/10/2021 - Present",
         "body": [
-          "The website was migrated to yet another frontend framework, Svelte. The original plan was to use this version as a chance to learn Tailwind CSS as well, but I just couldn't help playing around with some custom CSS to achieve some mid-2010s skeumorphic aesthetic.",
-          "Eventually in later minor updates to version 5, I've removed the skeumorphic aspects. I'm even considering experimenting with neobrutalist design.",
+          "The website was migrated to yet another frontend framework, Svelte. The original plan was to use this version as a chance to learn Tailwind CSS as well, but I just couldn't help playing around with some custom CSS to achieve some mid-2010s skeuomorphic aesthetic.",
+          "This version also had a couple of neobrutalist phases too, but as of version 5.10.0, skeuomorphism is back.",
           "Unlike the previous version of the website, version 5.0 does not use the Brioche UI library."
         ]
       }

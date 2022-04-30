@@ -22,7 +22,7 @@
 <main>
 	<slot />
 	<footer>
-		<p>Version 5.9.0<br/><a sveltekit:prefetch href="/versions">Version history</a></p>
+		<p>Version 5.10.0<br/><a sveltekit:prefetch href="/versions">Version history</a></p>
 		<p>Copyright &copy; 2022 Clarence Siew</p>
 	</footer>
 </main>
