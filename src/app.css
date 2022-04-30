@@ -645,11 +645,16 @@ section {
 @media (max-width: 767px) {
 	body, #svelte {
 		flex-flow: column-reverse !important;
-		justify-content: center;
+		justify-content: space-between;
 		align-items: center;
 		width: 100%;
-		height: auto;
+		height: 100vh;
 		font-size: 1.125rem;
+		overflow: hidden;
+	}
+	
+	main {
+		overflow: auto;
 	}
 
 	footer {
