@@ -1,5 +1,4 @@
 <script lang="ts">
-	import "../fonts/RobotoFlex.css";
 	import "../fonts/SplineSans.css";
 	import "../fonts/JetBrainsMono.css";
 	import "../colors.css";
