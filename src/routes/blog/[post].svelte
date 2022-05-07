@@ -63,7 +63,7 @@
         <hr />
         <SvelteMarkdown source={post.content} />
       {:else}
-        <span class="loading engrave">
+        <span class="loading subsection">
           <span class:loading-text={isLoading}>
             {loadingText}
           </span>

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import "../fonts/RobotoFlex.css";
 	import "../fonts/SplineSans.css";
 	import "../fonts/JetBrainsMono.css";
 	import "../colors.css";
@@ -22,7 +23,7 @@
 <main>
 	<slot />
 	<footer>
-		<p>Version 5.10.1<br/><a sveltekit:prefetch href="/versions">Version history</a></p>
+		<p>Version 5.11.0<br/><a sveltekit:prefetch href="/versions">Version history</a></p>
 		<p>Copyright &copy; 2022 Clarence Siew</p>
 	</footer>
 </main>
