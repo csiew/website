@@ -62,7 +62,7 @@
 	.era h2 {
 		margin: 2rem 0;
 		padding: 1rem 0;
-		border-bottom: 3px solid var(--border-color);
+		border-bottom: var(--hr-border);
 		color: var(--text-color);
 		text-align: center;
 	}

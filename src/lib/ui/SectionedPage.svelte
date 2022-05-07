@@ -86,6 +86,7 @@
 		border: var(--border-width) solid var(--button-border-color);
 		border-radius: var(--button-border-radius);
 		box-shadow: var(--button-shadow);
+		text-shadow: var(--button-text-shadow);
 		font-weight: 600;
 		text-decoration: none;
 		white-space: nowrap;

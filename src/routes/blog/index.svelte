@@ -7,6 +7,7 @@
 
 <script lang="ts">
 	import { onDestroy, onMount } from "svelte";
+  import MdArrowForward from "svelte-icons/md/MdArrowForward.svelte";
 	import { type BlogPost, store } from "./journal.store";
 	import sortPosts from "./sortPosts";
 
@@ -40,6 +41,9 @@
 							<span class="item">
 								<h3>{post.title}</h3>
 								<sub>{new Date(post.date).toLocaleString()}</sub>
+							</span>
+							<span class="icon">
+								<MdArrowForward />
 							</span>
 						</a>
 					</li>
@@ -77,12 +81,16 @@
 		padding: 0;
 	}
 	.post-list a {
-		display: grid;
-		grid-template-columns: 1fr;
+		display: inline-flex;
+		flex-flow: row;
+		align-items: center;
+		justify-content: space-between;
 		width: 100%;
 		padding: 1.5rem;
-		border: var(--border-width) solid transparent;
+		background: var(--card-bg-color);
+		border: var(--border-width) solid var(--button-border-color);
 		border-radius: var(--border-radius);
+		box-shadow: var(--button-shadow);
 		text-decoration: none;
 		cursor: pointer;
 		user-select: none;
@@ -90,15 +98,10 @@
 		-moz-user-select: none;
 	}
 	.post-list a:hover {
-		color: var(--button-fg-color-hover);
-		background: var(--button-bg-color-hover);
-		border-color: var(--button-border-color);
-		box-shadow: var(--element-shadow);
+		box-shadow: var(--button-shadow-hover);
 	}
 	.post-list a:active {
-		color: var(--button-fg-color-active);
-		background: var(--button-bg-color-active);
-		box-shadow: none;
+		box-shadow: var(--button-shadow-active);
 	}
 	.post-list h3 {
 		margin: 0;
@@ -119,5 +122,14 @@
 
 	.post-list a:active :is(h2, h3, sub) {
 		color: var(--button-fg-color-active);
+	}
+
+	.post-list a .icon {
+		opacity: 0.25;
+		transition: 0.2s;
+	}
+	.post-list a:hover .icon {
+		opacity: 1;
+		transition: 0.2s;
 	}
 </style>

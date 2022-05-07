@@ -22,129 +22,94 @@
 	--button-active-transform-scale: 1;
 
 	/* SHADOWS */
-	--global-text-shadow: 0px 1px 0px rgba(255, 255, 255, 1);
-	--footer-text-shadow: 0px 1px 0px rgba(255, 255, 255, 1);
-	--element-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
-	--element-shadow-inverse: 0px 2px 4px rgba(0, 0, 0, 0.125) inset;
-	--button-shadow:
-		0px 1px 2px rgba(125, 125, 125, 0.5) inset,
-		0px 8px 16px rgba(255, 255, 255, 1) inset,
-		0px -8px 16px rgba(125, 125, 125, 0.25) inset;
+
+	--global-text-shadow: 0px -2px 0px rgba(0, 0, 0, 0.5);
+	--footer-text-shadow: 0px -2px 0px rgba(0, 0, 0, 0.5);
+	--button-text-shadow:
+		0px 0px 2px rgba(0, 0, 0, 0.75),
+		0px 1px 4px rgba(0, 0, 0, 0.25);
+
+	--element-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+	--element-shadow-inverse:
+		0px 2px 4px rgba(0, 0, 0, 0.5) inset,
+		0px 8px 16px rgba(0, 0, 0, 0.0625) inset,
+		0px -1px 2px rgba(255, 255, 255, 0.125) inset;
+
+	--skeuomoprhic-surface-shadow:
+		0px -1px 4px rgba(255, 255, 255, 0.0625) inset,
+		0px 1px 2px rgba(255, 255, 255, 0.25) inset,
+		0px -4px 8px rgba(255, 255, 255, 0.0625) inset,
+		0px 8px 8px rgba(255, 255, 255, 0.0625) inset,
+		0px -8px 16px rgba(0, 0, 0, 0.25) inset,
+		0px 2px 4px rgba(0, 0, 0, 0.25);
+
+	--button-shadow: var(--skeuomoprhic-surface-shadow);
 	--button-shadow-hover:
-		0px 1px 4px rgba(125, 125, 125, 0.5) inset,
-		0px 8px 16px rgba(255, 255, 255, 1) inset,
-		0px -8px 16px rgba(125, 125, 125, 0.325) inset;
+		0px -1px 8px rgba(255, 255, 255, 0.0625) inset,
+		0px 1px 2px rgba(255, 255, 255, 0.25) inset,
+		var(--skeuomoprhic-surface-shadow);
 	--button-shadow-active:
+		0px 1px 4px rgba(0, 0, 0, 0.75) inset,
 		0px 4px 8px rgba(0, 0, 0, 0.25) inset,
-		var(--button-shadow-hover);
-	--header-shadow: -2px 0px 8px rgba(0, 0, 0, 0.25) inset;
+		var(--skeuomoprhic-surface-shadow);
+
+	--header-shadow: -2px 0px 16px rgba(0, 0, 0, 0.5) inset;
 	--header-shadow-responsve: var(--element-shadow);
+
+	--card-shadow:
+		var(--skeuomoprhic-surface-shadow),
+		var(--element-shadow);
+	
 	--toast-shadow: var(--element-shadow);
 
 	/* COLORS */
 
-	/* LIGHT THEME */
-	--primary-color: var(--material-color-grey-100);
-	--secondary-color: var(--pure-white);
-	--tertiary-color: var(--material-color-grey-400);
+	--primary-color: #2a2a2a;
+	--secondary-color: var(--material-color-grey-900);
+	--tertiary-color: var(--material-color-grey-800);
 
 	--accent-color: var(--material-color-teal-700);
-	--accent-secondary-color: var(--material-color-teal-600);
+	--accent-secondary-color: var(--material-color-teal-800);
 
-	--heading-color: var(--material-color-grey-900);
-	--subtitle-color: var(--material-color-grey-600);
-	--footer-color: var(--material-color-grey-700);
-	--text-color: var(--material-color-grey-900);
-	--text-secondary-color: var(--material-color-grey-800);
-	--text-tertiary-color: var(--material-color-grey-700);
+	--background-color: var(--primary-color);
 
-	--border-color: var(--material-color-grey-400);
-	--hr-border: 3px solid var(--material-color-grey-200);
+	--heading-color: var(--material-color-grey-200);
+	--subtitle-color: var(--material-color-grey-300);
+	--footer-color: var(--material-color-grey-400);
+	--text-color: var(--material-color-grey-200);
+	--text-secondary-color: var(--material-color-grey-300);
+	--text-tertiary-color: var(--material-color-grey-400);
+
+	--border-color: var(--pure-black);
+	--hr-border: 3px solid var(--material-color-grey-900);
 
 	--button-fg-color: var(--text-color);
 	--button-fg-color-hover: var(--text-color);
 	--button-fg-color-active: var(--text-color);
-	--button-bg-color: var(--material-color-grey-50);
-	--button-bg-color-hover: var(--material-color-grey-100);
-	--button-bg-color-active: var(--material-color-grey-200);
-	--button-border-color: var(--material-color-grey-400);
+	--button-bg-color: var(--accent-color);
+	--button-bg-color-hover: var(--accent-secondary-color);
+	--button-bg-color-active: var(--material-color-grey-900);
+	--button-border-color: var(--pure-black);
+
+	--card-bg-color: linear-gradient(to bottom, var(--primary-color), var(--material-color-grey-900));
 
 	--tooltip-fg-color: var(--pure-black);
 	--tooltip-bg-color: linear-gradient(to bottom, var(--material-color-yellow-100), var(--material-color-yellow-200));
 	--tooltip-border-color: var(--material-color-lime-700);
 
 	--header-fg-color: var(--text-color);
-	--header-bg-color: var(--secondary-color);
+	--header-bg-color: linear-gradient(to bottom, var(--primary-color), var(--material-color-grey-900));
 
-	--selection-background: var(--material-color-teal);
+	--selection-background: var(--material-color-grey-300);
 	--footer-background: none;
-}
-
-@media only screen and (prefers-color-scheme: dark) {
-	:root {
-		/* SHADOWS */
-		--global-text-shadow: 0px -2px 0px rgba(0, 0, 0, 0.5);
-		--footer-text-shadow: 0px -2px 0px rgba(0, 0, 0, 0.5);
-		--element-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
-		--element-shadow-inverse: 0px 2px 4px rgba(0, 0, 0, 0.5) inset;
-		--button-shadow:
-			0px 1px 2px rgba(0, 0, 0, 0.5) inset,
-			0px 8px 16px rgba(255, 255, 255, 0.0625) inset,
-			0px -8px 16px rgba(0, 0, 0, 0.25) inset;
-		--button-shadow-hover:
-			0px 1px 4px rgba(0, 0, 0, 0.5) inset,
-			0px 8px 16px rgba(255, 255, 255, 0.0625) inset,
-			0px -8px 16px rgba(0, 0, 0, 0.325) inset;
-		--button-shadow-active:
-			0px 4px 8px rgba(0, 0, 0, 0.25) inset,
-			var(--button-shadow-hover);
-		--header-shadow: -2px 0px 8px rgba(0, 0, 0, 0.25) inset;
-		--header-shadow-responsve: var(--element-shadow);
-
-		/* DARK THEME */
-		--primary-color: #2a2a2a;
-		--secondary-color: var(--material-color-grey-900);
-		--tertiary-color: var(--material-color-grey-800);
-
-		--accent-color: var(--material-color-teal-300);
-		--accent-secondary-color: var(--material-color-teal-400);
-
-		--heading-color: var(--material-color-grey-200);
-		--subtitle-color: var(--material-color-grey-300);
-		--footer-color: var(--material-color-grey-400);
-		--text-color: var(--material-color-grey-200);
-		--text-secondary-color: var(--material-color-grey-300);
-		--text-tertiary-color: var(--material-color-grey-400);
-
-		--border-color: var(--pure-black);
-		--hr-border: 3px solid var(--material-color-grey-900);
-
-		--button-fg-color: var(--text-color);
-		--button-fg-color-hover: var(--text-color);
-		--button-fg-color-active: var(--text-color);
-		--button-bg-color: var(--material-color-grey-900);
-		--button-bg-color-hover: var(--material-color-grey-900);
-		--button-bg-color-active: var(--material-color-grey-900);
-		--button-border-color: var(--pure-black);
-	
-		--header-fg-color: var(--text-color);
-		--header-bg-color: var(--material-color-grey-900);
-
-		--selection-background: var(--material-color-grey-300);
-		--footer-background: none;
-	}
-
-	html {
-		transition: 5s;
-	}
-
-	.wireframe-dynamic-color {
-		filter: invert(1);
-	}
 }
 
 * {
 	box-sizing: border-box;
+}
+
+.wireframe-dynamic-color {
+	filter: invert(1);
 }
 
 body, #svelte {
@@ -155,7 +120,9 @@ body, #svelte {
 	flex-flow: row;
 	justify-content: flex-start;
 	align-items: flex-start;
-	background: var(--primary-color);
+	background: var(--background-color);
+	background-size: cover;
+	background-attachment: fixed;
 	color: var(--text-color);
 	text-shadow: var(--global-text-shadow);
 	font-size: 1.125rem;
@@ -305,6 +272,7 @@ input, button, .button {
 	border: var(--border-width) solid var(--button-border-color);
 	border-radius: var(--button-border-radius);
 	box-shadow: var(--button-shadow);
+	text-shadow: var(--button-text-shadow);
 	cursor: pointer;
 	transition: 0.2s ease-in-out;
 }
@@ -344,6 +312,22 @@ small :is(button, .button, input[type="submit"]),
 	font-size: 90%;
 }
 
+:is(button, .button, input[type="submit"]) .icon svg {
+  color: var(--button-fg-color);
+	filter: drop-shadow(var(--element-shadow)) !important;
+  transition: 0.1s linear;
+}
+:is(button, .button, input[type="submit"]):hover .icon svg {
+  color: var(--button-fg-color-hover);
+  transform: scale(115%);
+  transition: 0.3s linear;
+}
+:is(button, .button, input[type="submit"]):active .icon svg {
+  color: var(--button-fg-color-active);
+  transform: scale(100%);
+  transition: 0.2s linear;
+}
+
 /* width */
 ::-webkit-scrollbar {
   width: 1.03125rem;
@@ -351,18 +335,27 @@ small :is(button, .button, input[type="submit"]),
 
 ::-webkit-scrollbar-track {
   background: var(--tertiary-color);
+	box-shadow: var(--header-shadow);
+	border-width: 0px 0px 0px 1px;
+	border-style: solid;
+	border-color: var(--material-color-grey-900);
 }
 
 ::-webkit-scrollbar-thumb {
 	margin: 0;
 	padding: 0;
   background: var(--text-tertiary-color);
+	border: 1px solid var(--material-color-grey-900);
+	border-radius: var(--button-border-radius);
+	box-shadow: var(--button-shadow);
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--text-secondary-color);
+	box-shadow: var(--button-shadow-hover);
 }
 ::-webkit-scrollbar-thumb:active {
-  background: var(--text-color);
+  background: var(--accent-color);
+	box-shadow: var(--button-shadow);
 }
 
 @keyframes button-throbber {
@@ -391,7 +384,7 @@ section {
 	width: 100%;
 }
 
-.card, .engrave {
+.card, .subsection {
 	display: inline-flex;
 	flex-flow: column;
 	justify-content: flex-start;
@@ -400,13 +393,12 @@ section {
 	padding: 1rem;
 	width: 100%;
 	border-radius: var(--border-radius);
-	border: var(--border-width) solid var(--border-color);
-	box-shadow: var(--element-shadow-inverse);
 }
 
 .card {
-	background: var(--secondary-color);
-	box-shadow: var(--element-shadow);
+	background: var(--card-bg-color);
+	border: var(--border-width) solid var(--border-color);
+	box-shadow: var(--card-shadow);
 }
 .card .heading {
 	display: inline-flex;
@@ -448,14 +440,10 @@ section {
 	width: 100%;
 }
 
-.engrave {
-	background: rgba(0,0,0,0.03125);
-}
-
-@media only screen and (prefers-color-scheme: dark) {
-	.engrave {
-		background: rgba(255,255,255,0.03125);
-	}
+.subsection {
+	background: rgba(255, 255, 255, 0.0125);
+	border: var(--border-width) solid var(--secondary-color);
+	box-shadow: var(--button-shadow);
 }
 
 .toast-window {
@@ -617,18 +605,17 @@ section {
 }
 
 .toolbar {
-	position: sticky;
 	display: inline-flex;
 	flex-flow: row;
 	justify-content: space-between;
 	align-items: center;
 	margin: 0;
-	top: 0;
 	padding: 0.25rem;
 	width: 100%;
 	height: 3.5rem;
 	background: var(--secondary-color);
 	border-bottom: var(--border-width) solid var(--border-color) !important;
+	box-shadow: var(--card-shadow);
 }
 .toolbar h4 {
 	color: var(--subtitle-color);
@@ -658,6 +645,9 @@ section {
 		padding-bottom: 0rem;
 	}
 
+	.content {
+		margin: 0.5rem auto;
+	}
 	.content .heading {
 		margin: 1rem 0rem;
 	}
@@ -669,7 +659,7 @@ section {
 	}
 
 	.card {
-		padding: 0.75rem;
+		padding: 0.5rem;
 	}
 	.card .heading,
 	.card .heading :is(.title, .accessories) {
@@ -702,6 +692,14 @@ section {
 	.card .heading.toggle :is(.title, .accessories) {
 		margin: 0;
 		width: min-content;
+	}
+
+	.subsection {
+		padding: 0.125rem;
+		background: none;
+		border: none;
+		border-radius: 0;
+		box-shadow: none;
 	}
 
 	.toast-window {

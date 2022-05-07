@@ -77,16 +77,6 @@ button.scroll-top-shortcut .icon {
   padding: 0.125rem;
   width: 2rem;
   height: 2rem;
-  color: var(--text-color);
-  transition: 0.1s linear;
-}
-button.scroll-top-shortcut:hover .icon {
-  transform: scale(115%);
-  transition: 0.3s linear;
-}
-button.scroll-top-shortcut:active .icon {
-  transform: scale(100%);
-  transition: 0.2s linear;
 }
 
 @media (max-width: 767px) {
@@ -190,6 +180,7 @@ nav a:active {
   box-shadow: var(--button-shadow-active);
 }
 nav li.active a {
+  background: var(--accent-color);
   border-color: var(--button-border-color);
   box-shadow: var(--button-shadow);
 }
@@ -203,11 +194,11 @@ nav a:hover .icon {
   transition: 0.3s linear;
 }
 nav li.active :is(a, a:hover) {
-  color: var(--accent-color);
+  color: var(--text-color);
 }
 nav li.active a .icon {
-  color: var(--accent-color);
-  filter: drop-shadow(0px 2px 1px rgba(0, 0, 0, 0.25));
+  color: var(--text-color);
+  filter: drop-shadow(var(--element-shadow));
   transition: 0.3s linear;
 }
 nav a:active {
