@@ -21,7 +21,7 @@ header {
   color: var(--header-fg-color);
   background: var(--header-bg-color);
   border: solid var(--border-color);
-  border-width: 0px var(--border-width) 0px 0px;
+  border-width: 0px var(--header-border-width) 0px 0px;
   border-radius: 0px;
   box-shadow: var(--header-shadow);
 }
@@ -96,6 +96,7 @@ button.scroll-top-shortcut .icon {
     padding: 0.75rem 1rem;
     width: 100%;
     height: min-content;
+    background: var(--header-bg-color-responsive);
     border-width: 0px 0px var(--border-width) 0px;
     border-radius: 0;
     box-shadow: var(--header-shadow-responsve);
@@ -228,8 +229,7 @@ nav a:active .icon {
     gap: 0.25rem;
     padding: 0.125rem;
     width: 100%;
-    border: var(--border-width) solid var(--border-color);
-    border-radius: var(--border-radius);
+    border: none;
   }
   nav li {
     width: 100%;
@@ -245,8 +245,9 @@ nav a:active .icon {
     box-shadow: none;
   }
   nav :is(a:active, li.active a) {
+    background: var(--accent-secondary-color);
     border-color: transparent;
-    box-shadow: none;
+    box-shadow: var(--button-shadow-active);
   }
   nav a .icon {
     filter: none !important;
