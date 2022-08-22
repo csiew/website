@@ -1,0 +1,29 @@
+header {
+  width: 100%;
+  display: inline-flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: space-between;
+
+  color: var(--fg-color);
+  background: none;
+}
+
+nav a {
+  padding: 0.25rem 1rem;
+
+  color: var(--fg-color);
+
+  font-weight: bold;
+  text-decoration: none;
+}
+nav a:hover {
+  color: var(--fg-color-6);
+
+  text-decoration: none;
+}
+nav a:active {
+  color: var(--fg-color-3);
+
+  text-decoration: none;
+}

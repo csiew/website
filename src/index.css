@@ -1,0 +1,43 @@
+:root {
+  --fg-color: #333333;
+  --fg-color-1: #363636;
+  --fg-color-2: #393939;
+  --fg-color-3: #424242;
+  --fg-color-4: #454545;
+  --fg-color-5: #484848;
+  --fg-color-6: #515151;
+  --bg-color: #cccccc;
+  --primary-color: #348282;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.25;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: var(--fg-color);
+  background: var(--bg-color);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+a:active {
+  color: var(--fg-color);
+}
