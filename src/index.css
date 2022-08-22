@@ -6,8 +6,21 @@
   --fg-color-4: #454545;
   --fg-color-5: #484848;
   --fg-color-6: #515151;
-  --bg-color: #cccccc;
+
+  --bg-color: #ffffff;
+  --bg-color-1: #eeeeee;
+  --bg-color-2: #dddddd;
+  --bg-color-3: #cccccc;
+  --bg-color-4: #bbbbbb;
+  --bg-color-5: #aaaaaa;
+
   --primary-color: #348282;
+
+  --shadow: none;
+  --shadow-1: rgba(0, 0, 0, 0.5);
+  --shadow-2: rgba(0, 0, 0, 0.325);
+  --shadow-3: rgba(0, 0, 0, 0.25);
+  --shadow-4: rgba(0, 0, 0, 0.125);
 }
 
 * {
@@ -15,6 +28,10 @@
 }
 
 html {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
   font-family: Helvetica, Arial, sans-serif;
   font-size: 1rem;
   line-height: 1.25;
@@ -22,13 +39,18 @@ html {
 
   color-scheme: light dark;
   color: var(--fg-color);
-  background: var(--bg-color);
+  background: var(--bg-color-1);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
 }
 
 a {
@@ -40,4 +62,28 @@ a:hover {
 }
 a:active {
   color: var(--fg-color);
+}
+
+h1 {
+  margin: 0;
+  padding: 0.5rem 0rem;
+}
+h2 {
+  margin: 0;
+  padding: 0.325rem 0rem;
+}
+h3, h4, h5 {
+  margin: 0;
+  padding: 0.25rem 0rem;
+}
+
+main {
+  width: 100%;
+  margin: 0;
+  padding: 0rem 1rem;
+
+  display: inline-flex;
+  flex-flow: column;
+  align-items: flex-start;
+  justify-content: flex-start;
 }

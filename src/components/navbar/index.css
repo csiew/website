@@ -1,5 +1,8 @@
 header {
   width: 100%;
+  margin: 0;
+  padding: 0.25rem 1rem;
+
   display: inline-flex;
   flex-flow: row;
   align-items: center;
@@ -11,19 +14,19 @@ header {
 
 nav a {
   padding: 0.25rem 1rem;
-
-  color: var(--fg-color);
-
   font-weight: bold;
   text-decoration: none;
+  color: var(--fg-color);
+
 }
 nav a:hover {
-  color: var(--fg-color-6);
-
   text-decoration: none;
+  color: var(--fg-color-6);
 }
 nav a:active {
-  color: var(--fg-color-3);
-
   text-decoration: none;
+  color: var(--fg-color-3);
+}
+nav a.active {
+  color: var(--primary-color);
 }
