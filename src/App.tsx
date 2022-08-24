@@ -1,18 +1,41 @@
 import { Routes, Route } from "react-router-dom";
+import NavBar from "./components/app/NavBar";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import NavBar from "./components/navbar";
+import Projects from "./pages/Projects";
+import { PageRoute } from "./common/@types";
 
-export default () => {
+const pages: PageRoute[] = [
+  {
+    title: "Home",
+    path: "/",
+    element: <Home />,
+  },
+  {
+    title: "About",
+    path: "/about",
+    element: <About />,
+  },
+  {
+    title: "Projects",
+    path: "/projects",
+    element: <Projects />,
+  }
+];
+
+const App = () => {
   return (
     <div className="App">
-      <NavBar />
+      <NavBar pages={pages} />
       <main>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          {
+            pages.map((page) => <Route key={page.path.replace("/", "app-route-")} path={page.path} element={page.element} />)
+          }
         </Routes>
       </main>
     </div>
   );
 };
+
+export default App;

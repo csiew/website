@@ -1,0 +1,110 @@
+{
+    "projectStatus": {
+        "0": "Discontinued",
+        "1": "Hiatus",
+        "2": "Active"
+    },
+    "projects": [
+        {
+            "id": "brioche",
+            "name": "Brioche",
+            "timeRange": "2021",
+            "status": 2,
+            "description": "Brioche is a React UI component library based off the reusable components and stylesheets that were developed via my personal website over the years. It is currently under heavy development and may not have all commonly-used UI components.\n\nIt is the successor to Cardo, my previous attempt at building a UI component library.",
+            "imgUrl": "",
+            "url": "https://www.npmjs.com/package/brioche",
+            "github": "https://github.com/csiew/brioche"
+        },
+        {
+            "id": "cast",
+            "name": "Cast",
+            "timeRange": "2020",
+            "status": 1,
+            "description": "A podcast web app that allows you to manage your podcast subscriptions and bookmarks with an intuitive, well-organised interface.\n\nIt uses the Node.js runtime with the Express framework for its backend API service.\n\nThe initial version of Cast used my own custom frontend library, Cardo. However I have since started work on a version of the frontend that uses the Vue.js framework, just like this site.",
+            "imgUrl": "cast.png",
+            "url": "",
+            "github": ""
+        },
+        {
+            "id": "cardo",
+            "name": "Cardo",
+            "timeRange": "2020",
+            "status": 1,
+            "description": "A client-side web frontend library (more so a collection of functions to enable single-page web apps). The previous version of my site and my 'Hoddle' Javascript window manager contain the foundational work for this library. The initial version of my upcoming podcast app used this library extensively.\n\nIt does not add additional syntactic sugar to the existing HTML syntax of a site (unlike _Vue.js_ or _Svelte_). It is largely made up of utility functions written in vanilla JavaScript with some JQuery thrown-in (for stuff like changing out contents of an element, performing data calls, etc). My own custom utility CSS stylesheets also work hand-in-hand with this library to provide pre-designed UI elements.",
+            "imgUrl": "",
+            "url": "",
+            "github": "",
+            "note": "Cardo's CSS utility library survived beyond _Cast's_ transition to Vue.js. The latest iteration of it powers this site. This CSS utility library along with the custom React components in use on this site are in the process of being converted into a reusable library."
+        },
+        {
+            "id": "biscuitwm",
+            "name": "BiscuitWM",
+            "timeRange": "2020-2021",
+            "status": 2,
+            "description": "A minimalist X11 window manager for Linux/Unix systems written in Python. It's largely an experimental project. It's based on [TinyWM](https://github.com/mackstann/tinywm) and [xpywm](https://github.com/h-ohsaki/xpywm).",
+            "imgUrl": "biscuitwm.png",
+            "url": "https://csiew.github.io/BiscuitWM",
+            "github": "https://github.com/csiew/BiscuitWM"
+        },
+        {
+            "id": "podzol",
+            "name": "Podzol",
+            "timeRange": "2020",
+            "status": 0,
+            "description": "A podcast app that lives in your terminal. It stores indexes of your podcast subscriptions and episode data in JSON files. It's written in Python and uses the pygame library for audio streaming functionality. Limitations with pygame and cross-platform compatibiltiy (Linux and macOS) led me to start working on a web-based podcast client (which was initially codenamed Podzol).",
+            "imgUrl": "",
+            "url": "",
+            "github": "https://github.com/csiew/podzol"
+        },
+        {
+            "id": "hoddle",
+            "name": "Hoddle",
+            "timeRange": "2020",
+            "status": 0,
+            "description": "An experimental client-side JavaScript frontend library to turn a web page into a desktop-like environment. It allows for moveable and resizeable windows.",
+            "imgUrl": "hoddle.png",
+            "url": "https://csiew.github.io/Hoddle",
+            "github": "https://github.com/csiew/Hoddle"
+        },
+        {
+            "id": "md2magic",
+            "name": "md2magic",
+            "timeRange": "2018, 2020",
+            "status": 0,
+            "description": "A static site generator written in Python. Ideal for blogs. Work on a rewrite had been on-and-off until 2020.",
+            "imgUrl": "",
+            "url": "",
+            "github": "https://github.com/csiew/md2magic"
+        },
+        {
+            "id": "transitsafe",
+            "name": "TransitSafe",
+            "timeRange": "2017-2019",
+            "status": 0,
+            "description": "An app and service that lets commuters report incidents (crime, hygiene, medical emergencies, etc) on public transport. It used the Public Transport Victoria APIs to get data on public transport services and station metadata.",
+            "imgUrl": "",
+            "url": "",
+            "github": ""
+        },
+        {
+            "id": "antorcalinux",
+            "name": "Antorca Linux",
+            "timeRange": "2017-2019",
+            "status": 0,
+            "description": "A Debian-based Linux distribution designed for a simple out of the box experience. Ideal for Windows users transitioning to Linux. It used the Xfce desktop environment.",
+            "imgUrl": "antorca_linux.png",
+            "url": "https://antorca.github.io/linux/",
+            "github": ""
+        },
+        {
+            "id": "illumeos",
+            "name": "illume OS",
+            "timeRange": "2011-2017",
+            "status": 0,
+            "description": "A lightweight Debian-based Linux distribution designed for old hardware (e.g. 32-bit x86 PCs). It used IceWM as its window manager in version 1.x, before transitioning to the LXDE desktop environment from version 2.x onwards.",
+            "imgUrl": "",
+            "url": "https://illume-os.firebaseapp.com/",
+            "github": ""
+        }
+    ]
+}

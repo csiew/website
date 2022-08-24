@@ -1,0 +1,57 @@
+:root {
+  --btn-fg-color: gray;
+  --btn-fg-color-hover: dimgray;
+  --btn-fg-color-active: var(--fg-color);
+  --btn-fg-color-selected: var(--primary-color-3);
+  --btn-fg-color-focused: var(--primary-color);
+
+  --btn-bg-color: none;
+  --btn-bg-color-hover: lightgray;
+  --btn-bg-color-active: gray;
+  --btn-bg-color-selected: var(--primary-color);
+  --btn-bg-color-focused: var(--primary-color-3);
+}
+
+:is(button, .button, input[type=submit], input[type=reset]) {
+  width: max-content;
+  margin: 0;
+  padding: 0.25rem 0.5rem;
+
+  color: var(--btn-fg-color);
+  background: var(--btn-bg-color);
+  border: 1px solid var(--bg-color-3);
+  border-radius: 5px;
+
+  font-family: var(--font-family-widget);
+  font-weight: 600;
+  text-decoration: none;
+}
+:is(button, .button, input[type=submit], input[type=reset]):hover {
+  color: var(--btn-fg-color-hover);
+  background: var(--btn-bg-color-hover);
+
+  text-decoration: none;
+}
+:is(button, .button, input[type=submit], input[type=reset]):active {
+  color: var(--btn-fg-color-active);
+  background: var(--btn-bg-color-active);
+}
+:is(button, .button, input[type=submit], input[type=reset]).active {
+  color: var(--btn-fg-color-selected);
+  background: var(--btn-bg-color-selected);
+}
+:is(button, .button, input[type=submit], input[type=reset]):is(:disabled, .disabled) {
+  outline: none;
+
+  opacity: 0.5;
+  filter: saturate(0);
+
+  cursor: default;
+  pointer-events: none;
+}
+:is(button, .button, input[type=submit], input[type=reset]):focus {
+  color: var(--btn-fg-color-focused);
+  background: var(--btn-bg-color-focused);
+  border-color: var(--btn-fg-color-focused);
+  outline: 3px solid var(--btn-fg-color-focused);
+}
