@@ -1,3 +1,7 @@
+main:has(article#page-projects) {
+  max-width: 1024px;
+}
+
 article#page-projects .projects {
   width: 100%;
   margin: 0;

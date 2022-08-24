@@ -49,10 +49,11 @@ header h1 {
 @media (max-width: 768px) {
   header {
     margin-bottom: 1rem;
+    padding: 0.25rem 0rem;
 
     flex-flow: column;
     align-items: center;
-    justify-content: center
+    justify-content: center;
   }
 
   header h1 {
@@ -60,7 +61,7 @@ header h1 {
   }
 }
 
-nav {
+header nav {
   display: inline-flex;
   flex-flow: row;
   align-items: center;
@@ -68,7 +69,14 @@ nav {
   gap: 0.25rem;
 }
 
-nav a {
+@media (max-width: 767px) {
+  header nav {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+}
+
+header nav a {
   padding: 0.325rem 0.5rem;
 
   color: var(--nav-fg-color);
@@ -79,19 +87,19 @@ nav a {
   text-decoration: none;
 
 }
-nav a:hover {
+header nav a:hover {
   color: var(--nav-fg-color-hover);
   background: var(--nav-bg-color-hover);
 
   text-decoration: none;
 }
-nav a:active {
+header nav a:active {
   color: var(--nav-fg-color-active);
   background: var(--nav-bg-color-active);
 
   text-decoration: none;
 }
-nav a.active {
+header nav a.active {
   color: var(--nav-fg-color-selected);
   background: var(--nav-bg-color-selected);
 }

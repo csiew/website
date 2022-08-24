@@ -17,33 +17,47 @@ const Projects = () => {
   return (
     <article id="page-projects" className="top-level-page">
       <h2>Projects</h2>
-      <div className="projects">
-        {
-          projectData.projects.map((project) => {
-            return (
-              <section key={`project-item-${project.id}`}>
-                <Paper>
-                  <div className="project-header">
-                    <h3>{project.name}</h3>
-                    <div className="project-header-links">
-                      <Button url={project.url} newTab={true} disabled={project.url.length === 0}>Website</Button>
-                      <Button url={project.github} newTab={true}>Repository</Button>
+      <div className="article-body">
+        <nav>
+          {
+            projectData.projects.map((project) => {
+              const keyName = `project-shortcut-${project.id}`;
+              return (
+                <a key={keyName} href={`#${keyName}`}>
+                  {project.name}
+                </a>
+              );
+            })
+          }
+        </nav>
+        <div className="article-content projects">
+          {
+            projectData.projects.map((project) => {
+              return (
+                <section id={`project-shortcut-${project.id}`} key={`project-item-${project.id}`}>
+                  <Paper>
+                    <div className="project-header">
+                      <h3>{project.name}</h3>
+                      <div className="project-header-links">
+                        <Button url={project.url} newTab={true} disabled={project.url.length === 0}>Website</Button>
+                        <Button url={project.github} newTab={true}>Repository</Button>
+                      </div>
                     </div>
-                  </div>
-                  {
-                    project.imgUrl ?
-                      <img src={project.imgUrl} width="100%" />
-                      :
-                      <></>
-                  }
-                  <ReactMarkdown>
-                    {project.description}
-                  </ReactMarkdown>
-                </Paper>
-              </section>
-            );
-          })
-        }
+                    {
+                      project.imgUrl ?
+                        <img src={project.imgUrl} width="100%" />
+                        :
+                        <></>
+                    }
+                    <ReactMarkdown>
+                      {project.description}
+                    </ReactMarkdown>
+                  </Paper>
+                </section>
+              );
+            })
+          }
+        </div>
       </div>
     </article>
   );

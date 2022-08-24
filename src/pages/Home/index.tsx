@@ -9,7 +9,6 @@ const Home = () => {
 
   return (
     <article id="page-home" className="top-level-page">
-      <h2>Hello World</h2>
       <section>
         <img id="profile" src="/profile.jpg" alt="Clarence's portrait" />
         <p>
