@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
 import { PageRoute } from "./common/@types";
+import Footer from "./components/app/Footer";
 
 const pages: PageRoute[] = [
   {
@@ -25,7 +26,7 @@ const pages: PageRoute[] = [
 
 const App = () => {
   return (
-    <div className="App">
+    <>
       <NavBar pages={pages} />
       <main>
         <Routes>
@@ -34,7 +35,8 @@ const App = () => {
           }
         </Routes>
       </main>
-    </div>
+      <Footer />
+    </>
   );
 };
 

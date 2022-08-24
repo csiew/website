@@ -20,8 +20,13 @@ header {
   align-items: center;
   justify-content: space-between;
 
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
   color: var(--fg-color);
-  background: none;
+  background: var(--bg-color);
+  border-bottom: 1px solid var(--bg-color-3);
 
   font-family: var(--font-family-widget);
 }

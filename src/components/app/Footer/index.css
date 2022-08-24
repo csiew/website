@@ -1,0 +1,19 @@
+footer {
+  width: 100%;
+  margin: auto 0 0 0;
+  padding: 2rem 1rem 4rem 1rem;
+
+  display: inline-flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+
+  top: auto;
+  bottom: 0;
+
+  color: var(--fg-color-9);
+  background: var(--bg-color-2);
+
+  font-family: var(--font-family-widget);
+  font-size: 80%;
+}
