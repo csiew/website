@@ -40,7 +40,7 @@ const Projects = () => {
                       <h3>{project.name}</h3>
                       <div className="project-header-links">
                         <Button url={project.url} newTab={true} disabled={project.url.length === 0}>Website</Button>
-                        <Button url={project.github} newTab={true}>Repository</Button>
+                        <Button url={project.github} newTab={true} disabled={project.github.length === 0}>Repository</Button>
                       </div>
                     </div>
                     {

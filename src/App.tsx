@@ -1,7 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import NavBar from "./components/app/NavBar";
 import Home from "./pages/Home";
-import About from "./pages/About";
 import Projects from "./pages/Projects";
 import { PageRoute } from "./common/@types";
 import Footer from "./components/app/Footer";
@@ -11,11 +10,7 @@ const pages: PageRoute[] = [
     title: "Home",
     path: "/",
     element: <Home />,
-  },
-  {
-    title: "About",
-    path: "/about",
-    element: <About />,
+    hideFromNavBar: true,
   },
   {
     title: "Projects",
