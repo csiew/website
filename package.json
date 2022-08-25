@@ -3,8 +3,8 @@
   "private": true,
   "version": "6.0.0",
   "type": "commonjs",
+  "files": ["./dist"],
   "scripts": {
-    "compile": "tsc -p ./tsconfig.dist.json",
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
