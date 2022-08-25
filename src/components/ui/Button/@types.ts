@@ -1,16 +1,12 @@
 import { ReactElement } from "react";
+import { BaseComponentProps } from "../../../common/@types";
 
-export type CommonButtonProps = {
-  classList?: string[];
-  className?: string;
+export type CommonButtonProps = BaseComponentProps & {
+  children?: string | number | ReactElement | ReactElement[];
   callback?: () => void;
-  disabled?: boolean;
-  style?: { [k: string]: string | number };
 };
 
-export type PlainButtonProps = CommonButtonProps & {
-  label?: string;
-};
+export type PlainButtonProps = CommonButtonProps;
 
 export type LinkButtonProps = CommonButtonProps & {
   children?: string | number | ReactElement | ReactElement[];

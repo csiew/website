@@ -1,6 +1,6 @@
 import { PlainButtonProps } from "./@types";
 
-const PlainButton = ({ classList, className, style, label, callback, disabled }: PlainButtonProps) => {
+const PlainButton = ({ classList, className, style, children, callback, disabled }: PlainButtonProps) => {
   return (
     <button
       className={[disabled ? "disabled" : undefined, className, ...classList || []].join(" ")}
@@ -8,7 +8,7 @@ const PlainButton = ({ classList, className, style, label, callback, disabled }:
       onClick={callback}
       disabled={disabled}
     >
-      {label}
+      {children}
     </button>
   );
 };

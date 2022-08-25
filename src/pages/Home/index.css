@@ -1,14 +1,11 @@
 article#page-home {
-  margin: 0;
-  padding: 0;
-
   font-size: 1.25rem;
 }
 
 article#page-home section:first-of-type p:first-of-type {
-  max-width: 500px;
+  max-width: 80%;
   width: 100%;
-  margin: 1rem 0rem 0rem 0rem;
+  margin: 1rem 0rem 2rem 0rem;
   padding: 1.5rem;
 
   background: var(--primary-color-3);

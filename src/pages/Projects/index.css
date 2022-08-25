@@ -1,7 +1,3 @@
-main:has(article#page-projects) {
-  max-width: 1024px;
-}
-
 article#page-projects .projects {
   width: 100%;
   margin: 0;
@@ -12,52 +8,4 @@ article#page-projects .projects {
   align-items: stretch;
   justify-content: flex-start;
   gap: 1rem;
-}
-
-article#page-projects section h3 {
-  font-size: 200%;
-  white-space: nowrap;
-}
-
-article#page-projects section img {
-  margin: 0.5rem 0rem;
-  padding: 0;
-
-  border: 1px solid var(--bg-color-3);
-  border-radius: 5px;
-}
-
-article#page-projects .project-header {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-
-  display: inline-flex;
-  flex-flow: row;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-@media (max-width: 767px) {
-  article#page-projects .project-header {
-    margin: 0rem 0rem 1rem 0rem;
-
-    flex-flow: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-  }
-}
-
-article#page-projects .project-header .project-header-links {
-  width: min-content;
-  margin: 0;
-  padding: 0;
-
-  display: inline-flex;
-  flex-flow: row;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 0.5rem;
 }

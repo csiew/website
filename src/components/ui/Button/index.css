@@ -23,8 +23,11 @@
   border-radius: 5px;
 
   font-family: var(--font-family-widget);
+  font-size: inherit;
   font-weight: 600;
   text-decoration: none;
+
+  cursor: pointer;
 }
 :is(button, .button, input[type=submit], input[type=reset]):hover {
   color: var(--btn-fg-color-hover);
