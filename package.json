@@ -4,6 +4,7 @@
   "version": "6.0.0",
   "type": "commonjs",
   "scripts": {
+    "compile": "tsc -p ./tsconfig.dist.json",
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",

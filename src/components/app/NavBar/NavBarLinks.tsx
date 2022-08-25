@@ -9,7 +9,7 @@ const NavBarLinks = ({ pages }: { pages: PageRoute[] }) => {
           .filter((page) => !page.hideFromNavBar)
           .map((page) => {
             return (
-              <NavLink key={page.path.replace("/", "nav-link-")} to={page.path} className={(state: any) => state.isActive ? "active" : ""}>
+              <NavLink key={page.path.replace("/", "nav-link-")} to={page.path} className={(state: { isActive: boolean }) => state.isActive ? "active" : ""}>
                 {page.title}
               </NavLink>
             );
