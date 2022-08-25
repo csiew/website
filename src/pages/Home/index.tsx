@@ -5,6 +5,7 @@ import "./index.css";
 const Home = () => {
   useEffect(() => {
     document.title = retitle("Home");
+    document.getElementById("root")?.scrollTo({ top: 0 });
   }, []);
 
   return (

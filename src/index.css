@@ -30,6 +30,7 @@
   --primary-color-2: #84D2D2;
   --primary-color-3: #C4E3E3;
   --primary-color-4: #D9E8E8;
+  --primary-color-5: #E9F8F8;
 
   --shadow: none;
   --shadow-1: rgba(0, 0, 0, 0.5);
@@ -122,6 +123,12 @@ main {
   justify-content: flex-start;
 }
 
+@media (max-width: 767px) {
+  main {
+    padding: 1rem;
+  }
+}
+
 article {
   font-family: var(--font-family-article);
   letter-spacing: -0.75px;
@@ -168,4 +175,20 @@ article.top-level-page h2 {
   article.top-level-page h2 {
     text-align: center;
   }
+}
+
+article .card-list {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  display: inline-flex;
+  flex-flow: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+article .card-list .paper {
+  width: 100%;
 }

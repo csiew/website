@@ -15,9 +15,9 @@ export type Project = {
   github: string;
 };
 
-export type ProjectData = {
+export interface ProjectData {
   projectStatus: {
     [k: string]: "Discontinued" | "Hiatus" | "Active"
   };
   projects: Project[];
-};
+}

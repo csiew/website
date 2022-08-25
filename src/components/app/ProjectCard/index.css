@@ -45,6 +45,12 @@ section.project .project-header .project-header-info {
   -moz-user-select: none;
 }
 
+@media (max-width: 767px) {
+  section.project .project-header .project-header-info {
+    align-items: center;
+  }
+}
+
 section.project .project-header .project-header-info h3 {
   padding: 0.125rem 0rem;
 

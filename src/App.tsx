@@ -1,9 +1,10 @@
 import { Routes, Route } from "react-router-dom";
+import { PageRoute } from "./common/@types";
 import NavBar from "./components/app/NavBar";
+import Footer from "./components/app/Footer";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
-import { PageRoute } from "./common/@types";
-import Footer from "./components/app/Footer";
+import Playlists from "./pages/Playlists";
 
 const pages: PageRoute[] = [
   {
@@ -16,6 +17,11 @@ const pages: PageRoute[] = [
     title: "Projects",
     path: "/projects",
     element: <Projects />,
+  },
+  {
+    title: "Playlists",
+    path: "/playlists",
+    element: <Playlists />,
   }
 ];
 
