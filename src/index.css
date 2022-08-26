@@ -37,6 +37,7 @@
   --shadow-2: rgba(0, 0, 0, 0.325);
   --shadow-3: rgba(0, 0, 0, 0.25);
   --shadow-4: rgba(0, 0, 0, 0.125);
+  --shadow-5: rgba(0, 0, 0, 0.06125);
 }
 
 * {
@@ -63,7 +64,7 @@ html {
 
   color-scheme: light dark;
   color: var(--fg-color);
-  background: var(--bg-color-1);
+  background: var(--bg-color);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -160,15 +161,8 @@ article.top-level-page h2 {
 
   font-size: 250%;
   font-style: italic;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: -0.125rem;
-
-  transform: skewX(-10deg);
-
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
+  font-weight: 500;
+  letter-spacing: -0.06125rem;
 }
 
 @media (max-width: 767px) {

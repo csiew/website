@@ -25,7 +25,7 @@ const PlaylistGroupCard = ({ playlistGroup }: { playlistGroup: PlaylistGroup }) 
             {
               playlistGroup.playlists.special.map((playlist) => {
                 return (
-                  <Button key={`playlist-${playlistGroup.id}-${playlist.name}`} url={playlist.url}>
+                  <Button className="primary" key={`playlist-${playlistGroup.id}-${playlist.name}`} url={playlist.url}>
                     {playlist.name}
                   </Button>
                 );

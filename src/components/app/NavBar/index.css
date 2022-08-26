@@ -1,13 +1,13 @@
 :root {
   --nav-fg-color: gray;
   --nav-fg-color-hover: dimgray;
-  --nav-fg-color-active: var(--fg-color);
+  --nav-fg-color-active: var(--primary-color);
   --nav-fg-color-selected: var(--primary-color);
 
   --nav-bg-color: none;
   --nav-bg-color-hover: lightgray;
-  --nav-bg-color-active: gray;
-  --nav-bg-color-selected: var(--primary-color-3);
+  --nav-bg-color-active: var(--primary-color-3);
+  --nav-bg-color-selected: var(--primary-color-4);
 }
 
 header {
@@ -25,7 +25,9 @@ header {
   z-index: 100;
 
   color: var(--fg-color);
-  background: var(--bg-color);
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(6px);
+  box-shadow: 0px 2px 4px var(--shadow-4);
   border-bottom: 1px solid var(--bg-color-3);
 
   font-family: var(--font-family-widget);
@@ -34,12 +36,9 @@ header {
 header h1 {
   color: var(--fg-color-9);
 
-  font-weight: 900;
+  font-weight: 600;
   font-style: italic;
-  text-transform: uppercase;
-  letter-spacing: -0.125rem;
-
-  transform: skewX(-10deg);
+  letter-spacing: -0.06125rem;
 
   user-select: none;
   -webkit-user-select: none;
