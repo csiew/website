@@ -1,11 +1,17 @@
+import { LegacyRef } from "react";
 import ReactMarkdown from "react-markdown";
 import { Project } from "../../../pages/Projects/@types";
 import Button from "../../ui/Button";
 import Paper from "../../ui/Paper";
 
-const ProjectCard = ({ project }: { project: Project }) => {
+type ProjectCardProps = {
+  project: Project;
+  ref?: LegacyRef<HTMLElement> | undefined;
+};
+
+const ProjectCard = ({ project, ref }: ProjectCardProps) => {
   return (
-    <section className="project">
+    <section className="project" id={project.id} ref={ref}>
       <Paper>
         <div className="project-header">
           <div className="project-header-info">
