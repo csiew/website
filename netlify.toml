@@ -1,9 +1,0 @@
-[build]
-  command = "next build"
-  publish = ""
-  base = "/"
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
