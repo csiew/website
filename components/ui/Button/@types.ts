@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import { BaseComponentProps } from "../../../common/@types";
+import { BaseComponentProps } from "../../../lib/@types";
 
 export type CommonButtonProps = BaseComponentProps & {
   children?: string | number | ReactElement | ReactElement[];
