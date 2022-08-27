@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
+import config from "../config";
 import NavigationView from "../components/ui/NavigationView";
 import retitle from "../lib/retitle";
 
 const Home = () => {
   useEffect(() => {
     document.title = retitle("Home");
-    document.getElementById("root")?.scrollTo({ top: 0 });
+    document.getElementById(config.rootElementId)?.scrollTo({ top: 0 });
   }, []);
 
   return (

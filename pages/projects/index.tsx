@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import config from "../../config";
 import retitle from "../../lib/retitle";
 import { ProjectData } from "../../lib/projects";
 import rawProjectData from "./projects.json";
@@ -11,7 +12,7 @@ const projectData = rawProjectData as ProjectData;
 const Projects = () => {
   useEffect(() => {
     document.title = retitle("Projects");
-    document.getElementById("root")?.scrollTo({ top: 0 });
+    document.getElementById(config.rootElementId)?.scrollTo({ top: 0 });
   }, []);
 
   return (

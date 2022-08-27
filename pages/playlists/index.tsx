@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import config from "../../config";
 import PlaylistGroupCard from "../../components/app/PlaylistGroupCard";
 import NavigationSidebar from "../../components/ui/NavigationSidebar";
 import NavigationView from "../../components/ui/NavigationView";
@@ -11,7 +12,7 @@ const playlistData = rawPlaylistData as PlaylistData;
 const Playlists = () => {
   useEffect(() => {
     document.title = retitle("Playlists");
-    document.getElementById("root")?.scrollTo({ top: 0 });
+    document.getElementById(config.rootElementId)?.scrollTo({ top: 0 });
   }, []);
 
   return (
