@@ -33,8 +33,7 @@ nav.navigation-sidebar ul {
   justify-content: flex-start;
 
   position: sticky;
-  /* top: 5.5rem; */
-  top: 0;
+  top: 4.5rem;
 }
 nav.navigation-sidebar ul li {
   width: 100%;
