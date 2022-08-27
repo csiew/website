@@ -1,6 +1,6 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
-import { Project } from "../../../pages/Projects/@types";
+import { Project } from "../../../lib/projects";
 import Button from "../../ui/Button";
 import Paper from "../../ui/Paper";
 

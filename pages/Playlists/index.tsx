@@ -3,7 +3,7 @@ import PlaylistGroupCard from "../../components/app/PlaylistGroupCard";
 import NavigationSidebar from "../../components/ui/NavigationSidebar";
 import NavigationView from "../../components/ui/NavigationView";
 import retitle from "../../lib/retitle";
-import { PlaylistData } from "./@types";
+import { PlaylistData } from "../../lib/playlists";
 import rawPlaylistData from "./playlists.json";
 
 const playlistData = rawPlaylistData as PlaylistData;

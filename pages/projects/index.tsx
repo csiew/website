@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import retitle from "../../lib/retitle";
-import { ProjectData } from "./@types";
+import { ProjectData } from "../../lib/projects";
 import rawProjectData from "./projects.json";
 import ProjectCard from "../../components/app/ProjectCard";
 import NavigationView from "../../components/ui/NavigationView";

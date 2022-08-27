@@ -1,5 +1,5 @@
 import React from "react";
-import { PlaylistGroup } from "../../../pages/Playlists/@types";
+import { PlaylistGroup } from "../../../lib/playlists";
 import Button from "../../ui/Button";
 import Paper from "../../ui/Paper";
 
