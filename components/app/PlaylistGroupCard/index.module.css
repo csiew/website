@@ -1,0 +1,59 @@
+.playlistGroup .playlistGroupHeader {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  display: inline-flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+@media (max-width: 767px) {
+  .playlistGroup .playlistGroupHeader {
+    justify-content: center;
+  }
+}
+
+.playlistGroup .playlistGroupHeader h3 {
+  width: max-content;
+  margin: 0;
+  padding: 0.25rem 0rem 1rem 0rem;
+
+  font-size: 200%;
+  line-height: 1;
+}
+
+.playlistGroup .playlistGroupBody {
+  width: 100%;
+  margin: 0;
+  padding: 0rem 0rem 0.5rem 0rem;
+
+  display: inline-flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+.playlistGroup .playlistGroupBody section {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+
+  border-radius: 9px;
+}
+
+@media (max-width: 767px) {
+  .playlistGroup .playlistGroupBody section {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.playlistGroup .playlistGroupBody section a.button {
+  width: 100%;
+  text-align: center;
+}

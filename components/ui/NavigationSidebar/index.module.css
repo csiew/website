@@ -1,0 +1,66 @@
+nav.navigationSidebar {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
+  display: inline-flex;
+  flex-flow: column;
+  align-items: stretch;
+  justify-content: flex-start;
+
+  position: sticky;
+  top: 0;
+
+  background: var(--bg-color);
+  border-width: 0px 1px 0px 0px;
+  border-style: solid;
+  border-color: var(--bg-color-3);
+
+  font-family: var(--font-family-widget);
+  font-size: 90%;
+}
+
+nav.navigationSidebar ul {
+  width: 100%;
+  margin: 0;
+  padding: 1rem 0rem;
+  
+  list-style: none;
+  display: inline-flex;
+  flex-flow: column;
+  align-items: stretch;
+  justify-content: flex-start;
+
+  position: sticky;
+  top: 4.5rem;
+}
+nav.navigationSidebar ul li {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  
+  display: inline-flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+nav.navigationSidebar ul li.navigationSidebarItem :is(a, span) {
+  width: 100%;
+  margin: 0;
+  padding: 0.25rem 1rem;
+  color: var(--fg-color-9);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+nav.navigationSidebar ul li.navigationSidebarItem :is(a, span):hover {
+  color: var(--primary-color);
+  background: var(--primary-color-3);
+  text-decoration: none;
+}
+nav.navigationSidebar ul li.navigationSidebarItem :is(a, span):active {
+  color: var(--bg-color);
+  background: var(--primary-color);
+  text-decoration: none;
+}
