@@ -2,9 +2,14 @@ import { PlaylistGroup } from "../../../pages/Playlists/@types";
 import Button from "../../ui/Button";
 import Paper from "../../ui/Paper";
 
-const PlaylistGroupCard = ({ playlistGroup }: { playlistGroup: PlaylistGroup }) => {
+type PlaylistGroupCardProps = {
+  id?: string;
+  playlistGroup: PlaylistGroup;
+};
+
+const PlaylistGroupCard = ({ id, playlistGroup }: PlaylistGroupCardProps) => {
   return (
-    <section className="playlist-group">
+    <section className="playlist-group" id={id}>
       <Paper>
         <div className="playlist-group-header">
           <h3>{ playlistGroup.name }</h3>

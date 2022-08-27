@@ -24,19 +24,19 @@ const NavigationSidebar = ({
             const keyName = `${keyPrefix}-${item.key}`;
             if (item.url) {
               return (
-                <ul>
-                  <a className="navigation-sidebar-item" key={keyName} href={item.url}>
+                <li className="navigation-sidebar-item">
+                  <a key={keyName} href={item.url}>
                     {item.label}
                   </a>
-                </ul>
+                </li>
               );
             } else {
               return (
-                <ul>
-                  <span className="navigation-sidebar-item" key={keyName} onClick={item.callback}>
+                <li className="navigation-sidebar-item">
+                  <span key={keyName} onClick={item.callback}>
                     {item.label}
                   </span>
-                </ul>
+                </li>
               );
             }
           })

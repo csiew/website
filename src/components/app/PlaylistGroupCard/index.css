@@ -1,4 +1,21 @@
+.playlist-group .playlist-group-header {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  display: inline-flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+@media (max-width: 767px) {
+  .playlist-group .playlist-group-header {
+    justify-content: center;
+  }
+}
+
 .playlist-group .playlist-group-header h3 {
+  width: max-content;
   margin: 0;
   padding: 0.25rem 0rem 1rem 0rem;
 

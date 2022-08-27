@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import PlaylistGroupCard from "../../components/app/PlaylistGroupCard";
+import NavigationSidebar from "../../components/ui/NavigationSidebar";
 import NavigationView from "../../components/ui/NavigationView";
 import retitle from "../../lib/retitle";
 import { PlaylistData } from "./@types";
@@ -15,6 +16,18 @@ const Playlists = () => {
 
   return (
     <NavigationView
+      nav={(
+        <NavigationSidebar
+          keyPrefix="playlist-shortcut-"
+          items={
+            playlistData.collection.map((playlistGroup) => ({
+              key: playlistGroup.id,
+              url: `#${playlistGroup.id}`,
+              label: playlistGroup.name
+            }))
+          }
+        />
+      )}
       content={(
         <article className="top-level-page">
           <h2>Playlists</h2>
@@ -22,7 +35,11 @@ const Playlists = () => {
             {
               playlistData.collection.map((playlistGroup) => {
                 return (
-                  <PlaylistGroupCard key={`playlist-group-${playlistGroup.id}`} playlistGroup={playlistGroup} />
+                  <PlaylistGroupCard
+                    key={`playlist-group-${playlistGroup.id}`}
+                    id={playlistGroup.id}
+                    playlistGroup={playlistGroup}
+                  />
                 );
               })
             }
