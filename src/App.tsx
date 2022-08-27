@@ -3,6 +3,7 @@ import { PageRoute } from "./common/@types";
 import NavBar from "./components/app/NavBar";
 import Footer from "./components/app/Footer";
 import Home from "./pages/Home";
+import Blog from "./pages/Blog";
 import Projects from "./pages/Projects";
 import Playlists from "./pages/Playlists";
 
@@ -12,6 +13,11 @@ const pages: PageRoute[] = [
     path: "/",
     element: <Home />,
     hideFromNavBar: true,
+  },
+  {
+    title: "Blog",
+    path: "/blog",
+    element: <Blog />,
   },
   {
     title: "Projects",
