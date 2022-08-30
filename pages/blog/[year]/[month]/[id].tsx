@@ -1,7 +1,6 @@
 import React from "react";
 import BlogNavigationView from "../../../../components/app/BlogNavigationView";
-import { BlogPost } from "../../../../lib/blog";
-import getPosts from "../../get-posts";
+import { BlogPost, getPosts } from "../../../../lib/blog";
 
 type BlogPostPageProps = {
   year: string;

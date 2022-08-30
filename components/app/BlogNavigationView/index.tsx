@@ -1,7 +1,6 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
-import { BlogPost } from "../../../lib/blog";
-import { generatePathString } from "../../../pages/blog/get-posts";
+import { BlogPost, generatePathString } from "../../../lib/blog";
 import NavigationSidebar from "../../ui/NavigationSidebar";
 import NavigationView from "../../ui/NavigationView";
 import Paper from "../../ui/Paper";
