@@ -64,3 +64,10 @@ nav.navigationSidebar ul li.navigationSidebarItem :is(a, span):active {
   background: var(--primary-color);
   text-decoration: none;
 }
+nav.navigationSidebar ul li.navigationSidebarItem.active :is(a, span) {
+  color: var(--primary-color);
+  background: var(--primary-color-3);
+  
+  font-weight: 700;
+  text-decoration: none;
+}

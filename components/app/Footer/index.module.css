@@ -12,7 +12,8 @@ footer {
   bottom: 0;
 
   color: var(--fg-color-9);
-  background: var(--bg-color-1);
+  background: none;
+  border-top: 1px solid var(--bg-color-3);
 
   font-family: var(--font-family-widget);
   font-size: 80%;

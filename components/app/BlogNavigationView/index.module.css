@@ -1,0 +1,93 @@
+.pageBlog ul.postList {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  list-style-type: none;
+  display: inline-flex;
+  flex-flow: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
+
+.pageBlog ul.postList li,
+.pageBlog ul.postList li a {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+.pageBlog ul.postList li a:hover {
+  text-decoration: none;
+}
+
+.pageBlog ul.postList li .paper {
+  width: 100%;
+}
+.pageBlog ul.postList li:hover .paper {
+  box-shadow: 0px 4px 8px var(--shadow-2);
+}
+.pageBlog ul.postList li:active .paper {
+  box-shadow: none;
+}
+
+.pageBlog ul.postList li .paper sub {
+  color: var(--fg-color-9);
+  font-size: 75%;
+  font-family: var(--font-family-widget);
+}
+
+.pageBlogPost article.topLevelPage {
+  margin: 3rem auto;
+}
+@media (max-width: 767px) {
+  .pageBlogPost article.topLevelPage {
+    margin: 1rem auto;
+  }
+}
+
+.pageBlogPost .navigationViewNav {
+  max-width: 320px;
+  width: 100%;
+}
+
+.pageBlogPost .navigationSidebar .navigationSidebarItem :is(a, span) {
+  width: 100%;
+  margin: 0;
+  padding: 0.75rem 1rem;
+
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.pageBlogPost .pageBlogPostHeader {
+  margin: 0rem 0rem 1.5rem 0rem;
+  padding: 0rem 0rem 1rem 0rem;
+  border-bottom: 1px solid var(--bg-color-3);
+  text-align: center;
+}
+.pageBlogPost .pageBlogPostHeader h2 {
+  margin: 0rem 0rem 1rem 0rem;
+  padding: 0;
+
+  color: var(--fg-color);
+  border: none;
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1;
+}
+.pageBlogPost .pageBlogPostHeader sub {
+  color: var(--fg-color-5);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.pageBlogPost .pageBlogPostHeader p.timestamp {
+  color: var(--fg-color-9);
+  font-weight: 600;
+}
+
+.pageBlogPost .pageBlogPostContent {
+  font-size: 120%;
+  line-height: 1.5;
+}

@@ -12,13 +12,15 @@
     "next": "^12.2.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-markdown": "^8.0.3"
+    "react-markdown": "^8.0.3",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@types/next": "^9.0.0",
     "@types/node": "^18.7.13",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
+    "@types/uuid": "^8.3.4",
     "@typescript-eslint/eslint-plugin": "^5.33.1",
     "@typescript-eslint/parser": "^5.33.1",
     "@vitejs/plugin-react": "^2.0.1",
