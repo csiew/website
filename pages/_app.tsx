@@ -1,9 +1,10 @@
 import React, {  } from "react";
 import Head from "next/head";
 import "./app.css";
+import routes from "../lib/routes";
 import NavBar from "../components/app/NavBar";
 import Footer from "../components/app/Footer";
-import routes from "../lib/routes";
+import BackToTop from "../components/app/BackToTop";
 
 const AppContext = ({ Component, pageProps }: any) => {
   return (
@@ -17,6 +18,7 @@ const AppContext = ({ Component, pageProps }: any) => {
         <Component {...pageProps} />
       </main>
       <Footer />
+      <BackToTop />
     </>
   );
 };
