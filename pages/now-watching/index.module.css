@@ -9,11 +9,5 @@ article.topLevelPage.pageNowWatching {
 }
 
 .pageNowWatching .pageNowWatchingSection h3 {
-  margin-bottom: 0.75rem;
-  margin-inline: auto;
-
-  font-size: 200%;
-  font-weight: 900;
-  font-style: italic;
-  font-family: var(--font-family-article);
+  margin-bottom: 2rem;
 }
