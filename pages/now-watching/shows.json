@@ -1,0 +1,70 @@
+{
+  "shows": [
+    {
+      "name": "Succession",
+      "imdbId": "tt7660850"
+    },
+    {
+      "name": "House of the Dragon",
+      "imdbId": "tt11198330",
+      "watching": true
+    },
+    {
+      "name": "Westworld",
+      "imdbId": "tt0475784"
+    },
+    {
+      "name": "For All Mankind",
+      "imdbId": "tt7772588"
+    },
+    {
+      "name": "Star Trek: Lower Decks",
+      "imdbId": "tt9184820",
+      "watching": true
+    },
+    {
+      "name": "Star Trek: Strange New Worlds",
+      "imdbId": "tt12327578"
+    },
+    {
+      "name": "Pachinko",
+      "imdbId": "tt8888462"
+    },
+    {
+      "name": "Squid Game",
+      "imdbId": "tt10919420"
+    },
+    {
+      "name": "The Last Kingdom",
+      "imdbId": "tt4179452"
+    },
+    {
+      "name": "Vikings: Valhalla",
+      "imdbId": "tt11311302"
+    },
+    {
+      "name": "The Expanse",
+      "imdbId": "tt3230854"
+    },
+    {
+      "name": "Beforeigners",
+      "imdbId": "tt8332130"
+    },
+    {
+      "name": "Wellington Paranormal",
+      "imdbId": "tt6109562"
+    },
+    {
+      "name": "Halt and Catch Fire",
+      "imdbId": "tt2543312"
+    },
+    {
+      "name": "Dr. Brain",
+      "imdbId": "tt15758760"
+    },
+    {
+      "name": "Foundation",
+      "imdbId": "tt0804484"
+    }
+  ]
+}

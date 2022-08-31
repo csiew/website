@@ -1,0 +1,477 @@
+[
+    {
+        "id": "tt7660850",
+        "Title": "Succession",
+        "Year": "2018–",
+        "Rated": "TV-MA",
+        "Released": "03 Jun 2018",
+        "Runtime": "60 min",
+        "Genre": "Drama",
+        "Director": "N/A",
+        "Writer": "Jesse Armstrong",
+        "Actors": "Nicholas Braun, Peter Friedman, Matthew Macfadyen",
+        "Plot": "The Roy family is known for controlling the biggest media and entertainment company in the world. However, their world changes when their father steps down from the company.",
+        "Language": "English",
+        "Country": "United States",
+        "Awards": "Won 9 Primetime Emmys. 85 wins & 175 nominations total",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BZDE0ODVlYjktNjJiMC00ODk4LWIwNTktMWRhZmZiOGFhYmUwXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX300.jpg",
+        "Ratings": [
+            {
+                "Source": "Internet Movie Database",
+                "Value": "8.8/10"
+            }
+        ],
+        "Metascore": "N/A",
+        "imdbRating": "8.8",
+        "imdbVotes": "136,467",
+        "imdbID": "tt7660850",
+        "Type": "series",
+        "totalSeasons": "3",
+        "Response": "True"
+    },
+    {
+        "id": "tt11198330",
+        "Title": "House of the Dragon",
+        "Year": "2022–",
+        "Rated": "N/A",
+        "Released": "21 Aug 2022",
+        "Runtime": "N/A",
+        "Genre": "Action, Adventure, Drama",
+        "Director": "N/A",
+        "Writer": "Ryan J. Condal, George R.R. Martin",
+        "Actors": "Paddy Considine, Olivia Cooke, Emma D'Arcy",
+        "Plot": "The story of the House Targaryen set 200 years before the events of Game of Thrones (2011).",
+        "Language": "English",
+        "Country": "United States",
+        "Awards": "N/A",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BZDBkZjRiNGMtZGU2My00ODdkLWI0MGYtNGU4MmJjN2MzOTkxXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_SX300.jpg",
+        "Ratings": [],
+        "Metascore": "N/A",
+        "imdbRating": "N/A",
+        "imdbVotes": "N/A",
+        "imdbID": "tt11198330",
+        "Type": "series",
+        "totalSeasons": "N/A",
+        "Response": "True"
+    },
+    {
+        "id": "tt0475784",
+        "Title": "Westworld",
+        "Year": "2016–",
+        "Rated": "TV-MA",
+        "Released": "02 Oct 2016",
+        "Runtime": "62 min",
+        "Genre": "Drama, Mystery, Sci-Fi",
+        "Director": "N/A",
+        "Writer": "Lisa Joy, Jonathan Nolan",
+        "Actors": "Evan Rachel Wood, Jeffrey Wright, Ed Harris",
+        "Plot": "At the intersection of the near future and the reimagined past, waits a world in which every human appetite can be indulged without consequence.",
+        "Language": "English",
+        "Country": "United States",
+        "Awards": "Won 7 Primetime Emmys. 52 wins & 202 nominations total",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BZDg1OWRiMTktZDdiNy00NTZlLTg2Y2EtNWRiMTcxMGE5YTUxXkEyXkFqcGdeQXVyMTM2MDY0OTYx._V1_SX300.jpg",
+        "Ratings": [
+            {
+                "Source": "Internet Movie Database",
+                "Value": "8.5/10"
+            }
+        ],
+        "Metascore": "N/A",
+        "imdbRating": "8.5",
+        "imdbVotes": "494,191",
+        "imdbID": "tt0475784",
+        "Type": "series",
+        "totalSeasons": "4",
+        "Response": "True"
+    },
+    {
+        "id": "tt7772588",
+        "Title": "For All Mankind",
+        "Year": "2019–",
+        "Rated": "TV-MA",
+        "Released": "01 Nov 2019",
+        "Runtime": "60 min",
+        "Genre": "Drama, Sci-Fi",
+        "Director": "N/A",
+        "Writer": "Ronald D. Moore, Ben Nedivi, Matt Wolpert",
+        "Actors": "Joel Kinnaman, Michael Dorman, Wrenn Schmidt",
+        "Plot": "In an alternative version of 1969, the Soviet Union beats the United States to the Moon, and the space race continues on for decades with still grander challenges and goals.",
+        "Language": "English",
+        "Country": "United States",
+        "Awards": "Won 1 Primetime Emmy. 3 wins & 13 nominations total",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BMDI3ZGQ1OGItNGM5Yy00ZDBhLTg2ZDYtYWNkNTU4MDNmZjU2XkEyXkFqcGdeQXVyMjQ4ODcxNTM@._V1_SX300.jpg",
+        "Ratings": [
+            {
+                "Source": "Internet Movie Database",
+                "Value": "7.9/10"
+            }
+        ],
+        "Metascore": "N/A",
+        "imdbRating": "7.9",
+        "imdbVotes": "39,598",
+        "imdbID": "tt7772588",
+        "Type": "series",
+        "totalSeasons": "4",
+        "Response": "True"
+    },
+    {
+        "id": "tt9184820",
+        "Title": "Star Trek: Lower Decks",
+        "Year": "2020–",
+        "Rated": "TV-14",
+        "Released": "06 Aug 2020",
+        "Runtime": "N/A",
+        "Genre": "Animation, Action, Adventure",
+        "Director": "N/A",
+        "Writer": "Mike McMahan",
+        "Actors": "Tawny Newsome, Jack Quaid, Noël Wells",
+        "Plot": "The support crew serving on one of Starfleet's least important ships, the U.S.S. Cerritos, have to keep up with their duties, often while the ship is being rocked by a multitude of sci-fi anomalies.",
+        "Language": "English",
+        "Country": "United States",
+        "Awards": "Nominated for 1 Primetime Emmy. 2 wins & 14 nominations total",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BYzE3NTNkZDUtMWQwYy00NDIxLTgzZGYtZTMxNmYyMTcyYzA1XkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_SX300.jpg",
+        "Ratings": [
+            {
+                "Source": "Internet Movie Database",
+                "Value": "7.3/10"
+            }
+        ],
+        "Metascore": "N/A",
+        "imdbRating": "7.3",
+        "imdbVotes": "16,210",
+        "imdbID": "tt9184820",
+        "Type": "series",
+        "totalSeasons": "3",
+        "Response": "True"
+    },
+    {
+        "id": "tt12327578",
+        "Title": "Star Trek: Strange New Worlds",
+        "Year": "2022–",
+        "Rated": "TV-PG",
+        "Released": "05 May 2022",
+        "Runtime": "N/A",
+        "Genre": "Action, Adventure, Sci-Fi",
+        "Director": "N/A",
+        "Writer": "Akiva Goldsman, Alex Kurtzman, Jenny Lumet",
+        "Actors": "Melissa Navia, Anson Mount, Ethan Peck",
+        "Plot": "A prequel to Star Trek: The Original Series, the show will follow the crew of the USS Enterprise under Captain Christopher Pike.",
+        "Language": "English",
+        "Country": "United States",
+        "Awards": "Nominated for 1 Primetime Emmy. 2 nominations total",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BYWNlYmZkZjQtNjU5OS00YTNkLWJmOTEtYmZiMmUwZGI3NTM3XkEyXkFqcGdeQXVyMTM2NTIwMDIw._V1_SX300.jpg",
+        "Ratings": [
+            {
+                "Source": "Internet Movie Database",
+                "Value": "8.2/10"
+            }
+        ],
+        "Metascore": "N/A",
+        "imdbRating": "8.2",
+        "imdbVotes": "23,699",
+        "imdbID": "tt12327578",
+        "Type": "series",
+        "totalSeasons": "1",
+        "Response": "True"
+    },
+    {
+        "id": "tt8888462",
+        "Title": "Pachinko",
+        "Year": "2022–",
+        "Rated": "TV-MA",
+        "Released": "25 Mar 2022",
+        "Runtime": "N/A",
+        "Genre": "Drama",
+        "Director": "N/A",
+        "Writer": "N/A",
+        "Actors": "Lee Min-Ho, Soji Arai, Jin Ha",
+        "Plot": "Based on the New York Times bestseller, this sweeping saga chronicles the hopes and dreams of a Korean immigrant family across four generations as they leave their homeland in an indomitable quest to survive and thrive.",
+        "Language": "English, Korean, Japanese",
+        "Country": "United States, South Korea, Canada",
+        "Awards": "Nominated for 1 Primetime Emmy. 4 wins & 13 nominations total",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BNjJjZWEyOTMtYjVkYi00MjY0LTk4OTEtMWUwMDE4NWYyODg5XkEyXkFqcGdeQXVyNjEwNTM2Mzc@._V1_SX300.jpg",
+        "Ratings": [
+            {
+                "Source": "Internet Movie Database",
+                "Value": "8.4/10"
+            }
+        ],
+        "Metascore": "N/A",
+        "imdbRating": "8.4",
+        "imdbVotes": "7,492",
+        "imdbID": "tt8888462",
+        "Type": "series",
+        "totalSeasons": "1",
+        "Response": "True"
+    },
+    {
+        "id": "tt10919420",
+        "Title": "Squid Game",
+        "Year": "2021–",
+        "Rated": "TV-MA",
+        "Released": "17 Sep 2021",
+        "Runtime": "N/A",
+        "Genre": "Action, Drama, Mystery",
+        "Director": "N/A",
+        "Writer": "N/A",
+        "Actors": "Lee Jung-jae, Park Hae-soo, Hoyeon",
+        "Plot": "Hundreds of cash-strapped players accept a strange invitation to compete in children's games. Inside, a tempting prize awaits with deadly high stakes. A survival game that has a whopping 45.6 billion-won prize at stake.",
+        "Language": "Korean, English, Urdu",
+        "Country": "South Korea",
+        "Awards": "Nominated for 14 Primetime Emmys. 32 wins & 77 nominations total",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BYWE3MDVkN2EtNjQ5MS00ZDQ4LTliNzYtMjc2YWMzMDEwMTA3XkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_SX300.jpg",
+        "Ratings": [
+            {
+                "Source": "Internet Movie Database",
+                "Value": "8.0/10"
+            }
+        ],
+        "Metascore": "N/A",
+        "imdbRating": "8.0",
+        "imdbVotes": "430,118",
+        "imdbID": "tt10919420",
+        "Type": "series",
+        "totalSeasons": "1",
+        "Response": "True"
+    },
+    {
+        "id": "tt4179452",
+        "Title": "The Last Kingdom",
+        "Year": "2015–2022",
+        "Rated": "TV-MA",
+        "Released": "10 Oct 2015",
+        "Runtime": "60 min",
+        "Genre": "Action, Drama, History",
+        "Director": "N/A",
+        "Writer": "N/A",
+        "Actors": "Alexander Dreymon, Eliza Butterworth, Arnas Fedaravicius",
+        "Plot": "As Alfred the Great defends his kingdom from Norse invaders, Uhtred--born a Saxon but raised by Vikings--seeks to claim his ancestral birthright.",
+        "Language": "English, Latin",
+        "Country": "United Kingdom",
+        "Awards": "4 nominations",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BMjE1MzYzNjk3OF5BMl5BanBnXkFtZTgwMzk0MzYwNzE@._V1_SX300.jpg",
+        "Ratings": [
+            {
+                "Source": "Internet Movie Database",
+                "Value": "8.5/10"
+            }
+        ],
+        "Metascore": "N/A",
+        "imdbRating": "8.5",
+        "imdbVotes": "134,999",
+        "imdbID": "tt4179452",
+        "Type": "series",
+        "totalSeasons": "5",
+        "Response": "True"
+    },
+    {
+        "id": "tt11311302",
+        "Title": "Vikings: Valhalla",
+        "Year": "2022–",
+        "Rated": "TV-MA",
+        "Released": "25 Feb 2022",
+        "Runtime": "N/A",
+        "Genre": "Action, Adventure, Drama",
+        "Director": "N/A",
+        "Writer": "Jeb Stuart",
+        "Actors": "Sam Corlett, Leo Suter, Jóhannes Haukur Jóhannesson",
+        "Plot": "Follow-up series to 'Vikings' set 100 years afterward and centering on the adventures of Leif Erikson, Freydis, Harald Hardrada and the Norman King William the Conqueror.",
+        "Language": "English, Latin",
+        "Country": "United States",
+        "Awards": "Nominated for 1 Primetime Emmy. 1 win & 5 nominations total",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BZjgwOGI3ZWEtNjBiMy00ZjM3LWFkNWYtNmU1MzY1ZGZkMDU2XkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_SX300.jpg",
+        "Ratings": [
+            {
+                "Source": "Internet Movie Database",
+                "Value": "7.1/10"
+            }
+        ],
+        "Metascore": "N/A",
+        "imdbRating": "7.1",
+        "imdbVotes": "35,295",
+        "imdbID": "tt11311302",
+        "Type": "series",
+        "totalSeasons": "1",
+        "Response": "True"
+    },
+    {
+        "id": "tt3230854",
+        "Title": "The Expanse",
+        "Year": "2015–2022",
+        "Rated": "TV-14",
+        "Released": "23 Nov 2015",
+        "Runtime": "60 min",
+        "Genre": "Drama, Mystery, Sci-Fi",
+        "Director": "N/A",
+        "Writer": "Daniel Abraham, Mark Fergus, Ty Franck",
+        "Actors": "Steven Strait, Dominique Tipper, Wes Chatham",
+        "Plot": "In the 24th century, a group of humans untangle a vast plot which threatens the Solar System's fragile state of detente.",
+        "Language": "English",
+        "Country": "United States",
+        "Awards": "5 wins & 28 nominations",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BZDVmMDljM2QtZDkzZC00ZDg2LWFiMGItZjNiNjliZjg2MGEzXkEyXkFqcGdeQXVyMjkwOTAyMDU@._V1_SX300.jpg",
+        "Ratings": [
+            {
+                "Source": "Internet Movie Database",
+                "Value": "8.5/10"
+            }
+        ],
+        "Metascore": "N/A",
+        "imdbRating": "8.5",
+        "imdbVotes": "149,442",
+        "imdbID": "tt3230854",
+        "Type": "series",
+        "totalSeasons": "6",
+        "Response": "True"
+    },
+    {
+        "id": "tt8332130",
+        "Title": "Beforeigners",
+        "Year": "2019–",
+        "Rated": "TV-14",
+        "Released": "18 Feb 2020",
+        "Runtime": "45 min",
+        "Genre": "Crime, Drama, Sci-Fi",
+        "Director": "N/A",
+        "Writer": "Anne Bjørnstad, Eilif Skodvin",
+        "Actors": "Krista Kosonen, Nicolai Cleve Broch, Stig R. Amdam",
+        "Plot": "HBO Nordic's first original series from Norway, Beforeigners is about two persons who mysteriously appear in Oslo. They are the first of many from the past to seek refuge in present time. Seven years later the community is transfo...",
+        "Language": "Norwegian, Norse, Old",
+        "Country": "Norway",
+        "Awards": "5 wins & 11 nominations",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BN2U3YWM2MzItZGM4YS00NmMxLTgxOWEtMjVlOTkzMTYzNTdhXkEyXkFqcGdeQXVyODk5NzQ4MDU@._V1_SX300.jpg",
+        "Ratings": [
+            {
+                "Source": "Internet Movie Database",
+                "Value": "7.8/10"
+            }
+        ],
+        "Metascore": "N/A",
+        "imdbRating": "7.8",
+        "imdbVotes": "11,088",
+        "imdbID": "tt8332130",
+        "Type": "series",
+        "totalSeasons": "N/A",
+        "Response": "True"
+    },
+    {
+        "id": "tt6109562",
+        "Title": "Wellington Paranormal",
+        "Year": "2018–2022",
+        "Rated": "TV-14",
+        "Released": "11 Jul 2021",
+        "Runtime": "30 min",
+        "Genre": "Comedy, Crime, Fantasy",
+        "Director": "N/A",
+        "Writer": "Jemaine Clement, Taika Waititi",
+        "Actors": "Mike Minogue, Karen O'Leary, Maaka Pohatu",
+        "Plot": "Sergeant Maaka, and Officers Minogue and O'Leary, are members of the Wellington, New Zealand, police. Their job is to investigate paranormal phenomena.",
+        "Language": "English",
+        "Country": "New Zealand",
+        "Awards": "1 win",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BNDQ1ZGM3M2UtYzM4YS00NjgxLWJkYTgtYjcwMTY4ZWZkMDBlXkEyXkFqcGdeQXVyNDEzNjA0NzM@._V1_SX300.jpg",
+        "Ratings": [
+            {
+                "Source": "Internet Movie Database",
+                "Value": "7.6/10"
+            }
+        ],
+        "Metascore": "N/A",
+        "imdbRating": "7.6",
+        "imdbVotes": "5,729",
+        "imdbID": "tt6109562",
+        "Type": "series",
+        "totalSeasons": "4",
+        "Response": "True"
+    },
+    {
+        "id": "tt2543312",
+        "Title": "Halt and Catch Fire",
+        "Year": "2014–2017",
+        "Rated": "TV-14",
+        "Released": "01 Jun 2014",
+        "Runtime": "60 min",
+        "Genre": "Drama",
+        "Director": "N/A",
+        "Writer": "Christopher Cantwell, Christopher C. Rogers",
+        "Actors": "Lee Pace, Scoot McNairy, Mackenzie Davis",
+        "Plot": "Follows some players in the 80s technological revolution that lead to information society.",
+        "Language": "English",
+        "Country": "United States",
+        "Awards": "Nominated for 1 Primetime Emmy. 2 wins & 14 nominations total",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BZmVkZmQ1MWQtNjE0NS00NjYzLTk1ZTEtYzMyNTA3ZWU0NGMyXkEyXkFqcGdeQXVyNTE1NjY5Mg@@._V1_SX300.jpg",
+        "Ratings": [
+            {
+                "Source": "Internet Movie Database",
+                "Value": "8.4/10"
+            }
+        ],
+        "Metascore": "N/A",
+        "imdbRating": "8.4",
+        "imdbVotes": "32,223",
+        "imdbID": "tt2543312",
+        "Type": "series",
+        "totalSeasons": "4",
+        "Response": "True"
+    },
+    {
+        "id": "tt15758760",
+        "Title": "Dr. Brain",
+        "Year": "2021–",
+        "Rated": "TV-MA",
+        "Released": "04 Nov 2021",
+        "Runtime": "N/A",
+        "Genre": "Drama, Mystery, Sci-Fi",
+        "Director": "N/A",
+        "Writer": "N/A",
+        "Actors": "Sun-kyun Lee, Hee-soon Park, June Yoon",
+        "Plot": "Brilliant brain scientist Sewon (Lee Sun-Kyun) suffers a horrific personal tragedy. Desperate to uncover what happened to his family, he conducts \"brain syncs\" with the dead to access their memories for clues.",
+        "Language": "Korean",
+        "Country": "South Korea",
+        "Awards": "N/A",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BMThjNDI3YzctNGYyYy00YmM1LTk1ZDctOThjMDdkYzg4Y2QwXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_SX300.jpg",
+        "Ratings": [
+            {
+                "Source": "Internet Movie Database",
+                "Value": "6.7/10"
+            }
+        ],
+        "Metascore": "N/A",
+        "imdbRating": "6.7",
+        "imdbVotes": "2,275",
+        "imdbID": "tt15758760",
+        "Type": "series",
+        "totalSeasons": "1",
+        "Response": "True"
+    },
+    {
+        "id": "tt0804484",
+        "Title": "Foundation",
+        "Year": "2021–",
+        "Rated": "TV-14",
+        "Released": "24 Sep 2021",
+        "Runtime": "N/A",
+        "Genre": "Drama, Sci-Fi",
+        "Director": "N/A",
+        "Writer": "Josh Friedman, David S. Goyer",
+        "Actors": "Lou Llobell, Jared Harris, Lee Pace",
+        "Plot": "A complex saga of humans scattered on planets throughout the galaxy all living under the rule of the Galactic Empire.",
+        "Language": "English",
+        "Country": "Ireland, United States",
+        "Awards": "Nominated for 2 Primetime Emmys. 3 wins & 13 nominations total",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BMTE5MDY1MGUtMmMxNi00YjA3LWIyZTYtN2FhOWJmNTY2NmM4XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX300.jpg",
+        "Ratings": [
+            {
+                "Source": "Internet Movie Database",
+                "Value": "7.4/10"
+            }
+        ],
+        "Metascore": "N/A",
+        "imdbRating": "7.4",
+        "imdbVotes": "56,382",
+        "imdbID": "tt0804484",
+        "Type": "series",
+        "totalSeasons": "1",
+        "Response": "True"
+    }
+]

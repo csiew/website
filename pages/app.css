@@ -185,17 +185,21 @@ article .cardList .paper {
   width: 100%;
 }
 
-@import url('./index.module.css');
+@import url('../lib/assets/fonts/figtree/index.css');
+@import url('../lib/assets/fonts/roboto-mono/index.css');
+@import url('../lib/assets/fonts/source-serif-pro/index.css');
+
 @import url('../components/ui/Button/index.module.css');
 @import url('../components/ui/NavigationSidebar/index.module.css');
 @import url('../components/ui/NavigationView/index.module.css');
 @import url('../components/ui/Paper/index.module.css');
+
 @import url('../components/app/BlogNavigationView/index.module.css');
 @import url('../components/app/Footer/index.module.css');
 @import url('../components/app/NavBar/index.module.css');
+@import url('../components/app/NowWatchingShowCard/index.module.css');
 @import url('../components/app/PlaylistGroupCard/index.module.css');
 @import url('../components/app/ProjectCard/index.module.css');
 
-@import url('../lib/assets/fonts/figtree/index.css');
-@import url('../lib/assets/fonts/roboto-mono/index.css');
-@import url('../lib/assets/fonts/source-serif-pro/index.css');
+@import url('./index.module.css');
+@import url('./now-watching/index.module.css');

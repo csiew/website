@@ -17,6 +17,10 @@ const routes: PageRoute[] = [
   {
     title: "Playlists",
     path: "/playlists"
+  },
+  {
+    title: "Now Watching",
+    path: "/now-watching"
   }
 ];
 

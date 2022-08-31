@@ -68,8 +68,7 @@ nav.navigationSidebar ul li.navigationSidebarItem :is(a, span) {
   color: var(--nav-sidebar-fg-color);
   background: var(--nav-sidebar-bg-color);
   
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  white-space: pre-wrap;
 }
 nav.navigationSidebar ul li.navigationSidebarItem :is(a, span):hover {
   color: var(--nav-sidebar-fg-color-hover);

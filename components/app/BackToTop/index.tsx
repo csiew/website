@@ -16,7 +16,7 @@ const BackToTop = () => {
     rootEl?.addEventListener("scroll", handleScrollEvent);
   }, []);
 
-  if (isAtTop) return;
+  if (isAtTop) return <></>;
   return (
     <div className="backToTopFloat">
       <Button callback={scrollPageToTop}>
