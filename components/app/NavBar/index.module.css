@@ -54,7 +54,7 @@ header h1 a:hover {
   text-decoration: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   header {
     padding: 0.25rem 0rem;
 
@@ -69,6 +69,9 @@ header h1 a:hover {
 }
 
 header nav {
+  margin: 0;
+  padding: 0;
+
   display: inline-flex;
   flex-flow: row;
   align-items: center;
@@ -78,6 +81,7 @@ header nav {
 
 @media (max-width: 767px) {
   header nav {
+    width: 100%;
     overflow-x: auto;
     overflow-y: hidden;
   }
@@ -86,6 +90,8 @@ header nav {
 header nav a {
   padding: 0.325rem 0.5rem;
 
+  display: inline-block;
+
   color: var(--nav-fg-color);
   background: var(--nav-bg-color);
   border-radius: 9px;
@@ -93,6 +99,7 @@ header nav a {
   font-weight: bold;
   text-decoration: none;
 
+  white-space: nowrap;
 }
 header nav a:hover {
   color: var(--nav-fg-color-hover);
