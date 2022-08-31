@@ -61,6 +61,24 @@
   white-space: pre-wrap;
 }
 
+:is(.pageBlog, .pageBlogPost) .navigationSidebarItem :is(a, span) {
+  width: 100%;
+  margin: 0;
+
+  display: inline-flex;
+  flex-flow: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+:is(.pageBlog, .pageBlogPost) .navigationSidebarItem :is(a, span) .title {
+  width: 100%;
+  padding: 0rem 0rem 0.25rem 0rem !important;
+}
+:is(.pageBlog, .pageBlogPost) .navigationSidebarItem :is(a, span) .timestamp {
+  width: 100%;
+  font-size: 75%;
+}
+
 .pageBlogPost .pageBlogPostHeader {
   margin: 0rem 0rem 1.5rem 0rem;
   padding: 0rem 0rem 1rem 0rem;

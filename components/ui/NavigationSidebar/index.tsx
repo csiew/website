@@ -1,11 +1,12 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import { BaseComponentProps } from "../../../lib/@types";
 
 type NavigationSidebarProps = BaseComponentProps & {
   keyPrefix: string;
   items: Array<{
     key: string;
-    label: string;
+    label: string | ReactElement | ReactElement[];
+    active?: boolean;
     url?: string;
     callback?: () => void;
   }>;
@@ -23,9 +24,10 @@ const NavigationSidebar = ({
         {
           items.map((item) => {
             const keyName = `${keyPrefix}-${item.key}`;
+            const classNames = ["navigationSidebarItem", item.active ? "active" : ""].join(" ");
             if (item.url) {
               return (
-                <li key={keyName} className="navigationSidebarItem">
+                <li key={keyName} className={classNames}>
                   <a href={item.url}>
                     {item.label}
                   </a>
@@ -33,7 +35,7 @@ const NavigationSidebar = ({
               );
             } else {
               return (
-                <li key={keyName} className="navigationSidebarItem">
+                <li key={keyName} className={classNames}>
                   <span onClick={item.callback}>
                     {item.label}
                   </span>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {  } from "react";
 import Head from "next/head";
 import "./app.css";
 import NavBar from "../components/app/NavBar";
@@ -10,6 +10,7 @@ const AppContext = ({ Component, pageProps }: any) => {
     <>
       <Head>
         <link rel="shortcut icon" href="/profile.jpg" />
+        <title>Clarence Siew</title>
       </Head>
       <NavBar pages={routes} />
       <main>

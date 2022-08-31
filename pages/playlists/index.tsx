@@ -6,6 +6,7 @@ import NavigationView from "../../components/ui/NavigationView";
 import retitle from "../../lib/retitle";
 import { PlaylistData } from "../../lib/playlists";
 import rawPlaylistData from "./playlists.json";
+import { scrollCardToTop } from "../../lib/scroll";
 
 const playlistData = rawPlaylistData as PlaylistData;
 
@@ -23,8 +24,8 @@ const Playlists = () => {
           items={
             playlistData.collection.map((playlistGroup) => ({
               key: playlistGroup.id,
-              url: `#${playlistGroup.id}`,
-              label: playlistGroup.name
+              label: playlistGroup.name,
+              callback: () => scrollCardToTop(playlistGroup.id)
             }))
           }
         />

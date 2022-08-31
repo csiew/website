@@ -5,7 +5,7 @@
   --nav-fg-color-selected: var(--primary-color);
 
   --nav-bg-color: none;
-  --nav-bg-color-hover: lightgray;
+  --nav-bg-color-hover: var(--bg-color-2);
   --nav-bg-color-active: var(--primary-color-3);
   --nav-bg-color-selected: var(--primary-color-4);
 }

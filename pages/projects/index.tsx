@@ -6,6 +6,7 @@ import rawProjectData from "./projects.json";
 import ProjectCard from "../../components/app/ProjectCard";
 import NavigationView from "../../components/ui/NavigationView";
 import NavigationSidebar from "../../components/ui/NavigationSidebar";
+import { scrollCardToTop } from "../../lib/scroll";
 
 const projectData = rawProjectData as ProjectData;
 
@@ -24,7 +25,7 @@ const Projects = () => {
             projectData.projects.map((project) =>({
               key: `project-name-${project.id}`,
               label: project.name,
-              url: `#${project.id}`
+              callback: () => scrollCardToTop(project.id)
             }))
           }
         />

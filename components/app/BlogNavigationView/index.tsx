@@ -1,4 +1,5 @@
 import React from "react";
+import { useRouter } from "next/router";
 import ReactMarkdown from "react-markdown";
 import { BlogPost, generatePathString } from "../../../lib/blog";
 import NavigationSidebar from "../../ui/NavigationSidebar";
@@ -11,6 +12,8 @@ type BlogNavigationViewProps = {
 }
 
 const BlogNavigationView = ({ posts, post }: BlogNavigationViewProps) => {
+  const router = useRouter();
+
   return (
     <NavigationView
       classList={[post ? "pageBlogPost" : "pageBlog"]}
@@ -18,11 +21,22 @@ const BlogNavigationView = ({ posts, post }: BlogNavigationViewProps) => {
         post ?
           <NavigationSidebar
             keyPrefix="blog-post-"
-            items={posts.map((p) => ({
-              key: p.id,
-              label: p.title,
-              url: generatePathString(p.path)
-            }))}
+            items={posts.map((p) => {
+              const pathString = generatePathString(p.path);
+              return {
+                key: p.id,
+                label: (
+                  <>
+                    <div className="title">{p.title}</div>
+                    <div className="timestamp">
+                      {new Date(p.publishedOn).toLocaleDateString()}
+                    </div>
+                  </>
+                ),
+                active: router.asPath === pathString,
+                url: pathString
+              };
+            })}
           />
           :
           undefined
