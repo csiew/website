@@ -1,12 +1,14 @@
 import React, { useEffect } from "react";
 import config from "../../../config";
+import rawShowsData from "../shows.json";
+import rawShowsMetadata from "../showsMetadata.json";
 import retitle from "../../../lib/retitle";
 import { OmdbResponse, Show, ShowsData } from "../../../lib/now-watching";
 import NavigationView from "../../../components/ui/NavigationView";
-import rawShowsData from "../shows.json";
-import rawShowsMetadata from "../showsMetadata.json";
 import Button from "../../../components/ui/Button";
 import Paper from "../../../components/ui/Paper";
+import Toolbar from "../../../components/ui/Toolbar";
+import MustWatchBadge from "../../../components/app/MustWatchBadge";
 
 const showsData = rawShowsData as ShowsData;
 const showsMetadata = rawShowsMetadata as Array<Partial<OmdbResponse>>;
@@ -28,16 +30,16 @@ const ShowDetailPage = ({ show }: { show: Show }) => {
 
   return (
     <>
-      <div className="toolbar">
+      <Toolbar>
         <Button callback={() => history.go(-1)}>
           &#8592; Back
         </Button>
         {
           show.recommended
-            ? <span className="mustWatchBadge">Must Watch</span>
+            ? <MustWatchBadge />
             : <></>
         }
-      </div>
+      </Toolbar>
       <NavigationView
         className="pageShowDetail"
         content={(

@@ -179,29 +179,6 @@ article .cardList .paper {
   width: 100%;
 }
 
-.toolbar {
-  width: 100%;
-  margin: 0;
-  padding: 0.25rem 1rem;
-
-  display: inline-flex;
-  flex-flow: row;
-  align-items: center;
-  justify-content: space-between;
-
-  position: sticky;
-  top: 0;
-  z-index: 90;
-
-  color: var(--fg-color);
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(6px);
-  border-bottom: 1px solid var(--bg-color-3);
-  box-shadow: 0px 2px 4px var(--shadow-4);
-
-  font-family: var(--font-family-widget);
-}
-
 @import url('../lib/assets/fonts/figtree/index.css');
 @import url('../lib/assets/fonts/roboto-mono/index.css');
 @import url('../lib/assets/fonts/source-serif-pro/index.css');
@@ -210,9 +187,11 @@ article .cardList .paper {
 @import url('../components/ui/NavigationSidebar/index.module.css');
 @import url('../components/ui/NavigationView/index.module.css');
 @import url('../components/ui/Paper/index.module.css');
+@import url('../components/ui/Toolbar/index.module.css');
 
 @import url('../components/app/BlogNavigationView/index.module.css');
 @import url('../components/app/Footer/index.module.css');
+@import url('../components/app/MustWatchBadge/index.module.css');
 @import url('../components/app/NavBar/index.module.css');
 @import url('../components/app/NowWatchingShowCard/index.module.css');
 @import url('../components/app/PlaylistGroupCard/index.module.css');

@@ -1,5 +1,6 @@
 import React from "react";
 import { Show } from "../../../lib/now-watching";
+import MustWatchBadge from "../MustWatchBadge";
 
 const NowWatchingShowCard = ({ show, keyPrefix }: { show: Show, keyPrefix: string }) => {
   return (
@@ -14,7 +15,7 @@ const NowWatchingShowCard = ({ show, keyPrefix }: { show: Show, keyPrefix: strin
           <sub>{show.metadata?.Year}</sub>
           {
             show.recommended
-              ? <span className="mustWatchBadge">Must Watch</span>
+              ? <MustWatchBadge />
               : <></>
           }
         </div>

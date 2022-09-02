@@ -1,0 +1,20 @@
+.mustWatchBadge {
+  width: min-content;
+  margin: 0;
+  padding: 0.125rem 0.5rem;
+
+  color: green;
+  background: honeydew;
+  border: 1px solid green;
+  border-radius: 32px;
+
+  font-size: 70%;
+  font-weight: 500;
+  font-family: var(--font-family-widget);
+  letter-spacing: 0;
+
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
