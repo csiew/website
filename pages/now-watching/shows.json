@@ -2,7 +2,8 @@
   "shows": [
     {
       "name": "Succession",
-      "imdbId": "tt7660850"
+      "imdbId": "tt7660850",
+      "recommended": true
     },
     {
       "name": "House of the Dragon",
@@ -15,7 +16,8 @@
     },
     {
       "name": "For All Mankind",
-      "imdbId": "tt7772588"
+      "imdbId": "tt7772588",
+      "recommended": true
     },
     {
       "name": "Star Trek: Lower Decks",
@@ -24,7 +26,8 @@
     },
     {
       "name": "Star Trek: Strange New Worlds",
-      "imdbId": "tt12327578"
+      "imdbId": "tt12327578",
+      "recommended": true
     },
     {
       "name": "Star Trek: Picard",
@@ -36,7 +39,8 @@
     },
     {
       "name": "Pachinko",
-      "imdbId": "tt8888462"
+      "imdbId": "tt8888462",
+      "recommended": true
     },
     {
       "name": "Squid Game",
@@ -44,7 +48,8 @@
     },
     {
       "name": "The Last Kingdom",
-      "imdbId": "tt4179452"
+      "imdbId": "tt4179452",
+      "recommended": true
     },
     {
       "name": "Vikings: Valhalla",
@@ -52,11 +57,13 @@
     },
     {
       "name": "The Expanse",
-      "imdbId": "tt3230854"
+      "imdbId": "tt3230854",
+      "recommended": true
     },
     {
       "name": "Beforeigners",
-      "imdbId": "tt8332130"
+      "imdbId": "tt8332130",
+      "recommended": true
     },
     {
       "name": "Wellington Paranormal",
@@ -64,7 +71,8 @@
     },
     {
       "name": "Halt and Catch Fire",
-      "imdbId": "tt2543312"
+      "imdbId": "tt2543312",
+      "recommended": true
     },
     {
       "name": "Dr. Brain",
@@ -80,15 +88,18 @@
     },
     {
       "name": "Deutschland 83",
-      "imdbId": "tt4445154"
+      "imdbId": "tt4445154",
+      "recommended": true
     },
     {
       "name": "Deutschland 86",
-      "imdbId": "tt6148324"
+      "imdbId": "tt6148324",
+      "recommended": true
     },
     {
       "name": "Deutschland 89",
-      "imdbId": "tt8760304"
+      "imdbId": "tt8760304",
+      "recommended": true
     },
     {
       "name": "Demon Slayer: Kimetsu no Yaiba",
@@ -104,7 +115,8 @@
     },
     {
       "name": "Kingdom",
-      "imdbId": "tt6611916"
+      "imdbId": "tt6611916",
+      "recommended": true
     },
     {
       "name": "Rick and Morty",
@@ -116,11 +128,13 @@
     },
     {
       "name": "SS-GB",
-      "imdbId": "tt4939950"
+      "imdbId": "tt4939950",
+      "recommended": true
     },
     {
       "name": "Medici",
-      "imdbId": "tt5057130"
+      "imdbId": "tt5057130",
+      "recommended": true
     },
     {
       "name": "The Man in the High Castle",
@@ -128,7 +142,8 @@
     },
     {
       "name": "The Queen's Gambit",
-      "imdbId": "tt10048342"
+      "imdbId": "tt10048342",
+      "recommended": true
     },
     {
       "name": "The Plot Against America",
@@ -136,11 +151,13 @@
     },
     {
       "name": "Okkupert",
-      "imdbId": "tt4192998"
+      "imdbId": "tt4192998",
+      "recommended": true
     },
     {
       "name": "Borgen",
-      "imdbId": "tt1526318"
+      "imdbId": "tt1526318",
+      "recommended": true
     },
     {
       "name": "The Crown",
@@ -172,11 +189,13 @@
     },
     {
       "name": "Years and Years",
-      "imdbId": "tt8694364"
+      "imdbId": "tt8694364",
+      "recommended": true
     },
     {
       "name": "11.22.63",
-      "imdbId": "tt2879552"
+      "imdbId": "tt2879552",
+      "recommended": true
     }
   ]
 }

@@ -35,6 +35,6 @@
 }
 @media (max-width: 1023px) {
   .navigationView .navigationViewContent {
-    padding: 1rem 0rem;
+    padding: 1rem;
   }
 }

@@ -2,6 +2,7 @@ export interface Show {
   name: string;
   imdbId: string;
   watching?: boolean;
+  recommended?: boolean;
   metadata?: Partial<OmdbResponse>;
 }
 

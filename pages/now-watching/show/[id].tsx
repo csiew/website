@@ -32,6 +32,11 @@ const ShowDetailPage = ({ show }: { show: Show }) => {
         <Button callback={() => history.go(-1)}>
           &#8592; Back
         </Button>
+        {
+          show.recommended
+            ? <span className="mustWatchBadge">Must Watch</span>
+            : <></>
+        }
       </div>
       <NavigationView
         className="pageShowDetail"

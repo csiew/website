@@ -12,6 +12,11 @@ const NowWatchingShowCard = ({ show, keyPrefix }: { show: Show, keyPrefix: strin
           <h4>{show.name}</h4>
           <sub>{show.metadata?.Genre}</sub>
           <sub>{show.metadata?.Year}</sub>
+          {
+            show.recommended
+              ? <span className="mustWatchBadge">Must Watch</span>
+              : <></>
+          }
         </div>
       </a>
     </section>
