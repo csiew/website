@@ -2,6 +2,12 @@ article.topLevelPage.pageNowWatching {
   max-width: 1280px;
 }
 
+article.topLevelPage.pageNowWatching section.acknowledgements {
+  margin-top: 1rem;
+  color: var(--fg-color-9);
+  text-align: center;
+}
+
 .pageNowWatching .pageNowWatchingSection .cardList {
   display: grid;
   grid-template-columns: repeat(auto-fit, 256px);

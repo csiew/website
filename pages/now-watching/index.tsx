@@ -59,6 +59,9 @@ const NowWatching = () => {
               </Paper>
             </section>
           </div>
+          <section className="acknowledgements">
+            <p>Data and posters are courtesy of <a href="https://www.imdb.com/" target="_blank" rel="noreferrer">IMDb</a> and <a href="https://www.omdbapi.com/" target="_blank" rel="noreferrer">OMDb</a></p>
+          </section>
         </article>
       )}
     />
