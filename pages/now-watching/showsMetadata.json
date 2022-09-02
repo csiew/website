@@ -1269,5 +1269,63 @@
       "Type": "series",
       "totalSeasons": "1",
       "Response": "True"
+    },
+    {
+      "Title": "Warrior",
+      "Year": "2019–",
+      "Rated": "TV-MA",
+      "Released": "05 Apr 2019",
+      "Runtime": "60 min",
+      "Genre": "Action, Crime, Drama",
+      "Director": "N/A",
+      "Writer": "Jonathan Tropper",
+      "Actors": "Andrew Koji, Olivia Cheng, Jason Tobin",
+      "Plot": "During the Tong Wars in the late 1800s, Ah Sahm, a martial arts prodigy from China, immigrates to San Francisco and becomes a hatchet man for the most powerful tong in Chinatown.",
+      "Language": "Cantonese, Mandarin, English",
+      "Country": "United States",
+      "Awards": "Nominated for 2 Primetime Emmys. 1 win & 7 nominations total",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMmQwZWYzNWEtYTMyYy00YzBjLTlkNmQtMmI4ZTdhNDRmZDFkXkEyXkFqcGdeQXVyMzY0MTE3NzU@._V1_SX300.jpg",
+      "Ratings": [
+        {
+          "Source": "Internet Movie Database",
+          "Value": "8.4/10"
+        }
+      ],
+      "Metascore": "N/A",
+      "imdbRating": "8.4",
+      "imdbVotes": "25,908",
+      "imdbID": "tt5743796",
+      "Type": "series",
+      "totalSeasons": "N/A",
+      "Response": "True"
+    },
+    {
+      "Title": "Rome",
+      "Year": "2005–2007",
+      "Rated": "TV-MA",
+      "Released": "28 Aug 2005",
+      "Runtime": "52 min",
+      "Genre": "Action, Drama, History",
+      "Director": "N/A",
+      "Writer": "Bruno Heller, William J. MacDonald, John Milius",
+      "Actors": "Kevin McKidd, Ray Stevenson, Polly Walker",
+      "Plot": "A down-to-earth account of the lives of both illustrious and ordinary Romans set in the last days of the Roman Republic.",
+      "Language": "English",
+      "Country": "United Kingdom, United States",
+      "Awards": "Won 7 Primetime Emmys. 19 wins & 36 nominations total",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BYTM4MmU1NWYtNzJjYy00YWFhLThjOGEtZmMxOGI1NzE0NGNiXkEyXkFqcGdeQXVyNDIzMzcwNjc@._V1_SX300.jpg",
+      "Ratings": [
+        {
+          "Source": "Internet Movie Database",
+          "Value": "8.7/10"
+        }
+      ],
+      "Metascore": "N/A",
+      "imdbRating": "8.7",
+      "imdbVotes": "169,998",
+      "imdbID": "tt0384766",
+      "Type": "series",
+      "totalSeasons": "2",
+      "Response": "True"
     }
 ]
