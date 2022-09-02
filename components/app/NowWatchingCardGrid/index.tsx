@@ -12,25 +12,8 @@ type NowWatchingCardGridProps = {
 }
 
 const NowWatchingCardGrid = ({ title, keyPrefix, shows }: NowWatchingCardGridProps) => {
-
-  const handleKeyUp = (e: KeyboardEvent<any>) => {
-    switch (e.key) {
-    case "ArrowLeft":
-    case "ArrowUp":
-      const previousSibling = e.target.previousSibling;
-      if (previousSibling) previousSibling.focus();
-      break;
-    case "ArrowRight":
-    case "ArrowDown":
-      const nextSibling = e.target.nextSibling;
-      if (nextSibling) nextSibling.focus();
-      break;
-    }
-    e.preventDefault();
-  };
-
   return (
-    <section onKeyUp={handleKeyUp}>
+    <section>
       <Paper className="pageNowWatchingSection">
         <h3>{title}</h3>
         <div className="cardList">

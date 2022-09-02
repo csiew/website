@@ -1,12 +1,10 @@
 import React, { useEffect } from "react";
 import config from "../../config";
+import rawShowsData from "./shows.json";
+import rawShowsMetadata from "./showsMetadata.json";
 import retitle from "../../lib/retitle";
 import { OmdbResponse, ShowsData } from "../../lib/now-watching";
 import NavigationView from "../../components/ui/NavigationView";
-import rawShowsData from "./shows.json";
-import rawShowsMetadata from "./showsMetadata.json";
-import Paper from "../../components/ui/Paper";
-import NowWatchingShowCard from "../../components/app/NowWatchingShowCard";
 import NowWatchingCardGrid from "../../components/app/NowWatchingCardGrid";
 
 const showsData = rawShowsData as ShowsData;
