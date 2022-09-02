@@ -44,6 +44,9 @@
 * {
   box-sizing: border-box;
 }
+*:focus {
+  outline-color: var(--primary-color);
+}
 
 html, body, #__next {
   width: 100%;

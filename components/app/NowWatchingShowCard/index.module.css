@@ -16,7 +16,7 @@ a.nowWatchingShowCard:hover {
 
   cursor: pointer;
 }
-.nowWatchingShowCard:hover {
+.nowWatchingShowCard:is(:hover, :focus) {
   background: var(--bg-color-1);
 }
 .nowWatchingShowCard:active {
@@ -39,7 +39,7 @@ a.nowWatchingShowCard:hover {
 
   -webkit-user-drag: none;
 }
-.nowWatchingShowCard:hover .poster img {
+.nowWatchingShowCard:is(:hover, :focus) .poster img {
   box-shadow: 0px 4px 8px var(--shadow-2);
 }
 
