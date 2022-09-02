@@ -1,13 +1,13 @@
 :root {
   --nav-sidebar-fg-color: gray;
   --nav-sidebar-fg-color-hover: dimgray;
-  --nav-sidebar-fg-color-active: var(--primary-color);
+  --nav-sidebar-fg-color-active: var(--fg-color);
   --nav-sidebar-fg-color-selected: var(--primary-color);
 
   --nav-sidebar-bg-color: none;
-  --nav-sidebar-bg-color-hover: var(--bg-color-2);
-  --nav-sidebar-bg-color-active: var(--primary-color-3);
-  --nav-sidebar-bg-color-selected: var(--primary-color-4);
+  --nav-sidebar-bg-color-hover: var(--bg-color-1);
+  --nav-sidebar-bg-color-active: var(--bg-color-3);
+  --nav-sidebar-bg-color-selected: var(--primary-color-3);
 }
 
 nav.navigationSidebar {

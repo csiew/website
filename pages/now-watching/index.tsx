@@ -1,16 +1,12 @@
 import React, { useEffect } from "react";
 import config from "../../config";
 import retitle from "../../lib/retitle";
-import { OmdbResponse, Show, ShowsData } from "../../lib/now-watching";
-// import { getShowDataById } from "../../client/omdb";
+import { OmdbResponse, ShowsData } from "../../lib/now-watching";
 import NavigationView from "../../components/ui/NavigationView";
 import rawShowsData from "./shows.json";
 import rawShowsMetadata from "./showsMetadata.json";
 import Paper from "../../components/ui/Paper";
-import Button from "../../components/ui/Button";
 import NowWatchingShowCard from "../../components/app/NowWatchingShowCard";
-import NavigationSidebar from "../../components/ui/NavigationSidebar";
-import { scrollCardToTop } from "../../lib/scroll";
 
 const showsData = rawShowsData as ShowsData;
 const showsMetadata = rawShowsMetadata as Array<Partial<OmdbResponse>>;
@@ -18,10 +14,12 @@ const showsMetadata = rawShowsMetadata as Array<Partial<OmdbResponse>>;
 const getShows = (watching?: boolean) => {
   let shows = showsData.shows.sort((a, b) => a.name.localeCompare(b.name));
   if (watching) shows = shows.filter((show) => show.watching);
-  return shows.map((show) => {
-    show.metadata = showsMetadata.find((sm) => sm.id === show.imdbId);
-    return show;
-  });
+  return shows
+    .map((show) => {
+      show.metadata = showsMetadata.find((sm) => sm.imdbID === show.imdbId);
+      return show;
+    })
+    .filter((show) => show.metadata !== undefined);
 };
 
 const NowWatching = () => {
@@ -32,18 +30,6 @@ const NowWatching = () => {
 
   return (
     <NavigationView
-      nav={(
-        <NavigationSidebar
-          keyPrefix="shortcut"
-          items={
-            getShows().map((show) => ({
-              key: show.imdbId,
-              label: show.name,
-              callback: () => scrollCardToTop(`recent-${show.imdbId}`)
-            }))
-          }
-        />
-      )}
       content={(
         <article className="topLevelPage pageNowWatching">
           <h2>Now Watching</h2>
@@ -78,13 +64,5 @@ const NowWatching = () => {
     />
   );
 };
-
-/*
-export const getStaticProps = async () => {
-  const omdbShows = await Promise.all(showsData.shows.map((show) => getShowDataById(show.imdbId)));
-  console.log(JSON.stringify(omdbShows));
-  return { props: { omdbShows } };
-};
-*/
 
 export default NowWatching;

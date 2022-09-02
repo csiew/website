@@ -5,9 +5,87 @@ article.topLevelPage.pageNowWatching {
 .pageNowWatching .pageNowWatchingSection .cardList {
   display: grid;
   grid-template-columns: repeat(auto-fit, 256px);
+  align-items: flex-start;
   justify-content: center;
+  gap: 0.5rem;
 }
 
 .pageNowWatching .pageNowWatchingSection h3 {
   margin-bottom: 2rem;
+}
+
+.pageShowDetail .navigationViewContent {
+  padding: 0rem 1rem;
+}
+.pageShowDetail .navigationViewContent article {
+  padding: 2rem 0rem;
+}
+
+.showInfo {
+  display: inline-flex;
+  flex-flow: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1.5rem;
+}
+
+.showInfo img {
+  border-radius: 5px;
+  box-shadow: 0px 4px 8px var(--shadow-2);
+}
+
+@media (max-width: 767px) {
+  .showInfo {
+    flex-flow: column-reverse;
+    align-items: center;
+  }
+}
+
+.showDataDetails {
+  width: 100%;
+  margin: 0;
+
+  display: inline-flex;
+  flex-flow: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 0.25rem;
+
+  font-family: var(--font-family-widget);
+}
+.showDataDetails .row {
+  display: inline-flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.5rem;
+}
+.showDataDetails .row .key {
+  width: 100%;
+  flex-grow: 1;
+  flex-shrink: 3;
+
+  color: var(--fg-color-9);
+
+  font-weight: 600;
+  text-align: right;
+}
+.showDataDetails .row .value {
+  width: 100%;
+  flex-grow: 3;
+}
+
+@media (max-width: 767px) {
+  .showDataDetails {
+    gap: 1.25rem;
+  }
+  .showDataDetails .row {
+    flex-flow: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0.25rem;
+  }
+  .showDataDetails .row .key {
+    text-align: left;
+  }
 }

@@ -1,12 +1,26 @@
+a.nowWatchingShowCard,
+a.nowWatchingShowCard:hover {
+  text-decoration: none;
+}
 .nowWatchingShowCard {
-  padding: 0;
+  width: 100%;
+  padding: 0.5rem;
 
   display: inline-flex;
   flex-flow: column;
   align-items: center;
   justify-content: flex-start;
 
+  color: var(--fg-color);
+  border-radius: 9px;
+
   cursor: pointer;
+}
+.nowWatchingShowCard:hover {
+  background: var(--bg-color-1);
+}
+.nowWatchingShowCard:active {
+  background: var(--bg-color-2);
 }
 
 .nowWatchingShowCard h3 {
@@ -22,12 +36,11 @@
 .nowWatchingShowCard .poster img {
   height: 256px;
   border-radius: 5px;
+
+  -webkit-user-drag: none;
 }
 .nowWatchingShowCard:hover .poster img {
   box-shadow: 0px 4px 8px var(--shadow-2);
-}
-.nowWatchingShowCard:active .poster img {
-  box-shadow: none;
 }
 
 .nowWatchingShowCard .metadata {

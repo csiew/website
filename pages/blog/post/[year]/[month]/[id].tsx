@@ -1,6 +1,8 @@
-import React from "react";
-import BlogNavigationView from "../../../../components/app/BlogNavigationView";
-import { BlogPost, getPosts } from "../../../../lib/blog";
+import React, { useEffect } from "react";
+import config from "../../../../../config";
+import retitle from "../../../../../lib/retitle";
+import { BlogPost, getPosts } from "../../../../../lib/blog";
+import BlogNavigationView from "../../../../../components/app/BlogNavigationView";
 
 type BlogPostPageProps = {
   year: string;
@@ -17,6 +19,11 @@ const getPost = (posts: BlogPost[], { year, month, id }: BlogPostPageProps) => {
 };
 
 const BlogPostPage = ({ posts, post }: { posts: BlogPost[], post: BlogPost }) => {
+  useEffect(() => {
+    document.title = retitle(post.title);
+    document.getElementById(config.rootElementId)?.scrollTo({ top: 0 });
+  }, []);
+  
   return <BlogNavigationView posts={posts} post={post} />;
 };
 

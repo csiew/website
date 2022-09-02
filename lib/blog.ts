@@ -46,7 +46,7 @@ export const generatePathString = (pathProps?: BlogPostPath) => {
   if (!pathProps) {
     return "";
   }
-  return `/blog/${pathProps.year}/${pathProps.month}/${pathProps.shortTitle}`;
+  return `/blog/post/${pathProps.year}/${pathProps.month}/${pathProps.shortTitle}`;
 };
 
 export const getPosts = (getContent = false): BlogPost[] => {

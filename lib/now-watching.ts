@@ -12,7 +12,7 @@ export interface ShowsData {
 
 // Remember to wrap with Partial<>
 export interface OmdbResponse {
-  id: string;
+  imdbID: string;
   Title: string;
   Year: string;
   Rated: string;

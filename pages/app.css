@@ -131,12 +131,6 @@ main {
   justify-content: flex-start;
 }
 
-@media (max-width: 767px) {
-  main {
-    padding: 1rem;
-  }
-}
-
 article {
   font-family: var(--font-family-article);
   letter-spacing: -0.75px;
@@ -183,6 +177,29 @@ article .cardList {
 
 article .cardList .paper {
   width: 100%;
+}
+
+.toolbar {
+  width: 100%;
+  margin: 0;
+  padding: 0.25rem 1rem;
+
+  display: inline-flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: flex-start;
+
+  position: sticky;
+  top: 0;
+  z-index: 90;
+
+  color: var(--fg-color);
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--bg-color-3);
+  box-shadow: 0px 2px 4px var(--shadow-4);
+
+  font-family: var(--font-family-widget);
 }
 
 @import url('../lib/assets/fonts/figtree/index.css');
