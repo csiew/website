@@ -4,7 +4,8 @@ a.nowWatchingShowCard:hover {
 }
 .nowWatchingShowCard {
   width: 100%;
-  padding: 0.5rem;
+  height: 100%;
+  padding: 1rem 0.5rem;
 
   display: inline-flex;
   flex-flow: column;
@@ -41,6 +42,13 @@ a.nowWatchingShowCard:hover {
 }
 .nowWatchingShowCard:is(:hover, :focus) .poster img {
   box-shadow: 0px 4px 8px var(--shadow-2);
+}
+.nowWatchingShowCard:hover .poster img {
+  transform: scale(1.02);
+  transition: 0.2s;
+}
+.nowWatchingShowCard:active .poster img {
+  transform: scale(1);
 }
 
 .nowWatchingShowCard .metadata {

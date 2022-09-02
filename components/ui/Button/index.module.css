@@ -37,8 +37,13 @@
   z-index: 200;
 }
 .backToTopFloat :is(button, .button, input[type=submit], input[type=reset]) {
-  background: var(--bg-color);
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 64px;
+  box-shadow: 0px 4px 8px var(--shadow-2);
   font-size: 75%;
+  backdrop-filter: blur(16px);
+  transition: 0.2s;
 }
 
 :is(button, .button, input[type=submit], input[type=reset]) {
