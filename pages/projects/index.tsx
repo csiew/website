@@ -18,6 +18,7 @@ const Projects = () => {
 
   return (
     <NavigationView
+      navPosition="right"
       nav={(
         <NavigationSidebar
           keyPrefix="project-item-"

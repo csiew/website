@@ -18,6 +18,7 @@ const Playlists = () => {
 
   return (
     <NavigationView
+      navPosition="right"
       nav={(
         <NavigationSidebar
           keyPrefix="playlist-shortcut-"

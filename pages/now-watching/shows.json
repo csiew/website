@@ -8,7 +8,8 @@
     {
       "name": "House of the Dragon",
       "imdbId": "tt11198330",
-      "watching": true
+      "watching": true,
+      "recommended": true
     },
     {
       "name": "Westworld",

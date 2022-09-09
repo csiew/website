@@ -17,6 +17,7 @@ const BlogNavigationView = ({ posts, post }: BlogNavigationViewProps) => {
   return (
     <NavigationView
       classList={[post ? "pageBlogPost" : "pageBlog"]}
+      navPosition="right"
       nav={
         post ?
           <NavigationSidebar
