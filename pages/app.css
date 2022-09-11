@@ -187,6 +187,7 @@ article .cardList .paper {
 @import url('../lib/assets/fonts/source-serif-pro/index.css');
 
 @import url('../components/ui/Button/index.module.css');
+@import url('../components/ui/Modal/index.module.css');
 @import url('../components/ui/NavigationSidebar/index.module.css');
 @import url('../components/ui/NavigationView/index.module.css');
 @import url('../components/ui/Paper/index.module.css');

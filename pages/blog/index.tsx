@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import Head from "next/head";
 import config from "../../config";
 import { BlogPost, getPosts } from "../../lib/blog";
 import retitle from "../../lib/retitle";
@@ -6,11 +7,17 @@ import BlogNavigationView from "../../components/app/BlogNavigationView";
 
 const Blog = ({ posts }: { posts: BlogPost[] }) => {
   useEffect(() => {
-    document.title = retitle("Blog");
     document.getElementById(config.rootElementId)?.scrollTo({ top: 0 });
   }, []);
   
-  return <BlogNavigationView posts={posts} />;
+  return (
+    <>
+      <Head>
+        <title>{retitle("Blog")}</title>
+      </Head>
+      <BlogNavigationView posts={posts} />
+    </>
+  );
 };
 
 export const getStaticProps = async () => {
@@ -19,4 +26,4 @@ export const getStaticProps = async () => {
   };
 };
 
-export default Blog;
+export default React.memo(Blog);

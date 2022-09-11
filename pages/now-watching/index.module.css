@@ -40,6 +40,10 @@ article.topLevelPage.pageNowWatching section.acknowledgements {
   box-shadow: 0px 4px 8px var(--shadow-2);
 }
 
+.showInfo.column {
+  flex-flow: column-reverse;
+  align-items: center;
+}
 @media (max-width: 767px) {
   .showInfo {
     flex-flow: column-reverse;

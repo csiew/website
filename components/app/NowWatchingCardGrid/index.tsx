@@ -9,9 +9,10 @@ type NowWatchingCardGridProps = {
   title: string;
   keyPrefix: string;
   shows: Array<Show>;
+  setSelectedShow?: (id: string) => void;
 }
 
-const NowWatchingCardGrid = ({ title, keyPrefix, shows }: NowWatchingCardGridProps) => {
+const NowWatchingCardGrid = ({ title, keyPrefix, shows, setSelectedShow }: NowWatchingCardGridProps) => {
   return (
     <section>
       <Paper className="pageNowWatchingSection">
@@ -19,7 +20,7 @@ const NowWatchingCardGrid = ({ title, keyPrefix, shows }: NowWatchingCardGridPro
         <div className="cardList">
           {
             shows.map((show) => (
-              <NowWatchingShowCard key={`${keyPrefix}-${show.imdbId}`} keyPrefix={keyPrefix} show={show} />
+              <NowWatchingShowCard key={`${keyPrefix}-${show.imdbId}`} show={show} setSelectedShow={setSelectedShow} />
             ))
           }
         </div>

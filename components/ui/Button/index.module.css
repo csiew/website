@@ -34,7 +34,7 @@
 
   position: sticky;
   bottom: 0;
-  z-index: 200;
+  z-index: 150;
 }
 .backToTopFloat :is(button, .button, input[type=submit], input[type=reset]) {
   padding: 0.5rem 1rem;

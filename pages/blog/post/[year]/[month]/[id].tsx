@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import Head from "next/head";
 import config from "../../../../../config";
 import retitle from "../../../../../lib/retitle";
 import { BlogPost, getPosts } from "../../../../../lib/blog";
@@ -20,11 +21,17 @@ const getPost = (posts: BlogPost[], { year, month, id }: BlogPostPageProps) => {
 
 const BlogPostPage = ({ posts, post }: { posts: BlogPost[], post: BlogPost }) => {
   useEffect(() => {
-    document.title = retitle(post.title);
     document.getElementById(config.rootElementId)?.scrollTo({ top: 0 });
   }, []);
   
-  return <BlogNavigationView posts={posts} post={post} />;
+  return (
+    <>
+      <Head>
+        <title>{retitle(post.title)}</title>
+      </Head>
+      <BlogNavigationView posts={posts} post={post} />
+    </>
+  );
 };
 
 export const getStaticPaths = () => {
@@ -51,4 +58,4 @@ export const getStaticProps = async (context: any) => {
   };
 };
 
-export default BlogPostPage;
+export default React.memo(BlogPostPage);
