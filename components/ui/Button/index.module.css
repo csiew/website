@@ -35,6 +35,9 @@
   position: sticky;
   bottom: 0;
   z-index: 150;
+
+  animation-name: backToTopTransitionIn;
+  animation-duration: 0.5s;
 }
 .backToTopFloat :is(button, .button, input[type=submit], input[type=reset]) {
   margin: 0;
@@ -62,6 +65,21 @@
   height: 1.25rem;
   margin: 0;
   padding: 0;
+}
+
+@keyframes backToTopTransitionIn {
+  0% {
+    opacity: 0.5;
+    translate: 0rem 5rem;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+  100% {
+    opacity: 1.0;
+    translate: 0rem 0rem;
+    pointer-events: all;
+    cursor: auto;
+  }
 }
 
 :is(button, .button, input[type=submit], input[type=reset]) {
