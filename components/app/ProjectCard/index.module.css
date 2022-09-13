@@ -1,0 +1,82 @@
+section.project .paper {
+  width: 100%;
+}
+
+section.project img {
+  margin: 0.5rem 0rem;
+  padding: 0;
+
+  border: 1px solid var(--bg-color-3);
+  border-radius: 5px;
+}
+
+section.project .projectHeader {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  display: inline-flex;
+  flex-flow: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+@media (max-width: 767px) {
+  section.project .projectHeader {
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+}
+
+section.project .projectHeader .projectHeaderInfo {
+  width: 100%;
+
+  display: inline-flex;
+  flex-flow: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  cursor: default;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+
+@media (max-width: 767px) {
+  section.project .projectHeader .projectHeaderInfo {
+    align-items: center;
+  }
+}
+
+section.project .projectHeader .projectHeaderInfo h3 {
+  padding: 0.125rem 0rem;
+
+  font-size: 200%;
+  line-height: 1.25;
+  white-space: nowrap;
+}
+section.project .projectHeader .projectHeaderInfo sub {
+  padding: 0rem 0rem 0.5rem 0rem;
+  font-family: var(--font-family-widget);
+}
+
+section.project .projectHeader .projectHeaderLinks {
+  width: min-content;
+  margin: 0;
+  padding: 0;
+
+  display: inline-flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+
+  font-size: 80%;
+}
+
+section.project .projectBody {
+  margin: 0.5rem 0rem 0rem 0rem;
+}

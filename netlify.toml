@@ -1,11 +1,7 @@
 [build]
-  command = "npm run build"
-  publish = "build/"
-  functions = "functions/"
+command = "next build"
+base = "/"
+publish = "/.next/"
 
-[dev]
-  command = "svelte-kit dev"
-
-[functions]
-  directory = "netlify/functions"
-  node_bundler = "esbuild"
+[[plugins]]
+package = "@netlify/plugin-nextjs"

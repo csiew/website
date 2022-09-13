@@ -1,0 +1,25 @@
+.paper {
+  margin: 0;
+  padding: 1rem 1.25rem;
+
+  display: inline-flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  color: var(--fg-color);
+  background: var(--bg-color);
+  box-shadow: 0px 2px 4px var(--shadow-4);
+  border: 1px solid var(--bg-color-3);
+  border-radius: 5px;
+}
+
+.paper.disabled {
+  opacity: 0.75;
+
+  cursor: default;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
