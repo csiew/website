@@ -37,13 +37,31 @@
   z-index: 150;
 }
 .backToTopFloat :is(button, .button, input[type=submit], input[type=reset]) {
+  margin: 0;
   padding: 0.5rem 1rem;
-  background: rgba(255, 255, 255, 0.75);
+
+  display: inline-flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255, 255, 255, 0.25);
   border-radius: 64px;
-  box-shadow: 0px 4px 8px var(--shadow-2);
-  font-size: 75%;
-  backdrop-filter: blur(8px);
+  box-shadow: 0px 2px 4px var(--shadow-4);
+  backdrop-filter: blur(16px);
+
   transition: 0.2s;
+}
+.backToTopFloat :is(button, .button, input[type=submit], input[type=reset]):hover {
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 0px 4px 8px var(--shadow-2);
+  backdrop-filter: blur(8px);
+}
+.backToTopFloat :is(button, .button, input[type=submit], input[type=reset]) svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin: 0;
+  padding: 0;
 }
 
 :is(button, .button, input[type=submit], input[type=reset]) {

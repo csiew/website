@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { MdArrowUpward } from "react-icons/md";
 import config from "../../../config";
 import { scrollPageToTop } from "../../../lib/scroll";
 import Button from "../../ui/Button";
@@ -19,8 +20,8 @@ const BackToTop = () => {
   if (isAtTop) return <></>;
   return (
     <div className="backToTopFloat">
-      <Button callback={scrollPageToTop}>
-        Back to top
+      <Button callback={scrollPageToTop} alt="Back to top">
+        <MdArrowUpward />
       </Button>
     </div>
   );

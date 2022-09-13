@@ -61,10 +61,12 @@
   0% {
     translate: 0vw 100vh;
     pointer-events: none;
+    cursor: not-allowed;
   }
   100% {
     translate: 0vw 0vh;
     pointer-events: all;
+    cursor: auto;
   }
 }
 

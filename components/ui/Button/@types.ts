@@ -4,6 +4,7 @@ import { BaseComponentProps } from "../../../lib/@types";
 export type CommonButtonProps = BaseComponentProps & {
   children?: string | number | ReactElement | ReactElement[];
   callback?: () => void;
+  alt?: string;
 };
 
 export type PlainButtonProps = CommonButtonProps;
