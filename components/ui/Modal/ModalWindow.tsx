@@ -12,9 +12,11 @@ const ModalWindow = ({ children, className, classList, style, disabled, title, c
         <h2>
           {title}
         </h2>
-        <Button callback={closeWindowCallback}>
-          Close
-        </Button>
+        <small>
+          <Button callback={closeWindowCallback}>
+            Close
+          </Button>
+        </small>
       </div>
       <div className="modalWindowBody">
         {children}

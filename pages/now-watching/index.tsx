@@ -58,6 +58,7 @@ const NowWatching = () => {
     <>
       <Head>
         <title>{retitle("Now Watching")}</title>
+        <meta property="og:title" content={retitle("Now Watching")} key="title" />
       </Head>
       <NavigationView
         content={(

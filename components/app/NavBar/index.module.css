@@ -34,6 +34,9 @@ header {
 }
 
 header h1 {
+  margin: 0;
+  padding: 0;
+
   color: var(--fg-color-9);
 
   font-weight: 600;

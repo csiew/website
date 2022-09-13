@@ -13,6 +13,7 @@ const Home = () => {
     <>
       <Head>
         <title>{retitle("Home")}</title>
+        <meta property="og:title" content={retitle("Home")} key="title" />
       </Head>
       <NavigationView
         content={(

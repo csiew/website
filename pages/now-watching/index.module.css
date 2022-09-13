@@ -28,6 +28,7 @@ article.topLevelPage.pageNowWatching section.acknowledgements {
 }
 
 .showInfo {
+  width: 100%;
   display: inline-flex;
   flex-flow: row;
   align-items: flex-start;

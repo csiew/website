@@ -20,6 +20,7 @@ const Projects = () => {
     <>
       <Head>
         <title>{retitle("Projects")}</title>
+        <meta property="og:title" content={retitle("Projects")} key="title" />
       </Head>
       <NavigationView
         navPosition="right"

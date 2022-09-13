@@ -50,6 +50,7 @@ const ShowDetailPage = ({ show, isInModal }: { show: Show, isInModal?: boolean }
       }
       <Head>
         <title>{retitle(show.name)}</title>
+        <meta property="og:title" content={retitle(show.name)} key="title" />
       </Head>
       <NavigationView
         className="pageShowDetail"

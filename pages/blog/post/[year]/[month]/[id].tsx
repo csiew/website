@@ -28,6 +28,7 @@ const BlogPostPage = ({ posts, post }: { posts: BlogPost[], post: BlogPost }) =>
     <>
       <Head>
         <title>{retitle(post.title)}</title>
+        <meta property="og:title" content={retitle(post.title)} key="title" />
       </Head>
       <BlogNavigationView posts={posts} post={post} />
     </>
