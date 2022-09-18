@@ -1,4 +1,8 @@
-import process from "process";
+export const getEnv = (key: string) => {
+  const varValue = process.env[key];
+  if (!varValue) throw new Error(`Could not get environment variable: ${key}`);
+  return varValue;
+};
 
 export default {
   rootElementId: "__next",
@@ -7,7 +11,11 @@ export default {
     divider: "|"
   },
   omdb: {
-    apiKey: process.env.OMDB_API_KEY ?? "",
+    apiKey: process.env.OMDB_API_KEY,
     host: "https://omdbapi.com"
-  }
+  },
+  features: {
+    contactForm: true
+  },
+  debugMode: process.env.DEBUG_MODE
 };

@@ -1,7 +1,16 @@
 import { ReactElement } from "react";
 import { BaseComponentProps } from "../../../lib/@types";
 
+export enum ButtonVariant {
+  PLAIN = "plain",
+  PRIMARY = "primary",
+  LINK = "link",
+  SUBMIT = "submit",
+  RESET = "reset"
+}
+
 export type CommonButtonProps = BaseComponentProps & {
+  variant: ButtonVariant;
   children?: string | number | ReactElement | ReactElement[];
   callback?: () => void;
   alt?: string;

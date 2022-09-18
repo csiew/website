@@ -5,11 +5,17 @@ import routes from "../lib/routes";
 import NavBar from "../components/app/NavBar";
 import Footer from "../components/app/Footer";
 import BackToTop from "../components/app/BackToTop";
+import config from "../config";
 
-const AppContext = ({ Component, pageProps }: any) => {
+const AppContainer = ({ Component, pageProps }: any) => {
   return (
     <>
       <Head>
+        {
+          config.debugMode
+            ? <script>self.FIREBASE_APPCHECK_DEBUG_TOKEN = true;</script>
+            : <></>
+        }
         <link rel="shortcut icon" href="/profile.jpg" />
         <title>Clarence Siew</title>
       </Head>
@@ -23,4 +29,4 @@ const AppContext = ({ Component, pageProps }: any) => {
   );
 };
 
-export default AppContext;
+export default AppContainer;

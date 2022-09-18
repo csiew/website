@@ -1,0 +1,11 @@
+.formControls {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  display: inline-flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
