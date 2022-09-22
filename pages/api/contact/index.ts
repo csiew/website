@@ -20,7 +20,7 @@ export type Submission = {
   message: string;
 };
 
-if (config.debugMode && config.debugMode === "1") {
+if (config.debugMode) {
   console.log("Debug mode enabled");
   firebase.setLogLevel("debug");
 }
