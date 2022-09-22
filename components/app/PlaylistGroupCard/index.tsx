@@ -1,7 +1,6 @@
 import React from "react";
 import { PlaylistGroup } from "../../../lib/playlists";
 import Button from "../../ui/Button";
-import { ButtonVariant } from "../../ui/Button/@types";
 import Paper from "../../ui/Paper";
 
 type PlaylistGroupCardProps = {
@@ -21,7 +20,7 @@ const PlaylistGroupCard = ({ id, playlistGroup }: PlaylistGroupCardProps) => {
             {
               playlistGroup.playlists.standard.map((playlist) => {
                 return (
-                  <Button variant={ButtonVariant.LINK} key={`playlist-${playlistGroup.id}-${playlist.name}`} url={playlist.url}>
+                  <Button variant="link" key={`playlist-${playlistGroup.id}-${playlist.name}`} url={playlist.url}>
                     {playlist.name}
                   </Button>
                 );
@@ -32,7 +31,7 @@ const PlaylistGroupCard = ({ id, playlistGroup }: PlaylistGroupCardProps) => {
             {
               playlistGroup.playlists.special.map((playlist) => {
                 return (
-                  <Button variant={ButtonVariant.LINK} className="primary" key={`playlist-${playlistGroup.id}-${playlist.name}`} url={playlist.url}>
+                  <Button variant="link" className="primary" key={`playlist-${playlistGroup.id}-${playlist.name}`} url={playlist.url}>
                     {playlist.name}
                   </Button>
                 );

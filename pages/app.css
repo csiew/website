@@ -195,6 +195,7 @@ form {
 @import url('../lib/assets/fonts/roboto-mono/index.css');
 @import url('../lib/assets/fonts/source-serif-pro/index.css');
 
+@import url('../components/ui/Alert/index.module.css');
 @import url('../components/ui/Button/index.module.css');
 @import url('../components/ui/Form/index.module.css');
 @import url('../components/ui/Modal/index.module.css');

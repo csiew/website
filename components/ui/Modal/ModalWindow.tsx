@@ -1,6 +1,5 @@
 import React from "react";
 import Button from "../Button";
-import { ButtonVariant } from "../Button/@types";
 import { ModalWindowProps } from "./@types";
 
 const ModalWindow = ({ children, className, classList, style, disabled, title, closeWindowCallback }: ModalWindowProps) => {
@@ -14,7 +13,7 @@ const ModalWindow = ({ children, className, classList, style, disabled, title, c
           {title}
         </h2>
         <small>
-          <Button variant={ButtonVariant.PLAIN} callback={closeWindowCallback}>
+          <Button onClick={closeWindowCallback}>
             Close
           </Button>
         </small>

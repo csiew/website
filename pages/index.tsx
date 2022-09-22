@@ -6,6 +6,7 @@ import retitle from "../lib/retitle";
 import NavigationView from "../components/ui/NavigationView";
 import Button from "../components/ui/Button";
 import ContactForm from "../components/app/ContactForm";
+import Paper from "../components/ui/Paper";
 
 const Home = () => {
   useEffect(() => {
@@ -44,7 +45,6 @@ const Home = () => {
               config.features.contactForm
                 ? (
                   <section>
-                    <h3>Contact</h3>
                     <ContactForm />
                   </section>
                 )

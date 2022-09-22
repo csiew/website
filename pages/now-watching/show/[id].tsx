@@ -10,7 +10,6 @@ import Button from "../../../components/ui/Button";
 import Paper from "../../../components/ui/Paper";
 import Toolbar from "../../../components/ui/Toolbar";
 import MustWatchBadge from "../../../components/app/MustWatchBadge";
-import { ButtonVariant } from "../../../components/ui/Button/@types";
 
 const showsData = rawShowsData as ShowsData;
 const showsMetadata = rawShowsMetadata as Array<Partial<OmdbResponse>>;
@@ -38,7 +37,7 @@ const ShowDetailPage = ({ show, isInModal }: { show: Show, isInModal?: boolean }
           ? <></>
           : (
             <Toolbar>
-              <Button variant={ButtonVariant.PLAIN} callback={() => history.go(-1)}>
+              <Button onClick={() => history.go(-1)}>
                 &#8592; Back
               </Button>
               {

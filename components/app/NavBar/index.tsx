@@ -5,7 +5,6 @@ import { useRouter } from "next/router";
 import { PageRoute } from "../../../lib/@types";
 import Button from "../../ui/Button";
 import config from "../../../config";
-import { ButtonVariant } from "../../ui/Button/@types";
 
 const NavBar = ({ pages }: { pages: PageRoute[] }) => {
   const router = useRouter();
@@ -40,7 +39,7 @@ const NavBar = ({ pages }: { pages: PageRoute[] }) => {
         {
           showNavToggle
             ? (
-              <Button variant={ButtonVariant.PLAIN} className="navMenuToggle" callback={() => setShowNavMenu(!showNavMenu)}>
+              <Button className="navMenuToggle" onClick={() => setShowNavMenu(!showNavMenu)}>
                 <MdMenu />
               </Button>
             )

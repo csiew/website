@@ -2,7 +2,6 @@ import React from "react";
 import ReactMarkdown from "react-markdown";
 import { Project } from "../../../lib/projects";
 import Button from "../../ui/Button";
-import { ButtonVariant } from "../../ui/Button/@types";
 import Paper from "../../ui/Paper";
 
 const ProjectCard = ({ project }: { project: Project }) => {
@@ -15,8 +14,8 @@ const ProjectCard = ({ project }: { project: Project }) => {
             <sub>{project.timeRange}</sub>
           </div>
           <div className="projectHeaderLinks">
-            <Button variant={ButtonVariant.LINK} url={project.url} newTab={true} disabled={project.url.length === 0}>Website</Button>
-            <Button variant={ButtonVariant.LINK} url={project.github} newTab={true} disabled={project.github.length === 0}>Repository</Button>
+            <Button variant="link" url={project.url} newTab={true} disabled={project.url.length === 0}>Website</Button>
+            <Button variant="link" url={project.github} newTab={true} disabled={project.github.length === 0}>Repository</Button>
           </div>
         </div>
         <div className="projectBody">

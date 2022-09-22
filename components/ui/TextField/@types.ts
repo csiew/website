@@ -1,4 +1,5 @@
-import { RefObject } from "react";
+import { ChangeEventHandler, MouseEventHandler, RefObject } from "react";
+import { BaseComponentProps } from "../../../lib/@types";
 
 export enum TextFieldVariant {
   TEXT = "text",
@@ -8,15 +9,13 @@ export enum TextFieldVariant {
   MULTILINE = "multiline"
 }
 
-export type TextFieldProps = {
+export type TextFieldProps = BaseComponentProps & {
   variant: TextFieldVariant;
   name?: string;
-  className?: string;
-  classList?: string[];
-  style?: { [k: string]: string | number | boolean };
   placeholder?: string;
   defaultValue?: string | number;
   required?: boolean;
-  disabled?: boolean;
   forwardedRef?: RefObject<any>;
+  onClick?: MouseEventHandler<HTMLInputElement | HTMLTextAreaElement>;
+  onChange?: ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>;
 };

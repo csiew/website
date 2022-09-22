@@ -1,4 +1,13 @@
-.formControls {
+.contactForm {
+  width: 100%;
+  margin: 2rem 0rem 0rem 0rem;
+}
+
+.contactForm h3 {
+  margin-bottom: 0.5rem;
+}
+
+.contactForm .formControls {
   width: 100%;
   margin: 0;
   padding: 0;
@@ -8,4 +17,6 @@
   align-items: center;
   justify-content: flex-end;
   gap: 0.5rem;
+
+  font-size: inherit;
 }

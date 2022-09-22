@@ -31,7 +31,7 @@ const Playlists = () => {
               playlistData.collection.map((playlistGroup) => ({
                 key: playlistGroup.id,
                 label: playlistGroup.name,
-                callback: () => scrollCardToTop(playlistGroup.id)
+                onClick: () => scrollCardToTop(playlistGroup.id)
               }))
             }
           />

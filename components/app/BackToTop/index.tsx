@@ -3,7 +3,6 @@ import { MdArrowUpward } from "react-icons/md";
 import config from "../../../config";
 import { scrollPageToTop } from "../../../lib/scroll";
 import Button from "../../ui/Button";
-import { ButtonVariant } from "../../ui/Button/@types";
 
 const BackToTop = () => {
   const [isAtTop, setIsAtTop] = useState<boolean>(true);
@@ -21,7 +20,7 @@ const BackToTop = () => {
   if (isAtTop) return <></>;
   return (
     <div className="backToTopFloat">
-      <Button variant={ButtonVariant.PLAIN} callback={scrollPageToTop} alt="Back to top">
+      <Button onClick={scrollPageToTop} alt="Back to top">
         <MdArrowUpward />
       </Button>
     </div>

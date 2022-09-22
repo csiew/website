@@ -3,7 +3,7 @@ import TextField from "../TextField";
 import { TextFieldVariant } from "../TextField/@types";
 import { FormQuestionProps } from "./@types";
 
-const FormQuestion = ({ label, name, forwardedRef, variant, required }: FormQuestionProps) => {
+const FormQuestion = ({ label, name, forwardedRef, variant, required, onClick, onChange }: FormQuestionProps) => {
   const focusInput = (ev: MouseEvent<HTMLLabelElement>) => {
     ev.preventDefault();
     forwardedRef?.current.focus();
@@ -19,7 +19,7 @@ const FormQuestion = ({ label, name, forwardedRef, variant, required }: FormQues
       {
         Object.values(TextFieldVariant).map(v => v.valueOf()).includes(variant)
           ? (
-            <TextField variant={variant} name={name} forwardedRef={forwardedRef} required={required} />
+            <TextField variant={variant} name={name} forwardedRef={forwardedRef} required={required} onClick={onClick} onChange={onChange} />
           )
           : <></>
       }
