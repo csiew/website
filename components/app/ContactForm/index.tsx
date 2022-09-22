@@ -5,7 +5,6 @@ import Button from "../../ui/Button";
 import Form from "../../ui/Form";
 import FormQuestion from "../../ui/Form/FormQuestion";
 import Paper from "../../ui/Paper";
-import { TextFieldVariant } from "../../ui/TextField/@types";
 import Alert from "../../ui/Alert";
 
 const ContactForm = () => {
@@ -92,7 +91,7 @@ const ContactForm = () => {
               <FormQuestion
                 name="contactName"
                 label="Name"
-                variant={TextFieldVariant.TEXT}
+                variant="text"
                 forwardedRef={contactNameRef}
                 onChange={updateIsReadyForSubmission}
                 required
@@ -100,7 +99,7 @@ const ContactForm = () => {
               <FormQuestion
                 name="contactEmail"
                 label="Email"
-                variant={TextFieldVariant.EMAIL}
+                variant="email"
                 forwardedRef={contactEmailRef}
                 onChange={updateIsReadyForSubmission}
                 required
@@ -108,7 +107,8 @@ const ContactForm = () => {
               <FormQuestion
                 name="contactMessage"
                 label="Message"
-                variant={TextFieldVariant.MULTILINE}
+                variant="multiline"
+                style={{ resize: "vertical" }}
                 forwardedRef={contactMessageRef}
                 onChange={updateIsReadyForSubmission}
                 required
