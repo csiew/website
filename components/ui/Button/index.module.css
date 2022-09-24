@@ -41,21 +41,6 @@
   --btn-border-color-submit: seagreen;
 }
 
-@keyframes backToTopTransitionIn {
-  0% {
-    opacity: 0.5;
-    translate: 0rem 5rem;
-    pointer-events: none;
-    cursor: not-allowed;
-  }
-  100% {
-    opacity: 1.0;
-    translate: 0rem 0rem;
-    pointer-events: all;
-    cursor: auto;
-  }
-}
-
 :is(button, .button, input[type=submit], input[type=reset]) {
   width: max-content;
   margin: 0;
