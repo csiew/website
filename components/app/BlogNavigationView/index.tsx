@@ -5,6 +5,7 @@ import { BlogPost, generatePathString } from "../../../lib/blog";
 import NavigationSidebar from "../../ui/NavigationSidebar";
 import NavigationView from "../../ui/NavigationView";
 import Paper from "../../ui/Paper";
+import { relativeTime } from "../../../lib/timestamp";
 
 type BlogNavigationViewProps = {
   posts: BlogPost[];
@@ -30,7 +31,7 @@ const BlogNavigationView = ({ posts, post }: BlogNavigationViewProps) => {
                   <>
                     <div className="title">{p.title}</div>
                     <div className="timestamp">
-                      {new Date(p.publishedOn).toLocaleDateString()}
+                      {`${relativeTime(p.publishedOn)} - ${new Date(p.publishedOn).toLocaleDateString()}`}
                     </div>
                   </>
                 ),
@@ -75,7 +76,7 @@ const BlogNavigationView = ({ posts, post }: BlogNavigationViewProps) => {
                         <a href={generatePathString(p.path)}>
                           <Paper>
                             <h3>{p.title}</h3>
-                            <sub>{new Date(p.publishedOn).toDateString()}</sub>
+                            <sub>{`${relativeTime(p.publishedOn)} - ${new Date(p.publishedOn).toLocaleDateString()}`}</sub>
                           </Paper>
                         </a>
                       </li>

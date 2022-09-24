@@ -59,4 +59,4 @@ const Playlists = () => {
   );
 };
 
-export default React.memo(Playlists);
+export default Playlists;

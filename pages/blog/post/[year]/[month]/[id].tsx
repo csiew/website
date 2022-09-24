@@ -59,4 +59,4 @@ export const getStaticProps = async (context: any) => {
   };
 };
 
-export default React.memo(BlogPostPage);
+export default BlogPostPage;
