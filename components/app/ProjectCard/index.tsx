@@ -14,8 +14,8 @@ const ProjectCard = ({ project }: { project: Project }) => {
             <sub>{project.timeRange}</sub>
           </div>
           <div className="projectHeaderLinks">
-            <Button url={project.url} newTab={true} disabled={project.url.length === 0}>Website</Button>
-            <Button url={project.github} newTab={true} disabled={project.github.length === 0}>Repository</Button>
+            <Button variant="link" url={project.url} newTab={true} disabled={project.url.length === 0}>Website</Button>
+            <Button variant="link" url={project.github} newTab={true} disabled={project.github.length === 0}>Repository</Button>
           </div>
         </div>
         <div className="projectBody">

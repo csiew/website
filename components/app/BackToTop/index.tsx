@@ -20,7 +20,7 @@ const BackToTop = () => {
   if (isAtTop) return <></>;
   return (
     <div className="backToTopFloat">
-      <Button callback={scrollPageToTop} alt="Back to top">
+      <Button onClick={scrollPageToTop} alt="Back to top">
         <MdArrowUpward />
       </Button>
     </div>

@@ -1,8 +1,12 @@
-import React, { useEffect } from "react";
+import React, { FormEvent, useEffect, useRef, useState } from "react";
 import Head from "next/head";
+import { Submission, submitContactForm } from "./api/contact";
 import config from "../config";
 import retitle from "../lib/retitle";
 import NavigationView from "../components/ui/NavigationView";
+import Button from "../components/ui/Button";
+import ContactForm from "../components/app/ContactForm";
+import Paper from "../components/ui/Paper";
 
 const Home = () => {
   useEffect(() => {
@@ -37,6 +41,15 @@ const Home = () => {
                 I absolutely must have music playing when working. My favourite genres are punk, grunge, alternative, hard rock and metal.
               </p>
             </section>
+            {
+              config.features.contactForm
+                ? (
+                  <section>
+                    <ContactForm />
+                  </section>
+                )
+                : <></>
+            }
           </article>
         )}
       />
@@ -44,4 +57,4 @@ const Home = () => {
   );
 };
 
-export default React.memo(Home);
+export default Home;

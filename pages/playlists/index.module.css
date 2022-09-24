@@ -1,0 +1,11 @@
+.topLevelPage.playlists .cardList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 767px) {
+  .topLevelPage.playlists .cardList {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

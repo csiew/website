@@ -1,10 +1,11 @@
 import React from "react";
+import config from "../../../config";
 
 const Footer = () => {
   return (
     <footer>
       <p>
-        Version 6.0.0
+        Version {config.version}
       </p>
       <p>
         &copy; 2022 Clarence Siew

@@ -13,7 +13,7 @@ const ModalWindow = ({ children, className, classList, style, disabled, title, c
           {title}
         </h2>
         <small>
-          <Button callback={closeWindowCallback}>
+          <Button onClick={closeWindowCallback}>
             Close
           </Button>
         </small>

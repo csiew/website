@@ -1,0 +1,19 @@
+form .question {
+  width: 100%;
+  display: inline-flex;
+  flex-flow: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.25rem;
+}
+form .question label {
+  color: var(--fg-color-9);
+  font-size: 0.8rem;
+  font-weight: bold;
+  font-family: var(--font-family-widget);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+form .question :is(input, textarea) {
+  width: 100%;
+}

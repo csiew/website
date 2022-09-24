@@ -27,4 +27,4 @@ export const getStaticProps = async () => {
   };
 };
 
-export default React.memo(Blog);
+export default Blog;

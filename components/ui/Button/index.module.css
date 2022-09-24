@@ -8,6 +8,14 @@
   --btn-fg-color-primary-hover: var(--primary-color);
   --btn-fg-color-primary-active: var(--bg-color);
   --btn-fg-color-primary-selected: var(--bg-color);
+  --btn-fg-color-reset: firebrick;
+  --btn-fg-color-reset-hover: crimson;
+  --btn-fg-color-reset-active: red;
+  --btn-fg-color-reset-selected: var(--bg-color);
+  --btn-fg-color-submit: var(--bg-color);
+  --btn-fg-color-submit-hover: var(--bg-color);
+  --btn-fg-color-submit-active: var(--bg-color);
+  --btn-fg-color-submit-selected: var(--bg-color);
 
   --btn-bg-color: none;
   --btn-bg-color-hover: lightgray;
@@ -18,68 +26,19 @@
   --btn-bg-color-primary-hover: var(--primary-color-4);
   --btn-bg-color-primary-active: var(--primary-color);
   --btn-bg-color-primary-selected: var(--primary-color);
+  --btn-bg-color-reset: mistyrose;
+  --btn-bg-color-reset-hover: mistyrose;
+  --btn-bg-color-reset-active: lightcoral;
+  --btn-bg-color-reset-selected: firebrick;
+  --btn-bg-color-submit: seagreen;
+  --btn-bg-color-submit-hover: mediumseagreen;
+  --btn-bg-color-submit-active: darkgreen;
+  --btn-bg-color-submit-selected: darkgreen;
 
   --btn-border-color: var(--bg-color-3);
-}
-
-.backToTopFloat {
-  width: min-content;
-  margin-inline: auto;
-  padding: 1rem;
-
-  display: inline-flex;
-  flex-flow: row;
-  align-items: center;
-  justify-content: center;
-
-  position: sticky;
-  bottom: 0;
-  z-index: 150;
-
-  animation-name: backToTopTransitionIn;
-  animation-duration: 0.5s;
-}
-.backToTopFloat :is(button, .button, input[type=submit], input[type=reset]) {
-  margin: 0;
-  padding: 0.5rem 1rem;
-
-  display: inline-flex;
-  flex-flow: row;
-  align-items: center;
-  justify-content: center;
-
-  background: rgba(255, 255, 255, 0.25);
-  border-radius: 64px;
-  box-shadow: 0px 2px 4px var(--shadow-4);
-  backdrop-filter: blur(16px);
-
-  transition: 0.2s;
-}
-.backToTopFloat :is(button, .button, input[type=submit], input[type=reset]):hover {
-  background: rgba(255, 255, 255, 0.75);
-  box-shadow: 0px 4px 8px var(--shadow-2);
-  backdrop-filter: blur(8px);
-}
-.backToTopFloat :is(button, .button, input[type=submit], input[type=reset]) svg {
-  width: 1.25rem;
-  height: 1.25rem;
-  margin: 0;
-  padding: 0;
-}
-
-@keyframes backToTopTransitionIn {
-  0% {
-    opacity: 0.5;
-    translate: 0rem 5rem;
-    pointer-events: none;
-    cursor: not-allowed;
-  }
-  100% {
-    opacity: 1.0;
-    translate: 0rem 0rem;
-    pointer-events: all;
-    cursor: auto;
-  }
+  --btn-border-color-primary: var(--primary-color);
+  --btn-border-color-reset: firebrick;
+  --btn-border-color-submit: seagreen;
 }
 
 :is(button, .button, input[type=submit], input[type=reset]) {
@@ -128,10 +87,46 @@
   outline-offset: 1px;
 }
 
+input[type=reset] {
+  color: var(--btn-fg-color-reset);
+  background: var(--btn-bg-color-reset);
+  border-color: var(--btn-border-color-reset);
+}
+input[type=reset]:hover {
+  color: var(--btn-fg-color-reset-hover);
+  background: var(--btn-bg-color-reset-hover);
+}
+input[type=reset]:active {
+  color: var(--btn-fg-color-reset-active);
+  background: var(--btn-bg-color-reset-active);
+}
+input[type=reset].active {
+  color: var(--btn-fg-color-reset-selected);
+  background: var(--btn-bg-color-reset-selected);
+}
+
+input[type=submit] {
+  color: var(--btn-fg-color-submit);
+  background: var(--btn-bg-color-submit);
+  border-color: var(--btn-border-color-submit);
+}
+input[type=submit]:hover {
+  color: var(--btn-fg-color-submit-hover);
+  background: var(--btn-bg-color-submit-hover);
+}
+input[type=submit]:active {
+  color: var(--btn-fg-color-submit-active);
+  background: var(--btn-bg-color-submit-active);
+}
+input[type=submit].active {
+  color: var(--btn-fg-color-submit-selected);
+  background: var(--btn-bg-color-submit-selected);
+}
+
 :is(button, .button, input[type=submit], input[type=reset]).primary {
   color: var(--btn-fg-color-primary);
   background: var(--btn-bg-color-primary);
-  border-color: var(--btn-fg-color-primary);
+  border-color: var(--btn-border-color-primary);
 }
 :is(button, .button, input[type=submit], input[type=reset]).primary:hover {
   color: var(--btn-fg-color-primary-hover);

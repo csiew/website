@@ -37,7 +37,7 @@ const ShowDetailPage = ({ show, isInModal }: { show: Show, isInModal?: boolean }
           ? <></>
           : (
             <Toolbar>
-              <Button callback={() => history.go(-1)}>
+              <Button onClick={() => history.go(-1)}>
                 &#8592; Back
               </Button>
               {

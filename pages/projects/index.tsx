@@ -31,7 +31,7 @@ const Projects = () => {
               projectData.projects.map((project) =>({
                 key: `project-name-${project.id}`,
                 label: project.name,
-                callback: () => scrollCardToTop(project.id)
+                onClick: () => scrollCardToTop(project.id)
               }))
             }
           />
@@ -58,4 +58,4 @@ const Projects = () => {
   );
 };
 
-export default React.memo(Projects);
+export default Projects;

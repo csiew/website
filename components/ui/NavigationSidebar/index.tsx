@@ -8,7 +8,7 @@ type NavigationSidebarProps = BaseComponentProps & {
     label: string | ReactElement | ReactElement[];
     active?: boolean;
     url?: string;
-    callback?: () => void;
+    onClick?: () => void;
   }>;
 };
 
@@ -36,7 +36,7 @@ const NavigationSidebar = ({
             } else {
               return (
                 <li key={keyName} className={classNames}>
-                  <span onClick={item.callback}>
+                  <span onClick={item.onClick}>
                     {item.label}
                   </span>
                 </li>

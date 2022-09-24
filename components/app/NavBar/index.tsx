@@ -39,7 +39,7 @@ const NavBar = ({ pages }: { pages: PageRoute[] }) => {
         {
           showNavToggle
             ? (
-              <Button className="navMenuToggle" callback={() => setShowNavMenu(!showNavMenu)}>
+              <Button className="navMenuToggle" onClick={() => setShowNavMenu(!showNavMenu)}>
                 <MdMenu />
               </Button>
             )
