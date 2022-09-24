@@ -1,15 +1,14 @@
 import React, { useEffect } from "react";
 import Head from "next/head";
 import config from "../../config";
-import PlaylistGroupCard from "../../components/app/PlaylistGroupCard";
-import NavigationSidebar from "../../components/ui/NavigationSidebar";
 import NavigationView from "../../components/ui/NavigationView";
 import retitle from "../../lib/retitle";
 import { PlaylistData } from "../../lib/playlists";
 import rawPlaylistData from "./playlists.json";
-import { scrollCardToTop } from "../../lib/scroll";
+import PlaylistCard from "../../components/app/PlaylistCard";
+import Paper from "../../components/ui/Paper";
 
-const playlistData = rawPlaylistData as PlaylistData;
+const playlists = (rawPlaylistData as PlaylistData).collection.flatMap((group) => group.playlists.special);
 
 const Playlists = () => {
   useEffect(() => {
@@ -23,35 +22,26 @@ const Playlists = () => {
         <meta property="og:title" content={retitle("Playlists")} key="title" />
       </Head>
       <NavigationView
-        navPosition="right"
-        nav={(
-          <NavigationSidebar
-            keyPrefix="playlist-shortcut-"
-            items={
-              playlistData.collection.map((playlistGroup) => ({
-                key: playlistGroup.id,
-                label: playlistGroup.name,
-                onClick: () => scrollCardToTop(playlistGroup.id)
-              }))
-            }
-          />
-        )}
         content={(
-          <article className="topLevelPage">
+          <article className="topLevelPage playlists">
             <h2>Playlists</h2>
-            <div className="cardList">
-              {
-                playlistData.collection.map((playlistGroup) => {
-                  return (
-                    <PlaylistGroupCard
-                      key={`playlistGroup-${playlistGroup.id}`}
-                      id={playlistGroup.id}
-                      playlistGroup={playlistGroup}
-                    />
-                  );
-                })
-              }
-            </div>
+            <p>
+              Every year I add new music I&#8217;ve discovered into annual zeitgeist playlists on Spotify.
+            </p>
+            <Paper style={{ width: "100%", marginTop: "1rem" }}>
+              <div className="cardList">
+                {
+                  playlists.map((playlist) => {
+                    return (
+                      <PlaylistCard
+                        key={`playlist-${encodeURI(playlist.url)}`}
+                        playlist={playlist}
+                      />
+                    );
+                  })
+                }
+              </div>
+            </Paper>
           </article>
         )}
       />

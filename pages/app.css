@@ -212,8 +212,9 @@ form {
 @import url('../components/app/MustWatchBadge/index.module.css');
 @import url('../components/app/NavBar/index.module.css');
 @import url('../components/app/NowWatchingShowCard/index.module.css');
-@import url('../components/app/PlaylistGroupCard/index.module.css');
+@import url('../components/app/PlaylistCard/index.module.css');
 @import url('../components/app/ProjectCard/index.module.css');
 
 @import url('./index.module.css');
+@import url('./playlists/index.module.css');
 @import url('./now-watching/index.module.css');
