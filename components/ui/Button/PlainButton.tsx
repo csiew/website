@@ -1,7 +1,7 @@
 import React from "react";
 import { PlainButtonProps } from "./@types";
 
-const PlainButton = ({ variant, classList, className, style, children, onClick, disabled, forwardedRef }: PlainButtonProps) => {
+const PlainButton = ({ variant, classList, className, style, iconOnly, children, onClick, disabled, forwardedRef }: PlainButtonProps) => {
   switch (variant) {
   case "submit":
   case "reset": {
@@ -15,7 +15,7 @@ const PlainButton = ({ variant, classList, className, style, children, onClick, 
         type={buttonType}
         title={children as string}
         value={children as string}
-        className={[disabled ? "disabled" : undefined, className, ...classList || []].join(" ")}
+        className={[disabled ? "disabled" : undefined, iconOnly ? "iconOnly" : undefined, className, ...classList || []].join(" ")}
         style={style}
         ref={forwardedRef}
         onClick={onClick}
@@ -27,7 +27,7 @@ const PlainButton = ({ variant, classList, className, style, children, onClick, 
     const isPrimary = variant === "primary";
     return (
       <button
-        className={[isPrimary ? "primary" : "", disabled ? "disabled" : undefined, className, ...classList || []].join(" ")}
+        className={[isPrimary ? "primary" : "", disabled ? "disabled" : undefined, iconOnly ? "iconOnly" : undefined, className, ...classList || []].join(" ")}
         style={style}
         ref={forwardedRef}
         onClick={onClick}

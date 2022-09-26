@@ -5,6 +5,7 @@ export type CommonButtonProps = BaseComponentProps & {
   variant?: "plain" | "primary" | "link" | "submit" | "reset";
   children?: string | number | ReactElement | ReactElement[];
   alt?: string;
+  iconOnly?: boolean;
   forwardedRef?: RefObject<any>;
   onClick?: (ev: MouseEvent) => void;
 };

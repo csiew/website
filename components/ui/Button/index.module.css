@@ -140,3 +140,24 @@ input[type=submit].active {
   color: var(--btn-fg-color-primary-selected);
   background: var(--btn-bg-color-primary-selected);
 }
+
+:is(button, .button, input[type=submit], input[type=reset]).iconOnly {
+  margin: -0.25rem;
+  padding: 0.5rem;
+  width: max-content;
+  height: max-content;
+
+  display: inline-flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+
+  border-color: transparent;
+  border-radius: 100%;
+}
+:is(button, .button, input[type=submit], input[type=reset]).iconOnly svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0;
+  color: inherit;
+}
