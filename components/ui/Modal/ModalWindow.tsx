@@ -1,4 +1,5 @@
 import React from "react";
+import { MdClose } from "react-icons/md";
 import Button from "../Button";
 import { ModalWindowProps } from "./@types";
 
@@ -12,11 +13,9 @@ const ModalWindow = ({ children, className, classList, style, disabled, title, c
         <h2>
           {title}
         </h2>
-        <small>
-          <Button onClick={closeWindowCallback}>
-            Close
-          </Button>
-        </small>
+        <Button onClick={closeWindowCallback} alt="Close" iconOnly>
+          <MdClose />
+        </Button>
       </div>
       <div className="modalWindowBody">
         {children}
