@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { MdMenu } from "react-icons/md";
+import { MdClose, MdMenu } from "react-icons/md";
 import { FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
 import { useRouter } from "next/router";
 import { PageRoute } from "../../../lib/@types";
@@ -41,7 +41,11 @@ const NavBar = ({ pages }: { pages: PageRoute[] }) => {
           showNavToggle
             ? (
               <Button className="navMenuToggle" onClick={() => setShowNavMenu(!showNavMenu)}>
-                <MdMenu />
+                {
+                  showNavMenu
+                    ? <MdClose />
+                    : <MdMenu />
+                }
               </Button>
             )
             : <></>
