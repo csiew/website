@@ -1,1331 +1,1447 @@
 [
-    {
-        "Title": "Succession",
-        "Year": "2018–",
-        "Rated": "TV-MA",
-        "Released": "03 Jun 2018",
-        "Runtime": "60 min",
-        "Genre": "Drama",
-        "Director": "N/A",
-        "Writer": "Jesse Armstrong",
-        "Actors": "Nicholas Braun, Peter Friedman, Matthew Macfadyen",
-        "Plot": "The Roy family is known for controlling the biggest media and entertainment company in the world. However, their world changes when their father steps down from the company.",
-        "Language": "English",
-        "Country": "United States",
-        "Awards": "Won 9 Primetime Emmys. 85 wins & 175 nominations total",
-        "Poster": "https://m.media-amazon.com/images/M/MV5BZDE0ODVlYjktNjJiMC00ODk4LWIwNTktMWRhZmZiOGFhYmUwXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX300.jpg",
-        "Ratings": [
-            {
-                "Source": "Internet Movie Database",
-                "Value": "8.8/10"
-            }
-        ],
-        "Metascore": "N/A",
-        "imdbRating": "8.8",
-        "imdbVotes": "136,467",
-        "imdbID": "tt7660850",
-        "Type": "series",
-        "totalSeasons": "3",
-        "Response": "True"
-    },
-    {
-        "Title": "House of the Dragon",
-        "Year": "2022–",
-        "Rated": "N/A",
-        "Released": "21 Aug 2022",
-        "Runtime": "N/A",
-        "Genre": "Action, Adventure, Drama",
-        "Director": "N/A",
-        "Writer": "Ryan J. Condal, George R.R. Martin",
-        "Actors": "Paddy Considine, Olivia Cooke, Emma D'Arcy",
-        "Plot": "The story of the House Targaryen set 200 years before the events of Game of Thrones (2011).",
-        "Language": "English",
-        "Country": "United States",
-        "Awards": "N/A",
-        "Poster": "https://m.media-amazon.com/images/M/MV5BZDBkZjRiNGMtZGU2My00ODdkLWI0MGYtNGU4MmJjN2MzOTkxXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_SX300.jpg",
-        "Ratings": [],
-        "Metascore": "N/A",
-        "imdbRating": "N/A",
-        "imdbVotes": "N/A",
-        "imdbID": "tt11198330",
-        "Type": "series",
-        "totalSeasons": "N/A",
-        "Response": "True"
-    },
-    {
-        "Title": "Westworld",
-        "Year": "2016–",
-        "Rated": "TV-MA",
-        "Released": "02 Oct 2016",
-        "Runtime": "62 min",
-        "Genre": "Drama, Mystery, Sci-Fi",
-        "Director": "N/A",
-        "Writer": "Lisa Joy, Jonathan Nolan",
-        "Actors": "Evan Rachel Wood, Jeffrey Wright, Ed Harris",
-        "Plot": "At the intersection of the near future and the reimagined past, waits a world in which every human appetite can be indulged without consequence.",
-        "Language": "English",
-        "Country": "United States",
-        "Awards": "Won 7 Primetime Emmys. 52 wins & 202 nominations total",
-        "Poster": "https://m.media-amazon.com/images/M/MV5BZDg1OWRiMTktZDdiNy00NTZlLTg2Y2EtNWRiMTcxMGE5YTUxXkEyXkFqcGdeQXVyMTM2MDY0OTYx._V1_SX300.jpg",
-        "Ratings": [
-            {
-                "Source": "Internet Movie Database",
-                "Value": "8.5/10"
-            }
-        ],
-        "Metascore": "N/A",
-        "imdbRating": "8.5",
-        "imdbVotes": "494,191",
-        "imdbID": "tt0475784",
-        "Type": "series",
-        "totalSeasons": "4",
-        "Response": "True"
-    },
-    {
-        "Title": "For All Mankind",
-        "Year": "2019–",
-        "Rated": "TV-MA",
-        "Released": "01 Nov 2019",
-        "Runtime": "60 min",
-        "Genre": "Drama, Sci-Fi",
-        "Director": "N/A",
-        "Writer": "Ronald D. Moore, Ben Nedivi, Matt Wolpert",
-        "Actors": "Joel Kinnaman, Michael Dorman, Wrenn Schmidt",
-        "Plot": "In an alternative version of 1969, the Soviet Union beats the United States to the Moon, and the space race continues on for decades with still grander challenges and goals.",
-        "Language": "English",
-        "Country": "United States",
-        "Awards": "Won 1 Primetime Emmy. 3 wins & 13 nominations total",
-        "Poster": "https://m.media-amazon.com/images/M/MV5BMDI3ZGQ1OGItNGM5Yy00ZDBhLTg2ZDYtYWNkNTU4MDNmZjU2XkEyXkFqcGdeQXVyMjQ4ODcxNTM@._V1_SX300.jpg",
-        "Ratings": [
-            {
-                "Source": "Internet Movie Database",
-                "Value": "7.9/10"
-            }
-        ],
-        "Metascore": "N/A",
-        "imdbRating": "7.9",
-        "imdbVotes": "39,598",
-        "imdbID": "tt7772588",
-        "Type": "series",
-        "totalSeasons": "4",
-        "Response": "True"
-    },
-    {
-        "Title": "Star Trek: Lower Decks",
-        "Year": "2020–",
-        "Rated": "TV-14",
-        "Released": "06 Aug 2020",
-        "Runtime": "N/A",
-        "Genre": "Animation, Action, Adventure",
-        "Director": "N/A",
-        "Writer": "Mike McMahan",
-        "Actors": "Tawny Newsome, Jack Quaid, Noël Wells",
-        "Plot": "The support crew serving on one of Starfleet's least important ships, the U.S.S. Cerritos, have to keep up with their duties, often while the ship is being rocked by a multitude of sci-fi anomalies.",
-        "Language": "English",
-        "Country": "United States",
-        "Awards": "Nominated for 1 Primetime Emmy. 2 wins & 14 nominations total",
-        "Poster": "https://m.media-amazon.com/images/M/MV5BYzE3NTNkZDUtMWQwYy00NDIxLTgzZGYtZTMxNmYyMTcyYzA1XkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_SX300.jpg",
-        "Ratings": [
-            {
-                "Source": "Internet Movie Database",
-                "Value": "7.3/10"
-            }
-        ],
-        "Metascore": "N/A",
-        "imdbRating": "7.3",
-        "imdbVotes": "16,210",
-        "imdbID": "tt9184820",
-        "Type": "series",
-        "totalSeasons": "3",
-        "Response": "True"
-    },
-    {
-        "Title": "Star Trek: Strange New Worlds",
-        "Year": "2022–",
-        "Rated": "TV-PG",
-        "Released": "05 May 2022",
-        "Runtime": "N/A",
-        "Genre": "Action, Adventure, Sci-Fi",
-        "Director": "N/A",
-        "Writer": "Akiva Goldsman, Alex Kurtzman, Jenny Lumet",
-        "Actors": "Melissa Navia, Anson Mount, Ethan Peck",
-        "Plot": "A prequel to Star Trek: The Original Series, the show will follow the crew of the USS Enterprise under Captain Christopher Pike.",
-        "Language": "English",
-        "Country": "United States",
-        "Awards": "Nominated for 1 Primetime Emmy. 2 nominations total",
-        "Poster": "https://m.media-amazon.com/images/M/MV5BYWNlYmZkZjQtNjU5OS00YTNkLWJmOTEtYmZiMmUwZGI3NTM3XkEyXkFqcGdeQXVyMTM2NTIwMDIw._V1_SX300.jpg",
-        "Ratings": [
-            {
-                "Source": "Internet Movie Database",
-                "Value": "8.2/10"
-            }
-        ],
-        "Metascore": "N/A",
-        "imdbRating": "8.2",
-        "imdbVotes": "23,699",
-        "imdbID": "tt12327578",
-        "Type": "series",
-        "totalSeasons": "1",
-        "Response": "True"
-    },
-    {
-        "Title": "Pachinko",
-        "Year": "2022–",
-        "Rated": "TV-MA",
-        "Released": "25 Mar 2022",
-        "Runtime": "N/A",
-        "Genre": "Drama",
-        "Director": "N/A",
-        "Writer": "N/A",
-        "Actors": "Lee Min-Ho, Soji Arai, Jin Ha",
-        "Plot": "Based on the New York Times bestseller, this sweeping saga chronicles the hopes and dreams of a Korean immigrant family across four generations as they leave their homeland in an indomitable quest to survive and thrive.",
-        "Language": "English, Korean, Japanese",
-        "Country": "United States, South Korea, Canada",
-        "Awards": "Nominated for 1 Primetime Emmy. 4 wins & 13 nominations total",
-        "Poster": "https://m.media-amazon.com/images/M/MV5BNjJjZWEyOTMtYjVkYi00MjY0LTk4OTEtMWUwMDE4NWYyODg5XkEyXkFqcGdeQXVyNjEwNTM2Mzc@._V1_SX300.jpg",
-        "Ratings": [
-            {
-                "Source": "Internet Movie Database",
-                "Value": "8.4/10"
-            }
-        ],
-        "Metascore": "N/A",
-        "imdbRating": "8.4",
-        "imdbVotes": "7,492",
-        "imdbID": "tt8888462",
-        "Type": "series",
-        "totalSeasons": "1",
-        "Response": "True"
-    },
-    {
-        "Title": "Squid Game",
-        "Year": "2021–",
-        "Rated": "TV-MA",
-        "Released": "17 Sep 2021",
-        "Runtime": "N/A",
-        "Genre": "Action, Drama, Mystery",
-        "Director": "N/A",
-        "Writer": "N/A",
-        "Actors": "Lee Jung-jae, Park Hae-soo, Hoyeon",
-        "Plot": "Hundreds of cash-strapped players accept a strange invitation to compete in children's games. Inside, a tempting prize awaits with deadly high stakes. A survival game that has a whopping 45.6 billion-won prize at stake.",
-        "Language": "Korean, English, Urdu",
-        "Country": "South Korea",
-        "Awards": "Nominated for 14 Primetime Emmys. 32 wins & 77 nominations total",
-        "Poster": "https://m.media-amazon.com/images/M/MV5BYWE3MDVkN2EtNjQ5MS00ZDQ4LTliNzYtMjc2YWMzMDEwMTA3XkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_SX300.jpg",
-        "Ratings": [
-            {
-                "Source": "Internet Movie Database",
-                "Value": "8.0/10"
-            }
-        ],
-        "Metascore": "N/A",
-        "imdbRating": "8.0",
-        "imdbVotes": "430,118",
-        "imdbID": "tt10919420",
-        "Type": "series",
-        "totalSeasons": "1",
-        "Response": "True"
-    },
-    {
-        "Title": "The Last Kingdom",
-        "Year": "2015–2022",
-        "Rated": "TV-MA",
-        "Released": "10 Oct 2015",
-        "Runtime": "60 min",
-        "Genre": "Action, Drama, History",
-        "Director": "N/A",
-        "Writer": "N/A",
-        "Actors": "Alexander Dreymon, Eliza Butterworth, Arnas Fedaravicius",
-        "Plot": "As Alfred the Great defends his kingdom from Norse invaders, Uhtred--born a Saxon but raised by Vikings--seeks to claim his ancestral birthright.",
-        "Language": "English, Latin",
-        "Country": "United Kingdom",
-        "Awards": "4 nominations",
-        "Poster": "https://m.media-amazon.com/images/M/MV5BMjE1MzYzNjk3OF5BMl5BanBnXkFtZTgwMzk0MzYwNzE@._V1_SX300.jpg",
-        "Ratings": [
-            {
-                "Source": "Internet Movie Database",
-                "Value": "8.5/10"
-            }
-        ],
-        "Metascore": "N/A",
-        "imdbRating": "8.5",
-        "imdbVotes": "134,999",
-        "imdbID": "tt4179452",
-        "Type": "series",
-        "totalSeasons": "5",
-        "Response": "True"
-    },
-    {
-        "Title": "Vikings: Valhalla",
-        "Year": "2022–",
-        "Rated": "TV-MA",
-        "Released": "25 Feb 2022",
-        "Runtime": "N/A",
-        "Genre": "Action, Adventure, Drama",
-        "Director": "N/A",
-        "Writer": "Jeb Stuart",
-        "Actors": "Sam Corlett, Leo Suter, Jóhannes Haukur Jóhannesson",
-        "Plot": "Follow-up series to 'Vikings' set 100 years afterward and centering on the adventures of Leif Erikson, Freydis, Harald Hardrada and the Norman King William the Conqueror.",
-        "Language": "English, Latin",
-        "Country": "United States",
-        "Awards": "Nominated for 1 Primetime Emmy. 1 win & 5 nominations total",
-        "Poster": "https://m.media-amazon.com/images/M/MV5BZjgwOGI3ZWEtNjBiMy00ZjM3LWFkNWYtNmU1MzY1ZGZkMDU2XkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_SX300.jpg",
-        "Ratings": [
-            {
-                "Source": "Internet Movie Database",
-                "Value": "7.1/10"
-            }
-        ],
-        "Metascore": "N/A",
-        "imdbRating": "7.1",
-        "imdbVotes": "35,295",
-        "imdbID": "tt11311302",
-        "Type": "series",
-        "totalSeasons": "1",
-        "Response": "True"
-    },
-    {
-        "Title": "The Expanse",
-        "Year": "2015–2022",
-        "Rated": "TV-14",
-        "Released": "23 Nov 2015",
-        "Runtime": "60 min",
-        "Genre": "Drama, Mystery, Sci-Fi",
-        "Director": "N/A",
-        "Writer": "Daniel Abraham, Mark Fergus, Ty Franck",
-        "Actors": "Steven Strait, Dominique Tipper, Wes Chatham",
-        "Plot": "In the 24th century, a group of humans untangle a vast plot which threatens the Solar System's fragile state of detente.",
-        "Language": "English",
-        "Country": "United States",
-        "Awards": "5 wins & 28 nominations",
-        "Poster": "https://m.media-amazon.com/images/M/MV5BZDVmMDljM2QtZDkzZC00ZDg2LWFiMGItZjNiNjliZjg2MGEzXkEyXkFqcGdeQXVyMjkwOTAyMDU@._V1_SX300.jpg",
-        "Ratings": [
-            {
-                "Source": "Internet Movie Database",
-                "Value": "8.5/10"
-            }
-        ],
-        "Metascore": "N/A",
-        "imdbRating": "8.5",
-        "imdbVotes": "149,442",
-        "imdbID": "tt3230854",
-        "Type": "series",
-        "totalSeasons": "6",
-        "Response": "True"
-    },
-    {
-        "Title": "Beforeigners",
-        "Year": "2019–",
-        "Rated": "TV-14",
-        "Released": "18 Feb 2020",
-        "Runtime": "45 min",
-        "Genre": "Crime, Drama, Sci-Fi",
-        "Director": "N/A",
-        "Writer": "Anne Bjørnstad, Eilif Skodvin",
-        "Actors": "Krista Kosonen, Nicolai Cleve Broch, Stig R. Amdam",
-        "Plot": "HBO Nordic's first original series from Norway, Beforeigners is about two persons who mysteriously appear in Oslo. They are the first of many from the past to seek refuge in present time. Seven years later the community is transfo...",
-        "Language": "Norwegian, Norse, Old",
-        "Country": "Norway",
-        "Awards": "5 wins & 11 nominations",
-        "Poster": "https://m.media-amazon.com/images/M/MV5BN2U3YWM2MzItZGM4YS00NmMxLTgxOWEtMjVlOTkzMTYzNTdhXkEyXkFqcGdeQXVyODk5NzQ4MDU@._V1_SX300.jpg",
-        "Ratings": [
-            {
-                "Source": "Internet Movie Database",
-                "Value": "7.8/10"
-            }
-        ],
-        "Metascore": "N/A",
-        "imdbRating": "7.8",
-        "imdbVotes": "11,088",
-        "imdbID": "tt8332130",
-        "Type": "series",
-        "totalSeasons": "N/A",
-        "Response": "True"
-    },
-    {
-        "Title": "Wellington Paranormal",
-        "Year": "2018–2022",
-        "Rated": "TV-14",
-        "Released": "11 Jul 2021",
-        "Runtime": "30 min",
-        "Genre": "Comedy, Crime, Fantasy",
-        "Director": "N/A",
-        "Writer": "Jemaine Clement, Taika Waititi",
-        "Actors": "Mike Minogue, Karen O'Leary, Maaka Pohatu",
-        "Plot": "Sergeant Maaka, and Officers Minogue and O'Leary, are members of the Wellington, New Zealand, police. Their job is to investigate paranormal phenomena.",
-        "Language": "English",
-        "Country": "New Zealand",
-        "Awards": "1 win",
-        "Poster": "https://m.media-amazon.com/images/M/MV5BNDQ1ZGM3M2UtYzM4YS00NjgxLWJkYTgtYjcwMTY4ZWZkMDBlXkEyXkFqcGdeQXVyNDEzNjA0NzM@._V1_SX300.jpg",
-        "Ratings": [
-            {
-                "Source": "Internet Movie Database",
-                "Value": "7.6/10"
-            }
-        ],
-        "Metascore": "N/A",
-        "imdbRating": "7.6",
-        "imdbVotes": "5,729",
-        "imdbID": "tt6109562",
-        "Type": "series",
-        "totalSeasons": "4",
-        "Response": "True"
-    },
-    {
-        "Title": "Halt and Catch Fire",
-        "Year": "2014–2017",
-        "Rated": "TV-14",
-        "Released": "01 Jun 2014",
-        "Runtime": "60 min",
-        "Genre": "Drama",
-        "Director": "N/A",
-        "Writer": "Christopher Cantwell, Christopher C. Rogers",
-        "Actors": "Lee Pace, Scoot McNairy, Mackenzie Davis",
-        "Plot": "Follows some players in the 80s technological revolution that lead to information society.",
-        "Language": "English",
-        "Country": "United States",
-        "Awards": "Nominated for 1 Primetime Emmy. 2 wins & 14 nominations total",
-        "Poster": "https://m.media-amazon.com/images/M/MV5BZmVkZmQ1MWQtNjE0NS00NjYzLTk1ZTEtYzMyNTA3ZWU0NGMyXkEyXkFqcGdeQXVyNTE1NjY5Mg@@._V1_SX300.jpg",
-        "Ratings": [
-            {
-                "Source": "Internet Movie Database",
-                "Value": "8.4/10"
-            }
-        ],
-        "Metascore": "N/A",
-        "imdbRating": "8.4",
-        "imdbVotes": "32,223",
-        "imdbID": "tt2543312",
-        "Type": "series",
-        "totalSeasons": "4",
-        "Response": "True"
-    },
-    {
-        "Title": "Dr. Brain",
-        "Year": "2021–",
-        "Rated": "TV-MA",
-        "Released": "04 Nov 2021",
-        "Runtime": "N/A",
-        "Genre": "Drama, Mystery, Sci-Fi",
-        "Director": "N/A",
-        "Writer": "N/A",
-        "Actors": "Sun-kyun Lee, Hee-soon Park, June Yoon",
-        "Plot": "Brilliant brain scientist Sewon (Lee Sun-Kyun) suffers a horrific personal tragedy. Desperate to uncover what happened to his family, he conducts \"brain syncs\" with the dead to access their memories for clues.",
-        "Language": "Korean",
-        "Country": "South Korea",
-        "Awards": "N/A",
-        "Poster": "https://m.media-amazon.com/images/M/MV5BMThjNDI3YzctNGYyYy00YmM1LTk1ZDctOThjMDdkYzg4Y2QwXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_SX300.jpg",
-        "Ratings": [
-            {
-                "Source": "Internet Movie Database",
-                "Value": "6.7/10"
-            }
-        ],
-        "Metascore": "N/A",
-        "imdbRating": "6.7",
-        "imdbVotes": "2,275",
-        "imdbID": "tt15758760",
-        "Type": "series",
-        "totalSeasons": "1",
-        "Response": "True"
-    },
-    {
-        "Title": "Foundation",
-        "Year": "2021–",
-        "Rated": "TV-14",
-        "Released": "24 Sep 2021",
-        "Runtime": "N/A",
-        "Genre": "Drama, Sci-Fi",
-        "Director": "N/A",
-        "Writer": "Josh Friedman, David S. Goyer",
-        "Actors": "Lou Llobell, Jared Harris, Lee Pace",
-        "Plot": "A complex saga of humans scattered on planets throughout the galaxy all living under the rule of the Galactic Empire.",
-        "Language": "English",
-        "Country": "Ireland, United States",
-        "Awards": "Nominated for 2 Primetime Emmys. 3 wins & 13 nominations total",
-        "Poster": "https://m.media-amazon.com/images/M/MV5BMTE5MDY1MGUtMmMxNi00YjA3LWIyZTYtN2FhOWJmNTY2NmM4XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX300.jpg",
-        "Ratings": [
-            {
-                "Source": "Internet Movie Database",
-                "Value": "7.4/10"
-            }
-        ],
-        "Metascore": "N/A",
-        "imdbRating": "7.4",
-        "imdbVotes": "56,382",
-        "imdbID": "tt0804484",
-        "Type": "series",
-        "totalSeasons": "1",
-        "Response": "True"
-    },
-    {
-        "Title": "Parlement",
-        "Year": "2020–",
-        "Rated": "N/A",
-        "Released": "09 Apr 2020",
-        "Runtime": "N/A",
-        "Genre": "Comedy",
-        "Director": "N/A",
-        "Writer": "Noé Debré",
-        "Actors": "Xavier Lacaille, Liz Kingsman, Lucas Englander",
-        "Plot": "Samy, a young European parliamentary assistant arrives in Brussels a few weeks after the Brexit referendum. He is obviously not fit for the job. In fact, Samy doesn't know much about European institutions and he hopes to get away ...",
-        "Language": "French, English, German",
-        "Country": "Belgium, France, Germany",
-        "Awards": "N/A",
-        "Poster": "https://m.media-amazon.com/images/M/MV5BODUyZDA5NGUtODU0ZC00NGIzLTk1ZjgtMDczOTJlMzI2NWQ3XkEyXkFqcGdeQXVyMjY0MzIwODQ@._V1_SX300.jpg",
-        "Ratings": [
-          {
-            "Source": "Internet Movie Database",
-            "Value": "7.6/10"
-          }
-        ],
-        "Metascore": "N/A",
-        "imdbRating": "7.6",
-        "imdbVotes": "634",
-        "imdbID": "tt9812666",
-        "Type": "series",
-        "totalSeasons": "2",
-        "Response": "True"
-    },
-    {
-        "Title": "Deutschland 83",
-        "Year": "2015",
-        "Rated": "TV-MA",
-        "Released": "17 Jun 2015",
-        "Runtime": "42 min",
-        "Genre": "Drama, Romance, Thriller",
-        "Director": "N/A",
-        "Writer": "Anna Winger, Jörg Winger",
-        "Actors": "Jonas Nay, Maria Schrader, Ulrich Noethen",
-        "Plot": "Martin Rauch is recruited by the HVA to infiltrate the West Germany army. As a rookie spy, his decisions constantly put his cover at risk and force his agency to take extreme measures.",
-        "Language": "German",
-        "Country": "Germany",
-        "Awards": "8 wins & 11 nominations",
-        "Poster": "https://m.media-amazon.com/images/M/MV5BYjA4MmFhNGUtNzRhNy00YWUzLTk5N2EtMTM4YmVjNDhiNDU2XkEyXkFqcGdeQXVyMTYzMDM0NTU@._V1_SX300.jpg",
-        "Ratings": [
-          {
-            "Source": "Internet Movie Database",
-            "Value": "8.1/10"
-          }
-        ],
-        "Metascore": "N/A",
-        "imdbRating": "8.1",
-        "imdbVotes": "13,870",
-        "imdbID": "tt4445154",
-        "Type": "series",
-        "totalSeasons": "1",
-        "Response": "True"
-    },
-    {
-        "Title": "Deutschland 86",
-        "Year": "2018",
-        "Rated": "TV-MA",
-        "Released": "25 Oct 2018",
-        "Runtime": "60 min",
-        "Genre": "Action, Drama, Thriller",
-        "Director": "N/A",
-        "Writer": "Anna Winger, Jörg Winger",
-        "Actors": "Jonas Nay, Maria Schrader, Florence Kasumba",
-        "Plot": "Abandoned by Moscow and desperate for cash, the East German leadership pushes their secret operatives to experiment with global capitalism and save their sinking socialist ship. Long banished to Africa for his sins in 1983, Martin...",
-        "Language": "German, English, Xhosa, Portuguese, Arabic, French",
-        "Country": "Germany",
-        "Awards": "1 win & 3 nominations",
-        "Poster": "https://m.media-amazon.com/images/M/MV5BNGEzYTk3YTEtNmQ0Yi00MWE5LWEzM2ItMDA1ZWNiYjk5Njg1XkEyXkFqcGdeQXVyNjk5MzYwMTM@._V1_SX300.jpg",
-        "Ratings": [
-          {
-            "Source": "Internet Movie Database",
-            "Value": "7.6/10"
-          }
-        ],
-        "Metascore": "N/A",
-        "imdbRating": "7.6",
-        "imdbVotes": "4,694",
-        "imdbID": "tt6148324",
-        "Type": "series",
-        "totalSeasons": "1",
-        "Response": "True"
-    },
-    {
-        "Title": "Deutschland 89",
-        "Year": "2020",
-        "Rated": "TV-MA",
-        "Released": "29 Oct 2020",
-        "Runtime": "1 min",
-        "Genre": "Drama, Thriller",
-        "Director": "N/A",
-        "Writer": "Anna Winger, Jörg Winger",
-        "Actors": "Jonas Nay, Maria Schrader, Sylvester Groth",
-        "Plot": "Martin Rauch experiences the fall of the Berlin Wall in November 1989 during his activities as an East German spy.",
-        "Language": "German, English",
-        "Country": "Germany",
-        "Awards": "4 nominations",
-        "Poster": "https://m.media-amazon.com/images/M/MV5BNzA2NzcxNWUtMTk1ZC00OTViLWFmMTQtMDdlZTBmMTUzN2ZlXkEyXkFqcGdeQXVyMTAwMzM3NDI3._V1_SX300.jpg",
-        "Ratings": [
-          {
-            "Source": "Internet Movie Database",
-            "Value": "7.7/10"
-          }
-        ],
-        "Metascore": "N/A",
-        "imdbRating": "7.7",
-        "imdbVotes": "2,753",
-        "imdbID": "tt8760304",
-        "Type": "series",
-        "totalSeasons": "1",
-        "Response": "True"
-    },
-    {
-      "Title": "Star Trek: Picard",
-      "Year": "2020–2023",
-      "Rated": "TV-MA",
-      "Released": "23 Jan 2020",
-      "Runtime": "46 min",
-      "Genre": "Action, Adventure, Drama",
-      "Director": "N/A",
-      "Writer": "Kirsten Beyer, Michael Chabon, Akiva Goldsman",
-      "Actors": "Patrick Stewart, Alison Pill, Michelle Hurd",
-      "Plot": "Follow-up series to Star Trek: The Next Generation (1987) and Star Trek: Nemesis (2002) that centers on Jean-Luc Picard in the next chapter of his life.",
-      "Language": "English",
-      "Country": "United States",
-      "Awards": "Won 1 Primetime Emmy. 7 wins & 21 nominations total",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BMzY3MTcyNTktZGY0Yy00MmNhLTllYjQtMWFkNGM1YzNiOWRkXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_SX300.jpg",
-      "Ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "7.3/10"
-        }
-      ],
-      "Metascore": "N/A",
-      "imdbRating": "7.3",
-      "imdbVotes": "69,703",
-      "imdbID": "tt8806524",
-      "Type": "series",
-      "totalSeasons": "3",
-      "Response": "True"
-    },
-    {
-      "Title": "Star Trek: Discovery",
-      "Year": "2017–",
-      "Rated": "TV-14",
-      "Released": "24 Sep 2017",
-      "Runtime": "60 min",
-      "Genre": "Action, Adventure, Drama",
-      "Director": "N/A",
-      "Writer": "Bryan Fuller, Alex Kurtzman",
-      "Actors": "Sonequa Martin-Green, Doug Jones, Anthony Rapp",
-      "Plot": "Ten years before Kirk, Spock, and the Enterprise, the USS Discovery discovers new worlds and lifeforms as one Starfleet officer learns to understand all things alien.",
-      "Language": "English, Klingon",
-      "Country": "United States",
-      "Awards": "Won 2 Primetime Emmys. 21 wins & 76 nominations total",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BNjg1NTc2MDktZTU5Ni00OTZiLWIyNjQtN2FhNGY4MzAxNmZkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX300.jpg",
-      "Ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "7.0/10"
-        }
-      ],
-      "Metascore": "N/A",
-      "imdbRating": "7.0",
-      "imdbVotes": "121,556",
-      "imdbID": "tt5171438",
-      "Type": "series",
-      "totalSeasons": "4",
-      "Response": "True"
-    },
-    {
-      "Title": "Demon Slayer: Kimetsu no Yaiba",
-      "Year": "2019–",
-      "Rated": "TV-MA",
-      "Released": "22 Jan 2021",
-      "Runtime": "25 min",
-      "Genre": "Animation, Action, Adventure",
-      "Director": "N/A",
-      "Writer": "N/A",
-      "Actors": "Natsuki Hanae, Zach Aguilar, Abby Trott",
-      "Plot": "A family is attacked by demons and only two members survive - Tanjiro and his sister Nezuko, who is turning into a demon slowly. Tanjiro sets out to become a demon slayer to avenge his family and cure his sister.",
-      "Language": "Japanese",
-      "Country": "Japan",
-      "Awards": "8 wins & 11 nominations",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BNzJhMDY2NzUtYzE2Ny00YWVmLWI3YjQtODk2ZWQzYmEwMzJiXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_SX300.jpg",
-      "Ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "8.7/10"
-        }
-      ],
-      "Metascore": "N/A",
-      "imdbRating": "8.7",
-      "imdbVotes": "96,314",
-      "imdbID": "tt9335498",
-      "Type": "series",
-      "totalSeasons": "3",
-      "Response": "True"
-    },
-    {
-      "Title": "Barbarians",
-      "Year": "2020–",
-      "Rated": "TV-MA",
-      "Released": "23 Oct 2020",
-      "Runtime": "280 min",
-      "Genre": "Action, Adventure, Drama",
-      "Director": "N/A",
-      "Writer": "Andreas Heckmann, Arne Nolting, Jan Martin Scharf",
-      "Actors": "Florian Schmidtke, Laurence Rupp, Jeanne Goursaud",
-      "Plot": "Torn between the mighty empire that raised him and his own tribal people, a Roman officer's conflicted allegiances lead to an epic historical clash.",
-      "Language": "German, Latin",
-      "Country": "Germany",
-      "Awards": "5 nominations",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BNzdjNWU4MTktYTJmYi00YWZhLTllYWUtZGY2YzE3MWYxMmY4XkEyXkFqcGdeQXVyNjEwNTM2Mzc@._V1_SX300.jpg",
-      "Ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "7.2/10"
-        }
-      ],
-      "Metascore": "N/A",
-      "imdbRating": "7.2",
-      "imdbVotes": "24,019",
-      "imdbID": "tt9184986",
-      "Type": "series",
-      "totalSeasons": "2",
-      "Response": "True"
-    },
-    {
-      "Title": "Romulus",
-      "Year": "2020–",
-      "Rated": "N/A",
-      "Released": "06 Nov 2020",
-      "Runtime": "N/A",
-      "Genre": "Drama, Fantasy, History",
-      "Director": "N/A",
-      "Writer": "N/A",
-      "Actors": "Andrea Arcangeli, Marianna Fontana, Francesco Di Napoli",
-      "Plot": "The story of Romulus and his twin brother Remus, in eighth century B.C. as seen through the eyes of three people marked by death, loneliness and violence.",
-      "Language": "Latin",
-      "Country": "Italy, United Kingdom",
-      "Awards": "2 wins",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BOTc0ZTI1NDctMzcxZC00ODRmLTk1M2QtOThiMWY3NzZjMTMyXkEyXkFqcGdeQXVyNTEwNDY2MjU@._V1_SX300.jpg",
-      "Ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "6.9/10"
-        }
-      ],
-      "Metascore": "N/A",
-      "imdbRating": "6.9",
-      "imdbVotes": "1,996",
-      "imdbID": "tt10405220",
-      "Type": "series",
-      "totalSeasons": "N/A",
-      "Response": "True"
-    },
-    {
-      "Title": "Kingdom",
-      "Year": "2019–",
-      "Rated": "TV-MA",
-      "Released": "25 Jan 2019",
-      "Runtime": "45 min",
-      "Genre": "Action, Drama, Horror",
-      "Director": "N/A",
-      "Writer": "N/A",
-      "Actors": "Ju Ji-Hoon, Bae Doona, Kim Sungkyu",
-      "Plot": "While strange rumors about their ill King grip a kingdom, the crown prince becomes their only hope against a mysterious plague overtaking the land.",
-      "Language": "Korean",
-      "Country": "South Korea",
-      "Awards": "N/A",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BNTBlZmE4YzItNTY5Mi00NmIxLTlhZTAtOWIxNjFlNTMzNmI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
-      "Ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "8.3/10"
-        }
-      ],
-      "Metascore": "N/A",
-      "imdbRating": "8.3",
-      "imdbVotes": "45,494",
-      "imdbID": "tt6611916",
-      "Type": "series",
-      "totalSeasons": "2",
-      "Response": "True"
-    },
-    {
-      "Title": "Rick and Morty",
-      "Year": "2013–",
-      "Rated": "TV-MA",
-      "Released": "02 Dec 2013",
-      "Runtime": "23 min",
-      "Genre": "Animation, Adventure, Comedy",
-      "Director": "N/A",
-      "Writer": "Dan Harmon, Justin Roiland",
-      "Actors": "Justin Roiland, Chris Parnell, Spencer Grammer",
-      "Plot": "An animated series that follows the exploits of a super scientist and his not-so-bright grandson.",
-      "Language": "English",
-      "Country": "United States",
-      "Awards": "Won 2 Primetime Emmys. 18 wins & 33 nominations total",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BZjRjOTFkOTktZWUzMi00YzMyLThkMmYtMjEwNmQyNzliYTNmXkEyXkFqcGdeQXVyNzQ1ODk3MTQ@._V1_SX300.jpg",
-      "Ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "9.2/10"
-        }
-      ],
-      "Metascore": "N/A",
-      "imdbRating": "9.2",
-      "imdbVotes": "494,143",
-      "imdbID": "tt2861424",
-      "Type": "series",
-      "totalSeasons": "6",
-      "Response": "True"
-    },
-    {
-      "Title": "Ordeal by Innocence",
-      "Year": "2018",
-      "Rated": "TV-MA",
-      "Released": "10 Aug 2018",
-      "Runtime": "60 min",
-      "Genre": "Crime, Drama, Mystery",
-      "Director": "N/A",
-      "Writer": "N/A",
-      "Actors": "Morven Christie, Anthony Boyle, Christian Cooke",
-      "Plot": "Christmas 1954. Wealthy philanthropist Rachel Argyll is murdered at her family estate Sunny Point. Her adopted son Jack Argyll is arrested for her murder. He vehemently protests his innocence.",
-      "Language": "English",
-      "Country": "United Kingdom, United States",
-      "Awards": "2 nominations",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BN2ZjNGJmMDgtODgyYy00MjNkLTk2NjUtMzRjMzQ5NjBhZmVhXkEyXkFqcGdeQXVyNjI4OTg2Njg@._V1_SX300.jpg",
-      "Ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "7.3/10"
-        }
-      ],
-      "Metascore": "N/A",
-      "imdbRating": "7.3",
-      "imdbVotes": "9,777",
-      "imdbID": "tt6118426",
-      "Type": "series",
-      "totalSeasons": "N/A",
-      "Response": "True"
-    },
-    {
-      "Title": "SS-GB",
-      "Year": "2017",
-      "Rated": "TV-MA",
-      "Released": "19 Feb 2017",
-      "Runtime": "60 min",
-      "Genre": "Action, Drama, Sci-Fi",
-      "Director": "N/A",
-      "Writer": "N/A",
-      "Actors": "Sam Riley, James Cosmo, Rainer Bock",
-      "Plot": "A British homicide detective investigates a murder in a German-occupied England in a parallel universe where the Nazis won World War II.",
-      "Language": "English, German",
-      "Country": "United Kingdom",
-      "Awards": "1 win & 2 nominations",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BOGYzYmNmODQtY2ZmMS00MzdiLWExM2ItMzViYWIxODI1NjBlXkEyXkFqcGdeQXVyMjExMjk0ODk@._V1_SX300.jpg",
-      "Ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "6.6/10"
-        }
-      ],
-      "Metascore": "N/A",
-      "imdbRating": "6.6",
-      "imdbVotes": "3,335",
-      "imdbID": "tt4939950",
-      "Type": "series",
-      "totalSeasons": "1",
-      "Response": "True"
-    },
-    {
-      "Title": "Medici",
-      "Year": "2016–2019",
-      "Rated": "TV-14",
-      "Released": "09 Dec 2016",
-      "Runtime": "60 min",
-      "Genre": "Biography, Drama, History",
-      "Director": "N/A",
-      "Writer": "Nicholas Meyer, Frank Spotnitz",
-      "Actors": "Daniel Sharman, Alessandra Mastronardi, Synnove Karlsen",
-      "Plot": "A political family drama set in Florence in the early fifteenth century. Cosimo de Medici finds himself at the helm of his banking dynasty when his father, Giovanni, dies suddenly.",
-      "Language": "English",
-      "Country": "Italy, United Kingdom, France",
-      "Awards": "3 wins & 1 nomination",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BMzY2M2E1MGMtMjA4MS00ODcwLWEwNDctNTAwOWQ2MTYwZmFkXkEyXkFqcGdeQXVyMTk4NDUxNzY@._V1_SX300.jpg",
-      "Ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "7.9/10"
-        }
-      ],
-      "Metascore": "N/A",
-      "imdbRating": "7.9",
-      "imdbVotes": "18,971",
-      "imdbID": "tt5057130",
-      "Type": "series",
-      "totalSeasons": "3",
-      "Response": "True"
-    },
-    {
-      "Title": "The Man in the High Castle",
-      "Year": "2015–2019",
-      "Rated": "TV-MA",
-      "Released": "15 Jan 2015",
-      "Runtime": "60 min",
-      "Genre": "Drama, Sci-Fi, Thriller",
-      "Director": "N/A",
-      "Writer": "Frank Spotnitz",
-      "Actors": "Alexa Davalos, Luke Kleintank, Rufus Sewell",
-      "Plot": "In a dystopian America dominated by Nazi Germany and Imperial Japan, a young woman discovers a mysterious film that may hold the key to toppling the totalitarian regimes.",
-      "Language": "English, Hebrew, German, Japanese",
-      "Country": "United States, United Kingdom, Canada",
-      "Awards": "Won 2 Primetime Emmys. 10 wins & 56 nominations total",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BZWEwNzQ4NzUtMWRmYS00NDdiLTg5NDItODA5M2M4YTM0ZTE2XkEyXkFqcGdeQXVyMTAzNjU2NjM1._V1_SX300.jpg",
-      "Ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "7.9/10"
-        }
-      ],
-      "Metascore": "N/A",
-      "imdbRating": "7.9",
-      "imdbVotes": "100,243",
-      "imdbID": "tt1740299",
-      "Type": "series",
-      "totalSeasons": "4",
-      "Response": "True"
-    },
-    {
-      "Title": "The Queen's Gambit",
-      "Year": "2020",
-      "Rated": "TV-MA",
-      "Released": "23 Oct 2020",
-      "Runtime": "395 min",
-      "Genre": "Drama",
-      "Director": "N/A",
-      "Writer": "Scott Frank, Allan Scott",
-      "Actors": "Anya Taylor-Joy, Chloe Pirrie, Bill Camp",
-      "Plot": "Orphaned at the tender age of nine, prodigious introvert Beth Harmon discovers and masters the game of chess in 1960s USA. But child stardom comes at a price.",
-      "Language": "English, French, Spanish, Russian",
-      "Country": "United States",
-      "Awards": "Won 11 Primetime Emmys. 55 wins & 53 nominations total",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BM2EwMmRhMmUtMzBmMS00ZDQ3LTg4OGEtNjlkODk3ZTMxMmJlXkEyXkFqcGdeQXVyMjM5ODk1NDU@._V1_SX300.jpg",
-      "Ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "8.6/10"
-        }
-      ],
-      "Metascore": "N/A",
-      "imdbRating": "8.6",
-      "imdbVotes": "425,501",
-      "imdbID": "tt10048342",
-      "Type": "series",
-      "totalSeasons": "1",
-      "Response": "True"
-    },
-    {
-      "Title": "The Plot Against America",
-      "Year": "2020",
-      "Rated": "TV-MA",
-      "Released": "16 Mar 2020",
-      "Runtime": "60 min",
-      "Genre": "Drama, Thriller",
-      "Director": "N/A",
-      "Writer": "Ed Burns, David Simon",
-      "Actors": "Winona Ryder, Anthony Boyle, Zoe Kazan",
-      "Plot": "Characters live in an alternative history in which Franklin D. Roosevelt was defeated in the U.S. presidential election of 1940 by Charles Lindbergh.",
-      "Language": "English",
-      "Country": "United States",
-      "Awards": "Nominated for 1 Primetime Emmy. 1 win & 17 nominations total",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BZTk2NzdhMTItMGRmYS00NGQxLTlkMWQtYmI0MWNlNDJjNWMxXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX300.jpg",
-      "Ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "7.3/10"
-        }
-      ],
-      "Metascore": "N/A",
-      "imdbRating": "7.3",
-      "imdbVotes": "9,871",
-      "imdbID": "tt9308346",
-      "Type": "series",
-      "totalSeasons": "1",
-      "Response": "True"
-    },
-    {
-      "Title": "Okkupert",
-      "Year": "2015–",
-      "Rated": "TV-14",
-      "Released": "15 Jan 2016",
-      "Runtime": "45 min",
-      "Genre": "Drama, Thriller",
-      "Director": "N/A",
-      "Writer": "Karianne Lund, Jo Nesbø, Erik Skjoldbjærg",
-      "Actors": "Henrik Mestad, Ane Dahl Torp, Eldar Skar",
-      "Plot": "In the near future, Norway is occupied by Russia on behalf of the European Union because the newly-elected environmentally-friendly Norwegian government has stopped the all important oil- and gas-production in the North Sea.",
-      "Language": "Norwegian, English, Russian",
-      "Country": "Norway, Sweden",
-      "Awards": "1 win",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BODVkNzdiZmQtNGRkYS00MWQwLWEzY2EtOTI3ZmU5MjAyOWYwXkEyXkFqcGdeQXVyMTQ5MjkwNDI@._V1_SX300.jpg",
-      "Ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "7.6/10"
-        }
-      ],
-      "Metascore": "N/A",
-      "imdbRating": "7.6",
-      "imdbVotes": "9,118",
-      "imdbID": "tt4192998",
-      "Type": "series",
-      "totalSeasons": "3",
-      "Response": "True"
-    },
-    {
-      "Title": "Borgen",
-      "Year": "2010–2022",
-      "Rated": "TV-14",
-      "Released": "29 Oct 2011",
-      "Runtime": "58 min",
-      "Genre": "Drama",
-      "Director": "N/A",
-      "Writer": "Adam Price",
-      "Actors": "Sidse Babett Knudsen, Birgitte Hjort Sørensen, Søren Malling",
-      "Plot": "A political drama about a prime minister's rise to power, and how power changes a prime minister.",
-      "Language": "Danish",
-      "Country": "Denmark",
-      "Awards": "Won 1 BAFTA Award8 wins & 7 nominations total",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BZjQxYzczNDAtZGYxYi00NGFmLWEwMmEtNzVkOGQ5MGY1ZmZmXkEyXkFqcGdeQXVyNjkyODA0MTc@._V1_SX300.jpg",
-      "Ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "8.5/10"
-        }
-      ],
-      "Metascore": "N/A",
-      "imdbRating": "8.5",
-      "imdbVotes": "25,694",
-      "imdbID": "tt1526318",
-      "Type": "series",
-      "totalSeasons": "4",
-      "Response": "True"
-    },
-    {
-      "Title": "The Crown",
-      "Year": "2016–",
-      "Rated": "TV-MA",
-      "Released": "04 Nov 2016",
-      "Runtime": "58 min",
-      "Genre": "Biography, Drama, History",
-      "Director": "N/A",
-      "Writer": "Peter Morgan",
-      "Actors": "Claire Foy, Olivia Colman, Imelda Staunton",
-      "Plot": "Follows the political rivalries and romance of Queen Elizabeth II's reign and the events that shaped the second half of the twentieth century.",
-      "Language": "English",
-      "Country": "United Kingdom",
-      "Awards": "Won 21 Primetime Emmys. 139 wins & 296 nominations total",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BZmY0MzBlNjctNTRmNy00Njk3LWFjMzctMWQwZDAwMGJmY2MyXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_SX300.jpg",
-      "Ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "8.7/10"
-        }
-      ],
-      "Metascore": "N/A",
-      "imdbRating": "8.7",
-      "imdbVotes": "195,524",
-      "imdbID": "tt4786824",
-      "Type": "series",
-      "totalSeasons": "5",
-      "Response": "True"
-    },
-    {
-      "Title": "The Great",
-      "Year": "2020–",
-      "Rated": "TV-MA",
-      "Released": "15 May 2020",
-      "Runtime": "1 min",
-      "Genre": "Biography, Comedy, Drama",
-      "Director": "N/A",
-      "Writer": "Tony McNamara",
-      "Actors": "Elle Fanning, Nicholas Hoult, Phoebe Fox",
-      "Plot": "A royal woman living in rural Russia during the 18th century is forced to choose between her own personal happiness and the future of Russia, when she marries an Emperor.",
-      "Language": "English",
-      "Country": "United States",
-      "Awards": "Nominated for 6 Primetime Emmys. 11 wins & 51 nominations total",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BYzVmOGNlOTctZGFhZi00MTczLTg1MTEtYTg3ZTNkNjQ2YjRlXkEyXkFqcGdeQXVyNjYxNjc0OTc@._V1_SX300.jpg",
-      "Ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "8.1/10"
-        }
-      ],
-      "Metascore": "N/A",
-      "imdbRating": "8.1",
-      "imdbVotes": "41,037",
-      "imdbID": "tt2235759",
-      "Type": "series",
-      "totalSeasons": "2",
-      "Response": "True"
-    },
-    {
-      "Title": "The Legend of Korra",
-      "Year": "2012–2014",
-      "Rated": "TV-PG",
-      "Released": "14 Apr 2012",
-      "Runtime": "1 min",
-      "Genre": "Animation, Action, Adventure",
-      "Director": "N/A",
-      "Writer": "Michael Dante DiMartino, Bryan Konietzko",
-      "Actors": "Janet Varney, P.J. Byrne, David Faustino",
-      "Plot": "Avatar Korra fights to keep Republic City safe from the evil forces of both the physical and spiritual worlds.",
-      "Language": "English",
-      "Country": "United States",
-      "Awards": "27 wins & 41 nominations",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BYTZhNGY2ZDAtYWYxYy00YWNlLWI3NDUtNjBiM2NkMGVmODIxXkEyXkFqcGdeQXVyODUwNjEzMzg@._V1_SX300.jpg",
-      "Ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "8.4/10"
-        }
-      ],
-      "Metascore": "N/A",
-      "imdbRating": "8.4",
-      "imdbVotes": "120,319",
-      "imdbID": "tt1695360",
-      "Type": "series",
-      "totalSeasons": "3",
-      "Response": "True"
-    },
-    {
-      "Title": "Project Blue Book",
-      "Year": "2019–2020",
-      "Rated": "TV-14",
-      "Released": "08 Jan 2019",
-      "Runtime": "45 min",
-      "Genre": "Drama, Mystery, Sci-Fi",
-      "Director": "N/A",
-      "Writer": "David O'Leary",
-      "Actors": "Aidan Gillen, Michael Malarkey, Laura Mennell",
-      "Plot": "A tough US Air Force officer and a skeptical scientist investigate UFO and alien conspiracies as Cold War paranoia spreads.",
-      "Language": "English",
-      "Country": "United States, Canada",
-      "Awards": "1 win & 8 nominations",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BZTFjNmM0YTItNzg3NC00NWNmLThkMGItODdiZWUyNmIxM2E0XkEyXkFqcGdeQXVyMzY0MTE3NzU@._V1_SX300.jpg",
-      "Ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "7.6/10"
-        }
-      ],
-      "Metascore": "N/A",
-      "imdbRating": "7.6",
-      "imdbVotes": "13,040",
-      "imdbID": "tt6632666",
-      "Type": "series",
-      "totalSeasons": "1",
-      "Response": "True"
-    },
-    {
-      "Title": "The Young Pope",
-      "Year": "2016",
-      "Rated": "TV-MA",
-      "Released": "15 Jan 2017",
-      "Runtime": "546 min",
-      "Genre": "Drama",
-      "Director": "N/A",
-      "Writer": "Paolo Sorrentino",
-      "Actors": "Jude Law, Diane Keaton, Silvio Orlando",
-      "Plot": "The beginning of the pontificate of Lenny Belardo, alias Pius XIII, the first American Pope in history.",
-      "Language": "English, Italian",
-      "Country": "Italy, France, Spain, United Kingdom, United States",
-      "Awards": "Nominated for 2 Primetime Emmys. 5 wins & 28 nominations total",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BMjA4ODA2NjAxMV5BMl5BanBnXkFtZTgwMTUzOTA4MDI@._V1_SX300.jpg",
-      "Ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "8.3/10"
-        }
-      ],
-      "Metascore": "N/A",
-      "imdbRating": "8.3",
-      "imdbVotes": "43,716",
-      "imdbID": "tt3655448",
-      "Type": "series",
-      "totalSeasons": "1",
-      "Response": "True"
-    },
-    {
-      "Title": "Silicon Valley",
-      "Year": "2014–2019",
-      "Rated": "TV-MA",
-      "Released": "06 Apr 2014",
-      "Runtime": "28 min",
-      "Genre": "Comedy",
-      "Director": "N/A",
-      "Writer": "John Altschuler, Mike Judge, Dave Krinsky",
-      "Actors": "Thomas Middleditch, T.J. Miller, Josh Brener",
-      "Plot": "Follows the struggle of Richard Hendricks, a Silicon Valley engineer trying to build his own company called Pied Piper.",
-      "Language": "English",
-      "Country": "United States",
-      "Awards": "Won 2 Primetime Emmys. 15 wins & 97 nominations total",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BM2Q5YjNjZWMtYThmYy00N2ZjLWE2NDctNmZjMmZjYWE2NjEwXkEyXkFqcGdeQXVyMTAzMDM4MjM0._V1_SX300.jpg",
-      "Ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "8.5/10"
-        }
-      ],
-      "Metascore": "N/A",
-      "imdbRating": "8.5",
-      "imdbVotes": "147,651",
-      "imdbID": "tt2575988",
-      "Type": "series",
-      "totalSeasons": "6",
-      "Response": "True"
-    },
-    {
-      "Title": "Cathedral of the Sea",
-      "Year": "2018",
-      "Rated": "TV-MA",
-      "Released": "23 May 2018",
-      "Runtime": "55 min",
-      "Genre": "Drama, History",
-      "Director": "N/A",
-      "Writer": "N/A",
-      "Actors": "Susana G. Esteban, Jordi Aguilar, Aitor Luna",
-      "Plot": "Based upon Ildefonso Falcones novel.",
-      "Language": "Spanish",
-      "Country": "Spain",
-      "Awards": "2 wins & 2 nominations",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BZjQ4N2E5ZjQtNTA4Zi00ZmJkLWEwMDItYzlmMzBiZmFhM2RiXkEyXkFqcGdeQXVyOTQxNzM2MjY@._V1_SX300.jpg",
-      "Ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "7.4/10"
-        }
-      ],
-      "Metascore": "N/A",
-      "imdbRating": "7.4",
-      "imdbVotes": "4,526",
-      "imdbID": "tt4944694",
-      "Type": "series",
-      "totalSeasons": "1",
-      "Response": "True"
-    },
-    {
-      "Title": "Years and Years",
-      "Year": "2019",
-      "Rated": "TV-MA",
-      "Released": "24 Jun 2019",
-      "Runtime": "60 min",
-      "Genre": "Drama, Sci-Fi",
-      "Director": "N/A",
-      "Writer": "Russell T. Davies",
-      "Actors": "Rory Kinnear, Anne Reid, T'Nia Miller",
-      "Plot": "As Britain slowly turns into a dictatorship throughout the years, the lives of a typical busy family from Manchester converge on one crucial night in 2019.",
-      "Language": "English",
-      "Country": "United Kingdom, United States",
-      "Awards": "1 win & 17 nominations",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BZTk2YWM0NGMtNzg0MS00MDBkLThmMDYtYjdhMWZjMjgyZDc4XkEyXkFqcGdeQXVyMTkzODUwNzk@._V1_SX300.jpg",
-      "Ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "8.3/10"
-        }
-      ],
-      "Metascore": "N/A",
-      "imdbRating": "8.3",
-      "imdbVotes": "29,390",
-      "imdbID": "tt8694364",
-      "Type": "series",
-      "totalSeasons": "1",
-      "Response": "True"
-    },
-    {
-      "Title": "11.22.63",
-      "Year": "2016",
-      "Rated": "TV-MA",
-      "Released": "15 Feb 2016",
-      "Runtime": "60 min",
-      "Genre": "Drama, History, Mystery",
-      "Director": "N/A",
-      "Writer": "Bridget Carpenter",
-      "Actors": "James Franco, Sarah Gadon, George MacKay",
-      "Plot": "A high school teacher travels back in time to prevent John F. Kennedy's assassination.",
-      "Language": "English, Russian, Spanish",
-      "Country": "United States",
-      "Awards": "Nominated for 1 Primetime Emmy. 2 wins & 12 nominations total",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BMTk1NjE5MjUwM15BMl5BanBnXkFtZTgwODk3NTk2OTE@._V1_SX300.jpg",
-      "Ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "8.1/10"
-        }
-      ],
-      "Metascore": "N/A",
-      "imdbRating": "8.1",
-      "imdbVotes": "85,200",
-      "imdbID": "tt2879552",
-      "Type": "series",
-      "totalSeasons": "1",
-      "Response": "True"
-    },
-    {
-      "Title": "Warrior",
-      "Year": "2019–",
-      "Rated": "TV-MA",
-      "Released": "05 Apr 2019",
-      "Runtime": "60 min",
-      "Genre": "Action, Crime, Drama",
-      "Director": "N/A",
-      "Writer": "Jonathan Tropper",
-      "Actors": "Andrew Koji, Olivia Cheng, Jason Tobin",
-      "Plot": "During the Tong Wars in the late 1800s, Ah Sahm, a martial arts prodigy from China, immigrates to San Francisco and becomes a hatchet man for the most powerful tong in Chinatown.",
-      "Language": "Cantonese, Mandarin, English",
-      "Country": "United States",
-      "Awards": "Nominated for 2 Primetime Emmys. 1 win & 7 nominations total",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BMmQwZWYzNWEtYTMyYy00YzBjLTlkNmQtMmI4ZTdhNDRmZDFkXkEyXkFqcGdeQXVyMzY0MTE3NzU@._V1_SX300.jpg",
-      "Ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "8.4/10"
-        }
-      ],
-      "Metascore": "N/A",
-      "imdbRating": "8.4",
-      "imdbVotes": "25,908",
-      "imdbID": "tt5743796",
-      "Type": "series",
-      "totalSeasons": "N/A",
-      "Response": "True"
-    },
-    {
-      "Title": "Rome",
-      "Year": "2005–2007",
-      "Rated": "TV-MA",
-      "Released": "28 Aug 2005",
-      "Runtime": "52 min",
-      "Genre": "Action, Drama, History",
-      "Director": "N/A",
-      "Writer": "Bruno Heller, William J. MacDonald, John Milius",
-      "Actors": "Kevin McKidd, Ray Stevenson, Polly Walker",
-      "Plot": "A down-to-earth account of the lives of both illustrious and ordinary Romans set in the last days of the Roman Republic.",
-      "Language": "English",
-      "Country": "United Kingdom, United States",
-      "Awards": "Won 7 Primetime Emmys. 19 wins & 36 nominations total",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BYTM4MmU1NWYtNzJjYy00YWFhLThjOGEtZmMxOGI1NzE0NGNiXkEyXkFqcGdeQXVyNDIzMzcwNjc@._V1_SX300.jpg",
-      "Ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "8.7/10"
-        }
-      ],
-      "Metascore": "N/A",
-      "imdbRating": "8.7",
-      "imdbVotes": "169,998",
-      "imdbID": "tt0384766",
-      "Type": "series",
-      "totalSeasons": "2",
-      "Response": "True"
-    }
+  {
+    "Title": "Succession",
+    "Year": "2018–",
+    "Rated": "TV-MA",
+    "Released": "03 Jun 2018",
+    "Runtime": "60 min",
+    "Genre": "Drama",
+    "Director": "N/A",
+    "Writer": "Jesse Armstrong",
+    "Actors": "Nicholas Braun, Peter Friedman, Matthew Macfadyen",
+    "Plot": "The Roy family is known for controlling the biggest media and entertainment company in the world. However, their world changes when their father steps down from the company.",
+    "Language": "English",
+    "Country": "United States",
+    "Awards": "Won 9 Primetime Emmys. 85 wins & 175 nominations total",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BZDE0ODVlYjktNjJiMC00ODk4LWIwNTktMWRhZmZiOGFhYmUwXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.8/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "8.8",
+    "imdbVotes": "136,467",
+    "imdbID": "tt7660850",
+    "Type": "series",
+    "totalSeasons": "3",
+    "Response": "True"
+  },
+  {
+    "Title": "House of the Dragon",
+    "Year": "2022–",
+    "Rated": "N/A",
+    "Released": "21 Aug 2022",
+    "Runtime": "N/A",
+    "Genre": "Action, Adventure, Drama",
+    "Director": "N/A",
+    "Writer": "Ryan J. Condal, George R.R. Martin",
+    "Actors": "Paddy Considine, Olivia Cooke, Emma D'Arcy",
+    "Plot": "The story of the House Targaryen set 200 years before the events of Game of Thrones (2011).",
+    "Language": "English",
+    "Country": "United States",
+    "Awards": "N/A",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BZDBkZjRiNGMtZGU2My00ODdkLWI0MGYtNGU4MmJjN2MzOTkxXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_SX300.jpg",
+    "Ratings": [],
+    "Metascore": "N/A",
+    "imdbRating": "N/A",
+    "imdbVotes": "N/A",
+    "imdbID": "tt11198330",
+    "Type": "series",
+    "totalSeasons": "N/A",
+    "Response": "True"
+  },
+  {
+    "Title": "Westworld",
+    "Year": "2016–",
+    "Rated": "TV-MA",
+    "Released": "02 Oct 2016",
+    "Runtime": "62 min",
+    "Genre": "Drama, Mystery, Sci-Fi",
+    "Director": "N/A",
+    "Writer": "Lisa Joy, Jonathan Nolan",
+    "Actors": "Evan Rachel Wood, Jeffrey Wright, Ed Harris",
+    "Plot": "At the intersection of the near future and the reimagined past, waits a world in which every human appetite can be indulged without consequence.",
+    "Language": "English",
+    "Country": "United States",
+    "Awards": "Won 7 Primetime Emmys. 52 wins & 202 nominations total",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BZDg1OWRiMTktZDdiNy00NTZlLTg2Y2EtNWRiMTcxMGE5YTUxXkEyXkFqcGdeQXVyMTM2MDY0OTYx._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.5/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "8.5",
+    "imdbVotes": "494,191",
+    "imdbID": "tt0475784",
+    "Type": "series",
+    "totalSeasons": "4",
+    "Response": "True"
+  },
+  {
+    "Title": "For All Mankind",
+    "Year": "2019–",
+    "Rated": "TV-MA",
+    "Released": "01 Nov 2019",
+    "Runtime": "60 min",
+    "Genre": "Drama, Sci-Fi",
+    "Director": "N/A",
+    "Writer": "Ronald D. Moore, Ben Nedivi, Matt Wolpert",
+    "Actors": "Joel Kinnaman, Michael Dorman, Wrenn Schmidt",
+    "Plot": "In an alternative version of 1969, the Soviet Union beats the United States to the Moon, and the space race continues on for decades with still grander challenges and goals.",
+    "Language": "English",
+    "Country": "United States",
+    "Awards": "Won 1 Primetime Emmy. 3 wins & 13 nominations total",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BMDI3ZGQ1OGItNGM5Yy00ZDBhLTg2ZDYtYWNkNTU4MDNmZjU2XkEyXkFqcGdeQXVyMjQ4ODcxNTM@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.9/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "7.9",
+    "imdbVotes": "39,598",
+    "imdbID": "tt7772588",
+    "Type": "series",
+    "totalSeasons": "4",
+    "Response": "True"
+  },
+  {
+    "Title": "Star Trek: Lower Decks",
+    "Year": "2020–",
+    "Rated": "TV-14",
+    "Released": "06 Aug 2020",
+    "Runtime": "N/A",
+    "Genre": "Animation, Action, Adventure",
+    "Director": "N/A",
+    "Writer": "Mike McMahan",
+    "Actors": "Tawny Newsome, Jack Quaid, Noël Wells",
+    "Plot": "The support crew serving on one of Starfleet's least important ships, the U.S.S. Cerritos, have to keep up with their duties, often while the ship is being rocked by a multitude of sci-fi anomalies.",
+    "Language": "English",
+    "Country": "United States",
+    "Awards": "Nominated for 1 Primetime Emmy. 2 wins & 14 nominations total",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BYzE3NTNkZDUtMWQwYy00NDIxLTgzZGYtZTMxNmYyMTcyYzA1XkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.3/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "7.3",
+    "imdbVotes": "16,210",
+    "imdbID": "tt9184820",
+    "Type": "series",
+    "totalSeasons": "3",
+    "Response": "True"
+  },
+  {
+    "Title": "Star Trek: Strange New Worlds",
+    "Year": "2022–",
+    "Rated": "TV-PG",
+    "Released": "05 May 2022",
+    "Runtime": "N/A",
+    "Genre": "Action, Adventure, Sci-Fi",
+    "Director": "N/A",
+    "Writer": "Akiva Goldsman, Alex Kurtzman, Jenny Lumet",
+    "Actors": "Melissa Navia, Anson Mount, Ethan Peck",
+    "Plot": "A prequel to Star Trek: The Original Series, the show will follow the crew of the USS Enterprise under Captain Christopher Pike.",
+    "Language": "English",
+    "Country": "United States",
+    "Awards": "Nominated for 1 Primetime Emmy. 2 nominations total",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BYWNlYmZkZjQtNjU5OS00YTNkLWJmOTEtYmZiMmUwZGI3NTM3XkEyXkFqcGdeQXVyMTM2NTIwMDIw._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.2/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "8.2",
+    "imdbVotes": "23,699",
+    "imdbID": "tt12327578",
+    "Type": "series",
+    "totalSeasons": "1",
+    "Response": "True"
+  },
+  {
+    "Title": "Pachinko",
+    "Year": "2022–",
+    "Rated": "TV-MA",
+    "Released": "25 Mar 2022",
+    "Runtime": "N/A",
+    "Genre": "Drama",
+    "Director": "N/A",
+    "Writer": "N/A",
+    "Actors": "Lee Min-Ho, Soji Arai, Jin Ha",
+    "Plot": "Based on the New York Times bestseller, this sweeping saga chronicles the hopes and dreams of a Korean immigrant family across four generations as they leave their homeland in an indomitable quest to survive and thrive.",
+    "Language": "English, Korean, Japanese",
+    "Country": "United States, South Korea, Canada",
+    "Awards": "Nominated for 1 Primetime Emmy. 4 wins & 13 nominations total",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BNjJjZWEyOTMtYjVkYi00MjY0LTk4OTEtMWUwMDE4NWYyODg5XkEyXkFqcGdeQXVyNjEwNTM2Mzc@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.4/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "8.4",
+    "imdbVotes": "7,492",
+    "imdbID": "tt8888462",
+    "Type": "series",
+    "totalSeasons": "1",
+    "Response": "True"
+  },
+  {
+    "Title": "Squid Game",
+    "Year": "2021–",
+    "Rated": "TV-MA",
+    "Released": "17 Sep 2021",
+    "Runtime": "N/A",
+    "Genre": "Action, Drama, Mystery",
+    "Director": "N/A",
+    "Writer": "N/A",
+    "Actors": "Lee Jung-jae, Park Hae-soo, Hoyeon",
+    "Plot": "Hundreds of cash-strapped players accept a strange invitation to compete in children's games. Inside, a tempting prize awaits with deadly high stakes. A survival game that has a whopping 45.6 billion-won prize at stake.",
+    "Language": "Korean, English, Urdu",
+    "Country": "South Korea",
+    "Awards": "Nominated for 14 Primetime Emmys. 32 wins & 77 nominations total",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BYWE3MDVkN2EtNjQ5MS00ZDQ4LTliNzYtMjc2YWMzMDEwMTA3XkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.0/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "8.0",
+    "imdbVotes": "430,118",
+    "imdbID": "tt10919420",
+    "Type": "series",
+    "totalSeasons": "1",
+    "Response": "True"
+  },
+  {
+    "Title": "The Last Kingdom",
+    "Year": "2015–2022",
+    "Rated": "TV-MA",
+    "Released": "10 Oct 2015",
+    "Runtime": "60 min",
+    "Genre": "Action, Drama, History",
+    "Director": "N/A",
+    "Writer": "N/A",
+    "Actors": "Alexander Dreymon, Eliza Butterworth, Arnas Fedaravicius",
+    "Plot": "As Alfred the Great defends his kingdom from Norse invaders, Uhtred--born a Saxon but raised by Vikings--seeks to claim his ancestral birthright.",
+    "Language": "English, Latin",
+    "Country": "United Kingdom",
+    "Awards": "4 nominations",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BMjE1MzYzNjk3OF5BMl5BanBnXkFtZTgwMzk0MzYwNzE@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.5/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "8.5",
+    "imdbVotes": "134,999",
+    "imdbID": "tt4179452",
+    "Type": "series",
+    "totalSeasons": "5",
+    "Response": "True"
+  },
+  {
+    "Title": "Vikings: Valhalla",
+    "Year": "2022–",
+    "Rated": "TV-MA",
+    "Released": "25 Feb 2022",
+    "Runtime": "N/A",
+    "Genre": "Action, Adventure, Drama",
+    "Director": "N/A",
+    "Writer": "Jeb Stuart",
+    "Actors": "Sam Corlett, Leo Suter, Jóhannes Haukur Jóhannesson",
+    "Plot": "Follow-up series to 'Vikings' set 100 years afterward and centering on the adventures of Leif Erikson, Freydis, Harald Hardrada and the Norman King William the Conqueror.",
+    "Language": "English, Latin",
+    "Country": "United States",
+    "Awards": "Nominated for 1 Primetime Emmy. 1 win & 5 nominations total",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BZjgwOGI3ZWEtNjBiMy00ZjM3LWFkNWYtNmU1MzY1ZGZkMDU2XkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.1/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "7.1",
+    "imdbVotes": "35,295",
+    "imdbID": "tt11311302",
+    "Type": "series",
+    "totalSeasons": "1",
+    "Response": "True"
+  },
+  {
+    "Title": "The Expanse",
+    "Year": "2015–2022",
+    "Rated": "TV-14",
+    "Released": "23 Nov 2015",
+    "Runtime": "60 min",
+    "Genre": "Drama, Mystery, Sci-Fi",
+    "Director": "N/A",
+    "Writer": "Daniel Abraham, Mark Fergus, Ty Franck",
+    "Actors": "Steven Strait, Dominique Tipper, Wes Chatham",
+    "Plot": "In the 24th century, a group of humans untangle a vast plot which threatens the Solar System's fragile state of detente.",
+    "Language": "English",
+    "Country": "United States",
+    "Awards": "5 wins & 28 nominations",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BZDVmMDljM2QtZDkzZC00ZDg2LWFiMGItZjNiNjliZjg2MGEzXkEyXkFqcGdeQXVyMjkwOTAyMDU@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.5/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "8.5",
+    "imdbVotes": "149,442",
+    "imdbID": "tt3230854",
+    "Type": "series",
+    "totalSeasons": "6",
+    "Response": "True"
+  },
+  {
+    "Title": "Beforeigners",
+    "Year": "2019–",
+    "Rated": "TV-14",
+    "Released": "18 Feb 2020",
+    "Runtime": "45 min",
+    "Genre": "Crime, Drama, Sci-Fi",
+    "Director": "N/A",
+    "Writer": "Anne Bjørnstad, Eilif Skodvin",
+    "Actors": "Krista Kosonen, Nicolai Cleve Broch, Stig R. Amdam",
+    "Plot": "HBO Nordic's first original series from Norway, Beforeigners is about two persons who mysteriously appear in Oslo. They are the first of many from the past to seek refuge in present time. Seven years later the community is transfo...",
+    "Language": "Norwegian, Norse, Old",
+    "Country": "Norway",
+    "Awards": "5 wins & 11 nominations",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BN2U3YWM2MzItZGM4YS00NmMxLTgxOWEtMjVlOTkzMTYzNTdhXkEyXkFqcGdeQXVyODk5NzQ4MDU@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.8/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "7.8",
+    "imdbVotes": "11,088",
+    "imdbID": "tt8332130",
+    "Type": "series",
+    "totalSeasons": "N/A",
+    "Response": "True"
+  },
+  {
+    "Title": "Wellington Paranormal",
+    "Year": "2018–2022",
+    "Rated": "TV-14",
+    "Released": "11 Jul 2021",
+    "Runtime": "30 min",
+    "Genre": "Comedy, Crime, Fantasy",
+    "Director": "N/A",
+    "Writer": "Jemaine Clement, Taika Waititi",
+    "Actors": "Mike Minogue, Karen O'Leary, Maaka Pohatu",
+    "Plot": "Sergeant Maaka, and Officers Minogue and O'Leary, are members of the Wellington, New Zealand, police. Their job is to investigate paranormal phenomena.",
+    "Language": "English",
+    "Country": "New Zealand",
+    "Awards": "1 win",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BNDQ1ZGM3M2UtYzM4YS00NjgxLWJkYTgtYjcwMTY4ZWZkMDBlXkEyXkFqcGdeQXVyNDEzNjA0NzM@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.6/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "7.6",
+    "imdbVotes": "5,729",
+    "imdbID": "tt6109562",
+    "Type": "series",
+    "totalSeasons": "4",
+    "Response": "True"
+  },
+  {
+    "Title": "Halt and Catch Fire",
+    "Year": "2014–2017",
+    "Rated": "TV-14",
+    "Released": "01 Jun 2014",
+    "Runtime": "60 min",
+    "Genre": "Drama",
+    "Director": "N/A",
+    "Writer": "Christopher Cantwell, Christopher C. Rogers",
+    "Actors": "Lee Pace, Scoot McNairy, Mackenzie Davis",
+    "Plot": "Follows some players in the 80s technological revolution that lead to information society.",
+    "Language": "English",
+    "Country": "United States",
+    "Awards": "Nominated for 1 Primetime Emmy. 2 wins & 14 nominations total",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BZmVkZmQ1MWQtNjE0NS00NjYzLTk1ZTEtYzMyNTA3ZWU0NGMyXkEyXkFqcGdeQXVyNTE1NjY5Mg@@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.4/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "8.4",
+    "imdbVotes": "32,223",
+    "imdbID": "tt2543312",
+    "Type": "series",
+    "totalSeasons": "4",
+    "Response": "True"
+  },
+  {
+    "Title": "Dr. Brain",
+    "Year": "2021–",
+    "Rated": "TV-MA",
+    "Released": "04 Nov 2021",
+    "Runtime": "N/A",
+    "Genre": "Drama, Mystery, Sci-Fi",
+    "Director": "N/A",
+    "Writer": "N/A",
+    "Actors": "Sun-kyun Lee, Hee-soon Park, June Yoon",
+    "Plot": "Brilliant brain scientist Sewon (Lee Sun-Kyun) suffers a horrific personal tragedy. Desperate to uncover what happened to his family, he conducts \"brain syncs\" with the dead to access their memories for clues.",
+    "Language": "Korean",
+    "Country": "South Korea",
+    "Awards": "N/A",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BMThjNDI3YzctNGYyYy00YmM1LTk1ZDctOThjMDdkYzg4Y2QwXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "6.7/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "6.7",
+    "imdbVotes": "2,275",
+    "imdbID": "tt15758760",
+    "Type": "series",
+    "totalSeasons": "1",
+    "Response": "True"
+  },
+  {
+    "Title": "Foundation",
+    "Year": "2021–",
+    "Rated": "TV-14",
+    "Released": "24 Sep 2021",
+    "Runtime": "N/A",
+    "Genre": "Drama, Sci-Fi",
+    "Director": "N/A",
+    "Writer": "Josh Friedman, David S. Goyer",
+    "Actors": "Lou Llobell, Jared Harris, Lee Pace",
+    "Plot": "A complex saga of humans scattered on planets throughout the galaxy all living under the rule of the Galactic Empire.",
+    "Language": "English",
+    "Country": "Ireland, United States",
+    "Awards": "Nominated for 2 Primetime Emmys. 3 wins & 13 nominations total",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BMTE5MDY1MGUtMmMxNi00YjA3LWIyZTYtN2FhOWJmNTY2NmM4XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.4/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "7.4",
+    "imdbVotes": "56,382",
+    "imdbID": "tt0804484",
+    "Type": "series",
+    "totalSeasons": "1",
+    "Response": "True"
+  },
+  {
+    "Title": "Parlement",
+    "Year": "2020–",
+    "Rated": "N/A",
+    "Released": "09 Apr 2020",
+    "Runtime": "N/A",
+    "Genre": "Comedy",
+    "Director": "N/A",
+    "Writer": "Noé Debré",
+    "Actors": "Xavier Lacaille, Liz Kingsman, Lucas Englander",
+    "Plot": "Samy, a young European parliamentary assistant arrives in Brussels a few weeks after the Brexit referendum. He is obviously not fit for the job. In fact, Samy doesn't know much about European institutions and he hopes to get away ...",
+    "Language": "French, English, German",
+    "Country": "Belgium, France, Germany",
+    "Awards": "N/A",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BODUyZDA5NGUtODU0ZC00NGIzLTk1ZjgtMDczOTJlMzI2NWQ3XkEyXkFqcGdeQXVyMjY0MzIwODQ@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.6/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "7.6",
+    "imdbVotes": "634",
+    "imdbID": "tt9812666",
+    "Type": "series",
+    "totalSeasons": "2",
+    "Response": "True"
+  },
+  {
+    "Title": "Deutschland 83",
+    "Year": "2015",
+    "Rated": "TV-MA",
+    "Released": "17 Jun 2015",
+    "Runtime": "42 min",
+    "Genre": "Drama, Romance, Thriller",
+    "Director": "N/A",
+    "Writer": "Anna Winger, Jörg Winger",
+    "Actors": "Jonas Nay, Maria Schrader, Ulrich Noethen",
+    "Plot": "Martin Rauch is recruited by the HVA to infiltrate the West Germany army. As a rookie spy, his decisions constantly put his cover at risk and force his agency to take extreme measures.",
+    "Language": "German",
+    "Country": "Germany",
+    "Awards": "8 wins & 11 nominations",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BYjA4MmFhNGUtNzRhNy00YWUzLTk5N2EtMTM4YmVjNDhiNDU2XkEyXkFqcGdeQXVyMTYzMDM0NTU@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.1/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "8.1",
+    "imdbVotes": "13,870",
+    "imdbID": "tt4445154",
+    "Type": "series",
+    "totalSeasons": "1",
+    "Response": "True"
+  },
+  {
+    "Title": "Deutschland 86",
+    "Year": "2018",
+    "Rated": "TV-MA",
+    "Released": "25 Oct 2018",
+    "Runtime": "60 min",
+    "Genre": "Action, Drama, Thriller",
+    "Director": "N/A",
+    "Writer": "Anna Winger, Jörg Winger",
+    "Actors": "Jonas Nay, Maria Schrader, Florence Kasumba",
+    "Plot": "Abandoned by Moscow and desperate for cash, the East German leadership pushes their secret operatives to experiment with global capitalism and save their sinking socialist ship. Long banished to Africa for his sins in 1983, Martin...",
+    "Language": "German, English, Xhosa, Portuguese, Arabic, French",
+    "Country": "Germany",
+    "Awards": "1 win & 3 nominations",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BNGEzYTk3YTEtNmQ0Yi00MWE5LWEzM2ItMDA1ZWNiYjk5Njg1XkEyXkFqcGdeQXVyNjk5MzYwMTM@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.6/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "7.6",
+    "imdbVotes": "4,694",
+    "imdbID": "tt6148324",
+    "Type": "series",
+    "totalSeasons": "1",
+    "Response": "True"
+  },
+  {
+    "Title": "Deutschland 89",
+    "Year": "2020",
+    "Rated": "TV-MA",
+    "Released": "29 Oct 2020",
+    "Runtime": "1 min",
+    "Genre": "Drama, Thriller",
+    "Director": "N/A",
+    "Writer": "Anna Winger, Jörg Winger",
+    "Actors": "Jonas Nay, Maria Schrader, Sylvester Groth",
+    "Plot": "Martin Rauch experiences the fall of the Berlin Wall in November 1989 during his activities as an East German spy.",
+    "Language": "German, English",
+    "Country": "Germany",
+    "Awards": "4 nominations",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BNzA2NzcxNWUtMTk1ZC00OTViLWFmMTQtMDdlZTBmMTUzN2ZlXkEyXkFqcGdeQXVyMTAwMzM3NDI3._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.7/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "7.7",
+    "imdbVotes": "2,753",
+    "imdbID": "tt8760304",
+    "Type": "series",
+    "totalSeasons": "1",
+    "Response": "True"
+  },
+  {
+    "Title": "Star Trek: Picard",
+    "Year": "2020–2023",
+    "Rated": "TV-MA",
+    "Released": "23 Jan 2020",
+    "Runtime": "46 min",
+    "Genre": "Action, Adventure, Drama",
+    "Director": "N/A",
+    "Writer": "Kirsten Beyer, Michael Chabon, Akiva Goldsman",
+    "Actors": "Patrick Stewart, Alison Pill, Michelle Hurd",
+    "Plot": "Follow-up series to Star Trek: The Next Generation (1987) and Star Trek: Nemesis (2002) that centers on Jean-Luc Picard in the next chapter of his life.",
+    "Language": "English",
+    "Country": "United States",
+    "Awards": "Won 1 Primetime Emmy. 7 wins & 21 nominations total",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BMzY3MTcyNTktZGY0Yy00MmNhLTllYjQtMWFkNGM1YzNiOWRkXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.3/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "7.3",
+    "imdbVotes": "69,703",
+    "imdbID": "tt8806524",
+    "Type": "series",
+    "totalSeasons": "3",
+    "Response": "True"
+  },
+  {
+    "Title": "Star Trek: Discovery",
+    "Year": "2017–",
+    "Rated": "TV-14",
+    "Released": "24 Sep 2017",
+    "Runtime": "60 min",
+    "Genre": "Action, Adventure, Drama",
+    "Director": "N/A",
+    "Writer": "Bryan Fuller, Alex Kurtzman",
+    "Actors": "Sonequa Martin-Green, Doug Jones, Anthony Rapp",
+    "Plot": "Ten years before Kirk, Spock, and the Enterprise, the USS Discovery discovers new worlds and lifeforms as one Starfleet officer learns to understand all things alien.",
+    "Language": "English, Klingon",
+    "Country": "United States",
+    "Awards": "Won 2 Primetime Emmys. 21 wins & 76 nominations total",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BNjg1NTc2MDktZTU5Ni00OTZiLWIyNjQtN2FhNGY4MzAxNmZkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.0/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "7.0",
+    "imdbVotes": "121,556",
+    "imdbID": "tt5171438",
+    "Type": "series",
+    "totalSeasons": "4",
+    "Response": "True"
+  },
+  {
+    "Title": "Demon Slayer: Kimetsu no Yaiba",
+    "Year": "2019–",
+    "Rated": "TV-MA",
+    "Released": "22 Jan 2021",
+    "Runtime": "25 min",
+    "Genre": "Animation, Action, Adventure",
+    "Director": "N/A",
+    "Writer": "N/A",
+    "Actors": "Natsuki Hanae, Zach Aguilar, Abby Trott",
+    "Plot": "A family is attacked by demons and only two members survive - Tanjiro and his sister Nezuko, who is turning into a demon slowly. Tanjiro sets out to become a demon slayer to avenge his family and cure his sister.",
+    "Language": "Japanese",
+    "Country": "Japan",
+    "Awards": "8 wins & 11 nominations",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BNzJhMDY2NzUtYzE2Ny00YWVmLWI3YjQtODk2ZWQzYmEwMzJiXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.7/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "8.7",
+    "imdbVotes": "96,314",
+    "imdbID": "tt9335498",
+    "Type": "series",
+    "totalSeasons": "3",
+    "Response": "True"
+  },
+  {
+    "Title": "Barbarians",
+    "Year": "2020–",
+    "Rated": "TV-MA",
+    "Released": "23 Oct 2020",
+    "Runtime": "280 min",
+    "Genre": "Action, Adventure, Drama",
+    "Director": "N/A",
+    "Writer": "Andreas Heckmann, Arne Nolting, Jan Martin Scharf",
+    "Actors": "Florian Schmidtke, Laurence Rupp, Jeanne Goursaud",
+    "Plot": "Torn between the mighty empire that raised him and his own tribal people, a Roman officer's conflicted allegiances lead to an epic historical clash.",
+    "Language": "German, Latin",
+    "Country": "Germany",
+    "Awards": "5 nominations",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BNzdjNWU4MTktYTJmYi00YWZhLTllYWUtZGY2YzE3MWYxMmY4XkEyXkFqcGdeQXVyNjEwNTM2Mzc@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.2/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "7.2",
+    "imdbVotes": "24,019",
+    "imdbID": "tt9184986",
+    "Type": "series",
+    "totalSeasons": "2",
+    "Response": "True"
+  },
+  {
+    "Title": "Romulus",
+    "Year": "2020–",
+    "Rated": "N/A",
+    "Released": "06 Nov 2020",
+    "Runtime": "N/A",
+    "Genre": "Drama, Fantasy, History",
+    "Director": "N/A",
+    "Writer": "N/A",
+    "Actors": "Andrea Arcangeli, Marianna Fontana, Francesco Di Napoli",
+    "Plot": "The story of Romulus and his twin brother Remus, in eighth century B.C. as seen through the eyes of three people marked by death, loneliness and violence.",
+    "Language": "Latin",
+    "Country": "Italy, United Kingdom",
+    "Awards": "2 wins",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BOTc0ZTI1NDctMzcxZC00ODRmLTk1M2QtOThiMWY3NzZjMTMyXkEyXkFqcGdeQXVyNTEwNDY2MjU@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "6.9/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "6.9",
+    "imdbVotes": "1,996",
+    "imdbID": "tt10405220",
+    "Type": "series",
+    "totalSeasons": "N/A",
+    "Response": "True"
+  },
+  {
+    "Title": "Kingdom",
+    "Year": "2019–",
+    "Rated": "TV-MA",
+    "Released": "25 Jan 2019",
+    "Runtime": "45 min",
+    "Genre": "Action, Drama, Horror",
+    "Director": "N/A",
+    "Writer": "N/A",
+    "Actors": "Ju Ji-Hoon, Bae Doona, Kim Sungkyu",
+    "Plot": "While strange rumors about their ill King grip a kingdom, the crown prince becomes their only hope against a mysterious plague overtaking the land.",
+    "Language": "Korean",
+    "Country": "South Korea",
+    "Awards": "N/A",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BNTBlZmE4YzItNTY5Mi00NmIxLTlhZTAtOWIxNjFlNTMzNmI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.3/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "8.3",
+    "imdbVotes": "45,494",
+    "imdbID": "tt6611916",
+    "Type": "series",
+    "totalSeasons": "2",
+    "Response": "True"
+  },
+  {
+    "Title": "Rick and Morty",
+    "Year": "2013–",
+    "Rated": "TV-MA",
+    "Released": "02 Dec 2013",
+    "Runtime": "23 min",
+    "Genre": "Animation, Adventure, Comedy",
+    "Director": "N/A",
+    "Writer": "Dan Harmon, Justin Roiland",
+    "Actors": "Justin Roiland, Chris Parnell, Spencer Grammer",
+    "Plot": "An animated series that follows the exploits of a super scientist and his not-so-bright grandson.",
+    "Language": "English",
+    "Country": "United States",
+    "Awards": "Won 2 Primetime Emmys. 18 wins & 33 nominations total",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BZjRjOTFkOTktZWUzMi00YzMyLThkMmYtMjEwNmQyNzliYTNmXkEyXkFqcGdeQXVyNzQ1ODk3MTQ@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "9.2/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "9.2",
+    "imdbVotes": "494,143",
+    "imdbID": "tt2861424",
+    "Type": "series",
+    "totalSeasons": "6",
+    "Response": "True"
+  },
+  {
+    "Title": "Ordeal by Innocence",
+    "Year": "2018",
+    "Rated": "TV-MA",
+    "Released": "10 Aug 2018",
+    "Runtime": "60 min",
+    "Genre": "Crime, Drama, Mystery",
+    "Director": "N/A",
+    "Writer": "N/A",
+    "Actors": "Morven Christie, Anthony Boyle, Christian Cooke",
+    "Plot": "Christmas 1954. Wealthy philanthropist Rachel Argyll is murdered at her family estate Sunny Point. Her adopted son Jack Argyll is arrested for her murder. He vehemently protests his innocence.",
+    "Language": "English",
+    "Country": "United Kingdom, United States",
+    "Awards": "2 nominations",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BN2ZjNGJmMDgtODgyYy00MjNkLTk2NjUtMzRjMzQ5NjBhZmVhXkEyXkFqcGdeQXVyNjI4OTg2Njg@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.3/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "7.3",
+    "imdbVotes": "9,777",
+    "imdbID": "tt6118426",
+    "Type": "series",
+    "totalSeasons": "N/A",
+    "Response": "True"
+  },
+  {
+    "Title": "SS-GB",
+    "Year": "2017",
+    "Rated": "TV-MA",
+    "Released": "19 Feb 2017",
+    "Runtime": "60 min",
+    "Genre": "Action, Drama, Sci-Fi",
+    "Director": "N/A",
+    "Writer": "N/A",
+    "Actors": "Sam Riley, James Cosmo, Rainer Bock",
+    "Plot": "A British homicide detective investigates a murder in a German-occupied England in a parallel universe where the Nazis won World War II.",
+    "Language": "English, German",
+    "Country": "United Kingdom",
+    "Awards": "1 win & 2 nominations",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BOGYzYmNmODQtY2ZmMS00MzdiLWExM2ItMzViYWIxODI1NjBlXkEyXkFqcGdeQXVyMjExMjk0ODk@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "6.6/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "6.6",
+    "imdbVotes": "3,335",
+    "imdbID": "tt4939950",
+    "Type": "series",
+    "totalSeasons": "1",
+    "Response": "True"
+  },
+  {
+    "Title": "Medici",
+    "Year": "2016–2019",
+    "Rated": "TV-14",
+    "Released": "09 Dec 2016",
+    "Runtime": "60 min",
+    "Genre": "Biography, Drama, History",
+    "Director": "N/A",
+    "Writer": "Nicholas Meyer, Frank Spotnitz",
+    "Actors": "Daniel Sharman, Alessandra Mastronardi, Synnove Karlsen",
+    "Plot": "A political family drama set in Florence in the early fifteenth century. Cosimo de Medici finds himself at the helm of his banking dynasty when his father, Giovanni, dies suddenly.",
+    "Language": "English",
+    "Country": "Italy, United Kingdom, France",
+    "Awards": "3 wins & 1 nomination",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BMzY2M2E1MGMtMjA4MS00ODcwLWEwNDctNTAwOWQ2MTYwZmFkXkEyXkFqcGdeQXVyMTk4NDUxNzY@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.9/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "7.9",
+    "imdbVotes": "18,971",
+    "imdbID": "tt5057130",
+    "Type": "series",
+    "totalSeasons": "3",
+    "Response": "True"
+  },
+  {
+    "Title": "The Man in the High Castle",
+    "Year": "2015–2019",
+    "Rated": "TV-MA",
+    "Released": "15 Jan 2015",
+    "Runtime": "60 min",
+    "Genre": "Drama, Sci-Fi, Thriller",
+    "Director": "N/A",
+    "Writer": "Frank Spotnitz",
+    "Actors": "Alexa Davalos, Luke Kleintank, Rufus Sewell",
+    "Plot": "In a dystopian America dominated by Nazi Germany and Imperial Japan, a young woman discovers a mysterious film that may hold the key to toppling the totalitarian regimes.",
+    "Language": "English, Hebrew, German, Japanese",
+    "Country": "United States, United Kingdom, Canada",
+    "Awards": "Won 2 Primetime Emmys. 10 wins & 56 nominations total",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BZWEwNzQ4NzUtMWRmYS00NDdiLTg5NDItODA5M2M4YTM0ZTE2XkEyXkFqcGdeQXVyMTAzNjU2NjM1._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.9/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "7.9",
+    "imdbVotes": "100,243",
+    "imdbID": "tt1740299",
+    "Type": "series",
+    "totalSeasons": "4",
+    "Response": "True"
+  },
+  {
+    "Title": "The Queen's Gambit",
+    "Year": "2020",
+    "Rated": "TV-MA",
+    "Released": "23 Oct 2020",
+    "Runtime": "395 min",
+    "Genre": "Drama",
+    "Director": "N/A",
+    "Writer": "Scott Frank, Allan Scott",
+    "Actors": "Anya Taylor-Joy, Chloe Pirrie, Bill Camp",
+    "Plot": "Orphaned at the tender age of nine, prodigious introvert Beth Harmon discovers and masters the game of chess in 1960s USA. But child stardom comes at a price.",
+    "Language": "English, French, Spanish, Russian",
+    "Country": "United States",
+    "Awards": "Won 11 Primetime Emmys. 55 wins & 53 nominations total",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BM2EwMmRhMmUtMzBmMS00ZDQ3LTg4OGEtNjlkODk3ZTMxMmJlXkEyXkFqcGdeQXVyMjM5ODk1NDU@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.6/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "8.6",
+    "imdbVotes": "425,501",
+    "imdbID": "tt10048342",
+    "Type": "series",
+    "totalSeasons": "1",
+    "Response": "True"
+  },
+  {
+    "Title": "The Plot Against America",
+    "Year": "2020",
+    "Rated": "TV-MA",
+    "Released": "16 Mar 2020",
+    "Runtime": "60 min",
+    "Genre": "Drama, Thriller",
+    "Director": "N/A",
+    "Writer": "Ed Burns, David Simon",
+    "Actors": "Winona Ryder, Anthony Boyle, Zoe Kazan",
+    "Plot": "Characters live in an alternative history in which Franklin D. Roosevelt was defeated in the U.S. presidential election of 1940 by Charles Lindbergh.",
+    "Language": "English",
+    "Country": "United States",
+    "Awards": "Nominated for 1 Primetime Emmy. 1 win & 17 nominations total",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BZTk2NzdhMTItMGRmYS00NGQxLTlkMWQtYmI0MWNlNDJjNWMxXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.3/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "7.3",
+    "imdbVotes": "9,871",
+    "imdbID": "tt9308346",
+    "Type": "series",
+    "totalSeasons": "1",
+    "Response": "True"
+  },
+  {
+    "Title": "Okkupert",
+    "Year": "2015–",
+    "Rated": "TV-14",
+    "Released": "15 Jan 2016",
+    "Runtime": "45 min",
+    "Genre": "Drama, Thriller",
+    "Director": "N/A",
+    "Writer": "Karianne Lund, Jo Nesbø, Erik Skjoldbjærg",
+    "Actors": "Henrik Mestad, Ane Dahl Torp, Eldar Skar",
+    "Plot": "In the near future, Norway is occupied by Russia on behalf of the European Union because the newly-elected environmentally-friendly Norwegian government has stopped the all important oil- and gas-production in the North Sea.",
+    "Language": "Norwegian, English, Russian",
+    "Country": "Norway, Sweden",
+    "Awards": "1 win",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BODVkNzdiZmQtNGRkYS00MWQwLWEzY2EtOTI3ZmU5MjAyOWYwXkEyXkFqcGdeQXVyMTQ5MjkwNDI@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.6/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "7.6",
+    "imdbVotes": "9,118",
+    "imdbID": "tt4192998",
+    "Type": "series",
+    "totalSeasons": "3",
+    "Response": "True"
+  },
+  {
+    "Title": "Borgen",
+    "Year": "2010–2022",
+    "Rated": "TV-14",
+    "Released": "29 Oct 2011",
+    "Runtime": "58 min",
+    "Genre": "Drama",
+    "Director": "N/A",
+    "Writer": "Adam Price",
+    "Actors": "Sidse Babett Knudsen, Birgitte Hjort Sørensen, Søren Malling",
+    "Plot": "A political drama about a prime minister's rise to power, and how power changes a prime minister.",
+    "Language": "Danish",
+    "Country": "Denmark",
+    "Awards": "Won 1 BAFTA Award8 wins & 7 nominations total",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BZjQxYzczNDAtZGYxYi00NGFmLWEwMmEtNzVkOGQ5MGY1ZmZmXkEyXkFqcGdeQXVyNjkyODA0MTc@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.5/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "8.5",
+    "imdbVotes": "25,694",
+    "imdbID": "tt1526318",
+    "Type": "series",
+    "totalSeasons": "4",
+    "Response": "True"
+  },
+  {
+    "Title": "The Crown",
+    "Year": "2016–",
+    "Rated": "TV-MA",
+    "Released": "04 Nov 2016",
+    "Runtime": "58 min",
+    "Genre": "Biography, Drama, History",
+    "Director": "N/A",
+    "Writer": "Peter Morgan",
+    "Actors": "Claire Foy, Olivia Colman, Imelda Staunton",
+    "Plot": "Follows the political rivalries and romance of Queen Elizabeth II's reign and the events that shaped the second half of the twentieth century.",
+    "Language": "English",
+    "Country": "United Kingdom",
+    "Awards": "Won 21 Primetime Emmys. 139 wins & 296 nominations total",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BZmY0MzBlNjctNTRmNy00Njk3LWFjMzctMWQwZDAwMGJmY2MyXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.7/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "8.7",
+    "imdbVotes": "195,524",
+    "imdbID": "tt4786824",
+    "Type": "series",
+    "totalSeasons": "5",
+    "Response": "True"
+  },
+  {
+    "Title": "The Great",
+    "Year": "2020–",
+    "Rated": "TV-MA",
+    "Released": "15 May 2020",
+    "Runtime": "1 min",
+    "Genre": "Biography, Comedy, Drama",
+    "Director": "N/A",
+    "Writer": "Tony McNamara",
+    "Actors": "Elle Fanning, Nicholas Hoult, Phoebe Fox",
+    "Plot": "A royal woman living in rural Russia during the 18th century is forced to choose between her own personal happiness and the future of Russia, when she marries an Emperor.",
+    "Language": "English",
+    "Country": "United States",
+    "Awards": "Nominated for 6 Primetime Emmys. 11 wins & 51 nominations total",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BYzVmOGNlOTctZGFhZi00MTczLTg1MTEtYTg3ZTNkNjQ2YjRlXkEyXkFqcGdeQXVyNjYxNjc0OTc@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.1/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "8.1",
+    "imdbVotes": "41,037",
+    "imdbID": "tt2235759",
+    "Type": "series",
+    "totalSeasons": "2",
+    "Response": "True"
+  },
+  {
+    "Title": "The Legend of Korra",
+    "Year": "2012–2014",
+    "Rated": "TV-PG",
+    "Released": "14 Apr 2012",
+    "Runtime": "1 min",
+    "Genre": "Animation, Action, Adventure",
+    "Director": "N/A",
+    "Writer": "Michael Dante DiMartino, Bryan Konietzko",
+    "Actors": "Janet Varney, P.J. Byrne, David Faustino",
+    "Plot": "Avatar Korra fights to keep Republic City safe from the evil forces of both the physical and spiritual worlds.",
+    "Language": "English",
+    "Country": "United States",
+    "Awards": "27 wins & 41 nominations",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BYTZhNGY2ZDAtYWYxYy00YWNlLWI3NDUtNjBiM2NkMGVmODIxXkEyXkFqcGdeQXVyODUwNjEzMzg@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.4/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "8.4",
+    "imdbVotes": "120,319",
+    "imdbID": "tt1695360",
+    "Type": "series",
+    "totalSeasons": "3",
+    "Response": "True"
+  },
+  {
+    "Title": "Project Blue Book",
+    "Year": "2019–2020",
+    "Rated": "TV-14",
+    "Released": "08 Jan 2019",
+    "Runtime": "45 min",
+    "Genre": "Drama, Mystery, Sci-Fi",
+    "Director": "N/A",
+    "Writer": "David O'Leary",
+    "Actors": "Aidan Gillen, Michael Malarkey, Laura Mennell",
+    "Plot": "A tough US Air Force officer and a skeptical scientist investigate UFO and alien conspiracies as Cold War paranoia spreads.",
+    "Language": "English",
+    "Country": "United States, Canada",
+    "Awards": "1 win & 8 nominations",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BZTFjNmM0YTItNzg3NC00NWNmLThkMGItODdiZWUyNmIxM2E0XkEyXkFqcGdeQXVyMzY0MTE3NzU@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.6/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "7.6",
+    "imdbVotes": "13,040",
+    "imdbID": "tt6632666",
+    "Type": "series",
+    "totalSeasons": "1",
+    "Response": "True"
+  },
+  {
+    "Title": "The Young Pope",
+    "Year": "2016",
+    "Rated": "TV-MA",
+    "Released": "15 Jan 2017",
+    "Runtime": "546 min",
+    "Genre": "Drama",
+    "Director": "N/A",
+    "Writer": "Paolo Sorrentino",
+    "Actors": "Jude Law, Diane Keaton, Silvio Orlando",
+    "Plot": "The beginning of the pontificate of Lenny Belardo, alias Pius XIII, the first American Pope in history.",
+    "Language": "English, Italian",
+    "Country": "Italy, France, Spain, United Kingdom, United States",
+    "Awards": "Nominated for 2 Primetime Emmys. 5 wins & 28 nominations total",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BMjA4ODA2NjAxMV5BMl5BanBnXkFtZTgwMTUzOTA4MDI@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.3/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "8.3",
+    "imdbVotes": "43,716",
+    "imdbID": "tt3655448",
+    "Type": "series",
+    "totalSeasons": "1",
+    "Response": "True"
+  },
+  {
+    "Title": "Silicon Valley",
+    "Year": "2014–2019",
+    "Rated": "TV-MA",
+    "Released": "06 Apr 2014",
+    "Runtime": "28 min",
+    "Genre": "Comedy",
+    "Director": "N/A",
+    "Writer": "John Altschuler, Mike Judge, Dave Krinsky",
+    "Actors": "Thomas Middleditch, T.J. Miller, Josh Brener",
+    "Plot": "Follows the struggle of Richard Hendricks, a Silicon Valley engineer trying to build his own company called Pied Piper.",
+    "Language": "English",
+    "Country": "United States",
+    "Awards": "Won 2 Primetime Emmys. 15 wins & 97 nominations total",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BM2Q5YjNjZWMtYThmYy00N2ZjLWE2NDctNmZjMmZjYWE2NjEwXkEyXkFqcGdeQXVyMTAzMDM4MjM0._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.5/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "8.5",
+    "imdbVotes": "147,651",
+    "imdbID": "tt2575988",
+    "Type": "series",
+    "totalSeasons": "6",
+    "Response": "True"
+  },
+  {
+    "Title": "Cathedral of the Sea",
+    "Year": "2018",
+    "Rated": "TV-MA",
+    "Released": "23 May 2018",
+    "Runtime": "55 min",
+    "Genre": "Drama, History",
+    "Director": "N/A",
+    "Writer": "N/A",
+    "Actors": "Susana G. Esteban, Jordi Aguilar, Aitor Luna",
+    "Plot": "Based upon Ildefonso Falcones novel.",
+    "Language": "Spanish",
+    "Country": "Spain",
+    "Awards": "2 wins & 2 nominations",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BZjQ4N2E5ZjQtNTA4Zi00ZmJkLWEwMDItYzlmMzBiZmFhM2RiXkEyXkFqcGdeQXVyOTQxNzM2MjY@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.4/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "7.4",
+    "imdbVotes": "4,526",
+    "imdbID": "tt4944694",
+    "Type": "series",
+    "totalSeasons": "1",
+    "Response": "True"
+  },
+  {
+    "Title": "Years and Years",
+    "Year": "2019",
+    "Rated": "TV-MA",
+    "Released": "24 Jun 2019",
+    "Runtime": "60 min",
+    "Genre": "Drama, Sci-Fi",
+    "Director": "N/A",
+    "Writer": "Russell T. Davies",
+    "Actors": "Rory Kinnear, Anne Reid, T'Nia Miller",
+    "Plot": "As Britain slowly turns into a dictatorship throughout the years, the lives of a typical busy family from Manchester converge on one crucial night in 2019.",
+    "Language": "English",
+    "Country": "United Kingdom, United States",
+    "Awards": "1 win & 17 nominations",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BZTk2YWM0NGMtNzg0MS00MDBkLThmMDYtYjdhMWZjMjgyZDc4XkEyXkFqcGdeQXVyMTkzODUwNzk@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.3/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "8.3",
+    "imdbVotes": "29,390",
+    "imdbID": "tt8694364",
+    "Type": "series",
+    "totalSeasons": "1",
+    "Response": "True"
+  },
+  {
+    "Title": "11.22.63",
+    "Year": "2016",
+    "Rated": "TV-MA",
+    "Released": "15 Feb 2016",
+    "Runtime": "60 min",
+    "Genre": "Drama, History, Mystery",
+    "Director": "N/A",
+    "Writer": "Bridget Carpenter",
+    "Actors": "James Franco, Sarah Gadon, George MacKay",
+    "Plot": "A high school teacher travels back in time to prevent John F. Kennedy's assassination.",
+    "Language": "English, Russian, Spanish",
+    "Country": "United States",
+    "Awards": "Nominated for 1 Primetime Emmy. 2 wins & 12 nominations total",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BMTk1NjE5MjUwM15BMl5BanBnXkFtZTgwODk3NTk2OTE@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.1/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "8.1",
+    "imdbVotes": "85,200",
+    "imdbID": "tt2879552",
+    "Type": "series",
+    "totalSeasons": "1",
+    "Response": "True"
+  },
+  {
+    "Title": "Warrior",
+    "Year": "2019–",
+    "Rated": "TV-MA",
+    "Released": "05 Apr 2019",
+    "Runtime": "60 min",
+    "Genre": "Action, Crime, Drama",
+    "Director": "N/A",
+    "Writer": "Jonathan Tropper",
+    "Actors": "Andrew Koji, Olivia Cheng, Jason Tobin",
+    "Plot": "During the Tong Wars in the late 1800s, Ah Sahm, a martial arts prodigy from China, immigrates to San Francisco and becomes a hatchet man for the most powerful tong in Chinatown.",
+    "Language": "Cantonese, Mandarin, English",
+    "Country": "United States",
+    "Awards": "Nominated for 2 Primetime Emmys. 1 win & 7 nominations total",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BMmQwZWYzNWEtYTMyYy00YzBjLTlkNmQtMmI4ZTdhNDRmZDFkXkEyXkFqcGdeQXVyMzY0MTE3NzU@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.4/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "8.4",
+    "imdbVotes": "25,908",
+    "imdbID": "tt5743796",
+    "Type": "series",
+    "totalSeasons": "N/A",
+    "Response": "True"
+  },
+  {
+    "Title": "Rome",
+    "Year": "2005–2007",
+    "Rated": "TV-MA",
+    "Released": "28 Aug 2005",
+    "Runtime": "52 min",
+    "Genre": "Action, Drama, History",
+    "Director": "N/A",
+    "Writer": "Bruno Heller, William J. MacDonald, John Milius",
+    "Actors": "Kevin McKidd, Ray Stevenson, Polly Walker",
+    "Plot": "A down-to-earth account of the lives of both illustrious and ordinary Romans set in the last days of the Roman Republic.",
+    "Language": "English",
+    "Country": "United Kingdom, United States",
+    "Awards": "Won 7 Primetime Emmys. 19 wins & 36 nominations total",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BYTM4MmU1NWYtNzJjYy00YWFhLThjOGEtZmMxOGI1NzE0NGNiXkEyXkFqcGdeQXVyNDIzMzcwNjc@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.7/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "8.7",
+    "imdbVotes": "169,998",
+    "imdbID": "tt0384766",
+    "Type": "series",
+    "totalSeasons": "2",
+    "Response": "True"
+  },
+  {
+    "Title": "Inside No. 9",
+    "Year": "2014–",
+    "Rated": "TV-MA",
+    "Released": "13 Feb 2014",
+    "Runtime": "30 min",
+    "Genre": "Comedy, Crime, Drama",
+    "Director": "N/A",
+    "Writer": "Steve Pemberton, Reece Shearsmith",
+    "Actors": "Reece Shearsmith, Steve Pemberton, Derek Jacobi",
+    "Plot": "Anthology series which mixes dark humor with genres like crime, horror, or drama. The show invites viewers into some very different No. 9s, where the ordinary and mundane rub shoulders with the extraordinary and macabre.",
+    "Language": "English",
+    "Country": "United Kingdom",
+    "Awards": "Won 2 BAFTA 13 wins & 10 nominations total",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BYTY1Y2UzMmItZDgzMC00Nzc1LTk3ZDAtYWM4MGFhNzdkYzU1XkEyXkFqcGdeQXVyMjQ1NjEyNzE@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.5/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "8.5",
+    "imdbVotes": "16,913",
+    "imdbID": "tt2674806",
+    "Type": "series",
+    "totalSeasons": "7",
+    "Response": "True"
+  },
+  {
+    "Title": "Black Mirror",
+    "Year": "2011–2019",
+    "Rated": "TV-MA",
+    "Released": "04 Dec 2011",
+    "Runtime": "60 min",
+    "Genre": "Drama, Mystery, Sci-Fi",
+    "Director": "N/A",
+    "Writer": "Charlie Brooker",
+    "Actors": "Daniel Lapaine, Hannah John-Kamen, Michaela Coel",
+    "Plot": "An anthology series exploring a twisted, high-tech multiverse where humanity's greatest innovations and darkest instincts collide.",
+    "Language": "English",
+    "Country": "United Kingdom, United States",
+    "Awards": "Won 6 Primetime Emmys. 33 wins & 109 nominations total",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BYTM3YWVhMDMtNjczMy00NGEyLWJhZDctYjNhMTRkNDE0ZTI1XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.8/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "8.8",
+    "imdbVotes": "536,463",
+    "imdbID": "tt2085059",
+    "Type": "series",
+    "totalSeasons": "5",
+    "Response": "True"
+  },
+  {
+    "Title": "Electric Dreams",
+    "Year": "2017–2018",
+    "Rated": "TV-MA",
+    "Released": "12 Jan 2018",
+    "Runtime": "60 min",
+    "Genre": "Drama, Sci-Fi",
+    "Director": "N/A",
+    "Writer": "N/A",
+    "Actors": "Bryan Cranston, Richard Madden, Steve Buscemi",
+    "Plot": "A sci-fi anthology series with stand-alone episodes based on the works of Philip K. Dick.",
+    "Language": "English",
+    "Country": "United Kingdom, United States",
+    "Awards": "Nominated for 2 Primetime Emmys. 1 win & 11 nominations total",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BNGY4OTBiMTktMDM4Zi00MjVhLTgyNjctOGYzNGM5YzBlMjU5XkEyXkFqcGdeQXVyNjI4OTg2Njg@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.2/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "7.2",
+    "imdbVotes": "16,560",
+    "imdbID": "tt5711280",
+    "Type": "series",
+    "totalSeasons": "1",
+    "Response": "True"
+  },
+  {
+    "Title": "The Twilight Zone",
+    "Year": "2019–2020",
+    "Rated": "TV-MA",
+    "Released": "01 Apr 2019",
+    "Runtime": "60 min",
+    "Genre": "Drama, Fantasy, Horror",
+    "Director": "N/A",
+    "Writer": "Simon Kinberg, Jordan Peele, Marco Ramirez",
+    "Actors": "Jordan Peele, David Epstein, Kelly Ann Woods",
+    "Plot": "An updated version of the classic anthology series featuring various tales of science fiction, mystery, and horror.",
+    "Language": "English",
+    "Country": "United States",
+    "Awards": "Nominated for 1 Primetime Emmy. 4 wins & 13 nominations total",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BMzBkMTU3MzktMDhhYS00NzQ4LTkwMzItYTM5MDBkZWYwNzM4XkEyXkFqcGdeQXVyMTI3MjgxNjg0._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "5.8/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "5.8",
+    "imdbVotes": "15,972",
+    "imdbID": "tt2583620",
+    "Type": "series",
+    "totalSeasons": "2",
+    "Response": "True"
+  }
 ]

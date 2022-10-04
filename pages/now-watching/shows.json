@@ -207,6 +207,27 @@
       "name": "Rome",
       "imdbId": "tt0384766",
       "recommended": true
+    },
+    {
+      "name": "Inside No. 9",
+      "imdbId": "tt2674806",
+      "watching": true,
+      "recommended": true
+    },
+    {
+      "name": "Black Mirror",
+      "imdbId": "tt2085059",
+      "recommended": true
+    },
+    {
+      "name": "Electric Dreams",
+      "imdbId": "tt5711280",
+      "recommended": true
+    },
+    {
+      "name": "The Twilight Zone",
+      "imdbId": "tt2583620",
+      "recommended": true
     }
   ]
 }
