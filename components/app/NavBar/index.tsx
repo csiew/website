@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { MdClose, MdMenu } from "react-icons/md";
+import { MdClose, MdCode, MdCreate, MdHelpOutline, MdMenu, MdPlaylistPlay, MdTv } from "react-icons/md";
 import { FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
 import { useRouter } from "next/router";
 import { PageRoute } from "../../../lib/@types";
@@ -10,8 +10,20 @@ import config from "../../../config";
 const NavBar = ({ pages }: { pages: PageRoute[] }) => {
   const router = useRouter();
   const navMenuRef = useRef<any>(null);
+  const isMounted = useRef<boolean>();
   const [showNavToggle, setShowNavToggle] = useState<boolean>(true);
   const [showNavMenu, setShowNavMenu] = useState<boolean>(false);
+
+  const reconfigureNavLayout = (ev?: UIEvent) => {
+    const rootElWidth = document.getElementById(config.rootElementId)?.clientWidth || 0;
+    if (rootElWidth > 767) {
+      setShowNavMenu(true);
+      setShowNavToggle(false);
+    } else {
+      setShowNavMenu(false);
+      setShowNavToggle(true);
+    }
+  };
 
   const closeNavMenu = () => {
     if (showNavToggle) {
@@ -21,11 +33,27 @@ const NavBar = ({ pages }: { pages: PageRoute[] }) => {
     }
   };
 
+  const getLinkIcon = (path: string) => {
+    switch (path) {
+    case "/blog":
+      return <MdCreate />;
+    case "/projects":
+      return <MdCode />;
+    case "/playlists":
+      return <MdPlaylistPlay />;
+    case "/now-watching":
+      return <MdTv />;
+    default:
+      return <MdHelpOutline />;
+    }
+  };
+
   useEffect(() => {
-    const rootElWidth = document.getElementById(config.rootElementId)?.clientWidth || 0;
-    if (rootElWidth >= 768) {
-      setShowNavMenu(true);
-      setShowNavToggle(false);
+    if (!isMounted.current) {
+      reconfigureNavLayout();
+      window.addEventListener("resize", reconfigureNavLayout);
+    } else {
+      isMounted.current = true;
     }
   }, []);
 
@@ -61,22 +89,25 @@ const NavBar = ({ pages }: { pages: PageRoute[] }) => {
                   .map((page) => (
                     <Link key={page.path.replace("/", "nav-link-")} href={page.path}>
                       <a className={["navLink", router.pathname === page.path ? "active" : ""].join(" ")} onClick={closeNavMenu}>
-                        {page.title}
+                        <span className="icon">{getLinkIcon(page.path)}</span>
+                        <span className="title">{page.title}</span>
                       </a>
                     </Link>
                   ))
               }
-              <div className="externalNavLinks">
-                <Button variant="link" url="https://twitter.com/clarence_siew" alt="Twitter" newTab iconOnly>
-                  <FaTwitter />
-                </Button>
-                <Button variant="link" url="https://www.linkedin.com/in/clarencesiew/" alt="LinkedIn" newTab iconOnly>
-                  <FaLinkedin />
-                </Button>
-                <Button variant="link" url="https://github.com/csiew" alt="GitHub" newTab iconOnly>
-                  <FaGithub />
-                </Button>
-              </div>
+              <hr />
+              <a href="https://twitter.com/clarence_siew" target="_blank" rel="noreferrer">
+                <span className="icon"><FaTwitter /></span>
+                <span className="title">Twitter</span>
+              </a>
+              <a href="https://www.linkedin.com/in/clarencesiew/" target="_blank" rel="noreferrer">
+                <span className="icon"><FaLinkedin /></span>
+                <span className="title">LinkedIn</span>
+              </a>
+              <a href="https://github.com/csiew" target="_blank" rel="noreferrer">
+                <span className="icon"><FaGithub /></span>
+                <span className="title">GitHub</span>
+              </a>
             </nav>
           )
           : <></>

@@ -33,16 +33,17 @@ nav.navigationSidebar {
 nav.navigationSidebar ul {
   width: 100%;
   margin: 0;
-  padding: 1rem 0rem;
+  padding: 1rem 0.5rem;
   
   list-style: none;
   display: inline-flex;
   flex-flow: column;
   align-items: stretch;
   justify-content: flex-start;
+  gap: 0.25rem;
 
   position: sticky;
-  top: 3rem;
+  top: 0;
 }
 nav.navigationSidebar ul li {
   width: 100%;
@@ -64,6 +65,7 @@ nav.navigationSidebar ul li.navigationSidebarItem :is(a, span) {
 
   color: var(--nav-sidebar-fg-color);
   background: var(--nav-sidebar-bg-color);
+  border-radius: 9px;
   
   white-space: pre-wrap;
 }
