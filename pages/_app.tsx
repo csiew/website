@@ -22,9 +22,9 @@ const AppContainer = ({ Component, pageProps }: any) => {
       <NavBar pages={routes} />
       <main>
         <Component {...pageProps} />
+        <Footer />
+        <BackToTop />
       </main>
-      <Footer />
-      <BackToTop />
     </>
   );
 };
