@@ -1,13 +1,13 @@
 :root {
-  --nav-fg-color: gray;
-  --nav-fg-color-hover: dimgray;
+  --nav-fg-color: var(--bg-color-9);
+  --nav-fg-color-hover: var(--fg-color-3);
   --nav-fg-color-active: var(--fg-color);
-  --nav-fg-color-selected: var(--primary-color);
+  --nav-fg-color-selected: var(--bg-color);
 
   --nav-bg-color: none;
   --nav-bg-color-hover: var(--bg-color-1);
   --nav-bg-color-active: var(--bg-color-3);
-  --nav-bg-color-selected: var(--primary-color-3);
+  --nav-bg-color-selected: var(--fg-color);
 }
 
 header {
@@ -28,7 +28,7 @@ header {
   z-index: 100;
 
   color: var(--fg-color);
-  background: rgba(255, 255, 255, 0.75);
+  background: var(--bg-color);
   backdrop-filter: blur(6px);
   border-width: 0px 1px 0px 0px;
   border-style: solid;
@@ -57,7 +57,7 @@ header h1 {
   margin: 0;
   padding: 0;
 
-  color: var(--fg-color-9);
+  color: var(--fg-color);
 
   font-size: 1.5rem;
   font-weight: 900;

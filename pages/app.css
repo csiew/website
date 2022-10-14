@@ -5,40 +5,6 @@
   --font-family-header: Satoshi, var(--font-family-system);
   --font-family-widget: Satoshi, var(--font-family-system);
   --font-family-monospace: 'Roboto Mono', 'JetBrains Mono', 'SF Mono', Consolas, 'Cascadia Code', monospace;
-
-  --fg-color: #333333;
-  --fg-color-1: #363636;
-  --fg-color-2: #393939;
-  --fg-color-3: #424242;
-  --fg-color-4: #454545;
-  --fg-color-5: #484848;
-  --fg-color-6: #515151;
-  --fg-color-7: #545454;
-  --fg-color-8: #575757;
-  --fg-color-9: #606060;
-
-  --bg-color: #ffffff;
-  --bg-color-1: #eeeeee;
-  --bg-color-2: #dddddd;
-  --bg-color-3: #cccccc;
-  --bg-color-4: #bbbbbb;
-  --bg-color-5: #aaaaaa;
-  --bg-color-6: #999999;
-  --bg-color-7: #888888;
-
-  --primary-color: #348282;
-  --primary-color-1: #54A2A2;
-  --primary-color-2: #84D2D2;
-  --primary-color-3: #C4E3E3;
-  --primary-color-4: #D9E8E8;
-  --primary-color-5: #E9F8F8;
-
-  --shadow: none;
-  --shadow-1: rgba(0, 0, 0, 0.5);
-  --shadow-2: rgba(0, 0, 0, 0.325);
-  --shadow-3: rgba(0, 0, 0, 0.25);
-  --shadow-4: rgba(0, 0, 0, 0.125);
-  --shadow-5: rgba(0, 0, 0, 0.06125);
 }
 
 * {
@@ -162,12 +128,12 @@ article.topLevelPage h2 {
   margin: 0rem 0rem 2rem 0rem;
   padding: 0rem 0rem 0.25rem 0rem;
 
-  color: var(--primary-color-1);
-  border-bottom: 5px solid var(--primary-color-4);
+  color: var(--primary-color);
 
   font-size: 250%;
   font-weight: 900;
   letter-spacing: -0.06125rem;
+  text-align: center;
 }
 
 @media (max-width: 767px) {
@@ -200,6 +166,8 @@ form {
   justify-content: stretch;
   gap: 1rem;
 }
+
+@import url('./colors.css');
 
 @import url('../lib/assets/fonts/satoshi/index.css');
 @import url('../lib/assets/fonts/roboto-mono/index.css');
