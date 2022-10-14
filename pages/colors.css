@@ -1,0 +1,73 @@
+:root {
+  --fg-color: #333333;
+  --fg-color-1: #363636;
+  --fg-color-2: #393939;
+  --fg-color-3: #424242;
+  --fg-color-4: #454545;
+  --fg-color-5: #484848;
+  --fg-color-6: #515151;
+  --fg-color-7: #545454;
+  --fg-color-8: #575757;
+  --fg-color-9: #606060;
+
+  --bg-color: #ffffff;
+  --bg-color-1: #eeeeee;
+  --bg-color-2: #dddddd;
+  --bg-color-3: #cccccc;
+  --bg-color-4: #bbbbbb;
+  --bg-color-5: #aaaaaa;
+  --bg-color-6: #999999;
+  --bg-color-7: #888888;
+
+  --primary-color: #348282;
+  --primary-color-1: #54A2A2;
+  --primary-color-2: #84D2D2;
+  --primary-color-3: #C4E3E3;
+  --primary-color-4: #D9E8E8;
+  --primary-color-5: #E9F8F8;
+
+  --shadow: none;
+  --shadow-1: rgba(0, 0, 0, 0.5);
+  --shadow-2: rgba(0, 0, 0, 0.325);
+  --shadow-3: rgba(0, 0, 0, 0.25);
+  --shadow-4: rgba(0, 0, 0, 0.125);
+  --shadow-5: rgba(0, 0, 0, 0.06125);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fg-color: #eeeeee;
+    --fg-color-1: #e0e0e0;
+    --fg-color-2: #dddddd;
+    --fg-color-3: #d0d0d0;
+    --fg-color-4: #cccccc;
+    --fg-color-5: #c0c0c0;
+    --fg-color-6: #bbbbbb;
+    --fg-color-7: #b0b0b0;
+    --fg-color-8: #aaaaaa;
+    --fg-color-9: #a0a0a0;
+  
+    --bg-color: #222222;
+    --bg-color-1: #2e2e2e;
+    --bg-color-2: #333333;
+    --bg-color-3: #3e3e3e;
+    --bg-color-4: #444444;
+    --bg-color-5: #4e4e4e;
+    --bg-color-6: #555555;
+    --bg-color-7: #5e5e5e;
+  
+    --primary-color: #348282;
+    --primary-color-1: #378585;
+    --primary-color-2: #408888;
+    --primary-color-3: #43A2A2;
+    --primary-color-4: #46A5A5;
+    --primary-color-5: #49A8A8;
+  
+    --shadow: none;
+    --shadow-1: rgba(0, 0, 0, 0.75);
+    --shadow-2: rgba(0, 0, 0, 0.5);
+    --shadow-3: rgba(0, 0, 0, 0.325);
+    --shadow-4: rgba(0, 0, 0, 0.25);
+    --shadow-5: rgba(0, 0, 0, 0.125);
+  }
+}

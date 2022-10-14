@@ -6,8 +6,6 @@ import { ProjectData } from "../../lib/projects";
 import rawProjectData from "./projects.json";
 import ProjectCard from "../../components/app/ProjectCard";
 import NavigationView from "../../components/ui/NavigationView";
-import NavigationSidebar from "../../components/ui/NavigationSidebar";
-import { scrollCardToTop } from "../../lib/scroll";
 
 const projectData = rawProjectData as ProjectData;
 
@@ -24,18 +22,6 @@ const Projects = () => {
       </Head>
       <NavigationView
         navPosition="right"
-        nav={(
-          <NavigationSidebar
-            keyPrefix="project-item-"
-            items={
-              projectData.projects.map((project) =>({
-                key: `project-name-${project.id}`,
-                label: project.name,
-                onClick: () => scrollCardToTop(project.id)
-              }))
-            }
-          />
-        )}
         content={(
           <article className="topLevelPage">
             <h2>Projects</h2>
