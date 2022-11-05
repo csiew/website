@@ -11,6 +11,7 @@ const ContactForm = () => {
   const contactNameRef = useRef<any>(null);
   const contactEmailRef = useRef<any>(null);
   const contactMessageRef = useRef<any>(null);
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [contactFormSubmitted, setContactFormSubmitted] = useState<boolean>(false);
   const [contactFormFailed, setContactFormFailed] = useState<boolean>(false);
   const [isReadyForSubmission, setIsReadyForSubmission] = useState<boolean>(false);
@@ -28,15 +29,19 @@ const ContactForm = () => {
     const submission = {
       contactName: contactNameRef.current.value,
       email: contactEmailRef.current.value,
-      message: contactMessageRef.current.value
+      message: contactMessageRef.current.value,
+      isTest: contactApiConfig.debugMode
     } as Submission;
     try {
+      setIsSubmitting(true);
       await submitContactForm(submission);
       setContactFormSubmitted(true);
       setContactFormFailed(false);
     } catch (err) {
       console.error(err);
       setContactFormFailed(true);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -59,6 +64,15 @@ const ContactForm = () => {
   return (
     <Paper className="contactForm" style={{ width: "100%" }}>
       <h3>Contact</h3>
+      {
+        isSubmitting
+          ? (
+            <Alert variant="plain" style={{ marginBottom: "1rem" }}>
+              Submitting your message...
+            </Alert>
+          )
+          : <></>
+      }
       {
         contactApiConfig.debugMode
           ? (
@@ -94,6 +108,7 @@ const ContactForm = () => {
                 variant="text"
                 forwardedRef={contactNameRef}
                 onChange={updateIsReadyForSubmission}
+                disabled={isSubmitting}
                 required
               />
               <FormQuestion
@@ -102,6 +117,7 @@ const ContactForm = () => {
                 variant="email"
                 forwardedRef={contactEmailRef}
                 onChange={updateIsReadyForSubmission}
+                disabled={isSubmitting}
                 required
               />
               <FormQuestion
@@ -111,6 +127,7 @@ const ContactForm = () => {
                 style={{ resize: "vertical" }}
                 forwardedRef={contactMessageRef}
                 onChange={updateIsReadyForSubmission}
+                disabled={isSubmitting}
                 required
               />
               <span className="formControls">
@@ -119,12 +136,12 @@ const ContactForm = () => {
                     ? (
                       <>
                         <small>
-                          <Button variant="primary" onClick={testPopulateForm}>
+                          <Button variant="primary" onClick={testPopulateForm} disabled={isSubmitting}>
                             Populate
                           </Button>
                         </small>
                         <small>
-                          <Button variant="reset">
+                          <Button variant="reset" disabled={isSubmitting}>
                             Reset
                           </Button>
                         </small>
@@ -133,7 +150,7 @@ const ContactForm = () => {
                     : <></>
                 }
                 <small>
-                  <Button variant="submit" disabled={!isReadyForSubmission}>
+                  <Button variant="submit" disabled={!isReadyForSubmission || isSubmitting}>
                     Submit
                   </Button>
                 </small>

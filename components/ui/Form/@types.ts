@@ -11,4 +11,5 @@ export type FormProps = BaseComponentProps & {
 
 export type FormQuestionProps = TextFieldProps & {
   label?: string;
+  disabled?: boolean;
 };
