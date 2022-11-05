@@ -16,6 +16,43 @@ article.topLevelPage.pageNowWatching section.acknowledgements {
   gap: 0.5rem;
 }
 
+.pageNowWatching .pageNowWatchingSection .header-bar {
+  width: 100%;
+  display: inline-flex;
+  flex-flow: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.pageNowWatching .pageNowWatchingSection .header-bar .actions {
+  display: inline-flex;
+  flex-flow: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+@media (max-width: 767px) {
+  .pageNowWatching .pageNowWatchingSection .header-bar {
+    margin-block: 0rem 1rem;
+    flex-flow: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0rem;
+  }
+
+  .pageNowWatching .pageNowWatchingSection .header-bar h3 {
+    margin-block: 0.25rem 0.5rem;
+  }
+
+  .pageNowWatching .pageNowWatchingSection .header-bar .actions {
+    width: 100%;
+    flex-flow: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0rem;
+  }
+}
+
 .pageNowWatching .pageNowWatchingSection h3 {
   margin-bottom: 2rem;
 }

@@ -8,34 +8,34 @@
   --btn-fg-color-primary-hover: var(--bg-color);
   --btn-fg-color-primary-active: var(--bg-color);
   --btn-fg-color-primary-selected: var(--bg-color);
-  --btn-fg-color-reset: firebrick;
-  --btn-fg-color-reset-hover: crimson;
-  --btn-fg-color-reset-active: red;
-  --btn-fg-color-reset-selected: var(--bg-color);
+  --btn-fg-color-reset: mistyrose;
+  --btn-fg-color-reset-hover: mistyrose;
+  --btn-fg-color-reset-active: mistyrose;
+  --btn-fg-color-reset-selected: salmon;
   --btn-fg-color-submit: var(--bg-color);
   --btn-fg-color-submit-hover: var(--bg-color);
   --btn-fg-color-submit-active: var(--bg-color);
   --btn-fg-color-submit-selected: var(--bg-color);
 
   --btn-bg-color: none;
-  --btn-bg-color-hover: var(--bg-color-3);
-  --btn-bg-color-active: var(--bg-color-1);
+  --btn-bg-color-hover: var(--bg-color-1);
+  --btn-bg-color-active: var(--bg-color-2);
   --btn-bg-color-selected: var(--primary-color);
   --btn-bg-color-focused: var(--primary-color-3);
   --btn-bg-color-primary: var(--primary-color);
   --btn-bg-color-primary-hover: var(--primary-color-1);
   --btn-bg-color-primary-active: var(--primary-color);
   --btn-bg-color-primary-selected: var(--primary-color);
-  --btn-bg-color-reset: mistyrose;
-  --btn-bg-color-reset-hover: mistyrose;
-  --btn-bg-color-reset-active: lightcoral;
-  --btn-bg-color-reset-selected: firebrick;
+  --btn-bg-color-reset: firebrick;
+  --btn-bg-color-reset-hover: crimson;
+  --btn-bg-color-reset-active: firebrick;
+  --btn-bg-color-reset-selected: darkred;
   --btn-bg-color-submit: seagreen;
   --btn-bg-color-submit-hover: mediumseagreen;
   --btn-bg-color-submit-active: darkgreen;
   --btn-bg-color-submit-selected: darkgreen;
 
-  --btn-border-color: var(--bg-color-3);
+  --btn-border-color: var(--border-color);
   --btn-border-color-primary: var(--primary-color);
   --btn-border-color-reset: firebrick;
   --btn-border-color-submit: seagreen;
@@ -49,7 +49,7 @@
   color: var(--btn-fg-color);
   background: var(--btn-bg-color);
   border: 1px solid var(--btn-border-color);
-  border-radius: 5px;
+  border-radius: var(--border-radius);
 
   font-family: var(--font-family-widget);
   font-size: inherit;
@@ -74,10 +74,8 @@
 }
 :is(button, .button, input[type=submit], input[type=reset]):is(:disabled, .disabled) {
   outline: none;
-
   opacity: 0.5;
   filter: saturate(0);
-
   cursor: default;
   pointer-events: none;
 }

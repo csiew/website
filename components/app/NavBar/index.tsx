@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { MdClose, MdCode, MdCreate, MdHelpOutline, MdMenu, MdPlaylistPlay, MdTv } from "react-icons/md";
-import { FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
+import { MdClose, MdMenu } from "react-icons/md";
 import { useRouter } from "next/router";
 import { PageRoute } from "../../../lib/@types";
 import Button from "../../ui/Button";
@@ -16,7 +15,7 @@ const NavBar = ({ pages }: { pages: PageRoute[] }) => {
 
   const reconfigureNavLayout = (ev?: UIEvent) => {
     const rootElWidth = document.getElementById(config.rootElementId)?.clientWidth || 0;
-    if (rootElWidth > 767) {
+    if (rootElWidth >= 900) {
       setShowNavMenu(true);
       setShowNavToggle(false);
     } else {
@@ -26,25 +25,10 @@ const NavBar = ({ pages }: { pages: PageRoute[] }) => {
   };
 
   const closeNavMenu = () => {
-    if (showNavToggle) {
+    if (showNavToggle && !!navMenuRef.current) {
       navMenuRef.current.style.pointerEvent = "none";
       navMenuRef.current.style.cursor = "not-allowed";
       setTimeout(() => setShowNavMenu(false), 250);
-    }
-  };
-
-  const getLinkIcon = (path: string) => {
-    switch (path) {
-    case "/blog":
-      return <MdCreate />;
-    case "/projects":
-      return <MdCode />;
-    case "/playlists":
-      return <MdPlaylistPlay />;
-    case "/now-watching":
-      return <MdTv />;
-    default:
-      return <MdHelpOutline />;
     }
   };
 
@@ -60,7 +44,7 @@ const NavBar = ({ pages }: { pages: PageRoute[] }) => {
   return (
     <header>
       <span className="titleAndMenuToggle">
-        <h1>
+        <h1 onClick={closeNavMenu}>
           <Link href="/">
             Clarence Siew
           </Link>
@@ -87,26 +71,20 @@ const NavBar = ({ pages }: { pages: PageRoute[] }) => {
                 pages
                   .filter((page) => !page.hideFromNavBar)
                   .map((page) => (
-                    <Link key={page.path.replace("/", "nav-link-")} href={page.path}>
-                      <a className={["navLink", router.pathname === page.path ? "active" : ""].join(" ")} onClick={closeNavMenu}>
-                        <span className="icon">{getLinkIcon(page.path)}</span>
-                        <span className="title">{page.title}</span>
-                      </a>
+                    <Link
+                      key={page.path.replace("/", "nav-link-")}
+                      className={["navLink", router.pathname === page.path ? "active" : ""].join(" ")}
+                      href={page.path}
+                      onClick={closeNavMenu}>
+                      {page.title}
                     </Link>
                   ))
               }
-              <hr />
-              <a href="https://twitter.com/clarence_siew" target="_blank" rel="noreferrer">
-                <span className="icon"><FaTwitter /></span>
-                <span className="title">Twitter</span>
-              </a>
               <a href="https://www.linkedin.com/in/clarencesiew/" target="_blank" rel="noreferrer">
-                <span className="icon"><FaLinkedin /></span>
-                <span className="title">LinkedIn</span>
+                LinkedIn
               </a>
               <a href="https://github.com/csiew" target="_blank" rel="noreferrer">
-                <span className="icon"><FaGithub /></span>
-                <span className="title">GitHub</span>
+                GitHub
               </a>
             </nav>
           )

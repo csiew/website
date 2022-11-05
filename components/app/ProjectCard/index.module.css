@@ -6,8 +6,8 @@ section.project img {
   margin: 0.5rem 0rem;
   padding: 0;
 
-  border: 1px solid var(--bg-color-3);
-  border-radius: 5px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
 }
 
 section.project .projectHeader {

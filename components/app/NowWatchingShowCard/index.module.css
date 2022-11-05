@@ -12,7 +12,7 @@ a.nowWatchingShowCard:hover {
   justify-content: flex-start;
 
   color: var(--fg-color);
-  border-radius: 9px;
+  border-radius: var(--border-radius);
 
   cursor: pointer;
 }
@@ -35,7 +35,7 @@ a.nowWatchingShowCard:hover {
 }
 .nowWatchingShowCard .poster img {
   height: 256px;
-  border-radius: 5px;
+  border-radius: var(--border-radius);
 
   -webkit-user-drag: none;
 }

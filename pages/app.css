@@ -1,10 +1,12 @@
 :root {
   --font-family-system: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  --font-family-base: 'Source Serif Pro', Charter, Georgia, var(--font-family-system);
-  --font-family-article: 'Source Serif Pro', Charter, Georgia, var(--font-family-system);
-  --font-family-header: Satoshi, var(--font-family-system);
-  --font-family-widget: Satoshi, var(--font-family-system);
-  --font-family-monospace: 'Roboto Mono', 'JetBrains Mono', 'SF Mono', Consolas, 'Cascadia Code', monospace;
+  --font-family-base: 'Satoshi', var(--font-family-system);
+  --font-family-article: var(--font-family-base);
+  --font-family-header: var(--font-family-base);
+  --font-family-widget: var(--font-family-base);
+  --font-family-monospace: 'JetBrains Mono', Monaco, Menlo, 'Cascadia Mono', 'Cascadia Code', 'Ubuntu Mono', 'Noto Mono', 'Courier New', Courier, monospace;
+
+  --border-radius: 5px;
 }
 
 * {
@@ -21,7 +23,7 @@ html, body, #__next {
   padding: 0;
 
   display: inline-flex;
-  flex-flow: row;
+  flex-flow: column;
   align-items: flex-start;
   justify-content: flex-start;
 }
@@ -38,25 +40,26 @@ html {
   background: var(--bg-color);
 
   font-family: var(--font-family-base);
-  font-size: 1.25rem;
-  font-weight: 450;
+  font-size: 1.125rem;
+  font-weight: 400;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-  line-height: 1.25;
+  line-height: 1.5;
 }
 
 hr {
   width: 100%;
   border: none;
-  border-bottom: 1px solid var(--bg-color-3);
+  border-bottom: 1px solid var(--border-color);
 }
 
 a {
-  color: var(--primary-color);
-  text-decoration: none;
+  color: var(--fg-color);
+  font-weight: 800;
+  text-decoration: underline;
 }
 a:hover {
   text-decoration: underline;
@@ -112,8 +115,12 @@ main {
 }
 
 article {
+  display: inline-flex;
+  flex-flow: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 0.5rem;
   font-family: var(--font-family-article);
-  letter-spacing: -0.5px;
 }
 
 article.topLevelPage {
@@ -128,12 +135,13 @@ article.topLevelPage h2 {
   margin: 0rem 0rem 2rem 0rem;
   padding: 0rem 0rem 0.25rem 0rem;
 
-  color: var(--primary-color);
+  color: var(--fg-color);
 
-  font-size: 250%;
+  font-size: 2rem;
   font-weight: 900;
-  letter-spacing: -0.06125rem;
+  letter-spacing: 0.05rem;
   text-align: center;
+  text-transform: uppercase;
 }
 
 @media (max-width: 767px) {
@@ -167,11 +175,35 @@ form {
   gap: 1rem;
 }
 
+select {
+  margin: 0;
+  padding: 0.25rem;
+  color: var(--fg-color);
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  font-size: inherit;
+  font-family: var(--font-family-widget);
+  cursor: pointer;
+}
+select:hover {
+  background: var(--bg-color-1);
+}
+select:active {
+  background: var(--bg-color-2);
+}
+select:is(:disabled, .disabled) {
+  outline: none;
+  opacity: 0.5;
+  filter: saturate(0);
+  cursor: default;
+  pointer-events: none;
+}
+
 @import url('./colors.css');
 
+@import url('../lib/assets/fonts/jetbrains-mono/index.css');
 @import url('../lib/assets/fonts/satoshi/index.css');
-@import url('../lib/assets/fonts/roboto-mono/index.css');
-@import url('../lib/assets/fonts/source-serif-pro/index.css');
 
 @import url('../components/ui/Alert/index.module.css');
 @import url('../components/ui/Button/index.module.css');

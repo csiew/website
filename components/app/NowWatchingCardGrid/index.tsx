@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable no-case-declarations */
-import React from "react";
+import React, { ReactElement } from "react";
 import { Show } from "../../../lib/now-watching";
 import Paper from "../../ui/Paper";
 import NowWatchingShowCard from "../NowWatchingShowCard";
@@ -10,16 +10,34 @@ type NowWatchingCardGridProps = {
   keyPrefix: string;
   shows: Array<Show>;
   setSelectedShow?: (id: string) => void;
+  filter?: string;
+  cornerActions?: string | ReactElement | ReactElement[];
 }
 
-const NowWatchingCardGrid = ({ title, keyPrefix, shows, setSelectedShow }: NowWatchingCardGridProps) => {
+const NowWatchingCardGrid = ({ title, keyPrefix, shows, setSelectedShow, filter, cornerActions }: NowWatchingCardGridProps) => {
+  let filteredShows;
+
+  switch (filter) {
+  case "featured":
+    filteredShows = shows.filter((show) => show.recommended);
+    break;
+  case "all":
+  default:
+    filteredShows = shows;
+  }
+
   return (
     <section>
       <Paper className="pageNowWatchingSection">
-        <h3>{title}</h3>
+        <div className="header-bar">
+          <h3>{title}</h3>
+          <div className="actions">
+            { cornerActions }
+          </div>
+        </div>
         <div className="cardList">
           {
-            shows.map((show) => (
+            filteredShows.map((show) => (
               <NowWatchingShowCard key={`${keyPrefix}-${show.imdbId}`} show={show} setSelectedShow={setSelectedShow} />
             ))
           }

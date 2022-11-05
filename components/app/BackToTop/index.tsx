@@ -17,10 +17,9 @@ const BackToTop = () => {
     rootEl?.addEventListener("scroll", handleScrollEvent);
   }, []);
 
-  if (isAtTop) return <></>;
   return (
     <div className="backToTopFloat">
-      <Button onClick={scrollPageToTop} alt="Back to top">
+      <Button className={isAtTop ? "hiddenKeepHeight" : undefined} onClick={scrollPageToTop} alt="Back to top">
         <MdArrowUpward />
       </Button>
     </div>

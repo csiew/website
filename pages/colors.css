@@ -1,30 +1,32 @@
 :root {
-  --fg-color: #333333;
-  --fg-color-1: #363636;
-  --fg-color-2: #393939;
-  --fg-color-3: #424242;
-  --fg-color-4: #454545;
-  --fg-color-5: #484848;
-  --fg-color-6: #515151;
-  --fg-color-7: #545454;
-  --fg-color-8: #575757;
-  --fg-color-9: #606060;
+  --fg-color: #000000;
+  --fg-color-1: #111111;
+  --fg-color-2: #222222;
+  --fg-color-3: #333333;
+  --fg-color-4: #3a3a3a;
+  --fg-color-5: #3c3c3c;
+  --fg-color-6: #3e3e3e;
+  --fg-color-7: #444444;
+  --fg-color-8: #4a4a4a;
+  --fg-color-9: #555555;
 
   --bg-color: #ffffff;
-  --bg-color-1: #eeeeee;
-  --bg-color-2: #dddddd;
-  --bg-color-3: #cccccc;
-  --bg-color-4: #bbbbbb;
-  --bg-color-5: #aaaaaa;
-  --bg-color-6: #999999;
-  --bg-color-7: #888888;
+  --bg-color-1: #f5f5f5;
+  --bg-color-2: #eeeeee;
+  --bg-color-3: #e5e5e5;
+  --bg-color-4: #dddddd;
+  --bg-color-5: #d5d5d5;
+  --bg-color-6: #cccccc;
+  --bg-color-7: #c5c5c5;
 
-  --primary-color: #348282;
-  --primary-color-1: #54A2A2;
-  --primary-color-2: #84D2D2;
-  --primary-color-3: #C4E3E3;
-  --primary-color-4: #D9E8E8;
-  --primary-color-5: #E9F8F8;
+  --border-color: #cccccc;
+
+  --primary-color: #FF4500;
+  --primary-color-1: #FF6520;
+  --primary-color-2: #FF8540;
+  --primary-color-3: #FFA560;
+  --primary-color-4: #FFC580;
+  --primary-color-5: #FFE5A0;
 
   --shadow: none;
   --shadow-1: rgba(0, 0, 0, 0.5);
@@ -47,21 +49,16 @@
     --fg-color-8: #aaaaaa;
     --fg-color-9: #a0a0a0;
   
-    --bg-color: #222222;
-    --bg-color-1: #2e2e2e;
-    --bg-color-2: #333333;
-    --bg-color-3: #3e3e3e;
-    --bg-color-4: #444444;
-    --bg-color-5: #4e4e4e;
-    --bg-color-6: #555555;
-    --bg-color-7: #5e5e5e;
-  
-    --primary-color: #348282;
-    --primary-color-1: #378585;
-    --primary-color-2: #408888;
-    --primary-color-3: #43A2A2;
-    --primary-color-4: #46A5A5;
-    --primary-color-5: #49A8A8;
+    --bg-color: #1e1e1e;
+    --bg-color-1: #222222;
+    --bg-color-2: #2e2e2e;
+    --bg-color-3: #333333;
+    --bg-color-4: #3e3e3e;
+    --bg-color-5: #444444;
+    --bg-color-6: #4e4e4e;
+    --bg-color-7: #555555;
+
+    --border-color: #555555;
   
     --shadow: none;
     --shadow-1: rgba(0, 0, 0, 0.75);
