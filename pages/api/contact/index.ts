@@ -18,6 +18,7 @@ export type Submission = {
   contactName: string;
   email: string;
   message: string;
+  isTest?: boolean;
 };
 
 if (config.debugMode) {
