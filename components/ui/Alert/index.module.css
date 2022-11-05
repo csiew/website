@@ -31,7 +31,7 @@
   border-width: 1px;
   border-style: solid;
   border-color: var(--alert-border-color);
-  border-radius: 9px;
+  border-radius: var(--border-radius);
 
   font-size: 1rem;
   font-family: var(--font-family-widget);

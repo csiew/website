@@ -15,7 +15,7 @@
   color: var(--fg-color);
   background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(6px);
-  border-bottom: 1px solid var(--bg-color-3);
+  border-bottom: 1px solid var(--border-color);
   box-shadow: 0px 2px 4px var(--shadow-4);
 
   font-family: var(--font-family-widget);

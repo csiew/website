@@ -1443,5 +1443,29 @@
     "Type": "series",
     "totalSeasons": "2",
     "Response": "True"
+  },
+  {
+    "Title": "SAS Rogue Heroes",
+    "Year": "2022",
+    "Rated": "N/A",
+    "Released": "N/A",
+    "Runtime": "N/A",
+    "Genre": "Thriller, War",
+    "Director": "N/A",
+    "Writer": "N/A",
+    "Actors": "Connor Swindells, Jack O'Connell, Alfie Allen",
+    "Plot": "The six-part drama is based on Ben Macintyre's SAS: Rogue Heroes book, which charts the creation of the famed Special Forces unit.",
+    "Language": "English",
+    "Country": "United Kingdom",
+    "Awards": "N/A",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BNDA5YzYyYWEtMjk4OS00ZjA2LWI0NWEtYzhkNTQ0ZDFmZWIxXkEyXkFqcGdeQXVyNjU0NTI0Nw@@._V1_.jpg",
+    "Ratings": [],
+    "Metascore": "N/A",
+    "imdbRating": "N/A",
+    "imdbVotes": "N/A",
+    "imdbID": "tt10405370",
+    "Type": "series",
+    "totalSeasons": "N/A",
+    "Response": "True"
   }
 ]

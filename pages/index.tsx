@@ -1,12 +1,9 @@
-import React, { FormEvent, useEffect, useRef, useState } from "react";
+import React, { useEffect } from "react";
 import Head from "next/head";
-import { Submission, submitContactForm } from "./api/contact";
 import config from "../config";
 import retitle from "../lib/retitle";
 import NavigationView from "../components/ui/NavigationView";
-import Button from "../components/ui/Button";
 import ContactForm from "../components/app/ContactForm";
-import Paper from "../components/ui/Paper";
 
 const Home = () => {
   useEffect(() => {
@@ -23,22 +20,21 @@ const Home = () => {
         content={(
           <article className="topLevelPage pageHome">
             <section>
-              <img className="profile" src="/profile.jpg" alt="Clarence's portrait" />
+              <h3>Hi there</h3>
               <p>
-                Hi there! I&apos;m <span className="highlight firstName">Clarence</span>. I&apos;m a <span className="highlight profession">software engineer</span> based in <span className="highlight location">Melbourne</span> who builds web applications, services, and websites.
+                <img className="profile" src="/profile.jpg" alt="Clarence's portrait" />
+                <span>
+                  I&apos;m a full-stack software engineer based in Melbourne. I love reading about history, listening to rock music, and the occassional writing of lore for fictional game worlds.
+                </span>
               </p>
             </section>
             <section>
+              <h3>Tech Stack</h3>
               <p>
-                I was born in George Town on Penang Island, which is one half of the state of Penang in Malaysia.
+                I mostly develop in TypeScript and JavaScript for both backend services and frontend/websites. Count HTML in for the latter. I have experience developing in Java and Kotlin for backend services. I also use Shell and Python scripts from time to time for some DevOps or quick data processing.
               </p>
               <p>
-                I currently live in Melbourne, Victoria in Australia. It was at one point, the most locked-down city in the world. Being a homebody, I wasn&apos;t too bothered.
-              </p>
-            </section>
-            <section>
-              <p>
-                I absolutely must have music playing when working. My favourite genres are punk, grunge, alternative, hard rock and metal.
+                I also actively use Amazon Web Services at work. For personal projects I largely use Netlify for CI/CD and hosting, with some experimenting with edge functions; Google Firebase for its cloud database and cloud functions.
               </p>
             </section>
             {

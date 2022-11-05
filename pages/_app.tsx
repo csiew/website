@@ -1,4 +1,4 @@
-import React, {  } from "react";
+import React from "react";
 import Head from "next/head";
 import "./app.css";
 import routes from "../lib/routes";

@@ -11,9 +11,6 @@
   position: sticky;
   bottom: 0;
   z-index: 150;
-
-  animation-name: backToTopTransitionIn;
-  animation-duration: 0.5s;
 }
 .backToTopFloat :is(button, .button, input[type=submit], input[type=reset]) {
   margin: 0;
@@ -42,19 +39,6 @@
   padding: 0;
 }
 
-@keyframes backToTopTransitionIn {
-  0% {
-    opacity: 0.25;
-    translate: 0rem 5rem;
-    filter: blur(8px);
-    pointer-events: none;
-    cursor: not-allowed;
-  }
-  100% {
-    opacity: 0.75;
-    translate: 0rem 0rem;
-    filter: blur(0px);
-    pointer-events: all;
-    cursor: auto;
-  }
+:is(button, .button, input[type=submit], input[type=reset]).hiddenKeepHeight {
+  visibility: hidden;
 }

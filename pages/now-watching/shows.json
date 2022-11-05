@@ -152,13 +152,11 @@
     },
     {
       "name": "Okkupert",
-      "imdbId": "tt4192998",
-      "recommended": true
+      "imdbId": "tt4192998"
     },
     {
       "name": "Borgen",
-      "imdbId": "tt1526318",
-      "recommended": true
+      "imdbId": "tt1526318"
     },
     {
       "name": "The Crown",
@@ -186,7 +184,8 @@
     },
     {
       "name": "Cathedral of the Sea",
-      "imdbId": "tt4944694"
+      "imdbId": "tt4944694",
+      "recommended": true
     },
     {
       "name": "Years and Years",
@@ -216,18 +215,21 @@
     },
     {
       "name": "Black Mirror",
-      "imdbId": "tt2085059",
-      "recommended": true
+      "imdbId": "tt2085059"
     },
     {
       "name": "Electric Dreams",
-      "imdbId": "tt5711280",
-      "recommended": true
+      "imdbId": "tt5711280"
     },
     {
       "name": "The Twilight Zone",
-      "imdbId": "tt2583620",
-      "recommended": true
+      "imdbId": "tt2583620"
+    },
+    {
+      "name": "SAS: Rogue Heroes",
+      "imdbId": "tt10405370",
+      "recommended": true,
+      "watching": true
     }
   ]
 }
