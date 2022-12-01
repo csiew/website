@@ -202,9 +202,6 @@ select:is(:disabled, .disabled) {
 
 @import url('./colors.css');
 
-@import url('../lib/assets/fonts/jetbrains-mono/index.css');
-@import url('../lib/assets/fonts/satoshi/index.css');
-
 @import url('../components/ui/Alert/index.module.css');
 @import url('../components/ui/Button/index.module.css');
 @import url('../components/ui/Form/index.module.css');
