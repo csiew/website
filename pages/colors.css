@@ -10,23 +10,21 @@
   --fg-color-8: #4a4a4a;
   --fg-color-9: #555555;
 
-  --bg-color: #ffffff;
-  --bg-color-1: #f5f5f5;
-  --bg-color-2: #eeeeee;
-  --bg-color-3: #e5e5e5;
-  --bg-color-4: #dddddd;
-  --bg-color-5: #d5d5d5;
-  --bg-color-6: #cccccc;
-  --bg-color-7: #c5c5c5;
+  --bg-color: #f5f5f5;
+  --bg-color-1: #eeeeee;
+  --bg-color-2: #e5e5e5;
+  --bg-color-3: #dddddd;
+  --bg-color-4: #d5d5d5;
+  --bg-color-5: #cccccc;
+  --bg-color-6: #c5c5c5;
+  --bg-color-7: #dddddd;
 
   --border-color: #cccccc;
 
-  --primary-color: #FF4500;
-  --primary-color-1: #FF6520;
-  --primary-color-2: #FF8540;
-  --primary-color-3: #FFA560;
-  --primary-color-4: #FFC580;
-  --primary-color-5: #FFE5A0;
+  --primary-color: #029d02;
+  --primary-color-1: #12ad12;
+  --primary-color-2: #22bd22;
+  --primary-color-3: #32cd32;
 
   --shadow: none;
   --shadow-1: rgba(0, 0, 0, 0.5);

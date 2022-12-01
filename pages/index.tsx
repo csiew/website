@@ -20,7 +20,7 @@ const Home = () => {
         content={(
           <article className="topLevelPage pageHome">
             <section>
-              <p>Hi, I&apos;m Clarence Siew.</p>
+              <p>Hi, I&apos;m <b>Clarence Siew</b>.</p>
               <p>
                 I&apos;m a full-stack software engineer based in Melbourne. I love reading about history, listening to rock music (I curate annual zeitgeist <a href="/playlists">playlists</a>), <a href="/now-watching">watching TV shows</a>, and the occassional writing of lore for fictional game worlds.
               </p>
@@ -28,7 +28,10 @@ const Home = () => {
                 Coding isn&apos;t just a job for me, it&apos;s been a passion of mine since I was 9 years old. Check out a selection of my <a href="/projects">personal projects</a>.
               </p>
               <p>
-                I mostly develop in TypeScript and JavaScript for both backend services and frontend/websites. Count HTML in for the latter. I have experience developing in Java and Kotlin for backend services. I also use Shell and Python scripts from time to time for some DevOps or quick data processing.
+                I mostly develop in TypeScript and JavaScript for both backend services and frontend/websites. I&apos;ve used a plethora frontend frameworks/libraries such as React, Next.js, Vue.js, Svelte/SvelteKit, and Mithril.js for work and personal projects.
+              </p>
+              <p>
+                I have experience developing in Java and Kotlin for backend services. I also use Shell and Python scripts from time to time for some DevOps or quick data processing.
               </p>
               <p>
                 I also actively use Amazon Web Services at work. For personal projects I largely use Netlify for CI/CD and hosting, with some experimenting with edge functions; Google Firebase for its cloud database and cloud functions.

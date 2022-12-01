@@ -7,7 +7,7 @@
   --nav-sidebar-bg-color: none;
   --nav-sidebar-bg-color-hover: var(--bg-color-1);
   --nav-sidebar-bg-color-active: var(--bg-color-3);
-  --nav-sidebar-bg-color-selected: var(--primary-color-5);
+  --nav-sidebar-bg-color-selected: var(--primary-color-3);
 }
 
 nav.navigationSidebar {
