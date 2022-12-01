@@ -5,15 +5,12 @@ a.playlistCard:hover {
 .playlistCard {
   width: 100%;
   padding: 1rem 0.5rem;
-
   display: inline-flex;
   flex-flow: column;
   align-items: center;
   justify-content: flex-start;
-
   color: var(--fg-color);
   border-radius: var(--border-radius);
-
   cursor: pointer;
 }
 .playlistCard:is(:hover, :focus) {
@@ -27,10 +24,4 @@ a.playlistCard:hover {
   margin: 0rem;
   font-size: 2rem;
   font-weight: 900;
-  transition: 0.2s;
-}
-.playlistCard:hover h3 {
-  text-shadow: 0px 2px 4px var(--shadow-4);
-  scale: 1.125;
-  transition: 0.2s;
 }

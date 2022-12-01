@@ -10,13 +10,13 @@ export default {
     text: "Clarence Siew",
     divider: "|"
   },
-  version: "6.3.0",
+  version: "6.4.0",
   omdb: {
     apiKey: process.env.OMDB_API_KEY,
     host: "https://omdbapi.com"
   },
   features: {
-    contactForm: true
+    contactForm: false
   },
   debugMode: process.env.DEBUG_MODE
 };

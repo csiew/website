@@ -67,14 +67,11 @@ section.project .projectHeader .projectHeaderLinks {
   width: min-content;
   margin: 0;
   padding: 0;
-
   display: inline-flex;
   flex-flow: row;
   align-items: center;
   justify-content: flex-end;
   gap: 0.5rem;
-
-  font-size: 80%;
 }
 
 section.project .projectBody {

@@ -2,6 +2,12 @@
   padding: 2rem 0rem;
 }
 
+@media (max-width: 768px) {
+  .pageHome {
+    padding: 0rem;
+  }
+}
+
 .pageHome .profile {
   width: 128px;
   height: 128px;
@@ -14,10 +20,17 @@
 @media (max-width: 768px) {
   .pageHome .profile {
     margin: 0rem auto 2rem auto;
-
     float: none;
     display: block;
-
     box-shadow: none;
   }
+}
+
+.pageHome section:first-of-type {
+  display: inline-flex;
+  flex-flow: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1rem;
+  font-size: 2rem;
 }

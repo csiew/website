@@ -1,38 +1,31 @@
 :root {
   --nav-fg-color: var(--fg-color);
-  --nav-fg-color-hover: var(--fg-color);
-  --nav-fg-color-active: var(--fg-color);
-  --nav-fg-color-selected: var(--fg-color);
+  --nav-fg-color-hover: var(--bg-color);
+  --nav-fg-color-active: var(--bg-color);
+  --nav-fg-color-selected: var(--bg-color);
 
-  --nav-bg-color: none;
-  --nav-bg-color-hover: var(--bg-color-1);
-  --nav-bg-color-active: var(--bg-color-2);
-  --nav-bg-color-selected: var(--bg-color-2);
+  --nav-bg-color: var(--bg-color);
+  --nav-bg-color-hover: var(--primary-color-1);
+  --nav-bg-color-active: var(--primary-color-2);
+  --nav-bg-color-selected: var(--primary-color);
 }
 
 header {
   width: 100%;
-  margin: 0;
+  margin: 0 auto;
   padding: 0rem 0.75rem;
-
   display: inline-flex;
   flex-flow: row;
   align-items: center;
   justify-content: flex-start;
   gap: 0.5rem;
-
-  position: sticky;
   top: 0;
   z-index: 100;
-
   color: var(--fg-color);
-  background: var(--bg-color);
-  backdrop-filter: blur(6px);
+  background: var(--bg-color-1);
   border-width: 0px 0px 1px 0px;
   border-style: solid;
   border-color: var(--border-color);
-  box-shadow: 0px 2px 8px var(--shadow-4);
-
   font-family: var(--font-family-widget);
 }
 
@@ -40,12 +33,10 @@ header {
   header {
     max-width: unset;
     padding: 0.25rem;
-
     flex-flow: column;
     align-items: flex-start;
     justify-content: flex-start;
     gap: 0.25rem;
-
     background: var(--bg-color);
     backdrop-filter: unset;
     border-width: 0px 0px 1px 0px;
@@ -55,12 +46,10 @@ header {
 header h1 {
   margin: 0;
   padding: 0.75rem 0rem;
-
-  font-size: 1.75rem;
+  font-size: 2.5rem;
   font-weight: 900;
   line-height: 1;
   letter-spacing: -0.06125rem;
-
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -79,7 +68,6 @@ header .titleAndMenuToggle {
   width: 100%;
   margin: 0;
   padding: 0rem 0.25rem;
-
   display: inline-flex;
   flex-flow: row;
   align-items: center;
@@ -89,12 +77,10 @@ header .titleAndMenuToggle {
 header .navMenuToggle {
   margin: 0;
   padding: 0.5rem;
-
   display: inline-flex;
   flex-flow: row;
   align-items: center;
   justify-content: center;
-
   border: none;
   border-radius: 100%;
 }
@@ -106,16 +92,20 @@ header .navMenuToggle svg {
 }
 
 header nav {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-
-  display: inline-flex;
-  flex-flow: row;
-  align-items: center;
+  width: min-content;
+  height: min-content;
+  margin: auto;
+  padding: 0.25rem 0.5rem 0rem 0.5rem;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(auto, 1fr);
+  align-items: flex-end;
   justify-content: flex-end;
-  gap: 0;
+  gap: 0.25rem;
+  background: var(--bg-color-3);
+  box-shadow: var(--sm-shadow-4);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
 }
 
 @media (max-width: 900px) {
@@ -124,7 +114,6 @@ header nav {
     margin: 0;
     padding: 0.25rem 0rem;
     align-items: flex-start;
-
     border-width: 1px 0px 0px 0px;
     border-style: solid;
     border-color: var(--border-color);
@@ -132,25 +121,23 @@ header nav {
 }
 
 header nav a {
-  height: 100%;
-  padding: 0.325rem 0.75rem;
-
+  width: 100%;
+  margin: 0;
+  padding: 0.5rem 0.75rem;
   display: inline-flex;
   flex-flow: row;
   align-items: center;
-  justify-content: flex-start;
-  gap: 0.5rem;
-
+  justify-content: flex-end;
+  gap: 0;
   color: var(--nav-fg-color);
   background: var(--nav-bg-color);
-  border-radius: 0;
-
-  font-size: 0.9rem;
-  font-weight: 400;
+  box-shadow: var(--sm-shadow-1);
+  border: solid var(--border-color);
+  border-width: 1px 1px 0px 1px;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  font-size: inherit;
+  font-weight: bold;
   text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 0.025rem;
-
   white-space: nowrap;
 }
 header nav a:hover {
@@ -161,7 +148,7 @@ header nav a:hover {
 header nav a.active {
   color: var(--nav-fg-color-selected);
   background: var(--nav-bg-color-selected);
-  font-weight: 900;
+  text-decoration: none;
 }
 header nav a:active {
   color: var(--nav-fg-color-active);
@@ -170,11 +157,24 @@ header nav a:active {
 
 @media (max-width: 900px) {
   header nav {
+    padding: 0.25rem;
+    display: inline-flex;
     flex-flow: column;
     align-items: stretch;
     justify-content: flex-start;
+    gap: 0;
   }
   header nav a {
     width: 100%;
+    box-shadow: var(--sm-shadow);
+    border-width: 1px 1px 0px 1px;
+    border-radius: 0;
+  }
+  header nav a:first-of-type {
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+  }
+  header nav a:last-of-type {
+    border-width: 1px;
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
   }
 }

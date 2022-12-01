@@ -2,50 +2,35 @@
   width: 100%;
   margin: 0;
   padding: 0;
-
   list-style-type: none;
   display: inline-flex;
   flex-flow: column;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 
-.pageBlog ul.postList li,
-.pageBlog ul.postList li a {
+.pageBlog ul.postList li {
   width: 100%;
   margin: 0;
   padding: 0;
-  display: block;
-  text-decoration: none;
+  display: inline-flex;
+  flex-flow: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0rem;
+}
+.pageBlog ul.postList li a {
+  text-decoration: underline;
 }
 .pageBlog ul.postList li a:hover {
   text-decoration: none;
 }
 
-.pageBlog ul.postList li .paper {
-  width: 100%;
-}
-.pageBlog ul.postList li:hover .paper {
-  box-shadow: 0px 4px 8px var(--shadow-2);
-}
-.pageBlog ul.postList li:active .paper {
-  box-shadow: none;
-}
-
-.pageBlog ul.postList li .paper sub {
+.pageBlog ul.postList li sub {
   color: var(--fg-color-9);
   font-size: 75%;
   font-family: var(--font-family-widget);
-}
-
-.pageBlogPost article.topLevelPage {
-  margin: 3rem auto;
-}
-@media (max-width: 767px) {
-  .pageBlogPost article.topLevelPage {
-    margin: 1rem auto;
-  }
 }
 
 .pageBlogPost .navigationViewNav {
@@ -57,7 +42,6 @@
   width: 100%;
   margin: 0;
   padding: 0.75rem 1rem;
-
   word-wrap: break-word;
   white-space: pre-wrap;
 }
@@ -65,7 +49,6 @@
 :is(.pageBlog, .pageBlogPost) .navigationSidebarItem :is(a, span) {
   width: 100%;
   margin: 0;
-
   display: inline-flex;
   flex-flow: column;
   align-items: flex-start;
@@ -89,7 +72,6 @@
 .pageBlogPost .pageBlogPostHeader h2 {
   margin: 0rem 0rem 1rem 0rem;
   padding: 0;
-
   color: var(--fg-color);
   border: none;
   font-size: 3rem;

@@ -3,7 +3,6 @@
   height: 100%;
   margin: 0;
   padding: 0;
-
   display: inline-flex;
   flex-flow: row;
   align-items: stretch;
@@ -22,7 +21,6 @@
   width: 100%;
   margin: 0;
   padding: 0;
-
   display: block;
   position: sticky;
   top: 0;
@@ -38,7 +36,6 @@
   width: 100%;
   margin: 0;
   padding: 2rem 1rem;
-
   display: inline-flex;
   flex-flow: column;
   flex-grow: 3;

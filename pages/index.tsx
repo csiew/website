@@ -20,21 +20,24 @@ const Home = () => {
         content={(
           <article className="topLevelPage pageHome">
             <section>
-              <h3>Hi there</h3>
+              <p>Hi, I&apos;m Clarence Siew.</p>
               <p>
-                <img className="profile" src="/profile.jpg" alt="Clarence's portrait" />
-                <span>
-                  I&apos;m a full-stack software engineer based in Melbourne. I love reading about history, listening to rock music, and the occassional writing of lore for fictional game worlds.
-                </span>
+                I&apos;m a full-stack software engineer based in Melbourne. I love reading about history, listening to rock music (I curate annual zeitgeist <a href="/playlists">playlists</a>), <a href="/now-watching">watching TV shows</a>, and the occassional writing of lore for fictional game worlds.
               </p>
-            </section>
-            <section>
-              <h3>Tech Stack</h3>
+              <p>
+                Coding isn&apos;t just a job for me, it&apos;s been a passion of mine since I was 9 years old. Check out a selection of my <a href="/projects">personal projects</a>.
+              </p>
               <p>
                 I mostly develop in TypeScript and JavaScript for both backend services and frontend/websites. Count HTML in for the latter. I have experience developing in Java and Kotlin for backend services. I also use Shell and Python scripts from time to time for some DevOps or quick data processing.
               </p>
               <p>
                 I also actively use Amazon Web Services at work. For personal projects I largely use Netlify for CI/CD and hosting, with some experimenting with edge functions; Google Firebase for its cloud database and cloud functions.
+              </p>
+              <p>
+                You can find me on <a href="https://github.com/csiew" target="_blank" rel="noreferrer">GitHub</a> and <a href="https://www.linkedin.com/in/clarencesiew/" target="_blank" rel="noreferrer">LinkedIn</a>. You can also find me on <a href="https://mastodon.online/@csiew" target="_blank" rel="noreferrer">Mastodon</a>, though I never post there.
+              </p>
+              <p>
+                You could also email me at <code>clarence (dot) siew (at) gmail (dot) com</code>.
               </p>
             </section>
             {
