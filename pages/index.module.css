@@ -26,11 +26,13 @@
   }
 }
 
-.pageHome section:first-of-type {
+.pageHome section {
   display: inline-flex;
   flex-flow: column;
   align-items: flex-start;
   justify-content: flex-start;
   gap: 1rem;
-  font-size: 2rem;
+}
+.pageHome section:first-of-type {
+  font-size: 1.75rem;
 }
