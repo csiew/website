@@ -1,12 +1,12 @@
 :root {
   --font-family-system: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  --font-family-base: 'Satoshi', var(--font-family-system);
+  --font-family-base: var(--font-family-system);
   --font-family-article: var(--font-family-base);
   --font-family-header: var(--font-family-base);
   --font-family-widget: var(--font-family-base);
-  --font-family-monospace: 'JetBrains Mono', Monaco, Menlo, 'Cascadia Mono', 'Cascadia Code', 'Ubuntu Mono', 'Noto Mono', 'Courier New', Courier, monospace;
+  --font-family-monospace: Monaco, Menlo, 'Cascadia Mono', 'Cascadia Code', 'Ubuntu Mono', 'Noto Mono', 'Courier New', Courier, monospace;
 
-  --border-radius: 5px;
+  --border-radius: 9px;
 }
 
 * {
@@ -21,7 +21,6 @@ html, body, #__next {
   height: 100%;
   margin: 0;
   padding: 0;
-
   display: inline-flex;
   flex-flow: column;
   align-items: flex-start;
@@ -38,16 +37,15 @@ html {
   color-scheme: light dark;
   color: var(--fg-color);
   background: var(--bg-color);
-
   font-family: var(--font-family-base);
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   font-weight: 400;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-  line-height: 1.5;
+  line-height: 1.25;
 }
 
 hr {
@@ -180,6 +178,7 @@ select {
   padding: 0.25rem;
   color: var(--fg-color);
   background: var(--bg-color);
+  box-shadow: var(--sm-shadow-1);
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
   font-size: inherit;
@@ -191,6 +190,7 @@ select:hover {
 }
 select:active {
   background: var(--bg-color-2);
+  box-shadow: var(--sm-shadow-1-inset);
 }
 select:is(:disabled, .disabled) {
   outline: none;
@@ -202,9 +202,6 @@ select:is(:disabled, .disabled) {
 
 @import url('./colors.css');
 
-@import url('../lib/assets/fonts/jetbrains-mono/index.css');
-@import url('../lib/assets/fonts/satoshi/index.css');
-
 @import url('../components/ui/Alert/index.module.css');
 @import url('../components/ui/Button/index.module.css');
 @import url('../components/ui/Form/index.module.css');
@@ -215,6 +212,7 @@ select:is(:disabled, .disabled) {
 @import url('../components/ui/TextField/index.module.css');
 @import url('../components/ui/Toolbar/index.module.css');
 
+@import url('../components/app/BackToHome/index.module.css');
 @import url('../components/app/BackToTop/index.module.css');
 @import url('../components/app/BlogNavigationView/index.module.css');
 @import url('../components/app/Footer/index.module.css');

@@ -135,25 +135,19 @@ const ContactForm = () => {
                   contactApiConfig.debugMode
                     ? (
                       <>
-                        <small>
-                          <Button variant="primary" onClick={testPopulateForm} disabled={isSubmitting}>
-                            Populate
-                          </Button>
-                        </small>
-                        <small>
-                          <Button variant="reset" disabled={isSubmitting}>
-                            Reset
-                          </Button>
-                        </small>
+                        <Button variant="primary" onClick={testPopulateForm} disabled={isSubmitting}>
+                          Populate
+                        </Button>
+                        <Button variant="reset" disabled={isSubmitting}>
+                          Reset
+                        </Button>
                       </>
                     )
                     : <></>
                 }
-                <small>
-                  <Button variant="submit" disabled={!isReadyForSubmission || isSubmitting}>
-                    Submit
-                  </Button>
-                </small>
+                <Button variant="submit" disabled={!isReadyForSubmission || isSubmitting}>
+                  Submit
+                </Button>
               </span>
             </Form>
           )

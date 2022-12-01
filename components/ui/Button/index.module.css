@@ -44,33 +44,32 @@
 :is(button, .button, input[type=submit], input[type=reset]) {
   width: max-content;
   margin: 0;
-  padding: 0.25rem 0.5rem;
-
+  padding: 0.5rem 0.75rem;
   color: var(--btn-fg-color);
   background: var(--btn-bg-color);
+  box-shadow: var(--sm-shadow-1);
   border: 1px solid var(--btn-border-color);
   border-radius: var(--border-radius);
-
   font-family: var(--font-family-widget);
   font-size: inherit;
   font-weight: 600;
   text-decoration: none;
-
   cursor: pointer;
 }
 :is(button, .button, input[type=submit], input[type=reset]):hover {
   color: var(--btn-fg-color-hover);
   background: var(--btn-bg-color-hover);
-
   text-decoration: none;
 }
 :is(button, .button, input[type=submit], input[type=reset]):active {
   color: var(--btn-fg-color-active);
   background: var(--btn-bg-color-active);
+  box-shadow: var(--sm-shadow-1-inset);
 }
 :is(button, .button, input[type=submit], input[type=reset]).active {
   color: var(--btn-fg-color-selected);
   background: var(--btn-bg-color-selected);
+  box-shadow: var(--sm-shadow-1-inset);
 }
 :is(button, .button, input[type=submit], input[type=reset]):is(:disabled, .disabled) {
   outline: none;
@@ -144,12 +143,10 @@ input[type=submit].active {
   padding: 0.325rem;
   width: max-content;
   height: max-content;
-
   display: inline-flex;
   flex-flow: row;
   align-items: center;
   justify-content: center;
-
   border-color: transparent;
   border-radius: 100%;
 }
