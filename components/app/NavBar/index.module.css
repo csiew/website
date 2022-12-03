@@ -41,9 +41,6 @@ header {
 .navMenuBubble::before {
   animation: callToActionIndicator infinite linear 2s;
 }
-header:hover .navMenuBubble::before {
-  animation: none;
-}
 
 .navMenuBubbleActive::before,
 .navMenuBubble:hover::before {
