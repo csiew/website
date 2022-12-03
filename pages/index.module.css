@@ -2,12 +2,6 @@
   padding: 2rem 0rem;
 }
 
-@media (max-width: 768px) {
-  .pageHome {
-    padding: 0rem;
-  }
-}
-
 .pageHome .profile {
   width: 128px;
   height: 128px;
@@ -15,15 +9,6 @@
   float: right;
   border-radius: 100%;
   -webkit-user-drag: none;
-}
-
-@media (max-width: 768px) {
-  .pageHome .profile {
-    margin: 0rem auto 2rem auto;
-    float: none;
-    display: block;
-    box-shadow: none;
-  }
 }
 
 .pageHome section {
@@ -35,4 +20,21 @@
 }
 .pageHome section:first-of-type {
   font-size: 1.75rem;
+}
+
+@media (max-width: 768px) {
+  .pageHome {
+    padding: 0rem;
+  }
+
+  .pageHome section:first-of-type {
+    font-size: 1.25rem;
+  }
+
+  .pageHome .profile {
+    margin: 0rem auto 2rem auto;
+    float: none;
+    display: block;
+    box-shadow: none;
+  }
 }

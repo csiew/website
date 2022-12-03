@@ -65,6 +65,8 @@
   color: var(--btn-fg-color-active);
   background: var(--btn-bg-color-active);
   box-shadow: var(--sm-shadow-1-inset);
+  transform: translateY(5%);
+  transition: var(--transition);
 }
 :is(button, .button, input[type=submit], input[type=reset]).active {
   color: var(--btn-fg-color-selected);

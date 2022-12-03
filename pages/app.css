@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Murecho:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
 :root {
   --font-family-system: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   --font-family-base: 'Murecho', var(--font-family-system);
@@ -9,6 +7,7 @@
   --font-family-monospace: Monaco, Menlo, 'Cascadia Mono', 'Cascadia Code', 'Ubuntu Mono', 'Noto Mono', 'Courier New', Courier, monospace;
 
   --border-radius: 9px;
+  --transition: 0.25s;
 }
 
 * {
@@ -27,6 +26,7 @@ html, body, #__next {
   flex-flow: column;
   align-items: flex-start;
   justify-content: flex-start;
+  scroll-behavior: smooth;
 }
 
 @media (max-width: 767px) {
@@ -109,7 +109,6 @@ main {
   width: 100%;
   margin: 0rem auto auto auto;
   padding: 0;
-
   display: inline-flex;
   flex-flow: column;
   align-items: flex-start;
@@ -136,9 +135,7 @@ article.topLevelPage h2 {
   height: max-content;
   margin: 0rem 0rem 2rem 0rem;
   padding: 0rem 0rem 0.25rem 0rem;
-
   color: var(--fg-color);
-
   font-size: 2rem;
   font-weight: 900;
   letter-spacing: 0.05rem;
@@ -204,7 +201,64 @@ select:is(:disabled, .disabled) {
   pointer-events: none;
 }
 
+.randomAnimationBar {
+  content: '';
+  width: 100%;
+  height: 4px;
+  margin: 0;
+  top: 0;
+  padding: 4px;
+  position: relative;
+  z-index: 0;
+  display: block;
+  background-image: linear-gradient(
+    to right,
+    yellow,
+    gold,
+    orange,
+    orangered,
+    red,
+    brown,
+    purple,
+    blue,
+    steelblue,
+    skyblue,
+    turquoise,
+    limegreen,
+    yellowgreen,
+    yellow
+  );
+  animation: randomAnimationBarInPlace infinite linear 16s;
+  filter: blur(16px);
+  pointer-events: none;
+}
+.randomAnimationBar:-moz-window-inactive {
+  animation: none;
+}
+
+@media (max-width: 767px) {
+  .randomAnimationBar {
+    display: none;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .randomAnimationBar {
+    padding: 12px;
+    filter: blur(32px) saturate(2);
+  }
+}
+
+@keyframes randomAnimationBarInPlace {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: 100vw 0px;
+  }
+}
+
 @import url('./colors.css');
+@import url('../assets/murecho/index.css');
 
 @import url('../components/ui/Alert/index.module.css');
 @import url('../components/ui/Button/index.module.css');
@@ -216,7 +270,6 @@ select:is(:disabled, .disabled) {
 @import url('../components/ui/TextField/index.module.css');
 @import url('../components/ui/Toolbar/index.module.css');
 
-@import url('../components/app/BackToHome/index.module.css');
 @import url('../components/app/BackToTop/index.module.css');
 @import url('../components/app/BlogNavigationView/index.module.css');
 @import url('../components/app/Footer/index.module.css');
