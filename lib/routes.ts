@@ -3,8 +3,7 @@ import { PageRoute } from "./@types";
 const routes: PageRoute[] = [
   {
     title: "Home",
-    path: "/",
-    hideFromNavBar: true,
+    path: "/"
   },
   {
     title: "Blog",

@@ -21,6 +21,7 @@ const AppContainer = ({ Component, pageProps }: any) => {
       <main>
         <Component {...pageProps} />
         <BackToTop />
+        <div className="randomAnimationBar"></div>
       </main>
     </>
   );

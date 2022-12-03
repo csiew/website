@@ -2,12 +2,10 @@
   width: min-content;
   margin-inline: auto;
   padding: 1rem;
-
   display: inline-flex;
   flex-flow: row;
   align-items: center;
   justify-content: center;
-
   position: sticky;
   bottom: 0;
   z-index: 150;
@@ -15,17 +13,14 @@
 .backToTopFloat :is(button, .button, input[type=submit], input[type=reset]) {
   margin: 0;
   padding: 0.5rem 1rem;
-
   display: inline-flex;
   flex-flow: row;
   align-items: center;
   justify-content: center;
-
   background: var(--bg-color);
   border-radius: 64px;
   box-shadow: 0px 2px 4px var(--shadow-4);
   opacity: 0.75;
-
   transition: 0.2s;
 }
 .backToTopFloat :is(button, .button, input[type=submit], input[type=reset]):hover {
