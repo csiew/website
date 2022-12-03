@@ -1,9 +1,9 @@
 .backToTopFloat {
-  width: min-content;
+  width: 100%;
   margin-inline: auto;
   padding: 1rem;
   display: inline-flex;
-  flex-flow: row;
+  flex-flow: column;
   align-items: center;
   justify-content: center;
   position: sticky;
@@ -36,4 +36,17 @@
 
 :is(button, .button, input[type=submit], input[type=reset]).hiddenKeepHeight {
   visibility: hidden;
+}
+
+@media (max-width: 767px) {
+  .backToTopFloat {
+    width: min-content;
+    margin-inline: auto 0;
+    padding: 0.25rem;
+    right: 0;
+  }
+  .backToTopFloat :is(button, .button, input[type=submit], input[type=reset]) {
+    padding: 0.5rem;
+    border-radius: 100%;
+  }
 }

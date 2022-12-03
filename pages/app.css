@@ -26,6 +26,7 @@ html, body, #__next {
   flex-flow: column;
   align-items: flex-start;
   justify-content: flex-start;
+  scroll-behavior: smooth;
 }
 
 @media (max-width: 767px) {
@@ -108,7 +109,6 @@ main {
   width: 100%;
   margin: 0rem auto auto auto;
   padding: 0;
-
   display: inline-flex;
   flex-flow: column;
   align-items: flex-start;
@@ -135,9 +135,7 @@ article.topLevelPage h2 {
   height: max-content;
   margin: 0rem 0rem 2rem 0rem;
   padding: 0rem 0rem 0.25rem 0rem;
-
   color: var(--fg-color);
-
   font-size: 2rem;
   font-weight: 900;
   letter-spacing: 0.05rem;
@@ -206,11 +204,12 @@ select:is(:disabled, .disabled) {
 .randomAnimationBar {
   content: '';
   width: 100%;
-  height: 24px;
-  margin: auto 0px 0px 0px;
-  bottom: 0;
-  padding: 0;
+  height: 4px;
+  margin: 0;
+  top: 0;
+  padding: 4px;
   position: relative;
+  z-index: 0;
   display: block;
   background-image: linear-gradient(
     to right,
@@ -226,25 +225,26 @@ select:is(:disabled, .disabled) {
     skyblue,
     turquoise,
     limegreen,
-    yellowgreen
+    yellowgreen,
+    yellow
   );
-  animation: randomAnimationBarInPlace infinite linear 8s;
-  filter: blur(64px);
+  animation: randomAnimationBarInPlace infinite linear 16s;
+  filter: blur(16px);
   pointer-events: none;
 }
 .randomAnimationBar:-moz-window-inactive {
   animation: none;
 }
 
-@media (prefers-color-scheme: light) {
-  .randomAnimationBar {
-    filter: blur(48px) saturate(2) brightness(0.75);
-  }
-}
-
 @media (max-width: 767px) {
   .randomAnimationBar {
     display: none;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .randomAnimationBar {
+    padding: 12px;
+    filter: blur(32px) saturate(2);
   }
 }
 
@@ -257,9 +257,8 @@ select:is(:disabled, .disabled) {
   }
 }
 
-@import url('../assets/murecho/index.css');
-
 @import url('./colors.css');
+@import url('../assets/murecho/index.css');
 
 @import url('../components/ui/Alert/index.module.css');
 @import url('../components/ui/Button/index.module.css');
@@ -271,13 +270,12 @@ select:is(:disabled, .disabled) {
 @import url('../components/ui/TextField/index.module.css');
 @import url('../components/ui/Toolbar/index.module.css');
 
-@import url('../components/app/BackToHome/index.module.css');
 @import url('../components/app/BackToTop/index.module.css');
 @import url('../components/app/BlogNavigationView/index.module.css');
 @import url('../components/app/Footer/index.module.css');
 @import url('../components/app/ContactForm/index.module.css');
 @import url('../components/app/MustWatchBadge/index.module.css');
-@import url('../components/app/NavBar/index.module.css');
+@import url('../components/app/Navbar/index.module.css');
 @import url('../components/app/NowWatchingShowCard/index.module.css');
 @import url('../components/app/PlaylistCard/index.module.css');
 @import url('../components/app/ProjectCard/index.module.css');

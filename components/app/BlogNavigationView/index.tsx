@@ -2,9 +2,7 @@ import React from "react";
 import ReactMarkdown from "react-markdown";
 import { BlogPost, generatePathString } from "../../../lib/blog";
 import NavigationView from "../../ui/NavigationView";
-import Paper from "../../ui/Paper";
 import { relativeTime } from "../../../lib/timestamp";
-import Button from "../../ui/Button";
 
 type BlogNavigationViewProps = {
   posts: BlogPost[];
@@ -14,15 +12,6 @@ type BlogNavigationViewProps = {
 const BlogNavigationView = ({ posts, post }: BlogNavigationViewProps) => {
   return (
     <>
-      {
-        post
-          ? (
-            <div style={{ width: "100%", padding: "1rem" }}>
-              <Button variant="link" url="/blog">Back</Button>
-            </div>
-          )
-          : <></>
-      }
       <NavigationView
         classList={[post ? "pageBlogPost" : "pageBlog"]}
         content={(
@@ -47,6 +36,10 @@ const BlogNavigationView = ({ posts, post }: BlogNavigationViewProps) => {
                       {decodeURI(post?.content || "")}
                     </ReactMarkdown>
                   </div>
+                  <hr />
+                  <p style={{ width: "100%", textAlign: "center" }}>
+                    <small><a href="/blog">&larr; See all posts</a></small>
+                  </p>
                 </>
                 :
                 <>
