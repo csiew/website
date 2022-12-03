@@ -6,7 +6,7 @@ import { PageRoute } from "../../../lib/@types";
 import Button from "../../ui/Button";
 import config from "../../../config";
 
-const Navbar = () => {
+const NavBar = () => {
   const router = useRouter();
   const [showMenu, setShowMenu] = useState<boolean>(false);
   const [menuCoordinates, setMenuCoordinates] = useState<[number, number]>([0, 0]);
@@ -62,4 +62,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default NavBar;

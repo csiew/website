@@ -1,7 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import "./app.css";
-import Navbar from "../components/app/Navbar";
+import NavBar from "../components/app/NavBar";
 import BackToTop from "../components/app/BackToTop";
 import config from "../config";
 
@@ -18,7 +18,7 @@ const AppContainer = ({ Component, pageProps }: any) => {
         <title>Clarence Siew</title>
       </Head>
       <div className="randomAnimationBar"></div>
-      <Navbar />
+      <NavBar />
       <main>
         <Component {...pageProps} />
         <BackToTop />
