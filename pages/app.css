@@ -275,7 +275,7 @@ select:is(:disabled, .disabled) {
 @import url('../components/app/Footer/index.module.css');
 @import url('../components/app/ContactForm/index.module.css');
 @import url('../components/app/MustWatchBadge/index.module.css');
-@import url('../components/app/Navbar/index.module.css');
+@import url('../components/app/NavBar/index.module.css');
 @import url('../components/app/NowWatchingShowCard/index.module.css');
 @import url('../components/app/PlaylistCard/index.module.css');
 @import url('../components/app/ProjectCard/index.module.css');
