@@ -37,6 +37,14 @@ header {
   filter: blur(4px);
   transition: var(--transition);
 }
+
+.navMenuBubble::before {
+  animation: callToActionIndicator infinite linear 2s;
+}
+header:hover .navMenuBubble::before {
+  animation: none;
+}
+
 .navMenuBubbleActive::before,
 .navMenuBubble:hover::before {
   background-image: linear-gradient(
@@ -118,6 +126,34 @@ header {
   100% {
     filter: blur(32px) saturate(2);
     transform: scale(2);
+  }
+}
+
+@keyframes callToActionIndicator {
+  0% {
+    opacity: 1;
+    border-width: 1px;
+    border-style: double;
+    border-color: var(--fg-color);
+    padding: 0;
+    filter: none;
+  }
+  25% {
+    padding: 2rem;
+  }
+  50% {
+    padding: 3rem;
+    opacity: 0.1;
+  }
+  75% {
+    padding: 1rem;
+  }
+  100% {
+    opacity: 0;
+    border-width: 64px;
+    border-color: var(--bg-color);
+    padding: 0;
+    filter: none;
   }
 }
 
