@@ -221,6 +221,14 @@ nav li.active a {
   font-weight: bold;
 }
 
+nav .versionTag {
+  width: 100%;
+  padding-block: 0rem 0.5rem;
+  padding-inline: 0.75rem;
+  color: var(--fg-color-5);
+  user-select: none;
+}
+
 @keyframes floatNavMenuEnter {
   0% {
     opacity: 0%;

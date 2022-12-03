@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import routes from "../../../lib/routes";
 import { PageRoute } from "../../../lib/@types";
 import Button from "../../ui/Button";
+import config from "../../../config";
 
 const Navbar = () => {
   const router = useRouter();
@@ -46,6 +47,10 @@ const Navbar = () => {
                     })
                 }
               </ul>
+              <hr />
+              <p className="versionTag">
+                <small>Version {config.version}</small>
+              </p>
               <Button variant="reset" className="floatNavMenuClose" onClick={() => setShowMenu(false)}>
                 Close
               </Button>
