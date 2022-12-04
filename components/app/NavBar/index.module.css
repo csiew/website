@@ -32,18 +32,6 @@ header {
   padding: 0;
   position: absolute;
   display: inline-block;
-  background-image: none;
-  border-radius: 100%;
-  filter: blur(4px);
-  transition: var(--transition);
-}
-
-.navMenuBubble::before {
-  animation: callToActionIndicator infinite linear 2s;
-}
-
-.navMenuBubbleActive::before,
-.navMenuBubble:hover::before {
   background-image: linear-gradient(
     to bottom right,
     yellow,
@@ -61,8 +49,9 @@ header {
     yellowgreen,
     yellow
   );
-  animation: profilePicHover infinite alternate linear 5s;
+  border-radius: 100%;
   filter: blur(16px);
+  animation: profilePicHover infinite linear 5s;
   transition: var(--transition);
 }
 .navMenuBubble:is(:focus, :focus-visible, :active)::before {
@@ -81,7 +70,11 @@ header {
   padding: 0;
   position: absolute;
   display: inline-block;
+  border-width: 3px;
+  border-style: solid;
+  border-color: var(--bg-color);
   border-radius: 100%;
+  box-shadow: 0px 4px 8px var(--shadow-4);
   cursor: pointer;
   transform: scale(1);
   transition: var(--transition);
@@ -95,6 +88,10 @@ header {
 .navMenuBubble img:active {
   transform: scale(0.95);
   transition: var(--transition);
+}
+
+.navMenuBubbleActive img {
+  border-color: var(--primary-color);
 }
 
 @keyframes profilePicHover {
@@ -177,14 +174,7 @@ header {
     position: relative;
   }
   .navMenuBubble img {
-    box-shadow: 0px 2px 4px var(--shadow-4);
-  }
-
-  .navMenuBubble::before,
-  .navMenuBubble:hover::before,
-  .navMenuBubble:active::before {
-    background-image: none;
-    animation: none;
+    box-shadow: 0px 2px 4px var(--shadow-1);
   }
 }
 

@@ -17,7 +17,6 @@ const AppContainer = ({ Component, pageProps }: any) => {
         <link rel="shortcut icon" href="/profile.jpg" />
         <title>Clarence Siew</title>
       </Head>
-      <div className="randomAnimationBar"></div>
       <NavBar />
       <main>
         <Component {...pageProps} />
