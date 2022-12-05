@@ -255,7 +255,8 @@ nav .versionTag {
 @keyframes floatNavMenuEnter {
   0% {
     opacity: 0%;
-    transform: scale(0.25, 0.75) translate(-64px, -50vw);
+    scale: 0.25 0.75;
+    translate: -64px -50vw;
     pointer-events: none;
     cursor: not-allowed;
   }
@@ -264,7 +265,8 @@ nav .versionTag {
   }
   100% {
     opacity: 100%;
-    transform: scale(1) translate(0px, 0px);
+    scale: 1;
+    translate: 0 0;
     pointer-events: all;
     cursor: auto;
   }

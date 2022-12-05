@@ -201,6 +201,23 @@ select:is(:disabled, .disabled) {
   pointer-events: none;
 }
 
+::-webkit-scrollbar,
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+  border-radius: 0px 0px var(--border-radius) 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bg-color-6);
+  border: 3px solid var(--bg-color);
+  border-radius: var(--border-radius);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--fg-color-3);
+}
+::-webkit-scrollbar-thumb:active {
+  background: var(--fg-color);
+}
+
 .randomAnimationBar {
   content: '';
   width: 100%;
