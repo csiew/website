@@ -32,33 +32,24 @@ header {
   padding: 0;
   position: absolute;
   display: inline-block;
-  background-image: linear-gradient(
-    to bottom right,
-    yellow,
-    gold,
-    orange,
-    orangered,
-    red,
-    brown,
-    purple,
-    blue,
-    steelblue,
-    skyblue,
-    turquoise,
-    limegreen,
-    yellowgreen,
-    yellow
-  );
+  background: rgba(0, 0, 0, 0.5);
   border-radius: 100%;
-  filter: blur(16px);
-  animation: profilePicHover infinite linear 5s;
+  animation: profilePicHover infinite linear 2s;
+  scale: 1;
+  opacity: 0.25;
   transition: var(--transition);
 }
-.navMenuBubble:is(:focus, :focus-visible, :active)::before {
+@media (prefers-color-scheme: dark) {
+  .navMenuBubble::before {
+    background: rgba(255, 255, 255, 0.75);
+  }
+}
+.navMenuBubble:is(:focus, :focus-visible, :active)::before,
+.navMenuBubble.navMenuBubbleActive:is(:focus, :focus-visible, :active)::before {
   background-position: 0px 0px;
   animation: profilePicActive forwards ease var(--transition);
-  filter: blur(16px) brightness(1);
-  transform: scale(1);
+  scale: 1;
+  filter: brightness(1);
 }
 
 .navMenuBubble img {
@@ -76,78 +67,52 @@ header {
   border-radius: 100%;
   box-shadow: 0px 4px 8px var(--shadow-4);
   cursor: pointer;
-  transform: scale(1);
+  scale: 1;
   transition: var(--transition);
   user-select: none;
   -webkit-user-drag: none;
 }
 .navMenuBubble img:hover {
-  transform: scale(1.0625);
+  scale: 1.0625;
   transition: var(--transition);
 }
 .navMenuBubble img:active {
-  transform: scale(0.95);
+  scale: 0.95;
   transition: var(--transition);
 }
 
 .navMenuBubbleActive img {
   border-color: var(--primary-color);
 }
+.navMenuBubble.navMenuBubbleActive::before {
+  animation: none;
+}
 
 @keyframes profilePicHover {
   0% {
-    background-position: 128px -128px;
-    filter: blur(16px) saturate(1);
+    opacity: 0.25;
     transform: scale(1);
-  }
-  50% {
-    background-position: 0px 0px;
-    filter: blur(32px) saturate(2);
-    transform: scale(2);
   }
   100% {
-    background-position: -128px 128px;
-    filter: blur(16px) saturate(1);
-    transform: scale(1);
+    opacity: 0;
+    transform: scale(1.75);
   }
 }
 
 @keyframes profilePicActive {
   0% {
-    filter: blur(16px) saturate(1);
-    transform: scale(1);
+    opacity: 0.25;
+    transform: scale(1.25);
   }
   100% {
-    filter: blur(32px) saturate(2);
-    transform: scale(2);
+    opacity: 0.125;
+    transform: scale(1.75);
   }
 }
 
-@keyframes callToActionIndicator {
-  0% {
-    opacity: 1;
-    border-width: 1px;
-    border-style: double;
-    border-color: var(--fg-color);
-    padding: 0;
-    filter: none;
-  }
-  25% {
-    padding: 2rem;
-  }
-  50% {
-    padding: 3rem;
-    opacity: 0.1;
-  }
-  75% {
-    padding: 1rem;
-  }
-  100% {
-    opacity: 0;
-    border-width: 64px;
-    border-color: var(--bg-color);
-    padding: 0;
-    filter: none;
+@media (max-width: 1024px) {
+  header {
+    position: sticky;
   }
 }
 
