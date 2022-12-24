@@ -8,7 +8,7 @@ const Footer = () => {
         Version {config.version}
       </p>
       <p>
-        &copy; 2022 Clarence Siew
+        &copy; 2023 Clarence Siew
       </p>
     </footer>
   );

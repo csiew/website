@@ -18,17 +18,10 @@
   justify-content: flex-start;
   gap: 1rem;
 }
-.pageHome section:first-of-type {
-  font-size: 1.75rem;
-}
 
 @media (max-width: 768px) {
   .pageHome {
     padding: 0rem;
-  }
-
-  .pageHome section:first-of-type {
-    font-size: 1.25rem;
   }
 
   .pageHome .profile {

@@ -40,7 +40,7 @@ const Home = () => {
                 You can find me on <a href="https://github.com/csiew" target="_blank" rel="noreferrer">GitHub</a> and <a href="https://www.linkedin.com/in/clarencesiew/" target="_blank" rel="noreferrer">LinkedIn</a>. You can also find me on <a href="https://mastodon.online/@csiew" target="_blank" rel="noreferrer">Mastodon</a>, though I never post there.
               </p>
               <p>
-                You could also email me at <code>clarence (dot) siew (at) gmail (dot) com</code>.
+                You could also email me at <span className="no-select" style={{ fontWeight: "bold" }}>clarence.siew@gmail.com</span>.
               </p>
             </section>
             {

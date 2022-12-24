@@ -18,14 +18,16 @@
   align-items: center;
   justify-content: center;
   background: var(--bg-color);
-  border-radius: 64px;
-  box-shadow: 0px 2px 4px var(--shadow-4);
+  border-radius: var(--border-radius);
   opacity: 0.75;
   transition: 0.2s;
 }
 .backToTopFloat :is(button, .button, input[type=submit], input[type=reset]):hover {
-  box-shadow: 0px 4px 8px var(--shadow-2);
+  box-shadow: var(--preset-shadow-widget);
   opacity: 1;
+}
+.backToTopFloat :is(button, .button, input[type=submit], input[type=reset]):active {
+  box-shadow: none;
 }
 .backToTopFloat :is(button, .button, input[type=submit], input[type=reset]) svg {
   width: 1.25rem;

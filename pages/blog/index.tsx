@@ -22,8 +22,9 @@ const Blog = ({ posts }: { posts: BlogPost[] }) => {
 };
 
 export const getStaticProps = async () => {
+  const posts = getPosts();
   return {
-    props: { posts: getPosts() }
+    props: { posts }
   };
 };
 

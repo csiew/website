@@ -1,30 +1,32 @@
 :root {
-  --fg-color: #000000;
-  --fg-color-1: #111111;
-  --fg-color-2: #222222;
-  --fg-color-3: #333333;
-  --fg-color-4: #3a3a3a;
-  --fg-color-5: #3c3c3c;
-  --fg-color-6: #3e3e3e;
-  --fg-color-7: #444444;
-  --fg-color-8: #4a4a4a;
-  --fg-color-9: #555555;
+  --fg-color: rgb(5, 4, 0);
+  --fg-color-1: rgb(25, 24, 20);
+  --fg-color-2: rgb(45, 44, 40);
+  --fg-color-3: rgb(65, 64, 60);
+  --fg-color-4: rgb(85, 84, 80);
+  --fg-color-5: rgb(105, 104, 100);
+  --fg-color-6: rgb(125, 124, 120);
+  --fg-color-7: rgb(145, 144, 140);
+  --fg-color-8: rgb(165, 164, 160);
+  --fg-color-9: rgb(195, 194, 190);
 
-  --bg-color: #f5f5f5;
-  --bg-color-1: #eeeeee;
-  --bg-color-2: #e5e5e5;
-  --bg-color-3: #dddddd;
-  --bg-color-4: #d5d5d5;
-  --bg-color-5: #cccccc;
-  --bg-color-6: #c5c5c5;
-  --bg-color-7: #dddddd;
+  --bg-color: rgb(255, 255, 255);
+  --bg-color-1: rgb(249, 248, 244);
+  --bg-color-2: rgb(243, 242, 238);
+  --bg-color-3: rgb(237, 236, 232);
+  --bg-color-4: rgb(231, 230, 226);
+  --bg-color-5: rgb(225, 224, 220);
+  --bg-color-6: rgb(219, 218, 214);
+  --bg-color-7: rgb(213, 212, 208);
+  --bg-color-8: rgb(207, 206, 202);
+  --bg-color-9: rgb(201, 200, 196);
 
-  --border-color: #cccccc;
+  --border-color: rgb(195, 194, 190);
 
-  --primary-color: #029d02;
-  --primary-color-1: #12ad12;
-  --primary-color-2: #22bd22;
-  --primary-color-3: #32cd32;
+  --primary-color: rgb(188, 155, 52);
+  --primary-color-1: rgb(182, 149, 46);
+  --primary-color-2: rgb(176, 143, 40);
+  --primary-color-3: rgb(170, 137, 34);
 
   --shadow: none;
   --shadow-1: rgba(0, 0, 0, 0.5);
@@ -33,43 +35,8 @@
   --shadow-4: rgba(0, 0, 0, 0.125);
   --shadow-5: rgba(0, 0, 0, 0.06125);
 
-  --sm-shadow: none;
-  --sm-shadow-1: none;
-  --sm-shadow-1-inset: none;
-  --sm-shadow-2: none;
-  --sm-shadow-3: none;
-  --sm-shadow-4: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --fg-color: #eeeeee;
-    --fg-color-1: #e0e0e0;
-    --fg-color-2: #dddddd;
-    --fg-color-3: #d0d0d0;
-    --fg-color-4: #cccccc;
-    --fg-color-5: #c0c0c0;
-    --fg-color-6: #bbbbbb;
-    --fg-color-7: #b0b0b0;
-    --fg-color-8: #aaaaaa;
-    --fg-color-9: #a0a0a0;
-  
-    --bg-color: #1e1e1e;
-    --bg-color-1: #222222;
-    --bg-color-2: #2e2e2e;
-    --bg-color-3: #333333;
-    --bg-color-4: #3e3e3e;
-    --bg-color-5: #444444;
-    --bg-color-6: #4e4e4e;
-    --bg-color-7: #555555;
-
-    --border-color: #555555;
-  
-    --shadow: none;
-    --shadow-1: rgba(0, 0, 0, 0.75);
-    --shadow-2: rgba(0, 0, 0, 0.5);
-    --shadow-3: rgba(0, 0, 0, 0.325);
-    --shadow-4: rgba(0, 0, 0, 0.25);
-    --shadow-5: rgba(0, 0, 0, 0.125);
-  }
+  --preset-shadow-widget: 2px 2px 0px rgba(0, 0, 0, 0.125);
+  --preset-shadow-widget-inset: -2px -2px 0px rgba(0, 0, 0, 0.125);
+  --preset-shadow-component: 4px 4px 0px rgba(0, 0, 0, 0.125);
+  --preset-shadow-textfield: -2px -2px 0px rgba(0, 0, 0, 0.125);
 }
