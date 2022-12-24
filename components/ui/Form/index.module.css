@@ -7,7 +7,7 @@ form .question {
   gap: 0.25rem;
 }
 form .question label {
-  color: var(--fg-color-9);
+  color: var(--fg-color-5);
   font-size: 0.8rem;
   font-weight: bold;
   font-family: var(--font-family-widget);
