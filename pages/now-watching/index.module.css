@@ -111,9 +111,7 @@ article.topLevelPage.pageNowWatching section.acknowledgements {
   width: 100%;
   flex-grow: 1;
   flex-shrink: 3;
-
-  color: var(--fg-color-9);
-
+  color: var(--fg-color-5);
   font-weight: 600;
   text-align: right;
 }
