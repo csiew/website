@@ -3,7 +3,7 @@
   padding: 0.5rem 0.75rem;
   color: var(--fg-color);
   background: var(--bg-color);
-  box-shadow: var(--sm-shadow-3);
+  box-shadow: var(--preset-shadow-textfield);
   border-width: 1px;
   border-style: solid;
   border-color: var(--border-color);

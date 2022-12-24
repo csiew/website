@@ -3,6 +3,7 @@ import ReactMarkdown from "react-markdown";
 import { BlogPost, generatePathString } from "../../../lib/blog";
 import NavigationView from "../../ui/NavigationView";
 import { relativeTime } from "../../../lib/timestamp";
+import Link from "next/link";
 
 type BlogNavigationViewProps = {
   posts: BlogPost[];
@@ -38,7 +39,7 @@ const BlogNavigationView = ({ posts, post }: BlogNavigationViewProps) => {
                   </div>
                   <hr />
                   <p style={{ width: "100%", textAlign: "center" }}>
-                    <small><a href="/blog">&larr; See all posts</a></small>
+                    <small><Link href="/blog">&larr; See all posts</Link></small>
                   </p>
                 </>
                 :

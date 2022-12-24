@@ -1,6 +1,7 @@
 a.playlistCard,
 a.playlistCard:hover {
   text-decoration: none;
+  transition: var(--transition);
 }
 .playlistCard {
   width: 100%;

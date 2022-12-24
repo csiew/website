@@ -6,7 +6,7 @@
 
   display: inline-flex;
   flex-flow: column;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
 
   position: fixed;
@@ -35,11 +35,9 @@
 }
 
 .modalWindow {
-  max-width: 800px;
+  max-width: 920px;
   width: 100%;
-  max-height: 1024px;
-  min-height: 400px;
-  height: 90%;
+  height: 100%;
   margin: 0;
   padding: 0;
   display: inline-flex;
@@ -48,8 +46,6 @@
   justify-content: flex-start;
   color: var(--fg-color);
   background: var(--bg-color);
-  box-shadow: 0px 4px 16px var(--shadow-2);
-  border-radius: var(--border-radius);
   animation-name: modalWindowTransitionIn;
   animation-duration: 0.25s;
 }
@@ -61,13 +57,13 @@
 @keyframes modalWindowTransitionIn {
   0% {
     opacity: 0;
-    scale: 0.75;
+    translate: 100vw 0;
     pointer-events: none;
     cursor: not-allowed;
   }
   100% {
     opacity: 1;
-    scale: 1;
+    translate: 0;
     pointer-events: all;
     cursor: auto;
   }

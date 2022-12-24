@@ -3,58 +3,64 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import routes from "../../../lib/routes";
 import { PageRoute } from "../../../lib/@types";
+import Modal from "../../ui/Modal";
 import Button from "../../ui/Button";
-import config from "../../../config";
+import { MdMenu } from "react-icons/md";
 
 const NavBar = () => {
   const router = useRouter();
   const [showMenu, setShowMenu] = useState<boolean>(false);
-  const [menuCoordinates, setMenuCoordinates] = useState<[number, number]>([0, 0]);
 
   return (
     <>
       <header>
-        <div
-          className={["navMenuBubble", showMenu ? "navMenuBubbleActive" : ""].join(" ")}
-          onClick={(ev: any) => {
-            const newState = !showMenu;
-            setShowMenu(newState);
-            if (newState) {
-              const coords = ev.target.getBoundingClientRect() ?? {};
-              setMenuCoordinates([coords.left, coords.top + coords.height + 8]);
+        <h1>
+          <a href="/">Clarence Siew</a>
+        </h1>
+        <nav className="navbar-menu">
+          <ul>
+            {
+              routes
+                .filter((route) => !route.hideFromNavBar)
+                .map((route: PageRoute) => {
+                  return (
+                    <li
+                      key={route.path}
+                      className={router.pathname === route.path ? "active" : ""}>
+                      <Link href={route.path}>{route.title}</Link>
+                    </li>
+                  );
+                })
             }
-          }}>
-          <img src="/profile.jpg" />
-        </div>
+          </ul>
+        </nav>
+        <Button id="overlay-menu-btn" onClick={() => setShowMenu(true)} iconOnly>
+          <MdMenu />
+        </Button>
       </header>
       {
         showMenu
           ? (
-            <nav style={{ left: `${menuCoordinates[0]}px`, top: `${menuCoordinates[1]}px` }}>
-              <ul>
-                {
-                  routes
-                    .filter((route) => !route.hideFromNavBar)
-                    .map((route: PageRoute) => {
-                      return (
-                        <li
-                          key={route.path}
-                          className={router.pathname === route.path ? "active" : ""}
-                          onClick={() => setShowMenu(false)}>
-                          <Link href={route.path}>{route.title}</Link>
-                        </li>
-                      );
-                    })
-                }
-              </ul>
-              <hr />
-              <p className="versionTag">
-                <small>Version {config.version}</small>
-              </p>
-              <Button variant="reset" className="floatNavMenuClose" onClick={() => setShowMenu(false)}>
-                Close
-              </Button>
-            </nav>
+            <Modal closeWindowCallback={() => setShowMenu(false)}>
+              <nav className="overlay-menu">
+                <ul>
+                  {
+                    routes
+                      .filter((route) => !route.hideFromNavBar)
+                      .map((route: PageRoute) => {
+                        return (
+                          <li
+                            key={route.path}
+                            className={router.pathname === route.path ? "active" : ""}
+                            onClick={() => setShowMenu(false)}>
+                            <Link href={route.path}>{route.title}</Link>
+                          </li>
+                        );
+                      })
+                  }
+                </ul>
+              </nav>
+            </Modal>
           )
           : <></>
       }

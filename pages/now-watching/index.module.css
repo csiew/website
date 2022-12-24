@@ -4,7 +4,7 @@ article.topLevelPage.pageNowWatching {
 
 article.topLevelPage.pageNowWatching section.acknowledgements {
   margin-top: 1rem;
-  color: var(--fg-color-9);
+  color: var(--fg-color-5);
   text-align: center;
 }
 
@@ -74,8 +74,9 @@ article.topLevelPage.pageNowWatching section.acknowledgements {
 }
 
 .showInfo img {
+  border: var(--border-width) solid var(--border-color);
   border-radius: 5px;
-  box-shadow: 0px 4px 8px var(--shadow-2);
+  box-shadow: var(--preset-shadow-component);
 }
 
 .showInfo.column {
@@ -92,13 +93,11 @@ article.topLevelPage.pageNowWatching section.acknowledgements {
 .showDataDetails {
   width: 100%;
   margin: 0;
-
   display: inline-flex;
   flex-flow: column;
   align-items: stretch;
   justify-content: flex-start;
   gap: 0.25rem;
-
   font-family: var(--font-family-widget);
 }
 .showDataDetails .row {

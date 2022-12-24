@@ -5,6 +5,7 @@ export type PageRoute = {
 };
 
 export type BaseComponentProps = {
+  id?: string;
   classList?: string[];
   className?: string;
   disabled?: boolean;

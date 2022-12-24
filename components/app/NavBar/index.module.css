@@ -1,167 +1,88 @@
 header {
-  width: min-content;
+  width: 100%;
   margin: 0;
   top: 0;
   left: 0;
-  padding: 1rem;
-  position: fixed;
-  display: inline-flex;
-  flex-flow: column;
-  align-items: flex-start;
-  justify-content: center;
-}
-
-.navMenuBubble {
-  width: 64px;
-  height: 64px;
-  margin: 0;
-  top: 0;
-  left: 0;
-  padding: 0;
+  padding: 0.5rem 1rem;
+  z-index: 100;
   position: relative;
   display: inline-flex;
-  flex-flow: column;
+  flex-flow: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  background: none;
 }
-.navMenuBubble::before {
-  content: '';
-  width: 100%;
-  height: 100%;
+
+header h1 {
   margin: 0;
   padding: 0;
-  position: absolute;
-  display: inline-block;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 100%;
-  animation: profilePicHover infinite linear 2s;
-  scale: 1;
-  opacity: 0.25;
-  transition: var(--transition);
 }
-@media (prefers-color-scheme: dark) {
-  .navMenuBubble::before {
-    background: rgba(255, 255, 255, 0.75);
-  }
-}
-.navMenuBubble:is(:focus, :focus-visible, :active)::before,
-.navMenuBubble.navMenuBubbleActive:is(:focus, :focus-visible, :active)::before {
-  background-position: 0px 0px;
-  animation: profilePicActive forwards ease var(--transition);
-  scale: 1;
-  filter: brightness(1);
-}
-
-.navMenuBubble img {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  top: 0;
-  left: 0;
-  padding: 0;
-  position: absolute;
-  display: inline-block;
-  border-width: 3px;
-  border-style: solid;
-  border-color: var(--bg-color);
-  border-radius: 100%;
-  box-shadow: 0px 4px 8px var(--shadow-4);
-  cursor: pointer;
-  scale: 1;
-  transition: var(--transition);
-  user-select: none;
-  -webkit-user-drag: none;
-}
-.navMenuBubble img:hover {
-  scale: 1.0625;
-  transition: var(--transition);
-}
-.navMenuBubble img:active {
-  scale: 0.95;
-  transition: var(--transition);
-}
-
-.navMenuBubbleActive img {
-  border-color: var(--primary-color);
-}
-.navMenuBubble.navMenuBubbleActive::before {
-  animation: none;
-}
-
-@keyframes profilePicHover {
-  0% {
-    opacity: 0.25;
-    transform: scale(1);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(1.75);
-  }
-}
-
-@keyframes profilePicActive {
-  0% {
-    opacity: 0.25;
-    transform: scale(1.25);
-  }
-  100% {
-    opacity: 0.125;
-    transform: scale(1.75);
-  }
-}
-
-@media (max-width: 1024px) {
-  header {
-    position: sticky;
-  }
-}
-
-@media (max-width: 767px) {
-  header {
-    width: min-content;
-    height: fit-content;
-    margin: auto 0 0 0;
-    top: auto;
-    bottom: 0;
-    padding: 0.25rem;
-    position: fixed;
-    z-index: 200;
-    display: inline-flex;
-    flex-flow: row;
-    align-items: center;
-    justify-content: flex-start;
-  }
-
-  .navMenuBubble,
-  .navMenuBubble img {
-    width: 48px;
-    height: 48px;
-    position: relative;
-  }
-  .navMenuBubble img {
-    box-shadow: 0px 2px 4px var(--shadow-1);
-  }
+header h1 :is(a, a:hover, a:active) {
+  color: var(--fg-color);
+  text-decoration: none;
 }
 
 nav {
-  max-width: 196px;
+  width: min-content;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: inline-flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+nav ul {
+  list-style: none;
   width: 100%;
   margin: 0;
-  padding: 0.25rem;
-  position: fixed;
+  padding: 0;
+  display: inline-flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.25rem;
+}
+nav li {
+  margin: 0;
+  padding: 0;
+  display: inline-flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: flex-start;
+  white-space: nowrap;
+  cursor: pointer;
+}
+nav li a {
+  margin: 0;
+  padding: 0.25rem 0.5rem;
+  color: var(--fg-color-8);
+  font-weight: bold;
+  text-decoration: none;
+  transition: var(--transition);
+}
+nav li a:hover {
+  color: var(--fg-color-2);
+  text-decoration: none;
+  transition: var(--transition);
+}
+nav li a:active {
+  color: var(--fg-color);
+  transition: var(--transition);
+}
+nav li.active :is(a, a:hover) {
+  color: var(--fg-color);
+  transition: var(--transition);
+}
+
+nav.overlay-menu {
+  width: 100%;
   display: inline-flex;
   flex-flow: column;
   align-items: flex-start;
   justify-content: flex-start;
-  background: var(--bg-color);
-  box-shadow: 0px 2px 4px var(--shadow-1);
-  border: 1px solid var(--border-color);
-  border-radius: var(--border-radius);
-  font-size: 0.8rem;
-  animation: floatNavMenuEnter forwards ease 0.2s;
 }
-nav ul {
-  list-style: none;
+nav.overlay-menu ul {
   width: 100%;
   margin: 0;
   padding: 0;
@@ -171,99 +92,32 @@ nav ul {
   justify-content: flex-start;
   gap: 0;
 }
-nav li {
+nav.overlay-menu li {
   width: 100%;
-  margin: 0;
-  padding: 0;
-  display: inline-flex;
+}
+nav.overlay-menu li a {
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  font-size: 2rem;
+  text-align: right;
+}
+
+#overlay-menu-btn {
+  height: min-content;
+  display: none;
   flex-flow: row;
   align-items: center;
-  justify-content: flex-start;
-  border-radius: var(--border-radius);
-  white-space: nowrap;
-  cursor: pointer;
-}
-nav li:hover {
-  background: var(--bg-color-1);
-}
-nav li:active {
-  background: var(--bg-color-2);
-}
-nav li a {
-  width: 100%;
-  padding: 0.5rem 0.75rem;
-  color: var(--fg-color);
-  font-weight: inherit;
-  text-decoration: none;
-}
-nav li a:hover {
-  color: var(--fg-color);
-  text-decoration: none;
-}
-nav li.active {
-  color: var(--bg-color);
-  background: var(--primary-color);
-}
-nav li.active a {
-  color: var(--bg-color);
-  font-weight: bold;
+  justify-content: center;
 }
 
-nav .versionTag {
-  width: 100%;
-  padding-block: 0rem 0.5rem;
-  padding-inline: 0.75rem;
-  color: var(--fg-color-5);
-  user-select: none;
-}
-
-@keyframes floatNavMenuEnter {
-  0% {
-    opacity: 0%;
-    scale: 0.25 0.75;
-    translate: -64px -50vw;
-    pointer-events: none;
-    cursor: not-allowed;
+@media (max-width: 1023px) {
+  header h1 {
+    font-size: 1.5rem;
   }
-  50% {
-    opacity: 12.5%;
+  nav.navbar-menu {
+    display: none;
   }
-  100% {
-    opacity: 100%;
-    scale: 1;
-    translate: 0 0;
-    pointer-events: all;
-    cursor: auto;
-  }
-}
-
-input.floatNavMenuClose {
-  display: none;
-}
-
-@media (max-width: 767px) {
-  nav {
-    max-width: unset;
-    width: 100%;
-    height: auto;
-    margin: 0;
-    top: auto !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    z-index: 200;
-    box-shadow: 0px -8px 32px var(--shadow-4);
-    border-width: 1px 0px 0px 0px;
-    border-radius: 0;
-    animation: none;
-  }
-
-  input.floatNavMenuClose {
-    width: 100%;
-    margin: 1rem 0rem auto 0rem;
-    bottom: 0;
-    left: 0;
-    position: sticky;
+  #overlay-menu-btn {
     display: inline-flex;
-    justify-content: center;
   }
 }

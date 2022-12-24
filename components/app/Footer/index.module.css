@@ -1,20 +1,15 @@
 footer {
   width: 100%;
   margin: auto 0 0 0;
-  padding: 2rem 1rem;
-
+  padding: 1rem;
   display: inline-flex;
   flex-flow: column;
   align-items: center;
   justify-content: center;
-
   top: auto;
   bottom: 0;
-
-  color: var(--fg-color-9);
+  color: var(--fg-color-5);
   background: none;
-  border-top: 1px solid var(--border-color);
-
   font-family: var(--font-family-widget);
-  font-size: 80%;
+  font-size: 0.75rem;
 }

@@ -1,12 +1,15 @@
+@import url('./colors.css');
+
 :root {
   --font-family-system: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  --font-family-base: 'Murecho', var(--font-family-system);
+  --font-family-base: var(--font-family-system);
   --font-family-article: var(--font-family-base);
   --font-family-header: var(--font-family-base);
   --font-family-widget: var(--font-family-base);
   --font-family-monospace: Monaco, Menlo, 'Cascadia Mono', 'Cascadia Code', 'Ubuntu Mono', 'Noto Mono', 'Courier New', Courier, monospace;
 
-  --border-radius: 9px;
+  --border-width: 1px;
+  --border-radius: 5px;
   --transition: 0.25s;
 }
 
@@ -15,6 +18,12 @@
 }
 *:focus {
   outline-color: var(--primary-color);
+}
+
+.no-select {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
 }
 
 html, body, #__next {
@@ -38,7 +47,7 @@ html, body, #__next {
 html {
   color-scheme: light dark;
   color: var(--fg-color);
-  background: var(--bg-color);
+  background: var(--bg-color-1);
   font-family: var(--font-family-base);
   font-size: 1.25rem;
   font-weight: 400;
@@ -48,7 +57,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-  line-height: 1.25;
+  line-height: 1.325;
 }
 
 hr {
@@ -138,9 +147,7 @@ article.topLevelPage h2 {
   color: var(--fg-color);
   font-size: 2rem;
   font-weight: 900;
-  letter-spacing: 0.05rem;
   text-align: center;
-  text-transform: uppercase;
 }
 
 @media (max-width: 767px) {
@@ -179,8 +186,8 @@ select {
   padding: 0.25rem;
   color: var(--fg-color);
   background: var(--bg-color);
-  box-shadow: var(--sm-shadow-1);
-  border: 1px solid var(--border-color);
+  box-shadow: var(--preset-shadow-widget);
+  border: var(--border-width) solid var(--border-color);
   border-radius: var(--border-radius);
   font-size: inherit;
   font-family: var(--font-family-widget);
@@ -191,7 +198,7 @@ select:hover {
 }
 select:active {
   background: var(--bg-color-2);
-  box-shadow: var(--sm-shadow-1-inset);
+  box-shadow: var(--preset-shadow-widget-inset);
 }
 select:is(:disabled, .disabled) {
   outline: none;
@@ -203,13 +210,12 @@ select:is(:disabled, .disabled) {
 
 ::-webkit-scrollbar,
 ::-webkit-scrollbar-track {
-  background: var(--bg-color);
+  background: var(--bg-color-1);
   border-radius: 0px 0px var(--border-radius) 0px;
 }
 ::-webkit-scrollbar-thumb {
   background: var(--bg-color-6);
-  border: 3px solid var(--bg-color);
-  border-radius: var(--border-radius);
+  border-radius: 0;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--fg-color-3);
@@ -273,9 +279,6 @@ select:is(:disabled, .disabled) {
     background-position: 100vw 0px;
   }
 }
-
-@import url('./colors.css');
-@import url('../assets/murecho/index.css');
 
 @import url('../components/ui/Alert/index.module.css');
 @import url('../components/ui/Button/index.module.css');

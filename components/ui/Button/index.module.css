@@ -47,8 +47,8 @@
   padding: 0.5rem 0.75rem;
   color: var(--btn-fg-color);
   background: var(--btn-bg-color);
-  box-shadow: var(--sm-shadow-1);
-  border: 1px solid var(--btn-border-color);
+  box-shadow: var(--preset-shadow-widget);
+  border: var(--border-width) solid var(--btn-border-color);
   border-radius: var(--border-radius);
   font-family: var(--font-family-widget);
   font-size: inherit;
@@ -64,14 +64,14 @@
 :is(button, .button, input[type=submit], input[type=reset]):active {
   color: var(--btn-fg-color-active);
   background: var(--btn-bg-color-active);
-  box-shadow: var(--sm-shadow-1-inset);
+  box-shadow: var(--preset-shadow-widget-inset);
   transform: translateY(5%);
   transition: var(--transition);
 }
 :is(button, .button, input[type=submit], input[type=reset]).active {
   color: var(--btn-fg-color-selected);
   background: var(--btn-bg-color-selected);
-  box-shadow: var(--sm-shadow-1-inset);
+  box-shadow: var(--preset-shadow-widget-inset);
 }
 :is(button, .button, input[type=submit], input[type=reset]):is(:disabled, .disabled) {
   outline: none;
@@ -149,8 +149,6 @@ input[type=submit].active {
   flex-flow: row;
   align-items: center;
   justify-content: center;
-  border-color: transparent;
-  border-radius: 100%;
 }
 :is(button, .button, input[type=submit], input[type=reset]).iconOnly svg {
   width: 1.25rem;

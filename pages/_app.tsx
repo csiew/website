@@ -4,6 +4,7 @@ import "./app.css";
 import NavBar from "../components/app/NavBar";
 import BackToTop from "../components/app/BackToTop";
 import config from "../config";
+import Footer from "../components/app/Footer";
 
 const AppContainer = ({ Component, pageProps }: any) => {
   return (
@@ -22,6 +23,7 @@ const AppContainer = ({ Component, pageProps }: any) => {
         <Component {...pageProps} />
         <BackToTop />
       </main>
+      <Footer />
     </>
   );
 };

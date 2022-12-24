@@ -7,8 +7,8 @@
   align-items: flex-start;
   color: var(--fg-color);
   background: var(--bg-color);
-  box-shadow: var(--sm-shadow-2);
-  border: 1px solid var(--border-color);
+  box-shadow: var(--preset-shadow-component);
+  border: var(--border-width) solid var(--border-color);
   border-radius: var(--border-radius);
 }
 
