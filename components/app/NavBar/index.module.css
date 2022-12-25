@@ -23,7 +23,6 @@ header h1 :is(a, a:hover, a:active) {
 }
 
 nav {
-  width: min-content;
   height: 100%;
   margin: 0;
   padding: 0;
@@ -34,7 +33,6 @@ nav {
 }
 nav ul {
   list-style: none;
-  width: 100%;
   margin: 0;
   padding: 0;
   display: inline-flex;
