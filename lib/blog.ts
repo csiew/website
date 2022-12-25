@@ -53,9 +53,12 @@ export const getPosts = (getContent = false): BlogPost[] => {
   const postFilePaths = fs.readdirSync(postsDir);
   const rawPosts: string[] = postFilePaths.map((filePath) => fs.readFileSync(path.join(postsDir, filePath)).toString("utf-8"));
   return rawPosts
-    .map((rawPost: string): BlogPost => {
-      // Transform raw multiline metadata string into tuple
-      const rawMetadata: string[][] = (rawPost.match(RegExp(/(?<=---\n)([\s\S]*?)(?=\n---\n)/gm)) || [])[0].split("\n").map((s) => s.split(": "));
+    .map((rawPost: string): BlogPost | null => {
+      const rawPostWithoutDividers = rawPost.match(RegExp(/(?<=---\n)([\s\S]*?)(?=\n---\n)/gm));
+      if (!rawPostWithoutDividers) {
+        return null;
+      }
+      const rawMetadata: string[][] = rawPostWithoutDividers[0].split("\n").map((s) => s.split(": "));
 
       // Map each tuple into Map object
       const postMap: Map<string, string | BlogPostPath> = new Map();
@@ -73,13 +76,15 @@ export const getPosts = (getContent = false): BlogPost[] => {
 
       // Encode content (only if content is to be retrieved here)
       if (getContent) {
-        const content = (rawPost.match(RegExp(/(?<=(\n---\n))[\d\s\S]*$/gm)) || [])[0];
+        const content = (rawPost.match(RegExp(/(?<=(\n---\n))[\d\s\S]*$/gm)) || [])[0] ?? "";
         postMap.set("content", encodeURI(content));
       }
 
       // Remap Map object as object
       return Object.fromEntries(postMap) as BlogPost;
     })
+    .filter((post) => !!post)
+    .map((post) => post as BlogPost)
     .sort((a, b) => {
       const dateA = new Date(a.publishedOn).getTime();
       const dateB = new Date(b.publishedOn).getTime();
