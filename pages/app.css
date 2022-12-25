@@ -218,10 +218,10 @@ select:is(:disabled, .disabled) {
   border-radius: 0;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--fg-color-3);
+  background: var(--fg-color-7);
 }
 ::-webkit-scrollbar-thumb:active {
-  background: var(--fg-color);
+  background: var(--fg-color-6);
 }
 
 .randomAnimationBar {
