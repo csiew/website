@@ -1,16 +1,29 @@
+:root {
+  --navbar-header-bg: rgb(0, 72, 72);
+  --navbar-header-fg: rgb(196, 248, 248);
+
+  --navbar-nav-fg: rgba(108, 158, 158);
+  --navbar-nav-fg-hover: rgb(148, 196, 196);
+  --navbar-nav-fg-active: rgb(196, 248, 248);
+}
+
 header {
-  width: 100%;
-  margin: 0;
+  min-width: 768px;
+  max-width: 1280px;
+  width: 90%;
+  margin: 0 auto;
   top: 0;
   left: 0;
   padding: 0.5rem 1rem;
   z-index: 100;
-  position: relative;
+  position: sticky;
   display: inline-flex;
   flex-flow: row;
   align-items: center;
   justify-content: space-between;
-  background: none;
+  color: var(--navbar-header-fg);
+  background: var(--navbar-header-bg);
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
 }
 
 header h1 {
@@ -18,7 +31,7 @@ header h1 {
   padding: 0;
 }
 header h1 :is(a, a:hover, a:active) {
-  color: var(--fg-color);
+  color: var(--navbar-header-fg);
   text-decoration: none;
 }
 
@@ -54,22 +67,22 @@ nav li {
 nav li a {
   margin: 0;
   padding: 0.25rem 0.5rem;
-  color: var(--fg-color-8);
+  color: var(--navbar-nav-fg);
   font-weight: bold;
   text-decoration: none;
   transition: var(--transition);
 }
 nav li a:hover {
-  color: var(--fg-color-2);
+  color: var(--navbar-nav-fg-hover);
   text-decoration: none;
   transition: var(--transition);
 }
 nav li a:active {
-  color: var(--fg-color);
+  color: var(--navbar-nav-fg-active);
   transition: var(--transition);
 }
 nav li.active :is(a, a:hover) {
-  color: var(--fg-color);
+  color: var(--navbar-nav-fg-active);
   transition: var(--transition);
 }
 
@@ -106,16 +119,54 @@ nav.overlay-menu li a {
   flex-flow: row;
   align-items: center;
   justify-content: center;
+  color: var(--navbar-menu-fg);
+  border: none;
+  box-shadow: none;
+}
+#overlay-menu-btn:hover {
+  color: var(--navbar-header-bg);
+  background: var(--navbar-header-fg);
 }
 
+@media (max-width: 1279px) {
+  header {
+    min-width: unset;
+    max-width: unset;
+    width: 95%;
+  }
+}
 @media (max-width: 1023px) {
+  :root {
+
+  }
   header h1 {
     font-size: 1.5rem;
   }
   nav.navbar-menu {
     display: none;
   }
+  nav.overlay-menu {
+    --navbar-menu-fg: var(--fg-color-8);
+    --navbar-menu-fg-hover: var(--fg-color-2);
+    --navbar-menu-fg-active: var(--fg-color);
+  }
+  nav.overlay-menu li a {
+    color: var(--fg-color-8);
+  }
+  nav.overlay-menu li a:hover {
+    color: var(--fg-color-2);
+  }
+  nav.overlay-menu li a:active,
+  nav.overlay-menu li.active :is(a, a:hover) {
+    color: var(--fg-color);
+  }
   #overlay-menu-btn {
     display: inline-flex;
+  }
+}
+@media (max-width: 767px) {
+  header {
+    width: 100%;
+    border-radius: 0;
   }
 }
