@@ -78,9 +78,9 @@
   .modalWindow {
     max-width: unset;
     max-height: unset;
-
     box-shadow: unset;
     border-radius: 0px;
+    animation: none;
   }
 }
 
