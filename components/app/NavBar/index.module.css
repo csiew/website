@@ -1,16 +1,17 @@
 :root {
-  --navbar-header-bg: rgb(0, 72, 72);
-  --navbar-header-fg: rgb(196, 248, 248);
+  --navbar-header-bg: var(--fg-color-3);
+  --navbar-header-fg: var(--bg-color-1);
 
-  --navbar-nav-fg: rgba(108, 158, 158);
-  --navbar-nav-fg-hover: rgb(148, 196, 196);
-  --navbar-nav-fg-active: rgb(196, 248, 248);
+  --navbar-nav-bg: none;
+  --navbar-nav-bg-hover: var(--bg-color-9);
+  --navbar-nav-bg-active: var(--bg-color-1);
+  --navbar-nav-fg: var(--bg-color-9);
+  --navbar-nav-fg-hover: var(--fg-color-3);
+  --navbar-nav-fg-active: var(--fg-color-3);
 }
 
 header {
-  min-width: 768px;
-  max-width: 1280px;
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   top: 0;
   left: 0;
@@ -23,7 +24,6 @@ header {
   justify-content: space-between;
   color: var(--navbar-header-fg);
   background: var(--navbar-header-bg);
-  border-radius: 0 0 var(--border-radius) var(--border-radius);
 }
 
 header h1 {
@@ -68,21 +68,26 @@ nav li a {
   margin: 0;
   padding: 0.25rem 0.5rem;
   color: var(--navbar-nav-fg);
+  background: var(--navbar-nav-bg);
+  border-radius: var(--border-radius);
   font-weight: bold;
   text-decoration: none;
   transition: var(--transition);
 }
 nav li a:hover {
   color: var(--navbar-nav-fg-hover);
+  background: var(--navbar-nav-bg-hover);
   text-decoration: none;
   transition: var(--transition);
 }
 nav li a:active {
   color: var(--navbar-nav-fg-active);
+  background: var(--navbar-nav-bg-active);
   transition: var(--transition);
 }
 nav li.active :is(a, a:hover) {
   color: var(--navbar-nav-fg-active);
+  background: var(--navbar-nav-bg-active);
   transition: var(--transition);
 }
 
@@ -106,9 +111,10 @@ nav.overlay-menu ul {
 nav.overlay-menu li {
   width: 100%;
 }
-nav.overlay-menu li a {
+nav.overlay-menu li :is(a, a.active) {
   width: 100%;
   padding: 0.75rem 1.5rem;
+  background: none;
   font-size: 2rem;
   text-align: right;
 }
@@ -128,17 +134,7 @@ nav.overlay-menu li a {
   background: var(--navbar-header-fg);
 }
 
-@media (max-width: 1279px) {
-  header {
-    min-width: unset;
-    max-width: unset;
-    width: 95%;
-  }
-}
 @media (max-width: 1023px) {
-  :root {
-
-  }
   header h1 {
     font-size: 1.5rem;
   }

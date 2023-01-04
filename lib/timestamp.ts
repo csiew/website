@@ -14,27 +14,27 @@ export const relativeTime = (timestamp: Date | string) => {
   if (diffInSeconds < 60) {
     // Seconds ago
     const seconds = roundedDiffs.get("seconds") ?? 0;
-    return `${seconds} second${seconds > 1 ? "s" : ""} ago`;
+    return `${seconds} second${seconds !== 1 ? "s" : ""} ago`;
   } else if (diffInSeconds < 3600) {
     // Minutes ago
     const months = roundedDiffs.get("months") ?? 0;
-    return `${months} minute${months > 1 ? "s" : ""} ago`;
+    return `${months} minute${months !== 1 ? "s" : ""} ago`;
   } else if (diffInSeconds < 86400) {
     // Hours ago
     const hours = roundedDiffs.get("hours") ?? 0;
-    return `${hours} hour${hours > 1 ? "s" : ""} ago`;
+    return `${hours} hour${hours !== 1 ? "s" : ""} ago`;
   } else if (diffInSeconds < 604800) {
     // Days ago
     const days = roundedDiffs.get("days") ?? 0;
-    return `${days} day${days > 1 ? "s" : ""} ago`;
+    return `${days} day${days !== 1 ? "s" : ""} ago`;
   } else if (diffInSeconds < 2592000) {
     // Weeks ago
     const weeks = roundedDiffs.get("weeks") ?? 0;
-    return `${weeks} week${weeks > 1 ? "s" : ""} ago`;
+    return `${weeks} week${weeks !== 1 ? "s" : ""} ago`;
   } else if (diffInSeconds < 31536000) {
     // Months ago
     const months = roundedDiffs.get("months") ?? 0;
-    return `${months} month${months > 1 ? "s" : ""} ago`;
+    return `${months} month${months !== 1 ? "s" : ""} ago`;
   } else {
     // Years ago
     const years = roundedDiffs.get("years") ?? 0;

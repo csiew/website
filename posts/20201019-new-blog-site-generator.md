@@ -1,4 +1,5 @@
 ---
+slug: new-blog-site-generator
 title: New blog - a new blog, a new static site generator ...ish
 subtitle: An experiment in static site generators
 author: Clarence Siew

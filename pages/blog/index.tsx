@@ -21,11 +21,8 @@ const Blog = ({ posts }: { posts: BlogPost[] }) => {
   );
 };
 
-export const getStaticProps = async () => {
-  const posts = getPosts();
-  return {
-    props: { posts }
-  };
-};
+export const getStaticProps = () => ({
+  props: { posts: getPosts() }
+});
 
 export default Blog;

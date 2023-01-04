@@ -1,0 +1,50 @@
+.breadcrumbs {
+  width: 100%;
+  margin: 0;
+  top: 0;
+  padding: 0.5rem 1rem;
+  position: sticky;
+  display: inline-flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: flex-start;
+  color: var(--bg-color-1);
+  background: var(--fg-color-5);
+  font-size: 0.9rem;
+}
+
+.breadcrumbs ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: inline-flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.25rem;
+}
+
+.breadcrumbs ul li {
+  margin: 0;
+  padding: 0;
+  display: inline-flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.breadcrumbs ul li::after {
+  content: '>';
+  margin-left: 0.25rem;
+}
+.breadcrumbs ul li:last-of-type::after {
+  content: none;
+}
+
+.breadcrumbs ul li span {
+  font-weight: bold;
+}
+
+.breadcrumbs ul li a {
+  color: var(--bg-color);
+  font-weight: normal;
+}

@@ -3,15 +3,9 @@ import path from "path";
 import process from "process";
 import { v4 as uuidv4 } from "uuid";
 
-export type BlogPostPath = {
-  year: string | number;
-  month: string | number;
-  shortTitle: string;
-};
-
 export type BlogPost = {
   id: string;
-  path?: BlogPostPath;
+  slug: string;
   title: string;
   subtitle?: string;
   author: string;
@@ -28,25 +22,8 @@ export type BlogPostFilter = {
 
 const postsDir = path.join(process.cwd(), "posts");
 
-const generatePathObject = (title: string, publishedOn: string) => {
-  const safeTitle = title
-    .toLocaleLowerCase()
-    .replace(/[^a-zA-Z\d\s]/g, "")
-    .replace(/[\s]/g, "-")
-    .replace(/-{2,}/g, "-");
-  const date = new Date(publishedOn);
-  return {
-    year: date.getFullYear(),
-    month: date.getMonth(),
-    shortTitle: safeTitle
-  };
-};
-
-export const generatePathString = (pathProps?: BlogPostPath) => {
-  if (!pathProps) {
-    return "";
-  }
-  return `/blog/post/${pathProps.year}/${pathProps.month}/${pathProps.shortTitle}`;
+export const generatePathString = (slug: string) => {
+  return `/post/${slug}`;
 };
 
 export const getPosts = (getContent = false): BlogPost[] => {
@@ -60,28 +37,21 @@ export const getPosts = (getContent = false): BlogPost[] => {
       }
       const rawMetadata: string[][] = rawPostWithoutDividers[0].split("\n").map((s) => s.split(": "));
 
-      // Map each tuple into Map object
-      const postMap: Map<string, string | BlogPostPath> = new Map();
-      rawMetadata.forEach((keyValuePair) => {
-        const [key, value] = keyValuePair;
-        postMap.set(key, value);
-      });
-      postMap.set("id", uuidv4().toString());
-      if (["title", "publishedOn"].every((k) => postMap.has(k))) {
-        const title = postMap.get("title") as string || "";
-        const publishedOn = postMap.get("publishedOn") as string || "";
-        const generatedPath = generatePathObject(title, publishedOn);
-        postMap.set("path", generatedPath);
-      }
+      // Map each tuple into object
+      const postMap = rawMetadata.reduce((accum, [k, v]) => {
+        accum[k] = v;
+        return accum;
+      }, {} as { [k: string]: any });
+      postMap.id = uuidv4().toString();
 
       // Encode content (only if content is to be retrieved here)
       if (getContent) {
         const content = (rawPost.match(RegExp(/(?<=(\n---\n))[\d\s\S]*$/gm)) || [])[0] ?? "";
-        postMap.set("content", encodeURI(content));
+        postMap.content = encodeURI(content);
       }
 
       // Remap Map object as object
-      return Object.fromEntries(postMap) as BlogPost;
+      return postMap as BlogPost;
     })
     .filter((post) => !!post)
     .map((post) => post as BlogPost)
