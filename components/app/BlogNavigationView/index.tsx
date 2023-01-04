@@ -4,15 +4,32 @@ import { BlogPost, generatePathString } from "../../../lib/blog";
 import NavigationView from "../../ui/NavigationView";
 import { relativeTime } from "../../../lib/timestamp";
 import Link from "next/link";
+import Breadcrumbs from "../../ui/Breadcrumbs";
 
 type BlogNavigationViewProps = {
-  posts: BlogPost[];
+  posts?: BlogPost[];
   post?: BlogPost;
 }
 
 const BlogNavigationView = ({ posts, post }: BlogNavigationViewProps) => {
   return (
     <>
+      {
+        post
+          ? (
+            <Breadcrumbs
+              items={[
+                {
+                  title: "Blog",
+                  href: "/blog"
+                },
+                {
+                  title: post?.title
+                }
+              ]} />
+          )
+          : <></>
+      }
       <NavigationView
         classList={[post ? "pageBlogPost" : "pageBlog"]}
         content={(
@@ -34,7 +51,7 @@ const BlogNavigationView = ({ posts, post }: BlogNavigationViewProps) => {
                   </div>
                   <div className="pageBlogPostContent">
                     <ReactMarkdown>
-                      {decodeURI(post?.content || "")}
+                      {decodeURI(post?.content ?? "")}
                     </ReactMarkdown>
                   </div>
                   <hr />
@@ -42,22 +59,28 @@ const BlogNavigationView = ({ posts, post }: BlogNavigationViewProps) => {
                     <small><Link href="/blog">&larr; See all posts</Link></small>
                   </p>
                 </>
-                :
-                <>
-                  <h2>Blog</h2>
-                  <ul className="postList">
-                    {
-                      posts.map((p) => (
-                        <li key={p.id}>
-                          <a href={generatePathString(p.path)}>
-                            <h3>{p.title}</h3>
-                          </a>
-                          <sub>{`${relativeTime(p.publishedOn)} - ${new Date(p.publishedOn).toLocaleDateString()}`}</sub>
-                        </li>
-                      ))
-                    }
-                  </ul>
-                </>
+                : <></>
+            }
+            {
+              posts
+                ? (
+                  <>
+                    <h2>Blog</h2>
+                    <ul className="postList">
+                      {
+                        posts?.map((p) => (
+                          <li key={p.id}>
+                            <Link href={generatePathString(p.slug)}>
+                              <h3>{p.title}</h3>
+                            </Link>
+                            <sub>{`${relativeTime(p.publishedOn)} - ${new Date(p.publishedOn).toLocaleDateString()}`}</sub>
+                          </li>
+                        ))
+                      }
+                    </ul>
+                  </>
+                )
+                : <></>
             }
           </article>
         )}

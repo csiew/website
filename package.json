@@ -1,6 +1,6 @@
 {
   "name": "website",
-  "version": "6.5.1",
+  "version": "6.6.0",
   "type": "commonjs",
   "scripts": {
     "dev": "next dev",

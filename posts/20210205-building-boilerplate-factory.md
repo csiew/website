@@ -1,4 +1,5 @@
 ---
+slug: building-boilerplate-factory
 title: Building a boilerplate factory
 subtitle: An experiment in boilerplates and templates
 author: Clarence Siew
