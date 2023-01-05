@@ -45,6 +45,7 @@
   width: max-content;
   margin: 0;
   padding: 0.5rem 0.75rem;
+  display: inline-block;
   color: var(--btn-fg-color);
   background: var(--btn-bg-color);
   box-shadow: var(--preset-shadow-widget);

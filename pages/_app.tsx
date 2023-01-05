@@ -12,9 +12,6 @@ const AppContainer = ({ Component, pageProps }: any) => {
 
   useEffect(() => {
     setIsLoggedIn(session.isLoggedIn());
-    console.debug({
-      user: session.user,
-    });
   }, [session.user]);
   
   return (

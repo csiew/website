@@ -81,6 +81,12 @@ a:hover {
 a:active {
   color: var(--fg-color);
 }
+a.disabled {
+  color: var(--fg-color-3);
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: not-allowed;
+}
 
 h1, h2, h3, h4, h5 {
   font-family: var(--font-family-header);
@@ -257,5 +263,8 @@ select:is(:disabled, .disabled) {
 @import url('../components/app/ProjectCard/index.module.css');
 
 @import url('./index.module.css');
+@import url('./admin/index.module.css');
+@import url('./admin/posts/index.module.css');
+@import url('./admin/posts/edit/index.module.css');
 @import url('./playlists/index.module.css');
 @import url('./now-watching/index.module.css');

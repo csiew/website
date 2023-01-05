@@ -8,6 +8,7 @@ import ButtonGroup from "../../../components/ui/ButtonGroup";
 import Form from "../../../components/ui/Form";
 import FormQuestion from "../../../components/ui/Form/FormQuestion";
 import NavigationView from "../../../components/ui/NavigationView";
+import config from "../../../config";
 import useSession from "../../../firebase/session";
 import handleSignup from "../../../firebase/signup";
 import retitle from "../../../lib/retitle";
@@ -44,7 +45,7 @@ const Signup = () => {
       setIsSuccess(true);
       router.push("/admin/login");
     } catch (err) {
-      console.error(err);
+      if (config.debugMode) console.error(err);
       setIsSuccess(false);
     } finally {
       setHasSubmitted(true);

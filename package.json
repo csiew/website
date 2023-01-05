@@ -13,6 +13,7 @@
     "@firebase/app-check": "^0.5.12",
     "@firebase/auth": "^0.21.0",
     "@firebase/firestore": "^3.4.15",
+    "lodash": "^4.17.21",
     "next": "^13.0.0",
     "node-fetch": "^3.2.10",
     "react": "^18.2.0",
@@ -22,6 +23,7 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.191",
     "@types/next": "^9.0.0",
     "@types/node": "^18.7.13",
     "@types/node-fetch": "^2.6.2",

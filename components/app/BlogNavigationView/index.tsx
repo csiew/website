@@ -24,7 +24,7 @@ const BlogNavigationView = ({ posts, post }: BlogNavigationViewProps) => {
                   href: "/blog"
                 },
                 {
-                  title: post?.title
+                  title: post?.title ?? "Post"
                 }
               ]} />
           )

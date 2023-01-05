@@ -1,4 +1,5 @@
 import fs from "fs";
+import { isUndefined } from "lodash";
 import path from "path";
 import process from "process";
 import { v4 as uuidv4 } from "uuid";
@@ -6,12 +7,13 @@ import { v4 as uuidv4 } from "uuid";
 export type BlogPost = {
   id: string;
   slug: string;
-  title: string;
+  title?: string;
   subtitle?: string;
   author: string;
-  publishedOn: string;      // parse as date
-  lastModified?: string;    // parse as date
-  content?: string;
+  publishedOn: string | Date;
+  lastModified?: string | Date;
+  content: string;
+  isPublished: boolean;
 };
 
 export type BlogPostFilter = {
@@ -49,6 +51,10 @@ export const getPosts = (getContent = false): BlogPost[] => {
         const content = (rawPost.match(RegExp(/(?<=(\n---\n))[\d\s\S]*$/gm)) || [])[0] ?? "";
         postMap.content = encodeURI(content);
       }
+
+      if (isUndefined(postMap.lastModified)) postMap.lastModified = postMap.publishedOn;
+
+      if (isUndefined(postMap.isPublished)) postMap.isPublished = true;
 
       // Remap Map object as object
       return postMap as BlogPost;
