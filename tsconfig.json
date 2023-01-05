@@ -27,7 +27,7 @@
     "lib",
     "pages",
     "public"
-  ],
+, "firebase"  ],
   "exclude": [
     "node_modules"
   ]

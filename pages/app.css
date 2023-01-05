@@ -237,6 +237,7 @@ select:is(:disabled, .disabled) {
 @import url('../components/ui/Alert/index.module.css');
 @import url('../components/ui/Breadcrumbs/index.module.css');
 @import url('../components/ui/Button/index.module.css');
+@import url('../components/ui/ButtonGroup/index.module.css');
 @import url('../components/ui/Form/index.module.css');
 @import url('../components/ui/Modal/index.module.css');
 @import url('../components/ui/NavigationSidebar/index.module.css');

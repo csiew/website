@@ -1,26 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import "./app.css";
 import NavBar from "../components/app/NavBar";
 import BackToTop from "../components/app/BackToTop";
-import config from "../config";
 import Footer from "../components/app/Footer";
+import useSession from "../firebase/session";
 
 const AppContainer = ({ Component, pageProps }: any) => {
+  const session = useSession();
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+
+  useEffect(() => {
+    setIsLoggedIn(session.isLoggedIn());
+    console.debug({
+      user: session.user,
+    });
+  }, [session.user]);
+  
   return (
     <>
       <Head>
-        {
-          config.debugMode
-            ? <script>self.FIREBASE_APPCHECK_DEBUG_TOKEN = true;</script>
-            : <></>
-        }
         <link rel="shortcut icon" href="/profile.jpg" />
         <title>Clarence Siew</title>
       </Head>
       <NavBar />
       <main>
-        <Component {...pageProps} />
+        <Component {...pageProps} isLoggedIn={isLoggedIn} />
         <BackToTop />
       </main>
       <Footer />

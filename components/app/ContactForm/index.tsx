@@ -1,6 +1,6 @@
 import React, { FormEvent, useRef, useState } from "react";
-import contactApiConfig from "../../../pages/api/contact/config";
-import { Submission, submitContactForm } from "../../../pages/api/contact";
+import contactApiConfig from "../../../config";
+import { Submission, submitContactForm } from "../../../firebase/contact";
 import Button from "../../ui/Button";
 import Form from "../../ui/Form";
 import FormQuestion from "../../ui/Form/FormQuestion";
@@ -11,6 +11,7 @@ const ContactForm = () => {
   const contactNameRef = useRef<any>(null);
   const contactEmailRef = useRef<any>(null);
   const contactMessageRef = useRef<any>(null);
+
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [contactFormSubmitted, setContactFormSubmitted] = useState<boolean>(false);
   const [contactFormFailed, setContactFormFailed] = useState<boolean>(false);
@@ -30,7 +31,7 @@ const ContactForm = () => {
       contactName: contactNameRef.current.value,
       email: contactEmailRef.current.value,
       message: contactMessageRef.current.value,
-      isTest: contactApiConfig.debugMode
+      isTest: contactApiConfig.firebase.debugMode
     } as Submission;
     try {
       setIsSubmitting(true);
@@ -74,7 +75,7 @@ const ContactForm = () => {
           : <></>
       }
       {
-        contactApiConfig.debugMode
+        contactApiConfig.firebase.debugMode
           ? (
             <Alert variant="warning" style={{ marginBottom: "1rem" }}>
               API is in debug mode
@@ -132,7 +133,7 @@ const ContactForm = () => {
               />
               <span className="formControls">
                 {
-                  contactApiConfig.debugMode
+                  contactApiConfig.firebase.debugMode
                     ? (
                       <>
                         <Button variant="primary" onClick={testPopulateForm} disabled={isSubmitting}>

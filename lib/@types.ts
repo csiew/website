@@ -1,3 +1,5 @@
+import { ReactElement } from "react";
+
 export type PageRoute = {
   title: string;
   path: string;
@@ -10,4 +12,8 @@ export type BaseComponentProps = {
   className?: string;
   disabled?: boolean;
   style?: { [k: string]: string | number };
+};
+
+export type ComposableComponentProps = BaseComponentProps & {
+  children?: ReactElement | ReactElement[];
 };
