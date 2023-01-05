@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import retitle from "../../../lib/retitle";
@@ -15,6 +15,9 @@ import { BlogPost } from "../../../lib/blog";
 const Posts = ({ isLoggedIn }: any) => {
   const router = useRouter();
   const adminSessionContext = useContext(AdminSessionContext);
+  
+  const isMountedRef = useRef<any>(false);
+
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isSuccess, setIsSuccess] = useState<boolean>(true);
@@ -38,12 +41,15 @@ const Posts = ({ isLoggedIn }: any) => {
   };
 
   useEffect(() => {
-    if (!adminSessionContext.posts.length) {
-      handleGetPosts();
-    } else {
-      setPosts(adminSessionContext.posts);
-      setIsSuccess(true);
-    }
+    if (!isMountedRef.current) {
+      if (!adminSessionContext.posts.length) {
+        handleGetPosts();
+      } else {
+        setPosts(adminSessionContext.posts);
+        setIsSuccess(true);
+      }
+    };
+    isMountedRef.current = true;
   }, []);
 
   useEffect(() => {

@@ -131,7 +131,7 @@ const ContactForm = () => {
                 disabled={isSubmitting}
                 required
               />
-              <span className="formControls">
+              <span className="form-controls">
                 {
                   contactApiConfig.firebase.debugMode
                     ? (

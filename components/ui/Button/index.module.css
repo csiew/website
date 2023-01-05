@@ -2,7 +2,7 @@
   --btn-fg-color: var(--fg-color-3);
   --btn-fg-color-hover: var(--fg-color-1);
   --btn-fg-color-active: var(--fg-color);
-  --btn-fg-color-selected: var(--primary-color-3);
+  --btn-fg-color-selected: var(--bg-color);
   --btn-fg-color-focused: var(--primary-color);
   --btn-fg-color-primary: var(--bg-color);
   --btn-fg-color-primary-hover: var(--bg-color);
@@ -20,7 +20,7 @@
   --btn-bg-color: none;
   --btn-bg-color-hover: var(--bg-color-1);
   --btn-bg-color-active: var(--bg-color-2);
-  --btn-bg-color-selected: var(--primary-color);
+  --btn-bg-color-selected: var(--fg-color-5);
   --btn-bg-color-focused: var(--primary-color-3);
   --btn-bg-color-primary: var(--primary-color);
   --btn-bg-color-primary-hover: var(--primary-color-1);
@@ -72,7 +72,6 @@
 :is(button, .button, input[type=submit], input[type=reset]).active {
   color: var(--btn-fg-color-selected);
   background: var(--btn-bg-color-selected);
-  box-shadow: var(--preset-shadow-widget-inset);
 }
 :is(button, .button, input[type=submit], input[type=reset]):is(:disabled, .disabled) {
   outline: none;
@@ -156,4 +155,10 @@ input[type=submit].active {
   height: 1.25rem;
   padding: 0;
   color: inherit;
+}
+
+small :is(button, .button, input[type=submit], input[type=reset]) {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8rem;
+  font-weight: normal;
 }

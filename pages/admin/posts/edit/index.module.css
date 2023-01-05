@@ -20,7 +20,18 @@
   gap: 0.25rem;
 }
 
-.post-editor > .input-group > label {
+.post-editor > .input-group > .input-group-header {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: inline-flex;
+  flex-flow: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.post-editor > .input-group > .input-group-header > label {
   width: 100%;
   margin: 0;
   padding: 0;

@@ -17,3 +17,15 @@ form .question label {
 form .question :is(input, textarea) {
   width: 100%;
 }
+
+form .form-controls {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: inline-flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  font-size: inherit;
+}
