@@ -5,13 +5,17 @@ import NavigationView from "../../ui/NavigationView";
 import { relativeTime } from "../../../lib/timestamp";
 import Link from "next/link";
 import Breadcrumbs from "../../ui/Breadcrumbs";
+import Alert from "../../ui/Alert";
+import { isUndefined } from "lodash";
 
 type BlogNavigationViewProps = {
   posts?: BlogPost[];
   post?: BlogPost;
+  isLoading?: boolean;
+  isSuccess?: boolean;
 }
 
-const BlogNavigationView = ({ posts, post }: BlogNavigationViewProps) => {
+const BlogNavigationView = ({ posts, post, isLoading, isSuccess }: BlogNavigationViewProps) => {
   if (posts) {
     posts
       .sort((a, b) => {
@@ -43,6 +47,24 @@ const BlogNavigationView = ({ posts, post }: BlogNavigationViewProps) => {
         classList={[post ? "pageBlogPost" : "pageBlog"]}
         content={(
           <article className="topLevelPage">
+            {
+              !isUndefined(isLoading) && !isUndefined(isSuccess) && !isLoading && !isSuccess
+                ? (
+                  <Alert variant="error">
+                    <span>Failed to fetch blog posts. <Link href="/blog">Try again.</Link></span>
+                  </Alert>
+                )
+                : <></>
+            }
+            {
+              !isUndefined(isLoading) && isLoading
+                ? (
+                  <Alert variant="plain">
+                    <span>Fetching blog posts...</span>
+                  </Alert>
+                )
+                : <></>
+            }
             {
               post ?
                 <>
