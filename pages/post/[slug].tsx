@@ -36,10 +36,11 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async (context: any) => {
+  const { slug } = context.params;
   const remotePosts = await getRemotePosts();
   const post = mapDocumentDataToPosts(
     remotePosts.docs.map((d) => ({ id: d.id, ...d.data() }))
-  ).filter((p) => p.isPublished && p.slug === context.params.slug)[0];
+  ).filter((p) => p.isPublished && p.slug === slug)[0];
   return {
     props: { post: JSON.stringify(post) }
   };

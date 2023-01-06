@@ -22,7 +22,7 @@ const Blog = ({ posts }: { posts: string }) => {
   );
 };
 
-export const getServerSideProps = async (context: any) => {
+export const getStaticProps = async () => {
   const remotePosts = await getRemotePosts();
   const posts = mapDocumentDataToPosts(
     remotePosts.docs.map((d) => ({ id: d.id, ...d.data() }))
