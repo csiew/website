@@ -8,7 +8,17 @@ export const getRemotePosts = async (): Promise<QuerySnapshot<DocumentData>> => 
   return await getDocs(q);
 };
 
-export const mapDocumentDataToPosts = (postData: (DocumentData & { id: string })[]): BlogPost[] => {
+export const encodeContent = (content: string): string => {
+  return Buffer.from(content, "utf-8").toString("base64");
+};
+
+export const decodeContent = (content: string): string => {
+  return Buffer.from(content, "base64").toString("utf-8");
+};
+
+export const mapDocumentDataToPosts = (
+  postData: (DocumentData & { id: string })[]
+): BlogPost[] => {
   return postData.map((p) => ({
     id: p.id,
     slug: p.slug,
@@ -18,12 +28,16 @@ export const mapDocumentDataToPosts = (postData: (DocumentData & { id: string })
     publishedOn: p.publishedOn ? (p.publishedOn as Timestamp).toDate(): undefined,
     createdAt: (p.createdAt as Timestamp).toDate(),
     lastModified: (p.lastModified as Timestamp)?.toDate(),
-    content: Buffer.from(p.content, "base64").toString("utf-8"),
+    content: decodeContent(p.content),
     isPublished: p.isPublished
   }));
 };
 
-export const savePost = async (post: { [k: string]: any }, id?: string, overrideProps?: { [k: string]: any }) => {
+export const savePost = async (
+  post: { [k: string]: any },
+  id?: string,
+  overrideProps?: { [k: string]: any }
+): Promise<void> => {
   if (overrideProps) {
     merge(post, overrideProps);
   }
@@ -40,7 +54,7 @@ export const savePost = async (post: { [k: string]: any }, id?: string, override
   }
 };
 
-export const deletePost = async (id: string) => {
+export const deletePost = async (id: string): Promise<void> => {
   const docReference = doc(firebaseAppInstance.db, "posts", id);
   await deleteDoc(docReference);
 };

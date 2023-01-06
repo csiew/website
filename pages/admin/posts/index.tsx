@@ -6,7 +6,7 @@ import Breadcrumbs from "../../../components/ui/Breadcrumbs";
 import NavigationView from "../../../components/ui/NavigationView";
 import Paper from "../../../components/ui/Paper";
 import Link from "next/link";
-import { deletePost, getRemotePosts, mapDocumentDataToPosts, savePost } from "../../../firebase/posts";
+import { deletePost, encodeContent, getRemotePosts, mapDocumentDataToPosts, savePost } from "../../../firebase/posts";
 import { AdminSessionContext } from "..";
 import config from "../../../config";
 import Alert from "../../../components/ui/Alert";
@@ -111,7 +111,11 @@ const Posts = ({ isLoggedIn }: any) => {
     setIsLoading(true);
     setHasAttemptedCommit({ delete: false, publish: true, unpublish: false });
     try {
-      await Promise.all(publishQueue.map((p) => savePost(p, p.id, { isPublished: true, publishedOn: serverTimestamp() })));
+      await Promise.all(
+        publishQueue.map((p) => {
+          return savePost(p, p.id, { content: encodeContent(p.content ?? ""), isPublished: true, publishedOn: serverTimestamp() });
+        })
+      );
       setIsPublishSuccess(true);
       setInEditMode(false);
     } catch (err) {
@@ -139,7 +143,11 @@ const Posts = ({ isLoggedIn }: any) => {
     setIsLoading(true);
     setHasAttemptedCommit({ delete: false, publish: false, unpublish: true });
     try {
-      await Promise.all(publishQueue.map((p) => savePost(p, p.id, { isPublished: false, publishedOn: undefined })));
+      await Promise.all(
+        publishQueue.map((p) => {
+          return savePost(p, p.id, { content: encodeContent(p.content ?? ""), isPublished: false, publishedOn: undefined });
+        })
+      );
       setIsUnpublishSuccess(true);
       setInEditMode(false);
     } catch (err) {

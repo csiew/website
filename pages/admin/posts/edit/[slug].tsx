@@ -5,7 +5,7 @@ import Breadcrumbs from "../../../../components/ui/Breadcrumbs";
 import NavigationView from "../../../../components/ui/NavigationView";
 import { useRouter } from "next/router";
 import { BlogPost } from "../../../../lib/blog";
-import { getRemotePosts, mapDocumentDataToPosts, savePost } from "../../../../firebase/posts";
+import { encodeContent, getRemotePosts, mapDocumentDataToPosts, savePost } from "../../../../firebase/posts";
 import { AdminSessionContext } from "../..";
 import config from "../../../../config";
 import ButtonGroup from "../../../../components/ui/ButtonGroup";
@@ -124,7 +124,7 @@ const EditPost = ({ isLoggedIn }: any) => {
     console.debug("Cached post");
 
     const updatedPost = { ...cachedPost } as { [k: string]: any };
-    updatedPost.content = cachedPost.content ? Buffer.from(cachedPost.content).toString("base64") : "";
+    updatedPost.content = cachedPost.content ? encodeContent(cachedPost.content) : "";
     updatedPost.isPublished = isPublished ?? cachedPost.isPublished ?? false;
     const publishedOn = determinePublishDate(cachedPost, isPublished ?? false);
     if (!publishedOn) {
