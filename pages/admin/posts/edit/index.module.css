@@ -1,3 +1,31 @@
+.post-metadata {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  font-family: var(--font-family-widget);
+}
+.post-metadata > .post-metadata-group {
+  margin: 0;
+  padding: 0;
+  display: inline-flex;
+  flex-flow: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.25rem;
+
+}
+.post-metadata > .post-metadata-group > label {
+  margin: 0;
+  padding: 0;
+  color: var(--fg-color-5);
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
 .post-editor > .question > textarea {
   width: 100%;
   margin: 0;

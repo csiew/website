@@ -5,14 +5,15 @@ import process from "process";
 import { v4 as uuidv4 } from "uuid";
 
 export type BlogPost = {
-  id: string;
-  slug: string;
+  id?: string;
+  slug?: string;
   title?: string;
   subtitle?: string;
   author: string;
-  publishedOn: string | Date;
+  createdAt: string | Date;
   lastModified?: string | Date;
-  content: string;
+  publishedOn?: string | Date;
+  content?: string;
   isPublished: boolean;
 };
 
@@ -62,8 +63,8 @@ export const getPosts = (getContent = false): BlogPost[] => {
     .filter((post) => !!post)
     .map((post) => post as BlogPost)
     .sort((a, b) => {
-      const dateA = new Date(a.publishedOn).getTime();
-      const dateB = new Date(b.publishedOn).getTime();
+      const dateA = new Date(a.createdAt).getTime();
+      const dateB = new Date(b.createdAt).getTime();
       return dateB - dateA;
     });
 };

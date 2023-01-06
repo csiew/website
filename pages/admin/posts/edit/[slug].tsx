@@ -5,7 +5,7 @@ import Breadcrumbs from "../../../../components/ui/Breadcrumbs";
 import NavigationView from "../../../../components/ui/NavigationView";
 import { useRouter } from "next/router";
 import { BlogPost } from "../../../../lib/blog";
-import { getRemotePosts, mapDocumentDataToPosts } from "../../../../firebase/posts";
+import { getRemotePosts, mapDocumentDataToPosts, savePost } from "../../../../firebase/posts";
 import { AdminSessionContext } from "../..";
 import config from "../../../../config";
 import ButtonGroup from "../../../../components/ui/ButtonGroup";
@@ -15,7 +15,7 @@ import Paper from "../../../../components/ui/Paper";
 import Form from "../../../../components/ui/Form";
 import Alert from "../../../../components/ui/Alert";
 import firebaseAppInstance from "../../../../firebase";
-import { doc, serverTimestamp, Timestamp, updateDoc } from "@firebase/firestore/lite";
+import { addDoc, collection, doc, serverTimestamp, Timestamp, updateDoc } from "@firebase/firestore/lite";
 import FormQuestion from "../../../../components/ui/Form/FormQuestion";
 
 const EditPost = ({ isLoggedIn }: any) => {
@@ -23,6 +23,7 @@ const EditPost = ({ isLoggedIn }: any) => {
   const adminSessionContext = useContext(AdminSessionContext);
 
   const isMountedRef = useRef<any>(false);
+  const slugEditorRef = useRef<any>(null);
   const titleEditorRef = useRef<any>(null);
   const subtitleEditorRef = useRef<any>(null);
   const contentEditorRef = useRef<any>(null);
@@ -41,6 +42,7 @@ const EditPost = ({ isLoggedIn }: any) => {
   const cacheLocalChanges = (): BlogPost => {
     const cachedPost: BlogPost = {
       ...post as BlogPost,
+      slug: slugEditorRef.current.value as string,
       title: titleEditorRef.current.value as string,
       subtitle: subtitleEditorRef.current.value as string,
       content: contentEditorRef.current.value as string
@@ -67,6 +69,26 @@ const EditPost = ({ isLoggedIn }: any) => {
     const { slug } = router.query;
     setSlug(slug as string);
     setIsLoading(true);
+    if (slug === "new") {
+      setIsNewPost(true);
+
+      const newPost: BlogPost = {
+        slug: "",
+        title: "",
+        subtitle: "",
+        content: "",
+        author: "Clarence Siew",
+        createdAt: new Date(Date.now()),
+        isPublished: false
+      };
+      setPost(newPost);
+      setLocalPostCache(newPost);
+
+      setIsSearchSuccess(true);
+      setIsLoading(false);
+
+      return;
+    }
     if (force || !adminSessionContext.posts.length) {
       await handleGetPosts();
     }
@@ -82,24 +104,52 @@ const EditPost = ({ isLoggedIn }: any) => {
     console.debug("Done searching for post");
   };
 
+  const determinePublishDate = (post: BlogPost, isPublished: boolean) => {
+    if (isPublished) {
+      if (post.publishedOn) {
+        return Timestamp.fromDate(post.publishedOn as Date);
+      } else {
+        return serverTimestamp();
+      }
+    } else {
+      return;
+    }
+  };
+
   const handleSubmit = async (ev: FormEvent<Element>, isPublished?: boolean) => {
     ev.preventDefault();
 
     const cachedPost = cacheLocalChanges();
 
+    console.debug("Cached post");
+
     const updatedPost = { ...cachedPost } as { [k: string]: any };
-    updatedPost.content = Buffer.from(cachedPost.content).toString("base64");
+    updatedPost.content = cachedPost.content ? Buffer.from(cachedPost.content).toString("base64") : "";
     updatedPost.isPublished = isPublished ?? cachedPost.isPublished ?? false;
-    updatedPost.publishedOn = cachedPost.isPublished ? Timestamp.fromDate(cachedPost.publishedOn as Date): serverTimestamp();
+    const publishedOn = determinePublishDate(cachedPost, isPublished ?? false);
+    if (!publishedOn) {
+      delete updatedPost.publishedOn;
+    } else {
+      updatedPost.publishedOn = publishedOn;
+    }
     updatedPost.lastModified = serverTimestamp();
+
+    console.debug("Created updated post");
 
     setIsLoading(true);
     setHasAttemptedSave(true);
     try {
-      const docReference = doc(firebaseAppInstance.db, "posts", updatedPost.id);
-      await updateDoc(docReference, updatedPost);
-      await handleGetTargetPost(true);
+      if (isNewPost) {
+        await savePost(updatedPost);
+      } else {
+        await savePost(updatedPost, updatedPost.id);
+        await handleGetTargetPost(true);
+      }
       setIsSavingSuccess(true);
+      if (isNewPost) {
+        setIsNewPost(false);
+        router.replace(`/admin/posts/edit/${cachedPost?.slug}`);
+      }
     } catch (err) {
       if (config.debugMode) console.error(err);
       setIsSavingSuccess(false);
@@ -118,11 +168,13 @@ const EditPost = ({ isLoggedIn }: any) => {
     if (!post || [titleEditorRef, subtitleEditorRef, contentEditorRef].some((r) => r.current === null)) return;
     if (force || !localPostCache) {
       console.debug("Loading post data from shared context");
+      slugEditorRef.current.value = post?.slug ?? "";
       titleEditorRef.current.value = post?.title ?? "";
       subtitleEditorRef.current.value = post?.subtitle ?? "";
       contentEditorRef.current.value = post?.content ?? "";
     } else {
       console.debug("Loading post data from local state cache");
+      slugEditorRef.current.value = localPostCache.slug;
       titleEditorRef.current.value = localPostCache.title;
       subtitleEditorRef.current.value = localPostCache.subtitle;
       contentEditorRef.current.value = localPostCache.content;
@@ -217,74 +269,104 @@ const EditPost = ({ isLoggedIn }: any) => {
               isLoading
                 ? <p>Loading...</p>
                 : (
-                  <Form
-                    className="post-editor"
-                    onSubmit={(ev: FormEvent<Element>) => handleSubmit(ev, true)}
-                    onReset={(ev: FormEvent<Element>) => resetInputValues(ev, true)}>
-                    <FormQuestion
-                      variant="text"
-                      label="Title"
-                      forwardedRef={titleEditorRef} />
-                    <FormQuestion
-                      variant="text"
-                      label="Subtitle"
-                      forwardedRef={subtitleEditorRef} />
-                    <small>
-                      <ButtonGroup orientation="horizontal">
-                        <Button
-                          variant="plain"
-                          className={isPreview ? "" : "active"}
-                          onClick={(ev: FormEvent<Element>) => {
-                            ev.preventDefault();
-                            setIsPreview(false);
-                          }}>
-                          Edit
-                        </Button>
-                        <Button
-                          variant="plain"
-                          className={isPreview ? "active" : ""}
-                          onClick={(ev: FormEvent<Element>) => {
-                            ev.preventDefault();
-                            cacheLocalChanges();
-                            setIsPreview(true);
-                          }}>
-                          Preview
-                        </Button>
-                      </ButtonGroup>
-                    </small>
-                    {
-                      isPreview
-                        ? (
-                          <Paper>
-                            <ReactMarkdown>
-                              {localPostCache ? localPostCache.content : post?.content ?? ""}
-                            </ReactMarkdown>
-                          </Paper>
-                        )
-                        : (
-                          <FormQuestion
-                            variant="multiline"
-                            label="Content"
-                            forwardedRef={contentEditorRef} />
-                        )
-                    }
-                    <span className="form-controls">
-                      <Button variant="reset">Reset</Button>
-                      <span style={{ width: "100%" }}></span>
+                  <>
+                    <Paper style={{ width: "100%", marginBottom: "1rem" }}>
+                      <div className="post-metadata">
+                        <div className="post-metadata-group">
+                          <label>Published</label>
+                          <span>{post?.isPublished ? "Yes" : "No"}</span>
+                        </div>
+                        {
+                          post?.isPublished && post?.publishedOn
+                            ? (
+                              <div className="post-metadata-group">
+                                <label>Published on</label>
+                                <span>{post?.publishedOn.toLocaleString()}</span>
+                              </div>
+                            )
+                            : <></>
+                        }
+                        <div className="post-metadata-group">
+                          <label>Created at</label>
+                          <span>{post?.createdAt.toLocaleString()}</span>
+                        </div>
+                      </div>
+                    </Paper>
+                    <Form
+                      className="post-editor"
+                      onSubmit={(ev: FormEvent<Element>) => handleSubmit(ev, true)}
+                      onReset={(ev: FormEvent<Element>) => resetInputValues(ev, true)}>
+                      <FormQuestion
+                        variant="text"
+                        label="URL Slug"
+                        forwardedRef={slugEditorRef}
+                        required />
+                      <FormQuestion
+                        variant="text"
+                        label="Title"
+                        forwardedRef={titleEditorRef}
+                        required />
+                      <FormQuestion
+                        variant="text"
+                        label="Subtitle"
+                        forwardedRef={subtitleEditorRef} />
+                      <small>
+                        <ButtonGroup orientation="horizontal">
+                          <Button
+                            variant="plain"
+                            className={isPreview ? "" : "active"}
+                            onClick={(ev: FormEvent<Element>) => {
+                              ev.preventDefault();
+                              setIsPreview(false);
+                            }}>
+                            Edit
+                          </Button>
+                          <Button
+                            variant="plain"
+                            className={isPreview ? "active" : ""}
+                            onClick={(ev: FormEvent<Element>) => {
+                              ev.preventDefault();
+                              cacheLocalChanges();
+                              setIsPreview(true);
+                            }}>
+                            Preview
+                          </Button>
+                        </ButtonGroup>
+                      </small>
                       {
-                        post?.isPublished
-                          ? <></>
+                        isPreview
+                          ? (
+                            <Paper style={{ width: "100%", minHeight: "200px" }}>
+                              <ReactMarkdown>
+                                {localPostCache?.content ?? post?.content ?? ""}
+                              </ReactMarkdown>
+                            </Paper>
+                          )
                           : (
-                            <Button
-                              variant="plain"
-                              onClick={(ev: FormEvent<Element>) => handleSubmit(ev, false)}>
-                              Save as draft
-                            </Button>
+                            <FormQuestion
+                              variant="multiline"
+                              label="Content"
+                              forwardedRef={contentEditorRef} />
                           )
                       }
-                      <Button variant="submit">Publish</Button>
-                    </span>
-                  </Form>
+                      <span className="form-controls">
+                        <Button variant="reset">Reset</Button>
+                        <span style={{ width: "100%" }}></span>
+                        {
+                          post?.isPublished
+                            ? <></>
+                            : (
+                              <Button
+                                variant="plain"
+                                onClick={(ev: FormEvent<Element>) => handleSubmit(ev, false)}>
+                                Save as draft
+                              </Button>
+                            )
+                        }
+                        <Button variant="submit">Publish</Button>
+                      </span>
+                    </Form>
+                  </>
                 )
             }
           </article>

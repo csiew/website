@@ -12,6 +12,7 @@
 }
 .admin-posts-list-header > a {
   font-size: 0.8rem;
+  white-space: nowrap;
 }
 
 .admin-posts-list {
@@ -40,10 +41,50 @@
   margin: 0;
   padding: 0;
   display: inline-flex;
-  flex-flow: column;
-  align-items: flex-start;
+  flex-flow: row;
+  align-items: center;
   justify-content: flex-start;
 }
+
+.admin-posts-list > ul > li > span.admin-post-checkbox {
+  margin: -0.25rem;
+  padding: 0.5rem;
+  display: inline-flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border-radius: 100%;
+}
+.admin-posts-list > ul > li > span.admin-post-checkbox:hover {
+  background: var(--bg-color-2);
+  transition: var(--transition);
+}
+.admin-posts-list > ul > li > span.admin-post-checkbox:active {
+  background: var(--bg-color-3);
+  transition: var(--transition);
+}
+.admin-posts-list > ul > li > span.admin-post-checkbox > input[type=checkbox] {
+  width: 1rem;
+  height: 1rem;
+  padding: 2rem;
+  display: inline-block;
+  border: var(--border-width) solid var(--border-color);
+  scale: 1;
+  transition: var(--transition);
+}
+.admin-posts-list > ul > li > span.admin-post-checkbox > input[type=checkbox]:hover {
+  scale: 1.25;
+  transition: var(--transition);
+}
+.admin-posts-list > ul > li > span.admin-post-checkbox > input[type=checkbox]:active {
+  scale: 1;
+  transition: var(--transition);
+}
+.admin-posts-list > ul > li > span.admin-post-checkbox > input[type=checkbox]:checked {
+  transition: var(--transition);
+}
+
 .admin-posts-list > ul > li > a {
   width: 100%;
   margin: 0;

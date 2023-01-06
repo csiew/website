@@ -4,6 +4,7 @@
   top: 0;
   padding: 0.5rem 1rem;
   position: sticky;
+  z-index: 100;
   display: inline-flex;
   flex-flow: row;
   align-items: center;
@@ -34,7 +35,8 @@
 }
 .breadcrumbs ul li::after {
   content: '>';
-  margin-left: 0.25rem;
+  margin-inline: 0.5rem 0.25rem;
+  color: var(--fg-color-8);
 }
 .breadcrumbs ul li:last-of-type::after {
   content: none;

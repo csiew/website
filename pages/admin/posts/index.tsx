@@ -6,11 +6,18 @@ import Breadcrumbs from "../../../components/ui/Breadcrumbs";
 import NavigationView from "../../../components/ui/NavigationView";
 import Paper from "../../../components/ui/Paper";
 import Link from "next/link";
-import { getRemotePosts, mapDocumentDataToPosts } from "../../../firebase/posts";
+import { deletePost, getRemotePosts, mapDocumentDataToPosts, savePost } from "../../../firebase/posts";
 import { AdminSessionContext } from "..";
 import config from "../../../config";
 import Alert from "../../../components/ui/Alert";
 import { BlogPost } from "../../../lib/blog";
+import { serverTimestamp } from "@firebase/firestore/lite";
+
+type CommitAttemptFlags = {
+  delete: boolean;
+  publish: boolean;
+  unpublish: boolean;
+};
 
 const Posts = ({ isLoggedIn }: any) => {
   const router = useRouter();
@@ -19,8 +26,18 @@ const Posts = ({ isLoggedIn }: any) => {
   const isMountedRef = useRef<any>(false);
 
   const [posts, setPosts] = useState<BlogPost[]>([]);
+  const [selectedPosts, setSelectedPosts] = useState<Map<string, boolean>>();
+  const [hasSelectedPosts, setHasSelectedPosts] = useState<boolean>(false);
+  const [inEditMode, setInEditMode] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isSuccess, setIsSuccess] = useState<boolean>(true);
+
+  const [hasAttemptedCommit, setHasAttemptedCommit] = useState<CommitAttemptFlags>(
+    { delete: false, publish: false, unpublish: false }
+  );
+  const [isPublishSuccess, setIsPublishSuccess] = useState<boolean>(false);
+  const [isUnpublishSuccess, setIsUnpublishSuccess] = useState<boolean>(false);
+  const [isDeletionSuccess, setIsDeletionSuccess] = useState<boolean>(false);
 
   const handleGetPosts = async (force?: boolean) => {
     if (force || !adminSessionContext.posts.length) {
@@ -30,6 +47,7 @@ const Posts = ({ isLoggedIn }: any) => {
         const queryResults = await getRemotePosts();
         const extractedPosts = mapDocumentDataToPosts(queryResults.docs.map((d) => ({ id: d.id, ...d.data() })));
         adminSessionContext.posts = extractedPosts;
+        console.debug({ extractedPosts });
         setPosts(extractedPosts);
         setIsSuccess(true);
       } catch (err) {
@@ -42,8 +60,95 @@ const Posts = ({ isLoggedIn }: any) => {
       console.debug("Fetching posts from shared context");
     }
     setPosts(adminSessionContext.posts);
+    const selectionMap = new Map<string, boolean>();
+    adminSessionContext.posts.map((p) => selectionMap.set(p.id!, false));
+    setSelectedPosts(selectionMap);
     setIsSuccess(true);
     console.debug("Done fetching");
+  };
+
+  const handleUpdateSelectedFlag = (selectionMap: Map<string, boolean>) => {
+    const selectedKeys: string[] = [];
+    selectionMap?.forEach((v, k) => {
+      if (v === true) selectedKeys.push(k);
+    });
+    setHasSelectedPosts(selectedKeys.length > 0);
+  };
+
+  const handleDeletePosts = async () => {
+    const selectedKeys: string[] = [];
+    selectedPosts?.forEach((v, k) => {
+      if (v === true) selectedKeys.push(k);
+    });
+    setIsLoading(true);
+    setHasAttemptedCommit({ delete: true, publish: false, unpublish: false });
+    try {
+      await Promise.all(selectedKeys.map((k) => deletePost(k)));
+      setIsDeletionSuccess(true);
+      setInEditMode(false);
+    } catch (err) {
+      if (config.debugMode) console.error(err);
+      setIsDeletionSuccess(false);
+    } finally {
+      setIsLoading(false);
+    }
+    await handleGetPosts(true);
+  };
+
+  const handlePublishPosts = async () => {
+    const selectedKeys: string[] = [];
+    selectedPosts?.forEach((v, k) => {
+      if (v === true) selectedKeys.push(k);
+    });
+    const publishQueue: BlogPost[] = selectedKeys
+      .map((k) => {
+        const post = posts.find((p) => p.id === k && p.isPublished === false);
+        if (post) {
+          return post;
+        }
+      })
+      .filter((p) => !!p) as BlogPost[];
+    setIsLoading(true);
+    setHasAttemptedCommit({ delete: false, publish: true, unpublish: false });
+    try {
+      await Promise.all(publishQueue.map((p) => savePost(p, p.id, { isPublished: true, publishedOn: serverTimestamp() })));
+      setIsPublishSuccess(true);
+      setInEditMode(false);
+    } catch (err) {
+      if (config.debugMode) console.error(err);
+      setIsPublishSuccess(false);
+    } finally {
+      setIsLoading(false);
+    }
+    await handleGetPosts(true);
+  };
+
+  const handleUnpublishPosts = async () => {
+    const selectedKeys: string[] = [];
+    selectedPosts?.forEach((v, k) => {
+      if (v === true) selectedKeys.push(k);
+    });
+    const publishQueue: BlogPost[] = selectedKeys
+      .map((k) => {
+        const post = posts.find((p: BlogPost) => p.id === k && p.isPublished === true);
+        if (post) {
+          return post;
+        }
+      })
+      .filter((p) => !!p) as BlogPost[];
+    setIsLoading(true);
+    setHasAttemptedCommit({ delete: false, publish: false, unpublish: true });
+    try {
+      await Promise.all(publishQueue.map((p) => savePost(p, p.id, { isPublished: false, publishedOn: undefined })));
+      setIsUnpublishSuccess(true);
+      setInEditMode(false);
+    } catch (err) {
+      if (config.debugMode) console.error(err);
+      setIsUnpublishSuccess(false);
+    } finally {
+      setIsLoading(false);
+    }
+    await handleGetPosts(true);
   };
 
   useEffect(() => {
@@ -86,10 +191,87 @@ const Posts = ({ isLoggedIn }: any) => {
                 )
                 : <></>
             }
+            {
+              !isLoading
+                ? (
+                  <>
+                    {
+                      hasAttemptedCommit.delete
+                        ? (
+                          !isDeletionSuccess
+                            ? (
+                              <Alert variant="error">
+                                Failed to delete selected posts.
+                              </Alert>
+                            )
+                            : (
+                              <Alert variant="success">
+                                Successfully deleted selected posts.
+                              </Alert>
+                            )
+                        )
+                        : <></>
+                    }
+                    {
+                      hasAttemptedCommit.publish
+                        ? (
+                          !isPublishSuccess
+                            ? (
+                              <Alert variant="error">
+                                Failed to publish selected posts.
+                              </Alert>
+                            )
+                            : (
+                              <Alert variant="success">
+                                Successfully publish selected posts.
+                              </Alert>
+                            )
+                        )
+                        : <></>
+                    }
+                    {
+                      hasAttemptedCommit.unpublish
+                        ? (
+                          !isUnpublishSuccess
+                            ? (
+                              <Alert variant="error">
+                                Failed to unpublish selected posts.
+                              </Alert>
+                            )
+                            : (
+                              <Alert variant="success">
+                                Successfully unpublish selected posts.
+                              </Alert>
+                            )
+                        )
+                        : <></>
+                    }
+                  </>
+                )
+                : <></>
+            }
             <Paper style={{ padding: 0 }}>
               <section className="admin-posts-list-header">
-                <Link href="/admin/posts/compose" className={isLoading ? "disabled" : ""}>New Post</Link>
-                <Link href="#" onClick={() => handleGetPosts(true)} className={isLoading ? "disabled" : ""}>Refresh</Link>
+                {
+                  !inEditMode
+                    ? <Link href="/admin/posts/edit/new" className={isLoading ? "disabled" : ""}>New Post</Link>
+                    : (
+                      <>
+                        <Link href="#" onClick={handleDeletePosts} className={!!isLoading || !hasSelectedPosts ? "disabled" : ""}>Delete Selected</Link>
+                        <Link href="#" onClick={handlePublishPosts} className={!!isLoading || !hasSelectedPosts ? "disabled" : ""}>Publish Selected</Link>
+                        <Link href="#" onClick={handleUnpublishPosts} className={!!isLoading || !hasSelectedPosts ? "disabled" : ""}>Unpublish Selected</Link>
+                      </>
+                    )
+                }
+                <span style={{ width: "100%" }}></span>
+                {
+                  !inEditMode
+                    ? <Link href="#" onClick={() => handleGetPosts(true)} className={isLoading ? "disabled" : ""}>Refresh</Link>
+                    : <></>
+                }
+                <Link href="#" onClick={() => setInEditMode(!inEditMode)} className={isLoading ? "disabled" : ""}>
+                  {inEditMode ? "Done" : "Edit"}
+                </Link>
               </section>
               {
                 isLoading
@@ -104,9 +286,32 @@ const Posts = ({ isLoggedIn }: any) => {
                         {
                           posts.map((p: BlogPost, i: number) => (
                             <li key={p.slug ?? i}>
-                              <Link href={`/admin/posts/edit/${p.slug}`} title={p.title}>
+                              {
+                                inEditMode
+                                  ? (
+                                    <span className="admin-post-checkbox">
+                                      <input
+                                        type="checkbox"
+                                        defaultChecked={selectedPosts?.get(p.id!)}
+                                        onClick={() => {
+                                          const currentValue = selectedPosts?.get(p.id!) ?? false;
+                                          const newSelectionMap = selectedPosts;
+                                          newSelectionMap!.set(p.id!, !currentValue);
+                                          setSelectedPosts(newSelectionMap);
+                                          handleUpdateSelectedFlag(newSelectionMap!);
+                                        }} />
+                                    </span>
+                                  )
+                                  : <></>
+                              }
+                              <Link href={`/admin/posts/edit/${p.slug}`} className={inEditMode ? "disabled" : ""} title={p.title}>
                                 <h3>{p.title}</h3>
-                                <sub>{p.publishedOn.toLocaleString()}</sub>
+                                <sub>
+                                  <b>Created at:</b> <span>{p.createdAt.toLocaleString()}</span>
+                                </sub>
+                                <sub>
+                                  <b>Published on:</b> <span>{p.isPublished ? p.publishedOn!.toLocaleString() : "Not published"}</span>
+                                </sub>
                               </Link>
                             </li>
                           ))

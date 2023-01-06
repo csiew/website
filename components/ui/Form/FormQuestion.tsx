@@ -9,7 +9,7 @@ const FormQuestion = ({ style, label, name, forwardedRef, defaultValue, variant,
   };
 
   return (
-    <span className="question">
+    <span className={["question", required ? "required" : ""].join(" ")}>
       {
         label
           ? <label htmlFor={name} onClick={focusInput}>{label}</label>
