@@ -2,14 +2,13 @@ import React, { useEffect } from "react";
 import Head from "next/head";
 import config from "../../config";
 import retitle from "../../lib/retitle";
-import { BlogPost, getPosts } from "../../lib/blog";
 import BlogNavigationView from "../../components/app/BlogNavigationView";
+import { getRemotePosts, mapDocumentDataToPosts } from "../../firebase/posts";
+import { BlogPost } from "../../lib/blog";
 
-const getPost = (slug: string) => {
-  return getPosts(true).find((p) => p.slug === slug);
-};
+const BlogPostPage = ({ post }: { post: string }) => {
+  const parsedPost = JSON.parse(post) as BlogPost;
 
-const BlogPostPage = ({ post }: { post: BlogPost }) => {
   useEffect(() => {
     document.getElementById(config.rootElementId)?.scrollTo({ top: 0 });
   }, []);
@@ -17,21 +16,34 @@ const BlogPostPage = ({ post }: { post: BlogPost }) => {
   return (
     <>
       <Head>
-        <title>{retitle(post.title)}</title>
-        <meta property="og:title" content={retitle(post.title)} key="title" />
+        <title>{retitle(parsedPost.title)}</title>
+        <meta property="og:title" content={retitle(parsedPost.title)} key="title" />
       </Head>
-      <BlogNavigationView post={post} />
+      <BlogNavigationView post={parsedPost} />
     </>
   );
 };
 
-export const getStaticPaths = () => ({
-  paths: getPosts(false).map((p) => ({ params: { slug: p.slug } })),
-  fallback: false
-});
+export const getStaticPaths = async () => {
+  const remotePosts = await getRemotePosts();
+  const posts = mapDocumentDataToPosts(
+    remotePosts.docs.map((d) => ({ id: d.id, ...d.data() }))
+  ).filter((p) => p.isPublished);
+  return {
+    paths: posts.map((p) => ({ params: { slug: p.slug } })),
+    fallback: false
+  };
+};
 
-export const getStaticProps = (context: any) => ({
-  props: { post: getPost(context.params.slug) }
-});
+export const getStaticProps = async (context: any) => {
+  const { slug } = context.params;
+  const remotePosts = await getRemotePosts();
+  const post = mapDocumentDataToPosts(
+    remotePosts.docs.map((d) => ({ id: d.id, ...d.data() }))
+  ).filter((p) => p.isPublished && p.slug === slug)[0];
+  return {
+    props: { post: JSON.stringify(post) }
+  };
+};
 
 export default BlogPostPage;

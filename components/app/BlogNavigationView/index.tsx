@@ -12,6 +12,15 @@ type BlogNavigationViewProps = {
 }
 
 const BlogNavigationView = ({ posts, post }: BlogNavigationViewProps) => {
+  if (posts) {
+    posts
+      .sort((a, b) => {
+        const dateA = new Date(a.publishedOn!).getTime();
+        const dateB = new Date(b.publishedOn!).getTime();
+        return dateB - dateA;
+      });
+  }
+  
   return (
     <>
       {
@@ -24,7 +33,7 @@ const BlogNavigationView = ({ posts, post }: BlogNavigationViewProps) => {
                   href: "/blog"
                 },
                 {
-                  title: post?.title
+                  title: post?.title ?? "Post"
                 }
               ]} />
           )
@@ -46,7 +55,7 @@ const BlogNavigationView = ({ posts, post }: BlogNavigationViewProps) => {
                         <></>
                     }
                     <p className="timestamp">
-                      {new Date(post?.publishedOn).toDateString()}
+                      {post?.publishedOn ? new Date(post?.publishedOn).toDateString() : ""}
                     </p>
                   </div>
                   <div className="pageBlogPostContent">
@@ -70,10 +79,10 @@ const BlogNavigationView = ({ posts, post }: BlogNavigationViewProps) => {
                       {
                         posts?.map((p) => (
                           <li key={p.id}>
-                            <Link href={generatePathString(p.slug)}>
+                            <Link href={generatePathString(p.slug!)}>
                               <h3>{p.title}</h3>
                             </Link>
-                            <sub>{`${relativeTime(p.publishedOn)} - ${new Date(p.publishedOn).toLocaleDateString()}`}</sub>
+                            <sub>{`${relativeTime(p.publishedOn!)} - ${new Date(p.publishedOn!).toLocaleDateString()}`}</sub>
                           </li>
                         ))
                       }

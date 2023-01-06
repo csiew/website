@@ -14,6 +14,25 @@ form .question label {
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
+form .question.required label::after {
+  content: ' (required)';
+  font-weight: normal;
+  font-style: italic;
+  text-transform: none;
+}
+
 form .question :is(input, textarea) {
   width: 100%;
+}
+
+form .form-controls {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: inline-flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  font-size: inherit;
 }

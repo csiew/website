@@ -1,0 +1,39 @@
+.admin-applet-list {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.admin-applet-list a {
+  width: 100%;
+  margin: 0;
+  padding: 1rem 0.5rem;
+  display: inline-flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: var(--fg-color);
+  background: var(--bg-color-2);
+  border-radius: var(--border-radius);
+  font-family: var(--font-family-widget);
+  text-decoration: none;
+}
+.admin-applet-list a:hover {
+  color: var(--fg-color-1);
+  background: var(--bg-color-3);
+  text-decoration: none;
+}
+.admin-applet-list a:active {
+  color: var(--fg-color-1);
+  background: var(--bg-color-5);
+  text-decoration: none;
+}
+
+.admin-applet-list a > svg {
+  width: 64px;
+  height: 64px;
+}

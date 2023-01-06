@@ -4,10 +4,12 @@ import { BaseComponentProps } from "../../../lib/@types";
 type NavigationViewProps = BaseComponentProps & {
   nav?: string | ReactElement | ReactElement[];
   navPosition?: "left" | "right";
+  navStyle?: any;
   content?: string | ReactElement | ReactElement[];
+  contentStyle?: any;
 };
 
-const NavigationView = ({ nav, navPosition, content, classList, className, style, disabled }: NavigationViewProps) => {
+const NavigationView = ({ nav, navPosition, navStyle, content, contentStyle, classList, className, style, disabled }: NavigationViewProps) => {
   return (
     <div
       className={["navigationView", navPosition === "right" ? "rightNav" : "leftNav", disabled ? "disabled" : undefined, className, ...classList || []].join(" ")}
@@ -15,13 +17,13 @@ const NavigationView = ({ nav, navPosition, content, classList, className, style
     >
       {
         nav ?
-          <div className="navigationViewNav">
+          <div className="navigationViewNav" style={navStyle}>
             {nav}
           </div>
           :
           <></>
       }
-      <div className="navigationViewContent">
+      <div className="navigationViewContent" style={contentStyle}>
         {content}
       </div>
     </div>

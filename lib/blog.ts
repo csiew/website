@@ -1,17 +1,20 @@
 import fs from "fs";
+import { isUndefined } from "lodash";
 import path from "path";
 import process from "process";
 import { v4 as uuidv4 } from "uuid";
 
 export type BlogPost = {
-  id: string;
-  slug: string;
-  title: string;
+  id?: string;
+  slug?: string;
+  title?: string;
   subtitle?: string;
   author: string;
-  publishedOn: string;      // parse as date
-  lastModified?: string;    // parse as date
+  createdAt: string | Date;
+  lastModified?: string | Date;
+  publishedOn?: string | Date;
   content?: string;
+  isPublished: boolean;
 };
 
 export type BlogPostFilter = {
@@ -50,14 +53,18 @@ export const getPosts = (getContent = false): BlogPost[] => {
         postMap.content = encodeURI(content);
       }
 
+      if (isUndefined(postMap.lastModified)) postMap.lastModified = postMap.publishedOn;
+
+      if (isUndefined(postMap.isPublished)) postMap.isPublished = true;
+
       // Remap Map object as object
       return postMap as BlogPost;
     })
     .filter((post) => !!post)
     .map((post) => post as BlogPost)
     .sort((a, b) => {
-      const dateA = new Date(a.publishedOn).getTime();
-      const dateB = new Date(b.publishedOn).getTime();
+      const dateA = new Date(a.createdAt).getTime();
+      const dateB = new Date(b.createdAt).getTime();
       return dateB - dateA;
     });
 };
