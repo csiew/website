@@ -287,6 +287,10 @@ const EditPost = ({ isLoggedIn }: any) => {
                             : <></>
                         }
                         <div className="post-metadata-group">
+                          <label>Last modified at</label>
+                          <span>{post?.lastModified?.toLocaleString()}</span>
+                        </div>
+                        <div className="post-metadata-group">
                           <label>Created at</label>
                           <span>{post?.createdAt.toLocaleString()}</span>
                         </div>
