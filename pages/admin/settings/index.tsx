@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
-import React, { useEffect, useRef, useState } from "react";
+import React, { FormEvent, useEffect, useRef, useState } from "react";
 import Alert from "../../../components/ui/Alert";
 import Breadcrumbs from "../../../components/ui/Breadcrumbs";
 import Button from "../../../components/ui/Button";
@@ -9,18 +9,25 @@ import FormQuestion from "../../../components/ui/Form/FormQuestion";
 import NavigationView from "../../../components/ui/NavigationView";
 import Paper from "../../../components/ui/Paper";
 import config from "../../../config";
-import { handleUpdateUserDisplayName } from "../../../firebase/settings";
+import { handleUpdateUserDisplayName, handleUpdateUserPassword } from "../../../firebase/settings";
 import retitle from "../../../lib/retitle";
+import { isValidPassword } from "../../../lib/validate";
 
 const Settings = ({ isLoggedIn }: any) => {
   const router = useRouter();
   const userDisplayNameRef = useRef<any>(null);
 
+  const currentPasswordRef = useRef<any>(null);
+  const newPasswordRef = useRef<any>(null);
+  const verifyNewPasswordRef = useRef<any>(null);
+
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [hasSubmitted, setHasSubmitted] = useState<boolean>(false);
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
+  const [readyToSubmitChangePassword, setReadyToSubmitChangePassword] = useState<boolean>(false);
 
-  const handleDisplayNameChange = async () => {
+  const handleDisplayNameChange = async (ev?: FormEvent<Element>) => {
+    ev?.preventDefault();
     setIsLoading(true);
     setHasSubmitted(false);
     try {
@@ -33,6 +40,42 @@ const Settings = ({ isLoggedIn }: any) => {
       setIsLoading(false);
       setHasSubmitted(true);
     }
+  };
+
+  const handleUpdatePassword = async (ev?: FormEvent<Element>) => {
+    ev?.preventDefault();
+    setIsLoading(true);
+    setHasSubmitted(false);
+    try {
+      if (
+        newPasswordRef.current.value !== verifyNewPasswordRef.current.value &&
+        !isValidPassword(newPasswordRef.current.value)
+      ) {
+        throw new Error("Invalid password");
+      }
+      await handleUpdateUserPassword(
+        currentPasswordRef.current.value,
+        newPasswordRef.current.value
+      );
+      setIsSuccess(true);
+    } catch (err) {
+      if (config.debugMode) console.error(err);
+      setIsSuccess(false);
+    } finally {
+      setIsLoading(false);
+      setHasSubmitted(true);
+    }
+  };
+
+  const updateReadyToSubmitChangePassword = () => {
+    setReadyToSubmitChangePassword(
+      currentPasswordRef.current.value.length > 0 &&
+      newPasswordRef.current.value.length > 0 &&
+      verifyNewPasswordRef.current.value.length > 0 &&
+      newPasswordRef.current.value ===  verifyNewPasswordRef.current.value &&
+      currentPasswordRef.current.value !== newPasswordRef.current.value &&
+      isValidPassword(newPasswordRef.current.value)
+    );
   };
 
   useEffect(() => {
@@ -59,7 +102,7 @@ const Settings = ({ isLoggedIn }: any) => {
         ]} />
       <NavigationView
         content={(
-          <article className="topLevelPage">
+          <article className="topLevelPage" style={{ gap: "1rem" }}>
             <h2>Settings</h2>
             {
               isLoading
@@ -89,11 +132,34 @@ const Settings = ({ isLoggedIn }: any) => {
                 : <></>
             }
             <Paper>
-              <h3>User</h3>
-              <section>
+              <h3>Profile</h3>
+              <section style={{ width: "100%", marginTop: "1rem" }}>
                 <Form onSubmit={handleDisplayNameChange}>
                   <FormQuestion variant="text" label="Display Name" forwardedRef={userDisplayNameRef} />
                   <Button variant="submit">Save</Button>
+                </Form>
+              </section>
+            </Paper>
+            <Paper>
+              <h3>Update password</h3>
+              <section style={{ width: "100%", marginTop: "1rem" }}>
+                <Form onSubmit={handleUpdatePassword}>
+                  <FormQuestion
+                    variant="password"
+                    label="Current Password"
+                    forwardedRef={currentPasswordRef}
+                    onChange={updateReadyToSubmitChangePassword} />
+                  <FormQuestion
+                    variant="password"
+                    label="New Password"
+                    forwardedRef={newPasswordRef}
+                    onChange={updateReadyToSubmitChangePassword} />
+                  <FormQuestion
+                    variant="password"
+                    label="Verify New Password"
+                    forwardedRef={verifyNewPasswordRef}
+                    onChange={updateReadyToSubmitChangePassword} />
+                  <Button variant="submit" disabled={!readyToSubmitChangePassword}>Update Password</Button>
                 </Form>
               </section>
             </Paper>
