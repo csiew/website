@@ -38,6 +38,17 @@ const EditPost = ({ isLoggedIn }: any) => {
   const [hasAttemptedSave, setHasAttemptedSave] = useState<boolean>(false);
   const [isSavingSuccess, setIsSavingSuccess] = useState<boolean>(false);
 
+  const cacheLocalChanges = (): BlogPost => {
+    const cachedPost: BlogPost = {
+      ...post as BlogPost,
+      title: titleEditorRef.current.value as string,
+      subtitle: subtitleEditorRef.current.value as string,
+      content: contentEditorRef.current.value as string
+    };
+    setLocalPostCache(cachedPost);
+    return cachedPost;
+  };
+
   const handleGetPosts = async () => {
     console.debug("Fetching posts from Firestore...");
     try {
@@ -74,14 +85,7 @@ const EditPost = ({ isLoggedIn }: any) => {
   const handleSubmit = async (ev: FormEvent<Element>, isPublished?: boolean) => {
     ev.preventDefault();
 
-    const cachedPost: BlogPost = {
-      ...post as BlogPost,
-      title: titleEditorRef.current.value as string,
-      subtitle: subtitleEditorRef.current.value as string,
-      content: contentEditorRef.current.value as string
-    };
-
-    setLocalPostCache(cachedPost);
+    const cachedPost = cacheLocalChanges();
 
     const updatedPost = { ...cachedPost } as { [k: string]: any };
     updatedPost.content = Buffer.from(cachedPost.content).toString("base64");
@@ -94,7 +98,7 @@ const EditPost = ({ isLoggedIn }: any) => {
     try {
       const docReference = doc(firebaseAppInstance.db, "posts", updatedPost.id);
       await updateDoc(docReference, updatedPost);
-      await handleGetTargetPost();
+      await handleGetTargetPost(true);
       setIsSavingSuccess(true);
     } catch (err) {
       if (config.debugMode) console.error(err);
@@ -102,6 +106,11 @@ const EditPost = ({ isLoggedIn }: any) => {
     } finally {
       setIsLoading(false);
     }
+  };
+
+  const resetAlertStates = () => {
+    setHasAttemptedSave(false);
+    setIsSavingSuccess(false);
   };
 
   const resetInputValues = (ev?: FormEvent<Element>, force?: boolean) => {
@@ -126,8 +135,12 @@ const EditPost = ({ isLoggedIn }: any) => {
   }, []);
 
   useEffect(() => {
-    if (!isLoading && !!isMountedRef.current) resetInputValues();
-  }, [handleGetTargetPost]);
+    if (!isLoading && !!isMountedRef.current && !isPreview) resetInputValues();
+  }, [handleGetTargetPost, setIsPreview]);
+
+  useEffect(() => {
+    if (!isLoading && !!isMountedRef.current) resetAlertStates();
+  }, [setLocalPostCache]);
 
   useEffect(() => {
     if (!isLoggedIn) {
@@ -182,12 +195,18 @@ const EditPost = ({ isLoggedIn }: any) => {
                         : <></>
                     }
                     {
-                      !isSavingSuccess && hasAttemptedSave
-                        ? (
-                          <Alert variant="error">
-                            <span>Failed to save post.</span>
-                          </Alert>
-                        )
+                      hasAttemptedSave
+                        ? !isSavingSuccess
+                          ? (
+                            <Alert variant="error">
+                              <span>Failed to save post.</span>
+                            </Alert>
+                          )
+                          : (
+                            <Alert variant="success">
+                              <span>Successfully saved post!</span>
+                            </Alert>
+                          )
                         : <></>
                     }
                   </>
@@ -226,6 +245,7 @@ const EditPost = ({ isLoggedIn }: any) => {
                           className={isPreview ? "active" : ""}
                           onClick={(ev: FormEvent<Element>) => {
                             ev.preventDefault();
+                            cacheLocalChanges();
                             setIsPreview(true);
                           }}>
                           Preview
@@ -237,7 +257,7 @@ const EditPost = ({ isLoggedIn }: any) => {
                         ? (
                           <Paper>
                             <ReactMarkdown>
-                              {post?.content ?? ""}
+                              {localPostCache ? localPostCache.content : post?.content ?? ""}
                             </ReactMarkdown>
                           </Paper>
                         )

@@ -23,8 +23,8 @@ const Posts = ({ isLoggedIn }: any) => {
   const [isSuccess, setIsSuccess] = useState<boolean>(true);
 
   const handleGetPosts = async (force?: boolean) => {
-    console.debug("Fetching posts from Firestore...");
     if (force || !adminSessionContext.posts.length) {
+      console.debug("Fetching posts from Firestore...");
       setIsLoading(true);
       try {
         const queryResults = await getRemotePosts();
@@ -38,6 +38,8 @@ const Posts = ({ isLoggedIn }: any) => {
       } finally {
         setIsLoading(false);
       }
+    } else {
+      console.debug("Fetching posts from shared context");
     }
     setPosts(adminSessionContext.posts);
     setIsSuccess(true);
@@ -45,9 +47,7 @@ const Posts = ({ isLoggedIn }: any) => {
   };
 
   useEffect(() => {
-    if (!isMountedRef.current) {
-      handleGetPosts();
-    }
+    if (!isMountedRef.current) handleGetPosts();
     isMountedRef.current = true;
   }, []);
 
