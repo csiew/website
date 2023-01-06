@@ -2,7 +2,7 @@ import React, { MouseEvent } from "react";
 import TextField from "../TextField";
 import { FormQuestionProps } from "./@types";
 
-const FormQuestion = ({ style, label, name, forwardedRef, variant, disabled, required, onClick, onChange }: FormQuestionProps) => {
+const FormQuestion = ({ style, label, name, forwardedRef, defaultValue, variant, disabled, required, onClick, onChange }: FormQuestionProps) => {
   const focusInput = (ev: MouseEvent<HTMLLabelElement>) => {
     ev.preventDefault();
     forwardedRef?.current.focus();
@@ -15,7 +15,16 @@ const FormQuestion = ({ style, label, name, forwardedRef, variant, disabled, req
           ? <label htmlFor={name} onClick={focusInput}>{label}</label>
           : <></>
       }
-      <TextField variant={variant} name={name} style={style} forwardedRef={forwardedRef} disabled={disabled} required={required} onClick={onClick} onChange={onChange} />
+      <TextField
+        variant={variant}
+        name={name}
+        style={style}
+        forwardedRef={forwardedRef}
+        defaultValue={defaultValue}
+        disabled={disabled}
+        required={required}
+        onClick={onClick}
+        onChange={onChange} />
     </span>
   );
 };

@@ -22,33 +22,32 @@ const Posts = ({ isLoggedIn }: any) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isSuccess, setIsSuccess] = useState<boolean>(true);
 
-  const handleGetPosts = async () => {
+  const handleGetPosts = async (force?: boolean) => {
     console.debug("Fetching posts from Firestore...");
-    setIsLoading(true);
-    try {
-      const queryResults = await getRemotePosts();
-      const extractedPosts = mapDocumentDataToPosts(queryResults.docs.map((d) => d.data()));
-      adminSessionContext.posts = extractedPosts;
-      setPosts(extractedPosts);
-      setIsSuccess(true);
-    } catch (err) {
-      if (config.debugMode) console.error(err);
-      setIsSuccess(true);
-    } finally {
-      setIsLoading(false);
+    if (!!force || !adminSessionContext.posts.length) {
+      setIsLoading(true);
+      try {
+        const queryResults = await getRemotePosts();
+        const extractedPosts = mapDocumentDataToPosts(queryResults.docs.map((d) => ({ id: d.id, ...d.data() })));
+        adminSessionContext.posts = extractedPosts;
+        setPosts(extractedPosts);
+        setIsSuccess(true);
+      } catch (err) {
+        if (config.debugMode) console.error(err);
+        setIsSuccess(true);
+      } finally {
+        setIsLoading(false);
+      }
     }
+    setPosts(adminSessionContext.posts);
+    setIsSuccess(true);
     console.debug("Done fetching");
   };
 
   useEffect(() => {
     if (!isMountedRef.current) {
-      if (!adminSessionContext.posts.length) {
-        handleGetPosts();
-      } else {
-        setPosts(adminSessionContext.posts);
-        setIsSuccess(true);
-      }
-    };
+      handleGetPosts();
+    }
     isMountedRef.current = true;
   }, []);
 
@@ -90,7 +89,7 @@ const Posts = ({ isLoggedIn }: any) => {
             <Paper style={{ padding: 0 }}>
               <section className="admin-posts-list-header">
                 <Link href="/admin/posts/compose" className={isLoading ? "disabled" : ""}>New Post</Link>
-                <Link href="#" onClick={() => handleGetPosts()} className={isLoading ? "disabled" : ""}>Refresh</Link>
+                <Link href="#" onClick={() => handleGetPosts(true)} className={isLoading ? "disabled" : ""}>Refresh</Link>
               </section>
               {
                 isLoading

@@ -7,9 +7,9 @@ export const getRemotePosts = async (): Promise<QuerySnapshot<DocumentData>> => 
   return await getDocs(q);
 };
 
-export const mapDocumentDataToPosts = (postData: DocumentData[]): BlogPost[] => {
+export const mapDocumentDataToPosts = (postData: (DocumentData & { id: string })[]): BlogPost[] => {
   return postData.map((p) => ({
-    id: p.slug,
+    id: p.id,
     slug: p.slug,
     title: p.title,
     subtitle: p.subtitle,
