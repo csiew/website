@@ -55,6 +55,7 @@
   font-size: inherit;
   font-weight: 600;
   text-decoration: none;
+  white-space: nowrap;
   cursor: pointer;
 }
 :is(button, .button, input[type=submit], input[type=reset]):hover {

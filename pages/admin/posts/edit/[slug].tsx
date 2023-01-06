@@ -18,7 +18,7 @@ import firebaseAppInstance from "../../../../firebase";
 import { doc, serverTimestamp, Timestamp, updateDoc } from "@firebase/firestore/lite";
 import FormQuestion from "../../../../components/ui/Form/FormQuestion";
 
-const EditPost = () => {
+const EditPost = ({ isLoggedIn }: any) => {
   const router = useRouter();
   const adminSessionContext = useContext(AdminSessionContext);
 
@@ -29,6 +29,7 @@ const EditPost = () => {
 
   const [slug, setSlug] = useState<string>("");
   const [post, setPost] = useState<BlogPost>();
+  const [localPostCache, setLocalPostCache] = useState<BlogPost | undefined>();
   const [isNewPost, setIsNewPost] = useState<boolean>(false);
   const [isPreview, setIsPreview] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -51,11 +52,11 @@ const EditPost = () => {
     console.debug("Done fetching");
   };
 
-  const handleGetTargetPost = async () => {
+  const handleGetTargetPost = async (force?: boolean) => {
     const { slug } = router.query;
     setSlug(slug as string);
     setIsLoading(true);
-    if (!adminSessionContext.posts.length) {
+    if (force || !adminSessionContext.posts.length) {
       await handleGetPosts();
     }
     console.debug(`Searching for post with slug: ${slug}`);
@@ -73,12 +74,19 @@ const EditPost = () => {
   const handleSubmit = async (ev: FormEvent<Element>, isPublished?: boolean) => {
     ev.preventDefault();
 
-    const updatedPost = { ...post } as { [k: string]: any };
-    updatedPost.title = titleEditorRef.current.value;
-    updatedPost.subtitle = subtitleEditorRef.current.value;
-    updatedPost.content = Buffer.from(contentEditorRef.current.value).toString("base64");
-    updatedPost.isPublished = isPublished ?? post?.isPublished ?? false;
-    updatedPost.publishedOn = post?.isPublished ? Timestamp.fromDate(post?.publishedOn as Date): serverTimestamp();
+    const cachedPost: BlogPost = {
+      ...post as BlogPost,
+      title: titleEditorRef.current.value as string,
+      subtitle: subtitleEditorRef.current.value as string,
+      content: contentEditorRef.current.value as string
+    };
+
+    setLocalPostCache(cachedPost);
+
+    const updatedPost = { ...cachedPost } as { [k: string]: any };
+    updatedPost.content = Buffer.from(cachedPost.content).toString("base64");
+    updatedPost.isPublished = isPublished ?? cachedPost.isPublished ?? false;
+    updatedPost.publishedOn = cachedPost.isPublished ? Timestamp.fromDate(cachedPost.publishedOn as Date): serverTimestamp();
     updatedPost.lastModified = serverTimestamp();
 
     setIsLoading(true);
@@ -86,7 +94,7 @@ const EditPost = () => {
     try {
       const docReference = doc(firebaseAppInstance.db, "posts", updatedPost.id);
       await updateDoc(docReference, updatedPost);
-      await handleGetPosts();
+      await handleGetTargetPost();
       setIsSavingSuccess(true);
     } catch (err) {
       if (config.debugMode) console.error(err);
@@ -96,12 +104,20 @@ const EditPost = () => {
     }
   };
 
-  const resetInputValues = (ev?: FormEvent<Element>) => {
+  const resetInputValues = (ev?: FormEvent<Element>, force?: boolean) => {
     ev?.preventDefault();
     if (!post || [titleEditorRef, subtitleEditorRef, contentEditorRef].some((r) => r.current === null)) return;
-    titleEditorRef.current.value = post?.title ?? "";
-    subtitleEditorRef.current.value = post?.subtitle ?? "";
-    contentEditorRef.current.value = post?.content ?? "";
+    if (force || !localPostCache) {
+      console.debug("Loading post data from shared context");
+      titleEditorRef.current.value = post?.title ?? "";
+      subtitleEditorRef.current.value = post?.subtitle ?? "";
+      contentEditorRef.current.value = post?.content ?? "";
+    } else {
+      console.debug("Loading post data from local state cache");
+      titleEditorRef.current.value = localPostCache.title;
+      subtitleEditorRef.current.value = localPostCache.subtitle;
+      contentEditorRef.current.value = localPostCache.content;
+    }
   };
 
   useEffect(() => {
@@ -113,7 +129,11 @@ const EditPost = () => {
     if (!isLoading && !!isMountedRef.current) resetInputValues();
   }, [handleGetTargetPost]);
 
-  useEffect(() => resetInputValues(), [setPost]);
+  useEffect(() => {
+    if (!isLoggedIn) {
+      router.push("/admin");
+    }
+  }, [isLoggedIn]);
 
   return (
     <>
@@ -136,32 +156,41 @@ const EditPost = () => {
           }
         ]} />
       <NavigationView
+        contentStyle={{ paddingInline: "0.75rem" }}
         content={(
-          <article className="topLevelPage">
+          <article className="topLevelPage" style={{ maxWidth: "1024px" }}>
             {
-              !isRefreshPostsSuccess
+              !isLoading
                 ? (
-                  <Alert variant="error">
-                    <span>Failed to reload posts from Firebase.</span>
-                  </Alert>
-                )
-                : <></>
-            }
-            {
-              !isSearchSuccess
-                ? (
-                  <Alert variant="error">
-                    <span>Failed to find post with slug: {slug}</span>
-                  </Alert>
-                )
-                : <></>
-            }
-            {
-              !isSavingSuccess && hasAttemptedSave
-                ? (
-                  <Alert variant="error">
-                    <span>Failed to save post.</span>
-                  </Alert>
+                  <>
+                    {
+                      !isRefreshPostsSuccess
+                        ? (
+                          <Alert variant="error">
+                            <span>Failed to reload posts from Firebase.</span>
+                          </Alert>
+                        )
+                        : <></>
+                    }
+                    {
+                      !isSearchSuccess
+                        ? (
+                          <Alert variant="error">
+                            <span>Failed to find post with slug: {slug}</span>
+                          </Alert>
+                        )
+                        : <></>
+                    }
+                    {
+                      !isSavingSuccess && hasAttemptedSave
+                        ? (
+                          <Alert variant="error">
+                            <span>Failed to save post.</span>
+                          </Alert>
+                        )
+                        : <></>
+                    }
+                  </>
                 )
                 : <></>
             }
@@ -172,7 +201,7 @@ const EditPost = () => {
                   <Form
                     className="post-editor"
                     onSubmit={(ev: FormEvent<Element>) => handleSubmit(ev, true)}
-                    onReset={resetInputValues}>
+                    onReset={(ev: FormEvent<Element>) => resetInputValues(ev, true)}>
                     <FormQuestion
                       variant="text"
                       label="Title"

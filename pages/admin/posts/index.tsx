@@ -24,7 +24,7 @@ const Posts = ({ isLoggedIn }: any) => {
 
   const handleGetPosts = async (force?: boolean) => {
     console.debug("Fetching posts from Firestore...");
-    if (!!force || !adminSessionContext.posts.length) {
+    if (force || !adminSessionContext.posts.length) {
       setIsLoading(true);
       try {
         const queryResults = await getRemotePosts();
