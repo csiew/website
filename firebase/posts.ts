@@ -19,18 +19,26 @@ export const decodeContent = (content: string): string => {
 export const mapDocumentDataToPosts = (
   postData: (DocumentData & { id: string })[]
 ): BlogPost[] => {
-  return postData.map((p) => ({
-    id: p.id,
-    slug: p.slug,
-    title: p.title,
-    subtitle: p.subtitle,
-    author: p.author,
-    publishedOn: p.publishedOn ? (p.publishedOn as Timestamp).toDate(): undefined,
-    createdAt: (p.createdAt as Timestamp).toDate(),
-    lastModified: (p.lastModified as Timestamp)?.toDate(),
-    content: decodeContent(p.content),
-    isPublished: p.isPublished
-  }));
+  return postData
+    .map((p) => {
+      return {
+        id: p.id,
+        slug: p.slug,
+        title: p.title,
+        subtitle: p.subtitle,
+        author: p.author,
+        publishedOn: p.publishedOn ? (p.publishedOn as Timestamp).toDate(): undefined,
+        createdAt: (p.createdAt as Timestamp)?.toDate(),
+        lastModified: (p.lastModified as Timestamp)?.toDate(),
+        content: decodeContent(p.content ?? ""),
+        isPublished: p.isPublished
+      };
+    })
+    .sort((a, b) => {
+      const dateA = a.createdAt.getTime();
+      const dateB = b.createdAt.getTime();
+      return dateB - dateA;
+    });
 };
 
 export const savePost = async (

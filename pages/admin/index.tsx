@@ -1,4 +1,4 @@
-import React, { createContext, useEffect } from "react";
+import React, { useEffect } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import retitle from "../../lib/retitle";
@@ -8,9 +8,6 @@ import config from "../../config";
 import useSession from "../../firebase/session";
 import { MdLogout, MdPostAdd, MdSettings } from "react-icons/md";
 import Paper from "../../components/ui/Paper";
-import { BlogPost } from "../../lib/blog";
-
-export const AdminSessionContext = createContext({ posts: [] as BlogPost[] });
 
 const Admin = ({ isLoggedIn }: any) => {
   const session = useSession();
@@ -25,48 +22,46 @@ const Admin = ({ isLoggedIn }: any) => {
         <title>{retitle("Admin")}</title>
         <meta property="og:title" content={retitle("Admin")} key="title" />
       </Head>
-      <AdminSessionContext.Provider value={{ posts: [] }}>
-        <NavigationView
-          content={(
-            <article className="topLevelPage">
-              <h2>Admin</h2>
-              {
-                !isLoggedIn
-                  ? (
+      <NavigationView
+        content={(
+          <article className="topLevelPage">
+            <h2>Admin</h2>
+            {
+              !isLoggedIn
+                ? (
+                  <section>
+                    <ButtonGroup orientation="vertical" style={{ alignItems: "center", justifyContent: "center" }}>
+                      <Link href="/admin/signup">Sign Up</Link>
+                      <Link href="/admin/login">Login</Link>
+                    </ButtonGroup>
+                  </section>
+                )
+                : (
+                  <>
                     <section>
-                      <ButtonGroup orientation="vertical" style={{ alignItems: "center", justifyContent: "center" }}>
-                        <Link href="/admin/signup">Sign Up</Link>
-                        <Link href="/admin/login">Login</Link>
-                      </ButtonGroup>
+                      <Paper style={{ width: "100%" }}>
+                        <p>Welcome back, {session.user?.displayName ?? session.user?.uid}!</p>
+                      </Paper>
                     </section>
-                  )
-                  : (
-                    <>
-                      <section>
-                        <Paper style={{ width: "100%" }}>
-                          <p>Welcome back, {session.user?.displayName ?? session.user?.uid}!</p>
-                        </Paper>
-                      </section>
-                      <section className="admin-applet-list" style={{ marginTop: "1rem" }}>
-                        <Link href="/admin/posts">
-                          <MdPostAdd />
-                          <span>Posts</span>
-                        </Link>
-                        <Link href="/admin/settings">
-                          <MdSettings />
-                          <span>Settings</span>
-                        </Link>
-                        <Link href="/admin/signout">
-                          <MdLogout />
-                          <span>Sign Out</span>
-                        </Link>
-                      </section>
-                    </>
-                  )
-              }
-            </article>
-          )} />
-      </AdminSessionContext.Provider>
+                    <section className="admin-applet-list" style={{ marginTop: "1rem" }}>
+                      <Link href="/admin/posts">
+                        <MdPostAdd />
+                        <span>Posts</span>
+                      </Link>
+                      <Link href="/admin/settings">
+                        <MdSettings />
+                        <span>Settings</span>
+                      </Link>
+                      <Link href="/admin/signout">
+                        <MdLogout />
+                        <span>Sign Out</span>
+                      </Link>
+                    </section>
+                  </>
+                )
+            }
+          </article>
+        )} />
     </>
   );
 };

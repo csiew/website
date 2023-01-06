@@ -7,11 +7,11 @@ import NavigationView from "../../../components/ui/NavigationView";
 import Paper from "../../../components/ui/Paper";
 import Link from "next/link";
 import { deletePost, encodeContent, getRemotePosts, mapDocumentDataToPosts, savePost } from "../../../firebase/posts";
-import { AdminSessionContext } from "..";
 import config from "../../../config";
 import Alert from "../../../components/ui/Alert";
 import { BlogPost } from "../../../lib/blog";
 import { serverTimestamp } from "@firebase/firestore/lite";
+import { ContentContext } from "../../_app";
 
 type CommitAttemptFlags = {
   delete: boolean;
@@ -21,7 +21,7 @@ type CommitAttemptFlags = {
 
 const Posts = ({ isLoggedIn }: any) => {
   const router = useRouter();
-  const adminSessionContext = useContext(AdminSessionContext);
+  const contentContext = useContext(ContentContext);
   
   const isMountedRef = useRef<any>(false);
 
@@ -40,13 +40,13 @@ const Posts = ({ isLoggedIn }: any) => {
   const [isDeletionSuccess, setIsDeletionSuccess] = useState<boolean>(false);
 
   const handleGetPosts = async (force?: boolean) => {
-    if (force || !adminSessionContext.posts.length) {
+    if (force || !contentContext.posts.length) {
       console.debug("Fetching posts from Firestore...");
       setIsLoading(true);
       try {
         const queryResults = await getRemotePosts();
         const extractedPosts = mapDocumentDataToPosts(queryResults.docs.map((d) => ({ id: d.id, ...d.data() })));
-        adminSessionContext.posts = extractedPosts;
+        contentContext.posts = extractedPosts;
         console.debug({ extractedPosts });
         setPosts(extractedPosts);
         setIsSuccess(true);
@@ -59,9 +59,9 @@ const Posts = ({ isLoggedIn }: any) => {
     } else {
       console.debug("Fetching posts from shared context");
     }
-    setPosts(adminSessionContext.posts);
+    setPosts(contentContext.posts);
     const selectionMap = new Map<string, boolean>();
-    adminSessionContext.posts.map((p) => selectionMap.set(p.id!, false));
+    contentContext.posts.map((p) => selectionMap.set(p.id!, false));
     setSelectedPosts(selectionMap);
     setIsSuccess(true);
     console.debug("Done fetching");
@@ -274,7 +274,17 @@ const Posts = ({ isLoggedIn }: any) => {
                 <span style={{ width: "100%" }}></span>
                 {
                   !inEditMode
-                    ? <Link href="#" onClick={() => handleGetPosts(true)} className={isLoading ? "disabled" : ""}>Refresh</Link>
+                    ? (
+                      <Link
+                        href="#"
+                        onClick={() => {
+                          handleGetPosts(true);
+                          setHasAttemptedCommit({ delete: false, publish: false, unpublish: false });
+                        }}
+                        className={isLoading ? "disabled" : ""}>
+                        Refresh
+                      </Link>
+                    )
                     : <></>
                 }
                 <Link href="#" onClick={() => setInEditMode(!inEditMode)} className={isLoading ? "disabled" : ""}>
@@ -316,6 +326,9 @@ const Posts = ({ isLoggedIn }: any) => {
                                 <h3>{p.title}</h3>
                                 <sub>
                                   <b>Created at:</b> <span>{p.createdAt.toLocaleString()}</span>
+                                </sub>
+                                <sub>
+                                  <b>Last modified at:</b> <span>{p.lastModified?.toLocaleString()}</span>
                                 </sub>
                                 <sub>
                                   <b>Published on:</b> <span>{p.isPublished ? p.publishedOn!.toLocaleString() : "Not published"}</span>

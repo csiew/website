@@ -6,7 +6,6 @@ import NavigationView from "../../../../components/ui/NavigationView";
 import { useRouter } from "next/router";
 import { BlogPost } from "../../../../lib/blog";
 import { encodeContent, getRemotePosts, mapDocumentDataToPosts, savePost } from "../../../../firebase/posts";
-import { AdminSessionContext } from "../..";
 import config from "../../../../config";
 import ButtonGroup from "../../../../components/ui/ButtonGroup";
 import Button from "../../../../components/ui/Button";
@@ -14,13 +13,13 @@ import ReactMarkdown from "react-markdown";
 import Paper from "../../../../components/ui/Paper";
 import Form from "../../../../components/ui/Form";
 import Alert from "../../../../components/ui/Alert";
-import firebaseAppInstance from "../../../../firebase";
-import { addDoc, collection, doc, serverTimestamp, Timestamp, updateDoc } from "@firebase/firestore/lite";
+import { serverTimestamp, Timestamp } from "@firebase/firestore/lite";
 import FormQuestion from "../../../../components/ui/Form/FormQuestion";
+import { ContentContext } from "../../../_app";
 
 const EditPost = ({ isLoggedIn }: any) => {
   const router = useRouter();
-  const adminSessionContext = useContext(AdminSessionContext);
+  const contentContext = useContext(ContentContext);
 
   const isMountedRef = useRef<any>(false);
   const slugEditorRef = useRef<any>(null);
@@ -56,7 +55,7 @@ const EditPost = ({ isLoggedIn }: any) => {
     try {
       const queryResults = await getRemotePosts();
       const extractedPosts = mapDocumentDataToPosts(queryResults.docs.map((d) => ({ id: d.id, ...d.data() })));
-      adminSessionContext.posts = extractedPosts;
+      contentContext.posts = extractedPosts;
       setIsRefreshPostsSuccess(true);
     } catch (err) {
       if (config.debugMode) console.error(err);
@@ -89,11 +88,11 @@ const EditPost = ({ isLoggedIn }: any) => {
 
       return;
     }
-    if (force || !adminSessionContext.posts.length) {
+    if (force || !contentContext.posts.length) {
       await handleGetPosts();
     }
     console.debug(`Searching for post with slug: ${slug}`);
-    const targetPost = adminSessionContext.posts.find((p) => p.slug === slug);
+    const targetPost = contentContext.posts.find((p) => p.slug === slug);
     if (!targetPost) {
       setIsSearchSuccess(false);
     } else {
