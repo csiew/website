@@ -24,18 +24,7 @@ const BlogPostPage = ({ post }: { post: string }) => {
   );
 };
 
-export const getStaticPaths = async () => {
-  const remotePosts = await getRemotePosts();
-  const posts = mapDocumentDataToPosts(
-    remotePosts.docs.map((d) => ({ id: d.id, ...d.data() }))
-  ).filter((p) => p.isPublished);
-  return {
-    paths: posts.map((p) => ({ params: { slug: p.slug } })),
-    fallback: false
-  };
-};
-
-export const getStaticProps = async (context: any) => {
+export const getServerSideProps = async (context: any) => {
   const { slug } = context.params;
   const remotePosts = await getRemotePosts();
   const post = mapDocumentDataToPosts(
