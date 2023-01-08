@@ -1,14 +1,16 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Head from "next/head";
 import config from "../../config";
-import { BlogPost } from "../../lib/blog";
+import { BlogPost, generatePathString } from "../../lib/blog";
 import retitle from "../../lib/retitle";
-import BlogNavigationView from "../../components/app/BlogNavigationView";
-import { getRemotePosts, mapDocumentDataToPosts } from "../../firebase/posts";
-import { ContentContext } from "../_app";
+import NavigationView from "../../components/ui/NavigationView";
+import Alert from "../../components/ui/Alert";
+import Link from "next/link";
+import { relativeTime } from "../../lib/timestamp";
+import usePostStoreHook from "../../stores/posts/hook";
 
 const Blog = () => {
-  const contentContext = useContext(ContentContext);
+  const postStoreHook = usePostStoreHook();
   const isMountedRef = useRef<any>(null);
 
   const [posts, setPosts] = useState<BlogPost[]>();
@@ -17,21 +19,13 @@ const Blog = () => {
 
   const getPosts = async (force?: boolean) => {
     setIsLoading(true);
-    if (!!force || !contentContext.posts.length) {
-      console.debug("Fetching blog post list from Firestore...");
-      try {
-        const remotePosts = await getRemotePosts();
-        const mappedPosts = mapDocumentDataToPosts(
-          remotePosts.docs.map((d) => ({ id: d.id, ...d.data() }))
-        ).filter((p) => p.isPublished);
-        contentContext.posts = mappedPosts;
-        setIsSuccess(true);
-      } catch (err) {
-        if (config.debugMode) console.error(err);
-        setIsSuccess(false);
-      }
+    const result = await postStoreHook.getPosts(force);
+    if (result.length) {
+      setPosts(result);
+      setIsSuccess(true);
+    } else {
+      setIsSuccess(false);
     }
-    setPosts(contentContext.posts);
     setIsLoading(false);
   };
 
@@ -47,7 +41,44 @@ const Blog = () => {
         <title>{retitle("Blog")}</title>
         <meta property="og:title" content={retitle("Blog")} key="title" />
       </Head>
-      <BlogNavigationView posts={posts} isLoading={isLoading} isSuccess={isSuccess} />
+      <NavigationView
+        className="pageBlog"
+        content={(
+          <article className="topLevelPage">
+            {
+              !isLoading && !isSuccess
+                ? (
+                  <Alert variant="error">
+                    <span>Failed to fetch blog posts. <a href="#" onClick={() => getPosts(true)}>Try again.</a></span>
+                  </Alert>
+                )
+                : <></>
+            }
+            {
+              isLoading
+                ? (
+                  <Alert variant="plain">
+                    <span>Fetching blog posts...</span>
+                  </Alert>
+                )
+                : <></>
+            }
+            <h2>Blog</h2>
+            <ul className="postList">
+              {
+                posts?.map((p) => (
+                  <li key={p.id}>
+                    <Link href={generatePathString(p.slug!)}>
+                      <h3>{p.title}</h3>
+                    </Link>
+                    <sub>{`${relativeTime(p.publishedOn!)} - ${new Date(p.publishedOn!).toLocaleDateString()}`}</sub>
+                  </li>
+                ))
+              }
+            </ul>
+          </article>
+        )}
+      />
     </>
   );
 };

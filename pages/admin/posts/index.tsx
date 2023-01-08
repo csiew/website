@@ -11,7 +11,7 @@ import config from "../../../config";
 import Alert from "../../../components/ui/Alert";
 import { BlogPost } from "../../../lib/blog";
 import { serverTimestamp } from "@firebase/firestore/lite";
-import { ContentContext } from "../../_app";
+import ContentContext from "../../../stores/posts";
 
 type CommitAttemptFlags = {
   delete: boolean;
