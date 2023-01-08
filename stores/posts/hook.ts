@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { ContentContext } from ".";
 import { BlogPost } from "../../lib/blog";
 import { getRemotePosts, mapDocumentDataToPosts } from "../../firebase/posts";
@@ -6,6 +6,7 @@ import config from "../../config";
 
 const usePostStoreHook = () => {
   const contentContext = useContext(ContentContext);
+  const isMountedRef = useRef<any>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
 
@@ -32,6 +33,11 @@ const usePostStoreHook = () => {
     }
     return contentContext.posts;
   };
+
+  useEffect(() => {
+    if (!isMountedRef.current) getPosts();
+    isMountedRef.current = true;
+  }, []);
 
   return { isLoading, isSuccess, getPosts };
 };

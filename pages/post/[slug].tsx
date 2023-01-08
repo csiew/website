@@ -8,11 +8,15 @@ import NavigationView from "../../components/ui/NavigationView";
 import ReactMarkdown from "react-markdown";
 import Link from "next/link";
 import usePostStoreHook from "../../stores/posts/hook";
+import Breadcrumbs from "../../components/ui/Breadcrumbs";
+import { useRouter } from "next/router";
 
-const BlogPostPage = ({ slug }: { slug: string }) => {
+const BlogPostPage = () => {
+  const router = useRouter();
   const postStoreHook = usePostStoreHook();
   const isMountedRef = useRef<any>(null);
 
+  const [urlSlug, setUrlSlug] = useState<string>();
   const [post, setPost] = useState<BlogPost | undefined>();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
@@ -20,7 +24,7 @@ const BlogPostPage = ({ slug }: { slug: string }) => {
   const getPost = async (force?: boolean) => {
     setIsLoading(true);
     const storeResult = await postStoreHook.getPosts(force);
-    const searchResult = storeResult.filter((p) => p.isPublished && p.slug === slug);
+    const searchResult = storeResult.filter((p) => p.isPublished && p.slug === urlSlug);
     if (storeResult.length) {
       setPost(searchResult[0]);
       setIsSuccess(true);
@@ -35,9 +39,16 @@ const BlogPostPage = ({ slug }: { slug: string }) => {
   }, []);
 
   useEffect(() => {
-    if (!isMountedRef.current) getPost();
-    if (slug && slug.length) isMountedRef.current = true;
-  }, [slug]);
+    const { slug } = router.query;
+    setUrlSlug(slug as string);
+  }, [router, router.query, router.query.slug]);
+
+  useEffect(() => {
+    if (urlSlug && urlSlug.length) {
+      if (!isMountedRef.current) getPost();
+      isMountedRef.current = true;
+    }
+  }, [urlSlug]);
   
   return (
     <>
@@ -45,6 +56,16 @@ const BlogPostPage = ({ slug }: { slug: string }) => {
         <title>{retitle(post?.title)}</title>
         <meta property="og:title" content={retitle(post?.title)} key="title" />
       </Head>
+      <Breadcrumbs
+        items={[
+          {
+            title: "Blog",
+            href: "/blog"
+          },
+          {
+            title: post?.title ?? "Post"
+          }
+        ]} />
       <NavigationView
         className="pageBlogPost"
         content={(
@@ -95,13 +116,6 @@ const BlogPostPage = ({ slug }: { slug: string }) => {
         )} />
     </>
   );
-};
-
-export const getServerSideProps = (context: any) => {
-  const { slug } = context.params;
-  return {
-    props: { slug }
-  };
 };
 
 export default BlogPostPage;
