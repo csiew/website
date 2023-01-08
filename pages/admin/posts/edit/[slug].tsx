@@ -15,7 +15,7 @@ import Form from "../../../../components/ui/Form";
 import Alert from "../../../../components/ui/Alert";
 import { serverTimestamp, Timestamp } from "@firebase/firestore/lite";
 import FormQuestion from "../../../../components/ui/Form/FormQuestion";
-import { ContentContext } from "../../../_app";
+import ContentContext from "../../../../stores/posts";
 
 const EditPost = ({ isLoggedIn }: any) => {
   const router = useRouter();
