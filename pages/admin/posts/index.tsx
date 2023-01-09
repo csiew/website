@@ -6,12 +6,13 @@ import Breadcrumbs from "../../../components/ui/Breadcrumbs";
 import NavigationView from "../../../components/ui/NavigationView";
 import Paper from "../../../components/ui/Paper";
 import Link from "next/link";
-import { deletePost, encodeContent, getRemotePosts, mapDocumentDataToPosts, savePost } from "../../../firebase/posts";
+import { deletePost, encodeContent, savePost } from "../../../firebase/posts";
 import config from "../../../config";
 import Alert from "../../../components/ui/Alert";
 import { BlogPost } from "../../../lib/blog";
 import { serverTimestamp } from "@firebase/firestore/lite";
-import { ContentContext } from "../../_app";
+import ContentContext from "../../../stores/posts";
+import usePostStoreHook from "../../../stores/posts/hook";
 
 type CommitAttemptFlags = {
   delete: boolean;
@@ -22,10 +23,9 @@ type CommitAttemptFlags = {
 const Posts = ({ isLoggedIn }: any) => {
   const router = useRouter();
   const contentContext = useContext(ContentContext);
-  
+  const postStoreHook = usePostStoreHook();
   const isMountedRef = useRef<any>(false);
 
-  const [posts, setPosts] = useState<BlogPost[]>([]);
   const [selectedPosts, setSelectedPosts] = useState<Map<string, boolean>>();
   const [hasSelectedPosts, setHasSelectedPosts] = useState<boolean>(false);
   const [inEditMode, setInEditMode] = useState<boolean>(false);
@@ -40,15 +40,10 @@ const Posts = ({ isLoggedIn }: any) => {
   const [isDeletionSuccess, setIsDeletionSuccess] = useState<boolean>(false);
 
   const handleGetPosts = async (force?: boolean) => {
-    if (force || !contentContext.posts.length) {
-      console.debug("Fetching posts from Firestore...");
+    if (!!force || !contentContext.posts.length) {
       setIsLoading(true);
       try {
-        const queryResults = await getRemotePosts();
-        const extractedPosts = mapDocumentDataToPosts(queryResults.docs.map((d) => ({ id: d.id, ...d.data() })));
-        contentContext.posts = extractedPosts;
-        console.debug({ extractedPosts });
-        setPosts(extractedPosts);
+        await postStoreHook.getPosts(force);
         setIsSuccess(true);
       } catch (err) {
         if (config.debugMode) console.error(err);
@@ -56,10 +51,7 @@ const Posts = ({ isLoggedIn }: any) => {
       } finally {
         setIsLoading(false);
       }
-    } else {
-      console.debug("Fetching posts from shared context");
     }
-    setPosts(contentContext.posts);
     const selectionMap = new Map<string, boolean>();
     contentContext.posts.map((p) => selectionMap.set(p.id!, false));
     setSelectedPosts(selectionMap);
@@ -102,7 +94,7 @@ const Posts = ({ isLoggedIn }: any) => {
     });
     const publishQueue: BlogPost[] = selectedKeys
       .map((k) => {
-        const post = posts.find((p) => p.id === k && p.isPublished === false);
+        const post = contentContext.posts.find((p) => p.id === k && p.isPublished === false);
         if (post) {
           return post;
         }
@@ -134,7 +126,7 @@ const Posts = ({ isLoggedIn }: any) => {
     });
     const publishQueue: BlogPost[] = selectedKeys
       .map((k) => {
-        const post = posts.find((p: BlogPost) => p.id === k && p.isPublished === true);
+        const post = contentContext.posts.find((p: BlogPost) => p.id === k && p.isPublished === true);
         if (post) {
           return post;
         }
@@ -302,7 +294,7 @@ const Posts = ({ isLoggedIn }: any) => {
                     <section className="admin-posts-list">
                       <ul>
                         {
-                          posts.map((p: BlogPost, i: number) => (
+                          contentContext.posts.map((p: BlogPost, i: number) => (
                             <li key={p.slug ?? i}>
                               {
                                 inEditMode
