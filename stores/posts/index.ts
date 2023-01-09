@@ -1,10 +1,11 @@
 import { createContext } from "react";
 import { BlogPost } from "../../lib/blog";
 
-export type ContentContextProps = {
+interface IContentContextProps {
   posts: BlogPost[];
-};
+  savePosts?: (newPosts: BlogPost[]) => void;
+}
 
-export const ContentContext = createContext({ posts: new Array<BlogPost>() });
+const ContentContext = createContext<IContentContextProps>({ posts: new Array<BlogPost>() });
 
 export default ContentContext;

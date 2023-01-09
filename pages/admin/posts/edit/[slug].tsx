@@ -5,7 +5,7 @@ import Breadcrumbs from "../../../../components/ui/Breadcrumbs";
 import NavigationView from "../../../../components/ui/NavigationView";
 import { useRouter } from "next/router";
 import { BlogPost } from "../../../../lib/blog";
-import { encodeContent, getRemotePosts, mapDocumentDataToPosts, savePost } from "../../../../firebase/posts";
+import { encodeContent, savePost } from "../../../../firebase/posts";
 import config from "../../../../config";
 import ButtonGroup from "../../../../components/ui/ButtonGroup";
 import Button from "../../../../components/ui/Button";
@@ -16,9 +16,11 @@ import Alert from "../../../../components/ui/Alert";
 import { serverTimestamp, Timestamp } from "@firebase/firestore/lite";
 import FormQuestion from "../../../../components/ui/Form/FormQuestion";
 import ContentContext from "../../../../stores/posts";
+import usePostStoreHook from "../../../../stores/posts/hook";
 
 const EditPost = ({ isLoggedIn }: any) => {
   const router = useRouter();
+  const postStoreHook = usePostStoreHook();
   const contentContext = useContext(ContentContext);
 
   const isMountedRef = useRef<any>(false);
@@ -51,17 +53,13 @@ const EditPost = ({ isLoggedIn }: any) => {
   };
 
   const handleGetPosts = async () => {
-    console.debug("Fetching posts from Firestore...");
     try {
-      const queryResults = await getRemotePosts();
-      const extractedPosts = mapDocumentDataToPosts(queryResults.docs.map((d) => ({ id: d.id, ...d.data() })));
-      contentContext.posts = extractedPosts;
+      await postStoreHook.getPosts();
       setIsRefreshPostsSuccess(true);
     } catch (err) {
       if (config.debugMode) console.error(err);
       setIsRefreshPostsSuccess(true);
     }
-    console.debug("Done fetching");
   };
 
   const handleGetTargetPost = async (force?: boolean) => {
@@ -183,7 +181,7 @@ const EditPost = ({ isLoggedIn }: any) => {
   useEffect(() => {
     if (!isMountedRef.current) handleGetTargetPost();
     isMountedRef.current = true;
-  }, []);
+  }, [contentContext.posts]);
 
   useEffect(() => {
     if (!isLoading && !!isMountedRef.current && !isPreview) resetInputValues();
