@@ -18,7 +18,7 @@ const Home = () => {
       </Head>
       <NavigationView
         content={(
-          <article className="topLevelPage pageHome">
+          <article className="appPage pageHome">
             <section>
               <p>Hi, I&apos;m <b>Clarence Siew</b>.</p>
               <p>

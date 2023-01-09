@@ -142,13 +142,13 @@ article {
   font-family: var(--font-family-article);
 }
 
-article.topLevelPage {
+article:is(.appPage, .contentPage) {
   max-width: 768px;
   width: 100%;
   margin: 0 auto;
 }
 
-article.topLevelPage h2 {
+article.appPage h2 {
   width: 100%;
   height: max-content;
   margin: 0rem 0rem 2rem 0rem;
@@ -160,14 +160,79 @@ article.topLevelPage h2 {
 }
 
 @media (max-width: 1023px) {
-  article.topLevelPage h2 {
+  article.appPage h2 {
     margin-block: 1.5rem 2rem;
     margin-inline: 0rem;
   }
 }
 @media (max-width: 767px) {
-  article.topLevelPage h2 {
+  article.appPage h2 {
     text-align: center;
+  }
+}
+
+article.contentPage {
+  margin-block: 3rem;
+}
+
+article.contentPage > .header {
+  max-width: 600px;
+  width: 100%;
+  margin-block: 0rem 1.5rem;
+  margin-inline: auto;
+  padding: 0rem 0rem 1rem 0rem;
+  display: inline-flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  border-bottom: 1px solidvar(--border-color);
+  text-align: center;
+}
+article.contentPage > .header > h2 {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  color: var(--fg-color);
+  border: none;
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1;
+}
+article.contentPage > .header > .subtitle {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  color: var(--fg-color-6);
+  font-size: 1.5rem;
+  font-weight: normal;
+  font-style: italic;
+}
+article.contentPage > .header > .timestamp {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  color: var(--fg-color-3);
+  font-family: var(--font-family-widget);
+  font-weight: 600;
+}
+article.contentPage > .content {
+  line-height: 1.5;
+}
+
+@media (max-width: 767px) {
+  article.contentPage > .header {
+    margin-block: 0;
+  }
+  article.contentPage > .header > h2 {
+    font-size: 2rem;
+  }
+  article.contentPage > .header > .subtitle {
+    font-size: 1.25rem;
+  }
+  article.contentPage > .header > .timestamp {
+    margin-top: 1rem;
+    font-size: 0.9rem;
   }
 }
 
@@ -241,6 +306,7 @@ select:is(:disabled, .disabled) {
 }
 
 @import url('../components/ui/Alert/index.module.css');
+@import url('../components/ui/Badge/index.module.css');
 @import url('../components/ui/Breadcrumbs/index.module.css');
 @import url('../components/ui/Button/index.module.css');
 @import url('../components/ui/ButtonGroup/index.module.css');
@@ -253,10 +319,8 @@ select:is(:disabled, .disabled) {
 @import url('../components/ui/Toolbar/index.module.css');
 
 @import url('../components/app/BackToTop/index.module.css');
-@import url('../components/app/BlogNavigationView/index.module.css');
 @import url('../components/app/Footer/index.module.css');
 @import url('../components/app/ContactForm/index.module.css');
-@import url('../components/app/MustWatchBadge/index.module.css');
 @import url('../components/app/NavBar/index.module.css');
 @import url('../components/app/NowWatchingShowCard/index.module.css');
 @import url('../components/app/PlaylistCard/index.module.css');
@@ -266,5 +330,6 @@ select:is(:disabled, .disabled) {
 @import url('./admin/index.module.css');
 @import url('./admin/posts/index.module.css');
 @import url('./admin/posts/edit/index.module.css');
+@import url('./blog/index.module.css');
 @import url('./playlists/index.module.css');
 @import url('./now-watching/index.module.css');

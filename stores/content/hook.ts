@@ -3,8 +3,10 @@ import ContentContext from ".";
 import { BlogPost } from "../../lib/blog";
 import { getRemotePosts, mapDocumentDataToPosts } from "../../firebase/posts";
 import config from "../../config";
+import { ProjectV2 } from "../../lib/projects";
+import { getRemoteProjects, mapDocumentDataToProjects } from "../../firebase/projects";
 
-const usePostStoreHook = () => {
+const useContentStoreHook = () => {
   const contentContext = useContext(ContentContext);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
@@ -33,7 +35,31 @@ const usePostStoreHook = () => {
     return contentContext.posts;
   };
 
-  return { isLoading, isSuccess, getPosts };
+  const getProjects = async (force?: boolean): Promise<ProjectV2[]> => {
+    setIsLoading(true);
+    try {
+      if (!!force || !contentContext.projects.length) {
+        console.debug("Fetching projects from Firestore...");
+        const remoteProjects = await getRemoteProjects();
+        contentContext.projects = mapDocumentDataToProjects(
+          remoteProjects
+            .docs
+            .map((d) => ({ id: d.id, ...d.data() }))
+        );
+      } else {
+        console.debug("Fetching projects from shared context");
+      }
+      setIsSuccess(true);
+    } catch (err) {
+      if (config.debugMode) console.error(err);
+      setIsSuccess(false);
+    } finally {
+      setIsLoading(false);
+    }
+    return contentContext.projects;
+  };
+
+  return { isLoading, isSuccess, getPosts, getProjects };
 };
 
-export default usePostStoreHook;
+export default useContentStoreHook;

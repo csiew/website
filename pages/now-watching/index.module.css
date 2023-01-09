@@ -1,8 +1,8 @@
-article.topLevelPage.pageNowWatching {
+article.appPage.pageNowWatching {
   max-width: 1280px;
 }
 
-article.topLevelPage.pageNowWatching section.acknowledgements {
+article.appPage.pageNowWatching section.acknowledgements {
   margin-top: 1rem;
   color: var(--fg-color-5);
   text-align: center;

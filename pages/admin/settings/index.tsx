@@ -102,7 +102,7 @@ const Settings = ({ isLoggedIn }: any) => {
         ]} />
       <NavigationView
         content={(
-          <article className="topLevelPage" style={{ gap: "1rem" }}>
+          <article className="appPage" style={{ gap: "1rem" }}>
             <h2>Settings</h2>
             {
               isLoading

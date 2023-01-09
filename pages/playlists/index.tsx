@@ -23,7 +23,7 @@ const Playlists = () => {
       </Head>
       <NavigationView
         content={(
-          <article className="topLevelPage playlists">
+          <article className="appPage playlists">
             <h2>Playlists</h2>
             <p>
               Every year I add new music I&#8217;ve discovered into annual zeitgeist playlists on Spotify.

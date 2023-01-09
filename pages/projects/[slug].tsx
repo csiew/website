@@ -1,32 +1,35 @@
-import React, { useEffect, useRef, useState } from "react";
+import { capitalize } from "lodash";
 import Head from "next/head";
-import config from "../../config";
-import retitle from "../../lib/retitle";
-import { BlogPost } from "../../lib/blog";
-import Alert from "../../components/ui/Alert";
-import NavigationView from "../../components/ui/NavigationView";
-import ReactMarkdown from "react-markdown";
 import Link from "next/link";
-import useContentStoreHook from "../../stores/content/hook";
-import Breadcrumbs from "../../components/ui/Breadcrumbs";
 import { useRouter } from "next/router";
+import React, { useEffect, useRef, useState } from "react";
+import ReactMarkdown from "react-markdown";
+import Alert from "../../components/ui/Alert";
+import Badge from "../../components/ui/Badge";
+import Breadcrumbs from "../../components/ui/Breadcrumbs";
+import NavigationView from "../../components/ui/NavigationView";
+import config from "../../config";
+import { ProjectV2 } from "../../lib/projects";
+import retitle from "../../lib/retitle";
+import useContentStoreHook from "../../stores/content/hook";
 
-const BlogPostPage = () => {
+const ProjectDetail = () => {
   const router = useRouter();
   const contentStoreHook = useContentStoreHook();
   const isMountedRef = useRef<any>(null);
 
   const [urlSlug, setUrlSlug] = useState<string>();
-  const [post, setPost] = useState<BlogPost | undefined>();
+  const [project, setProject] = useState<ProjectV2>();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
 
-  const getPost = async (force?: boolean) => {
+  const getProject = async (force?: boolean) => {
     setIsLoading(true);
-    const storeResult = await contentStoreHook.getPosts(force);
-    const searchResult = storeResult.filter((p) => p.isPublished && p.slug === urlSlug);
+    const storeResult = await contentStoreHook.getProjects(force);
+    const searchResult = storeResult.filter((p) => p.slug === urlSlug);
     if (storeResult.length) {
-      setPost(searchResult[0]);
+      console.debug({ project: searchResult[0] });
+      setProject(searchResult[0]);
       setIsSuccess(true);
     } else {
       setIsSuccess(false);
@@ -45,7 +48,7 @@ const BlogPostPage = () => {
 
   useEffect(() => {
     if (urlSlug && urlSlug.length) {
-      if (!isMountedRef.current) getPost();
+      if (!isMountedRef.current) getProject();
       isMountedRef.current = true;
     }
   }, [urlSlug]);
@@ -53,17 +56,17 @@ const BlogPostPage = () => {
   return (
     <>
       <Head>
-        <title>{retitle(post?.title)}</title>
-        <meta property="og:title" content={retitle(post?.title)} key="title" />
+        <title>{retitle(project?.name)}</title>
+        <meta property="og:title" content={retitle(project?.name)} key="title" />
       </Head>
       <Breadcrumbs
         items={[
           {
-            title: "Blog",
-            href: "/blog"
+            title: "Projects",
+            href: "/projects"
           },
           {
-            title: post?.title ?? "Post"
+            title: project?.name ?? "Project"
           }
         ]} />
       <NavigationView
@@ -73,7 +76,7 @@ const BlogPostPage = () => {
               isLoading
                 ? (
                   <Alert variant="plain">
-                    <span>Fetching post...</span>
+                    <span>Fetching project...</span>
                   </Alert>
                 )
                 : (
@@ -82,7 +85,7 @@ const BlogPostPage = () => {
                       !isSuccess
                         ? (
                           <Alert variant="error">
-                            <span>Failed to fetch post.</span>
+                            <span>Failed to fetch project.</span>
                           </Alert>
                         )
                         : <></>
@@ -91,20 +94,23 @@ const BlogPostPage = () => {
                 )
             }
             <div className="header">
-              <h2>{post?.title}</h2>
-              {post?.subtitle && <span className="subtitle">{post?.subtitle}</span>}
+              <h2>{project?.name}</h2>
               <span className="timestamp">
-                {post?.publishedOn ? new Date(post?.publishedOn).toDateString() : ""}
+                {project?.startYear && project?.endYear && (
+                  <sub>{project.startYear} - {project.endYear}</sub>
+                )}
               </span>
+              {project?.status && <Badge>{capitalize(project.status)}</Badge>}
             </div>
             <div className="content">
+              {project?.imgUrl && <img src={project?.imgUrl} width="100%" />}
               <ReactMarkdown>
-                {decodeURI(post?.content ?? "")}
+                {decodeURI(project?.description ?? "")}
               </ReactMarkdown>
             </div>
             <hr />
             <p style={{ width: "100%", textAlign: "center" }}>
-              <small><Link href="/blog">&larr; See all posts</Link></small>
+              <small><Link href="/projects">&larr; See all projects</Link></small>
             </p>
           </article>
         )} />
@@ -112,4 +118,4 @@ const BlogPostPage = () => {
   );
 };
 
-export default BlogPostPage;
+export default ProjectDetail;

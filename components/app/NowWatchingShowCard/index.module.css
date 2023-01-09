@@ -71,6 +71,6 @@ a.nowWatchingShowCard:hover {
   font-family: var(--font-family-widget);
 }
 
-.nowWatchingShowCard .metadata .mustWatchBadge {
+.nowWatchingShowCard .metadata .badge {
   margin: 0.5rem 0rem 0rem 0rem;
 }

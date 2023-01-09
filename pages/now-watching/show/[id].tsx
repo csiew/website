@@ -9,7 +9,7 @@ import NavigationView from "../../../components/ui/NavigationView";
 import Button from "../../../components/ui/Button";
 import Paper from "../../../components/ui/Paper";
 import Toolbar from "../../../components/ui/Toolbar";
-import MustWatchBadge from "../../../components/app/MustWatchBadge";
+import Badge from "../../../components/ui/Badge";
 
 const showsData = rawShowsData as ShowsData;
 const showsMetadata = rawShowsMetadata as Array<Partial<OmdbResponse>>;
@@ -33,20 +33,13 @@ const ShowDetailPage = ({ show, isInModal }: { show: Show, isInModal?: boolean }
   return (
     <>
       {
-        isInModal
-          ? <></>
-          : (
-            <Toolbar>
-              <Button onClick={() => history.go(-1)}>
-                &#8592; Back
-              </Button>
-              {
-                show.recommended
-                  ? <MustWatchBadge />
-                  : <></>
-              }
-            </Toolbar>
-          )
+        !isInModal && (
+          <Toolbar>
+            <Button onClick={() => history.go(-1)}>
+              &#8592; Back
+            </Button>
+          </Toolbar>
+        )
       }
       <Head>
         <title>{retitle(show.name)}</title>
@@ -55,7 +48,7 @@ const ShowDetailPage = ({ show, isInModal }: { show: Show, isInModal?: boolean }
       <NavigationView
         className="pageShowDetail"
         content={(
-          <article className="topLevelPage">
+          <article className="appPage">
             <h2>{show.name}</h2>
             <section className={["showInfo", isInModal ? "column" : ""].join(" ")}>
               <div className="cardList">

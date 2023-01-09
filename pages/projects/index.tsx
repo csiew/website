@@ -23,7 +23,7 @@ const Projects = () => {
       <NavigationView
         navPosition="right"
         content={(
-          <article className="topLevelPage">
+          <article className="appPage">
             <h2>Projects</h2>
             <div className="cardList">
               {

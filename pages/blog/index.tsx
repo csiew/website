@@ -7,10 +7,10 @@ import NavigationView from "../../components/ui/NavigationView";
 import Alert from "../../components/ui/Alert";
 import Link from "next/link";
 import { relativeTime } from "../../lib/timestamp";
-import usePostStoreHook from "../../stores/posts/hook";
+import useContentStoreHook from "../../stores/content/hook";
 
 const Blog = () => {
-  const postStoreHook = usePostStoreHook();
+  const contentStoreHook = useContentStoreHook();
   const isMountedRef = useRef<any>(null);
 
   const [posts, setPosts] = useState<BlogPost[]>();
@@ -19,7 +19,7 @@ const Blog = () => {
 
   const getPosts = async (force?: boolean) => {
     setIsLoading(true);
-    const result = await postStoreHook.getPosts(force);
+    const result = await contentStoreHook.getPosts(force);
     if (result.length) {
       setPosts(result);
       setIsSuccess(true);
@@ -44,7 +44,7 @@ const Blog = () => {
       <NavigationView
         className="pageBlog"
         content={(
-          <article className="topLevelPage">
+          <article className="appPage">
             {
               !isLoading && !isSuccess
                 ? (

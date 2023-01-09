@@ -6,13 +6,31 @@ export enum ProjectStatus {
 
 export type Project = {
   id: string;
+  slug?: string;
   name: string;
   timeRange: string;
+  startYear?: string;
+  endYear?: string;
   status: ProjectStatus;
   description: string;
   imgUrl: string;
   url: string;
   github: string;
+};
+
+export type ProjectV2 = {
+  id: string;
+  slug: string;
+  name: string;
+  startYear: string;
+  endYear?: string;
+  status: string;
+  description: string;
+  imgUrl?: string;
+  siteUrl?: string;
+  gitRepoUrl?: string;
+  createdAt: Date;
+  lastModified: Date;
 };
 
 export interface ProjectData {

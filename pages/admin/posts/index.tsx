@@ -11,8 +11,8 @@ import config from "../../../config";
 import Alert from "../../../components/ui/Alert";
 import { BlogPost } from "../../../lib/blog";
 import { serverTimestamp } from "@firebase/firestore/lite";
-import ContentContext from "../../../stores/posts";
-import usePostStoreHook from "../../../stores/posts/hook";
+import ContentContext from "../../../stores/content";
+import useContentStoreHook from "../../../stores/content/hook";
 
 type CommitAttemptFlags = {
   delete: boolean;
@@ -23,7 +23,7 @@ type CommitAttemptFlags = {
 const Posts = ({ isLoggedIn }: any) => {
   const router = useRouter();
   const contentContext = useContext(ContentContext);
-  const postStoreHook = usePostStoreHook();
+  const contentStoreHook = useContentStoreHook();
   const isMountedRef = useRef<any>(false);
 
   const [selectedPosts, setSelectedPosts] = useState<Map<string, boolean>>();
@@ -43,7 +43,7 @@ const Posts = ({ isLoggedIn }: any) => {
     if (!!force || !contentContext.posts.length) {
       setIsLoading(true);
       try {
-        await postStoreHook.getPosts(force);
+        await contentStoreHook.getPosts(force);
         setIsSuccess(true);
       } catch (err) {
         if (config.debugMode) console.error(err);
@@ -180,7 +180,7 @@ const Posts = ({ isLoggedIn }: any) => {
         ]} />
       <NavigationView
         content={(
-          <article className="topLevelPage">
+          <article className="appPage">
             <h2>Posts</h2>
             {
               !isLoading && !isSuccess

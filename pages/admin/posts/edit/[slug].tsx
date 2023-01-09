@@ -15,12 +15,12 @@ import Form from "../../../../components/ui/Form";
 import Alert from "../../../../components/ui/Alert";
 import { serverTimestamp, Timestamp } from "@firebase/firestore/lite";
 import FormQuestion from "../../../../components/ui/Form/FormQuestion";
-import ContentContext from "../../../../stores/posts";
-import usePostStoreHook from "../../../../stores/posts/hook";
+import ContentContext from "../../../../stores/content";
+import useContentStoreHook from "../../../../stores/content/hook";
 
 const EditPost = ({ isLoggedIn }: any) => {
   const router = useRouter();
-  const postStoreHook = usePostStoreHook();
+  const contentStoreHook = useContentStoreHook();
   const contentContext = useContext(ContentContext);
 
   const isMountedRef = useRef<any>(false);
@@ -54,7 +54,7 @@ const EditPost = ({ isLoggedIn }: any) => {
 
   const handleGetPosts = async () => {
     try {
-      await postStoreHook.getPosts();
+      await contentStoreHook.getPosts();
       setIsRefreshPostsSuccess(true);
     } catch (err) {
       if (config.debugMode) console.error(err);
@@ -220,7 +220,7 @@ const EditPost = ({ isLoggedIn }: any) => {
       <NavigationView
         contentStyle={{ paddingInline: "0.75rem" }}
         content={(
-          <article className="topLevelPage" style={{ maxWidth: "1024px" }}>
+          <article className="appPage" style={{ maxWidth: "1024px" }}>
             {
               !isLoading
                 ? (
