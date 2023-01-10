@@ -1,5 +1,4 @@
 .project-list-page .paper.link-list > ul > li > a {
-  padding-block: 0.5rem 0.75rem;
   display: grid;
   grid-template-columns: 3fr 0fr 0fr;
   align-items: center;
@@ -9,6 +8,7 @@
 
 @media (max-width: 767px) {
   .project-list-page .paper.link-list > ul > li > a {
+    padding-block: 0.5rem 0.75rem;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr 0fr;
     grid-area:
