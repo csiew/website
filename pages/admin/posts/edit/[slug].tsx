@@ -269,33 +269,33 @@ const EditPost = ({ isLoggedIn }: any) => {
                 : (
                   <>
                     <Paper style={{ width: "100%", marginBottom: "1rem" }}>
-                      <div className="post-metadata">
-                        <div className="post-metadata-group">
+                      <div className="admin-content-metadata">
+                        <div className="admin-content-metadata-group">
                           <label>Published</label>
                           <span>{post?.isPublished ? "Yes" : "No"}</span>
                         </div>
                         {
                           post?.isPublished && post?.publishedOn
                             ? (
-                              <div className="post-metadata-group">
+                              <div className="admin-content-metadata-group">
                                 <label>Published on</label>
                                 <span>{post?.publishedOn.toLocaleString()}</span>
                               </div>
                             )
                             : <></>
                         }
-                        <div className="post-metadata-group">
+                        <div className="admin-content-metadata-group">
                           <label>Last modified at</label>
                           <span>{post?.lastModified?.toLocaleString()}</span>
                         </div>
-                        <div className="post-metadata-group">
+                        <div className="admin-content-metadata-group">
                           <label>Created at</label>
                           <span>{post?.createdAt.toLocaleString()}</span>
                         </div>
                       </div>
                     </Paper>
                     <Form
-                      className="post-editor"
+                      className="admin-post-editor"
                       onSubmit={(ev: FormEvent<Element>) => handleSubmit(ev, true)}
                       onReset={(ev: FormEvent<Element>) => resetInputValues(ev, true)}>
                       <FormQuestion
