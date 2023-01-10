@@ -7,10 +7,12 @@ import ReactMarkdown from "react-markdown";
 import Alert from "../../components/ui/Alert";
 import Badge from "../../components/ui/Badge";
 import Breadcrumbs from "../../components/ui/Breadcrumbs";
+import Button from "../../components/ui/Button";
+import ButtonGroup from "../../components/ui/ButtonGroup";
 import NavigationView from "../../components/ui/NavigationView";
 import Paper from "../../components/ui/Paper";
 import config from "../../config";
-import { ProjectV2 } from "../../lib/projects";
+import { determineStatusBadgeVariant, ProjectV2 } from "../../lib/projects";
 import retitle from "../../lib/retitle";
 import useContentStoreHook from "../../stores/content/hook";
 
@@ -105,7 +107,7 @@ const ProjectDetail = () => {
                         <sub>{project.startYear} - {project.endYear}</sub>
                       )}
                     </span>
-                    {project?.status && <Badge>{capitalize(project.status)}</Badge>}
+                    {project?.status && <Badge variant={determineStatusBadgeVariant(project.status)}>{capitalize(project.status)}</Badge>}
                   </div>
                   <div className="content">
                     {project?.imgUrl && (
@@ -113,7 +115,12 @@ const ProjectDetail = () => {
                         <img src={project?.imgUrl} width="100%" />
                       </Link>
                     )}
-                    <Paper>
+                    <Paper style={{ width: "100%" }}>
+                      <ButtonGroup orientation="horizontal" style={{ width: "100%", justifyContent: "center" }}>
+                        <Button variant="link" url={project?.siteUrl} newTab={true} disabled={!project?.siteUrl}>Website</Button>
+                        <Button variant="link" url={project?.gitRepoUrl} newTab={true} disabled={!project?.gitRepoUrl}>Repository</Button>
+                      </ButtonGroup>
+                      <hr />
                       <ReactMarkdown>
                         {decodeURI(project?.description ?? "")}
                       </ReactMarkdown>
