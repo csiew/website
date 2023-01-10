@@ -1,16 +1,16 @@
-.buttonGroup {
+.button-group {
   width: 100%;
   display: inline-flex;
   gap: 0.5rem;
 }
 
-.buttonGroup.horizontal {
+.button-group.horizontal {
   flex-flow: row;
   align-items: center;
   justify-content: flex-start;
 }
 
-.buttonGroup.vertical {
+.button-group.vertical {
   flex-flow: column;
   align-items: flex-start;
   justify-content: flex-start;

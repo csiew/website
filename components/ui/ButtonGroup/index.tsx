@@ -9,7 +9,7 @@ const ButtonGroup = ({ children, classList, className, id, orientation, style }:
   return (
     <div
       id={id}
-      className={["buttonGroup", orientation, className, ...classList ?? []].join(" ")}
+      className={["button-group", orientation, className, ...classList ?? []].join(" ")}
       style={style}>
       {children}
     </div>

@@ -48,3 +48,16 @@
   justify-content: flex-start;
   gap: 2rem;
 }
+
+.project-detail-page .content .button-group {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.project-detail-page .content .button-group > :is(input, a) {
+  width: 100%;
+  display: inline-flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+}
