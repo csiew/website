@@ -19,18 +19,20 @@ export type Project = {
 };
 
 export type ProjectV2 = {
-  id: string;
+  id?: string;
   slug: string;
   name: string;
   startYear: string;
   endYear?: string;
   status: string;
   description: string;
+  isPublished?: boolean;
   imgUrl?: string;
   siteUrl?: string;
   gitRepoUrl?: string;
-  createdAt: Date;
-  lastModified: Date;
+  createdAt: string | Date;
+  lastModified?: string | Date;
+  publishedOn?: string | Date;
 };
 
 export interface ProjectData {

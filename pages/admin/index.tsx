@@ -6,7 +6,7 @@ import ButtonGroup from "../../components/ui/ButtonGroup";
 import NavigationView from "../../components/ui/NavigationView";
 import config from "../../config";
 import useSession from "../../firebase/session";
-import { MdLogout, MdPostAdd, MdSettings } from "react-icons/md";
+import { MdBuild, MdLogout, MdPostAdd, MdSettings } from "react-icons/md";
 import Paper from "../../components/ui/Paper";
 
 const Admin = ({ isLoggedIn }: any) => {
@@ -47,6 +47,10 @@ const Admin = ({ isLoggedIn }: any) => {
                       <Link href="/admin/posts">
                         <MdPostAdd />
                         <span>Posts</span>
+                      </Link>
+                      <Link href="/admin/projects">
+                        <MdBuild />
+                        <span>Projects</span>
                       </Link>
                       <Link href="/admin/settings">
                         <MdSettings />

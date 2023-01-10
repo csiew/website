@@ -291,6 +291,7 @@ select:is(:disabled, .disabled) {
 ::-webkit-scrollbar,
 ::-webkit-scrollbar-track {
   width: 18px;
+  position: fixed;
   background: var(--bg-color-6);
   border-left: var(--border-width) solid var(--border-color);
   border-radius: 0;
@@ -318,6 +319,7 @@ select:is(:disabled, .disabled) {
 @import url('../components/ui/TextField/index.module.css');
 @import url('../components/ui/Toolbar/index.module.css');
 
+@import url('../components/app/AdminContentList/index.module.css');
 @import url('../components/app/BackToTop/index.module.css');
 @import url('../components/app/Footer/index.module.css');
 @import url('../components/app/ContactForm/index.module.css');
@@ -328,7 +330,6 @@ select:is(:disabled, .disabled) {
 
 @import url('./index.module.css');
 @import url('./admin/index.module.css');
-@import url('./admin/posts/index.module.css');
 @import url('./admin/posts/edit/index.module.css');
 @import url('./blog/index.module.css');
 @import url('./playlists/index.module.css');

@@ -2,7 +2,7 @@ import { addDoc, collection, deleteDoc, doc, DocumentData, getDocs, query, Query
 import { merge } from "lodash";
 import firebaseAppInstance from ".";
 import { decodeContent } from "../lib/encoding";
-import { ProjectStatus, ProjectV2 } from "../lib/projects";
+import { ProjectV2 } from "../lib/projects";
 
 export const getRemoteProjects = async (): Promise<QuerySnapshot<DocumentData>> => {
   const q = query(collection(firebaseAppInstance.db, "projects"));
@@ -22,11 +22,13 @@ export const mapDocumentDataToProjects = (
         endYear: p.endYear,
         status: p.status,
         description: decodeContent(p.description ?? ""),
+        isPublished: p.isPublished,
         imgUrl: p.imgUrl,
         siteUrl: p.siteUrl,
         gitRepoUrl: p.gitRepoUrl,
         createdAt: (p.createdAt as Timestamp)?.toDate(),
-        lastModified: (p.lastModified as Timestamp)?.toDate()
+        lastModified: (p.lastModified as Timestamp)?.toDate(),
+        publishedOn: p.publishedOn ? (p.publishedOn as Timestamp).toDate(): undefined
       };
     })
     .sort((a, b) => {
