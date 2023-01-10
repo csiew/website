@@ -2,14 +2,12 @@ import React, { useEffect, useRef, useState } from "react";
 import Head from "next/head";
 import config from "../../config";
 import retitle from "../../lib/retitle";
-import { ProjectData, ProjectV2 } from "../../lib/projects";
-import rawProjectData from "./projects.json";
+import { ProjectV2 } from "../../lib/projects";
 import ProjectCard from "../../components/app/ProjectCard";
 import NavigationView from "../../components/ui/NavigationView";
 import useContentStoreHook from "../../stores/content/hook";
 import Alert from "../../components/ui/Alert";
 
-const projectData = rawProjectData as ProjectData;
 
 const Projects = () => {
   const contentStoreHook = useContentStoreHook();

@@ -315,7 +315,7 @@ const Projects = ({ isLoggedIn }: any) => {
                               <Link href={`/admin/projects/edit/${p.slug}`} className={inEditMode ? "disabled" : ""} title={p.name}>
                                 <h3>{p.name}</h3>
                                 <Badge>{capitalize(p.status)}</Badge>
-                                {p.startYear && <sub>{p.startYear} - {p.endYear ?? "Present"}</sub>}
+                                {p.startYear && <sub>{[p.startYear, p.endYear ? (p.startYear === p.endYear ? null : p.endYear) : (p.status === "inactive" ? null : "Present")].filter((y) => !!y).join(" - ")}</sub>}
                                 <sub>
                                   <b>Created at:</b> <span>{p.createdAt.toLocaleString()}</span>
                                 </sub>
