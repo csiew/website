@@ -10,7 +10,7 @@ export default {
     text: "Clarence Siew",
     divider: "|"
   },
-  version: "6.8.0",
+  version: "6.8.1",
   omdb: {
     apiKey: process.env.OMDB_API_KEY,
     host: "https://omdbapi.com"
