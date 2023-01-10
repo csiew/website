@@ -65,9 +65,9 @@ const NowWatching = () => {
       </Head>
       <NavigationView
         content={(
-          <article className="appPage pageNowWatching">
+          <article className="app-page page-now-watching">
             <h2>Now Watching</h2>
-            <div className="cardList">
+            <div className="card-list">
               <NowWatchingCardGrid
                 title="Recently watched"
                 keyPrefix="current"

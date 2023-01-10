@@ -68,7 +68,7 @@ const BlogPostPage = () => {
         ]} />
       <NavigationView
         content={(
-          <article className="contentPage">
+          <article className="content-page">
             {
               isLoading
                 ? (

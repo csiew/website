@@ -71,9 +71,9 @@ const ProjectDetail = () => {
           }
         ]} />
       <NavigationView
-        className="projectDetailPage"
+        className="project-detail-page"
         content={(
-          <article className="contentPage">
+          <article className="content-page">
             {
               isLoading
                 ? (
@@ -95,27 +95,37 @@ const ProjectDetail = () => {
                   </>
                 )
             }
-            <div className="header">
-              <h2>{project?.name}</h2>
-              <span className="timestamp">
-                {project?.startYear && project?.endYear && (
-                  <sub>{project.startYear} - {project.endYear}</sub>
-                )}
-              </span>
-              {project?.status && <Badge>{capitalize(project.status)}</Badge>}
-            </div>
-            <div className="content">
-              {project?.imgUrl && <img src={project?.imgUrl} width="100%" />}
-              <Paper>
-                <ReactMarkdown>
-                  {decodeURI(project?.description ?? "")}
-                </ReactMarkdown>
-              </Paper>
-            </div>
-            <hr />
-            <p style={{ width: "100%", textAlign: "center" }}>
-              <small><Link href="/projects">&larr; See all projects</Link></small>
-            </p>
+            {
+              !isLoading && (
+                <>
+                  <div className="header">
+                    <h2>{project?.name}</h2>
+                    <span className="timestamp">
+                      {project?.startYear && project?.endYear && (
+                        <sub>{project.startYear} - {project.endYear}</sub>
+                      )}
+                    </span>
+                    {project?.status && <Badge>{capitalize(project.status)}</Badge>}
+                  </div>
+                  <div className="content">
+                    {project?.imgUrl && (
+                      <Link href={project?.imgUrl}>
+                        <img src={project?.imgUrl} width="100%" />
+                      </Link>
+                    )}
+                    <Paper>
+                      <ReactMarkdown>
+                        {decodeURI(project?.description ?? "")}
+                      </ReactMarkdown>
+                    </Paper>
+                  </div>
+                  <hr />
+                  <p style={{ width: "100%", textAlign: "center" }}>
+                    <small><Link href="/projects">&larr; See all projects</Link></small>
+                  </p>
+                </>
+              )
+            }
           </article>
         )} />
     </>

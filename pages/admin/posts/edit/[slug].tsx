@@ -221,7 +221,7 @@ const EditPost = ({ isLoggedIn }: any) => {
       <NavigationView
         contentStyle={{ paddingInline: "0.75rem" }}
         content={(
-          <article className="appPage" style={{ maxWidth: "1024px" }}>
+          <article className="app-page" style={{ maxWidth: "1024px" }}>
             {
               !isLoading
                 ? (

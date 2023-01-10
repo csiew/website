@@ -8,6 +8,7 @@ import Alert from "../../components/ui/Alert";
 import Link from "next/link";
 import { relativeTime } from "../../lib/timestamp";
 import useContentStoreHook from "../../stores/content/hook";
+import Paper from "../../components/ui/Paper";
 
 const Blog = () => {
   const contentStoreHook = useContentStoreHook();
@@ -42,9 +43,9 @@ const Blog = () => {
         <meta property="og:title" content={retitle("Blog")} key="title" />
       </Head>
       <NavigationView
-        className="pageBlog"
+        className="blog-list-page"
         content={(
-          <article className="appPage">
+          <article className="app-page">
             {
               !isLoading && !isSuccess
                 ? (
@@ -64,18 +65,22 @@ const Blog = () => {
                 : <></>
             }
             <h2>Blog</h2>
-            <ul className="postList">
-              {
-                posts?.map((p) => (
-                  <li key={p.id}>
-                    <Link href={generatePathString(p.slug!)}>
-                      <h3>{p.title}</h3>
-                    </Link>
-                    <sub>{`${relativeTime(p.publishedOn!)} - ${new Date(p.publishedOn!).toLocaleDateString()}`}</sub>
-                  </li>
-                ))
-              }
-            </ul>
+            <Paper variant="link-list">
+              <ul>
+                {
+                  posts?.map((p) => (
+                    <li key={p.id}>
+                      <Link href={generatePathString(p.slug!)}>
+                        <h3>{p.title}</h3>
+                        <span className="timestamp">
+                          {`${relativeTime(p.publishedOn!)} - ${new Date(p.publishedOn!).toLocaleDateString()}`}
+                        </span>
+                      </Link>
+                    </li>
+                  ))
+                }
+              </ul>
+            </Paper>
           </article>
         )}
       />

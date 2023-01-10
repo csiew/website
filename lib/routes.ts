@@ -6,6 +6,11 @@ const routes: PageRoute[] = [
     path: "/"
   },
   {
+    title: "Admin",
+    path: "/admin",
+    authOnly: true
+  },
+  {
     title: "Blog",
     path: "/blog"
   },

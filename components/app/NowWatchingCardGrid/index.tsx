@@ -28,14 +28,14 @@ const NowWatchingCardGrid = ({ title, keyPrefix, shows, setSelectedShow, filter,
 
   return (
     <section>
-      <Paper className="pageNowWatchingSection">
+      <Paper className="page-now-watching-section">
         <div className="header-bar">
           <h3>{title}</h3>
           <div className="actions">
             { cornerActions }
           </div>
         </div>
-        <div className="cardList">
+        <div className="card-list">
           {
             filteredShows.map((show) => (
               <NowWatchingShowCard key={`${keyPrefix}-${show.imdbId}`} show={show} setSelectedShow={setSelectedShow} />

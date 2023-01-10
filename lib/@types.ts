@@ -4,6 +4,7 @@ export type PageRoute = {
   title: string;
   path: string;
   hideFromNavBar?: boolean;
+  authOnly?: boolean;
 };
 
 export type BaseComponentProps = {

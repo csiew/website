@@ -1,8 +1,10 @@
 import React, { ReactElement } from "react";
 
+export type BadgeVariant = "plain" | "success" | "warning" | "error";
+
 type BadgeProps = {
   children?: string | ReactElement | ReactElement[];
-  variant?: "plain" | "success" | "warning" | "error";
+  variant?: BadgeVariant;
 }
 
 const Badge = ({ children, variant = "plain" }: BadgeProps) => {

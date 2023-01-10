@@ -1,30 +1,29 @@
 .backToTopFloat {
-  width: 100%;
-  margin-inline: auto;
+  width: min-content;
+  margin-inline: auto 0px;
   padding: 1rem;
   display: inline-flex;
   flex-flow: column;
   align-items: center;
   justify-content: center;
-  position: sticky;
+  position: fixed;
   bottom: 0;
+  right: 0;
   z-index: 150;
 }
 .backToTopFloat :is(button, .button, input[type=submit], input[type=reset]) {
   margin: 0;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem;
   display: inline-flex;
   flex-flow: row;
   align-items: center;
   justify-content: center;
   background: var(--bg-color);
-  border-radius: var(--border-radius);
-  opacity: 0.75;
-  transition: 0.2s;
+  border-radius: 100%;
+  transition: ease-in-out 0.2s;
 }
 .backToTopFloat :is(button, .button, input[type=submit], input[type=reset]):hover {
   box-shadow: var(--preset-shadow-widget);
-  opacity: 1;
 }
 .backToTopFloat :is(button, .button, input[type=submit], input[type=reset]):active {
   box-shadow: none;
@@ -36,19 +35,11 @@
   padding: 0;
 }
 
-:is(button, .button, input[type=submit], input[type=reset]).hiddenKeepHeight {
-  visibility: hidden;
-}
-
 @media (max-width: 767px) {
   .backToTopFloat {
     width: min-content;
     margin-inline: auto 0;
     padding: 0.25rem;
     right: 0;
-  }
-  .backToTopFloat :is(button, .button, input[type=submit], input[type=reset]) {
-    padding: 0.5rem;
-    border-radius: 100%;
   }
 }

@@ -3,7 +3,7 @@ import { ModalOverlayProps } from "./@types";
 
 const ModalOverlay = ({ children }: ModalOverlayProps) => {
   return (
-    <div className="modalOverlay">
+    <div className="modal-overlay">
       {children}
     </div>
   );

@@ -24,7 +24,7 @@ const Admin = ({ isLoggedIn }: any) => {
       </Head>
       <NavigationView
         content={(
-          <article className="appPage">
+          <article className="app-page">
             <h2>Admin</h2>
             {
               !isLoggedIn

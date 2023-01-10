@@ -46,13 +46,13 @@ const ShowDetailPage = ({ show, isInModal }: { show: Show, isInModal?: boolean }
         <meta property="og:title" content={retitle(show.name)} key="title" />
       </Head>
       <NavigationView
-        className="pageShowDetail"
+        className="show-detail-page"
         content={(
-          <article className="appPage">
+          <article className="app-page">
             <h2>{show.name}</h2>
-            <section className={["showInfo", isInModal ? "column" : ""].join(" ")}>
-              <div className="cardList">
-                <Paper className="showDataDetails">
+            <section className={["show-info", isInModal ? "column" : ""].join(" ")}>
+              <div className="card-list">
+                <Paper className="show-data-details">
                   {
                     Object.entries(details).map((detail) => {
                       return (

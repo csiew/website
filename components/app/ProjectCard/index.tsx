@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import ReactMarkdown from "react-markdown";
 import { ProjectV2 } from "../../../lib/projects";
@@ -9,10 +10,10 @@ const ProjectCard = ({ project }: { project: ProjectV2 }) => {
     <section className="project" id={project.id}>
       <Paper>
         <div className="projectHeader">
-          <div className="projectHeaderInfo">
+          <Link className="projectHeaderInfo" href={`/projects/${project.slug}`}>
             <h3>{project.name}</h3>
             <sub>{[project.startYear, project.endYear ? (project.startYear === project.endYear ? null : project.endYear) : (project.status === "inactive" ? null : "Present")].filter((y) => !!y).join(" - ")}</sub>
-          </div>
+          </Link>
           <div className="projectHeaderLinks">
             <Button variant="link" url={project.siteUrl} newTab={true} disabled={!!project.siteUrl}>Website</Button>
             <Button variant="link" url={project.gitRepoUrl} newTab={true} disabled={!!project.gitRepoUrl}>Repository</Button>

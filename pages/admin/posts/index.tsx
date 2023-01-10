@@ -176,7 +176,7 @@ const Posts = ({ isLoggedIn }: any) => {
         ]} />
       <NavigationView
         content={(
-          <article className="appPage">
+          <article className="app-page">
             <h2>Posts</h2>
             {
               !isLoading && !isSuccess

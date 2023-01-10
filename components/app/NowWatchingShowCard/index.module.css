@@ -1,8 +1,8 @@
-a.nowWatchingShowCard,
-a.nowWatchingShowCard:hover {
+a.now-watching-show-card,
+a.now-watching-show-card:hover {
   text-decoration: none;
 }
-.nowWatchingShowCard {
+.now-watching-show-card {
   width: 100%;
   padding: 1rem 0.5rem;
   display: inline-flex;
@@ -13,40 +13,40 @@ a.nowWatchingShowCard:hover {
   border-radius: var(--border-radius);
   cursor: pointer;
 }
-.nowWatchingShowCard:is(:hover, :focus) {
+.now-watching-show-card:is(:hover, :focus) {
   background: var(--bg-color-1);
 }
-.nowWatchingShowCard:active {
+.now-watching-show-card:active {
   background: var(--bg-color-2);
 }
 
-.nowWatchingShowCard h3 {
+.now-watching-show-card h3 {
   margin: 0rem 0rem 1rem 0rem;
 }
 
-.nowWatchingShowCard .poster {
+.now-watching-show-card .poster {
   width: auto;
   height: min-content;
   display: inline-flex;
 }
-.nowWatchingShowCard .poster img {
+.now-watching-show-card .poster img {
   height: 256px;
   border: var(--border-width) solid var(--border-color);
   border-radius: var(--border-radius);
   -webkit-user-drag: none;
 }
-.nowWatchingShowCard:is(:hover, :focus) .poster img {
+.now-watching-show-card:is(:hover, :focus) .poster img {
   box-shadow: var(--preset-shadow-component);
 }
-.nowWatchingShowCard:hover .poster img {
+.now-watching-show-card:hover .poster img {
   transform: scale(1.02);
   transition: 0.2s;
 }
-.nowWatchingShowCard:active .poster img {
+.now-watching-show-card:active .poster img {
   transform: scale(1);
 }
 
-.nowWatchingShowCard .metadata {
+.now-watching-show-card .metadata {
   padding: 0.5rem;
   display: inline-flex;
   flex-flow: column;
@@ -55,22 +55,22 @@ a.nowWatchingShowCard:hover {
   text-align: center;
 }
 @media (max-width: 767px) {
-  .nowWatchingShowCard .metadata {
+  .now-watching-show-card .metadata {
     padding: 0;
   }
 }
 
-.nowWatchingShowCard .metadata h4 {
+.now-watching-show-card .metadata h4 {
   margin: 0.5rem 0rem;
   padding: 0;
   font-weight: 800;
 }
 
-.nowWatchingShowCard .metadata sub {
+.now-watching-show-card .metadata sub {
   color: var(--fg-color-3);
   font-family: var(--font-family-widget);
 }
 
-.nowWatchingShowCard .metadata .badge {
+.now-watching-show-card .metadata .badge {
   margin: 0.5rem 0rem 0rem 0rem;
 }

@@ -178,7 +178,7 @@ const Projects = ({ isLoggedIn }: any) => {
         ]} />
       <NavigationView
         content={(
-          <article className="appPage">
+          <article className="app-page">
             <h2>Projects</h2>
             {
               !isLoading && !isSuccess

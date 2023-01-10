@@ -1,28 +1,16 @@
-.pageBlog ul.postList {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
+.blog-list-page .paper.link-list > ul > li > a {
   display: inline-flex;
   flex-flow: column;
   align-items: flex-start;
-  justify-content: flex-start;
-  gap: 1rem;
+  justify-content: center;
+  gap: 0.125rem;
 }
 
-.pageBlog ul.postList li {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  display: inline-flex;
-  flex-flow: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 0rem;
+.blog-list-page .paper.link-list > ul > li > a > span.timestamp {
+  padding-block: 0rem 0.25rem;
+  font-size: 0.8rem;
 }
 
-.pageBlog ul.postList li sub {
-  color: var(--fg-color-3);
-  font-size: 75%;
-  font-family: var(--font-family-widget);
+.blog-list-page .paper.link-list > ul > li > a > h3 {
+  grid-column: unset;
 }

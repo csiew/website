@@ -6,10 +6,10 @@ import { ModalWindowProps } from "./@types";
 const ModalWindow = ({ children, className, classList, style, disabled, title, closeWindowCallback }: ModalWindowProps) => {
   return (
     <div
-      className={["modalWindow", disabled ? "disabled" : undefined, className, ...classList || []].join(" ")}
+      className={["modal-window", disabled ? "disabled" : undefined, className, ...classList || []].join(" ")}
       style={style}
     >
-      <div className="modalWindowHeader">
+      <div className="modal-windowHeader">
         <h2>
           {title}
         </h2>
@@ -17,7 +17,7 @@ const ModalWindow = ({ children, className, classList, style, disabled, title, c
           <MdClose />
         </Button>
       </div>
-      <div className="modalWindowBody">
+      <div className="modal-windowBody">
         {children}
       </div>
     </div>

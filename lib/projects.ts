@@ -1,3 +1,5 @@
+import { BadgeVariant } from "../components/ui/Badge";
+
 export enum ProjectStatus {
   Discontinued = 0,
   Hiatus = 1,
@@ -41,3 +43,15 @@ export interface ProjectData {
   };
   projects: Project[];
 }
+
+export const determineStatusBadgeVariant = (status: string): BadgeVariant => {
+  switch (status) {
+  case "active":
+    return "success";
+  case "hiatus":
+    return "warning";
+  case "inactive":
+  default:
+    return "plain";
+  }
+};

@@ -6,10 +6,16 @@ import { PageRoute } from "../../../lib/@types";
 import Modal from "../../ui/Modal";
 import Button from "../../ui/Button";
 import { MdMenu } from "react-icons/md";
+import useSession from "../../../firebase/session";
 
 const NavBar = () => {
   const router = useRouter();
+  const session = useSession();
   const [showMenu, setShowMenu] = useState<boolean>(false);
+
+  const getRoutes = () => {
+    return routes.filter((route) => !route.hideFromNavBar && (session.isLoggedIn() ? true : !route.authOnly));
+  };
 
   return (
     <>
@@ -20,17 +26,15 @@ const NavBar = () => {
         <nav className="navbar-menu">
           <ul>
             {
-              routes
-                .filter((route) => !route.hideFromNavBar)
-                .map((route: PageRoute) => {
-                  return (
-                    <li
-                      key={route.path}
-                      className={router.pathname === route.path ? "active" : ""}>
-                      <Link href={route.path}>{route.title}</Link>
-                    </li>
-                  );
-                })
+              getRoutes().map((route: PageRoute) => {
+                return (
+                  <li
+                    key={route.path}
+                    className={router.pathname === route.path ? "active" : ""}>
+                    <Link href={route.path}>{route.title}</Link>
+                  </li>
+                );
+              })
             }
           </ul>
         </nav>
@@ -45,18 +49,16 @@ const NavBar = () => {
               <nav className="overlay-menu">
                 <ul>
                   {
-                    routes
-                      .filter((route) => !route.hideFromNavBar)
-                      .map((route: PageRoute) => {
-                        return (
-                          <li
-                            key={route.path}
-                            className={router.pathname === route.path ? "active" : ""}
-                            onClick={() => setShowMenu(false)}>
-                            <Link href={route.path}>{route.title}</Link>
-                          </li>
-                        );
-                      })
+                    getRoutes().map((route: PageRoute) => {
+                      return (
+                        <li
+                          key={route.path}
+                          className={router.pathname === route.path ? "active" : ""}
+                          onClick={() => setShowMenu(false)}>
+                          <Link href={route.path}>{route.title}</Link>
+                        </li>
+                      );
+                    })
                   }
                 </ul>
               </nav>
