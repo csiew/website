@@ -51,18 +51,8 @@
   outline: none;
 }
 
-
 .post-editor > .question > textarea {
   height: 480px;
   resize: vertical;
   overflow: auto;
-}
-
-.post-editor > .question > textarea::-webkit-scrollbar,
-.post-editor > .question > textarea::-webkit-scrollbar-track {
-  border-radius: 0 var(--border-radius) var(--border-radius) 0;
-}
-
-.post-editor > .question > textarea::-webkit-scrollbar-thumb {
-  border-radius: 0 var(--border-radius) var(--border-radius) 0;
 }

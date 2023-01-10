@@ -3,14 +3,14 @@
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(128px, 1fr));
   gap: 1rem;
 }
 
 .admin-applet-list a {
   width: 100%;
   margin: 0;
-  padding: 1rem 0.5rem;
+  padding: 1.5rem 0.5rem;
   display: inline-flex;
   flex-flow: column;
   align-items: center;

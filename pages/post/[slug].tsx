@@ -7,13 +7,13 @@ import Alert from "../../components/ui/Alert";
 import NavigationView from "../../components/ui/NavigationView";
 import ReactMarkdown from "react-markdown";
 import Link from "next/link";
-import usePostStoreHook from "../../stores/posts/hook";
+import useContentStoreHook from "../../stores/content/hook";
 import Breadcrumbs from "../../components/ui/Breadcrumbs";
 import { useRouter } from "next/router";
 
 const BlogPostPage = () => {
   const router = useRouter();
-  const postStoreHook = usePostStoreHook();
+  const contentStoreHook = useContentStoreHook();
   const isMountedRef = useRef<any>(null);
 
   const [urlSlug, setUrlSlug] = useState<string>();
@@ -23,7 +23,7 @@ const BlogPostPage = () => {
 
   const getPost = async (force?: boolean) => {
     setIsLoading(true);
-    const storeResult = await postStoreHook.getPosts(force);
+    const storeResult = await contentStoreHook.getPosts(force);
     const searchResult = storeResult.filter((p) => p.isPublished && p.slug === urlSlug);
     if (storeResult.length) {
       setPost(searchResult[0]);
@@ -67,9 +67,8 @@ const BlogPostPage = () => {
           }
         ]} />
       <NavigationView
-        className="pageBlogPost"
         content={(
-          <article className="topLevelPage">
+          <article className="content-page">
             {
               isLoading
                 ? (
@@ -91,19 +90,14 @@ const BlogPostPage = () => {
                   </>
                 )
             }
-            <div className="pageBlogPostHeader">
+            <div className="header">
               <h2>{post?.title}</h2>
-              {
-                post?.subtitle ?
-                  <sub>{post?.subtitle}</sub>
-                  :
-                  <></>
-              }
-              <p className="timestamp">
+              {post?.subtitle && <span className="subtitle">{post?.subtitle}</span>}
+              <span className="timestamp">
                 {post?.publishedOn ? new Date(post?.publishedOn).toDateString() : ""}
-              </p>
+              </span>
             </div>
-            <div className="pageBlogPostContent">
+            <div className="content">
               <ReactMarkdown>
                 {decodeURI(post?.content ?? "")}
               </ReactMarkdown>

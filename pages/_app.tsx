@@ -4,7 +4,8 @@ import "./app.css";
 import NavBar from "../components/app/NavBar";
 import BackToTop from "../components/app/BackToTop";
 import useSession from "../firebase/session";
-import ContentContextProviderWrapper from "../stores/posts/provider";
+import ContentContextProviderWrapper from "../stores/content/provider";
+import Footer from "../components/app/Footer";
 
 const AppContainer = ({ Component, pageProps }: any) => {
   const session = useSession();
@@ -25,6 +26,7 @@ const AppContainer = ({ Component, pageProps }: any) => {
       <main>
         <Component {...pageProps} isLoggedIn={isLoggedIn} />
         <BackToTop />
+        <Footer />
       </main>
     </ContentContextProviderWrapper>
   );

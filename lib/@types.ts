@@ -4,6 +4,7 @@ export type PageRoute = {
   title: string;
   path: string;
   hideFromNavBar?: boolean;
+  authOnly?: boolean;
 };
 
 export type BaseComponentProps = {
@@ -16,4 +17,10 @@ export type BaseComponentProps = {
 
 export type ComposableComponentProps = BaseComponentProps & {
   children?: ReactElement | ReactElement[];
+};
+
+export type CommitAttemptFlags = {
+  delete: boolean;
+  publish: boolean;
+  unpublish: boolean;
 };

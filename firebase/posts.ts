@@ -2,18 +2,11 @@ import { addDoc, collection, deleteDoc, doc, DocumentData, getDocs, query, Query
 import { merge } from "lodash";
 import firebaseAppInstance from ".";
 import { BlogPost } from "../lib/blog";
+import { decodeContent } from "../lib/encoding";
 
 export const getRemotePosts = async (): Promise<QuerySnapshot<DocumentData>> => {
   const q = query(collection(firebaseAppInstance.db, "posts"));
   return await getDocs(q);
-};
-
-export const encodeContent = (content: string): string => {
-  return Buffer.from(content, "utf-8").toString("base64");
-};
-
-export const decodeContent = (content: string): string => {
-  return Buffer.from(content, "base64").toString("utf-8");
 };
 
 export const mapDocumentDataToPosts = (

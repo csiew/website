@@ -3,7 +3,7 @@ import { MdCheck, MdClose, MdError, MdInfo, MdWarning } from "react-icons/md";
 import Button from "../Button";
 import { AlertProps } from "./@types";
 
-const Alert = ({ className, classList, style, variant, children, onDismiss }: AlertProps) => {
+const Alert = ({ className, classList, style, variant = "plain", children, onDismiss }: AlertProps) => {
   const getIcon = () => {
     switch (variant) {
     case "warning":

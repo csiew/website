@@ -12,7 +12,7 @@
   font-family: var(--font-family-widget);
 }
 :is(input[type=text], input[type=email], input[type=password], input[type=password], textarea):hover {
-  border-color: var(--bg-color-5);
+  border-color: var(--fg-color-5);
 }
 :is(input[type=text], input[type=email], input[type=password], input[type=password], textarea):focus {
   border-color: var(--primary-color);

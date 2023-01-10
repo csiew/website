@@ -74,7 +74,7 @@ const Login = () => {
         ]} />
       <NavigationView
         content={(
-          <article className="topLevelPage">
+          <article className="app-page">
             <h2>Login</h2>
             {
               isLoading

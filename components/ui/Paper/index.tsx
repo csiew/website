@@ -1,19 +1,16 @@
-import React, { ReactElement } from "react";
+import React from "react";
+import { ComposableComponentProps } from "../../../lib/@types";
 
-type PaperProps = {
-  children?: ReactElement | ReactElement[];
-  classList?: string[];
-  className?: string;
-  disabled?: boolean;
-  style?: { [k: string]: string | number };
+type PaperProps = ComposableComponentProps & {
+  variant?: "plain" | "link-list"
 };
 
 const Paper = (
-  { children, classList, className, disabled, style }: PaperProps
+  { variant = "plain", children, classList, className, disabled, style }: PaperProps
 ) => {
   return (
     <div
-      className={["paper", disabled ? "disabled" : undefined, className, ...classList || []].join(" ")}
+      className={["paper", variant, disabled ? "disabled" : undefined, className, ...classList || []].join(" ")}
       style={style}
     >
       {children}

@@ -23,13 +23,13 @@ const Playlists = () => {
       </Head>
       <NavigationView
         content={(
-          <article className="topLevelPage playlists">
+          <article className="app-page playlists">
             <h2>Playlists</h2>
             <p>
               Every year I add new music I&#8217;ve discovered into annual zeitgeist playlists on Spotify.
             </p>
             <Paper style={{ width: "100%", marginTop: "1rem" }}>
-              <div className="cardList">
+              <div className="card-list">
                 {
                   playlists.map((playlist) => {
                     return (

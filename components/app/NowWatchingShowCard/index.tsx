@@ -1,6 +1,6 @@
 import React from "react";
 import { Show } from "../../../lib/now-watching";
-import MustWatchBadge from "../MustWatchBadge";
+import Badge from "../../ui/Badge";
 
 type NowWatchingShowCardProps = {
   show: Show;
@@ -20,7 +20,7 @@ const NowWatchingShowCard = ({ show, setSelectedShow }: NowWatchingShowCardProps
           <sub>{show.metadata?.Year}</sub>
           {
             show.recommended
-              ? <MustWatchBadge />
+              ? <Badge variant="success">Must Watch</Badge>
               : <></>
           }
         </div>
@@ -30,13 +30,13 @@ const NowWatchingShowCard = ({ show, setSelectedShow }: NowWatchingShowCardProps
 
   if (setSelectedShow) {
     return (
-      <div className="nowWatchingShowCard" onClick={() => setSelectedShow(show.imdbId)}>
+      <div className="now-watching-show-card" onClick={() => setSelectedShow(show.imdbId)}>
         {cardContent()}
       </div>
     );
   }
   return (
-    <a href={`/now-watching/show/${show.imdbId}`} className="nowWatchingShowCard">
+    <a href={`/now-watching/show/${show.imdbId}`} className="now-watching-show-card">
       {cardContent()}
     </a>
   );

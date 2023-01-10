@@ -47,7 +47,7 @@ html, body, #__next {
 }
 
 html {
-  color-scheme: light dark;
+  color-scheme: light;
   color: var(--fg-color);
   background: var(--bg-color-1);
   font-family: var(--font-family-base);
@@ -142,13 +142,13 @@ article {
   font-family: var(--font-family-article);
 }
 
-article.topLevelPage {
+article:is(.app-page, .content-page) {
   max-width: 768px;
   width: 100%;
   margin: 0 auto;
 }
 
-article.topLevelPage h2 {
+article.app-page h2 {
   width: 100%;
   height: max-content;
   margin: 0rem 0rem 2rem 0rem;
@@ -160,18 +160,83 @@ article.topLevelPage h2 {
 }
 
 @media (max-width: 1023px) {
-  article.topLevelPage h2 {
+  article.app-page h2 {
     margin-block: 1.5rem 2rem;
     margin-inline: 0rem;
   }
 }
 @media (max-width: 767px) {
-  article.topLevelPage h2 {
+  article.app-page h2 {
     text-align: center;
   }
 }
 
-article .cardList {
+article.content-page {
+  margin-block: 3rem;
+}
+
+article.content-page > .header {
+  max-width: 600px;
+  width: 100%;
+  margin-block: 0rem 1.5rem;
+  margin-inline: auto;
+  padding: 0rem 0rem 1rem 0rem;
+  display: inline-flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  border-bottom: 1px solidvar(--border-color);
+  text-align: center;
+}
+article.content-page > .header > h2 {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  color: var(--fg-color);
+  border: none;
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1;
+}
+article.content-page > .header > .subtitle {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  color: var(--fg-color-6);
+  font-size: 1.5rem;
+  font-weight: normal;
+  font-style: italic;
+}
+article.content-page > .header > .timestamp {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  color: var(--fg-color-3);
+  font-family: var(--font-family-widget);
+  font-weight: 600;
+}
+article.content-page > .content {
+  line-height: 1.5;
+}
+
+@media (max-width: 767px) {
+  article.content-page > .header {
+    margin-block: 0;
+  }
+  article.content-page > .header > h2 {
+    font-size: 2rem;
+  }
+  article.content-page > .header > .subtitle {
+    font-size: 1.25rem;
+  }
+  article.content-page > .header > .timestamp {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+article .card-list {
   width: 100%;
   margin: 0;
   padding: 0;
@@ -183,7 +248,7 @@ article .cardList {
   gap: 1rem;
 }
 
-article .cardList .paper {
+article .card-list .paper {
   width: 100%;
 }
 
@@ -223,24 +288,8 @@ select:is(:disabled, .disabled) {
   pointer-events: none;
 }
 
-::-webkit-scrollbar,
-::-webkit-scrollbar-track {
-  width: 18px;
-  background: var(--bg-color-6);
-  border-left: var(--border-width) solid var(--border-color);
-  border-radius: 0;
-}
-::-webkit-scrollbar-thumb {
-  background: var(--fg-color-7);
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--fg-color-6);
-}
-::-webkit-scrollbar-thumb:active {
-  background: var(--fg-color-5);
-}
-
 @import url('../components/ui/Alert/index.module.css');
+@import url('../components/ui/Badge/index.module.css');
 @import url('../components/ui/Breadcrumbs/index.module.css');
 @import url('../components/ui/Button/index.module.css');
 @import url('../components/ui/ButtonGroup/index.module.css');
@@ -252,11 +301,10 @@ select:is(:disabled, .disabled) {
 @import url('../components/ui/TextField/index.module.css');
 @import url('../components/ui/Toolbar/index.module.css');
 
+@import url('../components/app/AdminContentList/index.module.css');
 @import url('../components/app/BackToTop/index.module.css');
-@import url('../components/app/BlogNavigationView/index.module.css');
 @import url('../components/app/Footer/index.module.css');
 @import url('../components/app/ContactForm/index.module.css');
-@import url('../components/app/MustWatchBadge/index.module.css');
 @import url('../components/app/NavBar/index.module.css');
 @import url('../components/app/NowWatchingShowCard/index.module.css');
 @import url('../components/app/PlaylistCard/index.module.css');
@@ -264,7 +312,7 @@ select:is(:disabled, .disabled) {
 
 @import url('./index.module.css');
 @import url('./admin/index.module.css');
-@import url('./admin/posts/index.module.css');
-@import url('./admin/posts/edit/index.module.css');
-@import url('./playlists/index.module.css');
+@import url('./blog/index.module.css');
 @import url('./now-watching/index.module.css');
+@import url('./playlists/index.module.css');
+@import url('./projects/index.module.css');

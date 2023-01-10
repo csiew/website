@@ -4,8 +4,6 @@ import retitle from "../../../../lib/retitle";
 import Breadcrumbs from "../../../../components/ui/Breadcrumbs";
 import NavigationView from "../../../../components/ui/NavigationView";
 import { useRouter } from "next/router";
-import { BlogPost } from "../../../../lib/blog";
-import { savePost } from "../../../../firebase/posts";
 import config from "../../../../config";
 import ButtonGroup from "../../../../components/ui/ButtonGroup";
 import Button from "../../../../components/ui/Button";
@@ -18,94 +16,110 @@ import FormQuestion from "../../../../components/ui/Form/FormQuestion";
 import ContentContext from "../../../../stores/content";
 import useContentStoreHook from "../../../../stores/content/hook";
 import { encodeContent } from "../../../../lib/encoding";
+import { ProjectV2 } from "../../../../lib/projects";
+import { saveProject } from "../../../../firebase/projects";
 
-const EditPost = ({ isLoggedIn }: any) => {
+const EditProject = ({ isLoggedIn }: any) => {
   const router = useRouter();
   const contentStoreHook = useContentStoreHook();
   const contentContext = useContext(ContentContext);
 
   const isMountedRef = useRef<any>(false);
   const slugEditorRef = useRef<any>(null);
-  const titleEditorRef = useRef<any>(null);
-  const subtitleEditorRef = useRef<any>(null);
-  const contentEditorRef = useRef<any>(null);
+  const nameEditorRef = useRef<any>(null);
+  const startYearEditorRef = useRef<any>(null);
+  const endYearEditorRef = useRef<any>(null);
+  const statusEditorRef = useRef<any>(null);
+  const imgUrlEditorRef = useRef<any>(null);
+  const siteUrlEditorRef = useRef<any>(null);
+  const gitRepoUrlEditorRef = useRef<any>(null);
+  const descriptionEditorRef = useRef<any>(null);
 
   const [slug, setSlug] = useState<string>("");
-  const [post, setPost] = useState<BlogPost>();
-  const [localPostCache, setLocalPostCache] = useState<BlogPost | undefined>();
-  const [isNewPost, setIsNewPost] = useState<boolean>(false);
+  const [project, setProject] = useState<ProjectV2>();
+  const [localPostCache, setLocalPostCache] = useState<ProjectV2 | undefined>();
+  const [isNewProject, setIsNewProject] = useState<boolean>(false);
   const [isPreview, setIsPreview] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [isRefreshPostsSuccess, setIsRefreshPostsSuccess] = useState<boolean>(true);
+  const [isRefreshProjectsSuccess, setIsRefreshProjectsSuccess] = useState<boolean>(true);
   const [isSearchSuccess, setIsSearchSuccess] = useState<boolean>(false);
   const [hasAttemptedSave, setHasAttemptedSave] = useState<boolean>(false);
   const [isSavingSuccess, setIsSavingSuccess] = useState<boolean>(false);
 
-  const cacheLocalChanges = (): BlogPost => {
-    const cachedPost: BlogPost = {
-      ...post as BlogPost,
+  const cacheLocalChanges = (): ProjectV2 => {
+    const cachedProject: ProjectV2 = {
+      ...project as ProjectV2,
       slug: slugEditorRef.current.value as string,
-      title: titleEditorRef.current.value as string,
-      subtitle: subtitleEditorRef.current.value as string,
-      content: contentEditorRef.current.value as string
+      name: nameEditorRef.current.value as string,
+      startYear: startYearEditorRef.current.value as string,
+      endYear: endYearEditorRef.current.value as string,
+      status: statusEditorRef.current.value as string,
+      imgUrl: imgUrlEditorRef.current.value as string,
+      siteUrl: siteUrlEditorRef.current.value as string,
+      gitRepoUrl: gitRepoUrlEditorRef.current.value as string,
+      description: descriptionEditorRef.current.value as string
     };
-    setLocalPostCache(cachedPost);
-    return cachedPost;
+    setLocalPostCache(cachedProject);
+    return cachedProject;
   };
 
-  const handleGetPosts = async () => {
+  const handleGetProjects = async () => {
     try {
-      await contentStoreHook.getPosts();
-      setIsRefreshPostsSuccess(true);
+      await contentStoreHook.getProjects();
+      setIsRefreshProjectsSuccess(true);
     } catch (err) {
       if (config.debugMode) console.error(err);
-      setIsRefreshPostsSuccess(true);
+      setIsRefreshProjectsSuccess(true);
     }
   };
 
-  const handleGetTargetPost = async (force?: boolean) => {
+  const handleGetTargetProject = async (force?: boolean) => {
     const { slug } = router.query;
     setSlug(slug as string);
     setIsLoading(true);
     if (slug === "new") {
-      setIsNewPost(true);
+      setIsNewProject(true);
 
-      const newPost: BlogPost = {
+      const newProject: ProjectV2 = {
         slug: "",
-        title: "",
-        subtitle: "",
-        content: "",
-        author: "Clarence Siew",
+        name: "",
+        startYear: new Date(Date.now()).getFullYear().toString(),
+        endYear: "",
+        status: "active",
+        description: "",
+        imgUrl: "",
+        siteUrl: "",
+        gitRepoUrl: "",
         createdAt: new Date(Date.now()),
         isPublished: false
       };
-      setPost(newPost);
-      setLocalPostCache(newPost);
+      setProject(newProject);
+      setLocalPostCache(newProject);
 
       setIsSearchSuccess(true);
       setIsLoading(false);
 
       return;
     }
-    if (force || !contentContext.posts.length) {
-      await handleGetPosts();
+    if (force || !contentContext.projects.length) {
+      await handleGetProjects();
     }
-    console.debug(`Searching for post with slug: ${slug}`);
-    const targetPost = contentContext.posts.find((p) => p.slug === slug);
-    if (!targetPost) {
+    console.debug(`Searching for project with slug: ${slug}`);
+    const targetProject = contentContext.projects.find((p) => p.slug === slug);
+    if (!targetProject) {
       setIsSearchSuccess(false);
     } else {
-      setPost(targetPost);
+      setProject(targetProject);
       setIsSearchSuccess(true);
     }
     setIsLoading(false);
-    console.debug("Done searching for post");
+    console.debug("Done searching for project");
   };
 
-  const determinePublishDate = (post: BlogPost, isPublished: boolean) => {
+  const determinePublishDate = (project: ProjectV2, isPublished: boolean) => {
     if (isPublished) {
-      if (post.publishedOn) {
-        return Timestamp.fromDate(post.publishedOn as Date);
+      if (project.publishedOn) {
+        return Timestamp.fromDate(project.publishedOn as Date);
       } else {
         return serverTimestamp();
       }
@@ -117,36 +131,42 @@ const EditPost = ({ isLoggedIn }: any) => {
   const handleSubmit = async (ev: FormEvent<Element>, isPublished?: boolean) => {
     ev.preventDefault();
 
-    const cachedPost = cacheLocalChanges();
+    const cachedProject = cacheLocalChanges();
 
     console.debug("Cached post");
 
-    const updatedPost = { ...cachedPost } as { [k: string]: any };
-    updatedPost.content = cachedPost.content ? encodeContent(cachedPost.content) : "";
-    updatedPost.isPublished = isPublished ?? cachedPost.isPublished ?? false;
-    const publishedOn = determinePublishDate(cachedPost, isPublished ?? false);
+    const updatedProject = { ...cachedProject } as { [k: string]: any };
+    updatedProject.description = cachedProject.description ? encodeContent(cachedProject.description) : "";
+    updatedProject.isPublished = isPublished ?? cachedProject.isPublished ?? false;
+    const publishedOn = determinePublishDate(cachedProject, isPublished ?? false);
     if (!publishedOn) {
-      delete updatedPost.publishedOn;
+      delete updatedProject.publishedOn;
     } else {
-      updatedPost.publishedOn = publishedOn;
+      updatedProject.publishedOn = publishedOn;
     }
-    updatedPost.lastModified = serverTimestamp();
+    updatedProject.lastModified = serverTimestamp();
 
-    console.debug("Created updated post");
+    ["endYear", "imgUrl", "siteUrl", "gitRepoUrl"].map((k) => {
+      if (updatedProject[k].length === 0) {
+        delete updatedProject[k];
+      }
+    });
+
+    console.debug("Created updated project");
 
     setIsLoading(true);
     setHasAttemptedSave(true);
     try {
-      if (isNewPost) {
-        await savePost(updatedPost);
+      if (isNewProject) {
+        await saveProject(updatedProject);
       } else {
-        await savePost(updatedPost, updatedPost.id);
-        await handleGetTargetPost(true);
+        await saveProject(updatedProject, updatedProject.id);
+        await handleGetTargetProject(true);
       }
       setIsSavingSuccess(true);
-      if (isNewPost) {
-        setIsNewPost(false);
-        router.replace(`/admin/posts/edit/${cachedPost?.slug}`);
+      if (isNewProject) {
+        setIsNewProject(false);
+        router.replace(`/admin/projects/edit/${updatedProject?.slug}`);
       }
     } catch (err) {
       if (config.debugMode) console.error(err);
@@ -163,30 +183,53 @@ const EditPost = ({ isLoggedIn }: any) => {
 
   const resetInputValues = (ev?: FormEvent<Element>, force?: boolean) => {
     ev?.preventDefault();
-    if (!post || [slugEditorRef, titleEditorRef, subtitleEditorRef, contentEditorRef].some((r) => r.current === null)) return;
+    if (
+      !project ||
+      [
+        slugEditorRef,
+        nameEditorRef,
+        startYearEditorRef,
+        endYearEditorRef,
+        statusEditorRef,
+        imgUrlEditorRef,
+        siteUrlEditorRef,
+        gitRepoUrlEditorRef,
+        descriptionEditorRef
+      ].some((r) => r.current === null)
+    ) return;
     if (force || !localPostCache) {
       console.debug("Loading post data from shared context");
-      slugEditorRef.current.value = post?.slug ?? "";
-      titleEditorRef.current.value = post?.title ?? "";
-      subtitleEditorRef.current.value = post?.subtitle ?? "";
-      contentEditorRef.current.value = post?.content ?? "";
+      slugEditorRef.current.value = project?.slug ?? "";
+      nameEditorRef.current.value = project?.name ?? "";
+      startYearEditorRef.current.value = project?.startYear ?? new Date(Date.now()).getFullYear().toString();
+      endYearEditorRef.current.value = project?.endYear ?? "";
+      statusEditorRef.current.value = project?.status ?? "active";
+      imgUrlEditorRef.current.value = project?.imgUrl ?? "";
+      siteUrlEditorRef.current.value = project?.siteUrl ?? "";
+      gitRepoUrlEditorRef.current.value = project?.gitRepoUrl ?? "";
+      descriptionEditorRef.current.value = project?.description ?? "";
     } else {
       console.debug("Loading post data from local state cache");
       slugEditorRef.current.value = localPostCache.slug;
-      titleEditorRef.current.value = localPostCache.title;
-      subtitleEditorRef.current.value = localPostCache.subtitle;
-      contentEditorRef.current.value = localPostCache.content;
+      nameEditorRef.current.value = localPostCache.name;
+      startYearEditorRef.current.value = localPostCache.startYear;
+      endYearEditorRef.current.value = localPostCache.endYear;
+      statusEditorRef.current.value = localPostCache.status;
+      imgUrlEditorRef.current.value = localPostCache.imgUrl;
+      siteUrlEditorRef.current.value = localPostCache.siteUrl;
+      gitRepoUrlEditorRef.current.value = localPostCache.gitRepoUrl;
+      descriptionEditorRef.current.value = localPostCache.description;
     }
   };
 
   useEffect(() => {
-    if (!isMountedRef.current) handleGetTargetPost();
+    if (!isMountedRef.current) handleGetTargetProject();
     isMountedRef.current = true;
   }, [contentContext.posts]);
 
   useEffect(() => {
     if (!isLoading && !!isMountedRef.current && !isPreview) resetInputValues();
-  }, [handleGetTargetPost, setIsPreview]);
+  }, [handleGetTargetProject, setIsPreview]);
 
   useEffect(() => {
     if (!isLoading && !!isMountedRef.current) resetAlertStates();
@@ -201,8 +244,8 @@ const EditPost = ({ isLoggedIn }: any) => {
   return (
     <>
       <Head>
-        <title>{retitle("Edit Post")}</title>
-        <meta property="og:title" content={retitle("Edit Post")} key="title" />
+        <title>{retitle("Edit Project")}</title>
+        <meta property="og:title" content={retitle("Edit Project")} key="title" />
       </Head>
       <Breadcrumbs
         items={[
@@ -211,8 +254,8 @@ const EditPost = ({ isLoggedIn }: any) => {
             href: "/admin"
           },
           {
-            title: "Posts",
-            href: "/admin/posts"
+            title: "Projects",
+            href: "/admin/projects"
           },
           {
             title: "Editor"
@@ -227,10 +270,10 @@ const EditPost = ({ isLoggedIn }: any) => {
                 ? (
                   <>
                     {
-                      !isRefreshPostsSuccess
+                      !isRefreshProjectsSuccess
                         ? (
                           <Alert variant="error">
-                            <span>Failed to reload posts from Firebase.</span>
+                            <span>Failed to reload projects from Firebase.</span>
                           </Alert>
                         )
                         : <></>
@@ -239,7 +282,7 @@ const EditPost = ({ isLoggedIn }: any) => {
                       !isSearchSuccess
                         ? (
                           <Alert variant="error">
-                            <span>Failed to find post with slug: {slug}</span>
+                            <span>Failed to find project with slug: {slug}</span>
                           </Alert>
                         )
                         : <></>
@@ -249,12 +292,12 @@ const EditPost = ({ isLoggedIn }: any) => {
                         ? !isSavingSuccess
                           ? (
                             <Alert variant="error">
-                              <span>Failed to save post.</span>
+                              <span>Failed to save project.</span>
                             </Alert>
                           )
                           : (
                             <Alert variant="success">
-                              <span>Successfully saved post!</span>
+                              <span>Successfully saved project!</span>
                             </Alert>
                           )
                         : <></>
@@ -272,25 +315,25 @@ const EditPost = ({ isLoggedIn }: any) => {
                       <div className="post-metadata">
                         <div className="post-metadata-group">
                           <label>Published</label>
-                          <span>{post?.isPublished ? "Yes" : "No"}</span>
+                          <span>{project?.isPublished ? "Yes" : "No"}</span>
                         </div>
                         {
-                          post?.isPublished && post?.publishedOn
+                          project?.isPublished && project?.publishedOn
                             ? (
                               <div className="post-metadata-group">
                                 <label>Published on</label>
-                                <span>{post?.publishedOn.toLocaleString()}</span>
+                                <span>{project?.publishedOn.toLocaleString()}</span>
                               </div>
                             )
                             : <></>
                         }
                         <div className="post-metadata-group">
                           <label>Last modified at</label>
-                          <span>{post?.lastModified?.toLocaleString()}</span>
+                          <span>{project?.lastModified?.toLocaleString()}</span>
                         </div>
                         <div className="post-metadata-group">
                           <label>Created at</label>
-                          <span>{post?.createdAt.toLocaleString()}</span>
+                          <span>{project?.createdAt.toLocaleString()}</span>
                         </div>
                       </div>
                     </Paper>
@@ -305,13 +348,35 @@ const EditPost = ({ isLoggedIn }: any) => {
                         required />
                       <FormQuestion
                         variant="text"
-                        label="Title"
-                        forwardedRef={titleEditorRef}
+                        label="Name"
+                        forwardedRef={nameEditorRef}
                         required />
                       <FormQuestion
                         variant="text"
-                        label="Subtitle"
-                        forwardedRef={subtitleEditorRef} />
+                        label="Start Year"
+                        forwardedRef={startYearEditorRef}
+                        required />
+                      <FormQuestion
+                        variant="text"
+                        label="End Year"
+                        forwardedRef={endYearEditorRef} />
+                      <FormQuestion
+                        variant="text"
+                        label="Status"
+                        forwardedRef={statusEditorRef}
+                        required />
+                      <FormQuestion
+                        variant="text"
+                        label="Image URL"
+                        forwardedRef={imgUrlEditorRef} />
+                      <FormQuestion
+                        variant="text"
+                        label="Website URL"
+                        forwardedRef={siteUrlEditorRef} />
+                      <FormQuestion
+                        variant="text"
+                        label="Git Repository URL"
+                        forwardedRef={gitRepoUrlEditorRef} />
                       <small>
                         <ButtonGroup orientation="horizontal">
                           <Button
@@ -340,22 +405,22 @@ const EditPost = ({ isLoggedIn }: any) => {
                           ? (
                             <Paper style={{ width: "100%", minHeight: "200px" }}>
                               <ReactMarkdown>
-                                {localPostCache?.content ?? post?.content ?? ""}
+                                {localPostCache?.description ?? project?.description ?? ""}
                               </ReactMarkdown>
                             </Paper>
                           )
                           : (
                             <FormQuestion
                               variant="multiline"
-                              label="Content"
-                              forwardedRef={contentEditorRef} />
+                              label="Description"
+                              forwardedRef={descriptionEditorRef} />
                           )
                       }
                       <span className="form-controls">
                         <Button variant="reset">Reset</Button>
                         <span style={{ width: "100%" }}></span>
                         {
-                          post?.isPublished
+                          project?.isPublished
                             ? <></>
                             : (
                               <Button
@@ -377,4 +442,4 @@ const EditPost = ({ isLoggedIn }: any) => {
   );
 };
 
-export default EditPost;
+export default EditProject;

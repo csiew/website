@@ -1,14 +1,14 @@
-article.topLevelPage.pageNowWatching {
+article.app-page.page-now-watching {
   max-width: 1280px;
 }
 
-article.topLevelPage.pageNowWatching section.acknowledgements {
+article.app-page.page-now-watching section.acknowledgements {
   margin-top: 1rem;
   color: var(--fg-color-5);
   text-align: center;
 }
 
-.pageNowWatching .pageNowWatchingSection .cardList {
+.page-now-watching .page-now-watching-section .card-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, 256px);
   align-items: stretch;
@@ -16,14 +16,14 @@ article.topLevelPage.pageNowWatching section.acknowledgements {
   gap: 0.5rem;
 }
 
-.pageNowWatching .pageNowWatchingSection .header-bar {
+.page-now-watching .page-now-watching-section .header-bar {
   width: 100%;
   display: inline-flex;
   flex-flow: row;
   align-items: flex-start;
   justify-content: space-between;
 }
-.pageNowWatching .pageNowWatchingSection .header-bar .actions {
+.page-now-watching .page-now-watching-section .header-bar .actions {
   display: inline-flex;
   flex-flow: row;
   align-items: flex-start;
@@ -32,7 +32,7 @@ article.topLevelPage.pageNowWatching section.acknowledgements {
 }
 
 @media (max-width: 767px) {
-  .pageNowWatching .pageNowWatchingSection .header-bar {
+  .page-now-watching .page-now-watching-section .header-bar {
     margin-block: 0rem 1rem;
     flex-flow: column;
     align-items: stretch;
@@ -40,11 +40,11 @@ article.topLevelPage.pageNowWatching section.acknowledgements {
     gap: 0rem;
   }
 
-  .pageNowWatching .pageNowWatchingSection .header-bar h3 {
+  .page-now-watching .page-now-watching-section .header-bar h3 {
     margin-block: 0.25rem 0.5rem;
   }
 
-  .pageNowWatching .pageNowWatchingSection .header-bar .actions {
+  .page-now-watching .page-now-watching-section .header-bar .actions {
     width: 100%;
     flex-flow: column;
     align-items: stretch;
@@ -53,18 +53,18 @@ article.topLevelPage.pageNowWatching section.acknowledgements {
   }
 }
 
-.pageNowWatching .pageNowWatchingSection h3 {
+.page-now-watching .page-now-watching-section h3 {
   margin-bottom: 2rem;
 }
 
-.pageShowDetail .navigationViewContent {
+.show-detail-page .navigationViewContent {
   padding: 0rem 1rem;
 }
-.pageShowDetail .navigationViewContent article {
+.show-detail-page .navigationViewContent article {
   padding: 2rem 0rem;
 }
 
-.showInfo {
+.show-info {
   width: 100%;
   display: inline-flex;
   flex-flow: row;
@@ -73,24 +73,24 @@ article.topLevelPage.pageNowWatching section.acknowledgements {
   gap: 1.5rem;
 }
 
-.showInfo img {
+.show-info img {
   border: var(--border-width) solid var(--border-color);
   border-radius: 5px;
   box-shadow: var(--preset-shadow-component);
 }
 
-.showInfo.column {
+.show-info.column {
   flex-flow: column-reverse;
   align-items: center;
 }
 @media (max-width: 767px) {
-  .showInfo {
+  .show-info {
     flex-flow: column-reverse;
     align-items: center;
   }
 }
 
-.showDataDetails {
+.show-data-details {
   width: 100%;
   margin: 0;
   display: inline-flex;
@@ -100,14 +100,14 @@ article.topLevelPage.pageNowWatching section.acknowledgements {
   gap: 0.25rem;
   font-family: var(--font-family-widget);
 }
-.showDataDetails .row {
+.show-data-details .row {
   display: inline-flex;
   flex-flow: row;
   align-items: center;
   justify-content: flex-start;
   gap: 1.5rem;
 }
-.showDataDetails .row .key {
+.show-data-details .row .key {
   width: 100%;
   flex-grow: 1;
   flex-shrink: 3;
@@ -115,22 +115,22 @@ article.topLevelPage.pageNowWatching section.acknowledgements {
   font-weight: 600;
   text-align: right;
 }
-.showDataDetails .row .value {
+.show-data-details .row .value {
   width: 100%;
   flex-grow: 3;
 }
 
 @media (max-width: 767px) {
-  .showDataDetails {
+  .show-data-details {
     gap: 1.25rem;
   }
-  .showDataDetails .row {
+  .show-data-details .row {
     flex-flow: column;
     align-items: flex-start;
     justify-content: flex-start;
     gap: 0.25rem;
   }
-  .showDataDetails .row .key {
+  .show-data-details .row .key {
     text-align: left;
   }
 }

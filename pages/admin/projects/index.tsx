@@ -6,24 +6,26 @@ import Breadcrumbs from "../../../components/ui/Breadcrumbs";
 import NavigationView from "../../../components/ui/NavigationView";
 import Paper from "../../../components/ui/Paper";
 import Link from "next/link";
-import { deletePost, savePost } from "../../../firebase/posts";
 import config from "../../../config";
 import Alert from "../../../components/ui/Alert";
-import { BlogPost } from "../../../lib/blog";
 import { serverTimestamp } from "@firebase/firestore/lite";
 import ContentContext from "../../../stores/content";
 import useContentStoreHook from "../../../stores/content/hook";
 import { encodeContent } from "../../../lib/encoding";
 import { CommitAttemptFlags } from "../../../lib/@types";
+import { ProjectV2 } from "../../../lib/projects";
+import { deleteProject, saveProject } from "../../../firebase/projects";
+import Badge from "../../../components/ui/Badge";
+import { capitalize } from "lodash";
 
-const Posts = ({ isLoggedIn }: any) => {
+const Projects = ({ isLoggedIn }: any) => {
   const router = useRouter();
   const contentContext = useContext(ContentContext);
   const contentStoreHook = useContentStoreHook();
   const isMountedRef = useRef<any>(false);
 
-  const [selectedPosts, setSelectedPosts] = useState<Map<string, boolean>>();
-  const [hasSelectedPosts, setHasSelectedPosts] = useState<boolean>(false);
+  const [selectedProjects, setSelectedProjects] = useState<Map<string, boolean>>();
+  const [hasSelectedProjects, setHasSelectedProjects] = useState<boolean>(false);
   const [inEditMode, setInEditMode] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isSuccess, setIsSuccess] = useState<boolean>(true);
@@ -35,11 +37,11 @@ const Posts = ({ isLoggedIn }: any) => {
   const [isUnpublishSuccess, setIsUnpublishSuccess] = useState<boolean>(false);
   const [isDeletionSuccess, setIsDeletionSuccess] = useState<boolean>(false);
 
-  const handleGetPosts = async (force?: boolean) => {
-    if (!!force || !contentContext.posts.length) {
+  const handleGetProjects = async (force?: boolean) => {
+    if (!!force || !contentContext.projects.length) {
       setIsLoading(true);
       try {
-        await contentStoreHook.getPosts(force);
+        await contentStoreHook.getProjects(force);
         setIsSuccess(true);
       } catch (err) {
         if (config.debugMode) console.error(err);
@@ -49,8 +51,8 @@ const Posts = ({ isLoggedIn }: any) => {
       }
     }
     const selectionMap = new Map<string, boolean>();
-    contentContext.posts.map((p) => selectionMap.set(p.id!, false));
-    setSelectedPosts(selectionMap);
+    contentContext.projects.map((p) => selectionMap.set(p.id!, false));
+    setSelectedProjects(selectionMap);
     setIsSuccess(true);
     console.debug("Done fetching");
   };
@@ -60,18 +62,18 @@ const Posts = ({ isLoggedIn }: any) => {
     selectionMap?.forEach((v, k) => {
       if (v === true) selectedKeys.push(k);
     });
-    setHasSelectedPosts(selectedKeys.length > 0);
+    setHasSelectedProjects(selectedKeys.length > 0);
   };
 
-  const handleDeletePosts = async () => {
+  const handleDeleteProjects = async () => {
     const selectedKeys: string[] = [];
-    selectedPosts?.forEach((v, k) => {
+    selectedProjects?.forEach((v, k) => {
       if (v === true) selectedKeys.push(k);
     });
     setIsLoading(true);
     setHasAttemptedCommit({ delete: true, publish: false, unpublish: false });
     try {
-      await Promise.all(selectedKeys.map((k) => deletePost(k)));
+      await Promise.all(selectedKeys.map((k) => deleteProject(k)));
       setIsDeletionSuccess(true);
       setInEditMode(false);
     } catch (err) {
@@ -80,28 +82,28 @@ const Posts = ({ isLoggedIn }: any) => {
     } finally {
       setIsLoading(false);
     }
-    await handleGetPosts(true);
+    await handleGetProjects(true);
   };
 
-  const handlePublishPosts = async () => {
+  const handlePublishProjects = async () => {
     const selectedKeys: string[] = [];
-    selectedPosts?.forEach((v, k) => {
+    selectedProjects?.forEach((v, k) => {
       if (v === true) selectedKeys.push(k);
     });
-    const publishQueue: BlogPost[] = selectedKeys
+    const publishQueue: ProjectV2[] = selectedKeys
       .map((k) => {
-        const post = contentContext.posts.find((p) => p.id === k && p.isPublished === false);
-        if (post) {
-          return post;
+        const project = contentContext.projects.find((p) => p.id === k && p.isPublished === false);
+        if (project) {
+          return project;
         }
       })
-      .filter((p) => !!p) as BlogPost[];
+      .filter((p) => !!p) as ProjectV2[];
     setIsLoading(true);
     setHasAttemptedCommit({ delete: false, publish: true, unpublish: false });
     try {
       await Promise.all(
         publishQueue.map((p) => {
-          return savePost(p, p.id, { content: encodeContent(p.content ?? ""), isPublished: true, publishedOn: serverTimestamp() });
+          return saveProject(p, p.id, { description: encodeContent(p.description ?? ""), isPublished: true, publishedOn: serverTimestamp() });
         })
       );
       setIsPublishSuccess(true);
@@ -112,28 +114,28 @@ const Posts = ({ isLoggedIn }: any) => {
     } finally {
       setIsLoading(false);
     }
-    await handleGetPosts(true);
+    await handleGetProjects(true);
   };
 
-  const handleUnpublishPosts = async () => {
+  const handleUnpublishProjects = async () => {
     const selectedKeys: string[] = [];
-    selectedPosts?.forEach((v, k) => {
+    selectedProjects?.forEach((v, k) => {
       if (v === true) selectedKeys.push(k);
     });
-    const publishQueue: BlogPost[] = selectedKeys
+    const publishQueue: ProjectV2[] = selectedKeys
       .map((k) => {
-        const post = contentContext.posts.find((p) => p.id === k && p.isPublished === true);
+        const post = contentContext.projects.find((p) => p.id === k && p.isPublished === true);
         if (post) {
           return post;
         }
       })
-      .filter((p) => !!p) as BlogPost[];
+      .filter((p) => !!p) as ProjectV2[];
     setIsLoading(true);
     setHasAttemptedCommit({ delete: false, publish: false, unpublish: true });
     try {
       await Promise.all(
         publishQueue.map((p) => {
-          return savePost(p, p.id, { content: encodeContent(p.content ?? ""), isPublished: false, publishedOn: undefined });
+          return saveProject(p, p.id, { description: encodeContent(p.description ?? ""), isPublished: false, publishedOn: undefined });
         })
       );
       setIsUnpublishSuccess(true);
@@ -144,11 +146,11 @@ const Posts = ({ isLoggedIn }: any) => {
     } finally {
       setIsLoading(false);
     }
-    await handleGetPosts(true);
+    await handleGetProjects(true);
   };
 
   useEffect(() => {
-    if (!isMountedRef.current) handleGetPosts();
+    if (!isMountedRef.current) handleGetProjects();
     isMountedRef.current = true;
   }, []);
 
@@ -161,8 +163,8 @@ const Posts = ({ isLoggedIn }: any) => {
   return (
     <>
       <Head>
-        <title>{retitle("Posts")}</title>
-        <meta property="og:title" content={retitle("Posts")} key="title" />
+        <title>{retitle("Projects")}</title>
+        <meta property="og:title" content={retitle("Projects")} key="title" />
       </Head>
       <Breadcrumbs
         items={[
@@ -171,18 +173,18 @@ const Posts = ({ isLoggedIn }: any) => {
             href: "/admin"
           },
           {
-            title: "Posts"
+            title: "Projects"
           }
         ]} />
       <NavigationView
         content={(
           <article className="app-page">
-            <h2>Posts</h2>
+            <h2>Projects</h2>
             {
               !isLoading && !isSuccess
                 ? (
                   <Alert variant="error">
-                    Failed to fetch posts. Try again.
+                    Failed to fetch projects. Try again.
                   </Alert>
                 )
                 : <></>
@@ -197,12 +199,12 @@ const Posts = ({ isLoggedIn }: any) => {
                           !isDeletionSuccess
                             ? (
                               <Alert variant="error">
-                                Failed to delete selected posts.
+                                Failed to delete selected projects.
                               </Alert>
                             )
                             : (
                               <Alert variant="success">
-                                Successfully deleted selected posts.
+                                Successfully deleted selected projects.
                               </Alert>
                             )
                         )
@@ -214,12 +216,12 @@ const Posts = ({ isLoggedIn }: any) => {
                           !isPublishSuccess
                             ? (
                               <Alert variant="error">
-                                Failed to publish selected posts.
+                                Failed to publish selected projects.
                               </Alert>
                             )
                             : (
                               <Alert variant="success">
-                                Successfully publish selected posts.
+                                Successfully publish selected projects.
                               </Alert>
                             )
                         )
@@ -231,12 +233,12 @@ const Posts = ({ isLoggedIn }: any) => {
                           !isUnpublishSuccess
                             ? (
                               <Alert variant="error">
-                                Failed to unpublish selected posts.
+                                Failed to unpublish selected projects.
                               </Alert>
                             )
                             : (
                               <Alert variant="success">
-                                Successfully unpublish selected posts.
+                                Successfully unpublish selected projects.
                               </Alert>
                             )
                         )
@@ -250,12 +252,12 @@ const Posts = ({ isLoggedIn }: any) => {
               <section className="admin-content-list-header">
                 {
                   !inEditMode
-                    ? <Link href="/admin/posts/edit/new" className={isLoading ? "disabled" : ""}>New Post</Link>
+                    ? <Link href="/admin/projects/edit/new" className={isLoading ? "disabled" : ""}>New Project</Link>
                     : (
                       <>
-                        <Link href="#" onClick={handleDeletePosts} className={!!isLoading || !hasSelectedPosts ? "disabled" : ""}>Delete Selected</Link>
-                        <Link href="#" onClick={handlePublishPosts} className={!!isLoading || !hasSelectedPosts ? "disabled" : ""}>Publish Selected</Link>
-                        <Link href="#" onClick={handleUnpublishPosts} className={!!isLoading || !hasSelectedPosts ? "disabled" : ""}>Unpublish Selected</Link>
+                        <Link href="#" onClick={handleDeleteProjects} className={!!isLoading || !hasSelectedProjects ? "disabled" : ""}>Delete Selected</Link>
+                        <Link href="#" onClick={handlePublishProjects} className={!!isLoading || !hasSelectedProjects ? "disabled" : ""}>Publish Selected</Link>
+                        <Link href="#" onClick={handleUnpublishProjects} className={!!isLoading || !hasSelectedProjects ? "disabled" : ""}>Unpublish Selected</Link>
                       </>
                     )
                 }
@@ -266,7 +268,7 @@ const Posts = ({ isLoggedIn }: any) => {
                       <Link
                         href="#"
                         onClick={() => {
-                          handleGetPosts(true);
+                          handleGetProjects(true);
                           setHasAttemptedCommit({ delete: false, publish: false, unpublish: false });
                         }}
                         className={isLoading ? "disabled" : ""}>
@@ -290,7 +292,7 @@ const Posts = ({ isLoggedIn }: any) => {
                     <section className="admin-content-list">
                       <ul>
                         {
-                          contentContext.posts.map((p: BlogPost, i: number) => (
+                          contentContext.projects.map((p: ProjectV2, i: number) => (
                             <li key={p.slug ?? i}>
                               {
                                 inEditMode
@@ -298,20 +300,22 @@ const Posts = ({ isLoggedIn }: any) => {
                                     <span className="admin-content-list-checkbox">
                                       <input
                                         type="checkbox"
-                                        defaultChecked={selectedPosts?.get(p.id!)}
+                                        defaultChecked={selectedProjects?.get(p.id!)}
                                         onClick={() => {
-                                          const currentValue = selectedPosts?.get(p.id!) ?? false;
-                                          const newSelectionMap = selectedPosts;
+                                          const currentValue = selectedProjects?.get(p.id!) ?? false;
+                                          const newSelectionMap = selectedProjects;
                                           newSelectionMap!.set(p.id!, !currentValue);
-                                          setSelectedPosts(newSelectionMap);
+                                          setSelectedProjects(newSelectionMap);
                                           handleUpdateSelectedFlag(newSelectionMap!);
                                         }} />
                                     </span>
                                   )
                                   : <></>
                               }
-                              <Link href={`/admin/posts/edit/${p.slug}`} className={inEditMode ? "disabled" : ""} title={p.title}>
-                                <h3>{p.title}</h3>
+                              <Link href={`/admin/projects/edit/${p.slug}`} className={inEditMode ? "disabled" : ""} title={p.name}>
+                                <h3>{p.name}</h3>
+                                <Badge>{capitalize(p.status)}</Badge>
+                                {p.startYear && <sub>{[p.startYear, p.endYear ? (p.startYear === p.endYear ? null : p.endYear) : (p.status === "inactive" ? null : "Present")].filter((y) => !!y).join(" - ")}</sub>}
                                 <sub>
                                   <b>Created at:</b> <span>{p.createdAt.toLocaleString()}</span>
                                 </sub>
@@ -336,4 +340,4 @@ const Posts = ({ isLoggedIn }: any) => {
   );
 };
 
-export default Posts;
+export default Projects;

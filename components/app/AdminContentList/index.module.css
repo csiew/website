@@ -1,4 +1,4 @@
-.admin-posts-list-header {
+.admin-content-list-header {
   width: 100%;
   margin: 0;
   padding: 0.5rem;
@@ -10,12 +10,12 @@
   border-bottom: var(--border-width) solid var(--border-color);
   font-family: var(--font-family-widget);
 }
-.admin-posts-list-header > a {
+.admin-content-list-header > a {
   font-size: 0.8rem;
   white-space: nowrap;
 }
 
-.admin-posts-list {
+.admin-content-list {
   width: 100%;
   margin: 0;
   padding: 0.5rem;
@@ -25,7 +25,7 @@
   justify-content: flex-start;
   gap: 0;
 }
-.admin-posts-list > ul {
+.admin-content-list > ul {
   list-style: none;
   width: 100%;
   margin: 0;
@@ -36,7 +36,7 @@
   justify-content: flex-start;
   gap: 0.25rem;
 }
-.admin-posts-list > ul > li {
+.admin-content-list > ul > li {
   width: 100%;
   margin: 0;
   padding: 0;
@@ -46,8 +46,8 @@
   justify-content: flex-start;
 }
 
-.admin-posts-list > ul > li > span.admin-post-checkbox {
-  margin: -0.25rem;
+.admin-content-list > ul > li > span.admin-content-list-checkbox {
+  margin: 0.5rem;
   padding: 0.5rem;
   display: inline-flex;
   flex-flow: row;
@@ -56,36 +56,59 @@
   background: none;
   border-radius: 100%;
 }
-.admin-posts-list > ul > li > span.admin-post-checkbox:hover {
+.admin-content-list > ul > li > span.admin-content-list-checkbox:hover {
   background: var(--bg-color-2);
   transition: var(--transition);
 }
-.admin-posts-list > ul > li > span.admin-post-checkbox:active {
+.admin-content-list > ul > li > span.admin-content-list-checkbox:active {
   background: var(--bg-color-3);
   transition: var(--transition);
 }
-.admin-posts-list > ul > li > span.admin-post-checkbox > input[type=checkbox] {
-  width: 1rem;
-  height: 1rem;
+.admin-content-list > ul > li > span.admin-content-list-checkbox > input[type=checkbox] {
+  width: 100%;
+  height: 100%;
   padding: 2rem;
-  display: inline-block;
+  display: inline-flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
   border: var(--border-width) solid var(--border-color);
   scale: 1;
   transition: var(--transition);
 }
-.admin-posts-list > ul > li > span.admin-post-checkbox > input[type=checkbox]:hover {
+.admin-content-list > ul > li > span.admin-content-list-checkbox > input[type=checkbox]:after {
+  content: '';
+  margin: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0;
+  position: absolute;
+  display: inline-flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-color-3);
+  border: var(--border-width) solid var(--border-color);
+  border-radius: 100%;
+}
+.admin-content-list > ul > li > span.admin-content-list-checkbox > input[type=checkbox]:after:hover {
   scale: 1.25;
   transition: var(--transition);
 }
-.admin-posts-list > ul > li > span.admin-post-checkbox > input[type=checkbox]:active {
+.admin-content-list > ul > li > span.admin-content-list-checkbox > input[type=checkbox]:after:active {
   scale: 1;
   transition: var(--transition);
 }
-.admin-posts-list > ul > li > span.admin-post-checkbox > input[type=checkbox]:checked {
+.admin-content-list > ul > li > span.admin-content-list-checkbox > input[type=checkbox]:checked:after {
+  content: '\2713';
+  position: absolute;
+  color: var(--bg-color);
+  background: var(--primary-color);
+  font-size: 1.25rem;
   transition: var(--transition);
 }
 
-.admin-posts-list > ul > li > a {
+.admin-content-list > ul > li > a {
   width: 100%;
   margin: 0;
   padding: 0.5rem 0.75rem;
@@ -100,14 +123,14 @@
   font-family: var(--font-family-widget);
   text-decoration: none;
 }
-.admin-posts-list > ul > li > a:hover {
+.admin-content-list > ul > li > a:hover {
   background: var(--bg-color-1);
 }
-.admin-posts-list > ul > li > a:active {
+.admin-content-list > ul > li > a:active {
   background: var(--bg-color-3);
 }
 
-.admin-posts-list > ul > li > a > h3 {
+.admin-content-list > ul > li > a > h3 {
   width: 100%;
   margin: 0;
   padding: 0;
@@ -118,7 +141,7 @@
   line-clamp: 1;
   overflow: hidden
 }
-.admin-posts-list > ul > li > a > sub {
+.admin-content-list > ul > li > a > sub {
   color: var(--fg-color-5);
   font-size: 0.75rem;
   font-weight: normal;

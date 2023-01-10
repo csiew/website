@@ -1,4 +1,4 @@
-.modalOverlay {
+.modal-overlay {
   width: 100%;
   height: 100%;
   margin: 0;
@@ -17,11 +17,11 @@
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(8px);
 
-  animation-name: modalOverlayTransitionIn;
+  animation-name: modal-overlayTransitionIn;
   animation-duration: 0.5s;
 }
 
-@keyframes modalOverlayTransitionIn {
+@keyframes modal-overlayTransitionIn {
   0% {
     background: rgba(0, 0, 0, 0);
     backdrop-filter: blur(8px);
@@ -34,7 +34,7 @@
   }
 }
 
-.modalWindow {
+.modal-window {
   max-width: 920px;
   width: 100%;
   height: 100%;
@@ -46,15 +46,11 @@
   justify-content: flex-start;
   color: var(--fg-color);
   background: var(--bg-color);
-  animation-name: modalWindowTransitionIn;
+  animation-name: modal-windowTransitionIn;
   animation-duration: 0.25s;
 }
-::-webkit-scrollbar,
-::-webkit-scrollbar-track {
-  border-radius: 0px 0px var(--border-radius) 0px;
-}
 
-@keyframes modalWindowTransitionIn {
+@keyframes modal-windowTransitionIn {
   0% {
     opacity: 0;
     translate: 100vw 0;
@@ -70,12 +66,12 @@
 }
 
 @media (max-width: 1023px) {
-  .modalOverlay {
+  .modal-overlay {
     background: unset;
     backdrop-filter: unset;
   }
 
-  .modalWindow {
+  .modal-window {
     max-width: unset;
     max-height: unset;
     box-shadow: unset;
@@ -84,7 +80,7 @@
   }
 }
 
-.modalWindow .modalWindowHeader {
+.modal-window .modal-windowHeader {
   width: 100%;
   margin: 0;
   padding: 0.5rem 0.25rem;
@@ -98,7 +94,7 @@
   border-style: solid;
   border-color: var(--border-color);
 }
-.modalWindow .modalWindowHeader h2 {
+.modal-window .modal-windowHeader h2 {
   margin: 0;
   padding: 0;
   font-size: 1.25rem;
@@ -107,7 +103,7 @@
   overflow: clip;
 }
 
-.modalWindow .modalWindowBody {
+.modal-window .modal-windowBody {
   width: 100%;
   height: 100%;
   margin: 0;
@@ -116,6 +112,6 @@
   overflow: auto;
 }
 
-.modalWindow .modalWindowBody .topLevelPage {
+.modal-window .modal-windowBody .app-page {
   padding: 1rem 0rem;
 }
