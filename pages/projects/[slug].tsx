@@ -8,6 +8,7 @@ import Alert from "../../components/ui/Alert";
 import Badge from "../../components/ui/Badge";
 import Breadcrumbs from "../../components/ui/Breadcrumbs";
 import NavigationView from "../../components/ui/NavigationView";
+import Paper from "../../components/ui/Paper";
 import config from "../../config";
 import { ProjectV2 } from "../../lib/projects";
 import retitle from "../../lib/retitle";
@@ -70,6 +71,7 @@ const ProjectDetail = () => {
           }
         ]} />
       <NavigationView
+        className="projectDetailPage"
         content={(
           <article className="contentPage">
             {
@@ -104,9 +106,11 @@ const ProjectDetail = () => {
             </div>
             <div className="content">
               {project?.imgUrl && <img src={project?.imgUrl} width="100%" />}
-              <ReactMarkdown>
-                {decodeURI(project?.description ?? "")}
-              </ReactMarkdown>
+              <Paper>
+                <ReactMarkdown>
+                  {decodeURI(project?.description ?? "")}
+                </ReactMarkdown>
+              </Paper>
             </div>
             <hr />
             <p style={{ width: "100%", textAlign: "center" }}>

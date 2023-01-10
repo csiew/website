@@ -1,21 +1,21 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
-import { Project } from "../../../lib/projects";
+import { ProjectV2 } from "../../../lib/projects";
 import Button from "../../ui/Button";
 import Paper from "../../ui/Paper";
 
-const ProjectCard = ({ project }: { project: Project }) => {
+const ProjectCard = ({ project }: { project: ProjectV2 }) => {
   return (
     <section className="project" id={project.id}>
       <Paper>
         <div className="projectHeader">
           <div className="projectHeaderInfo">
             <h3>{project.name}</h3>
-            <sub>{project.timeRange}</sub>
+            <sub>{[project.startYear, project.endYear ? (project.startYear === project.endYear ? null : project.endYear) : (project.status === "inactive" ? null : "Present")].filter((y) => !!y).join(" - ")}</sub>
           </div>
           <div className="projectHeaderLinks">
-            <Button variant="link" url={project.url} newTab={true} disabled={project.url.length === 0}>Website</Button>
-            <Button variant="link" url={project.github} newTab={true} disabled={project.github.length === 0}>Repository</Button>
+            <Button variant="link" url={project.siteUrl} newTab={true} disabled={!!project.siteUrl}>Website</Button>
+            <Button variant="link" url={project.gitRepoUrl} newTab={true} disabled={!!project.gitRepoUrl}>Repository</Button>
           </div>
         </div>
         <div className="projectBody">

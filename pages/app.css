@@ -332,5 +332,6 @@ select:is(:disabled, .disabled) {
 @import url('./admin/index.module.css');
 @import url('./admin/posts/edit/index.module.css');
 @import url('./blog/index.module.css');
-@import url('./playlists/index.module.css');
 @import url('./now-watching/index.module.css');
+@import url('./playlists/index.module.css');
+@import url('./projects/index.module.css');

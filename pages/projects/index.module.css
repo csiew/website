@@ -1,0 +1,20 @@
+.projectDetailPage img {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: block;
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--preset-shadow-component);
+}
+
+.projectDetailPage .content {
+  width: 100%;
+  margin-block: 0rem 2rem;
+  margin-inline: 0rem;
+  display: inline-flex;
+  flex-flow: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 2rem;
+}
