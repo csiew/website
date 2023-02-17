@@ -1,23 +1,43 @@
 import React, { useContext, useEffect, useReducer, useRef } from "react";
 import Head from "next/head";
-import { useRouter } from "next/router";
-import retitle from "../../../lib/retitle";
-import Breadcrumbs from "../../../components/ui/Breadcrumbs";
-import NavigationView from "../../../components/ui/NavigationView";
-import Paper from "../../../components/ui/Paper";
 import Link from "next/link";
-import { deletePost, savePost } from "../../../firebase/posts";
-import config from "../../../config";
-import Alert from "../../../components/ui/Alert";
-import { BlogPost } from "../../../lib/blog";
-import { serverTimestamp } from "@firebase/firestore/lite";
-import ContentContext from "../../../stores/content";
+import { useRouter } from "next/router";
+import { serverTimestamp } from "@firebase/firestore";
+import retitle from "../../../lib/retitle";
+import Breadcrumbs from "../../ui/Breadcrumbs";
+import NavigationView from "../../ui/NavigationView";
+import Alert from "../../ui/Alert";
+import Paper from "../../ui/Paper";
+import ContentContext, { getContextStore } from "../../../stores/content";
 import useContentStoreHook from "../../../stores/content/hook";
+import config from "../../../config";
 import { encodeContent } from "../../../lib/encoding";
+import { PublishableItem } from "../../../lib/@types";
 
-type PostsPageState = {
-  selectedPosts: Map<string, boolean>;
-  hasSelectedPosts: boolean;
+type MultiContentListProps = {
+  isLoggedIn: boolean;
+  terminology: {
+    pageTitle: string;
+    itemPlural: string;
+    itemSingular: string;
+    urlSlug: string;
+  };
+  firebaseCallbacks: {
+    save: (
+      item: { [k: string]: any },
+      id?: string,
+      overrideProps?: { [k: string]: any }
+    ) => Promise<void>;
+    delete: (id: string) => Promise<void>;
+  };
+  contextRefs: {
+    storePropName: string;
+  };
+};
+
+type MultiContentListPageState = {
+  selectedItems: Map<string, boolean>;
+  hasSelectedItems: boolean;
   inEditMode: boolean;
   isLoading: boolean;
   isSuccess: boolean;
@@ -33,20 +53,20 @@ type PostsPageState = {
   };
 };
 
-const Posts = ({ isLoggedIn }: any) => {
+const MultiContentList = ({ isLoggedIn, terminology, firebaseCallbacks, contextRefs }: MultiContentListProps) => {
   const router = useRouter();
   const contentContext = useContext(ContentContext);
   const contentStoreHook = useContentStoreHook();
   const isMountedRef = useRef<any>(false);
-
+  
   const [pageState, updatePageState] = useReducer(
-    (prev: Partial<PostsPageState>, next: Partial<PostsPageState>) => {
+    (prev: Partial<MultiContentListPageState>, next: Partial<MultiContentListPageState>) => {
       const newPageState = { ...prev, ...next };
       return newPageState;
     },
     {
-      selectedPosts: new Map<string, boolean>(),
-      hasSelectedPosts: false,
+      selectedItems: new Map<string, boolean>(),
+      hasSelectedItems: false,
       inEditMode: false,
       isLoading: false,
       isSuccess: false,
@@ -63,11 +83,15 @@ const Posts = ({ isLoggedIn }: any) => {
     }
   );
 
-  const handleGetPosts = async (force?: boolean) => {
-    if (!!force || !contentContext.posts.length) {
+  const getStore = () => {
+    return getContextStore(contentContext, contextRefs.storePropName);
+  };
+
+  const handleGetItems = async (force?: boolean) => {
+    if (!!force || !getStore().length) {
       updatePageState({ isLoading: true });
       try {
-        await contentStoreHook.getPosts(force);
+        await contentStoreHook.get(terminology.urlSlug, force);
         updatePageState({ isSuccess: true, isLoading: false });
       } catch (err) {
         if (config.debugMode) console.error(err);
@@ -75,9 +99,9 @@ const Posts = ({ isLoggedIn }: any) => {
       }
     }
     const selectionMap = new Map<string, boolean>();
-    contentContext.posts.map((p) => selectionMap.set(p.id!, false));
+    getStore().map((p) => selectionMap.set(p.id!, false));
     updatePageState({
-      selectedPosts: selectionMap,
+      selectedItems: selectionMap,
       isSuccess: true
     });
     console.debug("Done fetching");
@@ -88,12 +112,12 @@ const Posts = ({ isLoggedIn }: any) => {
     selectionMap?.forEach((v, k) => {
       if (v === true) selectedKeys.push(k);
     });
-    updatePageState({ hasSelectedPosts: selectedKeys.length > 0 });
+    updatePageState({ hasSelectedItems: selectedKeys.length > 0 });
   };
 
-  const handleDeletePosts = async () => {
+  const handleDeleteItems = async () => {
     const selectedKeys: string[] = [];
-    pageState.selectedPosts?.forEach((v, k) => {
+    pageState.selectedItems?.forEach((v, k) => {
       if (v === true) selectedKeys.push(k);
     });
     updatePageState({
@@ -105,7 +129,7 @@ const Posts = ({ isLoggedIn }: any) => {
       }
     });
     try {
-      await Promise.all(selectedKeys.map((k) => deletePost(k)));
+      await Promise.all(selectedKeys.map((k) => firebaseCallbacks.delete(k)));
       updatePageState({
         isLoading: false,
         inEditMode: false,
@@ -126,22 +150,22 @@ const Posts = ({ isLoggedIn }: any) => {
         }
       });
     }
-    await handleGetPosts(true);
+    await handleGetItems(true);
   };
 
-  const handlePublishPosts = async () => {
+  const handlePublishItems = async () => {
     const selectedKeys: string[] = [];
-    pageState.selectedPosts?.forEach((v, k) => {
+    pageState.selectedItems?.forEach((v, k) => {
       if (v === true) selectedKeys.push(k);
     });
-    const publishQueue: BlogPost[] = selectedKeys
+    const publishQueue: PublishableItem[] = selectedKeys
       .map((k) => {
-        const post = contentContext.posts.find((p) => p.id === k && p.isPublished === false);
+        const post = getStore().find((p) => p.id === k && p.isPublished === false);
         if (post) {
           return post;
         }
       })
-      .filter((p) => !!p) as BlogPost[];
+      .filter((p) => !!p) as PublishableItem[];
     updatePageState({
       isLoading: true,
       hasAttemptedCommit: {
@@ -153,7 +177,7 @@ const Posts = ({ isLoggedIn }: any) => {
     try {
       await Promise.all(
         publishQueue.map((p) => {
-          return savePost(p, p.id, { content: encodeContent(p.content ?? ""), isPublished: true, publishedOn: serverTimestamp() });
+          return firebaseCallbacks.save(p, p.id, { content: encodeContent(p.content ?? ""), isPublished: true, publishedOn: serverTimestamp() });
         })
       );
       updatePageState({
@@ -176,22 +200,22 @@ const Posts = ({ isLoggedIn }: any) => {
         }
       });
     }
-    await handleGetPosts(true);
+    await handleGetItems(true);
   };
 
-  const handleUnpublishPosts = async () => {
+  const handleUnpublishItems = async () => {
     const selectedKeys: string[] = [];
-    pageState.selectedPosts?.forEach((v, k) => {
+    pageState.selectedItems?.forEach((v, k) => {
       if (v === true) selectedKeys.push(k);
     });
-    const publishQueue: BlogPost[] = selectedKeys
+    const publishQueue: PublishableItem[] = selectedKeys
       .map((k) => {
-        const post = contentContext.posts.find((p) => p.id === k && p.isPublished === true);
+        const post = getStore().find((p) => p.id === k && p.isPublished === true);
         if (post) {
           return post;
         }
       })
-      .filter((p) => !!p) as BlogPost[];
+      .filter((p) => !!p) as PublishableItem[];
     updatePageState({
       isLoading: true,
       hasAttemptedCommit: {
@@ -203,7 +227,7 @@ const Posts = ({ isLoggedIn }: any) => {
     try {
       await Promise.all(
         publishQueue.map((p) => {
-          return savePost(p, p.id, { content: encodeContent(p.content ?? ""), isPublished: false, publishedOn: undefined });
+          return firebaseCallbacks.save(p, p.id, { content: encodeContent(p.content ?? ""), isPublished: false, publishedOn: undefined });
         })
       );
       updatePageState({
@@ -226,11 +250,11 @@ const Posts = ({ isLoggedIn }: any) => {
         }
       });
     }
-    await handleGetPosts(true);
+    await handleGetItems(true);
   };
 
   useEffect(() => {
-    if (!isMountedRef.current) handleGetPosts();
+    if (!isMountedRef.current) handleGetItems();
     isMountedRef.current = true;
   }, []);
 
@@ -243,8 +267,8 @@ const Posts = ({ isLoggedIn }: any) => {
   return (
     <>
       <Head>
-        <title>{retitle("Posts")}</title>
-        <meta property="og:title" content={retitle("Posts")} key="title" />
+        <title>{retitle(terminology.pageTitle)}</title>
+        <meta property="og:title" content={retitle(terminology.pageTitle)} key="title" />
       </Head>
       <Breadcrumbs
         items={[
@@ -253,18 +277,18 @@ const Posts = ({ isLoggedIn }: any) => {
             href: "/admin"
           },
           {
-            title: "Posts"
+            title: terminology.pageTitle
           }
         ]} />
       <NavigationView
         content={(
           <article className="app-page">
-            <h2>Posts</h2>
+            <h2>{terminology.pageTitle}</h2>
             {
               !pageState.isLoading && !pageState.isSuccess
                 ? (
                   <Alert variant="error">
-                    Failed to fetch posts. Try again.
+                    <span>Failed to fetch {terminology.itemPlural}. Try again.</span>
                   </Alert>
                 )
                 : <></>
@@ -279,12 +303,12 @@ const Posts = ({ isLoggedIn }: any) => {
                           !pageState.isSuccessfulCommit?.delete
                             ? (
                               <Alert variant="error">
-                                Failed to delete selected posts.
+                                <span>Failed to delete selected {terminology.itemPlural}.</span>
                               </Alert>
                             )
                             : (
                               <Alert variant="success">
-                                Successfully deleted selected posts.
+                                <span>Successfully deleted selected {terminology.itemPlural}.</span>
                               </Alert>
                             )
                         )
@@ -296,12 +320,12 @@ const Posts = ({ isLoggedIn }: any) => {
                           !pageState.isSuccessfulCommit?.publish
                             ? (
                               <Alert variant="error">
-                                Failed to publish selected posts.
+                                <span>Failed to publish selected {terminology.itemPlural}.</span>
                               </Alert>
                             )
                             : (
                               <Alert variant="success">
-                                Successfully publish selected posts.
+                                <span>Successfully publish selected {terminology.itemPlural}.</span>
                               </Alert>
                             )
                         )
@@ -313,12 +337,12 @@ const Posts = ({ isLoggedIn }: any) => {
                           !pageState.isSuccessfulCommit?.unpublish
                             ? (
                               <Alert variant="error">
-                                Failed to unpublish selected posts.
+                                <span>Failed to unpublish selected {terminology.itemPlural}.</span>
                               </Alert>
                             )
                             : (
                               <Alert variant="success">
-                                Successfully unpublish selected posts.
+                                <span>Successfully unpublish selected {terminology.itemPlural}.</span>
                               </Alert>
                             )
                         )
@@ -332,12 +356,12 @@ const Posts = ({ isLoggedIn }: any) => {
               <section className="admin-content-list-header">
                 {
                   !pageState.inEditMode
-                    ? <Link href="/admin/posts/edit/new" className={pageState.isLoading ? "disabled" : ""}>New Post</Link>
+                    ? <Link href={`/admin/${terminology.urlSlug}/edit/new`} className={pageState.isLoading ? "disabled" : ""}>New Post</Link>
                     : (
                       <>
-                        <Link href="#" onClick={handleDeletePosts} className={!!pageState.isLoading || !pageState.hasSelectedPosts ? "disabled" : ""}>Delete Selected</Link>
-                        <Link href="#" onClick={handlePublishPosts} className={!!pageState.isLoading || !pageState.hasSelectedPosts ? "disabled" : ""}>Publish Selected</Link>
-                        <Link href="#" onClick={handleUnpublishPosts} className={!!pageState.isLoading || !pageState.hasSelectedPosts ? "disabled" : ""}>Unpublish Selected</Link>
+                        <Link href="#" onClick={handleDeleteItems} className={!!pageState.isLoading || !pageState.hasSelectedItems ? "disabled" : ""}>Delete Selected</Link>
+                        <Link href="#" onClick={handlePublishItems} className={!!pageState.isLoading || !pageState.hasSelectedItems ? "disabled" : ""}>Publish Selected</Link>
+                        <Link href="#" onClick={handleUnpublishItems} className={!!pageState.isLoading || !pageState.hasSelectedItems ? "disabled" : ""}>Unpublish Selected</Link>
                       </>
                     )
                 }
@@ -348,7 +372,7 @@ const Posts = ({ isLoggedIn }: any) => {
                       <Link
                         href="#"
                         onClick={() => {
-                          handleGetPosts(true);
+                          handleGetItems(true);
                           updatePageState({ isSuccessfulCommit: { delete: false, publish: false, unpublish: false } });
                         }}
                         className={pageState.isLoading ? "disabled" : ""}>
@@ -372,7 +396,7 @@ const Posts = ({ isLoggedIn }: any) => {
                     <section className="admin-content-list">
                       <ul>
                         {
-                          contentContext.posts.map((p: BlogPost, i: number) => (
+                          getStore().map((p: PublishableItem, i: number) => (
                             <li key={p.slug ?? i}>
                               {
                                 pageState.inEditMode
@@ -380,19 +404,19 @@ const Posts = ({ isLoggedIn }: any) => {
                                     <span className="admin-content-list-checkbox">
                                       <input
                                         type="checkbox"
-                                        defaultChecked={pageState.selectedPosts?.get(p.id!)}
+                                        defaultChecked={pageState.selectedItems?.get(p.id!)}
                                         onClick={() => {
-                                          const currentValue = pageState.selectedPosts?.get(p.id!) ?? false;
-                                          const newSelectionMap = pageState.selectedPosts;
+                                          const currentValue = pageState.selectedItems?.get(p.id!) ?? false;
+                                          const newSelectionMap = pageState.selectedItems;
                                           newSelectionMap!.set(p.id!, !currentValue);
-                                          updatePageState({ selectedPosts: newSelectionMap });
+                                          updatePageState({ selectedItems: newSelectionMap });
                                           handleUpdateSelectedFlag(newSelectionMap!);
                                         }} />
                                     </span>
                                   )
                                   : <></>
                               }
-                              <Link href={`/admin/posts/edit/${p.slug}`} className={pageState.inEditMode ? "disabled" : ""} title={p.title}>
+                              <Link href={`/admin/${terminology.urlSlug}/edit/${p.slug}`} className={pageState.inEditMode ? "disabled" : ""} title={p.title}>
                                 <h3>{p.title}</h3>
                                 <sub>
                                   <b>Created at:</b> <span>{p.createdAt.toLocaleString()}</span>
@@ -418,4 +442,4 @@ const Posts = ({ isLoggedIn }: any) => {
   );
 };
 
-export default Posts;
+export default MultiContentList;

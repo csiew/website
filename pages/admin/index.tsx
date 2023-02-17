@@ -48,9 +48,17 @@ const Admin = ({ isLoggedIn }: any) => {
                         <MdPostAdd />
                         <span>Posts</span>
                       </Link>
+                      <Link href="/admin/posts/beta">
+                        <MdPostAdd />
+                        <span>Posts (beta)</span>
+                      </Link>
                       <Link href="/admin/projects">
                         <MdBuild />
                         <span>Projects</span>
+                      </Link>
+                      <Link href="/admin/projects/beta">
+                        <MdBuild />
+                        <span>Projects (beta)</span>
                       </Link>
                       <Link href="/admin/settings">
                         <MdSettings />
