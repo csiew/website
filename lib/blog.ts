@@ -3,8 +3,9 @@ import { isUndefined } from "lodash";
 import path from "path";
 import process from "process";
 import { v4 as uuidv4 } from "uuid";
+import { PublishableItem } from "./@types";
 
-export type BlogPost = {
+export type BlogPost = PublishableItem & {
   id?: string;
   slug?: string;
   title?: string;

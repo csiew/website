@@ -59,7 +59,18 @@ const useContentStoreHook = () => {
     return contentContext.projects;
   };
 
-  return { isLoading, isSuccess, getPosts, getProjects };
+  const get = async (storeKey: string, force?: boolean) => {
+    switch (storeKey) {
+    case "posts":
+      return getPosts(force);
+    case "projects":
+      return getProjects(force);
+    default:
+      throw new Error(`No store with key '${storeKey}' found`);
+    }
+  };
+
+  return { isLoading, isSuccess, getPosts, getProjects, get };
 };
 
 export default useContentStoreHook;

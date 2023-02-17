@@ -3,14 +3,12 @@
   margin: 0;
   top: 0;
   padding: 0.5rem 1rem;
-  position: sticky;
-  z-index: 100;
   display: inline-flex;
   flex-flow: row;
   align-items: center;
   justify-content: flex-start;
-  color: var(--bg-color-1);
-  background: var(--fg-color-5);
+  color: var(--fg-color-1);
+  background: var(--bg-color-3);
   font-size: 0.9rem;
 }
 
@@ -47,6 +45,6 @@
 }
 
 .breadcrumbs ul li a {
-  color: var(--bg-color);
+  color: var(--fg-color-1);
   font-weight: normal;
 }

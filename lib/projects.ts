@@ -1,4 +1,5 @@
 import { BadgeVariant } from "../components/ui/Badge";
+import { PublishableItem } from "./@types";
 
 export enum ProjectStatus {
   Discontinued = 0,
@@ -20,7 +21,7 @@ export type Project = {
   github: string;
 };
 
-export type ProjectV2 = {
+export type ProjectV2 = PublishableItem & {
   id?: string;
   slug: string;
   name: string;

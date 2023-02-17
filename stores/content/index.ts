@@ -13,4 +13,15 @@ const ContentContext = createContext<IContentContextProps>({
   projects: new Array<ProjectV2>()
 });
 
+export const getContextStore = (context: IContentContextProps, storeKey: string): (BlogPost | ProjectV2)[] => {
+  switch (storeKey) {
+  case "posts":
+    return context.posts;
+  case "projects":
+    return context.projects;
+  default:
+    throw new Error(`No store with key '${storeKey}' found`);
+  }
+};
+
 export default ContentContext;

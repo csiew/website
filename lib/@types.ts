@@ -24,3 +24,10 @@ export type CommitAttemptFlags = {
   publish: boolean;
   unpublish: boolean;
 };
+
+export type PublishableItem = {
+  id?: string;
+  isPublished?: boolean;
+  publishedOn?: string | Date;
+  [k: string]: any;
+};
