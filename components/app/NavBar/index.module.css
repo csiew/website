@@ -1,13 +1,13 @@
 :root {
-  --navbar-header-bg: none;
-  --navbar-header-fg: var(--fg-color-1);
+  --navbar-header-bg: var(--fg-color-1);
+  --navbar-header-fg: var(--bg-color);
 
   --navbar-nav-bg: none;
   --navbar-nav-bg-hover: none;
   --navbar-nav-bg-active: none;
-  --navbar-nav-fg: var(--fg-color-8);
-  --navbar-nav-fg-hover: var(--fg-color-5);
-  --navbar-nav-fg-active: var(--fg-color-1);
+  --navbar-nav-fg: var(--fg-color-5);
+  --navbar-nav-fg-hover: var(--fg-color-8);
+  --navbar-nav-fg-active: var(--bg-color-1);
 }
 
 header {
@@ -17,13 +17,14 @@ header {
   left: 0;
   padding: 0.5rem 1rem;
   z-index: 100;
-  position: relative;
+  position: sticky;
   display: inline-flex;
   flex-flow: row;
   align-items: center;
   justify-content: space-between;
   color: var(--navbar-header-fg);
   background: var(--navbar-header-bg);
+  box-shadow: var(--preset-shadow-component);
 }
 
 header h1 {
