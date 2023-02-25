@@ -21,7 +21,7 @@
   --bg-color-8: rgb(206, 207, 202);
   --bg-color-9: rgb(200, 201, 196);
 
-  --border-color: rgb(150, 150, 150);
+  --border-color: rgb(200, 200, 200);
 
   --primary-color: rgb(85, 135, 45);
   --primary-color-1: rgb(75, 125, 35);
@@ -35,14 +35,25 @@
   --shadow-4: rgba(0, 0, 0, 0.125);
   --shadow-5: rgba(0, 0, 0, 0.06125);
 
-  --preset-shadow-widget: 0px -2px 0px rgba(0, 0, 0, 0.15) inset;
+  --preset-shadow-widget:
+    0px 2px 0px rgba(255, 255, 255, 0.75) inset,
+    0px -2px 0px rgba(0, 0, 0, 0.15) inset,
+    0px 1px 2px rgba(0, 0, 0, 0.275),
+    0px 2px 4px rgba(0, 0, 0, 0.25),
+    0px 4px 8px rgba(0, 0, 0, 0.125);
   --preset-shadow-widget-inset: 0px 2px 0px rgba(0, 0, 0, 0.15) inset;
-  --preset-shadow-component: none;
+  --preset-shadow-component:
+    0px 2px 0px rgba(255, 255, 255, 0.75) inset,
+    0px -2px 0px rgba(0, 0, 0, 0.15) inset,
+    0px 1px 2px rgba(0, 0, 0, 0.275),
+    0px 2px 4px rgba(0, 0, 0, 0.25),
+    0px 4px 8px rgba(0, 0, 0, 0.125);
   --preset-shadow-textfield: 0px 2px 0px rgba(0, 0, 0, 0.15) inset;
 
   color-scheme: light;
 }
 
+/*
 @media (prefers-color-scheme: dark) {
   :root {
     --bg-color: rgb(4, 5, 0);
@@ -89,3 +100,4 @@
     color-scheme: dark;
   }
 }
+*/

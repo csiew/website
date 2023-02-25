@@ -10,7 +10,7 @@ export default {
     text: "Clarence Siew",
     divider: "|"
   },
-  version: "6.9.0",
+  version: "6.9.1",
   omdb: {
     apiKey: process.env.OMDB_API_KEY,
     host: "https://omdbapi.com"
@@ -27,7 +27,7 @@ export default {
     }
   },
   features: {
-    contactForm: true
+    contactForm: false
   },
   adminEmail: process.env.ADMIN_EMAIL,
   debugMode: process.env.DEBUG_MODE
