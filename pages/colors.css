@@ -36,14 +36,12 @@
   --shadow-5: rgba(0, 0, 0, 0.06125);
 
   --preset-shadow-widget:
-    0px 2px 0px rgba(255, 255, 255, 0.75) inset,
     0px -2px 0px rgba(0, 0, 0, 0.15) inset,
     0px 1px 2px rgba(0, 0, 0, 0.275),
     0px 2px 4px rgba(0, 0, 0, 0.25),
     0px 4px 8px rgba(0, 0, 0, 0.125);
   --preset-shadow-widget-inset: 0px 2px 0px rgba(0, 0, 0, 0.15) inset;
   --preset-shadow-component:
-    0px 2px 0px rgba(255, 255, 255, 0.75) inset,
     0px -2px 0px rgba(0, 0, 0, 0.15) inset,
     0px 1px 2px rgba(0, 0, 0, 0.275),
     0px 2px 4px rgba(0, 0, 0, 0.25),
