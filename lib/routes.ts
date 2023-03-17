@@ -1,3 +1,4 @@
+import config from "../config";
 import { PageRoute } from "./@types";
 
 const routes: PageRoute[] = [
@@ -8,11 +9,12 @@ const routes: PageRoute[] = [
   {
     title: "Admin",
     path: "/admin",
-    authOnly: true
+    authOnly: true,
+    hideFromNavBar: !config.features.admin
   },
   {
-    title: "Blog",
-    path: "/blog"
+    title: "Posts",
+    path: "/posts"
   },
   {
     title: "Projects",

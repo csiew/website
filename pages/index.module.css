@@ -19,6 +19,10 @@
   gap: 1rem;
 }
 
+.pageHome section p:first-of-type {
+  font-size: 2rem;
+}
+
 @media (max-width: 768px) {
   .pageHome {
     padding: 0rem;

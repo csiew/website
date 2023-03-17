@@ -52,7 +52,7 @@ html {
   color: var(--fg-color);
   background: var(--bg-color-1);
   font-family: var(--font-family-base);
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 400;
   font-synthesis: none;
   font-display: fallback;
@@ -313,7 +313,7 @@ select:is(:disabled, .disabled) {
 
 @import url('./index.module.css');
 @import url('./admin/index.module.css');
-@import url('./blog/index.module.css');
+@import url('./posts/index.module.css');
 @import url('./now-watching/index.module.css');
 @import url('./playlists/index.module.css');
 @import url('./projects/index.module.css');

@@ -1,12 +1,3 @@
----
-slug: frontend-adventures
-title: Adventures in Frontend
-subtitle: A not-so-technical chronical of the frontend shenanigans I've been up to
-author: Clarence Siew
-publishedOn: 2023-01-05T01:30:00
-layout: post
----
-
 This post was supposed to be a short foreword to _another_ post about software architecture to briefly chronicle my adventures in the world of frontend web development, from the beginning to the present. But alas, I got a little too excited and ended up writing up something a far too long for a foreword and a little too meandering for a proper post.
 
 I started bumbling my way into the world of frontend development during a nail-biting final year project through [React](https://reactjs.org/). I consequently had PTSD from trying to learn React (pre-hooks!) with [Material UI](https://mui.com/) (now _MUI_) at the same time. Prior to this I was mostly toying with [Python UI toolkits](https://pygobject.readthedocs.io/en/latest/) and [playing around with window managers on Linux](https://github.com/csiew/BiscuitWM).
@@ -26,3 +17,7 @@ I started getting interested in server-side rendering (SSR) as I learned more an
 What comes next in my frontend adventures is still somewhat in the air. I've been looking into [module federation](https://medium.com/@vueshenzhen/a-brief-introduction-of-vite-plugin-federation-9e998b2e43b) recently (this was going to be a part of the original post I was going to write) for my own rather-large personal project. I've pulled off another _Brioche_, in that I extracted the components from my personal website and turned them into a new component library. However this time I don't plan on turning this into a Brioche v0.2.
 
 Til next time.
+
+**_EDIT (06/01/2023):_** I've since extended my personal site to include a CMS to update and/or publish new posts. This update was written in it!
+
+**_EDIT (17/03/2023):_** I decided to start scaling back the CMS features for my site. It won't go to waste as I'm migrating the CMS to another side project. I'll be reverting to statically-generated content for now.

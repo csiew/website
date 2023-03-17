@@ -1,4 +1,4 @@
-.blog-list-page .paper.link-list > ul > li > a {
+.posts-list-page .paper.link-list > ul > li > a {
   display: inline-flex;
   flex-flow: column;
   align-items: flex-start;
@@ -6,11 +6,11 @@
   gap: 0.125rem;
 }
 
-.blog-list-page .paper.link-list > ul > li > a > span.timestamp {
+.posts-list-page .paper.link-list > ul > li > a > span.timestamp {
   padding-block: 0rem 0.25rem;
   font-size: 0.8rem;
 }
 
-.blog-list-page .paper.link-list > ul > li > a > h3 {
+.posts-list-page .paper.link-list > ul > li > a > h3 {
   grid-column: unset;
 }

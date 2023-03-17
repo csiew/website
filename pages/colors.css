@@ -35,67 +35,10 @@
   --shadow-4: rgba(0, 0, 0, 0.125);
   --shadow-5: rgba(0, 0, 0, 0.06125);
 
-  --preset-shadow-widget:
-    0px -2px 0px rgba(0, 0, 0, 0.15) inset,
-    0px 1px 2px rgba(0, 0, 0, 0.275),
-    0px 2px 4px rgba(0, 0, 0, 0.25),
-    0px 4px 8px rgba(0, 0, 0, 0.125);
-  --preset-shadow-widget-inset: 0px 2px 0px rgba(0, 0, 0, 0.15) inset;
-  --preset-shadow-component:
-    0px -2px 0px rgba(0, 0, 0, 0.15) inset,
-    0px 1px 2px rgba(0, 0, 0, 0.275),
-    0px 2px 4px rgba(0, 0, 0, 0.25),
-    0px 4px 8px rgba(0, 0, 0, 0.125);
-  --preset-shadow-textfield: 0px 2px 0px rgba(0, 0, 0, 0.15) inset;
+  --preset-shadow-widget: none;
+  --preset-shadow-widget-inset: none;
+  --preset-shadow-component: none;
+  --preset-shadow-textfield: none;
 
   color-scheme: light;
 }
-
-/*
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg-color: rgb(4, 5, 0);
-    --bg-color-1: rgb(24, 25, 20);
-    --bg-color-2: rgb(44, 45, 40);
-    --bg-color-3: rgb(64, 65, 60);
-    --bg-color-4: rgb(84, 85, 80);
-    --bg-color-5: rgb(104, 105, 100);
-    --bg-color-6: rgb(124, 125, 120);
-    --bg-color-7: rgb(144, 145, 140);
-    --bg-color-8: rgb(164, 165, 160);
-    --bg-color-9: rgb(194, 195, 190);
-  
-    --fg-color: rgb(255, 255, 255);
-    --fg-color-1: rgb(248, 249, 244);
-    --fg-color-2: rgb(242, 243, 238);
-    --fg-color-3: rgb(236, 237, 232);
-    --fg-color-4: rgb(230, 231, 226);
-    --fg-color-5: rgb(224, 225, 220);
-    --fg-color-6: rgb(218, 219, 214);
-    --fg-color-7: rgb(212, 213, 208);
-    --fg-color-8: rgb(206, 207, 202);
-    --fg-color-9: rgb(200, 201, 196);
-  
-    --border-color: rgb(100, 100, 100);
-  
-    --primary-color: rgb(85, 135, 45);
-    --primary-color-1: rgb(95, 145, 55);
-    --primary-color-2: rgb(105, 155, 65);
-    --primary-color-3: rgb(115, 165, 75);
-  
-    --shadow: none;
-    --shadow-1: rgba(0, 0, 0, 0.5);
-    --shadow-2: rgba(0, 0, 0, 0.325);
-    --shadow-3: rgba(0, 0, 0, 0.25);
-    --shadow-4: rgba(0, 0, 0, 0.125);
-    --shadow-5: rgba(0, 0, 0, 0.06125);
-  
-    --preset-shadow-widget: 0px -2px 0px rgba(0, 0, 0, 0.15) inset;
-    --preset-shadow-widget-inset: 0px 2px 0px rgba(0, 0, 0, 0.15) inset;
-    --preset-shadow-component: none;
-    --preset-shadow-textfield: 0px 2px 0px rgba(0, 0, 0, 0.15) inset;
-
-    color-scheme: dark;
-  }
-}
-*/
