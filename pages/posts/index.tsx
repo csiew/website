@@ -48,7 +48,7 @@ const Blog = ({ posts }: { posts: { [k: string]: any }[] }) => {
   );
 };
 
-export async function getStaticProps(context: any) {
+export const getStaticProps = async (context: any) => {
   const posts = [...postManifest.entries()]
     .map(([slug, definition]) => {
       return {

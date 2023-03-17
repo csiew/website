@@ -68,7 +68,7 @@ const ProjectPage = ({ project }: { project: { [k: string]: any } }) => {
                   gap: "0.5rem"
                 }}>
                   {project?.stack && project?.stack.map((item: any) => {
-                    return <Badge variant="plain">{item}</Badge>
+                    return <Badge key={encodeURI(`${project?.title} ${project?.item}`)} variant="plain">{item}</Badge>;
                   })}
                 </div>
                 <ReactMarkdown>
@@ -97,7 +97,7 @@ export const getStaticPaths = async () => {
   };
 };
 
-export async function getStaticProps(context: any) {
+export const getStaticProps = async (context: any) => {
   const postContentDir = path.join(process.cwd(), "content", "projects");
   const definition = projectManifest.get(context.params.slug);
   const content = fs.readFileSync(path.join(postContentDir, definition?.filePath), { encoding: "utf8" });
