@@ -1,4 +1,4 @@
-const posts = new Map<string, { [k: string]: any }>([
+export const postManifest = new Map<string, { [k: string]: any }>([
   [
     "new-blog-site-generator",
     {
@@ -30,5 +30,3 @@ const posts = new Map<string, { [k: string]: any }>([
     }
   ]
 ]);
-
-export default posts;

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { capitalize } from "lodash";
 import retitle from "../../lib/retitle";
 import { determineStatusBadgeVariant } from "../../lib/projects";
-import projectManifest from "./manifest";
+import { projectManifest } from "../../manifests/projects";
 import config from "../../config";
 import NavigationView from "../../components/ui/NavigationView";
 import Badge from "../../components/ui/Badge";

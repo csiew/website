@@ -27,7 +27,7 @@
     "lib",
     "pages",
     "public"
-, "firebase"  ],
+, "firebase", "manifests/posts.ts", "manifests/projects.ts"  ],
   "exclude": [
     "node_modules"
   ]

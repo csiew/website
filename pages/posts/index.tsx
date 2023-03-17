@@ -4,7 +4,7 @@ import Link from "next/link";
 import { generatePathString } from "../../lib/blog";
 import retitle from "../../lib/retitle";
 import { relativeTime } from "../../lib/timestamp";
-import postManifest from "./manifest";
+import { postManifest } from "../../manifests/posts";
 import config from "../../config";
 import NavigationView from "../../components/ui/NavigationView";
 import Paper from "../../components/ui/Paper";

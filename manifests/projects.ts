@@ -1,4 +1,4 @@
-enum TechStack {
+export enum TechStack {
   Shell = "Shell",
   Python = "Python",
   Java = "Java",
@@ -19,7 +19,7 @@ enum TechStack {
   SwiftUI = "SwiftUI"
 }
 
-const projects = new Map<string, { [k: string]: any }>([
+export const projectManifest = new Map<string, { [k: string]: any }>([
   [
     "illume-os",
     {
@@ -246,5 +246,3 @@ const projects = new Map<string, { [k: string]: any }>([
     }
   ]
 ]);
-
-export default projects;
