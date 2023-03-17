@@ -87,7 +87,7 @@ const Projects = ({ projects }: { projects: { [k: string]: any } }) => {
   );
 };
 
-export async function getStaticProps(context: any) {
+export const getStaticProps = async (context: any) => {
   const projects = [...projectManifest.entries()]
     .map(([slug, definition]) => {
       return {

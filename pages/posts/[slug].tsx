@@ -63,7 +63,7 @@ export const getStaticPaths = async () => {
   };
 };
 
-export async function getStaticProps(context: any) {
+export const getStaticProps = async (context: any) => {
   const postContentDir = path.join(process.cwd(), "content", "posts");
   const definition = postManifest.get(context.params.slug);
   const content = fs.readFileSync(path.join(postContentDir, definition?.filePath), { encoding: "utf8" });

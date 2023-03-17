@@ -17,7 +17,7 @@ enum TechStack {
   Swift = "Swift",
   UIKit = "UIKit",
   SwiftUI = "SwiftUI"
-};
+}
 
 const projects = new Map<string, { [k: string]: any }>([
   [
