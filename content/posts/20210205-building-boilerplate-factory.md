@@ -1,12 +1,3 @@
----
-slug: building-boilerplate-factory
-title: Building a boilerplate factory
-subtitle: An experiment in boilerplates and templates
-author: Clarence Siew
-publishedOn: 2021-02-05T14:58:08
-layout: post
----
-
 As of late, I've been attempting some web development projects. I found a common problem with starting several new projects across different frameworks and runtimes is that I've been constantly looking up their docs online or my own notes on setting new projects up.
 
 I decided it was finally time to start doing a little automation with shell scripts.

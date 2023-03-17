@@ -1,12 +1,3 @@
----
-slug: new-blog-site-generator
-title: New blog - a new blog, a new static site generator ...ish
-subtitle: An experiment in static site generators
-author: Clarence Siew
-publishedOn: 2020-10-19T17:22:06
-layout: post
----
-
 Welcome to my new blog! I haven't imported my [old blog posts](http://csiew.github.io/blog) to this new one. This new blog uses a successor to my static site generator script [md2magic](http://github.com/csiew/md2magic) to help with importing and indexing posts.
 
 The new script is also written in Python. However I am now using JSON files for its configuration and post manifest. This was inspired by my work on [BiscuitWM](http://github.com/csiew/biscuitwm) which also uses a JSON file for configuration.

@@ -1,13 +1,13 @@
 :root {
-  --navbar-header-bg: var(--fg-color-1);
-  --navbar-header-fg: var(--bg-color);
+  --navbar-header-bg: var(--bg-color);
+  --navbar-header-fg: var(--fg-color);
 
   --navbar-nav-bg: none;
   --navbar-nav-bg-hover: none;
   --navbar-nav-bg-active: none;
-  --navbar-nav-fg: var(--fg-color-5);
-  --navbar-nav-fg-hover: var(--fg-color-8);
-  --navbar-nav-fg-active: var(--bg-color-1);
+  --navbar-nav-fg: var(--fg-color-7);
+  --navbar-nav-fg-hover: var(--fg-color-5);
+  --navbar-nav-fg-active: var(--primary-color);
 }
 
 header {
@@ -15,21 +15,25 @@ header {
   margin: 0 auto;
   top: 0;
   left: 0;
-  padding: 0.5rem 1rem;
+  padding: 0rem 1rem;
   z-index: 100;
-  position: sticky;
+  position: relative;
   display: inline-flex;
   flex-flow: row;
   align-items: center;
   justify-content: space-between;
   color: var(--navbar-header-fg);
   background: var(--navbar-header-bg);
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: var(--border-color);
   box-shadow: var(--preset-shadow-component);
 }
 
 header h1 {
   margin: 0;
-  padding: 0;
+  padding: 0.5rem 0rem;
+  font-size: 1.5rem;
 }
 header h1 :is(a, a:hover, a:active) {
   color: var(--navbar-header-fg);
@@ -47,6 +51,7 @@ nav {
 }
 nav ul {
   list-style: none;
+  height: 100%;
   margin: 0;
   padding: 0;
   display: inline-flex;
@@ -56,21 +61,30 @@ nav ul {
   gap: 0.25rem;
 }
 nav li {
+  height: 100%;
   margin: 0;
   padding: 0;
   display: inline-flex;
   flex-flow: row;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   white-space: nowrap;
   cursor: pointer;
 }
 nav li a {
+  height: 100%;
   margin: 0;
-  padding: 0.25rem 0.5rem;
+  padding: 0rem 0.5rem;
+  display: inline-flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
   color: var(--navbar-nav-fg);
   background: var(--navbar-nav-bg);
-  border-radius: var(--border-radius);
+  border-width: 6px 0px;
+  border-style: solid;
+  border-color: transparent;
   font-weight: bold;
   text-decoration: none;
   transition: var(--transition);
@@ -78,17 +92,20 @@ nav li a {
 nav li a:hover {
   color: var(--navbar-nav-fg-hover);
   background: var(--navbar-nav-bg-hover);
+  border-bottom-color: var(--navbar-nav-fg-hover);
   text-decoration: none;
   transition: var(--transition);
 }
 nav li a:active {
   color: var(--navbar-nav-fg-active);
   background: var(--navbar-nav-bg-active);
+  border-bottom-color: var(--navbar-nav-fg-active);
   transition: var(--transition);
 }
 nav li.active :is(a, a:hover) {
   color: var(--navbar-nav-fg-active);
   background: var(--navbar-nav-bg-active);
+  border-bottom-color: var(--primary-color);
   transition: var(--transition);
 }
 
@@ -128,10 +145,7 @@ nav.overlay-menu li :is(a, a.active) {
   flex-flow: row;
   align-items: center;
   justify-content: center;
-  color: var(--fg-color-1);
-  background: var(--bg-color-1);
-  border: 1px solid var(--border-color);
-  box-shadow: none;
+  background: var(--bg-color);
 }
 #overlay-menu-btn:hover {
   color: var(--fg-color-1);
@@ -156,6 +170,8 @@ nav.overlay-menu li :is(a, a.active) {
   }
   nav.overlay-menu li a {
     color: var(--fg-color-8);
+    justify-content: flex-end;
+    border-width: 0;
   }
   nav.overlay-menu li a:hover {
     color: var(--fg-color-2);

@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import Head from "next/head";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import retitle from "../../lib/retitle";
 import ButtonGroup from "../../components/ui/ButtonGroup";
 import NavigationView from "../../components/ui/NavigationView";
@@ -10,9 +11,13 @@ import { MdBuild, MdLogout, MdPostAdd, MdSettings } from "react-icons/md";
 import Paper from "../../components/ui/Paper";
 
 const Admin = ({ isLoggedIn }: any) => {
+  const router = useRouter();
   const session = useSession();
 
   useEffect(() => {
+    if (!config.features.admin) {
+      router.replace("/_error");
+    }
     document.getElementById(config.rootElementId)?.scrollTo({ top: 0 });
   }, []);
 

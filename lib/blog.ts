@@ -27,7 +27,7 @@ export type BlogPostFilter = {
 const postsDir = path.join(process.cwd(), "posts");
 
 export const generatePathString = (slug: string) => {
-  return `/post/${slug}`;
+  return `/posts/${slug}`;
 };
 
 export const getPosts = (getContent = false): BlogPost[] => {

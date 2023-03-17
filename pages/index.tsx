@@ -37,7 +37,7 @@ const Home = () => {
                 I also actively use Amazon Web Services at work. For personal projects I largely use Netlify for CI/CD and hosting, with some experimenting with edge functions; Google Firebase for its cloud database and cloud functions.
               </p>
               <p>
-                You can find me on <a href="https://github.com/csiew" target="_blank" rel="noreferrer">GitHub</a> and <a href="https://www.linkedin.com/in/clarencesiew/" target="_blank" rel="noreferrer">LinkedIn</a>. You can also find me on <a href="https://mastodon.online/@csiew" target="_blank" rel="noreferrer">Mastodon</a>, though I never post there.
+                You can find me on <a href="https://github.com/csiew" target="_blank" rel="noreferrer">GitHub</a> and <a href="https://www.linkedin.com/in/clarencesiew/" target="_blank" rel="noreferrer">LinkedIn</a>. You can also find me on <a href="https://mastodon.online/@csiew" target="_blank" rel="noreferrer">Mastodon</a>, though I don't usually post there.
               </p>
               <p>
                 You could also email me at <span className="no-select" style={{ fontWeight: "bold" }}>clarence.siew@gmail.com</span>.
