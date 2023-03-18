@@ -1,4 +1,14 @@
-export const postManifest = new Map<string, { [k: string]: any }>([
+export type BlogPost = {
+  slug?: string;
+  title: string;
+  subtitle: string;
+  publishedAt: Date | number;
+  layout: "post";
+  filePath: string;
+  content?: string;
+};
+
+export const postManifest = new Map<string, BlogPost>([
   [
     "new-blog-site-generator",
     {

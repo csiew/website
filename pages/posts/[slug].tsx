@@ -5,12 +5,12 @@ import Head from "next/head";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import retitle from "../../lib/retitle";
-import { postManifest } from "../../manifests/posts";
+import { BlogPost, postManifest } from "../../manifests/posts";
 import config from "../../config";
 import NavigationView from "../../components/ui/NavigationView";
 import Breadcrumbs from "../../components/ui/Breadcrumbs";
 
-const BlogPostPage = ({ post }: { post: { [k: string]: any } }) => {
+const BlogPostPage = ({ post }: { post: BlogPost }) => {
   useEffect(() => {
     document.getElementById(config.rootElementId)?.scrollTo({ top: 0 });
   }, []);
@@ -66,9 +66,10 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context: any) => {
   const postContentDir = path.join(process.cwd(), "content", "posts");
   const definition = postManifest.get(context.params.slug);
-  const content = fs.readFileSync(path.join(postContentDir, definition?.filePath), { encoding: "utf8" });
-  const post = {
-    ...postManifest.get(context.params.slug),
+  if (!definition) throw new Error(`Manifest for post '${context.params.slug}' not found`);
+  const content = fs.readFileSync(path.join(postContentDir, definition.filePath), { encoding: "utf8" });
+  const post: BlogPost = {
+    ...definition,
     publishedAt: (definition?.publishedAt as Date).getTime(),
     slug: context.params.slug,
     content

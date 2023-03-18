@@ -3,7 +3,6 @@ import Head from "next/head";
 import config from "../config";
 import retitle from "../lib/retitle";
 import NavigationView from "../components/ui/NavigationView";
-import ContactForm from "../components/app/ContactForm";
 
 const Home = () => {
   useEffect(() => {
@@ -43,15 +42,6 @@ const Home = () => {
                 You could also email me at <span className="no-select" style={{ fontWeight: "bold" }}>clarence.siew@gmail.com</span>.
               </p>
             </section>
-            {
-              config.features.contactForm
-                ? (
-                  <section>
-                    <ContactForm />
-                  </section>
-                )
-                : <></>
-            }
           </article>
         )}
       />

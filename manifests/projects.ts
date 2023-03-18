@@ -19,7 +19,28 @@ export enum TechStack {
   SwiftUI = "SwiftUI"
 }
 
-export const projectManifest = new Map<string, { [k: string]: any }>([
+export type Project = {
+  slug?: string;
+  title: string;
+  subtitle: string;
+  status: "active" | "inactive" | "hiatus";
+  duration?: {
+    start?: string;
+    end?: string;
+  };
+  assets?: {
+    screenshots?: string[];
+  };
+  links?: {
+    website?: string;
+    repository?: string;
+  };
+  stack?: TechStack[];
+  filePath: string;
+  content?: string;
+}
+
+export const projectManifest = new Map<string, Project>([
   [
     "illume-os",
     {
