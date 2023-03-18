@@ -1,4 +1,4 @@
-import { ReactElement, RefObject } from "react";
+import { ReactElement } from "react";
 import { BaseComponentProps } from "../../../lib/@types";
 
 export type ModalCommonProps = {

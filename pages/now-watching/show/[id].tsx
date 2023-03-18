@@ -9,7 +9,6 @@ import NavigationView from "../../../components/ui/NavigationView";
 import Button from "../../../components/ui/Button";
 import Paper from "../../../components/ui/Paper";
 import Toolbar from "../../../components/ui/Toolbar";
-import Badge from "../../../components/ui/Badge";
 
 const showsData = rawShowsData as ShowsData;
 const showsMetadata = rawShowsMetadata as Array<Partial<OmdbResponse>>;

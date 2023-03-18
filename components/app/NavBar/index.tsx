@@ -6,15 +6,13 @@ import { PageRoute } from "../../../lib/@types";
 import Modal from "../../ui/Modal";
 import Button from "../../ui/Button";
 import { MdMenu } from "react-icons/md";
-import useSession from "../../../firebase/session";
 
 const NavBar = () => {
   const router = useRouter();
-  const session = useSession();
   const [showMenu, setShowMenu] = useState<boolean>(false);
 
   const getRoutes = () => {
-    return routes.filter((route) => !route.hideFromNavBar && (session.isLoggedIn() ? true : !route.authOnly));
+    return routes.filter((route) => !route.hideFromNavBar);
   };
 
   return (

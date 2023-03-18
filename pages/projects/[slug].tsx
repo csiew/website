@@ -6,7 +6,7 @@ import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import { capitalize } from "lodash";
 import retitle from "../../lib/retitle";
-import { projectManifest } from "../../manifests/projects";
+import { Project, projectManifest } from "../../manifests/projects";
 import config from "../../config";
 import Badge from "../../components/ui/Badge";
 import Breadcrumbs from "../../components/ui/Breadcrumbs";
@@ -16,7 +16,7 @@ import NavigationView from "../../components/ui/NavigationView";
 import Paper from "../../components/ui/Paper";
 import { determineStatusBadgeVariant } from "../../lib/projects";
 
-const ProjectPage = ({ project }: { project: { [k: string]: any } }) => {
+const ProjectPage = ({ project }: { project: Project }) => {
   useEffect(() => {
     document.getElementById(config.rootElementId)?.scrollTo({ top: 0 });
   }, []);
@@ -24,8 +24,8 @@ const ProjectPage = ({ project }: { project: { [k: string]: any } }) => {
   return (
     <>
       <Head>
-        <title>{retitle(project?.name)}</title>
-        <meta property="og:title" content={retitle(project?.name)} key="title" />
+        <title>{retitle(project?.title)}</title>
+        <meta property="og:title" content={retitle(project?.title)} key="title" />
       </Head>
       <Breadcrumbs
         items={[
@@ -34,7 +34,7 @@ const ProjectPage = ({ project }: { project: { [k: string]: any } }) => {
             href: "/projects"
           },
           {
-            title: project?.name ?? "Project"
+            title: project?.title ?? "Project"
           }
         ]} />
       <NavigationView
@@ -68,7 +68,7 @@ const ProjectPage = ({ project }: { project: { [k: string]: any } }) => {
                   gap: "0.5rem"
                 }}>
                   {project?.stack && project?.stack.map((item: any) => {
-                    return <Badge key={encodeURI(`${project?.title} ${project?.item}`)} variant="plain">{item}</Badge>;
+                    return <Badge key={encodeURI(`${project?.title} ${item}`)} variant="plain">{item}</Badge>;
                   })}
                 </div>
                 <ReactMarkdown>
@@ -100,9 +100,10 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context: any) => {
   const postContentDir = path.join(process.cwd(), "content", "projects");
   const definition = projectManifest.get(context.params.slug);
-  const content = fs.readFileSync(path.join(postContentDir, definition?.filePath), { encoding: "utf8" });
-  const project = {
-    ...projectManifest.get(context.params.slug),
+  if (!definition) throw new Error(`Manifest for project '${context.params.slug}' not found`);
+  const content = fs.readFileSync(path.join(postContentDir, definition.filePath), { encoding: "utf8" });
+  const project: Project = {
+    ...definition,
     slug: context.params.slug,
     content
   };
