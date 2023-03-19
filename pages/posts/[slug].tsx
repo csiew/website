@@ -48,7 +48,7 @@ const BlogPostPage = ({ post }: { post: BlogPost }) => {
             </div>
             <hr />
             <p style={{ width: "100%", textAlign: "center" }}>
-              <small><Link href="/blog">&larr; See all posts</Link></small>
+              <small><Link href="/posts">&larr; See all posts</Link></small>
             </p>
           </article>
         )} />
