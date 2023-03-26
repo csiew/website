@@ -1,11 +1,13 @@
 @import url('./colors.css');
-@import url('../assets/amulya/index.css');
+@import url('../assets/inter/index.css');
+@import url('../assets/bitter/index.css');
 @import url('../assets/jetbrains-mono/index.css');
 
 :root {
   --font-family-system: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  --font-family-base: Amulya, var(--font-family-system);
+  --font-family-base: Inter, var(--font-family-system);
   --font-family-article: var(--font-family-base);
+  --font-family-quote: Bitter, var(--font-family-base);
   --font-family-header: var(--font-family-base);
   --font-family-widget: var(--font-family-base);
   --font-family-monospace: 'JetBrains Mono', Monaco, Menlo, 'Cascadia Mono', 'Cascadia Code', 'Ubuntu Mono', 'Noto Mono', 'Courier New', Courier, monospace;
@@ -37,7 +39,7 @@ html, body, #__next {
   flex-flow: column;
   align-items: flex-start;
   justify-content: flex-start;
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth; */
 }
 
 @media (max-width: 767px) {
@@ -288,6 +290,70 @@ select:is(:disabled, .disabled) {
   pointer-events: none;
 }
 
+:is(.note, blockquote) {
+  margin: 1rem 0rem;
+  padding: 1rem;
+  color: var(--fg-color-3);
+  background: var(--bg-color-3);
+  border-left: 5px solid var(--bg-color-9);
+  font-family: var(--font-family-quote);
+}
+.note :is(h1, h2, h3, h4, h5) {
+  color: var(--fg-color-7);
+  font-family: var(--font-family-quote);
+  font-style: normal;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.125rem;
+  user-select: none;
+}
+blockquote {
+  font-style: italic;
+}
+blockquote::before {
+  content: 'Quote';
+  color: var(--fg-color-7);
+  font-size: 0.8rem;
+  font-style: normal;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.125rem;
+}
+blockquote:first-of-type {
+  margin: 0rem 0rem 1rem 0rem;
+}
+.blockquotes-as-notes blockquote {
+  font-style: normal;
+}
+.blockquotes-as-notes blockquote::before {
+  content: 'Note';
+}
+
+.post-list {
+  width: 100%;
+  display: inline-flex;
+  flex-flow: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1.5rem;
+}
+
+.post-list > .post-list-entry {
+  width: 100%;
+  display: inline-flex;
+  flex-flow: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.25rem;
+}
+
+.post-list > .post-list-entry > .timestamp {
+  color: var(--fg-color-5);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
 @import url('../components/ui/Alert/index.module.css');
 @import url('../components/ui/Badge/index.module.css');
 @import url('../components/ui/Breadcrumbs/index.module.css');
@@ -308,6 +374,7 @@ select:is(:disabled, .disabled) {
 @import url('../components/app/PlaylistCard/index.module.css');
 
 @import url('./index.module.css');
+@import url('./now/index.module.css');
 @import url('./posts/index.module.css');
 @import url('./now-watching/index.module.css');
 @import url('./playlists/index.module.css');

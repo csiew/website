@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title><![CDATA[Clarence Siew]]></title>
+        <description><![CDATA[Clarence's blog, now updates, etc]]></description>
+        <link>https://clarencesiew.com</link>
+        <generator>RSS for Node</generator>
+        <lastBuildDate>Sun, 26 Mar 2023 09:43:13 GMT</lastBuildDate>
+        <atom:link href="https:/clarencesiew.com/rss" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA["Oh, I'm working on a side project", I exclaim for the millionth time.]]></title>
+            <description><![CDATA[Have I been working on the same thing for the last five years?]]></description>
+            <link>https:/clarencesiew.com/posts/five-year-side-project</link>
+            <guid isPermaLink="false">five-year-side-project</guid>
+            <pubDate>Thu, 30 Mar 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Eras are out, montages and vignettes are in.]]></title>
+            <description><![CDATA[Thoughts on changes in how I enjoy music]]></description>
+            <link>https:/clarencesiew.com/posts/music-eras</link>
+            <guid isPermaLink="false">music-eras</guid>
+            <pubDate>Thu, 30 Mar 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Links page?]]></title>
+            <description><![CDATA[I muse about creating a link log]]></description>
+            <link>https:/clarencesiew.com/posts/links-page</link>
+            <guid isPermaLink="false">links-page</guid>
+            <pubDate>Thu, 30 Mar 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Different crowds]]></title>
+            <description><![CDATA[Thoughts on personal interests and sharing]]></description>
+            <link>https:/clarencesiew.com/posts/different-crowds</link>
+            <guid isPermaLink="false">different-crowds</guid>
+            <pubDate>Thu, 30 Mar 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Adventures in Frontend]]></title>
+            <description><![CDATA[A not-so-technical chronical of the frontend shenanigans I've been up to]]></description>
+            <link>https:/clarencesiew.com/posts/frontend-adventures</link>
+            <guid isPermaLink="false">frontend-adventures</guid>
+            <pubDate>Thu, 05 Jan 2023 01:30:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Building a boilerplate factory]]></title>
+            <description><![CDATA[An experiment in boilerplates and templates]]></description>
+            <link>https:/clarencesiew.com/posts/building-boilerplate-factory</link>
+            <guid isPermaLink="false">building-boilerplate-factory</guid>
+            <pubDate>Fri, 05 Feb 2021 14:58:08 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[New blog - a new blog, a new static site generator ...ish]]></title>
+            <description><![CDATA[An experiment in static site generators]]></description>
+            <link>https:/clarencesiew.com/posts/new-blog-site-generator</link>
+            <guid isPermaLink="false">new-blog-site-generator</guid>
+            <pubDate>Mon, 19 Oct 2020 17:22:06 GMT</pubDate>
+        </item>
+    </channel>
+</rss>

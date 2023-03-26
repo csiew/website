@@ -6,6 +6,10 @@ const routes: PageRoute[] = [
     path: "/"
   },
   {
+    title: "Now",
+    path: "/now"
+  },
+  {
     title: "Posts",
     path: "/posts"
   },

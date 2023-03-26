@@ -30,12 +30,20 @@ header {
   box-shadow: var(--preset-shadow-component);
 }
 
-header h1 {
+header #site-home-link {
   margin: 0;
   padding: 0.5rem 0rem;
+  display: inline-flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+header #site-home-link h1 {
+  margin: 0;
+  padding: 0;
   font-size: 1.5rem;
 }
-header h1 :is(a, a:hover, a:active) {
+header #site-home-link:is(a, a:hover, a:active) {
   color: var(--navbar-header-fg);
   text-decoration: none;
 }
@@ -158,6 +166,7 @@ nav.overlay-menu li :is(a, a.active) {
 
 @media (max-width: 1023px) {
   header h1 {
+    display: none;
     font-size: 1.5rem;
   }
   nav.navbar-menu {

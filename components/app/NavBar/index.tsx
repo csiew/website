@@ -18,9 +18,12 @@ const NavBar = () => {
   return (
     <>
       <header>
-        <h1>
-          <a href="/">Clarence Siew</a>
-        </h1>
+        <Link href="/" id="site-home-link">
+          <span style={{ display: "inline-flex", flexFlow: "row", alignItems: "center", justifyContent: "flex-start", gap: "0.75rem" }}>
+            <img src="/profile.jpg" style={{ width: "2rem", height: "2rem", borderRadius: "100%" }} />
+            <h1>Clarence Siew</h1>
+          </span>
+        </Link>
         <nav className="navbar-menu">
           <ul>
             {
