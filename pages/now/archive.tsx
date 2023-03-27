@@ -4,7 +4,6 @@ import Head from "next/head";
 import Link from "next/link";
 import config from "../../config";
 import retitle from "../../lib/retitle";
-import { relativeTime } from "../../lib/timestamp";
 import { Post } from "../../manifests/@types";
 import { nowPostManifest } from "../../manifests/now";
 import Breadcrumbs from "../../components/ui/Breadcrumbs";
@@ -40,8 +39,9 @@ const NowArchive = ({ posts }: { posts: Post[] }) => {
                 posts.map((post) => (
                   <div key={post.slug} className="post-list-entry">
                     <h3><Link href={path.join("/now", post.slug!)}>{post.title}</Link></h3>
+                    <span>{post.subtitle}</span>
                     <span className="timestamp">
-                      {`${relativeTime(new Date(post.publishedAt))} - ${new Date(post.publishedAt).toDateString()}`}
+                      {`${new Date(post.publishedAt).toDateString()}`}
                     </span>
                   </div>
                 ))

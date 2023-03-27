@@ -6,7 +6,6 @@ import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import config from "../../config";
 import retitle from "../../lib/retitle";
-import { relativeTime } from "../../lib/timestamp";
 import { Post } from "../../manifests/@types";
 import { nowPostManifest } from "../../manifests/now";
 import Breadcrumbs from "../../components/ui/Breadcrumbs";
@@ -38,7 +37,7 @@ const NowPostPage = ({ post }: { post: Post }) => {
           <article className="app-page">
             <p className="now-entry-footer">
               <span>
-                {`${relativeTime(new Date(post.publishedAt))} - ${new Date(post.publishedAt).toDateString()}`}
+                {`${new Date(post.publishedAt).toDateString()}`}
               </span>
             </p>
             <ReactMarkdown linkTarget="_blank">

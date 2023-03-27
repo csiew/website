@@ -4,7 +4,7 @@
   flex-flow: row;
   align-items: center;
   justify-content: space-between;
-  color: var(--fg-color-5);
+  color: var(--fg-color-6);
   font-size: 0.8rem;
   font-weight: bold;
 }

@@ -3,7 +3,6 @@ import Head from "next/head";
 import Link from "next/link";
 import path from "path";
 import retitle from "../../lib/retitle";
-import { relativeTime } from "../../lib/timestamp";
 import { postManifest } from "../../manifests/posts";
 import config from "../../config";
 import NavigationView from "../../components/ui/NavigationView";
@@ -29,8 +28,9 @@ const Blog = ({ posts }: { posts: { [k: string]: any }[] }) => {
                 posts?.map((post) => (
                   <div key={post.slug} className="post-list-entry">
                     <h3><Link href={path.join("/posts", post.slug)}>{post.title}</Link></h3>
+                    <span>{post.subtitle}</span>
                     <span className="timestamp">
-                      {`${relativeTime(post.publishedAt)} - ${new Date(post.publishedAt).toDateString()}`}
+                      {`${new Date(post.publishedAt).toDateString()}`}
                     </span>
                   </div>
                 ))

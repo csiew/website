@@ -7,7 +7,6 @@ import Link from "next/link";
 import NavigationView from "../../components/ui/NavigationView";
 import config from "../../config";
 import retitle from "../../lib/retitle";
-import { relativeTime } from "../../lib/timestamp";
 import { nowEditionManifest, nowPostManifest } from "../../manifests/now";
 import { Post } from "../../manifests/@types";
 
@@ -41,7 +40,7 @@ const Now = ({ posts }: { posts: Post[] }) => {
                   </ReactMarkdown>
                   <p className="now-entry-footer">
                     <span>
-                      {`${relativeTime(new Date(post.publishedAt))} - ${new Date(post.publishedAt).toDateString()}`}
+                      {`${new Date(post.publishedAt).toDateString()}`}
                     </span>
                     <Link href={path.join("now", post.slug!)}>
                       Permalink

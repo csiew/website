@@ -42,6 +42,7 @@ header #site-home-link h1 {
   margin: 0;
   padding: 0;
   font-size: 1.5rem;
+  font-weight: 900;
 }
 header #site-home-link:is(a, a:hover, a:active) {
   color: var(--navbar-header-fg);

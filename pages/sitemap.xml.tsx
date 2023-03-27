@@ -8,7 +8,7 @@ import config from "../config";
 const generateSiteMap = (posts: Post[]) => {
   return `<?xml version="1.0" encoding="UTF-8"?>
    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-     ${["/", "now", "now/archive", "posts", "playlists", "projects", "now-watching"]
+     ${["/", "feed", "now", "now/archive", "posts", "playlists", "projects", "now-watching"]
     .map((suffixUrl) => {
       return `
       <url>

@@ -4,7 +4,6 @@ import Head from "next/head";
 import Link from "next/link";
 import config from "../../config";
 import retitle from "../../lib/retitle";
-import { relativeTime } from "../../lib/timestamp";
 import NavigationView from "../../components/ui/NavigationView";
 import { nowPostManifest } from "../../manifests/now";
 import { postManifest } from "../../manifests/posts";
@@ -38,7 +37,6 @@ const FeedPage = ({ posts }: { posts: Post[] }) => {
                       alignItems: "center",
                       justifyContent: "flex-start",
                       gap: "0.5rem",
-                      fontSize: "0.8rem"
                     }}>
                       <Badge style={{ fontWeight: "bold" }}>
                         {post.layout}
@@ -46,7 +44,7 @@ const FeedPage = ({ posts }: { posts: Post[] }) => {
                       <span>{post.subtitle}</span>
                     </div>
                     <span className="timestamp">
-                      {`${relativeTime(new Date(post.publishedAt))} - ${new Date(post.publishedAt).toDateString()}`}
+                      {`${new Date(post.publishedAt).toDateString()}`}
                     </span>
                   </div>
                 ))

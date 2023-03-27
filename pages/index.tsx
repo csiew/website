@@ -7,10 +7,9 @@ import ReactMarkdown from "react-markdown";
 import config from "../config";
 import retitle from "../lib/retitle";
 import NavigationView from "../components/ui/NavigationView";
-import Paper from "../components/ui/Paper";
 import generateRssFeed from "../utils/generate-rss-feed";
 
-const Home = ({ content }: { content: string }) => {
+const Home = ({ content, lastUpdated }: { content: string, lastUpdated: number }) => {
   useEffect(() => {
     document.getElementById(config.rootElementId)?.scrollTo({ top: 0 });
   }, []);
@@ -35,6 +34,9 @@ const Home = ({ content }: { content: string }) => {
                     <p>
                       New post: <Link href="/posts/different-crowds">Different crowds</Link>, new pages: <Link href="/now">/now</Link>, <Link href="/feed">/feed</Link>, RSS feed generated on build
                     </p>
+                    <span style={{ color: "var(--fg-color-6)", fontStyle: "italic", fontSize: "0.8rem" }}>
+                      Last updated: {(new Date(lastUpdated)).toDateString()}
+                    </span>
                   </div>
                 )
                 : <></>
@@ -54,10 +56,10 @@ const Home = ({ content }: { content: string }) => {
 
 export const getStaticProps = async (context: any) => {
   await generateRssFeed();
-
   const content = fs.readFileSync(path.join(process.cwd(), "content", "home.md"), { encoding: "utf8" });
+  const lastUpdated = Date.now();
   return {
-    props: { content },
+    props: { content, lastUpdated },
   };
 };
 
