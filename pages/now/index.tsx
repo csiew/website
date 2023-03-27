@@ -35,8 +35,8 @@ const Now = ({ posts }: { posts: Post[] }) => {
             <hr />
             {
               posts.map((post) => (
-                <>
-                  <ReactMarkdown key={post.slug} linkTarget="_blank">
+                <div key={post.slug}>
+                  <ReactMarkdown linkTarget="_blank">
                     {post.content!}
                   </ReactMarkdown>
                   <p className="now-entry-footer">
@@ -48,7 +48,7 @@ const Now = ({ posts }: { posts: Post[] }) => {
                     </Link>
                   </p>
                   <hr />
-                </>
+                </div>
               ))
             }
             <p style={{ width: "100%", textAlign: "center" }}>

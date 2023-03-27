@@ -1,11 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Head from "next/head";
 import "./app.css";
 import NavBar from "../components/app/NavBar";
 import BackToTop from "../components/app/BackToTop";
 import Footer from "../components/app/Footer";
+import config from "../config";
 
 const AppContainer = ({ Component, pageProps }: any) => {
+  useEffect(() => {
+    const rootClassList = document.getElementById(config.rootElementId)?.classList;
+    config.features.classicScrollbar
+      ? rootClassList?.add("classic-scrollbar")
+      : rootClassList?.remove("classic-scrollbar");
+  }, []);
+
   return (
     <>
       <Head>

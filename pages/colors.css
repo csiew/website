@@ -36,8 +36,8 @@
   --shadow-5: rgba(0, 0, 0, 0.06125);
 
   --preset-shadow-widget: none;
-  --preset-shadow-widget-inset: none;
-  --preset-shadow-component: none;
+  --preset-shadow-widget-inset: 0px 2px 4px rgba(0, 0, 0, 0.25) inset;
+  --preset-shadow-component: 0px 4px 8px rgba(0, 0, 0, 0.125);
   --preset-shadow-textfield: none;
 
   color-scheme: light;
