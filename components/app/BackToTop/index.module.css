@@ -1,45 +1,71 @@
 .backToTopFloat {
   width: min-content;
-  margin-inline: auto 0px;
-  padding: 1rem;
+  margin-inline: auto;
+  padding: 0;
   display: inline-flex;
   flex-flow: column;
+  align-self: center;
   align-items: center;
   justify-content: center;
   position: fixed;
   bottom: 0;
-  right: 0;
   z-index: 150;
 }
 .backToTopFloat :is(button, .button, input[type=submit], input[type=reset]) {
   margin: 0;
-  padding: 0.5rem;
+  padding: 1rem 1.5rem;
   display: inline-flex;
   flex-flow: row;
   align-items: center;
   justify-content: center;
-  background: var(--bg-color);
-  border-radius: 100%;
-  transition: ease-in-out 0.2s;
+  color: var(--bg-color);
+  background: var(--primary-color);
+  border-width: 1px 1px 0 1px;
+  border-color: var(--primary-color-3);
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  animation: back-to-float-transition-in 0.25s linear;
+  transition: var(--transition);
 }
 .backToTopFloat :is(button, .button, input[type=submit], input[type=reset]):hover {
+  padding: 1rem 1.5rem 2rem 1.5rem;
   box-shadow: var(--preset-shadow-widget);
+  transition: var(--transition);
 }
 .backToTopFloat :is(button, .button, input[type=submit], input[type=reset]):active {
+  padding: 1rem 1.5rem 0.8rem 1.5rem;
   box-shadow: none;
+  transition: var(--transition);
 }
 .backToTopFloat :is(button, .button, input[type=submit], input[type=reset]) svg {
   width: 1.25rem;
   height: 1.25rem;
   margin: 0;
   padding: 0;
+  transform: none;
+  transition: var(--transition);
+}
+.backToTopFloat :is(button, .button, input[type=submit], input[type=reset]):hover svg {
+  transform: scale(1.5);
+  transition: var(--transition);
+}
+.backToTopFloat :is(button, .button, input[type=submit], input[type=reset]):active svg {
+  transform: scaleY(0.9);
+  transition: var(--transition);
+}
+
+@keyframes back-to-float-transition-in {
+  0% {
+    translate: 0vw 20vh;
+    pointer-events: none;
+  }
+  100% {
+    translate: 0vw 0vh;
+    pointer-events: all;
+  }
 }
 
 @media (max-width: 767px) {
   .backToTopFloat {
-    width: min-content;
-    margin-inline: auto 0;
-    padding: 0.25rem;
-    right: 0;
+    display: none;
   }
 }

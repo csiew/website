@@ -20,6 +20,7 @@ export default {
   },
   debugMode: process.env.DEBUG_MODE,
   features: {
-    classicScrollbar: false
+    classicScrollbar: false,
+    omdbClient: false
   }
 };

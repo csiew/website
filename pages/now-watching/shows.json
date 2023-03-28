@@ -3,12 +3,13 @@
     {
       "name": "Succession",
       "imdbId": "tt7660850",
-      "recommended": true
+      "recommended": true,
+      "watching": true
     },
     {
       "name": "House of the Dragon",
       "imdbId": "tt11198330",
-      "watching": true,
+      "watching": false,
       "recommended": true
     },
     {
@@ -23,7 +24,7 @@
     {
       "name": "Star Trek: Lower Decks",
       "imdbId": "tt9184820",
-      "watching": true
+      "watching": false
     },
     {
       "name": "Star Trek: Strange New Worlds",
@@ -32,7 +33,9 @@
     },
     {
       "name": "Star Trek: Picard",
-      "imdbId": "tt8806524"
+      "imdbId": "tt8806524",
+      "watching": true,
+      "recommended": true
     },
     {
       "name": "Star Trek: Discovery",
@@ -210,7 +213,7 @@
     {
       "name": "Inside No. 9",
       "imdbId": "tt2674806",
-      "watching": true,
+      "watching": false,
       "recommended": true
     },
     {
@@ -229,6 +232,11 @@
       "name": "SAS: Rogue Heroes",
       "imdbId": "tt10405370",
       "recommended": true,
+      "watching": false
+    },
+    {
+      "name": "Hello Tomorrow!",
+      "imdbId": "tt14596212",
       "watching": true
     }
   ]

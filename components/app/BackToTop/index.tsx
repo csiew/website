@@ -19,9 +19,15 @@ const BackToTop = () => {
 
   return (
     <div className="backToTopFloat">
-      <Button style={{ opacity: isAtTop ? "0" : "1" }} onClick={scrollPageToTop} alt="Back to top">
-        <MdArrowUpward />
-      </Button>
+      {
+        isAtTop
+          ? <></>
+          : (
+            <Button onClick={scrollPageToTop} alt="Back to top">
+              <MdArrowUpward />
+            </Button>
+          )
+      }
     </div>
   );
 };

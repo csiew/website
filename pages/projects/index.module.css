@@ -33,6 +33,7 @@
   border-bottom-width: 3px;
   border-bottom-style: solid;
   border-bottom-color: var(--border-color);
+  font-size: 1.5rem;
 }
 
 .project-list {
@@ -73,11 +74,14 @@
   justify-content: flex-start;
 }
 
+.project-list .project-list-item > .head > h4 {
+  font-size: 1.2rem;
+}
+
 .project-list .project-list-item > .head > p {
   margin: 0;
   padding: 0;
   color: var(--fg-color-3);
-  font-size: 0.75rem;
   font-weight: normal;
 }
 
