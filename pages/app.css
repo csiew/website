@@ -372,8 +372,8 @@ blockquote::before {
 
 /* Mac OS Platinum style scrollbar */
 @media (min-width: 768px) {
-  .classic-scrollbar::-webkit-scrollbar,
-  .classic-scrollbar::-webkit-scrollbar-track {
+  #__next.classic-scrollbar ::-webkit-scrollbar,
+  #__next.classic-scrollbar ::-webkit-scrollbar-track {
     width: 18px;
     background: var(--fg-color-8);
     border-left: 1px solid var(--fg-color);
@@ -384,7 +384,7 @@ blockquote::before {
       0px -2px 2px rgba(255, 255, 255, 0.5) inset,
       -2px 0px 2px rgba(255, 255, 255, 0.5) inset;
   }
-  .classic-scrollbar::-webkit-scrollbar-thumb {
+  #__next.classic-scrollbar ::-webkit-scrollbar-thumb {
     background: var(--primary-color);
     border: 1px solid var(--fg-color);
     border-radius: 0;
@@ -394,10 +394,10 @@ blockquote::before {
       2px 0px 0px rgba(255, 255, 255, 0.5) inset,
       -2px 0px 0px rgba(0, 0, 0, 0.25) inset;
   }
-  .classic-scrollbar::-webkit-scrollbar-thumb:hover {
+  #__next.classic-scrollbar ::-webkit-scrollbar-thumb:hover {
     background: var(--primary-color-3);
   }
-  .classic-scrollbar::-webkit-scrollbar-thumb:active {
+  #__next.classic-scrollbar ::-webkit-scrollbar-thumb:active {
     background: var(--fg-color-3);
   }
 }
