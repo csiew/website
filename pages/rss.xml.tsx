@@ -1,5 +1,4 @@
 import React from "react";
-import path from "path";
 import { nowPostManifest } from "../manifests/now";
 import { postManifest } from "../manifests/posts";
 import generateRssFeed from "../utils/generate-rss-feed";
