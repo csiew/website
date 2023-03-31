@@ -6,6 +6,7 @@ import retitle from "../../lib/retitle";
 import { postManifest } from "../../manifests/posts";
 import config from "../../config";
 import NavigationView from "../../components/ui/NavigationView";
+import TagList from "../../components/app/TagList";
 
 const Blog = ({ posts }: { posts: { [k: string]: any }[] }) => {
   useEffect(() => {
@@ -29,6 +30,7 @@ const Blog = ({ posts }: { posts: { [k: string]: any }[] }) => {
                   <div key={post.slug} className="post-list-entry">
                     <h3><Link href={path.join("/posts", post.slug)}>{post.title}</Link></h3>
                     <span>{post.subtitle}</span>
+                    <TagList item={post} />
                     <span className="timestamp">
                       {`${new Date(post.publishedAt).toDateString()}`}
                     </span>

@@ -13,7 +13,7 @@ const TagList = ({ item }: TagListProps) => {
   return (
     <span style={{
       width: "100%",
-      margin: "1rem 0rem",
+      margin: "0.5rem 0rem",
       display: "inline-flex",
       flexFlow: "row wrap",
       alignItems: "center",
