@@ -7,7 +7,6 @@ import ReactMarkdown from "react-markdown";
 import config from "../config";
 import retitle from "../lib/retitle";
 import NavigationView from "../components/ui/NavigationView";
-import generateRssFeed from "../utils/generate-rss-feed";
 
 const Home = ({ content, lastUpdated }: { content: string, lastUpdated: number }) => {
   useEffect(() => {
@@ -59,7 +58,6 @@ const Home = ({ content, lastUpdated }: { content: string, lastUpdated: number }
 };
 
 export const getStaticProps = async (context: any) => {
-  await generateRssFeed();
   const content = fs.readFileSync(path.join(process.cwd(), "content", "home.md"), { encoding: "utf8" });
   const lastUpdated = Date.now();
   return {

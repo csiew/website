@@ -1,18 +1,21 @@
-import fs from "fs";
 import path from "path";
 import RSS from "rss";
-import { postManifest as posts } from "../manifests/posts";
-import { nowPostManifest as nowPosts } from "../manifests/now";
+import { Post } from "../manifests/@types";
 
-const generateRssFeed = async () => {
+const generateRssFeed = async (
+  title: string,
+  description: string,
+  feedPath: string[],
+  manifests: Map<string, Post>
+) => {
   const siteURL = "https://clarencesiew.com";
   const feed = new RSS({
-    title: "Clarence Siew",
-    description: "Clarence's blog, now updates, etc",
-    feed_url: path.join(siteURL, "rss"),
+    title,
+    description,
+    feed_url: path.join(siteURL, ...feedPath),
     site_url: siteURL
   });
-  [...posts.entries(), ...nowPosts.entries()]
+  [...manifests.entries()]
     .sort(([_a, a], [_b, b]) => {
       return a.publishedAt < b.publishedAt ? 1 : -1;
     })
@@ -26,10 +29,7 @@ const generateRssFeed = async () => {
       });
     });
 
-  fs.writeFileSync(
-    path.join(process.cwd(), "public", "rss.xml"),
-    feed.xml({ indent: true })
-  );
+  return feed.xml({ indent: true });
 };
 
 export default generateRssFeed;

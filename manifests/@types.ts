@@ -1,13 +1,16 @@
-export type Post = {
+export type Manifest = {
   slug?: string;
   title: string;
   subtitle: string;
-  publishedAt: Date | number;
-  layout: "blog" | "now";
   filePath: string;
-  quotesAsNotes?: boolean;
   content?: string;
   tags?: string[];
+}
+
+export type Post = Manifest & {
+  publishedAt: Date | number;
+  layout: "blog" | "now";
+  quotesAsNotes?: boolean;
 };
 
 export enum TechStack {
@@ -31,10 +34,7 @@ export enum TechStack {
   SwiftUI = "SwiftUI"
 }
 
-export type Project = {
-  slug?: string;
-  title: string;
-  subtitle: string;
+export type Project = Manifest & {
   status: "active" | "inactive" | "hiatus";
   duration?: {
     start?: string;
@@ -48,7 +48,4 @@ export type Project = {
     repository?: string;
   };
   stack?: TechStack[];
-  filePath: string;
-  content?: string;
-  tags?: string[];
 }
