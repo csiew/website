@@ -33,8 +33,7 @@ const Home = ({ content, lastUpdated }: { content: string, lastUpdated: number }
                       <li>Refreshed design</li>
                       <li>New post: <Link href="/posts/different-crowds">Different crowds</Link></li>
                       <li>New pages: <Link href="/now">/now</Link>, <Link href="/feed">/feed</Link></li>
-                      <li><a href="/rss.xml" target="_blank">RSS feed</a> generated at build-time</li>
-                      <li><a href="/sitemap.xml" target="_blank">Sitemap</a> generated server-side</li>
+                      <li><a href="/rss.xml" target="_blank">RSS feeds</a> and <a href="/sitemap.xml" target="_blank">Sitemap</a> generated server-side</li>
                       <li>Site-wide search functionality (see the search button on the navbar)</li>
                     </ul>
                     <span style={{ color: "var(--fg-color-6)", fontStyle: "italic", fontSize: "0.8rem" }}>
