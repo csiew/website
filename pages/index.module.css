@@ -1,5 +1,12 @@
 .pageHome {
-  padding: 2rem 0rem;
+  display: inline-flex;
+  flex-flow: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.pageHome h2 {
+  font-size: 10vw;
 }
 
 .pageHome .profile {
@@ -11,16 +18,9 @@
   -webkit-user-drag: none;
 }
 
-.pageHome section {
-  display: inline-flex;
-  flex-flow: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 1rem;
-}
-
-.pageHome section p:first-of-type {
-  font-size: 2rem;
+.pageHome p:first-child {
+  font-family: var(--font-family-header);
+  font-size: 2.5rem;
 }
 
 @media (max-width: 768px) {

@@ -10,10 +10,18 @@ export default {
     text: "Clarence Siew",
     divider: "|"
   },
-  version: "6.10.1",
+  version: "6.11.0",
+  host: {
+    baseUrl: "https://clarencesiew.com"
+  },
   omdb: {
     apiKey: process.env.OMDB_API_KEY,
     host: "https://omdbapi.com"
   },
-  debugMode: process.env.DEBUG_MODE
+  debugMode: process.env.DEBUG_MODE,
+  features: {
+    classicScrollbar: false,
+    omdbClient: false,
+    fuseDebug: false
+  }
 };

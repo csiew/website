@@ -1,15 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { FormEvent, useEffect, useState } from "react";
 import Head from "next/head";
 import config from "../../config";
 import rawShowsData from "./shows.json";
 import rawShowsMetadata from "./showsMetadata.json";
 import retitle from "../../lib/retitle";
 import { OmdbResponse, Show, ShowsData } from "../../lib/now-watching";
+import { getShowDataById } from "../../client/omdb";
 import NavigationView from "../../components/ui/NavigationView";
 import NowWatchingCardGrid from "../../components/app/NowWatchingCardGrid";
 import Modal from "../../components/ui/Modal";
 import ShowDetailPage from "./show/[id]";
 import Dropdown from "../../components/ui/Dropdown";
+import Paper from "../../components/ui/Paper";
+import Button from "../../components/ui/Button";
+import TextField from "../../components/ui/TextField";
+import Form from "../../components/ui/Form";
 
 const showsData = rawShowsData as ShowsData;
 const showsMetadata = rawShowsMetadata as Array<Partial<OmdbResponse>>;
@@ -40,6 +45,20 @@ const NowWatching = () => {
   const [selectedShow, setSelectedShow] = useState<string | null>(null);
   const [recentFilter, setRecentFilter] = useState<string>("all");
   const [historyFilter, setHistoryFilter] = useState<string>("all");
+  const [omdbClientResult, setOmdbClientResult] = useState<Partial<OmdbResponse>>({});
+
+  const handleGetOmdbSubmit = async (ev: any): Promise<Partial<OmdbResponse>> => {
+    ev.preventDefault();
+    const imdbId = ev.currentTarget.imdbId.value;
+    let result: Partial<OmdbResponse> = {};
+    try {
+      result = await getShowDataById(imdbId);
+    } catch (err) {
+      console.error(err);
+    }
+    setOmdbClientResult(result);
+    return result;
+  };
 
   useEffect(() => {
     document.getElementById(config.rootElementId)?.scrollTo({ top: 0 });
@@ -67,6 +86,40 @@ const NowWatching = () => {
         content={(
           <article className="app-page page-now-watching">
             <h2>Now Watching</h2>
+            {
+              config.features.omdbClient && (
+                <Paper style={{ width: "100%" }}>
+                  <Form onSubmit={handleGetOmdbSubmit}>
+                    <div style={{
+                      width: "100%",
+                      display: "inline-flex",
+                      flexFlow: "row",
+                      alignItems: "center",
+                      justifyContent: "flex-start",
+                      gap: "0.5rem"
+                    }}>
+                      <TextField variant="text" name="imdbId" placeholder="IMDB ID" style={{ width: "100%" }} />
+                      <Button variant="submit">Get</Button>
+                    </div>
+                    {
+                      Object.entries(omdbClientResult).length > 0
+                        ? (
+                          <>
+                            <hr />
+                            <pre
+                              className={config.features.classicScrollbar ? "classic-scrollbar" : undefined}
+                              style={{ width: "100%", overflow: "auto" }}
+                            >
+                              {JSON.stringify(omdbClientResult, null, 2)}
+                            </pre>
+                          </>
+                        )
+                        : <></>
+                    }
+                  </Form>
+                </Paper>
+              )
+            }
             <div className="card-list">
               <NowWatchingCardGrid
                 title="Recently watched"

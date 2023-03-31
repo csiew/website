@@ -7,6 +7,7 @@ export type TextFieldProps = BaseComponentProps & {
   placeholder?: string;
   defaultValue?: string | number;
   required?: boolean;
+  autoFocus?: boolean;
   forwardedRef?: RefObject<any>;
   onClick?: MouseEventHandler<HTMLInputElement | HTMLTextAreaElement>;
   onChange?: ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>;

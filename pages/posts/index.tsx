@@ -1,13 +1,12 @@
 import React, { useEffect } from "react";
 import Head from "next/head";
 import Link from "next/link";
-import { generatePathString } from "../../lib/blog";
+import path from "path";
 import retitle from "../../lib/retitle";
-import { relativeTime } from "../../lib/timestamp";
 import { postManifest } from "../../manifests/posts";
 import config from "../../config";
 import NavigationView from "../../components/ui/NavigationView";
-import Paper from "../../components/ui/Paper";
+import TagList from "../../components/app/TagList";
 
 const Blog = ({ posts }: { posts: { [k: string]: any }[] }) => {
   useEffect(() => {
@@ -25,22 +24,20 @@ const Blog = ({ posts }: { posts: { [k: string]: any }[] }) => {
         content={(
           <article className="app-page">
             <h2>Posts</h2>
-            <Paper variant="link-list">
-              <ul>
-                {
-                  posts?.map((p) => (
-                    <li key={p.id}>
-                      <Link href={generatePathString(p.slug!)}>
-                        <h3>{p.title}</h3>
-                        <span className="timestamp">
-                          {`${relativeTime(p.publishedAt)} - ${new Date(p.publishedAt).toDateString()}`}
-                        </span>
-                      </Link>
-                    </li>
-                  ))
-                }
-              </ul>
-            </Paper>
+            <div className="post-list">
+              {
+                posts?.map((post) => (
+                  <div key={post.slug} className="post-list-entry">
+                    <h3><Link href={path.join("/posts", post.slug)}>{post.title}</Link></h3>
+                    <span>{post.subtitle}</span>
+                    <TagList item={post} />
+                    <span className="timestamp">
+                      {`${new Date(post.publishedAt).toDateString()}`}
+                    </span>
+                  </div>
+                ))
+              }
+            </div>
           </article>
         )}
       />

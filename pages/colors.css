@@ -11,22 +11,22 @@
   --fg-color-9: rgb(194, 195, 190);
 
   --bg-color: rgb(255, 255, 255);
-  --bg-color-1: rgb(248, 249, 244);
-  --bg-color-2: rgb(242, 243, 238);
-  --bg-color-3: rgb(236, 237, 232);
-  --bg-color-4: rgb(230, 231, 226);
-  --bg-color-5: rgb(224, 225, 220);
-  --bg-color-6: rgb(218, 219, 214);
-  --bg-color-7: rgb(212, 213, 208);
-  --bg-color-8: rgb(206, 207, 202);
-  --bg-color-9: rgb(200, 201, 196);
+  --bg-color-1: rgb(249, 248, 244);
+  --bg-color-2: rgb(243, 242, 238);
+  --bg-color-3: rgb(237, 236, 232);
+  --bg-color-4: rgb(231, 230, 226);
+  --bg-color-5: rgb(225, 224, 220);
+  --bg-color-6: rgb(219, 218, 214);
+  --bg-color-7: rgb(213, 212, 208);
+  --bg-color-8: rgb(207, 206, 202);
+  --bg-color-9: rgb(201, 200, 196);
 
   --border-color: rgb(200, 200, 200);
 
-  --primary-color: rgb(85, 135, 45);
-  --primary-color-1: rgb(75, 125, 35);
-  --primary-color-2: rgb(65, 115, 25);
-  --primary-color-3: rgb(55, 105, 15);
+  --primary-color: rgb(185, 85, 45);
+  --primary-color-1: rgb(175, 75, 35);
+  --primary-color-2: rgb(165, 65, 25);
+  --primary-color-3: rgb(155, 55, 15);
 
   --shadow: none;
   --shadow-1: rgba(0, 0, 0, 0.5);
@@ -36,9 +36,18 @@
   --shadow-5: rgba(0, 0, 0, 0.06125);
 
   --preset-shadow-widget: none;
-  --preset-shadow-widget-inset: none;
-  --preset-shadow-component: none;
+  --preset-shadow-widget-inset: 0px 2px 4px rgba(0, 0, 0, 0.25) inset;
+  --preset-shadow-component: 0px 4px 8px rgba(0, 0, 0, 0.125);
   --preset-shadow-textfield: none;
+
+  --header-text-shadow:
+    4px 4px 0px var(--bg-color-9),
+    8px 8px 0px var(--bg-color-6),
+    12px 12px 0px var(--bg-color-3);
+  --header-text-shadow-small:
+    2px 2px 0px var(--bg-color-9),
+    4px 4px 0px var(--bg-color-6),
+    6px 6px 0px var(--bg-color-3);
 
   color-scheme: light;
 }

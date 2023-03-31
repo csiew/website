@@ -1,14 +1,14 @@
-/* Amulya */
+/* BITTER */
 @font-face {
-	font-family: 'Amulya';
-	src: url('./Amulya-Variable.ttf');
+	font-family: "Bitter";
+	src: url("./Bitter-VariableFont_wght.ttf");
 	font-weight: 100 1000;
   font-style: normal;
 	font-stretch: 25% 151%;
 }
 @font-face {
-	font-family: 'Amulya';
-	src: url('./Amulya-VariableItalic.ttf');
+	font-family: "Bitter";
+	src: url("./Bitter-Italic-VariableFont_wght.ttf");
 	font-weight: 100 1000;
   font-style: italic;
 	font-stretch: 25% 151%;

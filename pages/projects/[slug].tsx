@@ -6,7 +6,7 @@ import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import { capitalize } from "lodash";
 import retitle from "../../lib/retitle";
-import { Project, projectManifest } from "../../manifests/projects";
+import { projectManifest } from "../../manifests/projects";
 import config from "../../config";
 import Badge from "../../components/ui/Badge";
 import Breadcrumbs from "../../components/ui/Breadcrumbs";
@@ -15,6 +15,7 @@ import ButtonGroup from "../../components/ui/ButtonGroup";
 import NavigationView from "../../components/ui/NavigationView";
 import Paper from "../../components/ui/Paper";
 import { determineStatusBadgeVariant } from "../../lib/projects";
+import { Project } from "../../manifests/@types";
 
 const ProjectPage = ({ project }: { project: Project }) => {
   useEffect(() => {
