@@ -8,12 +8,12 @@ const generateRssFeed = async (
   feedPath: string[],
   manifests: Map<string, Post>
 ) => {
-  const siteURL = "https://clarencesiew.com";
+  const siteURL = "clarencesiew.com";
   const feed = new RSS({
     title,
     description,
-    feed_url: path.join(siteURL, ...feedPath),
-    site_url: siteURL
+    feed_url: "https://" + path.join(siteURL, ...feedPath),
+    site_url: "https://" + siteURL
   });
   [...manifests.entries()]
     .sort(([_a, a], [_b, b]) => {
@@ -22,8 +22,8 @@ const generateRssFeed = async (
     .map(([slug, post]) => {
       feed.item({
         title: post.title,
-        description: path.join(siteURL, post.layout, slug),
-        url: path.join(siteURL, post.layout, slug),
+        description: post.subtitle,
+        url: "https://" + path.join(siteURL, post.layout, slug),
         guid: slug,
         date: new Date(post.publishedAt)
       });
