@@ -50,7 +50,7 @@ html, body, #__next {
 html {
   color-scheme: light;
   color: var(--fg-color);
-  background: var(--bg-color-1);
+  background: var(--bg-color-2);
   font-family: var(--font-family-base);
   font-size: 1.1rem;
   font-weight: 400;
@@ -156,12 +156,18 @@ article:is(.app-page, .content-page) {
 article.app-page h2 {
   width: 100%;
   height: max-content;
-  margin: 0rem 0rem 2rem 0rem;
+  margin: 1rem 0rem 3rem 0rem;
   padding: 0rem 0rem 0.25rem 0rem;
   color: var(--fg-color);
-  font-size: 2.75rem;
+  font-size: 5vmax;
   font-weight: 900;
+  font-style: italic;
+  letter-spacing: 1.5vmin;
+  line-height: 1.1;
   text-align: center;
+  text-transform: uppercase;
+  text-shadow: var(--header-text-shadow);
+  transition: var(--transition);
 }
 
 @media (max-width: 1023px) {
@@ -191,24 +197,29 @@ article.content-page > .header {
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  border-bottom: 1px solidvar(--border-color);
   text-align: center;
 }
 article.content-page > .header > h2 {
-  margin: 0;
-  padding: 0;
+  margin-inline: calc(33% - 33vw);
+  padding: 0rem 1rem;
   display: inline-block;
   color: var(--fg-color);
   border: none;
-  font-size: 3rem;
+  font-size: 10vw;
   font-weight: 900;
-  line-height: 1;
+  font-style: italic;
+  letter-spacing: 2vmin;
+  line-height: 1.1;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: var(--header-text-shadow);
 }
 article.content-page > .header > .subtitle {
   margin: 0;
   padding: 0;
   display: inline-block;
   color: var(--fg-color-6);
+  font-family: var(--font-family-header);
   font-size: 1.5rem;
   font-weight: normal;
   font-style: italic;

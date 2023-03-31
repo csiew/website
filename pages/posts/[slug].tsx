@@ -10,6 +10,8 @@ import { postManifest } from "../../manifests/posts";
 import config from "../../config";
 import NavigationView from "../../components/ui/NavigationView";
 import Breadcrumbs from "../../components/ui/Breadcrumbs";
+import Badge from "../../components/ui/Badge";
+import TagList from "../../components/app/TagList";
 
 const BlogPostPage = ({ post }: { post: Post }) => {
   useEffect(() => {
@@ -21,6 +23,9 @@ const BlogPostPage = ({ post }: { post: Post }) => {
       <Head>
         <title>{retitle(post?.title)}</title>
         <meta property="og:title" content={retitle(post?.title)} key="title" />
+        {
+          post.tags && <meta name="keywords" content={post.tags?.join(", ")} />
+        }
       </Head>
       <Breadcrumbs
         items={[
@@ -47,6 +52,7 @@ const BlogPostPage = ({ post }: { post: Post }) => {
                 {decodeURI(post?.content ?? "")}
               </ReactMarkdown>
             </div>
+            <TagList item={post} />
             <hr />
             <p style={{ width: "100%", textAlign: "center" }}>
               <small><Link href="/posts">&larr; See all posts</Link></small>

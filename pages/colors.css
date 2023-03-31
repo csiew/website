@@ -40,5 +40,14 @@
   --preset-shadow-component: 0px 4px 8px rgba(0, 0, 0, 0.125);
   --preset-shadow-textfield: none;
 
+  --header-text-shadow:
+    4px 4px 0px var(--bg-color-9),
+    8px 8px 0px var(--bg-color-6),
+    12px 12px 0px var(--bg-color-3);
+  --header-text-shadow-small:
+    2px 2px 0px var(--bg-color-9),
+    4px 4px 0px var(--bg-color-6),
+    6px 6px 0px var(--bg-color-3);
+
   color-scheme: light;
 }

@@ -3,25 +3,21 @@
   height: 100%;
   margin: 0;
   padding: 0;
-
   display: inline-flex;
   flex-flow: column;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
-
   position: fixed;
   top: 0;
   left: 0;
   z-index: 200;
-
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(8px);
-
-  animation-name: modal-overlayTransitionIn;
+  animation-name: modal-overlay-transition-in;
   animation-duration: 0.5s;
 }
 
-@keyframes modal-overlayTransitionIn {
+@keyframes modal-overlay-transition-in {
   0% {
     background: rgba(0, 0, 0, 0);
     backdrop-filter: blur(8px);
@@ -36,8 +32,9 @@
 
 .modal-window {
   max-width: 920px;
+  max-height: 1024px;
   width: 100%;
-  height: 100%;
+  height: 90%;
   margin: 0;
   padding: 0;
   display: inline-flex;
@@ -46,19 +43,24 @@
   justify-content: flex-start;
   color: var(--fg-color);
   background: var(--bg-color);
-  animation-name: modal-windowTransitionIn;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--preset-shadow-component);
+  animation-name: modal-window-transition-in;
   animation-duration: 0.25s;
 }
 
-@keyframes modal-windowTransitionIn {
+@keyframes modal-window-transition-in {
   0% {
     opacity: 0;
-    translate: 100vw 0;
+    scale: 0.8;
+    translate: 0 100vh;
     pointer-events: none;
     cursor: not-allowed;
   }
   100% {
     opacity: 1;
+    scale: 1;
     translate: 0;
     pointer-events: all;
     cursor: auto;
@@ -66,21 +68,45 @@
 }
 
 @media (max-width: 1023px) {
+  .modal-window {
+    max-width: 720px;
+  }
+}
+
+@media (max-width: 767px) {
+  @keyframes modal-window-transition-in {
+    0% {
+      opacity: 0;
+      scale: 1;
+      translate: 0 100vh;
+      pointer-events: none;
+      cursor: not-allowed;
+    }
+    100% {
+      opacity: 1;
+      scale: 1;
+      translate: 0;
+      pointer-events: all;
+      cursor: auto;
+    }
+  }
+
   .modal-overlay {
-    background: unset;
-    backdrop-filter: unset;
+    justify-content: flex-end;
   }
 
   .modal-window {
     max-width: unset;
     max-height: unset;
+    width: 100%;
+    height: 90%;
     box-shadow: unset;
-    border-radius: 0px;
-    animation: none;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    animation-name: modal-window-transition-in;
   }
 }
 
-.modal-window .modal-windowHeader {
+.modal-window .modal-window-header {
   width: 100%;
   margin: 0;
   padding: 0.5rem 0.25rem;
@@ -94,7 +120,7 @@
   border-style: solid;
   border-color: var(--border-color);
 }
-.modal-window .modal-windowHeader h2 {
+.modal-window .modal-window-header h2 {
   margin: 0;
   padding: 0;
   font-size: 1.25rem;
@@ -103,7 +129,7 @@
   overflow: clip;
 }
 
-.modal-window .modal-windowBody {
+.modal-window .modal-window-body {
   width: 100%;
   height: 100%;
   margin: 0;
@@ -112,6 +138,6 @@
   overflow: auto;
 }
 
-.modal-window .modal-windowBody .app-page {
+.modal-window .modal-window-body .app-page {
   padding: 1rem 0rem;
 }

@@ -9,6 +9,7 @@ import config from "../../config";
 import retitle from "../../lib/retitle";
 import { nowEditionManifest, nowPostManifest } from "../../manifests/now";
 import { Post } from "../../manifests/@types";
+import TagList from "../../components/app/TagList";
 
 const Now = ({ posts }: { posts: Post[] }) => {
   useEffect(() => {
@@ -38,6 +39,7 @@ const Now = ({ posts }: { posts: Post[] }) => {
                   <ReactMarkdown linkTarget="_blank">
                     {post.content!}
                   </ReactMarkdown>
+                  <TagList item={post} />
                   <p className="now-entry-footer">
                     <span>
                       {`${new Date(post.publishedAt).toDateString()}`}

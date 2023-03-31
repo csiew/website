@@ -10,6 +10,7 @@ import { Post } from "../../manifests/@types";
 import { nowPostManifest } from "../../manifests/now";
 import Breadcrumbs from "../../components/ui/Breadcrumbs";
 import NavigationView from "../../components/ui/NavigationView";
+import TagList from "../../components/app/TagList";
 
 const NowPostPage = ({ post }: { post: Post }) => {
   useEffect(() => {
@@ -43,6 +44,7 @@ const NowPostPage = ({ post }: { post: Post }) => {
             <ReactMarkdown linkTarget="_blank">
               {post.content!}
             </ReactMarkdown>
+            <TagList item={post} />
             <hr />
             <p style={{ width: "100%", textAlign: "center" }}>
               <small><Link href="/now/archive">See all past updates &rarr;</Link></small>

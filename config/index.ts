@@ -21,6 +21,7 @@ export default {
   debugMode: process.env.DEBUG_MODE,
   features: {
     classicScrollbar: false,
-    omdbClient: false
+    omdbClient: false,
+    fuseDebug: false
   }
 };

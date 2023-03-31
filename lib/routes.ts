@@ -24,6 +24,26 @@ const routes: PageRoute[] = [
   {
     title: "Now Watching",
     path: "/now-watching"
+  },
+  {
+    title: "Search",
+    path: "/search",
+    hideFromNavBar: true
+  },
+  {
+    title: "Feed",
+    path: "/feed",
+    hideFromNavBar: true
+  },
+  {
+    title: "Sitemap",
+    path: "/sitemap.xml",
+    hideFromNavBar: true
+  },
+  {
+    title: "RSS",
+    path: "/rss.xml",
+    hideFromNavBar: true
   }
 ];
 

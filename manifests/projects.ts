@@ -1,44 +1,4 @@
-export enum TechStack {
-  Shell = "Shell",
-  Python = "Python",
-  Java = "Java",
-  Spring = "Spring",
-  HTML = "HTML",
-  Node = "Node",
-  Express = "Express",
-  JavaScript = "JavaScript",
-  TypeScript = "TypeScript",
-  React = "React",
-  NextJS = "Next.js",
-  VueJS = "Vue.js",
-  Svelte = "Svelte",
-  SvelteKit = "SvelteKit",
-  MithrilJS = "Mithril.js",
-  Swift = "Swift",
-  UIKit = "UIKit",
-  SwiftUI = "SwiftUI"
-}
-
-export type Project = {
-  slug?: string;
-  title: string;
-  subtitle: string;
-  status: "active" | "inactive" | "hiatus";
-  duration?: {
-    start?: string;
-    end?: string;
-  };
-  assets?: {
-    screenshots?: string[];
-  };
-  links?: {
-    website?: string;
-    repository?: string;
-  };
-  stack?: TechStack[];
-  filePath: string;
-  content?: string;
-}
+import { Project, TechStack } from "./@types";
 
 export const projectManifest = new Map<string, Project>([
   [
@@ -59,7 +19,8 @@ export const projectManifest = new Map<string, Project>([
         TechStack.HTML,
         TechStack.JavaScript
       ],
-      filePath: "illume-os.md"
+      filePath: "illume-os.md",
+      tags: ["linux", "distribution", "icewm", "debian"]
     }
   ],
   [
@@ -83,7 +44,14 @@ export const projectManifest = new Map<string, Project>([
         TechStack.HTML,
         TechStack.JavaScript
       ],
-      filePath: "antorca-linux.md"
+      filePath: "antorca-linux.md",
+      tags: [
+        "linux",
+        "distribution",
+        "xfce",
+        "debian",
+        "ubuntu"
+      ]
     }
   ],
   [
@@ -100,7 +68,14 @@ export const projectManifest = new Map<string, Project>([
         TechStack.Swift,
         TechStack.UIKit
       ],
-      filePath: "transitsafe.md"
+      filePath: "transitsafe.md",
+      tags: [
+        "ios",
+        "apps",
+        "swift",
+        "uikit",
+        "university"
+      ]
     }
   ],
   [
@@ -121,7 +96,18 @@ export const projectManifest = new Map<string, Project>([
         TechStack.SvelteKit,
         TechStack.VueJS
       ],
-      filePath: "website.md"
+      filePath: "website.md",
+      tags: [
+        "webdev",
+        "javascript",
+        "typescript",
+        "react",
+        "nextjs",
+        "svelte", "sveltekit",
+        "vuejs",
+        "firebase",
+        "cms"
+      ]
     }
   ],
   [
@@ -142,7 +128,12 @@ export const projectManifest = new Map<string, Project>([
         TechStack.Shell,
         TechStack.HTML
       ],
-      filePath: "md2magic.md"
+      filePath: "md2magic.md",
+      tags: [
+        "experimental",
+        "python",
+        "ssg"
+      ]
     }
   ],
   [
@@ -159,7 +150,12 @@ export const projectManifest = new Map<string, Project>([
         TechStack.JavaScript,
         TechStack.HTML
       ],
-      filePath: "cardo.md"
+      filePath: "cardo.md",
+      tags: [
+        "experimental",
+        "javascript",
+        "library"
+      ]
     }
   ],
   [
@@ -175,7 +171,12 @@ export const projectManifest = new Map<string, Project>([
       stack: [
         TechStack.Python
       ],
-      filePath: "podzol.md"
+      filePath: "podzol.md",
+      tags: [
+        "podcasts",
+        "python",
+        "json"
+      ]
     }
   ],
   [
@@ -198,7 +199,14 @@ export const projectManifest = new Map<string, Project>([
       stack: [
         TechStack.Python
       ],
-      filePath: "biscuitwm.md"
+      filePath: "biscuitwm.md",
+      tags: [
+        "experimental",
+        "python",
+        "windowmanager",
+        "linux",
+        "x11"
+      ]
     }
   ],
   [
@@ -222,7 +230,12 @@ export const projectManifest = new Map<string, Project>([
         TechStack.JavaScript,
         TechStack.HTML
       ],
-      filePath: "hoddle.md"
+      filePath: "hoddle.md",
+      tags: [
+        "experimental",
+        "javascript",
+        "library"
+      ]
     }
   ],
   [
@@ -242,7 +255,15 @@ export const projectManifest = new Map<string, Project>([
         TechStack.JavaScript,
         TechStack.VueJS
       ],
-      filePath: "cast.md"
+      filePath: "cast.md",
+      tags: [
+        "podcasts",
+        "webdev",
+        "node",
+        "javascript",
+        "vuejs",
+        "ejs"
+      ]
     }
   ],
   [
@@ -263,7 +284,12 @@ export const projectManifest = new Map<string, Project>([
         TechStack.JavaScript,
         TechStack.React
       ],
-      filePath: "brioche.md"
+      filePath: "brioche.md",
+      tags: [
+        "react",
+        "javascript",
+        "library"
+      ]
     }
   ]
 ]);

@@ -1,9 +1,12 @@
 .pageHome {
-  padding: 2rem 0rem;
   display: inline-flex;
   flex-flow: column;
   align-items: flex-start;
   justify-content: flex-start;
+}
+
+.pageHome h2 {
+  font-size: 10vw;
 }
 
 .pageHome .profile {

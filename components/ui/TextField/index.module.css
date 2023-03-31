@@ -18,3 +18,7 @@
   border-color: var(--primary-color);
   outline: none;
 }
+:is(input[type=text], input[type=email], input[type=password], input[type=password], textarea)::placeholder {
+  color: var(--fg-color-9);
+  font-style: italic;
+}
