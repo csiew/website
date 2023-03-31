@@ -1,3 +1,4 @@
+import fs from "fs";
 import path from "path";
 import RSS from "rss";
 import { Post } from "../manifests/@types";
@@ -6,7 +7,8 @@ const generateRssFeed = async (
   title: string,
   description: string,
   feedPath: string[],
-  manifests: Map<string, Post>
+  manifests: Map<string, Post>,
+  staticWrite = false
 ) => {
   const siteURL = "https://clarencesiew.com";
   const feed = new RSS({
@@ -22,12 +24,21 @@ const generateRssFeed = async (
     .map(([slug, post]) => {
       feed.item({
         title: post.title,
-        description: post.subtitle,
-        url: path.join(siteURL, "posts", slug),
+        description: path.join(siteURL, post.layout, slug),
+        url: path.join(siteURL, post.layout, slug),
         guid: slug,
         date: new Date(post.publishedAt)
       });
     });
+  
+  if (staticWrite) {
+    const writePath = path.join(process.cwd(), "public", "rss.xml");
+    console.log(`Writing RSS feed to: ${writePath}`);
+    fs.writeFileSync(
+      writePath,
+      feed.xml({ indent: true })
+    );
+  }
 
   return feed.xml({ indent: true });
 };

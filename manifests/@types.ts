@@ -9,7 +9,7 @@ export type Manifest = {
 
 export type Post = Manifest & {
   publishedAt: Date | number;
-  layout: "blog" | "now";
+  layout: "posts" | "now";
   quotesAsNotes?: boolean;
 };
 
