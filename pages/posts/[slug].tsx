@@ -10,7 +10,6 @@ import { postManifest } from "../../manifests/posts";
 import config from "../../config";
 import NavigationView from "../../components/ui/NavigationView";
 import Breadcrumbs from "../../components/ui/Breadcrumbs";
-import Badge from "../../components/ui/Badge";
 import TagList from "../../components/app/TagList";
 
 const BlogPostPage = ({ post }: { post: Post }) => {

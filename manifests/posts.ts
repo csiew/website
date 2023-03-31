@@ -8,7 +8,7 @@ export const postManifest = new Map<string, Post>([
       subtitle: "An experiment in static site generators",
       publishedAt: new Date("2020-10-19T17:22:06"),
       layout: "posts",
-      filePath: "20201019-new-posts-site-generator.md",
+      filePath: "20201019-new-blog-site-generator.md",
       tags: [
         "projects",
         "python",
