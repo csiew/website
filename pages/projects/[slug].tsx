@@ -16,6 +16,7 @@ import NavigationView from "../../components/ui/NavigationView";
 import Paper from "../../components/ui/Paper";
 import { determineStatusBadgeVariant } from "../../lib/projects";
 import { Project } from "../../manifests/@types";
+import TagList from "../../components/app/TagList";
 
 const ProjectPage = ({ project }: { project: Project }) => {
   useEffect(() => {
@@ -80,6 +81,7 @@ const ProjectPage = ({ project }: { project: Project }) => {
                   <Button variant="link" url={project?.links?.repository} newTab={true} disabled={!project?.links?.repository}>Repository</Button>
                 </ButtonGroup>
               </Paper>
+              <TagList item={project} />
             </div>
             <hr />
             <p style={{ width: "100%", textAlign: "center" }}>
