@@ -4,11 +4,12 @@ import { Post } from "../manifests/@types";
 import { nowPostManifest } from "../manifests/now";
 import { postManifest } from "../manifests/posts";
 import config from "../config";
+import routes from "../lib/routes";
 
 const generateSiteMap = (posts: Post[]) => {
   return `<?xml version="1.0" encoding="UTF-8"?>
    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-     ${["/", "search", "feed", "now", "now/archive", "posts", "playlists", "projects", "now-watching"]
+     ${routes.flatMap((route) => route.path)
     .map((suffixUrl) => {
       return `
       <url>
