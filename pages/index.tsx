@@ -43,6 +43,7 @@ const Home = ({ content, lastUpdated }: { content: string, lastUpdated: number }
                   <li>Search TV shows from <Link href="/now-watching">/now-watching</Link></li>
                   <li>New page: <Link href="/tags">/tags</Link></li>
                   <li>Clicking on tags highlights the tag in the Tags page; example: <Link href="/tags?t=python"><Badge>python</Badge></Link></li>
+                  <li>Project pages now show tags associated with project</li>
                 </ul>
               </section>
               <hr />
