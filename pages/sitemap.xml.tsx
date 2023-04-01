@@ -12,7 +12,7 @@ const generateSiteMap = (posts: Post[]) => {
     .map((suffixUrl) => {
       return `
       <url>
-          <loc>${path.join(config.host.baseUrl, suffixUrl)}</loc>
+          <loc>https://${path.join(config.host.name, suffixUrl)}</loc>
       </url>
       `;
     })
@@ -22,7 +22,7 @@ const generateSiteMap = (posts: Post[]) => {
       const prefixUrl: string = layout === "now" ? "now" : "posts";
       return `
       <url>
-          <loc>${path.join(config.host.baseUrl, prefixUrl, slug!)}</loc>
+          <loc>https://${path.join(config.host.name, prefixUrl, slug!)}</loc>
       </url>
       `;
     })

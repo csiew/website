@@ -26,6 +26,11 @@ const routes: PageRoute[] = [
     path: "/now-watching"
   },
   {
+    title: "Changelog",
+    path: "/changelog",
+    hideFromNavBar: true
+  },
+  {
     title: "Search",
     path: "/search",
     hideFromNavBar: true

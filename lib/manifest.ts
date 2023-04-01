@@ -3,10 +3,11 @@ import { nowPostManifest } from "../manifests/now";
 import { postManifest } from "../manifests/posts";
 import { projectManifest } from "../manifests/projects";
 import routes from "./routes";
+import { changelogManifest } from "../manifests/changelog";
 
 export type SearchData = {
   url: string;
-  type: "Blog" | "Now" | "Project" | "Page",
+  type: "Blog" | "Now" | "Project" | "Page" | "Changelog",
   title: string;
   subtitle?: string;
   tags?: string[];
@@ -50,6 +51,14 @@ export const searchDataManifest: SearchData[] = [
       title: project.title,
       subtitle: project.subtitle,
       tags: project.tags
+    } as SearchData;
+  }),
+  ...[...changelogManifest.entries()].map(([verNum, version]) => {
+    return {
+      url: `/changelog?v=${verNum}`,
+      type: "Changelog",
+      title: version.title,
+      subtitle: version.subtitle,
     } as SearchData;
   })
 ];

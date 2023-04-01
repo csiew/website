@@ -10,8 +10,9 @@ export default {
     text: "Clarence Siew",
     divider: "|"
   },
-  version: "6.11.2",
+  version: "6.11.3",
   host: {
+    name: "clarencesiew.com",
     baseUrl: "https://clarencesiew.com"
   },
   omdb: {

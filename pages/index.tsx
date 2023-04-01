@@ -8,6 +8,8 @@ import config from "../config";
 import retitle from "../lib/retitle";
 import NavigationView from "../components/ui/NavigationView";
 import Badge from "../components/ui/Badge";
+import Button from "../components/ui/Button";
+import { changelogManifest } from "../manifests/changelog";
 
 const Home = ({ content, lastUpdated }: { content: string, lastUpdated: number }) => {
   useEffect(() => {
@@ -33,46 +35,18 @@ const Home = ({ content, lastUpdated }: { content: string, lastUpdated: number }
             <div className="note">
               <h3>What&apos;s new</h3>
               <section>
-                <p style={{ fontWeight: "bold", fontStyle: "italic" }}>Version 6.11.2</p>
-                <p>
-                  <a href="https://github.com/csiew/website/pull/84" target="_blank" rel="noreferrer">
-                    See pull request for version 6.11.2
-                  </a>
-                </p>
-                <ul>
-                  <li>Search TV shows from <Link href="/now-watching">/now-watching</Link></li>
-                  <li>New page: <Link href="/tags">/tags</Link></li>
-                  <li>Clicking on tags highlights the tag in the Tags page; example: <Link href="/tags?t=python"><Badge>python</Badge></Link></li>
-                  <li>Project pages now show tags associated with project</li>
-                </ul>
+                {
+                  changelogManifest.has(config.version) && (
+                    <p>See the changlog for the latest version of this site: <Link href={`/changelog?v=${config.version}`}>{config.version}</Link></p>
+                  )
+                }
               </section>
-              <hr />
               <section>
-                <p style={{ fontWeight: "bold", fontStyle: "italic" }}>Version 6.11.1</p>
-                <p>
-                  <a href="https://github.com/csiew/website/pull/82" target="_blank" rel="noreferrer">
-                    See pull request for version 6.11.1
-                  </a>
+                <p style={{ padding: "1rem 0rem" }}>
+                  <Button variant="link" url="/changelog" style={{ fontSize: "0.8rem" }}>
+                      See changelogs for all versions &rarr;
+                  </Button>
                 </p>
-                <ul>
-                  <li>Fixed invalid article URLs in generated RSS feeds</li>
-                </ul>
-              </section>
-              <hr />
-              <section>
-                <p style={{ fontWeight: "bold", fontStyle: "italic" }}>Version 6.11.0</p>
-                <p>
-                  <a href="https://github.com/csiew/website/pull/81" target="_blank" rel="noreferrer">
-                    See pull request for version 6.11.0
-                  </a>
-                </p>
-                <ul>
-                  <li>Refreshed design</li>
-                  <li>New post: <Link href="/posts/different-crowds">Different crowds</Link></li>
-                  <li>New pages: <Link href="/now">/now</Link>, <Link href="/feed">/feed</Link></li>
-                  <li><a href="/rss.xml" target="_blank">RSS feeds</a> and <a href="/sitemap.xml" target="_blank">Sitemap</a> generated server-side</li>
-                  <li>Site-wide search functionality (see the search button on the navbar)</li>
-                </ul>
               </section>
               <span style={{ color: "var(--fg-color-6)", fontStyle: "italic", fontSize: "0.8rem" }}>
                 Last updated: {(new Date(lastUpdated)).toDateString()}
