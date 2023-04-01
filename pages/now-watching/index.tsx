@@ -104,7 +104,7 @@ const NowWatching = () => {
       setSearchKeywords("");
       searchFieldRef.current.value = "";
       searchField?.removeEventListener("keydown", handleEscapeSearch);
-      document.activeElement.blur();
+      (document.activeElement as any)?.blur();
     }
   };
 
