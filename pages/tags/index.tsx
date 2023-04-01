@@ -18,6 +18,7 @@ const TagsPage = () => {
       const tagEl = document.getElementById(t as string);
       if (tagEl) {
         const top = (tagEl?.getBoundingClientRect().top ?? 0) - 96;
+        tagEl.style.background = "lightyellow";
         tagEl.style.border = "3px solid var(--primary-color)";
         document.getElementById(config.rootElementId)?.scrollTo({ top });
       }

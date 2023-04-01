@@ -7,6 +7,7 @@ import ReactMarkdown from "react-markdown";
 import config from "../config";
 import retitle from "../lib/retitle";
 import NavigationView from "../components/ui/NavigationView";
+import Badge from "../components/ui/Badge";
 
 const Home = ({ content, lastUpdated }: { content: string, lastUpdated: number }) => {
   useEffect(() => {
@@ -31,6 +32,20 @@ const Home = ({ content, lastUpdated }: { content: string, lastUpdated: number }
             </p>
             <div className="note">
               <h3>What&apos;s new</h3>
+              <section>
+                <p style={{ fontWeight: "bold", fontStyle: "italic" }}>Version 6.11.2</p>
+                <p>
+                  <a href="https://github.com/csiew/website/pull/84" target="_blank" rel="noreferrer">
+                    See pull request for version 6.11.2
+                  </a>
+                </p>
+                <ul>
+                  <li>Search TV shows from <Link href="/now-watching">/now-watching</Link></li>
+                  <li>New page: <Link href="/tags">/tags</Link></li>
+                  <li>Clicking on tags highlights the tag in the Tags page; example: <Link href="/tags?t=python"><Badge>python</Badge></Link></li>
+                </ul>
+              </section>
+              <hr />
               <section>
                 <p style={{ fontWeight: "bold", fontStyle: "italic" }}>Version 6.11.1</p>
                 <p>
