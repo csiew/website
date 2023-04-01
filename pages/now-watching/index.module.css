@@ -1,5 +1,5 @@
 article.app-page.page-now-watching {
-  max-width: 1280px;
+  max-width: 1100px;
 }
 
 article.app-page.page-now-watching section.acknowledgements {
@@ -9,6 +9,7 @@ article.app-page.page-now-watching section.acknowledgements {
 }
 
 .page-now-watching .page-now-watching-section .card-list {
+  margin: 2rem 0rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, 256px);
   align-items: stretch;
@@ -18,10 +19,18 @@ article.app-page.page-now-watching section.acknowledgements {
 
 .page-now-watching .page-now-watching-section .header-bar {
   width: 100%;
+  margin: 0;
   display: inline-flex;
   flex-flow: row;
   align-items: flex-start;
   justify-content: space-between;
+  border-bottom-width: 3px;
+  border-bottom-style: solid;
+  border-bottom-color: var(--border-color);
+}
+.page-now-watching .page-now-watching-section .header-bar > h3 {
+  margin: 0;
+  font-size: 1.5rem;
 }
 .page-now-watching .page-now-watching-section .header-bar .actions {
   display: inline-flex;

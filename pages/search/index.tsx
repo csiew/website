@@ -66,7 +66,6 @@ const SearchPage = ({ setShowSearchModal }: { setShowSearchModal?: React.Dispatc
   const fuse = new Fuse(
     searchDataManifest,
     {
-      includeScore: true,
       threshold: 0.3,
       keys: ["title", "subtitle", "tags", "publishedAt"]
     }
@@ -120,7 +119,7 @@ const SearchPage = ({ setShowSearchModal }: { setShowSearchModal?: React.Dispatc
         content={
           <article className="app-page" style={{ maxWidth: "unset", paddingInline: "1rem" }}>
             <TextField
-              variant="text"
+              variant="search"
               name="keywords"
               placeholder="Search"
               autoFocus

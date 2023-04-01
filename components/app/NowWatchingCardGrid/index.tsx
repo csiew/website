@@ -2,7 +2,6 @@
 /* eslint-disable no-case-declarations */
 import React, { ReactElement } from "react";
 import { Show } from "../../../lib/now-watching";
-import Paper from "../../ui/Paper";
 import NowWatchingShowCard from "../NowWatchingShowCard";
 
 type NowWatchingCardGridProps = {
@@ -18,7 +17,7 @@ const NowWatchingCardGrid = ({ title, keyPrefix, shows, setSelectedShow, filter,
   let filteredShows;
 
   switch (filter) {
-  case "featured":
+  case "mustwatch":
     filteredShows = shows.filter((show) => show.recommended);
     break;
   case "all":
@@ -28,7 +27,7 @@ const NowWatchingCardGrid = ({ title, keyPrefix, shows, setSelectedShow, filter,
 
   return (
     <section>
-      <Paper className="page-now-watching-section">
+      <div className="page-now-watching-section">
         <div className="header-bar">
           <h3>{title}</h3>
           <div className="actions">
@@ -42,7 +41,7 @@ const NowWatchingCardGrid = ({ title, keyPrefix, shows, setSelectedShow, filter,
             ))
           }
         </div>
-      </Paper>
+      </div>
     </section>
   );
 };
