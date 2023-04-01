@@ -6,67 +6,13 @@ import config from "../../config";
 import retitle from "../../lib/retitle";
 import NavigationView from "../../components/ui/NavigationView";
 import TextField from "../../components/ui/TextField";
-import { postManifest } from "../../manifests/posts";
-import { nowPostManifest } from "../../manifests/now";
-import { projectManifest } from "../../manifests/projects";
 import TagList from "../../components/app/TagList";
-import routes from "../../lib/routes";
-
-type SearchData = {
-  url: string;
-  type: "Blog" | "Now" | "Project" | "Page",
-  title: string;
-  subtitle?: string;
-  tags?: string[];
-  publishedAt?: Date;
-};
-
-const mappedPages: SearchData[] = routes.map((route) => {
-  return {
-    url: route.path,
-    type: "Page",
-    title: route.title
-  };
-});
+import { SearchData, searchDataManifest } from "../../lib/manifest";
 
 const SearchPage = ({ setShowSearchModal }: { setShowSearchModal?: React.Dispatch<React.SetStateAction<boolean>> }) => {
-  const searchDataManifest: SearchData[] = [
-    ...mappedPages,
-    ...[...postManifest.entries()].map(([slug, post]) => {
-      return {
-        url: `/posts/${slug}`,
-        type: "Blog",
-        title: post.title,
-        subtitle: post.subtitle,
-        tags: post.tags,
-        publishedAt: post.publishedAt
-      } as SearchData;
-    }),
-    ...[...nowPostManifest.entries()].map(([slug, post]) => {
-      return {
-        url: `/now/${slug}`,
-        type: "Now",
-        title: post.title,
-        subtitle: post.subtitle,
-        tags: post.tags,
-        publishedAt: post.publishedAt
-      } as SearchData;
-    }),
-    ...[...projectManifest.entries()].map(([slug, project]) => {
-      return {
-        url: `/projects/${slug}`,
-        type: "Project",
-        title: project.title,
-        subtitle: project.subtitle,
-        tags: project.tags
-      } as SearchData;
-    })
-  ];
-
   const fuse = new Fuse(
     searchDataManifest,
     {
-      includeScore: true,
       threshold: 0.3,
       keys: ["title", "subtitle", "tags", "publishedAt"]
     }
@@ -120,7 +66,7 @@ const SearchPage = ({ setShowSearchModal }: { setShowSearchModal?: React.Dispatc
         content={
           <article className="app-page" style={{ maxWidth: "unset", paddingInline: "1rem" }}>
             <TextField
-              variant="text"
+              variant="search"
               name="keywords"
               placeholder="Search"
               autoFocus

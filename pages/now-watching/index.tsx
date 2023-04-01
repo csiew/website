@@ -1,5 +1,6 @@
-import React, { FormEvent, useEffect, useState } from "react";
+import React, { ChangeEvent, FocusEvent, createRef, useEffect, useRef, useState } from "react";
 import Head from "next/head";
+import Fuse from "fuse.js";
 import config from "../../config";
 import rawShowsData from "./shows.json";
 import rawShowsMetadata from "./showsMetadata.json";
@@ -36,16 +37,41 @@ const getShows = (watching?: boolean) => {
     .filter((show) => show.metadata !== undefined);
 };
 
+const getShowsByIds = (ids: string[]) => {
+  shows = showsData.shows
+    .filter((show) => ids.includes(show.imdbId))
+    .sort((a, b) => a.name.localeCompare(b.name));
+  const results = shows
+    .map((show) => {
+      show.metadata = matchShowToMetadata(show.imdbId);
+      return show;
+    })
+    .filter((show) => show.metadata !== undefined);
+  return results;
+};
+
 const getShow = (id: string) => {
   return shows.find((show) => show.imdbId === id);
 };
 
 const NowWatching = () => {
+  const fuse = new Fuse(
+    showsMetadata,
+    {
+      threshold: 0.3,
+      keys: ["imdbID", "Title", "Actors", "Director", "Writer", "Genre", "Country"]
+    }
+  );
+
+  const searchFieldRef = useRef<any>(null);
+
   const [showModal, setShowModal] = useState<boolean>(false);
   const [selectedShow, setSelectedShow] = useState<string | null>(null);
   const [recentFilter, setRecentFilter] = useState<string>("all");
   const [historyFilter, setHistoryFilter] = useState<string>("all");
   const [omdbClientResult, setOmdbClientResult] = useState<Partial<OmdbResponse>>({});
+  const [searchResults, setSearchResults] = useState<any[]>([]);
+  const [searchKeywords, setSearchKeywords] = useState<string>("");
 
   const handleGetOmdbSubmit = async (ev: any): Promise<Partial<OmdbResponse>> => {
     ev.preventDefault();
@@ -58,6 +84,32 @@ const NowWatching = () => {
     }
     setOmdbClientResult(result);
     return result;
+  };
+
+  const handleSearchShows = (ev: ChangeEvent) => {
+    const keywords = (ev.currentTarget as any).value;
+    setSearchKeywords(keywords);
+    if (keywords.length) {
+      const results = fuse.search(keywords);
+      setSearchResults(results);
+    } else {
+      setSearchResults([]);
+    }
+  };
+
+  const handleEscapeSearch = (ev: KeyboardEvent) => {
+    if (ev.key === "Escape") {
+      const searchField = ev.currentTarget as any;
+      // if (!searchField) return;
+      setSearchKeywords("");
+      searchFieldRef.current.value = "";
+      searchField?.removeEventListener("keydown", handleEscapeSearch);
+      (document.activeElement as any)?.blur();
+    }
+  };
+
+  const handleFocusSearch = (ev: FocusEvent) => {
+    (ev.currentTarget as any).addEventListener("keydown", handleEscapeSearch);
   };
 
   useEffect(() => {
@@ -120,37 +172,77 @@ const NowWatching = () => {
                 </Paper>
               )
             }
+            <div style={{
+              width: "100%",
+              margin: "0rem 0rem 2rem 0rem",
+              padding: 0,
+              display: "inline-flex",
+              flexFlow: "row",
+              alignItems: "center",
+              justifyContent: "center"
+            }}>
+              <TextField
+                forwardedRef={searchFieldRef}
+                variant="search"
+                name="showfilter"
+                placeholder="Search for a show"
+                style={{
+                  maxWidth: "480px",
+                  width: "100%"
+                }}
+                value={searchKeywords}
+                onChange={handleSearchShows}
+                onFocus={handleFocusSearch}
+              />
+            </div>
             <div className="card-list">
-              <NowWatchingCardGrid
-                title="Recently watched"
-                keyPrefix="current"
-                shows={getShows(true)}
-                setSelectedShow={setSelectedShow}
-                filter={recentFilter}
-                cornerActions={(
-                  <Dropdown
-                    options={[
-                      { value: "all", label: "All" },
-                      { value: "featured", label: "Featured only" }
-                    ]}
-                    selectedValue={recentFilter}
-                    setSelectedValue={setRecentFilter} />
-                )} />
-              <NowWatchingCardGrid
-                title="Viewing history"
-                keyPrefix="recent"
-                shows={getShows()}
-                setSelectedShow={setSelectedShow}
-                filter={historyFilter}
-                cornerActions={(
-                  <Dropdown
-                    options={[
-                      { value: "all", label: "All" },
-                      { value: "featured", label: "Featured only" }
-                    ]}
-                    selectedValue={historyFilter}
-                    setSelectedValue={setHistoryFilter} />
-                )} />
+              {
+                searchKeywords.length > 0
+                  ? (
+                    <NowWatchingCardGrid
+                      title="Search results"
+                      keyPrefix="search-result"
+                      shows={getShowsByIds(searchResults.map((s) => s.item.imdbID))}
+                      setSelectedShow={setSelectedShow}
+                    />
+                  )
+                  : (
+                    <>
+                      <NowWatchingCardGrid
+                        title="Recently watched"
+                        keyPrefix="current"
+                        shows={getShows(true)}
+                        setSelectedShow={setSelectedShow}
+                        filter={recentFilter}
+                        cornerActions={(
+                          <Dropdown
+                            options={[
+                              { value: "all", label: "All" },
+                              { value: "mustwatch", label: "Must Watch" }
+                            ]}
+                            selectedValue={recentFilter}
+                            setSelectedValue={setRecentFilter} />
+                        )}
+                      />
+                      <NowWatchingCardGrid
+                        title="Viewing history"
+                        keyPrefix="recent"
+                        shows={getShows()}
+                        setSelectedShow={setSelectedShow}
+                        filter={historyFilter}
+                        cornerActions={(
+                          <Dropdown
+                            options={[
+                              { value: "all", label: "All" },
+                              { value: "mustwatch", label: "Must Watch" }
+                            ]}
+                            selectedValue={historyFilter}
+                            setSelectedValue={setHistoryFilter} />
+                        )}
+                      />
+                    </>
+                  )
+              }
             </div>
             <section className="acknowledgements">
               <p>Data and posters are courtesy of <a href="https://www.imdb.com/" target="_blank" rel="noreferrer">IMDb</a> and <a href="https://www.omdbapi.com/" target="_blank" rel="noreferrer">OMDb</a></p>

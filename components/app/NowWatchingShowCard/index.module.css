@@ -14,10 +14,10 @@ a.now-watching-show-card:hover {
   cursor: pointer;
 }
 .now-watching-show-card:is(:hover, :focus) {
-  background: var(--bg-color-1);
+  background: var(--bg-color-5);
 }
 .now-watching-show-card:active {
-  background: var(--bg-color-2);
+  background: var(--bg-color-7);
 }
 
 .now-watching-show-card h3 {
