@@ -27,10 +27,15 @@
   font-weight: 500;
   font-family: var(--font-family-widget);
   letter-spacing: 0;
+  text-decoration: none;
   white-space: nowrap;
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
+}
+
+:is(a, a:hover, a:active) span.badge {
+  text-decoration: none;
 }
 
 .badge.plain {

@@ -1,5 +1,6 @@
 import React from "react";
 import Badge from "../../ui/Badge";
+import Link from "next/link";
 
 type TagListProps = {
   item: {
@@ -25,7 +26,7 @@ const TagList = ({ item }: TagListProps) => {
         fontWeight: "bold",
         fontSize: "0.9rem",
         textTransform: "uppercase"
-      }}><small>Tags: </small></span>{item?.tags?.map((tag) => <Badge key={`${item.slug}-tag-${tag}`}>{tag}</Badge>)}
+      }}><small><Link href="/tags">Tags</Link>: </small></span>{item?.tags?.map((tag) => <Link key={`${item.slug}-tag-${tag}`} href={`/tags?t=${encodeURIComponent(tag)}`}><Badge>{tag}</Badge></Link>)}
     </span>
   );
 };

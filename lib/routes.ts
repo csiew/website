@@ -31,6 +31,11 @@ const routes: PageRoute[] = [
     hideFromNavBar: true
   },
   {
+    title: "Tags",
+    path: "/tags",
+    hideFromNavBar: true
+  },
+  {
     title: "Feed",
     path: "/feed",
     hideFromNavBar: true
