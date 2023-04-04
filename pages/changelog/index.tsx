@@ -50,7 +50,7 @@ const ChangelogPage = ({ logs }: { logs: Changelog[] }) => {
                     <section key={changelog.version} id={changelog.version}>
                       <h3>{changelog.title}</h3>
                       <sub style={{ fontStyle: "italic" }}>{changelog.subtitle}</sub>
-                      <ReactMarkdown linkTarget="_blank">
+                      <ReactMarkdown>
                         {changelog.content!}
                       </ReactMarkdown>
                     </section>

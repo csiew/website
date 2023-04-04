@@ -7,7 +7,6 @@ import ReactMarkdown from "react-markdown";
 import config from "../config";
 import retitle from "../lib/retitle";
 import NavigationView from "../components/ui/NavigationView";
-import Badge from "../components/ui/Badge";
 import Button from "../components/ui/Button";
 import { changelogManifest } from "../manifests/changelog";
 
@@ -26,7 +25,7 @@ const Home = ({ content, lastUpdated }: { content: string, lastUpdated: number }
         content={(
           <article className="app-page pageHome">
             <h2>Clarence Siew</h2>
-            <ReactMarkdown linkTarget="_blank">
+            <ReactMarkdown>
               {content}
             </ReactMarkdown>
             <p>

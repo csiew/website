@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FocusEvent, KeyboardEvent, useEffect, useRef, useState } from "react";
+import React, { ChangeEvent, KeyboardEvent as ReactKeyboardEvent, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Fuse from "fuse.js";
@@ -39,7 +39,7 @@ const NavBar = ({ setShowSearchModal }: { setShowSearchModal: React.Dispatch<Rea
     setIsAtTop(rootEl?.scrollTop === 0);
   };
 
-  const handleSearchKeyDown = (ev: KeyboardEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleSearchKeyDown = (ev: ReactKeyboardEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     if (ev.key === "Escape") {
       clearSearch();
     }
@@ -68,6 +68,10 @@ const NavBar = ({ setShowSearchModal }: { setShowSearchModal: React.Dispatch<Rea
   };
 
   useEffect(() => {
+    if (searchResultsRef.current) positionSearchResults();
+  }, [handleSearch, searchBarRef.current, searchResultsRef.current]);
+
+  useEffect(() => {
     const rootEl = document.getElementById(config.rootElementId);
     rootEl?.addEventListener("scroll", handleScrollEvent);
     rootEl?.addEventListener("click", (ev: MouseEvent) => {
@@ -75,11 +79,13 @@ const NavBar = ({ setShowSearchModal }: { setShowSearchModal: React.Dispatch<Rea
         clearSearch();
       }
     });
+    window.addEventListener("keydown", (ev: KeyboardEvent) => {
+      if (ev.key === "/") {
+        ev.preventDefault();
+        setShowSearchModal(true);
+      }
+    });
   }, []);
-
-  useEffect(() => {
-    if (searchResultsRef.current) positionSearchResults();
-  }, [handleSearch, searchBarRef.current, searchResultsRef.current]);
 
   return (
     <>
@@ -119,7 +125,6 @@ const NavBar = ({ setShowSearchModal }: { setShowSearchModal: React.Dispatch<Rea
             defaultValue={searchKeywords}
             onChange={handleSearch}
             onKeyDown={handleSearchKeyDown}
-            autoFocus
           />
           {
             !!searchKeywords.length && (
