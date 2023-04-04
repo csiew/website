@@ -165,6 +165,10 @@ nav.overlay-menu li :is(a, a.active) {
   display: none;
 }
 
+#mobile-search-btn {
+  display: none;
+}
+
 @media (max-width: 1023px) {
   header h1 {
     display: none;
@@ -191,6 +195,14 @@ nav.overlay-menu li :is(a, a.active) {
     color: var(--fg-color);
   }
   #overlay-menu-btn {
+    display: inline-flex;
+  }
+  #desktop-search-btn,
+  #desktop-search-bar,
+  #desktop-search-results {
+    display: none;
+  }
+  #mobile-search-btn {
     display: inline-flex;
   }
 }

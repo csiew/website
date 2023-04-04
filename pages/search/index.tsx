@@ -1,13 +1,12 @@
 import React, { ChangeEvent, useEffect, useState } from "react";
 import Head from "next/head";
-import Link from "next/link";
 import Fuse from "fuse.js";
 import config from "../../config";
 import retitle from "../../lib/retitle";
 import NavigationView from "../../components/ui/NavigationView";
 import TextField from "../../components/ui/TextField";
-import TagList from "../../components/app/TagList";
-import { SearchData, searchDataManifest } from "../../lib/manifest";
+import { searchDataManifest } from "../../lib/manifest";
+import SearchResults from "../../components/app/Search/SearchResults";
 
 const SearchPage = ({ setShowSearchModal }: { setShowSearchModal?: React.Dispatch<React.SetStateAction<boolean>> }) => {
   const fuse = new Fuse(
@@ -81,46 +80,7 @@ const SearchPage = ({ setShowSearchModal }: { setShowSearchModal?: React.Dispatc
             {
               !!searchResults.length && <hr />
             }
-            <div id="search-results" className="post-list" style={{ marginTop: "1rem" }}>
-              {
-                searchResults?.map((result: Fuse.FuseResult<SearchData>) => (
-                  <div key={result.item.url} className="post-list-entry">
-                    <h3>
-                      <Link href={result.item.url}>{result.item.title}</Link>
-                      <span style={{
-                        marginLeft: "0.5rem",
-                        color: "var(--fg-color-9)",
-                        fontFamily: "var(--font-family-header)",
-                        fontWeight: "900",
-                        fontStyle: "italic",
-                        fontSize: "0.9rem",
-                        textTransform: "uppercase",
-                        userSelect: "none"
-                      }}>
-                        {result.item.type}
-                      </span>
-                    </h3>
-                    {
-                      result.item.subtitle && (
-                        <span>{result.item.subtitle}</span>
-                      )
-                    }
-                    {
-                      result.item.tags && (
-                        <TagList item={result.item} />
-                      )
-                    }
-                    {
-                      result.item.publishedAt && (
-                        <span className="timestamp">
-                          {`${new Date(result.item.publishedAt).toDateString()}`}
-                        </span>
-                      )
-                    }
-                  </div>
-                ))
-              }
-            </div>
+            <SearchResults results={searchResults} />
           </article>
         }
       />

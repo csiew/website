@@ -1,11 +1,12 @@
 import React from "react";
 import { TextFieldProps } from "./@types";
 
-const TextField = ({ variant, name, className, classList, style, placeholder, defaultValue, value, required, autoFocus, disabled, forwardedRef, onClick, onChange, onFocus }: TextFieldProps) => {
+const TextField = ({ id, variant, name, className, classList, style, placeholder, defaultValue, value, required, autoFocus, disabled, forwardedRef, onClick, onChange, onFocus, onBlur, onKeyDown }: TextFieldProps) => {
   switch (variant) {
   case "multiline":
     return (
       <textarea
+        id={id}
         name={name}
         placeholder={placeholder}
         defaultValue={defaultValue}
@@ -19,12 +20,15 @@ const TextField = ({ variant, name, className, classList, style, placeholder, de
         onClick={onClick}
         onChange={onChange}
         onFocus={onFocus}
+        onBlur={onBlur}
+        onKeyDown={onKeyDown}
       >
       </textarea>
     );
   default:
     return (
       <input
+        id={id}
         type={variant}
         name={name}
         placeholder={placeholder}
@@ -38,6 +42,8 @@ const TextField = ({ variant, name, className, classList, style, placeholder, de
         onClick={onClick}
         onChange={onChange}
         onFocus={onFocus}
+        onBlur={onBlur}
+        onKeyDown={onKeyDown}
       >
       </input>
     );
