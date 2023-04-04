@@ -146,9 +146,6 @@ export const projectManifest = new Map<string, Project>([
         start: "2020",
         end: "2020"
       },
-      links: {
-        repository: "https://github.com/csiew/Podzol"
-      },
       stack: [
         TechStack.JavaScript,
         TechStack.HTML
@@ -170,6 +167,9 @@ export const projectManifest = new Map<string, Project>([
       duration: {
         start: "2020",
         end: "Present"
+      },
+      links: {
+        repository: "https://github.com/csiew/Podzol"
       },
       stack: [
         TechStack.Python
