@@ -1,17 +1,20 @@
-import React from "react";
+import React, { RefObject } from "react";
 import { ComposableComponentProps } from "../../../lib/@types";
 
 type PaperProps = ComposableComponentProps & {
-  variant?: "plain" | "link-list"
+  variant?: "plain" | "link-list",
+  forwardedRef?: RefObject<any>;
 };
 
 const Paper = (
-  { variant = "plain", children, classList, className, disabled, style }: PaperProps
+  { variant = "plain", id, children, classList, className, disabled, style, forwardedRef }: PaperProps
 ) => {
   return (
     <div
+      id={id}
       className={["paper", variant, disabled ? "disabled" : undefined, className, ...classList || []].join(" ")}
       style={style}
+      ref={forwardedRef}
     >
       {children}
     </div>

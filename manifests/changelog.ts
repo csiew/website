@@ -37,4 +37,12 @@ export const changelogManifest = new Map<string, Changelog>([
       filePath: "6.11.3.md",
     }
   ],
+  [
+    "6.11.4",
+    {
+      title: "Version 6.11.4",
+      subtitle: "Floating search modal for desktop",
+      filePath: "6.11.4.md",
+    }
+  ],
 ]);
