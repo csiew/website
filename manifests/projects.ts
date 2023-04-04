@@ -163,10 +163,10 @@ export const projectManifest = new Map<string, Project>([
     {
       title: "Podzol",
       subtitle: "Podcasts in your terminal",
-      status: "hiatus",
+      status: "active",
       duration: {
         start: "2020",
-        end: "2020"
+        end: "Present"
       },
       stack: [
         TechStack.Python
