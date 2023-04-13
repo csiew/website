@@ -10,7 +10,7 @@ export default {
     text: "Clarence Siew",
     divider: "|"
   },
-  version: "6.12.0",
+  version: "6.12.1",
   host: {
     name: "clarencesiew.com",
     baseUrl: "https://clarencesiew.com"

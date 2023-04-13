@@ -21,7 +21,7 @@ const ShowDetailPage = ({ show, isInModal }: { show: Show, isInModal?: boolean }
     if (!isInModal) {
       document.getElementById(config.rootElementId)?.scrollTo({ top: 0 });
     } else {
-      router.push(`/now-watching/show/${show.imdbId}`, "/now-watching", { shallow: true });
+      router.push("/now-watching", `/now-watching/show/${show.imdbId}`, { shallow: true });
     }
   }, []);
   

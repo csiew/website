@@ -16,6 +16,7 @@ import Paper from "../../components/ui/Paper";
 import Button from "../../components/ui/Button";
 import TextField from "../../components/ui/TextField";
 import Form from "../../components/ui/Form";
+import { useRouter } from "next/router";
 
 const showsData = rawShowsData as ShowsData;
 const showsMetadata = rawShowsMetadata as Array<Partial<OmdbResponse>>;
@@ -55,6 +56,7 @@ const getShow = (id: string) => {
 };
 
 const NowWatching = () => {
+  const router = useRouter();
   const fuse = new Fuse(
     showsMetadata,
     {
@@ -125,6 +127,7 @@ const NowWatching = () => {
   useEffect(() => {
     if (showModal === false && selectedShow !== null) {
       setSelectedShow(null);
+      router.push("/now-watching",undefined, { shallow: true });
     }
   }, [showModal]);
 
