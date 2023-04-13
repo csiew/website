@@ -1,15 +1,24 @@
-.pageHome {
+.home-page {
   display: inline-flex;
   flex-flow: column;
   align-items: flex-start;
   justify-content: flex-start;
 }
 
-.pageHome h2 {
-  font-size: 10vw;
+article.home-page > h2 {
+  width: 100% !important;
+  margin-inline: calc(33% - 33vw) !important;
+  display: inline-flex;
+  flex-flow: column;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  text-align: center;
+  font-size: 10vw !important;
 }
 
-.pageHome .profile {
+.home-page .profile {
   width: 128px;
   height: 128px;
   margin: -2rem 2rem 0rem 0rem;
@@ -19,11 +28,11 @@
 }
 
 @media (max-width: 768px) {
-  .pageHome {
+  .home-page {
     padding: 0rem;
   }
 
-  .pageHome .profile {
+  .home-page .profile {
     margin: 0rem auto 2rem auto;
     float: none;
     display: block;

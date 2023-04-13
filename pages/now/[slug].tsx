@@ -4,6 +4,7 @@ import path from "path";
 import Head from "next/head";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
 import config from "../../config";
 import retitle from "../../lib/retitle";
 import { Post } from "../../manifests/@types";
@@ -35,15 +36,17 @@ const NowPostPage = ({ post }: { post: Post }) => {
         ]} />
       <NavigationView
         content={(
-          <article className="app-page">
-            <p className="now-entry-footer">
-              <span>
-                {`${new Date(post.publishedAt).toDateString()}`}
-              </span>
-            </p>
-            <ReactMarkdown linkTarget="_blank">
-              {post.content!}
-            </ReactMarkdown>
+          <article className="content-page now-content-page">
+            <div className="header">
+              <h2>{post.title}</h2>
+              <div className="subtitle">{post.subtitle}</div>
+              <div className="timestamp">{new Date(post.publishedAt).toDateString()}</div>
+            </div>
+            <div className={["content", post.quotesAsNotes ? "blockquotes-as-notes" : ""].join(" ")}>
+              <ReactMarkdown linkTarget="_blank" rehypePlugins={[rehypeRaw]}>
+                {post.content!}
+              </ReactMarkdown>
+            </div>
             <TagList item={post} />
             <hr />
             <p style={{ width: "100%", textAlign: "center" }}>

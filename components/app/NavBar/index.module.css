@@ -83,6 +83,7 @@ nav ul {
   align-items: center;
   justify-content: flex-end;
   gap: 0;
+  font-size: 90%;
 }
 nav li {
   height: 100%;
@@ -111,6 +112,7 @@ nav li a {
   border-color: transparent;
   font-weight: bold;
   text-decoration: none;
+  text-transform: uppercase;
   transition: var(--transition);
 }
 nav li a:hover {
@@ -167,6 +169,14 @@ nav.overlay-menu li :is(a, a.active) {
 
 #mobile-search-btn {
   display: none;
+}
+
+#desktop-search-bar {
+  background: none;
+  border-color: transparent;
+}
+#desktop-search-bar:focus {
+  border-color: var(--primary-color);
 }
 
 @media (max-width: 1023px) {

@@ -23,7 +23,7 @@ const Home = ({ content, lastUpdated }: { content: string, lastUpdated: number }
       </Head>
       <NavigationView
         content={(
-          <article className="app-page pageHome">
+          <article className="app-page home-page">
             <h2>Clarence Siew</h2>
             <ReactMarkdown>
               {content}

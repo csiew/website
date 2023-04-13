@@ -19,6 +19,5 @@
   outline: none;
 }
 :is(input[type=text], input[type=email], input[type=password], input[type=password], input[type=search], textarea)::placeholder {
-  color: var(--fg-color-9);
-  font-style: italic;
+  color: var(--fg-color-7);
 }

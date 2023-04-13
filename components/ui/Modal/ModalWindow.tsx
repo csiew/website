@@ -16,22 +16,28 @@ const ModalWindow = ({ children, className, classList, style, disabled, title, c
   }, []);
 
   return (
-    <div
-      className={["modal-window", disabled ? "disabled" : undefined, className, ...classList || []].join(" ")}
-      style={style}
-    >
-      <div className="modal-window-header">
-        <h2>
-          {title}
-        </h2>
-        <Button onClick={closeWindowCallback} alt="Close" iconOnly>
-          <MdClose />
-        </Button>
+    <>
+      <Button className="modal-close-btn" onClick={closeWindowCallback} alt="Close" iconOnly>
+        <MdClose />
+      </Button>
+      <div
+        className={["modal-window", disabled ? "disabled" : undefined, className, ...classList || []].join(" ")}
+        style={style}
+      >
+        {
+          !!title && (
+            <div className="modal-window-header">
+              <h2>
+                {title}
+              </h2>
+            </div>
+          )
+        }
+        <div className="modal-window-body">
+          {children}
+        </div>
       </div>
-      <div className="modal-window-body">
-        {children}
-      </div>
-    </div>
+    </>
   );
 };
 

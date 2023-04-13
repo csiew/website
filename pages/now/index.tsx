@@ -2,12 +2,13 @@ import React, { useEffect } from "react";
 import fs from "fs";
 import path from "path";
 import ReactMarkdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
 import Head from "next/head";
 import Link from "next/link";
 import NavigationView from "../../components/ui/NavigationView";
 import config from "../../config";
 import retitle from "../../lib/retitle";
-import { nowEditionManifest, nowPostManifest } from "../../manifests/now";
+import { nowPostManifest } from "../../manifests/now";
 import { Post } from "../../manifests/@types";
 import TagList from "../../components/app/TagList";
 
@@ -35,8 +36,16 @@ const Now = ({ posts }: { posts: Post[] }) => {
             <hr />
             {
               posts.map((post) => (
-                <div key={post.slug}>
-                  <ReactMarkdown linkTarget="_blank">
+                <div key={post.slug} className="now-list-post">
+                  <div className="header">
+                    <h3>
+                      <Link href={path.join("now", post.slug!)}>
+                        {post.title}
+                      </Link>
+                    </h3>
+                    <div className="subtitle">{post.subtitle}</div>
+                  </div>
+                  <ReactMarkdown linkTarget="_blank" rehypePlugins={[rehypeRaw]}>
                     {post.content!}
                   </ReactMarkdown>
                   <TagList item={post} />
@@ -63,23 +72,20 @@ const Now = ({ posts }: { posts: Post[] }) => {
 };
 
 export const getStaticProps = async (context: any) => {
-  const currentEdition = 1;
-  const edition = nowEditionManifest.get(currentEdition);
-
-  let posts: Post[] = [];
-
-  if (edition) {
-    posts = [...nowPostManifest.entries()]
-      .map(([slug, definition]) => {
-        const content = fs.readFileSync(path.join(process.cwd(), "content", "now", definition.filePath), { encoding: "utf8" });
-        return {
-          ...definition,
-          publishedAt: (definition?.publishedAt as Date).getTime(),
-          slug,
-          content
-        };
-      });
-  }
+  const posts: Post[] = [...nowPostManifest.entries()]
+    .sort(([_a, a], [_b, b]) => {
+      return (new Date(a.publishedAt).getTime()) < (new Date(b.publishedAt).getTime()) ? 1 : -1;
+    })
+    .slice(0, 3)
+    .map(([slug, definition]) => {
+      const content = fs.readFileSync(path.join(process.cwd(), "content", "now", definition.filePath), { encoding: "utf8" });
+      return {
+        ...definition,
+        publishedAt: (definition?.publishedAt as Date).getTime(),
+        slug,
+        content
+      };
+    });
 
   return {
     props: { posts },

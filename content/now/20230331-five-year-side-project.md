@@ -1,5 +1,3 @@
-### "Oh, I'm working on a side project", I exclaim for the millionth time.
-
 For the last five-or-so years I've been telling people I've been working on some side projects. Well, it's literally been one(-ish) project this entire time. For five years.
 
 Honestly I conceptualised a very, very vague version of what I'm working on now back during my internship at National Australia Bank in 2018. It's an idea that's evolved through the years:

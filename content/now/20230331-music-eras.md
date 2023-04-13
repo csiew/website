@@ -1,5 +1,3 @@
-### Eras are out, montages and vignettes are in.
-
 Spotify has somewhat broken my ability to have a _favourite_ artist. I used to have phases where one or two particular bands or singers I really enjoyed listening to on repeat defined my music tastes.
 
 Prior to embracing music streaming (and curated recommendations) as my default way of listening to music, I had my Beatles, Coldplay, Radiohead, and The National eras. And by eras, I mean I only ever wanted to listen to music of the _exact_ same style. That usually just meant sticking to listening to that same artist's entire discography front-to-back, back-to-front.

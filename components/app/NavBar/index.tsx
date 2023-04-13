@@ -121,7 +121,6 @@ const NavBar = ({ setShowSearchModal }: { setShowSearchModal: React.Dispatch<Rea
             name="search-keywords"
             placeholder="Search"
             forwardedRef={searchBarRef}
-            style={{ borderRadius: "32px" }}
             defaultValue={searchKeywords}
             onChange={handleSearch}
             onKeyDown={handleSearchKeyDown}

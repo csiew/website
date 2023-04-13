@@ -48,3 +48,24 @@
   color: var(--fg-color-1);
   font-weight: normal;
 }
+
+.breadcrumbs-back-btn {
+  display: none !important;
+}
+
+@media (max-width: 767px) {
+  .breadcrumbs-back-btn {
+    display: inline-flex !important;
+    border-radius: 100% !important;
+  }
+
+  .breadcrumbs {
+    padding: 1rem;
+    color: var(--fg-color);
+    background: none;
+  }
+
+  .breadcrumbs ul {
+    display: none;
+  }
+}
