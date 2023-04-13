@@ -53,4 +53,12 @@ export const changelogManifest = new Map<string, Changelog>([
       filePath: "6.12.0.md",
     }
   ],
+  [
+    "6.12.1",
+    {
+      title: "Version 6.12.1",
+      subtitle: "Fix static page rendering and shallow routing issues",
+      filePath: "6.12.1.md",
+    }
+  ],
 ]);
