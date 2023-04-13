@@ -45,4 +45,12 @@ export const changelogManifest = new Map<string, Changelog>([
       filePath: "6.11.4.md",
     }
   ],
+  [
+    "6.12.0",
+    {
+      title: "Version 6.12.0",
+      subtitle: "Tweaks to search and Now page",
+      filePath: "6.12.0.md",
+    }
+  ],
 ]);

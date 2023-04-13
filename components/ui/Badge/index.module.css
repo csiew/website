@@ -18,12 +18,12 @@
 .badge {
   width: min-content;
   margin: 0;
-  padding: 0.06125rem 0.325rem;
+  padding: 0.01rem 0.325rem;
   color: var(--badge-fg-color);
   background: var(--badge-bg-color);
   border: 1px solid var(--badge-border-color);
   border-radius: var(--border-radius);
-  font-size: 70%;
+  font-size: 80%;
   font-weight: 500;
   font-family: var(--font-family-widget);
   letter-spacing: 0;
@@ -34,7 +34,8 @@
   -moz-user-select: none;
 }
 
-:is(a, a:hover, a:active) span.badge {
+.badge :is(a, a:hover, a:active) {
+  color: var(--badge-fg-color);
   text-decoration: none;
 }
 

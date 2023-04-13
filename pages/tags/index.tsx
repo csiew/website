@@ -6,6 +6,7 @@ import retitle from "../../lib/retitle";
 import NavigationView from "../../components/ui/NavigationView";
 import { SearchData, getTags } from "../../lib/manifest";
 import { useRouter } from "next/router";
+import queryHighlight from "../../lib/query-highlight";
 
 const TagsPage = () => {
   const router = useRouter();
@@ -16,12 +17,7 @@ const TagsPage = () => {
     const { t } = router.query;
     if (t?.length && tags?.size) {
       const tagEl = document.getElementById(t as string);
-      if (tagEl) {
-        const top = (tagEl?.getBoundingClientRect().top ?? 0) - 96;
-        tagEl.style.background = "lightyellow";
-        tagEl.style.border = "3px solid var(--primary-color)";
-        document.getElementById(config.rootElementId)?.scrollTo({ top });
-      }
+      if (tagEl) queryHighlight(tagEl);
     }
   };
 

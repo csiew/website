@@ -8,6 +8,7 @@ import config from "../../config";
 import retitle from "../../lib/retitle";
 import NavigationView from "../../components/ui/NavigationView";
 import { Changelog, changelogManifest } from "../../manifests/changelog";
+import queryHighlight from "../../lib/query-highlight";
 
 const ChangelogPage = ({ logs }: { logs: Changelog[] }) => {
   const router = useRouter();
@@ -16,12 +17,7 @@ const ChangelogPage = ({ logs }: { logs: Changelog[] }) => {
     const { v } = router.query;
     if (v?.length) {
       const vEl = document.getElementById(v as string);
-      if (vEl) {
-        const top = (vEl?.getBoundingClientRect().top ?? 0) - 96;
-        vEl.style.background = "lightyellow";
-        vEl.style.border = "3px solid var(--primary-color)";
-        document.getElementById(config.rootElementId)?.scrollTo({ top });
-      }
+      if (vEl) queryHighlight(vEl);
     }
   };
 
@@ -50,7 +46,7 @@ const ChangelogPage = ({ logs }: { logs: Changelog[] }) => {
                     <section key={changelog.version} id={changelog.version}>
                       <h3>{changelog.title}</h3>
                       <sub style={{ fontStyle: "italic" }}>{changelog.subtitle}</sub>
-                      <ReactMarkdown linkTarget="_blank">
+                      <ReactMarkdown>
                         {changelog.content!}
                       </ReactMarkdown>
                     </section>

@@ -1522,5 +1522,60 @@
     "Type": "series",
     "totalSeasons": "1",
     "Response": "True"
+  },
+  {
+    "id": "tt13821126",
+    "Title": "Extrapolations",
+    "Year": "2023–",
+    "Rated": "TV-MA",
+    "Released": "17 Mar 2023",
+    "Runtime": "N/A",
+    "Genre": "Drama, Mystery",
+    "Director": "N/A",
+    "Writer": "Scott Z. Burns",
+    "Actors": "Simon Deonarian, Diane Lane, Kit Harington",
+    "Plot": "Unanticipated stories of how the upcoming changes to our planet will affect love, faith, work and family on a personal and human scale.",
+    "Language": "English",
+    "Country": "United States",
+    "Awards": "N/A",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BODNlZTJjODQtYmUwNS00ZDAyLWE0YjktNWQ5Zjg0NDE3YjAxXkEyXkFqcGdeQXVyMTExNTIxMzQ4._V1_SX300.jpg",
+    "Ratings": [],
+    "Metascore": "N/A",
+    "imdbRating": "N/A",
+    "imdbVotes": "2,111",
+    "imdbID": "tt13821126",
+    "Type": "series",
+    "totalSeasons": "1",
+    "Response": "True"
+  },
+  {
+    "id": "tt21344706",
+    "Title": "The Glory",
+    "Year": "2022–",
+    "Rated": "TV-MA",
+    "Released": "30 Dec 2022",
+    "Runtime": "N/A",
+    "Genre": "Drama, Mystery, Thriller",
+    "Director": "N/A",
+    "Writer": "N/A",
+    "Actors": "Song Hye-Kyo, Lee Do-Hyun, Ji-Yeon Lim",
+    "Plot": "A woman lives for absolute revenge against her childhood bullies who destroyed her life.",
+    "Language": "Korean",
+    "Country": "South Korea",
+    "Awards": "N/A",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BZjkzOTJkNWEtOThmMC00MjQ3LWFhODQtMDhjNjJkMGE5OTcxXkEyXkFqcGdeQXVyNDYzNDg2MTM@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.1/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "8.1",
+    "imdbVotes": "12,446",
+    "imdbID": "tt21344706",
+    "Type": "series",
+    "totalSeasons": "1",
+    "Response": "True"
   }
 ]

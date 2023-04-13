@@ -64,7 +64,7 @@ const ProjectPage = ({ project }: { project: Project }) => {
                   width: "100%",
                   margin: "0.5rem 0rem 1rem 0rem",
                   display: "inline-flex",
-                  flexFlow: "row",
+                  flexFlow: "row wrap",
                   alignItems: "center",
                   justifyContent: "center",
                   gap: "0.5rem"

@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import config from "../../../config";
 import rawShowsData from "../shows.json";
 import rawShowsMetadata from "../showsMetadata.json";
@@ -14,9 +15,13 @@ const showsData = rawShowsData as ShowsData;
 const showsMetadata = rawShowsMetadata as Array<Partial<OmdbResponse>>;
 
 const ShowDetailPage = ({ show, isInModal }: { show: Show, isInModal?: boolean }) => {
+  const router = useRouter();
+
   useEffect(() => {
     if (!isInModal) {
       document.getElementById(config.rootElementId)?.scrollTo({ top: 0 });
+    } else {
+      router.push(`/now-watching/show/${show.imdbId}`, "/now-watching", { shallow: true });
     }
   }, []);
   
@@ -71,6 +76,14 @@ const ShowDetailPage = ({ show, isInModal }: { show: Show, isInModal?: boolean }
                   <h3>Plot</h3>
                   <p>{show.metadata?.Plot}</p>
                 </Paper>
+                <Button
+                  variant="link"
+                  url={`https://imdb.com/title/${show.imdbId}`}
+                  newTab
+                  style={{ marginBlock: "1rem 2rem", alignSelf: "center" }}
+                >
+                  Visit IMDb page
+                </Button>
               </div>
               <img src={show.metadata?.Poster} height="320px" alt={show.name} />
             </section>
