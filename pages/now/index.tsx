@@ -36,7 +36,7 @@ const Now = ({ posts }: { posts: Post[] }) => {
             <hr />
             {
               posts.map((post) => (
-                <div key={post.slug} className="now-list-post">
+                <div key={post.slug} className={["now-list-post", post.quotesAsNotes ? "blockquotes-as-notes" : ""].join(" ")}>
                   <div className="header">
                     <h3>
                       <Link href={path.join("now", post.slug!)}>

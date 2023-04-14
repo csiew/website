@@ -61,4 +61,12 @@ export const changelogManifest = new Map<string, Changelog>([
       filePath: "6.12.1.md",
     }
   ],
+  [
+    "6.12.2",
+    {
+      title: "Version 6.12.2",
+      subtitle: "Fix Note block appearing as Quote block in Now page",
+      filePath: "6.12.2.md",
+    }
+  ],
 ]);
