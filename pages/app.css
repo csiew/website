@@ -164,7 +164,7 @@ article.app-page h2 {
   padding: 0rem 0rem 0.25rem 0rem;
   align-self: center;
   color: var(--fg-color);
-  font-size: 5vmax;
+  font-size: 3vmax;
   font-weight: 900;
   font-style: italic;
   letter-spacing: 1.5vmin;
@@ -179,12 +179,12 @@ article.app-page h2 {
 @keyframes app-page-title-transition-in {
   0% {
     color: var(--primary-color);
-    font-weight: 100;
-    text-shadow: var(--header-text-shadow-small);
+    font-weight: 500;
+    text-shadow: none;
     opacity: 0;
   }
   75% {
-    text-shadow: none;
+    text-shadow: var(--header-text-shadow-small);
     opacity: 1;
   }
   100% {
@@ -229,7 +229,7 @@ article.content-page > .header > h2 {
   display: inline-block;
   color: var(--fg-color);
   border: none;
-  font-size: 10vw;
+  font-size: 8vw;
   font-weight: 900;
   font-style: italic;
   letter-spacing: 2vmin;
