@@ -1,18 +1,18 @@
 :root {
-  --badge-fg-color: #555555;
-  --badge-fg-color-warning: darkgoldenrod;
-  --badge-fg-color-error: firebrick;
-  --badge-fg-color-success: seagreen;
+  --badge-fg-color: var(--fg-color);
+  --badge-fg-color-warning: lightyellow;
+  --badge-fg-color-error: mistyrose;
+  --badge-fg-color-success: mintcream;
 
-  --badge-bg-color: #eeeeee;
-  --badge-bg-color-warning: lightyellow;
-  --badge-bg-color-error: mistyrose;
-  --badge-bg-color-success: mintcream;
+  --badge-bg-color: var(--bg-color-1);
+  --badge-bg-color-warning: darkgoldenrod;
+  --badge-bg-color-error: firebrick;
+  --badge-bg-color-success: darkgreen;
 
-  --badge-border-color: #555555;
-  --badge-border-color-warning: darkgoldenrod;
-  --badge-border-color-error: firebrick;
-  --badge-border-color-success: seagreen;
+  --badge-border-color: var(--border-color);
+  --badge-border-color-warning: gold;
+  --badge-border-color-error: crimson;
+  --badge-border-color-success: mediumseagreen;
 }
 
 .badge {
@@ -28,6 +28,7 @@
   font-family: var(--font-family-widget);
   letter-spacing: 0;
   text-decoration: none;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.75);
   white-space: nowrap;
   user-select: none;
   -webkit-user-select: none;

@@ -7,6 +7,7 @@ export const determineStatusBadgeVariant = (status: string): BadgeVariant => {
   case "hiatus":
     return "warning";
   case "inactive":
+    return "error";
   default:
     return "plain";
   }
