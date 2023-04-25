@@ -187,7 +187,7 @@ export const projectManifest = new Map<string, Project>([
     {
       title: "BiscuitWM",
       subtitle: "Experimental window manager based on the Python version of TinyWM",
-      status: "inactive",
+      status: "hiatus",
       duration: {
         start: "2020",
         end: "2021"
@@ -246,7 +246,7 @@ export const projectManifest = new Map<string, Project>([
     {
       title: "Cast",
       subtitle: "Podcast web app",
-      status: "inactive",
+      status: "hiatus",
       duration: {
         start: "2020",
         end: "2021"

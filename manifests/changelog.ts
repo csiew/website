@@ -77,4 +77,12 @@ export const changelogManifest = new Map<string, Changelog>([
       filePath: "6.12.3.md",
     }
   ],
+  [
+    "6.13.0",
+    {
+      title: "Version 6.13.0",
+      subtitle: "Redesign and deprecate Now Watching",
+      filePath: "6.13.0.md",
+    }
+  ],
 ]);

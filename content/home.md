@@ -1,4 +1,4 @@
-I'm a full-stack software engineer based in Melbourne. I love reading about history, listening to rock music (I curate annual zeitgeist [playlists](/playlists)), [watching TV shows](/now-watching), and the occassional writing of lore for fictional game worlds.
+I'm a full-stack software engineer based in Melbourne. I love reading about history, listening to rock music (I curate annual zeitgeist [playlists](/playlists)) and the occassional writing of lore for fictional game worlds.
 
 Coding isn't just a job for me, it's been a passion of mine since I was 9 years old. Check out a selection of my [personal projects](/projects).
 
