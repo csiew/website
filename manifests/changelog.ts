@@ -85,4 +85,12 @@ export const changelogManifest = new Map<string, Changelog>([
       filePath: "6.13.0.md",
     }
   ],
+  [
+    "6.14.0",
+    {
+      title: "Version 6.14.0",
+      subtitle: "Invert colour scheme, update navbar and back-to-top",
+      filePath: "6.14.0.md",
+    }
+  ],
 ]);

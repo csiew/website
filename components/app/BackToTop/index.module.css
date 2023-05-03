@@ -1,6 +1,6 @@
 .backToTopFloat {
   width: min-content;
-  margin-inline: auto;
+  margin: 1rem auto;
   padding: 0;
   display: inline-flex;
   flex-flow: column;
@@ -13,26 +13,25 @@
 }
 .backToTopFloat :is(button, .button, input[type=submit], input[type=reset]) {
   margin: 0;
-  padding: 1rem 1.5rem;
+  padding: 0.5rem 1.5rem;
   display: inline-flex;
   flex-flow: row;
   align-items: center;
   justify-content: center;
   color: var(--bg-color);
-  background: var(--primary-color);
-  border-width: 1px 1px 0 1px;
-  border-color: var(--primary-color-3);
-  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid var(--fg-color);
+  border-radius: 64px;
+  box-shadow: var(--preset-shadow-component);
+  backdrop-filter: blur(6px);
   animation: back-to-float-transition-in 0.25s linear;
   transition: var(--transition);
 }
 .backToTopFloat :is(button, .button, input[type=submit], input[type=reset]):hover {
-  padding: 1rem 1.5rem 2rem 1.5rem;
-  box-shadow: var(--preset-shadow-widget);
+  background: var(--fg-color);
   transition: var(--transition);
 }
 .backToTopFloat :is(button, .button, input[type=submit], input[type=reset]):active {
-  padding: 1rem 1.5rem 0.8rem 1.5rem;
   box-shadow: none;
   transition: var(--transition);
 }
@@ -42,15 +41,6 @@
   margin: 0;
   padding: 0;
   transform: none;
-  transition: var(--transition);
-}
-.backToTopFloat :is(button, .button, input[type=submit], input[type=reset]):hover svg {
-  transform: scale(1.5);
-  transition: var(--transition);
-}
-.backToTopFloat :is(button, .button, input[type=submit], input[type=reset]):active svg {
-  transform: scaleY(0.9);
-  transition: var(--transition);
 }
 
 @keyframes back-to-float-transition-in {
