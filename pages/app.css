@@ -49,7 +49,7 @@ html, body, #__next {
 html {
   color-scheme: light;
   color: var(--fg-color);
-  background: var(--bg-color);
+  background: var(--bg-color-1);
   font-family: var(--font-family-base);
   font-size: 1.1rem;
   font-weight: 400;
@@ -327,7 +327,7 @@ select:is(:disabled, .disabled) {
   margin: 1rem 0rem;
   padding: 1rem;
   color: var(--fg-color-3);
-  background: var(--bg-color-1);
+  background: var(--bg-color-2);
   border-left: 5px solid var(--primary-color);
   font-family: var(--font-family-quote);
 }

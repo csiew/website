@@ -1,9 +1,9 @@
 :root {
-  --navbar-header-bg: var(--bg-color);
+  --navbar-header-bg: rgba(255, 255, 255, 0.8);
   --navbar-header-fg: var(--fg-color);
 
   --navbar-nav-bg: none;
-  --navbar-nav-bg-hover: var(--bg-color);
+  --navbar-nav-bg-hover: var(--bg-color-1);
   --navbar-nav-bg-active: var(--primary-color);
   --navbar-nav-fg: var(--fg-color-7);
   --navbar-nav-fg-hover: var(--fg-color);
@@ -11,11 +11,13 @@
 }
 
 header {
+  max-width: 1024px;
   width: 100%;
-  margin: 0 auto;
-  top: 0;
-  left: 0;
-  padding: 0rem 1rem;
+  margin: 1rem auto;
+  top: 1rem;
+  left: 1rem;
+  right: 1rem;
+  padding: 0rem 0.5rem;
   z-index: 100;
   position: sticky;
   display: inline-flex;
@@ -24,37 +26,20 @@ header {
   justify-content: space-between;
   color: var(--navbar-header-fg);
   background: var(--navbar-header-bg);
-  box-shadow: none;
-  border: 1px solid transparent;
-  transition: var(--transition);
-}
-
-header.with-shadow {
-  max-width: 1024px;
-  width: 100%;
-  margin: 1rem;
-  top: 1rem;
-  left: 1rem;
-  right: 1rem;
-  padding: 0rem 0.5rem;
-  align-self: center;
-  background: rgba(0, 0, 0, 0.5);
-  border-color: var(--border-color);
+  border: 1px solid var(--border-color);
   border-radius: 64px;
-  backdrop-filter: blur(8px);
-  transition: var(--transition);
+  box-shadow: var(--preset-shadow-component);
+  backdrop-filter: blur(6px);
 }
 
 @media (max-width: 1023px) {
-  header.with-shadow {
+  header {
     max-width: 720px;
-    background: rgba(0, 0, 0, 0.5);
   }
 }
 @media (max-width: 767px) {
-  header.with-shadow {
+  header {
     max-width: 90%;
-    background: rgba(0, 0, 0, 0.5);
   }
 }
 
@@ -181,10 +166,22 @@ nav.overlay-menu li :is(a, a.active) {
   text-align: right;
 }
 
+:is(#overlay-menu-btn, #mobile-search-btn) {
+  color: var(--navbar-nav-fg);
+  background: var(--navbar-nav-bg);
+}
+:is(#overlay-menu-btn, #mobile-search-btn):hover {
+  color: var(--navbar-nav-fg-hover);
+  background: var(--navbar-nav-bg-hover);
+}
+:is(#overlay-menu-btn, #mobile-search-btn):active {
+  color: var(--navbar-nav-fg-active);
+  background: var(--navbar-nav-bg-active);
+}
+
 #overlay-menu-btn {
   display: none;
 }
-
 #mobile-search-btn {
   display: inline-flex;
 }
@@ -216,11 +213,5 @@ nav.overlay-menu li :is(a, a.active) {
   }
   #overlay-menu-btn {
     display: inline-flex;
-  }
-}
-@media (max-width: 767px) {
-  header {
-    width: 100%;
-    border-radius: 0;
   }
 }

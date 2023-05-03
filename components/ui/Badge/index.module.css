@@ -4,7 +4,7 @@
   --badge-fg-color-error: mistyrose;
   --badge-fg-color-success: mintcream;
 
-  --badge-bg-color: var(--bg-color-1);
+  --badge-bg-color: var(--bg-color-3);
   --badge-bg-color-warning: darkgoldenrod;
   --badge-bg-color-error: firebrick;
   --badge-bg-color-success: darkgreen;
@@ -28,7 +28,6 @@
   font-family: var(--font-family-widget);
   letter-spacing: 0;
   text-decoration: none;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.75);
   white-space: nowrap;
   user-select: none;
   -webkit-user-select: none;
