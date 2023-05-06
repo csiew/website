@@ -1,13 +1,13 @@
 import React from "react";
-import { Show } from "../../../lib/now-watching";
+import { Show } from "../../../lib/watching";
 import Badge from "../../ui/Badge";
 
-type NowWatchingShowCardProps = {
+type WatchingShowCardProps = {
   show: Show;
   setSelectedShow?: (id: string) => void;
 };
 
-const NowWatchingShowCard = ({ show, setSelectedShow }: NowWatchingShowCardProps) => {
+const WatchingShowCard = ({ show, setSelectedShow }: WatchingShowCardProps) => {
   const cardContent = () => {
     return (
       <>
@@ -30,16 +30,16 @@ const NowWatchingShowCard = ({ show, setSelectedShow }: NowWatchingShowCardProps
 
   if (setSelectedShow) {
     return (
-      <div className="now-watching-show-card" onClick={() => setSelectedShow(show.imdbId)}>
+      <div className="watching-show-card" onClick={() => setSelectedShow(show.imdbId)}>
         {cardContent()}
       </div>
     );
   }
   return (
-    <a href={`/now-watching/show/${show.imdbId}`} className="now-watching-show-card">
+    <a href={`/watching/show/${show.imdbId}`} className="watching-show-card">
       {cardContent()}
     </a>
   );
 };
 
-export default NowWatchingShowCard;
+export default WatchingShowCard;

@@ -19,8 +19,8 @@
   align-items: center;
   justify-content: center;
   color: var(--bg-color);
-  background: rgba(0, 0, 0, 0.8);
-  border: 1px solid var(--fg-color);
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.5);
   border-radius: 64px;
   box-shadow: var(--preset-shadow-component);
   backdrop-filter: blur(6px);
@@ -29,6 +29,7 @@
 }
 .backToTopFloat :is(button, .button, input[type=submit], input[type=reset]):hover {
   background: var(--fg-color);
+  border-color: var(--fg-color);
   transition: var(--transition);
 }
 .backToTopFloat :is(button, .button, input[type=submit], input[type=reset]):active {

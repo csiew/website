@@ -1,5 +1,5 @@
 import config from "../../config";
-import { OmdbResponse } from "../../lib/now-watching";
+import { OmdbResponse } from "../../lib/watching";
 
 export const getShowDataById = async (id: string): Promise<Partial<OmdbResponse>> => {
   const url = new URL(config.omdb.host);

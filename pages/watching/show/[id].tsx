@@ -5,7 +5,7 @@ import config from "../../../config";
 import rawShowsData from "../shows.json";
 import rawShowsMetadata from "../showsMetadata.json";
 import retitle from "../../../lib/retitle";
-import { OmdbResponse, Show, ShowsData } from "../../../lib/now-watching";
+import { OmdbResponse, Show, ShowsData } from "../../../lib/watching";
 import NavigationView from "../../../components/ui/NavigationView";
 import Button from "../../../components/ui/Button";
 import Paper from "../../../components/ui/Paper";
@@ -21,7 +21,7 @@ const ShowDetailPage = ({ show, isInModal }: { show: Show, isInModal?: boolean }
     if (!isInModal) {
       document.getElementById(config.rootElementId)?.scrollTo({ top: 0 });
     } else {
-      router.push("/now-watching", `/now-watching/show/${show.imdbId}`, { shallow: true });
+      router.push("/watching", `/watching/show/${show.imdbId}`, { shallow: true });
     }
   }, []);
   

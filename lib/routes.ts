@@ -22,6 +22,10 @@ const routes: PageRoute[] = [
     path: "/playlists"
   },
   {
+    title: "Watching",
+    path: "/watching"
+  },
+  {
     title: "Changelog",
     path: "/changelog",
     hideFromNavBar: true

@@ -93,4 +93,12 @@ export const changelogManifest = new Map<string, Changelog>([
       filePath: "6.14.0.md",
     }
   ],
+  [
+    "6.15.0",
+    {
+      title: "Version 6.15.0",
+      subtitle: "Restore Now Watching page as Watching page",
+      filePath: "6.15.0.md",
+    }
+  ],
 ]);

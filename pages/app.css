@@ -458,12 +458,12 @@ blockquote::before {
 @import url('../components/app/BackToTop/index.module.css');
 @import url('../components/app/Footer/index.module.css');
 @import url('../components/app/NavBar/index.module.css');
-@import url('../components/app/NowWatchingShowCard/index.module.css');
+@import url('../components/app/WatchingShowCard/index.module.css');
 @import url('../components/app/PlaylistCard/index.module.css');
 
 @import url('./index.module.css');
 @import url('./now/index.module.css');
 @import url('./posts/index.module.css');
-@import url('./now-watching/index.module.css');
 @import url('./playlists/index.module.css');
 @import url('./projects/index.module.css');
+@import url('./watching/index.module.css');
