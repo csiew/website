@@ -6,16 +6,25 @@ import { PageRoute } from "../../../lib/@types";
 import Modal from "../../ui/Modal";
 import Button from "../../ui/Button";
 import { MdMenu, MdSearch } from "react-icons/md";
+import config from "../../../config";
 
 const NavBar = ({ setShowSearchModal }: { setShowSearchModal: React.Dispatch<React.SetStateAction<boolean>> }) => {
   const router = useRouter();
+  const [isAtTop, setIsAtTop] = useState<boolean>(true);
   const [showMenu, setShowMenu] = useState<boolean>(false);
 
   const getRoutes = () => {
     return routes.filter((route) => !route.hideFromNavBar);
   };
 
+  const handleScrollEvent = () => {
+    const rootEl = document.getElementById(config.rootElementId);
+    setIsAtTop(rootEl?.scrollTop === 0);
+  };
+
   useEffect(() => {
+    const rootEl = document.getElementById(config.rootElementId);
+    rootEl?.addEventListener("scroll", handleScrollEvent);
     window.addEventListener("keydown", (ev: KeyboardEvent) => {
       if (ev.key === "/") {
         ev.preventDefault();
@@ -26,7 +35,7 @@ const NavBar = ({ setShowSearchModal }: { setShowSearchModal: React.Dispatch<Rea
 
   return (
     <>
-      <header>
+      <header className={!isAtTop ? "with-shadow" : ""}>
         <div className="site-home-link">
           <Link href="/" style={{
             margin: 0,

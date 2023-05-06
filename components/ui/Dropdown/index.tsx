@@ -6,18 +6,19 @@ type DropdownOption = {
 };
 
 type DropdownProps = {
+  style?: { [k: string]: any };
   options: DropdownOption[];
   selectedValue: string;
   setSelectedValue: (value: string) => void;
 };
 
-const Dropdown = ({ options, selectedValue, setSelectedValue }: DropdownProps) => {
+const Dropdown = ({ style, options, selectedValue, setSelectedValue }: DropdownProps) => {
   const updateSelectedValue = (ev?: any) => {
     setSelectedValue(ev.target.value);
   };
 
   return (
-    <select value={selectedValue} onChange={updateSelectedValue}>
+    <select style={style} value={selectedValue} onChange={updateSelectedValue}>
       {
         options.map((option) => (
           <option

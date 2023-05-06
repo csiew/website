@@ -11,10 +11,9 @@
 }
 
 header {
-  max-width: 1024px;
   width: 100%;
-  margin: 1rem auto;
-  top: 1rem;
+  margin: 0 auto;
+  top: 0;
   left: 1rem;
   right: 1rem;
   padding: 0rem 0.5rem;
@@ -25,20 +24,29 @@ header {
   align-items: center;
   justify-content: space-between;
   color: var(--navbar-header-fg);
-  background: var(--navbar-header-bg);
-  border: 1px solid var(--border-color);
+  background: none;
+  border: 1px solid transparent;
   border-radius: 64px;
+  transition: var(--transition);
+}
+
+header.with-shadow {
+  max-width: 1024px;
+  top: 1rem;
+  background: var(--navbar-header-bg);
+  border-color: var(--border-color);
   box-shadow: var(--preset-shadow-component);
   backdrop-filter: blur(6px);
+  transition: var(--transition);
 }
 
 @media (max-width: 1023px) {
-  header {
+  header.with-shadow {
     max-width: 720px;
   }
 }
 @media (max-width: 767px) {
-  header {
+  header.with-shadow {
     max-width: 90%;
   }
 }
@@ -113,7 +121,7 @@ nav li a {
   white-space: nowrap;
   color: var(--navbar-nav-fg);
   background: var(--navbar-nav-bg);
-  border-radius: 64px;
+  border-radius: 32px;
   font-weight: bold;
   text-decoration: none;
   text-transform: uppercase;

@@ -1,19 +1,20 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable no-case-declarations */
 import React, { ReactElement } from "react";
-import { Show } from "../../../lib/now-watching";
-import NowWatchingShowCard from "../NowWatchingShowCard";
+import { Show } from "../../../lib/watching";
+import WatchingShowCard from "../WatchingShowCard";
 
-type NowWatchingCardGridProps = {
+type WatchingCardGridProps = {
   title: string;
   keyPrefix: string;
   shows: Array<Show>;
   setSelectedShow?: (id: string) => void;
   filter?: string;
+  viewMode?: string;
   cornerActions?: string | ReactElement | ReactElement[];
 }
 
-const NowWatchingCardGrid = ({ title, keyPrefix, shows, setSelectedShow, filter, cornerActions }: NowWatchingCardGridProps) => {
+const WatchingCardGrid = ({ title, keyPrefix, shows, setSelectedShow, filter, viewMode, cornerActions }: WatchingCardGridProps) => {
   let filteredShows;
 
   switch (filter) {
@@ -27,17 +28,17 @@ const NowWatchingCardGrid = ({ title, keyPrefix, shows, setSelectedShow, filter,
 
   return (
     <section>
-      <div className="page-now-watching-section">
+      <div className="page-watching-section">
         <div className="header-bar">
           <h3>{title}</h3>
           <div className="actions">
             { cornerActions }
           </div>
         </div>
-        <div className="card-list">
+        <div className={viewMode === "grid" ? "card-grid" : "card-list"}>
           {
             filteredShows.map((show) => (
-              <NowWatchingShowCard key={`${keyPrefix}-${show.imdbId}`} show={show} setSelectedShow={setSelectedShow} />
+              <WatchingShowCard key={`${keyPrefix}-${show.imdbId}`} show={show} setSelectedShow={setSelectedShow} />
             ))
           }
         </div>
@@ -46,4 +47,4 @@ const NowWatchingCardGrid = ({ title, keyPrefix, shows, setSelectedShow, filter,
   );
 };
 
-export default NowWatchingCardGrid;
+export default WatchingCardGrid;

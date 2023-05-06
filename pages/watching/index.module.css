@@ -1,23 +1,32 @@
-article.app-page.page-now-watching {
+article.app-page.page-watching {
   max-width: 1100px;
 }
 
-article.app-page.page-now-watching section.acknowledgements {
+article.app-page.page-watching section.acknowledgements {
   margin-top: 1rem;
   color: var(--fg-color-5);
   text-align: center;
 }
 
-.page-now-watching .page-now-watching-section .card-list {
+.page-watching .page-watching-section .card-grid {
   margin: 2rem 0rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, 256px);
+  grid-template-columns: repeat(auto-fit, 320px);
   align-items: stretch;
   justify-content: center;
   gap: 0.5rem;
 }
 
-.page-now-watching .page-now-watching-section .header-bar {
+.page-watching .page-watching-section .card-list {
+  margin: 2rem 0rem;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  align-items: stretch;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.page-watching .page-watching-section .header-bar {
   width: 100%;
   margin: 0;
   display: inline-flex;
@@ -28,11 +37,11 @@ article.app-page.page-now-watching section.acknowledgements {
   border-bottom-style: solid;
   border-bottom-color: var(--border-color);
 }
-.page-now-watching .page-now-watching-section .header-bar > h3 {
+.page-watching .page-watching-section .header-bar > h3 {
   margin: 0;
   font-size: 1.5rem;
 }
-.page-now-watching .page-now-watching-section .header-bar .actions {
+.page-watching .page-watching-section .header-bar .actions {
   display: inline-flex;
   flex-flow: row;
   align-items: flex-start;
@@ -41,7 +50,8 @@ article.app-page.page-now-watching section.acknowledgements {
 }
 
 @media (max-width: 767px) {
-  .page-now-watching .page-now-watching-section .header-bar {
+  .page-watching .page-watching-section .header-bar {
+    padding: 1rem 0rem;
     margin-block: 0rem 1rem;
     flex-flow: column;
     align-items: stretch;
@@ -49,11 +59,11 @@ article.app-page.page-now-watching section.acknowledgements {
     gap: 0rem;
   }
 
-  .page-now-watching .page-now-watching-section .header-bar h3 {
+  .page-watching .page-watching-section .header-bar h3 {
     margin-block: 0.25rem 0.5rem;
   }
 
-  .page-now-watching .page-now-watching-section .header-bar .actions {
+  .page-watching .page-watching-section .header-bar .actions {
     width: 100%;
     flex-flow: column;
     align-items: stretch;
@@ -62,7 +72,7 @@ article.app-page.page-now-watching section.acknowledgements {
   }
 }
 
-.page-now-watching .page-now-watching-section h3 {
+.page-watching .page-watching-section h3 {
   margin-bottom: 2rem;
 }
 

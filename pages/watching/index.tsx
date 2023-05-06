@@ -1,14 +1,14 @@
-import React, { ChangeEvent, FocusEvent, createRef, useEffect, useRef, useState } from "react";
+import React, { ChangeEvent, FocusEvent, useEffect, useRef, useState } from "react";
 import Head from "next/head";
 import Fuse from "fuse.js";
 import config from "../../config";
 import rawShowsData from "./shows.json";
 import rawShowsMetadata from "./showsMetadata.json";
 import retitle from "../../lib/retitle";
-import { OmdbResponse, Show, ShowsData } from "../../lib/now-watching";
+import { OmdbResponse, Show, ShowsData } from "../../lib/watching";
 import { getShowDataById } from "../../client/omdb";
 import NavigationView from "../../components/ui/NavigationView";
-import NowWatchingCardGrid from "../../components/app/NowWatchingCardGrid";
+import WatchingCardGrid from "../../components/app/WatchingCardGrid";
 import Modal from "../../components/ui/Modal";
 import ShowDetailPage from "./show/[id]";
 import Dropdown from "../../components/ui/Dropdown";
@@ -71,6 +71,7 @@ const NowWatching = () => {
   const [selectedShow, setSelectedShow] = useState<string | null>(null);
   const [recentFilter, setRecentFilter] = useState<string>("all");
   const [historyFilter, setHistoryFilter] = useState<string>("all");
+  const [viewMode, setViewMode] = useState<string>("grid");
   const [omdbClientResult, setOmdbClientResult] = useState<Partial<OmdbResponse>>({});
   const [searchResults, setSearchResults] = useState<any[]>([]);
   const [searchKeywords, setSearchKeywords] = useState<string>("");
@@ -127,20 +128,20 @@ const NowWatching = () => {
   useEffect(() => {
     if (showModal === false && selectedShow !== null) {
       setSelectedShow(null);
-      router.push("/now-watching",undefined, { shallow: true });
+      router.push("/watching",undefined, { shallow: true });
     }
   }, [showModal]);
 
   return (
     <>
       <Head>
-        <title>{retitle("Now Watching")}</title>
-        <meta property="og:title" content={retitle("Now Watching")} key="title" />
+        <title>{retitle("Watching")}</title>
+        <meta property="og:title" content={retitle("Watching")} key="title" />
       </Head>
       <NavigationView
         content={(
-          <article className="app-page page-now-watching">
-            <h2>Now Watching</h2>
+          <article className="app-page page-watching">
+            <h2>Watching</h2>
             {
               config.features.omdbClient && (
                 <Paper style={{ width: "100%" }}>
@@ -182,8 +183,18 @@ const NowWatching = () => {
               display: "inline-flex",
               flexFlow: "row",
               alignItems: "center",
-              justifyContent: "center"
+              justifyContent: "center",
+              gap: "0.5rem"
             }}>
+              <Dropdown
+                options={[
+                  { value: "grid", label: "Grid" },
+                  { value: "list", label: "List" }
+                ]}
+                selectedValue={viewMode}
+                setSelectedValue={setViewMode}
+                style={{ height: "100%" }}
+              />
               <TextField
                 forwardedRef={searchFieldRef}
                 variant="search"
@@ -202,7 +213,7 @@ const NowWatching = () => {
               {
                 searchKeywords.length > 0
                   ? (
-                    <NowWatchingCardGrid
+                    <WatchingCardGrid
                       title="Search results"
                       keyPrefix="search-result"
                       shows={getShowsByIds(searchResults.map((s) => s.item.imdbID))}
@@ -211,12 +222,13 @@ const NowWatching = () => {
                   )
                   : (
                     <>
-                      <NowWatchingCardGrid
+                      <WatchingCardGrid
                         title="Recently watched"
                         keyPrefix="current"
                         shows={getShows(true)}
                         setSelectedShow={setSelectedShow}
                         filter={recentFilter}
+                        viewMode={viewMode}
                         cornerActions={(
                           <Dropdown
                             options={[
@@ -224,15 +236,17 @@ const NowWatching = () => {
                               { value: "mustwatch", label: "Must Watch" }
                             ]}
                             selectedValue={recentFilter}
-                            setSelectedValue={setRecentFilter} />
+                            setSelectedValue={setRecentFilter}
+                          />
                         )}
                       />
-                      <NowWatchingCardGrid
+                      <WatchingCardGrid
                         title="Viewing history"
                         keyPrefix="recent"
                         shows={getShows()}
                         setSelectedShow={setSelectedShow}
                         filter={historyFilter}
+                        viewMode={viewMode}
                         cornerActions={(
                           <Dropdown
                             options={[
@@ -240,7 +254,8 @@ const NowWatching = () => {
                               { value: "mustwatch", label: "Must Watch" }
                             ]}
                             selectedValue={historyFilter}
-                            setSelectedValue={setHistoryFilter} />
+                            setSelectedValue={setHistoryFilter}
+                          />
                         )}
                       />
                     </>

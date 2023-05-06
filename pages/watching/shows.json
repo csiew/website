@@ -34,7 +34,6 @@
     {
       "name": "Star Trek: Picard",
       "imdbId": "tt8806524",
-      "watching": true,
       "recommended": true
     },
     {
@@ -236,8 +235,7 @@
     },
     {
       "name": "Hello Tomorrow!",
-      "imdbId": "tt14596212",
-      "watching": true
+      "imdbId": "tt14596212"
     },
     {
       "name": "The Big Door Prize",
@@ -246,13 +244,17 @@
     },
     {
       "name": "Extrapolations",
-      "imdbId": "tt13821126",
-      "watching": false
+      "imdbId": "tt13821126"
     },
     {
       "name": "The Glory",
-      "imdbId": "tt21344706",
-      "watching": true
+      "imdbId": "tt21344706"
+    },
+    {
+      "name": "Silo",
+      "imdbId": "tt14688458",
+      "watching": true,
+      "recommended": true
     }
   ]
 }
