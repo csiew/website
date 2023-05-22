@@ -1602,5 +1602,35 @@
     "Type": "series",
     "totalSeasons": "1",
     "Response": "True"
+  },
+  {
+    "id": "tt0118480",
+    "Title": "Stargate SG-1",
+    "Year": "1997-2007",
+    "Rated": "TV-14",
+    "Released": "27 Jul 1997",
+    "Runtime": "44 min",
+    "Genre": "Action, Adventure, Drama",
+    "Director": "N/A",
+    "Writer": "Jonathan Glassner, Brad Wright",
+    "Actors": "Richard Dean Anderson, Michael Shanks, Amanda Tapping",
+    "Plot": "A secret military team, SG-1, is formed to explore other planets through the recently discovered Stargates.",
+    "Language": "English",
+    "Country": "United States, Canada",
+    "Awards": "Nominated for 9 Primetime Emmys. 18 wins & 97 nominations total",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BMTc3MjEwMTc5N15BMl5BanBnXkFtZTcwNzQ2NjQ4NA@@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.4/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "8.4",
+    "imdbVotes": "96,455",
+    "imdbID": "tt0118480",
+    "Type": "series",
+    "totalSeasons": "10",
+    "Response": "True"
   }
 ]

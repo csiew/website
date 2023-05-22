@@ -239,8 +239,7 @@
     },
     {
       "name": "The Big Door Prize",
-      "imdbId": "tt14761860",
-      "watching": true
+      "imdbId": "tt14761860"
     },
     {
       "name": "Extrapolations",
@@ -253,6 +252,12 @@
     {
       "name": "Silo",
       "imdbId": "tt14688458",
+      "watching": true,
+      "recommended": true
+    },
+    {
+      "name": "Stargate SG-1",
+      "imdbId": "tt0118480",
       "watching": true,
       "recommended": true
     }
