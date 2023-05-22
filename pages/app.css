@@ -1,10 +1,10 @@
 @import url('./colors.css');
 @import url('../assets/roboto-mono/index.css');
-@import url('../assets/jost/index.css');
+@import url('../assets/instrument-sans/index.css');
 
 :root {
   --font-family-system: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  --font-family-base: Jost, var(--font-family-system);
+  --font-family-base: 'Instrument Sans', var(--font-family-system);
   --font-family-article: var(--font-family-base);
   --font-family-quote: var(--font-family-base);
   --font-family-header: var(--font-family-base);
@@ -49,9 +49,9 @@ html, body, #__next {
 html {
   color-scheme: light;
   color: var(--fg-color);
-  background: var(--bg-color-1);
+  background: var(--bg-color);
   font-family: var(--font-family-base);
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   font-weight: 400;
   font-synthesis: none;
   font-display: fallback;
@@ -140,6 +140,7 @@ main {
   flex-flow: column;
   align-items: flex-start;
   justify-content: flex-start;
+  background: var(--bg-color-1);
 }
 
 article {
@@ -152,7 +153,7 @@ article {
 }
 
 article:is(.app-page, .content-page) {
-  max-width: 640px;
+  max-width: 720px;
   width: 100%;
   margin: 0 auto;
 }
@@ -164,13 +165,10 @@ article.app-page h2 {
   padding: 0rem 0rem 0.25rem 0rem;
   align-self: center;
   color: var(--fg-color);
-  font-size: 3vmax;
-  font-weight: 900;
-  font-style: italic;
-  letter-spacing: 1.5vmin;
+  font-size: 5vmax;
+  font-weight: 1000;
   line-height: 1.1;
   text-align: center;
-  text-transform: uppercase;
   transition: var(--transition);
   animation: 0.25s linear app-page-title-transition-in;
 }
@@ -195,7 +193,7 @@ article.app-page h2 {
   article.app-page h2 {
     margin-block: 1.5rem 2rem;
     margin-inline: 0rem;
-    font-size: 5vh;
+    font-size: 7vmax;
   }
 }
 @media (max-width: 767px) {
@@ -229,11 +227,8 @@ article.content-page > .header > h2 {
   border: none;
   font-size: 8vw;
   font-weight: 900;
-  font-style: italic;
-  letter-spacing: 2vmin;
   line-height: 1.1;
   text-align: center;
-  text-transform: uppercase;
   text-shadow: var(--header-text-shadow);
 }
 article.content-page > .header > .subtitle {
@@ -244,7 +239,6 @@ article.content-page > .header > .subtitle {
   font-family: var(--font-family-header);
   font-size: 1.5rem;
   font-weight: normal;
-  font-style: italic;
 }
 article.content-page > .header > .timestamp {
   margin: 0;
@@ -297,7 +291,7 @@ form {
 
 select {
   margin: 0;
-  padding: 0.25rem;
+  padding: 0.25rem 0.75rem;
   color: var(--fg-color);
   background: var(--bg-color);
   box-shadow: var(--preset-shadow-widget);
@@ -329,6 +323,7 @@ select:is(:disabled, .disabled) {
   color: var(--fg-color-3);
   background: var(--bg-color-2);
   border-left: 5px solid var(--primary-color);
+  border-radius: var(--border-radius);
   font-family: var(--font-family-quote);
 }
 .note :is(h1, h2, h3, h4, h5) {
@@ -347,6 +342,7 @@ blockquote {
 blockquote::before {
   content: 'Quote';
   color: var(--primary-color);
+  font-family: var(--font-family-header);
   font-size: 0.8rem;
   font-style: normal;
   font-weight: 600;

@@ -20,6 +20,14 @@ a.watching-show-card:hover {
 .watching-show-card:active {
   background: var(--bg-color-7);
 }
+@media (prefers-color-scheme: dark) {
+  .watching-show-card:is(:hover, :focus) {
+    background: var(--bg-color-2);
+  }
+  .watching-show-card:active {
+    background: var(--bg-color);
+  }
+}
 
 .watching-show-card h3 {
   margin: 0rem 0rem 1rem 0rem;

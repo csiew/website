@@ -6,7 +6,7 @@
   display: inline-flex;
   flex-flow: row;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   color: var(--fg-color-1);
   font-size: 0.9rem;
 }

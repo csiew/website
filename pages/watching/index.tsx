@@ -139,6 +139,7 @@ const NowWatching = () => {
         <meta property="og:title" content={retitle("Watching")} key="title" />
       </Head>
       <NavigationView
+        className="blockquotes-as-notes"
         content={(
           <article className="app-page page-watching">
             <h2>Watching</h2>
@@ -176,6 +177,11 @@ const NowWatching = () => {
                 </Paper>
               )
             }
+            <blockquote style={{ maxWidth: "720px", marginInline: "auto" }}>
+              <p>
+                Only TV shows are listed here. The movies I&apos;ve watched are not listed here. I generally find TV shows to be far more memorable.
+              </p>
+            </blockquote>
             <div style={{
               width: "100%",
               margin: "0rem 0rem 2rem 0rem",

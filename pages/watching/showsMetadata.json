@@ -1632,5 +1632,155 @@
     "Type": "series",
     "totalSeasons": "10",
     "Response": "True"
+  },
+  {
+    "id": "tt0092455",
+    "Title": "Star Trek: The Next Generation",
+    "Year": "1987-1994",
+    "Rated": "TV-PG",
+    "Released": "26 Sep 1987",
+    "Runtime": "44 min",
+    "Genre": "Action, Adventure, Sci-Fi",
+    "Director": "N/A",
+    "Writer": "Gene Roddenberry",
+    "Actors": "Patrick Stewart, Brent Spiner, Jonathan Frakes",
+    "Plot": "Set almost 100 years after Captain Kirk's 5-year mission, a new generation of Starfleet officers sets off in the U.S.S. Enterprise-D on its own mission to go where no one has gone before.",
+    "Language": "English, Klingon, French",
+    "Country": "United States",
+    "Awards": "Won 18 Primetime Emmys. 37 wins & 61 nominations total",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BOWFhYjE4NzMtOWJmZi00NzEyLTg5NTctYmIxMTU1ZDIxMDAyXkEyXkFqcGdeQXVyNTE1NjY5Mg@@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.7/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "8.7",
+    "imdbVotes": "126,853",
+    "imdbID": "tt0092455",
+    "Type": "series",
+    "totalSeasons": "7",
+    "Response": "True"
+  },
+  {
+    "id": "tt0112178",
+    "Title": "Star Trek: Voyager",
+    "Year": "1995–2001",
+    "Rated": "TV-PG",
+    "Released": "16 Jan 1995",
+    "Runtime": "44 min",
+    "Genre": "Action, Adventure, Sci-Fi",
+    "Director": "N/A",
+    "Writer": "Rick Berman, Michael Piller, Jeri Taylor",
+    "Actors": "Kate Mulgrew, Robert Beltran, Roxann Dawson",
+    "Plot": "Pulled to the far side of the galaxy, where the Federation is seventy-five years away at maximum warp speed, a Starfleet ship must cooperate with Maquis rebels to find a way home.",
+    "Language": "English",
+    "Country": "United States",
+    "Awards": "Won 7 Primetime Emmys. 33 wins & 84 nominations total",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BYWIwMTI4NzctZmNjZi00OGU2LThhMGItZDI0ODAwOWI1NTFlXkEyXkFqcGdeQXVyNTE1NjY5Mg@@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.8/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "7.8",
+    "imdbVotes": "72,450",
+    "imdbID": "tt0112178",
+    "Type": "series",
+    "totalSeasons": "7",
+    "Response": "True"
+  },
+  {
+    "id": "tt0106145",
+    "Title": "Star Trek: Deep Space Nine",
+    "Year": "1993–1999",
+    "Rated": "TV-PG",
+    "Released": "03 Jan 1993",
+    "Runtime": "45 min",
+    "Genre": "Action, Adventure, Drama",
+    "Director": "N/A",
+    "Writer": "Rick Berman, Michael Piller",
+    "Actors": "Avery Brooks, Rene Auberjonois, Cirroc Lofton",
+    "Plot": "In the vicinity of the liberated planet of Bajor, the Federation space station Deep Space Nine guards the opening of a stable wormhole to the far side of the galaxy.",
+    "Language": "English, Klingon",
+    "Country": "United States",
+    "Awards": "Won 4 Primetime Emmys. 59 wins & 116 nominations total",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BMDc3OGNhYjUtZGYwNi00MjllLWE0MjYtNDFiYmVhNWI0MGJmXkEyXkFqcGdeQXVyNTE1NjY5Mg@@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.1/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "8.1",
+    "imdbVotes": "66,095",
+    "imdbID": "tt0106145",
+    "Type": "series",
+    "totalSeasons": "7",
+    "Response": "True"
+  },
+  {
+    "id": "tt0244365",
+    "Title": "Star Trek: Enterprise",
+    "Year": "2001–2005",
+    "Rated": "TV-PG",
+    "Released": "26 Sep 2001",
+    "Runtime": "60 min",
+    "Genre": "Action, Adventure, Drama",
+    "Director": "N/A",
+    "Writer": "Rick Berman, Brannon Braga",
+    "Actors": "Scott Bakula, John Billingsley, Jolene Blalock",
+    "Plot": "A century before Captain Kirk's five-year mission, Jonathan Archer captains the United Earth ship Enterprise during the early years of Starfleet, leading up to the Earth-Romulan War and the formation of the Federation.",
+    "Language": "English, Klingon",
+    "Country": "United States",
+    "Awards": "Won 4 Primetime Emmys. 14 wins & 50 nominations total",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BODg3ZmFmMzAtMTY0Yi00ZDdmLTk1MWMtOThjNjJjODlhMzkwXkEyXkFqcGdeQXVyNTE1NjY5Mg@@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.5/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "7.5",
+    "imdbVotes": "55,608",
+    "imdbID": "tt0244365",
+    "Type": "series",
+    "totalSeasons": "4",
+    "Response": "True"
+  },
+  {
+    "id": "tt0944947",
+    "Title": "Game of Thrones",
+    "Year": "2011–2019",
+    "Rated": "TV-MA",
+    "Released": "17 Apr 2011",
+    "Runtime": "57 min",
+    "Genre": "Action, Adventure, Drama",
+    "Director": "N/A",
+    "Writer": "David Benioff, D.B. Weiss",
+    "Actors": "Emilia Clarke, Peter Dinklage, Kit Harington",
+    "Plot": "Nine noble families fight for control over the lands of Westeros, while an ancient enemy returns after being dormant for millennia.",
+    "Language": "English",
+    "Country": "United States, United Kingdom",
+    "Awards": "Won 59 Primetime Emmys. 389 wins & 634 nominations total",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BYTRiNDQwYzAtMzVlZS00NTI5LWJjYjUtMzkwNTUzMWMxZTllXkEyXkFqcGdeQXVyNDIzMzcwNjc@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "9.2/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "9.2",
+    "imdbVotes": "2,152,159",
+    "imdbID": "tt0944947",
+    "Type": "series",
+    "totalSeasons": "8",
+    "Response": "True"
   }
 ]
