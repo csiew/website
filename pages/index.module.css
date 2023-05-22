@@ -15,7 +15,7 @@ article.home-page > h2 {
   justify-content: center;
   gap: 1rem;
   text-align: center;
-  font-size: 8vw !important;
+  font-size: 9vmax !important;
 }
 
 .home-page .profile {

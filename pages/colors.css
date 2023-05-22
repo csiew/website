@@ -42,3 +42,38 @@
 
   color-scheme: light;
 }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fg-color: rgb(255, 255, 255);
+    --fg-color-1: rgb(249, 248, 244);
+    --fg-color-2: rgb(243, 242, 238);
+    --fg-color-3: rgb(237, 236, 232);
+    --fg-color-4: rgb(231, 230, 226);
+    --fg-color-5: rgb(225, 224, 220);
+    --fg-color-6: rgb(219, 218, 214);
+    --fg-color-7: rgb(213, 212, 208);
+    --fg-color-8: rgb(207, 206, 202);
+    --fg-color-9: rgb(201, 200, 196);
+
+    --bg-color: rgb(4, 5, 0);
+    --bg-color-1: rgb(24, 25, 20);
+    --bg-color-2: rgb(44, 45, 40);
+    --bg-color-3: rgb(64, 65, 60);
+    --bg-color-4: rgb(84, 85, 80);
+    --bg-color-5: rgb(104, 105, 100);
+    --bg-color-6: rgb(124, 125, 120);
+    --bg-color-7: rgb(144, 145, 140);
+    --bg-color-8: rgb(164, 165, 160);
+    --bg-color-9: rgb(194, 195, 190);
+  
+    --border-color: rgb(54, 55, 50);
+
+    --preset-shadow-widget: none;
+    --preset-shadow-widget-inset: 0px 2px 4px rgba(0, 0, 0, 0.75) inset;
+    --preset-shadow-component: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    --preset-shadow-textfield: none;
+
+    color-scheme: dark;
+  }
+}

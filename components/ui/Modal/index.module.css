@@ -14,7 +14,7 @@
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(8px);
   animation-name: modal-overlay-transition-in;
-  animation-duration: 0.5s;
+  animation-duration: 0.125s;
 }
 
 @keyframes modal-overlay-transition-in {
@@ -42,10 +42,11 @@
   justify-content: flex-start;
   color: var(--fg-color);
   background: var(--bg-color);
-  border-inline: 1px solid var(--border-color);
+  border-width: 0px 1px 0px 1px;
+  border: solid var(--border-color);
   box-shadow: var(--preset-shadow-component);
   animation-name: modal-window-transition-in;
-  animation-duration: 0.25s;
+  animation-duration: 0.125s;
 }
 
 @keyframes modal-window-transition-in {
@@ -66,6 +67,7 @@
 @media (max-width: 1180px) {
   .modal-window {
     max-width: 720px;
+    border-width: 1px 0px 0px 0px;
   }
 }
 

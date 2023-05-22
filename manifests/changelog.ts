@@ -101,4 +101,12 @@ export const changelogManifest = new Map<string, Changelog>([
       filePath: "6.15.0.md",
     }
   ],
+  [
+    "6.16.0",
+    {
+      title: "Version 6.16.0",
+      subtitle: "Styling overhaul with dark mode and new font",
+      filePath: "6.16.0.md",
+    }
+  ],
 ]);

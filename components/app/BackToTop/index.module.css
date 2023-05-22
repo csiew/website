@@ -19,8 +19,8 @@
   align-items: center;
   justify-content: center;
   color: var(--bg-color);
-  background: rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(0, 0, 0, 0.5);
+  background: var(--primary-color);
+  border: var(--primary-color-3);
   border-radius: 64px;
   box-shadow: var(--preset-shadow-component);
   backdrop-filter: blur(6px);
@@ -42,6 +42,15 @@
   margin: 0;
   padding: 0;
   transform: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .backToTopFloat :is(button, .button, input[type=submit], input[type=reset]) {
+    color: var(--fg-color);
+  }
+  .backToTopFloat :is(button, .button, input[type=submit], input[type=reset]):hover {
+    color: var(--bg-color);
+  }
 }
 
 @keyframes back-to-float-transition-in {

@@ -1,0 +1,15 @@
+/* Instrument Sans */
+@font-face {
+	font-family: 'Instrument Sans';
+	src: url('./InstrumentSans-VariableFont_wdth\,wght.ttf');
+	font-weight: 100 1000;
+  font-style: normal;
+	font-stretch: 25% 151%;
+}
+@font-face {
+	font-family: 'Instrument Sans';
+	src: url('./InstrumentSans-Italic-VariableFont_wdth\,wght.ttf');
+	font-weight: 100 1000;
+  font-style: italic;
+	font-stretch: 25% 151%;
+}

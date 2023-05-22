@@ -1,21 +1,19 @@
 :root {
-  --navbar-header-bg: rgba(255, 255, 255, 0.8);
+  --navbar-header-bg: var(--bg-color);
   --navbar-header-fg: var(--fg-color);
 
   --navbar-nav-bg: none;
-  --navbar-nav-bg-hover: var(--bg-color-1);
-  --navbar-nav-bg-active: var(--primary-color);
+  --navbar-nav-bg-hover: none;
+  --navbar-nav-bg-active: none;
   --navbar-nav-fg: var(--fg-color-7);
-  --navbar-nav-fg-hover: var(--fg-color);
-  --navbar-nav-fg-active: var(--bg-color);
+  --navbar-nav-fg-hover: var(--fg-color-5);
+  --navbar-nav-fg-active: var(--primary-color);
 }
 
 header {
   width: 100%;
-  margin: 0 auto;
+  margin: 0;
   top: 0;
-  left: 1rem;
-  right: 1rem;
   padding: 0rem 0.5rem;
   z-index: 100;
   position: sticky;
@@ -24,31 +22,14 @@ header {
   align-items: center;
   justify-content: space-between;
   color: var(--navbar-header-fg);
-  background: none;
-  border: 1px solid transparent;
-  border-radius: 64px;
+  background: var(--navbar-header-bg);
+  border-bottom: 1px solid var(--border-color);
   transition: var(--transition);
 }
 
 header.with-shadow {
-  max-width: 1024px;
-  top: 1rem;
-  background: var(--navbar-header-bg);
-  border-color: var(--border-color);
   box-shadow: var(--preset-shadow-component);
-  backdrop-filter: blur(6px);
   transition: var(--transition);
-}
-
-@media (max-width: 1023px) {
-  header.with-shadow {
-    max-width: 720px;
-  }
-}
-@media (max-width: 767px) {
-  header.with-shadow {
-    max-width: 90%;
-  }
 }
 
 header .site-home-link {
@@ -96,8 +77,7 @@ nav ul {
   flex-flow: row;
   align-items: center;
   justify-content: flex-end;
-  gap: 0.5rem;
-  font-size: 90%;
+  gap: 0.25rem;
 }
 nav li {
   height: 100%;
@@ -113,7 +93,7 @@ nav li {
 nav li a {
   height: 100%;
   margin: 0;
-  padding: 0rem 0.75rem;
+  padding: 0rem 0.5rem;
   display: inline-flex;
   flex-flow: row;
   align-items: center;
@@ -121,10 +101,9 @@ nav li a {
   white-space: nowrap;
   color: var(--navbar-nav-fg);
   background: var(--navbar-nav-bg);
-  border-radius: 32px;
-  font-weight: bold;
+  border-radius: var(--border-radius);
+  font-weight: 900;
   text-decoration: none;
-  text-transform: uppercase;
   transition: var(--transition);
 }
 nav li a:hover {
@@ -208,16 +187,16 @@ nav.overlay-menu li :is(a, a.active) {
     --navbar-menu-fg-active: var(--fg-color);
   }
   nav.overlay-menu li a {
-    color: var(--fg-color-8);
+    color: var(--fg-color-7);
     justify-content: flex-end;
     border-width: 0;
   }
   nav.overlay-menu li a:hover {
-    color: var(--fg-color-2);
+    color: var(--fg-color-5);
   }
   nav.overlay-menu li a:active,
   nav.overlay-menu li.active :is(a, a:hover) {
-    color: var(--fg-color);
+    color: var(--primary-color);
   }
   #overlay-menu-btn {
     display: inline-flex;

@@ -9,8 +9,7 @@
     {
       "name": "House of the Dragon",
       "imdbId": "tt11198330",
-      "watching": false,
-      "recommended": true
+      "watching": false
     },
     {
       "name": "Westworld",
@@ -131,13 +130,11 @@
     },
     {
       "name": "SS-GB",
-      "imdbId": "tt4939950",
-      "recommended": true
+      "imdbId": "tt4939950"
     },
     {
       "name": "Medici",
-      "imdbId": "tt5057130",
-      "recommended": true
+      "imdbId": "tt5057130"
     },
     {
       "name": "The Man in the High Castle",
@@ -145,8 +142,7 @@
     },
     {
       "name": "The Queen's Gambit",
-      "imdbId": "tt10048342",
-      "recommended": true
+      "imdbId": "tt10048342"
     },
     {
       "name": "The Plot Against America",
@@ -186,13 +182,11 @@
     },
     {
       "name": "Cathedral of the Sea",
-      "imdbId": "tt4944694",
-      "recommended": true
+      "imdbId": "tt4944694"
     },
     {
       "name": "Years and Years",
-      "imdbId": "tt8694364",
-      "recommended": true
+      "imdbId": "tt8694364"
     },
     {
       "name": "11.22.63",
@@ -260,6 +254,30 @@
       "imdbId": "tt0118480",
       "watching": true,
       "recommended": true
+    },
+    {
+      "name": "Star Trek: The Next Generation",
+      "imdbId": "tt0092455",
+      "recommended": true
+    },
+    {
+      "name": "Star Trek: Voyager",
+      "imdbId": "tt0112178",
+      "recommended": true
+    },
+    {
+      "name": "Star Trek: Deep Space 9",
+      "imdbId": "tt0106145",
+      "recommended": true
+    },
+    {
+      "name": "Star Trek: Enterprise",
+      "imdbId": "tt0244365",
+      "recommended": true
+    },
+    {
+      "name": "Game of Thrones",
+      "imdbId": "tt0944947"
     }
   ]
 }
