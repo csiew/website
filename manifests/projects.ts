@@ -294,5 +294,30 @@ export const projectManifest = new Map<string, Project>([
         "library"
       ]
     }
+  ],
+  [
+    "brioche",
+    {
+      title: "Tab Shelf",
+      subtitle: "Manage your Chrome tabs from the side panel",
+      status: "active",
+      duration: {
+        start: "2023",
+      },
+      links: {
+        website: "https://tabshelf.clarencesiew.com",
+      },
+      stack: [
+        TechStack.TypeScript,
+        TechStack.React,
+      ],
+      filePath: "tab-shelf.md",
+      tags: [
+        "react",
+        "typescript",
+        "extension",
+        "chrome"
+      ]
+    }
   ]
 ]);

@@ -50,7 +50,7 @@ const NowPostPage = ({ post }: { post: Post }) => {
             <TagList item={post} />
             <hr />
             <p style={{ width: "100%", textAlign: "center" }}>
-              <small><Link href="/now/archive">See all past updates &rarr;</Link></small>
+              <Link href="/now/archive">See all past updates &rarr;</Link>
             </p>
           </article>
         )}

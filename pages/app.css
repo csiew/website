@@ -1,10 +1,9 @@
 @import url('./colors.css');
 @import url('../assets/roboto-mono/index.css');
-@import url('../assets/instrument-sans/index.css');
 
 :root {
   --font-family-system: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  --font-family-base: 'Instrument Sans', var(--font-family-system);
+  --font-family-base: 'Roboto Mono', var(--font-family-system);
   --font-family-article: var(--font-family-base);
   --font-family-quote: var(--font-family-base);
   --font-family-header: var(--font-family-base);
@@ -12,7 +11,7 @@
   --font-family-monospace: 'Roboto Mono', Monaco, Menlo, 'Cascadia Mono', 'Cascadia Code', 'Ubuntu Mono', 'Noto Mono', 'Courier New', Courier, monospace;
 
   --border-width: 1px;
-  --border-radius: 8px;
+  --border-radius: 5px;
   --transition: 0.25s;
 }
 
@@ -51,7 +50,7 @@ html {
   color: var(--fg-color);
   background: var(--bg-color);
   font-family: var(--font-family-base);
-  font-size: 1.25rem;
+  font-size: 14px;
   font-weight: 400;
   font-synthesis: none;
   font-display: fallback;
@@ -140,7 +139,6 @@ main {
   flex-flow: column;
   align-items: flex-start;
   justify-content: flex-start;
-  background: var(--bg-color-1);
 }
 
 article {
@@ -165,8 +163,8 @@ article.app-page h2 {
   padding: 0rem 0rem 0.25rem 0rem;
   align-self: center;
   color: var(--fg-color);
-  font-size: 5vmax;
-  font-weight: 1000;
+  font-size: 6vmax;
+  font-weight: 900;
   line-height: 1.1;
   text-align: center;
   transition: var(--transition);
@@ -176,7 +174,6 @@ article.app-page h2 {
 @keyframes app-page-title-transition-in {
   0% {
     color: var(--primary-color);
-    font-weight: 500;
     text-shadow: none;
     opacity: 0;
   }
@@ -185,7 +182,6 @@ article.app-page h2 {
   }
   100% {
     color: var(--fg-color);
-    font-weight: 900;
   }
 }
 
@@ -193,7 +189,7 @@ article.app-page h2 {
   article.app-page h2 {
     margin-block: 1.5rem 2rem;
     margin-inline: 0rem;
-    font-size: 7vmax;
+    font-size: 5vmax;
   }
 }
 @media (max-width: 767px) {
@@ -225,7 +221,7 @@ article.content-page > .header > h2 {
   display: inline-block;
   color: var(--fg-color);
   border: none;
-  font-size: 8vw;
+  font-size: 4vw;
   font-weight: 900;
   line-height: 1.1;
   text-align: center;
@@ -249,7 +245,7 @@ article.content-page > .header > .timestamp {
   font-weight: 600;
 }
 article.content-page > .content {
-  line-height: 1.5;
+  line-height: 1.75;
 }
 
 @media (max-width: 767px) {
@@ -343,7 +339,7 @@ blockquote::before {
   content: 'Quote';
   color: var(--primary-color);
   font-family: var(--font-family-header);
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-style: normal;
   font-weight: 600;
   text-transform: uppercase;

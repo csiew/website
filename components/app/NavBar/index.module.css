@@ -3,18 +3,20 @@
   --navbar-header-fg: var(--fg-color);
 
   --navbar-nav-bg: none;
-  --navbar-nav-bg-hover: none;
-  --navbar-nav-bg-active: none;
+  --navbar-nav-bg-hover: var(--bg-color-3);
+  --navbar-nav-bg-active: var(--bg-color-5);
+  --navbar-nav-bg-selected: none;
   --navbar-nav-fg: var(--fg-color-7);
-  --navbar-nav-fg-hover: var(--fg-color-5);
-  --navbar-nav-fg-active: var(--primary-color);
+  --navbar-nav-fg-hover: var(--fg-color);
+  --navbar-nav-fg-active: var(--fg-color);
+  --navbar-nav-fg-selected: var(--primary-color);
 }
 
 header {
   width: 100%;
   margin: 0;
   top: 0;
-  padding: 0rem 0.5rem;
+  padding: 0;
   z-index: 100;
   position: sticky;
   display: inline-flex;
@@ -34,7 +36,8 @@ header.with-shadow {
 
 header .site-home-link {
   margin: 0;
-  padding: 0.325rem 0rem;
+  bottom: 0;
+  padding: 0;
   display: inline-flex;
   flex-flow: row;
   align-items: center;
@@ -58,6 +61,11 @@ header .site-home-link :is(a, a:hover, a:active) {
   color: var(--navbar-header-fg);
   text-decoration: none;
 }
+header .site-home-link a img {
+  width: 3rem;
+  height: 3rem;
+  -webkit-user-drag: none;
+}
 
 nav {
   height: 100%;
@@ -70,14 +78,15 @@ nav {
 }
 nav ul {
   list-style: none;
-  height: 100%;
+  width: 100%;
   margin: 0;
-  padding: 0.5rem 0rem;
+  padding: 0;
   display: inline-flex;
   flex-flow: row;
   align-items: center;
   justify-content: flex-end;
-  gap: 0.25rem;
+  gap: 0;
+  font-weight: bold;
 }
 nav li {
   height: 100%;
@@ -93,7 +102,7 @@ nav li {
 nav li a {
   height: 100%;
   margin: 0;
-  padding: 0rem 0.5rem;
+  padding: 0.5rem 1rem;
   display: inline-flex;
   flex-flow: row;
   align-items: center;
@@ -101,9 +110,9 @@ nav li a {
   white-space: nowrap;
   color: var(--navbar-nav-fg);
   background: var(--navbar-nav-bg);
-  border-radius: var(--border-radius);
-  font-weight: 900;
+  border-block: 3px solid transparent;
   text-decoration: none;
+  text-transform: uppercase;
   transition: var(--transition);
 }
 nav li a:hover {
@@ -119,10 +128,15 @@ nav li a:active {
   transition: var(--transition);
 }
 nav li.active :is(a, a:hover) {
-  color: var(--navbar-nav-fg-active);
-  background: var(--navbar-nav-bg-active);
+  color: var(--navbar-nav-fg-selected);
+  background: var(--navbar-nav-bg-selected);
   border-bottom-color: var(--primary-color);
   transition: var(--transition);
+}
+
+#search-button svg {
+  width: 18px;
+  height: 18px;
 }
 
 nav.overlay-menu {
@@ -153,15 +167,15 @@ nav.overlay-menu li :is(a, a.active) {
   text-align: right;
 }
 
-:is(#overlay-menu-btn, #mobile-search-btn) {
+:is(#overlay-menu-btn, #search-button) {
   color: var(--navbar-nav-fg);
   background: var(--navbar-nav-bg);
 }
-:is(#overlay-menu-btn, #mobile-search-btn):hover {
+:is(#overlay-menu-btn, #search-button):hover {
   color: var(--navbar-nav-fg-hover);
   background: var(--navbar-nav-bg-hover);
 }
-:is(#overlay-menu-btn, #mobile-search-btn):active {
+:is(#overlay-menu-btn, #search-button):active {
   color: var(--navbar-nav-fg-active);
   background: var(--navbar-nav-bg-active);
 }
@@ -169,11 +183,11 @@ nav.overlay-menu li :is(a, a.active) {
 #overlay-menu-btn {
   display: none;
 }
-#mobile-search-btn {
+#search-button {
   display: inline-flex;
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 799px) {
   header h1 {
     display: none;
     font-size: 1.5rem;
