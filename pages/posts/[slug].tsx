@@ -54,7 +54,7 @@ const BlogPostPage = ({ post }: { post: Post }) => {
             <TagList item={post} />
             <hr />
             <p style={{ width: "100%", textAlign: "center" }}>
-              <small><Link href="/posts">&larr; See all posts</Link></small>
+              <Link href="/posts">&larr; See all posts</Link>
             </p>
           </article>
         )} />

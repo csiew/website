@@ -42,7 +42,7 @@ const Home = ({ content, lastUpdated }: { content: string, lastUpdated: number }
               </section>
               <section>
                 <p style={{ padding: "1rem 0rem" }}>
-                  <Button variant="link" url="/changelog" style={{ fontSize: "0.8rem" }}>
+                  <Button variant="link" url="/changelog">
                       See changelogs for all versions &rarr;
                   </Button>
                 </p>

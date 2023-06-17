@@ -70,5 +70,21 @@ export const postManifest = new Map<string, Post>([
         "hobbies"
       ]
     }
+  ],
+  [
+    "tab-shelf",
+    {
+      title: "Tab Shelf",
+      subtitle: "Announcing a vertical tab management extension for Chrome/Chromium",
+      publishedAt: new Date("2023-06-17T17:00:00"),
+      layout: "posts",
+      filePath: "20230617-tab-shelf.md",
+      quotesAsNotes: true,
+      tags: [
+        "chrome",
+        "extension",
+        "projects"
+      ]
+    }
   ]
 ]);

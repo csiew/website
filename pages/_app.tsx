@@ -21,7 +21,7 @@ const AppContainer = ({ Component, pageProps }: any) => {
   return (
     <>
       <Head>
-        <link rel="shortcut icon" href="/profile.jpg" />
+        <link rel="shortcut icon" href="/profile_transparent_background.png" />
         <title>Clarence Siew</title>
       </Head>
       <NavBar setShowSearchModal={setShowSearchModal} />
