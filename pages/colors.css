@@ -1,32 +1,32 @@
 :root {
-  --fg-color: rgb(4, 5, 0);
-  --fg-color-1: rgb(24, 25, 20);
-  --fg-color-2: rgb(44, 45, 40);
-  --fg-color-3: rgb(64, 65, 60);
-  --fg-color-4: rgb(84, 85, 80);
-  --fg-color-5: rgb(104, 105, 100);
-  --fg-color-6: rgb(124, 125, 120);
-  --fg-color-7: rgb(144, 145, 140);
-  --fg-color-8: rgb(164, 165, 160);
-  --fg-color-9: rgb(194, 195, 190);
+  --fg-color: rgb(5, 5, 5);
+  --fg-color-1: rgb(25, 25, 25);
+  --fg-color-2: rgb(45, 45, 45);
+  --fg-color-3: rgb(65, 65, 65);
+  --fg-color-4: rgb(85, 85, 85);
+  --fg-color-5: rgb(105, 105, 105);
+  --fg-color-6: rgb(125, 125, 125);
+  --fg-color-7: rgb(145, 145, 145);
+  --fg-color-8: rgb(165, 165, 165);
+  --fg-color-9: rgb(195, 195, 195);
 
   --bg-color: rgb(255, 255, 255);
-  --bg-color-1: rgb(249, 248, 244);
-  --bg-color-2: rgb(243, 242, 238);
-  --bg-color-3: rgb(237, 236, 232);
-  --bg-color-4: rgb(231, 230, 226);
-  --bg-color-5: rgb(225, 224, 220);
-  --bg-color-6: rgb(219, 218, 214);
-  --bg-color-7: rgb(213, 212, 208);
-  --bg-color-8: rgb(207, 206, 202);
-  --bg-color-9: rgb(201, 200, 196);
+  --bg-color-1: rgb(250, 250, 250);
+  --bg-color-2: rgb(245, 245, 245);
+  --bg-color-3: rgb(240, 240, 240);
+  --bg-color-4: rgb(235, 235, 235);
+  --bg-color-5: rgb(230, 230, 230);
+  --bg-color-6: rgb(225, 225, 225);
+  --bg-color-7: rgb(220, 220, 220);
+  --bg-color-8: rgb(215, 215, 215);
+  --bg-color-9: rgb(210, 210, 210);
 
   --border-color: rgb(220, 220, 220);
 
-  --primary-color: rgb(205, 105, 65);
-  --primary-color-1: rgb(195, 95, 55);
-  --primary-color-2: rgb(185, 85, 45);
-  --primary-color-3: rgb(175, 75, 35);
+  --primary-color: rgb(107, 142, 35);
+  --primary-color-1: rgb(117, 152, 45);
+  --primary-color-2: rgb(127, 162, 55);
+  --primary-color-3: rgb(137, 172, 65);
 
   --shadow: none;
   --shadow-1: rgba(0, 0, 0, 0.5);
@@ -46,28 +46,28 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --fg-color: rgb(255, 255, 255);
-    --fg-color-1: rgb(249, 248, 244);
-    --fg-color-2: rgb(243, 242, 238);
-    --fg-color-3: rgb(237, 236, 232);
-    --fg-color-4: rgb(231, 230, 226);
-    --fg-color-5: rgb(225, 224, 220);
-    --fg-color-6: rgb(219, 218, 214);
-    --fg-color-7: rgb(213, 212, 208);
-    --fg-color-8: rgb(207, 206, 202);
-    --fg-color-9: rgb(201, 200, 196);
+    --fg-color-1: rgb(250, 250, 250);
+    --fg-color-2: rgb(245, 245, 245);
+    --fg-color-3: rgb(240, 240, 240);
+    --fg-color-4: rgb(235, 235, 235);
+    --fg-color-5: rgb(230, 230, 230);
+    --fg-color-6: rgb(225, 225, 225);
+    --fg-color-7: rgb(220, 220, 220);
+    --fg-color-8: rgb(215, 215, 215);
+    --fg-color-9: rgb(210, 210, 210);
 
-    --bg-color: rgb(4, 5, 0);
-    --bg-color-1: rgb(24, 25, 20);
-    --bg-color-2: rgb(44, 45, 40);
-    --bg-color-3: rgb(64, 65, 60);
-    --bg-color-4: rgb(84, 85, 80);
-    --bg-color-5: rgb(104, 105, 100);
-    --bg-color-6: rgb(124, 125, 120);
-    --bg-color-7: rgb(144, 145, 140);
-    --bg-color-8: rgb(164, 165, 160);
-    --bg-color-9: rgb(194, 195, 190);
+    --bg-color: rgb(5, 5, 5);
+    --bg-color-1: rgb(25, 25, 25);
+    --bg-color-2: rgb(45, 45, 45);
+    --bg-color-3: rgb(65, 65, 65);
+    --bg-color-4: rgb(85, 85, 85);
+    --bg-color-5: rgb(105, 105, 105);
+    --bg-color-6: rgb(125, 125, 125);
+    --bg-color-7: rgb(145, 145, 145);
+    --bg-color-8: rgb(165, 165, 165);
+    --bg-color-9: rgb(195, 195, 195);
   
-    --border-color: rgb(54, 55, 50);
+    --border-color: rgb(55, 55, 55);
 
     --preset-shadow-widget: none;
     --preset-shadow-widget-inset: 0px 2px 4px rgba(0, 0, 0, 0.75) inset;

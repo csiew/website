@@ -104,7 +104,7 @@ nav li {
 nav li a {
   height: 100%;
   margin: 0;
-  padding: 0.5rem;
+  padding: 0.5rem 0.75rem;
   display: inline-flex;
   flex-flow: row;
   align-items: center;
