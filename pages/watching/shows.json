@@ -4,7 +4,7 @@
       "name": "Succession",
       "imdbId": "tt7660850",
       "recommended": true,
-      "watching": true
+      "watching": false
     },
     {
       "name": "House of the Dragon",
@@ -278,6 +278,11 @@
     {
       "name": "Game of Thrones",
       "imdbId": "tt0944947"
+    },
+    {
+      "name": "Stargate: Atlantis",
+      "imdbId": "tt0374455",
+      "watching": true
     }
   ]
 }

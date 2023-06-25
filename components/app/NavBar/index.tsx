@@ -46,7 +46,7 @@ const NavBar = ({ setShowSearchModal }: { setShowSearchModal: React.Dispatch<Rea
             justifyContent: "center",
             gap: 0
           }}>
-            <img src="/profile_transparent_background.png" />
+            <img src="/profile.jpg" />
           </Link>
           <Button
             iconOnly

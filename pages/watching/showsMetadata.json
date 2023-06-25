@@ -1782,5 +1782,35 @@
     "Type": "series",
     "totalSeasons": "8",
     "Response": "True"
+  },
+  {
+    "id": "tt0374455",
+    "Title": "Stargate: Atlantis",
+    "Year": "2004-2009",
+    "Rated": "TV-PG",
+    "Released": "16 Jul 2004",
+    "Runtime": "1 min",
+    "Genre": "Action, Adventure, Drama",
+    "Director": "N/A",
+    "Writer": "Robert C. Cooper, Brad Wright",
+    "Actors": "Joe Flanigan, Rachel Luttrell, David Hewlett",
+    "Plot": "An international team of scientists and military personnel discover a Stargate network in the Pegasus Galaxy and come face-to-face with a new, powerful enemy: The Wraith.",
+    "Language": "English, Czech",
+    "Country": "Canada, United States",
+    "Awards": "Nominated for 4 Primetime Emmys. 19 wins & 42 nominations total",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BMjI0MTI4MTY3N15BMl5BanBnXkFtZTcwMjg1NjQ4NA@@._V1_SX300.jpg",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "8.1/10"
+      }
+    ],
+    "Metascore": "N/A",
+    "imdbRating": "8.1",
+    "imdbVotes": "69,115",
+    "imdbID": "tt0374455",
+    "Type": "series",
+    "totalSeasons": "5",
+    "Response": "True"
   }
 ]
