@@ -16,7 +16,7 @@ header {
   width: 100%;
   margin: 0;
   top: 0;
-  padding: 0;
+  padding: 0rem 0.75rem;
   z-index: 100;
   position: sticky;
   display: inline-flex;
@@ -62,8 +62,9 @@ header .site-home-link :is(a, a:hover, a:active) {
   text-decoration: none;
 }
 header .site-home-link a img {
-  width: 3rem;
-  height: 3rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
   -webkit-user-drag: none;
 }
 
@@ -79,6 +80,7 @@ nav {
 nav ul {
   list-style: none;
   width: 100%;
+  height: 100%;
   margin: 0;
   padding: 0;
   display: inline-flex;
@@ -102,7 +104,7 @@ nav li {
 nav li a {
   height: 100%;
   margin: 0;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem;
   display: inline-flex;
   flex-flow: row;
   align-items: center;
@@ -112,7 +114,6 @@ nav li a {
   background: var(--navbar-nav-bg);
   border-block: 3px solid transparent;
   text-decoration: none;
-  text-transform: uppercase;
   transition: var(--transition);
 }
 nav li a:hover {
@@ -188,6 +189,9 @@ nav.overlay-menu li :is(a, a.active) {
 }
 
 @media (max-width: 799px) {
+  header {
+    padding: 0.25rem 0.75rem;
+  }
   header h1 {
     display: none;
     font-size: 1.5rem;

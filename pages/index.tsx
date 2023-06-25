@@ -43,7 +43,7 @@ const Home = ({ content, lastUpdated }: { content: string, lastUpdated: number }
               <section>
                 <p style={{ padding: "1rem 0rem" }}>
                   <Button variant="link" url="/changelog">
-                      See changelogs for all versions &rarr;
+                      All changelogs &rarr;
                   </Button>
                 </p>
               </section>
