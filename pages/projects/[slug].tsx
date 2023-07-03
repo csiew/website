@@ -3,6 +3,7 @@ import fs from "fs";
 import path from "path";
 import Head from "next/head";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import ReactMarkdown from "react-markdown";
 import { capitalize } from "lodash";
 import retitle from "../../lib/retitle";
@@ -19,6 +20,8 @@ import { Project } from "../../manifests/@types";
 import TagList from "../../components/app/TagList";
 
 const ProjectPage = ({ project }: { project: Project }) => {
+  const router = useRouter();
+
   useEffect(() => {
     document.getElementById(config.rootElementId)?.scrollTo({ top: 0 });
   }, []);
@@ -84,9 +87,13 @@ const ProjectPage = ({ project }: { project: Project }) => {
               <TagList item={project} />
             </div>
             <hr />
-            <p style={{ width: "100%", textAlign: "center" }}>
-              <small><Link href="/projects">&larr; See all projects</Link></small>
-            </p>
+            <button
+              title="See all projects"
+              onClick={() => router.replace("/projects")}
+              style={{ marginInline: "auto" }}
+            >
+              See all projects
+            </button>
           </article>
         )} />
     </>

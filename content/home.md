@@ -7,5 +7,3 @@ I mostly develop in TypeScript and JavaScript for both backend services and fron
 I have experience developing in Java and Kotlin for backend services. I also use Shell and Python scripts from time to time for some DevOps or quick data processing.
 
 I also actively use Amazon Web Services at work. For personal projects I largely use Netlify for CI/CD and hosting, with some experimenting with edge functions; Google Firebase for its cloud database and cloud functions.
-
-You can find me on [GitHub](https://github.com/csiew) and [LinkedIn](https://www.linkedin.com/in/clarencesiew/). You can also find me on [Mastodon](https://mastodon.online/@csiew), though I don't usually post there.

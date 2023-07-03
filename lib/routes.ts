@@ -6,10 +6,6 @@ const routes: PageRoute[] = [
     path: "/"
   },
   {
-    title: "Now",
-    path: "/now"
-  },
-  {
     title: "Posts",
     path: "/posts"
   },
@@ -24,11 +20,6 @@ const routes: PageRoute[] = [
   {
     title: "Watching",
     path: "/watching"
-  },
-  {
-    title: "Changelog",
-    path: "/changelog",
-    hideFromNavBar: true
   },
   {
     title: "Search",
@@ -53,11 +44,6 @@ const routes: PageRoute[] = [
   {
     title: "RSS",
     path: "/rss.xml",
-    hideFromNavBar: true
-  },
-  {
-    title: "Now RSS",
-    path: "/now/rss.xml",
     hideFromNavBar: true
   },
   {

@@ -30,9 +30,10 @@
   justify-content: flex-start;
 }
 .breadcrumbs ul li::after {
-  content: '>';
+  content: '/';
   margin-inline: 0.5rem 0.25rem;
-  color: var(--fg-color-8);
+  color: var(--bg-color-9);
+  font-weight: bolder;
 }
 .breadcrumbs ul li:last-of-type::after {
   content: none;

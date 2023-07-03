@@ -282,6 +282,12 @@
     {
       "name": "Stargate: Atlantis",
       "imdbId": "tt0374455",
+      "watching": true,
+      "recommended": true
+    },
+    {
+      "name": "In Limbo",
+      "imdbId": "tt20697956",
       "watching": true
     }
   ]

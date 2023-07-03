@@ -1,7 +1,6 @@
 import React from "react";
 import path from "path";
 import { Post } from "../manifests/@types";
-import { nowPostManifest } from "../manifests/now";
 import { postManifest } from "../manifests/posts";
 import config from "../config";
 import routes from "../lib/routes";
@@ -38,7 +37,7 @@ const SiteMap = () => {
 };
 
 export const getServerSideProps = async (context: any) => {
-  const posts = [...postManifest.entries(), ...nowPostManifest.entries()]
+  const posts = [...postManifest.entries()]
     .map(([slug, post]) => {
       return { ...post, slug };
     });

@@ -1,5 +1,4 @@
 import React from "react";
-import { nowPostManifest } from "../manifests/now";
 import { postManifest } from "../manifests/posts";
 import generateRssFeed from "../utils/generate-rss-feed";
 
@@ -9,7 +8,7 @@ const RssFeed = () => {
 };
 
 export const getServerSideProps = async (context: any) => {
-  const posts = new Map([...postManifest, ...nowPostManifest]);
+  const posts = new Map([...postManifest]);
 
   // We generate the XML sitemap with the posts data
   const feed = await generateRssFeed(

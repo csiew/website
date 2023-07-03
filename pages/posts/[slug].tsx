@@ -3,6 +3,7 @@ import fs from "fs";
 import path from "path";
 import Head from "next/head";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import ReactMarkdown from "react-markdown";
 import retitle from "../../lib/retitle";
 import { Post } from "../../manifests/@types";
@@ -13,6 +14,8 @@ import Breadcrumbs from "../../components/ui/Breadcrumbs";
 import TagList from "../../components/app/TagList";
 
 const BlogPostPage = ({ post }: { post: Post }) => {
+  const router = useRouter();
+  
   useEffect(() => {
     document.getElementById(config.rootElementId)?.scrollTo({ top: 0 });
   }, []);
@@ -53,9 +56,13 @@ const BlogPostPage = ({ post }: { post: Post }) => {
             </div>
             <TagList item={post} />
             <hr />
-            <p style={{ width: "100%", textAlign: "center" }}>
-              <Link href="/posts">&larr; See all posts</Link>
-            </p>
+            <button
+              title="See all posts"
+              onClick={() => router.replace("/posts")}
+              style={{ marginInline: "auto" }}
+            >
+              See all posts
+            </button>
           </article>
         )} />
     </>

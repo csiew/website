@@ -10,7 +10,7 @@
   --font-family-monospace: Menlo, Monaco, 'Cascadia Mono', 'Cascadia Code', 'Ubuntu Mono', 'Noto Mono', 'Courier New', Courier, monospace;
 
   --border-width: 1px;
-  --border-radius: 12px;
+  --border-radius: 9px;
   --transition: 0.25s;
 }
 
@@ -49,7 +49,7 @@ html {
   color: var(--fg-color);
   background: var(--bg-color);
   font-family: var(--font-family-base);
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
   font-synthesis: none;
   font-display: fallback;
@@ -188,7 +188,6 @@ article.app-page h2 {
   article.app-page h2 {
     margin-block: 1.5rem 2rem;
     margin-inline: 0rem;
-    font-size: 5vmax;
   }
 }
 @media (max-width: 767px) {
@@ -453,7 +452,6 @@ blockquote::before {
 @import url('../components/app/PlaylistCard/index.module.css');
 
 @import url('./index.module.css');
-@import url('./now/index.module.css');
 @import url('./posts/index.module.css');
 @import url('./playlists/index.module.css');
 @import url('./projects/index.module.css');

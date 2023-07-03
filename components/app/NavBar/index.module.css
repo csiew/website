@@ -5,18 +5,18 @@
   --navbar-nav-bg: none;
   --navbar-nav-bg-hover: var(--bg-color-3);
   --navbar-nav-bg-active: var(--bg-color-5);
-  --navbar-nav-bg-selected: none;
+  --navbar-nav-bg-selected: var(--primary-color);
   --navbar-nav-fg: var(--fg-color-7);
   --navbar-nav-fg-hover: var(--fg-color);
   --navbar-nav-fg-active: var(--fg-color);
-  --navbar-nav-fg-selected: var(--primary-color);
+  --navbar-nav-fg-selected: var(--bg-color);
 }
 
 header {
   width: 100%;
   margin: 0;
   top: 0;
-  padding: 0rem 0.75rem;
+  padding: 0.5rem 0.75rem;
   z-index: 100;
   position: sticky;
   display: inline-flex;
@@ -87,11 +87,10 @@ nav ul {
   flex-flow: row;
   align-items: center;
   justify-content: flex-end;
-  gap: 0;
+  gap: 0.25rem;
   font-weight: bold;
 }
 nav li {
-  height: 100%;
   margin: 0;
   padding: 0;
   display: inline-flex;
@@ -102,9 +101,8 @@ nav li {
   cursor: pointer;
 }
 nav li a {
-  height: 100%;
   margin: 0;
-  padding: 0.5rem 0.75rem;
+  padding: 0.25rem 0.75rem;
   display: inline-flex;
   flex-flow: row;
   align-items: center;
@@ -112,7 +110,7 @@ nav li a {
   white-space: nowrap;
   color: var(--navbar-nav-fg);
   background: var(--navbar-nav-bg);
-  border-block: 3px solid transparent;
+  border-radius: 64px;
   text-decoration: none;
   transition: var(--transition);
 }
@@ -125,13 +123,11 @@ nav li a:hover {
 nav li a:active {
   color: var(--navbar-nav-fg-active);
   background: var(--navbar-nav-bg-active);
-  border-bottom-color: var(--navbar-nav-fg-active);
   transition: var(--transition);
 }
 nav li.active :is(a, a:hover) {
   color: var(--navbar-nav-fg-selected);
   background: var(--navbar-nav-bg-selected);
-  border-bottom-color: var(--primary-color);
   transition: var(--transition);
 }
 

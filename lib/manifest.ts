@@ -1,13 +1,11 @@
 import { isUndefined, uniq } from "lodash";
-import { nowPostManifest } from "../manifests/now";
 import { postManifest } from "../manifests/posts";
 import { projectManifest } from "../manifests/projects";
 import routes from "./routes";
-import { changelogManifest } from "../manifests/changelog";
 
 export type SearchData = {
   url: string;
-  type: "Blog" | "Now" | "Project" | "Page" | "Changelog",
+  type: "Blog" | "Project" | "Page",
   title: string;
   subtitle?: string;
   tags?: string[];
@@ -34,16 +32,6 @@ export const searchDataManifest: SearchData[] = [
       publishedAt: post.publishedAt
     } as SearchData;
   }),
-  ...[...nowPostManifest.entries()].map(([slug, post]) => {
-    return {
-      url: `/now/${slug}`,
-      type: "Now",
-      title: post.title,
-      subtitle: post.subtitle,
-      tags: post.tags,
-      publishedAt: post.publishedAt
-    } as SearchData;
-  }),
   ...[...projectManifest.entries()].map(([slug, project]) => {
     return {
       url: `/projects/${slug}`,
@@ -53,14 +41,6 @@ export const searchDataManifest: SearchData[] = [
       tags: project.tags
     } as SearchData;
   }),
-  ...[...changelogManifest.entries()].map(([verNum, version]) => {
-    return {
-      url: `/changelog?v=${verNum}`,
-      type: "Changelog",
-      title: version.title,
-      subtitle: version.subtitle,
-    } as SearchData;
-  })
 ];
 
 export const getTags = (): Map<string, SearchData[]> => {
