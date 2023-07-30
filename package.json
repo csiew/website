@@ -1,6 +1,6 @@
 {
   "name": "website",
-  "version": "7.0.0",
+  "version": "7.0.1",
   "type": "commonjs",
   "scripts": {
     "dev": "next dev",
@@ -10,7 +10,6 @@
     "db:migrate": "docker compose -f flyway/docker/docker-compose.yml up"
   },
   "dependencies": {
-    "fuse.js": "^6.6.2",
     "lodash": "^4.17.21",
     "next": "^13.4.12",
     "node-fetch": "^3.3.2",
