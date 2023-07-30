@@ -29,4 +29,5 @@ tsconfig.tsbuildinfo
 *.sw?
 
 # Database
+flyway/conf/
 planetscale/

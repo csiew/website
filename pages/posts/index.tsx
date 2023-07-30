@@ -3,12 +3,12 @@ import Head from "next/head";
 import Link from "next/link";
 import path from "path";
 import retitle from "../../lib/retitle";
-import { postManifest } from "../../manifests/posts";
 import config from "../../config";
 import NavigationView from "../../components/ui/NavigationView";
 import TagList from "../../components/app/TagList";
+import { queryDbRest } from "../../client/db";
 
-const Blog = ({ posts }: { posts: { [k: string]: any }[] }) => {
+function Blog({ posts }: { posts: { [k: string]: any }[] }) {
   useEffect(() => {
     document.getElementById(config.rootElementId)?.scrollTo({ top: 0 });
   }, []);
@@ -27,8 +27,8 @@ const Blog = ({ posts }: { posts: { [k: string]: any }[] }) => {
             <div className="post-list">
               {
                 posts?.map((post) => (
-                  <div key={post.slug} className="post-list-entry">
-                    <h3><Link href={path.join("/posts", post.slug)}>{post.title}</Link></h3>
+                  <div key={post.urlSlug} className="post-list-entry">
+                    <h3><Link href={path.join("/posts", post.urlSlug)}>{post.title}</Link></h3>
                     <span>{post.subtitle}</span>
                     <TagList item={post} />
                     <span className="timestamp">
@@ -43,23 +43,13 @@ const Blog = ({ posts }: { posts: { [k: string]: any }[] }) => {
       />
     </>
   );
-};
+}
 
-export const getStaticProps = async (context: any) => {
-  const posts = [...postManifest.entries()]
-    .map(([slug, definition]) => {
-      return {
-        ...definition,
-        publishedAt: (definition?.publishedAt as Date).getTime(),
-        slug
-      };
-    })
-    .sort((a, b) => {
-      return a.publishedAt < b.publishedAt ? 1 : -1;
-    });
-  return {
-    props: { posts },
-  };
-};
+export async function getStaticProps() {
+  const result = await queryDbRest("item", "content_type=eq.blog_post");
+  const posts = result.sort((a: any, b: any) => b.publishedAt.localeCompare(a.publishedAt));
+ 
+  return { props: { posts } };
+}
 
 export default Blog;

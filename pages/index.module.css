@@ -5,19 +5,6 @@
   justify-content: flex-start;
 }
 
-article.home-page > h2 {
-  width: 100% !important;
-  margin-inline: calc(33% - 33vw) !important;
-  display: inline-flex;
-  flex-flow: column;
-  align-self: center;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  text-align: center;
-  font-size: 6vmax !important;
-}
-
 .home-page .profile {
   width: 128px;
   height: 128px;

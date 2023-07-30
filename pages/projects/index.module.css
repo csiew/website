@@ -44,10 +44,10 @@
   width: 100%;
   margin: 0;
   padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(80px, 370px));
+  display: inline-flex;
+  flex-flow: column;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 1rem;
 }
 

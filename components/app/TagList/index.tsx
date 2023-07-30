@@ -29,7 +29,7 @@ const TagList = ({ item, hooks }: TagListProps) => {
         fontWeight: "bold",
         fontSize: "0.9rem",
         textTransform: "uppercase"
-      }}><small><Link href="/tags" onClick={hooks?.onLinkClick}>Tags</Link>: </small></span>{item?.tags?.map((tag) => <Badge key={`${item.slug}-tag-${tag}`}><Link href={`/tags?t=${encodeURIComponent(tag)}`} onClick={hooks?.onLinkClick}>{tag}</Link></Badge>)}
+      }}><small><Link href="/tags" onClick={hooks?.onLinkClick}>Tags</Link>: </small></span>{item?.tags?.map((tag) => <Badge key={`${item.slug}-tag-${tag}`}><Link href={`/tags/${tag}`} onClick={hooks?.onLinkClick}>{tag}</Link></Badge>)}
     </span>
   );
 };

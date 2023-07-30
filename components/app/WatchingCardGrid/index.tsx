@@ -10,11 +10,10 @@ type WatchingCardGridProps = {
   shows: Array<Show>;
   setSelectedShow?: (id: string) => void;
   filter?: string;
-  viewMode?: string;
   cornerActions?: string | ReactElement | ReactElement[];
 }
 
-const WatchingCardGrid = ({ title, keyPrefix, shows, setSelectedShow, filter, viewMode, cornerActions }: WatchingCardGridProps) => {
+const WatchingCardGrid = ({ title, keyPrefix, shows, setSelectedShow, filter, cornerActions }: WatchingCardGridProps) => {
   let filteredShows;
 
   switch (filter) {
@@ -35,7 +34,7 @@ const WatchingCardGrid = ({ title, keyPrefix, shows, setSelectedShow, filter, vi
             { cornerActions }
           </div>
         </div>
-        <div className={viewMode === "grid" ? "card-grid" : "card-list"}>
+        <div className="card-list">
           {
             filteredShows.map((show) => (
               <WatchingShowCard key={`${keyPrefix}-${show.imdbId}`} show={show} setSelectedShow={setSelectedShow} />

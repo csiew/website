@@ -1,13 +1,10 @@
 import React, { useEffect } from "react";
-import fs from "fs";
-import path from "path";
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import ReactMarkdown from "react-markdown";
 import { capitalize } from "lodash";
 import retitle from "../../lib/retitle";
-import { projectManifest } from "../../manifests/projects";
 import config from "../../config";
 import Badge from "../../components/ui/Badge";
 import Breadcrumbs from "../../components/ui/Breadcrumbs";
@@ -16,10 +13,10 @@ import ButtonGroup from "../../components/ui/ButtonGroup";
 import NavigationView from "../../components/ui/NavigationView";
 import Paper from "../../components/ui/Paper";
 import { determineStatusBadgeVariant } from "../../lib/projects";
-import { Project } from "../../manifests/@types";
 import TagList from "../../components/app/TagList";
+import { queryDbRest } from "../../client/db";
 
-const ProjectPage = ({ project }: { project: Project }) => {
+const ProjectPage = ({ project }: { project: any }) => {
   const router = useRouter();
 
   useEffect(() => {
@@ -41,7 +38,8 @@ const ProjectPage = ({ project }: { project: Project }) => {
           {
             title: project?.title ?? "Project"
           }
-        ]} />
+        ]}
+      />
       <NavigationView
         className="project-detail-page"
         content={(
@@ -77,7 +75,7 @@ const ProjectPage = ({ project }: { project: Project }) => {
                   })}
                 </div>
                 <ReactMarkdown>
-                  {decodeURI(project?.content ?? "")}
+                  {atob(project?.body ?? "")}
                 </ReactMarkdown>
                 <ButtonGroup orientation="horizontal" style={{ width: "100%", justifyContent: "center", margin: "1.5rem 0rem 0.5rem 0rem" }}>
                   <Button variant="link" url={project?.links?.website} newTab={true} disabled={!project?.links?.website}>Website</Button>
@@ -100,26 +98,18 @@ const ProjectPage = ({ project }: { project: Project }) => {
   );
 };
 
-export const getStaticPaths = async () => {
-  return {
-    paths: [...projectManifest.keys()].map((slug) => ({ params: { slug } })),
-    fallback: false
-  };
-};
+export async function getStaticPaths() {
+  const projects = await queryDbRest("item", "content_type=eq.project");
+  const paths = projects.map((project: any) => ({ params: { slug: project.urlSlug } }));
+  return { paths, fallback: false };
+}
 
-export const getStaticProps = async (context: any) => {
-  const postContentDir = path.join(process.cwd(), "content", "projects");
-  const definition = projectManifest.get(context.params.slug);
-  if (!definition) throw new Error(`Manifest for project '${context.params.slug}' not found`);
-  const content = fs.readFileSync(path.join(postContentDir, definition.filePath), { encoding: "utf8" });
-  const project: Project = {
-    ...definition,
-    slug: context.params.slug,
-    content
-  };
-  return {
-    props: { project },
-  };
-};
+export async function getStaticProps({ params }: any) {
+  const { slug } = params;
+  const projects = await queryDbRest("item", `content_type=eq.project&body->>urlSlug=eq.${slug}`);
+  const project = projects?.[0];
+ 
+  return { props: { project } };
+}
 
 export default ProjectPage;

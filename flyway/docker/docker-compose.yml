@@ -1,0 +1,8 @@
+version: "3.8"
+services:
+  flyway:
+    image: flyway/flyway:9.21.1-alpine
+    volumes:
+      - ../conf:/flyway/conf
+      - ../sql:/flyway/sql
+    command: -configFiles=/flyway/conf/flyway.conf -locations=filesystem:/flyway/sql -connectRetries=60 migrate

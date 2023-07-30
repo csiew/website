@@ -22,18 +22,8 @@ const routes: PageRoute[] = [
     path: "/watching"
   },
   {
-    title: "Search",
-    path: "/search",
-    hideFromNavBar: true
-  },
-  {
     title: "Tags",
     path: "/tags",
-    hideFromNavBar: true
-  },
-  {
-    title: "Feed",
-    path: "/feed",
     hideFromNavBar: true
   },
   {

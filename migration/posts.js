@@ -1,6 +1,9 @@
-import { Post } from "./@types";
+const fs = require("fs");
+const { Pool } = require("pg");
+const { v4 } = require("uuid");
+const config = require("./config");
 
-export const postManifest = new Map<string, Post>([
+const manifest = [
   [
     "new-posts-site-generator",
     {
@@ -87,4 +90,30 @@ export const postManifest = new Map<string, Post>([
       ]
     }
   ]
-]);
+];
+
+const posts = [];
+const manifestFormatted = manifest.map((m) => ({
+  ...m[1],
+  urlSlug: m[0]
+}));
+
+for (const postManifest of manifestFormatted) {
+  const post = { ...postManifest };
+  const content = fs.readFileSync(`content/posts/${post.filePath}`, { encoding: "utf-8" });
+  post.body = btoa(content);
+  delete post["layout"];
+  delete post["filePath"];
+  posts.push(post);
+}
+
+const pool = new Pool(config);
+
+Promise.all(
+  posts.map((post) => {
+    return pool.query(
+      "INSERT INTO public.item (id, content_type, body) VALUES ($1, $2, $3)",
+      [v4(), "blog_post", post]
+    );
+  })
+);

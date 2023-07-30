@@ -4,6 +4,7 @@ export interface Show {
   watching?: boolean;
   recommended?: boolean;
   metadata?: Partial<OmdbResponse>;
+  details?: Partial<OmdbResponse>;
 }
 
 export interface ShowsData {

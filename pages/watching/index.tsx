@@ -1,9 +1,8 @@
 import React, { ChangeEvent, FocusEvent, useEffect, useRef, useState } from "react";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import Fuse from "fuse.js";
 import config from "../../config";
-import rawShowsData from "./shows.json";
-import rawShowsMetadata from "./showsMetadata.json";
 import retitle from "../../lib/retitle";
 import { OmdbResponse, Show, ShowsData } from "../../lib/watching";
 import { getShowDataById } from "../../client/omdb";
@@ -11,54 +10,13 @@ import NavigationView from "../../components/ui/NavigationView";
 import WatchingCardGrid from "../../components/app/WatchingCardGrid";
 import Modal from "../../components/ui/Modal";
 import ShowDetailPage from "./show/[id]";
-import Dropdown from "../../components/ui/Dropdown";
 import Paper from "../../components/ui/Paper";
-import Button from "../../components/ui/Button";
-import TextField from "../../components/ui/TextField";
-import Form from "../../components/ui/Form";
-import { useRouter } from "next/router";
+import { queryDbRest } from "../../client/db";
 
-const showsData = rawShowsData as ShowsData;
-const showsMetadata = rawShowsMetadata as Array<Partial<OmdbResponse>>;
-
-let shows = [] as Show[];
-
-const matchShowToMetadata = (id: string) => {
-  return showsMetadata.find((sm) => sm.imdbID === id);
-};
-
-const getShows = (watching?: boolean) => {
-  shows = showsData.shows.sort((a, b) => a.name.localeCompare(b.name));
-  if (watching) shows = shows.filter((show) => show.watching);
-  return shows
-    .map((show) => {
-      show.metadata = matchShowToMetadata(show.imdbId);
-      return show;
-    })
-    .filter((show) => show.metadata !== undefined);
-};
-
-const getShowsByIds = (ids: string[]) => {
-  shows = showsData.shows
-    .filter((show) => ids.includes(show.imdbId))
-    .sort((a, b) => a.name.localeCompare(b.name));
-  const results = shows
-    .map((show) => {
-      show.metadata = matchShowToMetadata(show.imdbId);
-      return show;
-    })
-    .filter((show) => show.metadata !== undefined);
-  return results;
-};
-
-const getShow = (id: string) => {
-  return shows.find((show) => show.imdbId === id);
-};
-
-const NowWatching = () => {
+function Watching({ shows }: { shows: Show[] }) {
   const router = useRouter();
   const fuse = new Fuse(
-    showsMetadata,
+    shows,
     {
       threshold: 0.3,
       keys: ["imdbID", "Title", "Actors", "Director", "Writer", "Genre", "Country"]
@@ -71,7 +29,6 @@ const NowWatching = () => {
   const [selectedShow, setSelectedShow] = useState<string | null>(null);
   const [recentFilter, setRecentFilter] = useState<string>("all");
   const [historyFilter, setHistoryFilter] = useState<string>("all");
-  const [viewMode, setViewMode] = useState<string>("grid");
   const [omdbClientResult, setOmdbClientResult] = useState<Partial<OmdbResponse>>({});
   const [searchResults, setSearchResults] = useState<any[]>([]);
   const [searchKeywords, setSearchKeywords] = useState<string>("");
@@ -145,19 +102,13 @@ const NowWatching = () => {
             <h2>Watching</h2>
             {
               config.features.omdbClient && (
-                <Paper style={{ width: "100%" }}>
-                  <Form onSubmit={handleGetOmdbSubmit}>
-                    <div style={{
-                      width: "100%",
-                      display: "inline-flex",
-                      flexFlow: "row",
-                      alignItems: "center",
-                      justifyContent: "flex-start",
-                      gap: "0.5rem"
-                    }}>
-                      <TextField variant="text" name="imdbId" placeholder="IMDB ID" style={{ width: "100%" }} />
-                      <Button variant="submit">Get</Button>
-                    </div>
+                <Paper>
+                  <form onSubmit={handleGetOmdbSubmit}>
+                    <span className="form-field">
+                      <label htmlFor="imdbId">IMDB ID</label>
+                      <input type="text" name="imdbId" style={{ width: "100%" }} />
+                    </span>
+                    <input type="submit" value="Get show" />
                     {
                       Object.entries(omdbClientResult).length > 0
                         ? (
@@ -173,7 +124,7 @@ const NowWatching = () => {
                         )
                         : <></>
                     }
-                  </Form>
+                  </form>
                 </Paper>
               )
             }
@@ -192,18 +143,9 @@ const NowWatching = () => {
               justifyContent: "center",
               gap: "0.5rem"
             }}>
-              <Dropdown
-                options={[
-                  { value: "grid", label: "Grid" },
-                  { value: "list", label: "List" }
-                ]}
-                selectedValue={viewMode}
-                setSelectedValue={setViewMode}
-                style={{ height: "100%" }}
-              />
-              <TextField
-                forwardedRef={searchFieldRef}
-                variant="search"
+              <input
+                ref={searchFieldRef}
+                type="search"
                 name="showfilter"
                 placeholder="Search for a show"
                 style={{
@@ -222,7 +164,7 @@ const NowWatching = () => {
                     <WatchingCardGrid
                       title="Search results"
                       keyPrefix="search-result"
-                      shows={getShowsByIds(searchResults.map((s) => s.item.imdbID))}
+                      shows={shows.filter((show) => searchResults.find((result) => result.imdbID === show.imdbId))}
                       setSelectedShow={setSelectedShow}
                     />
                   )
@@ -231,37 +173,27 @@ const NowWatching = () => {
                       <WatchingCardGrid
                         title="Recently watched"
                         keyPrefix="current"
-                        shows={getShows(true)}
+                        shows={shows.filter((show) => show.watching)}
                         setSelectedShow={setSelectedShow}
                         filter={recentFilter}
-                        viewMode={viewMode}
                         cornerActions={(
-                          <Dropdown
-                            options={[
-                              { value: "all", label: "All" },
-                              { value: "mustwatch", label: "Must Watch" }
-                            ]}
-                            selectedValue={recentFilter}
-                            setSelectedValue={setRecentFilter}
-                          />
+                          <select defaultValue="all" onChange={(e) => setRecentFilter(e.target.value)}>
+                            <option value="all">All</option>
+                            <option value="mustwatch">Must Watch</option>
+                          </select>
                         )}
                       />
                       <WatchingCardGrid
                         title="Viewing history"
                         keyPrefix="recent"
-                        shows={getShows()}
+                        shows={shows}
                         setSelectedShow={setSelectedShow}
                         filter={historyFilter}
-                        viewMode={viewMode}
                         cornerActions={(
-                          <Dropdown
-                            options={[
-                              { value: "all", label: "All" },
-                              { value: "mustwatch", label: "Must Watch" }
-                            ]}
-                            selectedValue={historyFilter}
-                            setSelectedValue={setHistoryFilter}
-                          />
+                          <select defaultValue="all" onChange={(e) => setHistoryFilter(e.target.value)}>
+                            <option value="all">All</option>
+                            <option value="mustwatch">Must Watch</option>
+                          </select>
                         )}
                       />
                     </>
@@ -278,13 +210,19 @@ const NowWatching = () => {
         showModal && selectedShow !== null
           ? (
             <Modal closeWindowCallback={() => setShowModal(false)}>
-              <ShowDetailPage show={getShow(selectedShow as string) as Show} isInModal={true} />
+              <ShowDetailPage show={shows.find((show) => show.imdbId === selectedShow)} isInModal={true} />
             </Modal>
           )
           : <></>
       }
     </>
   );
-};
+}
 
-export default React.memo(NowWatching);
+export async function getStaticProps() {
+  const result = await queryDbRest("item", "content_type=eq.tv_show");
+  const shows = result.sort((a: Show, b: Show) => a.name.localeCompare(b.name));
+  return { props: { shows } };
+}
+
+export default Watching;

@@ -1,6 +1,9 @@
-import { Project, TechStack } from "./@types";
+const fs = require("fs");
+const { Pool } = require("pg");
+const { v4 } = require("uuid");
+const config = require("./config");
 
-export const projectManifest = new Map<string, Project>([
+const manifest = [
   [
     "illume-os",
     {
@@ -15,9 +18,9 @@ export const projectManifest = new Map<string, Project>([
         website: "https://illume-os.firebaseapp.com/"
       },
       stack: [
-        TechStack.Shell,
-        TechStack.HTML,
-        TechStack.JavaScript
+        "Shell",
+        "HTML",
+        "JavaScript"
       ],
       filePath: "illume-os.md",
       tags: ["linux", "distribution", "icewm", "debian"]
@@ -40,9 +43,9 @@ export const projectManifest = new Map<string, Project>([
         screenshots: ["/antorca_linux.png"]
       },
       stack: [
-        TechStack.Shell,
-        TechStack.HTML,
-        TechStack.JavaScript
+        "Shell",
+        "HTML",
+        "JavaScript"
       ],
       filePath: "antorca-linux.md",
       tags: [
@@ -65,8 +68,8 @@ export const projectManifest = new Map<string, Project>([
         end: "2019"
       },
       stack: [
-        TechStack.Swift,
-        TechStack.UIKit
+        "Swift",
+        "UIKit"
       ],
       filePath: "transitsafe.md",
       tags: [
@@ -89,12 +92,12 @@ export const projectManifest = new Map<string, Project>([
         end: "Present"
       },
       stack: [
-        TechStack.JavaScript,
-        TechStack.TypeScript,
-        TechStack.React,
-        TechStack.NextJS,
-        TechStack.SvelteKit,
-        TechStack.VueJS
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "NextJS",
+        "SvelteKit",
+        "VueJS"
       ],
       filePath: "website.md",
       tags: [
@@ -124,9 +127,9 @@ export const projectManifest = new Map<string, Project>([
         repository: "https://github.com/csiew/md2magic"
       },
       stack: [
-        TechStack.Python,
-        TechStack.Shell,
-        TechStack.HTML
+        "Python",
+        "Shell",
+        "HTML"
       ],
       filePath: "md2magic.md",
       tags: [
@@ -147,8 +150,8 @@ export const projectManifest = new Map<string, Project>([
         end: "2020"
       },
       stack: [
-        TechStack.JavaScript,
-        TechStack.HTML
+        "JavaScript",
+        "HTML"
       ],
       filePath: "cardo.md",
       tags: [
@@ -172,7 +175,7 @@ export const projectManifest = new Map<string, Project>([
         repository: "https://github.com/csiew/Podzol"
       },
       stack: [
-        TechStack.Python
+        "Python"
       ],
       filePath: "podzol.md",
       tags: [
@@ -200,7 +203,7 @@ export const projectManifest = new Map<string, Project>([
         screenshots: ["/biscuitwm.png"]
       },
       stack: [
-        TechStack.Python
+        "Python"
       ],
       filePath: "biscuitwm.md",
       tags: [
@@ -230,8 +233,8 @@ export const projectManifest = new Map<string, Project>([
         screenshots: ["/hoddle.png"]
       },
       stack: [
-        TechStack.JavaScript,
-        TechStack.HTML
+        "JavaScript",
+        "HTML"
       ],
       filePath: "hoddle.md",
       tags: [
@@ -255,8 +258,8 @@ export const projectManifest = new Map<string, Project>([
         screenshots: ["/cast.png"]
       },
       stack: [
-        TechStack.JavaScript,
-        TechStack.VueJS
+        "JavaScript",
+        "VueJS"
       ],
       filePath: "cast.md",
       tags: [
@@ -284,8 +287,8 @@ export const projectManifest = new Map<string, Project>([
         repository: "https://github.com/csiew/brioche"
       },
       stack: [
-        TechStack.JavaScript,
-        TechStack.React
+        "JavaScript",
+        "React"
       ],
       filePath: "brioche.md",
       tags: [
@@ -308,8 +311,8 @@ export const projectManifest = new Map<string, Project>([
         website: "https://tabshelf.clarencesiew.com",
       },
       stack: [
-        TechStack.TypeScript,
-        TechStack.React,
+        "TypeScript",
+        "React",
       ],
       filePath: "tab-shelf.md",
       tags: [
@@ -320,4 +323,29 @@ export const projectManifest = new Map<string, Project>([
       ]
     }
   ]
-]);
+];
+
+const projects = [];
+const manifestFormatted = manifest.map((m) => ({
+  ...m[1],
+  urlSlug: m[0]
+}));
+
+for (const projectManifest of manifestFormatted) {
+  const project = { ...projectManifest };
+  const content = fs.readFileSync(`content/projects/${project.filePath}`, { encoding: "utf-8" });
+  project.body = btoa(content);
+  delete project["filePath"];
+  projects.push(project);
+}
+
+const pool = new Pool(config);
+
+Promise.all(
+  projects.map((project) => {
+    return pool.query(
+      "INSERT INTO public.item (id, content_type, body) VALUES ($1, $2, $3)",
+      [v4(), "project", project]
+    );
+  })
+);

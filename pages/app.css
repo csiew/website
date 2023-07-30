@@ -32,16 +32,6 @@ html, body, #__next {
   height: 100%;
   margin: 0;
   padding: 0;
-  display: inline-flex;
-  flex-flow: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-
-@media (max-width: 767px) {
-  html, body, #__next {
-    flex-flow: column;
-  }
 }
 
 html {
@@ -50,7 +40,7 @@ html {
   background: var(--bg-color);
   font-family: var(--font-family-base);
   font-size: 16px;
-  font-weight: 400;
+  font-weight: normal;
   font-synthesis: none;
   font-display: fallback;
   text-rendering: optimizeLegibility;
@@ -58,6 +48,38 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
   line-height: 1.5;
+}
+
+html, body {
+  overflow: hidden;
+}
+#__next {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  display: inline-flex;
+  flex-flow: row-reverse;
+  align-items: flex-start;
+  justify-content: flex-start;
+  overflow: auto;
+}
+
+@media (max-width: 799px) {
+  #__next {
+    flex-flow: column;
+  }
+}
+
+main {
+  max-width: 640px;
+  width: 100%;
+  margin-block: 0;
+  margin-inline: auto 0;
+  padding: 0;
+  display: inline-flex;
+  flex-flow: column;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 ::selection {
@@ -123,23 +145,6 @@ code, pre {
   font-family: var(--font-family-monospace);
 }
 
-html, body {
-  overflow: hidden;
-}
-#__next {
-  overflow: auto;
-}
-
-main {
-  width: 100%;
-  margin: 0rem auto auto auto;
-  padding: 0;
-  display: inline-flex;
-  flex-flow: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-
 article {
   display: inline-flex;
   flex-flow: column;
@@ -150,7 +155,6 @@ article {
 }
 
 article:is(.app-page, .content-page) {
-  max-width: 640px;
   width: 100%;
   margin: 0 auto;
 }
@@ -162,7 +166,7 @@ article.app-page h2 {
   padding: 0rem 0rem 0.25rem 0rem;
   align-self: center;
   color: var(--fg-color);
-  font-size: 6vmax;
+  font-size: 48px;
   font-weight: 900;
   line-height: 1.1;
   text-align: center;
@@ -201,7 +205,6 @@ article.content-page {
 }
 
 article.content-page > .header {
-  max-width: 600px;
   width: 100%;
   margin-block: 0rem 1.5rem;
   margin-inline: auto;
@@ -214,12 +217,11 @@ article.content-page > .header {
   text-align: center;
 }
 article.content-page > .header > h2 {
-  margin-inline: calc(33% - 33vw);
   padding: 0rem 1rem;
   display: inline-block;
   color: var(--fg-color);
   border: none;
-  font-size: 4vw;
+  font-size: 32px;
   font-weight: 900;
   line-height: 1.1;
   text-align: center;
@@ -231,7 +233,7 @@ article.content-page > .header > .subtitle {
   display: inline-block;
   color: var(--fg-color-6);
   font-family: var(--font-family-header);
-  font-size: 1.5rem;
+  font-size: 20px;
   font-weight: normal;
 }
 article.content-page > .header > .timestamp {
@@ -279,13 +281,60 @@ form {
   display: inline-flex;
   flex-flow: column;
   align-items: flex-start;
-  justify-content: stretch;
+  justify-content: flex-start;
   gap: 1rem;
+}
+form .form-field {
+  width: 100%;
+  display: inline-flex;
+  flex-flow: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
+form .form-field label {
+  margin-left: 0.75rem;
+  color: var(--fg-color-5);
+  font-weight: bold;
+}
+form .form-field.form-field-checkbox {
+  flex-flow: row;
+  align-items: center;
+}
+form .form-field.form-field-checkbox label {
+  margin: 0;
+  color: var(--fg-color);
+  font-weight: normal;
+}
+
+:is(select, input[type=text], input[type=email], input[type=password], input[type=password], input[type=search], textarea) {
+  margin: 0;
+  padding: 0.5rem 0.75rem;
+}
+
+:is(input[type=text], input[type=email], input[type=password], input[type=password], input[type=search], textarea) {
+  color: var(--fg-color);
+  background: var(--bg-color);
+  box-shadow: var(--preset-shadow-textfield);
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--border-color);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-family: var(--font-family-widget);
+}
+:is(input[type=text], input[type=email], input[type=password], input[type=password], input[type=search], textarea):hover {
+  border-color: var(--fg-color-5);
+}
+:is(input[type=text], input[type=email], input[type=password], input[type=password], input[type=search], textarea):focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+:is(input[type=text], input[type=email], input[type=password], input[type=password], input[type=search], textarea)::placeholder {
+  color: var(--fg-color-7);
 }
 
 select {
-  margin: 0;
-  padding: 0.25rem 0.75rem;
   color: var(--fg-color);
   background: var(--bg-color);
   box-shadow: var(--preset-shadow-widget);
@@ -437,12 +486,10 @@ blockquote::before {
 @import url('../components/ui/Breadcrumbs/index.module.css');
 @import url('../components/ui/Button/index.module.css');
 @import url('../components/ui/ButtonGroup/index.module.css');
-@import url('../components/ui/Form/index.module.css');
 @import url('../components/ui/Modal/index.module.css');
 @import url('../components/ui/NavigationSidebar/index.module.css');
 @import url('../components/ui/NavigationView/index.module.css');
 @import url('../components/ui/Paper/index.module.css');
-@import url('../components/ui/TextField/index.module.css');
 @import url('../components/ui/Toolbar/index.module.css');
 
 @import url('../components/app/BackToTop/index.module.css');
@@ -452,7 +499,9 @@ blockquote::before {
 @import url('../components/app/PlaylistCard/index.module.css');
 
 @import url('./index.module.css');
+@import url('./admin/index.module.css');
 @import url('./posts/index.module.css');
 @import url('./playlists/index.module.css');
 @import url('./projects/index.module.css');
+@import url('./tags/index.module.css');
 @import url('./watching/index.module.css');

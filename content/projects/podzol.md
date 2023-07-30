@@ -1,1 +1,0 @@
-A podcast app that lives in your terminal. It stores indexes of your podcast subscriptions and episode data in JSON files. It's written in Python and uses the pygame library for audio streaming functionality. Limitations with pygame and cross-platform compatibiltiy (Linux and macOS) led me to start working on a web-based podcast client (which was initially codenamed Podzol).
