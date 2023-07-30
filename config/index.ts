@@ -29,10 +29,10 @@ export default {
     apiKey: process.env.SUPABASE_API_KEY
   },
   database: {
-    user: process.env.MIGRATION_SUPABASE_DB_USER,
-    password: process.env.MIGRATION_SUPABASE_DB_PASSWORD,
-    host: process.env.MIGRATION_SUPABASE_DB_HOST,
-    database: process.env.MIGRATION_SUPABASE_DB_DATABASE,
-    port: process.env.MIGRATION_SUPABASE_DB_PORT
+    user: process.env.SUPABASE_DB_USER,
+    password: process.env.SUPABASE_DB_PASSWORD,
+    host: process.env.SUPABASE_DB_HOST,
+    database: process.env.SUPABASE_DB_DATABASE,
+    port: process.env.SUPABASE_DB_PORT
   }
 };

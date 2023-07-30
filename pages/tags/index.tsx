@@ -45,7 +45,7 @@ function TagsPage({ tags }: { tags: Tag[] }) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const pool = new Pool(config.database as PoolConfig);
   const result = await pool.query("SELECT value::TEXT, COUNT(value) FROM (SELECT * FROM item WHERE item.body->>'tags' IS NOT NULL) a, jsonb_array_elements(a.body->'tags') GROUP BY value;");
   const tags: Tag[] = result.rows
