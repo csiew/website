@@ -7,7 +7,7 @@ import { Show } from "../../../lib/watching";
 import NavigationView from "../../../components/ui/NavigationView";
 import Button from "../../../components/ui/Button";
 import Paper from "../../../components/ui/Paper";
-import Toolbar from "../../../components/ui/Toolbar";
+import Breadcrumbs from "../../../components/ui/Breadcrumbs";
 import { queryDbRest } from "../../../client/db";
 
 function ShowDetailPage({ show, isInModal }: { show?: Show, isInModal?: boolean }) {
@@ -36,19 +36,28 @@ function ShowDetailPage({ show, isInModal }: { show?: Show, isInModal?: boolean 
 
   return (
     <>
-      {
-        !isInModal && (
-          <Toolbar>
-            <Button onClick={() => history.go(-1)}>
-              &#8592; Back
-            </Button>
-          </Toolbar>
-        )
-      }
       <Head>
         <title>{retitle(show.name)}</title>
         <meta property="og:title" content={retitle(show.name)} key="title" />
       </Head>
+      {
+        !isInModal && (
+          <Breadcrumbs
+            items={[
+              {
+                title: "Watching",
+                href: "/watching"
+              },
+              {
+                title: "Show"
+              },
+              {
+                title: show.name
+              }
+            ]}
+          />
+        )
+      }
       <NavigationView
         className="show-detail-page"
         content={(
