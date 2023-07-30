@@ -21,8 +21,7 @@ export default {
   debugMode: process.env.DEBUG_MODE,
   features: {
     classicScrollbar: false,
-    omdbClient: false,
-    fuseDebug: false
+    omdbClient: false
   },
   supabase: {
     host: process.env.SUPABASE_HOST,

@@ -3,13 +3,7 @@ export interface Show {
   imdbId: string;
   watching?: boolean;
   recommended?: boolean;
-  metadata?: Partial<OmdbResponse>;
   details?: Partial<OmdbResponse>;
-}
-
-export interface ShowsData {
-  shows: Array<Show>;
-  current: Array<string>;
 }
 
 // Remember to wrap with Partial<>
