@@ -1,6 +1,6 @@
 import React from "react";
-import { postManifest } from "../manifests/posts";
 import generateRssFeed from "../utils/generate-rss-feed";
+import fetchBlogPosts from "../utils/fetch-blog-posts";
 
 function RssFeed() {
   // getServerSideProps will do the heavy lifting
@@ -8,8 +8,6 @@ function RssFeed() {
 }
 
 export async function getServerSideProps(context: any) {
-  const posts = new Map([...postManifest]);
-
   // We generate the XML sitemap with the posts data
   const feed = await generateRssFeed(
     "Clarence Siew",

@@ -1,6 +1,6 @@
 import path from "path";
 import RSS from "rss";
-import { queryDb } from "../client/db";
+import fetchBlogPosts from "./fetch-blog-posts";
 
 export default async function generateRssFeed(
   title: string,
@@ -8,17 +8,7 @@ export default async function generateRssFeed(
   feedPath: string[]
 ) {
   const siteURL = "clarencesiew.com";
-  const result = await queryDb("SELECT * FROM item WHERE content_type = 'blog_post';");
-  const posts = result.rows
-    .map((post) => ({
-      title: post.body.title,
-      description: post.body.subtitle,
-      url: `https://${siteURL}/posts/${post.body.urlSlug}`,
-      guid: post.body.urlSlug,
-      date: new Date(post.body.publishedAt)
-    }))
-    .sort((a, b) => a.date < b.date ? 1 : -1);
-
+  const posts = await fetchBlogPosts();
   const feed = new RSS({
     title,
     description,
