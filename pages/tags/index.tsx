@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import Head from "next/head";
 import Link from "next/link";
-import { Pool, PoolConfig } from "pg";
 import config from "../../config";
 import retitle from "../../lib/retitle";
 import NavigationView from "../../components/ui/NavigationView";
+import { queryDb } from "../../client/db";
 
 export type Tag = {
   value: string;
@@ -46,8 +46,7 @@ function TagsPage({ tags }: { tags: Tag[] }) {
 }
 
 export async function getStaticProps() {
-  const pool = new Pool(config.database as PoolConfig);
-  const result = await pool.query("SELECT value::TEXT, COUNT(value) FROM (SELECT * FROM item WHERE item.body->>'tags' IS NOT NULL) a, jsonb_array_elements(a.body->'tags') GROUP BY value;");
+  const result = await queryDb("SELECT value::TEXT, COUNT(value) FROM (SELECT * FROM item WHERE item.body->>'tags' IS NOT NULL) a, jsonb_array_elements(a.body->'tags') GROUP BY value;");
   const tags: Tag[] = result.rows
     .map((tag: any) => ({
       value: tag.value.replaceAll("\"", ""),

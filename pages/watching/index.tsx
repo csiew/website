@@ -11,6 +11,7 @@ import WatchingCardGrid from "../../components/app/WatchingCardGrid";
 import Modal from "../../components/ui/Modal";
 import ShowDetailPage from "./show/[id]";
 import Paper from "../../components/ui/Paper";
+import { queryDbRest } from "../../client/db";
 
 function Watching({ shows }: { shows: Show[] }) {
   const router = useRouter();
@@ -219,16 +220,8 @@ function Watching({ shows }: { shows: Show[] }) {
 }
 
 export async function getStaticProps() {
-  const response = await fetch(
-    `https://${config.supabase.host}/rest/v1/item?content_type=eq.tv_show`,
-    {
-      headers: {
-        "apikey": config.supabase.apiKey as string
-      }
-    }
-  );
-  const shows = (await response.json()).map((show: any) => show.body).sort((a: Show, b: Show) => a.name.localeCompare(b.name));
- 
+  const result = await queryDbRest("item", "content_type=eq.tv_show");
+  const shows = result.sort((a: Show, b: Show) => a.name.localeCompare(b.name));
   return { props: { shows } };
 }
 

@@ -6,6 +6,7 @@ import retitle from "../../lib/retitle";
 import config from "../../config";
 import NavigationView from "../../components/ui/NavigationView";
 import TagList from "../../components/app/TagList";
+import { queryDbRest } from "../../client/db";
 
 function Blog({ posts }: { posts: { [k: string]: any }[] }) {
   useEffect(() => {
@@ -45,17 +46,8 @@ function Blog({ posts }: { posts: { [k: string]: any }[] }) {
 }
 
 export async function getStaticProps() {
-  const response = await fetch(
-    `https://${config.supabase.host}/rest/v1/item?content_type=eq.blog_post`,
-    {
-      headers: {
-        "apikey": config.supabase.apiKey as string
-      }
-    }
-  );
-  const posts = (await response.json())
-    .map((post: any) => post.body)
-    .sort((a: any, b: any) => b.publishedAt.localeCompare(a.publishedAt));
+  const result = await queryDbRest("item", "content_type=eq.blog_post");
+  const posts = result.sort((a: any, b: any) => b.publishedAt.localeCompare(a.publishedAt));
  
   return { props: { posts } };
 }

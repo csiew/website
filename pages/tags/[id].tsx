@@ -2,12 +2,12 @@ import React, { useEffect } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { Pool, PoolConfig } from "pg";
 import config from "../../config";
 import retitle from "../../lib/retitle";
 import NavigationView from "../../components/ui/NavigationView";
 import { Tag } from ".";
 import Breadcrumbs from "../../components/ui/Breadcrumbs";
+import { queryDb } from "../../client/db";
 
 type ItemFromDb = {
   id: string;
@@ -111,8 +111,7 @@ function TagListPage({ items }: { items: any }) {
 }
 
 export async function getStaticPaths() {
-  const pool = new Pool(config.database as PoolConfig);
-  const result = await pool.query("SELECT value::TEXT, COUNT(value) FROM (SELECT * FROM item WHERE item.body->>'tags' IS NOT NULL) a, jsonb_array_elements(a.body->'tags') GROUP BY value;");
+  const result = await queryDb("SELECT value::TEXT, COUNT(value) FROM (SELECT * FROM item WHERE item.body->>'tags' IS NOT NULL) a, jsonb_array_elements(a.body->'tags') GROUP BY value;");
   const tags: Tag[] = result.rows
     .map((tag: any) => ({
       value: tag.value.replaceAll("\"", ""),
@@ -130,8 +129,7 @@ export async function getStaticProps({ params }: any) {
   const { id } = params;
   const pattern = /^[a-zA-Z0-9]+$/;
   if (!pattern.test(id)) return { props: { items: [] } };
-  const pool = new Pool(config.database as PoolConfig);
-  const result = await pool.query(`SELECT * FROM item WHERE body-> 'tags' IS NOT NULL AND body->>'tags' LIKE '%${id}%'`);
+  const result = await queryDb(`SELECT * FROM item WHERE body-> 'tags' IS NOT NULL AND body->>'tags' LIKE '%${id}%'`);
   const items = result.rows
     .map((item) => {
       if (item.body.body) item.body.body = atob(item.body.body);

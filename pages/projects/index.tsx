@@ -7,6 +7,7 @@ import { determineStatusBadgeVariant } from "../../lib/projects";
 import config from "../../config";
 import NavigationView from "../../components/ui/NavigationView";
 import Badge from "../../components/ui/Badge";
+import { queryDbRest } from "../../client/db";
 
 const decadeGroupNameMap = new Map<string, string>([
   ["200", "2000s"],
@@ -87,18 +88,8 @@ function Projects({ projects }: { projects: { [k: string]: any } }) {
 }
 
 export async function getStaticProps() {
-  const response = await fetch(
-    `https://${config.supabase.host}/rest/v1/item?content_type=eq.project`,
-    {
-      headers: {
-        "apikey": config.supabase.apiKey as string
-      }
-    }
-  );
-  const projects = (await response.json())
-    .map((project: any) => project.body)
-    .sort((a: any, b: any) => b.duration.start.localeCompare(a.duration.start));
- 
+  const result = await queryDbRest("item", "content_type=eq.project");
+  const projects = result.sort((a: any, b: any) => b.duration.start.localeCompare(a.duration.start));
   return { props: { projects } };
 }
 

@@ -1,12 +1,6 @@
-import path from "path";
-import RSS from "rss";
 import { queryDb } from "../client/db";
 
-export default async function generateRssFeed(
-  title: string,
-  description: string,
-  feedPath: string[]
-) {
+export default async function () {
   const siteURL = "clarencesiew.com";
   const result = await queryDb("SELECT * FROM item WHERE content_type = 'blog_post';");
   const posts = result.rows
@@ -18,15 +12,5 @@ export default async function generateRssFeed(
       date: new Date(post.body.publishedAt)
     }))
     .sort((a, b) => a.date < b.date ? 1 : -1);
-
-  const feed = new RSS({
-    title,
-    description,
-    feed_url: "https://" + path.join(siteURL, ...feedPath),
-    site_url: "https://" + siteURL
-  });
-
-  posts.forEach((post) => feed.item(post));
-
-  return feed.xml({ indent: true });
-};
+  return posts;
+}

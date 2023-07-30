@@ -8,6 +8,7 @@ import NavigationView from "../../../components/ui/NavigationView";
 import Button from "../../../components/ui/Button";
 import Paper from "../../../components/ui/Paper";
 import Toolbar from "../../../components/ui/Toolbar";
+import { queryDbRest } from "../../../client/db";
 
 function ShowDetailPage({ show, isInModal }: { show?: Show, isInModal?: boolean }) {
   const router = useRouter();
@@ -94,15 +95,7 @@ function ShowDetailPage({ show, isInModal }: { show?: Show, isInModal?: boolean 
 }
 
 export async function getStaticPaths() {
-  const response = await fetch(
-    `https://${config.supabase.host}/rest/v1/item?content_type=eq.tv_show`,
-    {
-      headers: {
-        "apikey": config.supabase.apiKey as string
-      }
-    }
-  );
-  const shows = (await response.json()).map((show: any) => show.body).sort((a: Show, b: Show) => a.name.localeCompare(b.name));
+  const shows = await queryDbRest("item", "content_type=eq.tv_show");
   const paths = shows.map((show: Show) => ({
     params: { id: show.imdbId },
   }));
@@ -111,15 +104,8 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }: any) {
   const { id } = params;
-  const response = await fetch(
-    `https://${config.supabase.host}/rest/v1/item?content_type=eq.tv_show&body->>imdbId=eq.${id}`,
-    {
-      headers: {
-        "apikey": config.supabase.apiKey as string
-      }
-    }
-  );
-  const show = (await response.json()).map((show: any) => show.body)?.[0];
+  const shows = await queryDbRest("item", `content_type=eq.tv_show&body->>imdbId=eq.${id}`);
+  const show = shows?.[0];
  
   return { props: { show } };
 }

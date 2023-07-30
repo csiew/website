@@ -14,6 +14,7 @@ import NavigationView from "../../components/ui/NavigationView";
 import Paper from "../../components/ui/Paper";
 import { determineStatusBadgeVariant } from "../../lib/projects";
 import TagList from "../../components/app/TagList";
+import { queryDbRest } from "../../client/db";
 
 const ProjectPage = ({ project }: { project: any }) => {
   const router = useRouter();
@@ -98,30 +99,15 @@ const ProjectPage = ({ project }: { project: any }) => {
 };
 
 export async function getStaticPaths() {
-  const response = await fetch(
-    `https://${config.supabase.host}/rest/v1/item?content_type=eq.project`,
-    {
-      headers: {
-        "apikey": config.supabase.apiKey as string
-      }
-    }
-  );
-  const projects = (await response.json()).map((project: any) => project.body);
+  const projects = await queryDbRest("item", "content_type=eq.project");
   const paths = projects.map((project: any) => ({ params: { slug: project.urlSlug } }));
   return { paths, fallback: false };
 }
 
 export async function getStaticProps({ params }: any) {
   const { slug } = params;
-  const response = await fetch(
-    `https://${config.supabase.host}/rest/v1/item?content_type=eq.project&body->>urlSlug=eq.${slug}`,
-    {
-      headers: {
-        "apikey": config.supabase.apiKey as string
-      }
-    }
-  );
-  const project = (await response.json()).map((project: any) => project.body)?.[0];
+  const projects = await queryDbRest("item", `content_type=eq.project&body->>urlSlug=eq.${slug}`);
+  const project = projects?.[0];
  
   return { props: { project } };
 }

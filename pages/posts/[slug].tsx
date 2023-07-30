@@ -7,6 +7,7 @@ import config from "../../config";
 import NavigationView from "../../components/ui/NavigationView";
 import Breadcrumbs from "../../components/ui/Breadcrumbs";
 import TagList from "../../components/app/TagList";
+import { queryDbRest } from "../../client/db";
 
 function BlogPostPage({ post }: { post: any }) {
   const router = useRouter();
@@ -66,16 +67,8 @@ function BlogPostPage({ post }: { post: any }) {
 }
 
 export async function getStaticPaths() {
-  const response = await fetch(
-    `https://${config.supabase.host}/rest/v1/item?content_type=eq.blog_post`,
-    {
-      headers: {
-        "apikey": config.supabase.apiKey as string
-      }
-    }
-  );
-  const posts = (await response.json())
-    .map((post: any) => post.body)
+  const result = await queryDbRest("item", "content_type=eq.blog_post");
+  const posts = result
     .sort((a: any, b: any) => a.publishedAt.localeCompare(b.publishedAt))
     .reverse();
   const paths = posts.map((post: any) => ({ params: { slug: post.urlSlug } }));
@@ -84,15 +77,8 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }: any) {
   const { slug } = params;
-  const response = await fetch(
-    `https://${config.supabase.host}/rest/v1/item?content_type=eq.blog_post&body->>urlSlug=eq.${slug}`,
-    {
-      headers: {
-        "apikey": config.supabase.apiKey as string
-      }
-    }
-  );
-  const post = (await response.json()).map((post: any) => post.body)?.[0];
+  const result = await queryDbRest("item", `content_type=eq.blog_post&body->>urlSlug=eq.${slug}`);
+  const post = result?.[0];
  
   return { props: { post } };
 }
