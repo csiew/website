@@ -6,7 +6,6 @@ import { Pool, PoolConfig } from "pg";
 import config from "../../config";
 import retitle from "../../lib/retitle";
 import NavigationView from "../../components/ui/NavigationView";
-import { Tag } from ".";
 import Breadcrumbs from "../../components/ui/Breadcrumbs";
 
 type ItemFromDb = {
@@ -110,23 +109,7 @@ function TagListPage({ items }: { items: any }) {
   );
 }
 
-export async function getStaticPaths() {
-  const pool = new Pool(config.database as PoolConfig);
-  const result = await pool.query("SELECT value::TEXT, COUNT(value) FROM (SELECT * FROM item WHERE item.body->>'tags' IS NOT NULL) a, jsonb_array_elements(a.body->'tags') GROUP BY value;");
-  const tags: Tag[] = result.rows
-    .map((tag: any) => ({
-      value: tag.value.replaceAll("\"", ""),
-      count: Number(tag.count)
-    }))
-    .sort((a: any, b: any) => a.count < b.count ? 1 : -1);
- 
-  const paths = tags.map((tag: Tag) => ({
-    params: { id: encodeURI(tag.value) },
-  }));
-  return { paths, fallback: false };
-}
-
-export async function getStaticProps({ params }: any) {
+export async function getServerSideProps({ params }: any) {
   const { id } = params;
   const pattern = /^[a-zA-Z0-9]+$/;
   if (!pattern.test(id)) return { props: { items: [] } };
