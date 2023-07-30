@@ -65,7 +65,7 @@ function BlogPostPage({ post }: { post: any }) {
   );
 }
 
-export const getStaticPaths = async () => {
+export async function getStaticPaths() {
   const response = await fetch(
     `https://${config.supabase.host}/rest/v1/item?content_type=eq.blog_post`,
     {
@@ -80,7 +80,7 @@ export const getStaticPaths = async () => {
     .reverse();
   const paths = posts.map((post: any) => ({ params: { slug: post.urlSlug } }));
   return { paths, fallback: false };
-}
+};
 
 export async function getStaticProps({ params }: any) {
   const { slug } = params;

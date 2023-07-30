@@ -84,7 +84,7 @@ function Projects({ projects }: { projects: { [k: string]: any } }) {
       />
     </>
   );
-};
+}
 
 export async function getStaticProps() {
   const response = await fetch(

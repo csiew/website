@@ -105,8 +105,8 @@ export async function getStaticPaths() {
   const shows = (await response.json()).map((show: any) => show.body).sort((a: Show, b: Show) => a.name.localeCompare(b.name));
   const paths = shows.map((show: Show) => ({
     params: { id: show.imdbId },
-  }))
-  return { paths, fallback: false }
+  }));
+  return { paths, fallback: false };
 }
 
 export async function getStaticProps({ params }: any) {

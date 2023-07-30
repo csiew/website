@@ -36,9 +36,9 @@ function mapDbItemToResult(results: ItemFromDb[]): ItemResult[] {
 }
 
 function TagListResult({ item }: { item: ItemResult }) {
-  let title: string = "Untitled";
+  let title = "Untitled";
   let contentType: string = item.contentType;
-  let url: string = "/";
+  let url = "/";
 
   switch (item.contentType) {
   case "blog_post":
@@ -122,8 +122,8 @@ export async function getStaticPaths() {
  
   const paths = tags.map((tag: Tag) => ({
     params: { id: encodeURI(tag.value) },
-  }))
-  return { paths, fallback: false }
+  }));
+  return { paths, fallback: false };
 }
 
 export async function getStaticProps({ params }: any) {

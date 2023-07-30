@@ -99,23 +99,23 @@ function ItemForm({
   setItemBody: React.Dispatch<React.SetStateAction<any>>;
 }) {
   switch (itemType) {
-    case "post":
-      return <BlogPostForm setItemBody={setItemBody} />
-    default:
-      return (
-        <textarea
-          placeholder="Body"
-          onChange={(e) => {
-            let value;
-            try {
-              value = JSON.stringify(JSON.parse(e.target.value));
-              setItemBody(value);
-            } catch (err) {
-              console.debug(err);
-            }
-          }}
-        />
-      );
+  case "post":
+    return <BlogPostForm setItemBody={setItemBody} />;
+  default:
+    return (
+      <textarea
+        placeholder="Body"
+        onChange={(e) => {
+          let value;
+          try {
+            value = JSON.stringify(JSON.parse(e.target.value));
+            setItemBody(value);
+          } catch (err) {
+            console.debug(err);
+          }
+        }}
+      />
+    );
   }
 }
 

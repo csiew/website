@@ -5,7 +5,7 @@ import generateRssFeed from "../utils/generate-rss-feed";
 function RssFeed() {
   // getServerSideProps will do the heavy lifting
   return <></>;
-};
+}
 
 export async function getServerSideProps(context: any) {
   const posts = new Map([...postManifest]);
@@ -25,6 +25,6 @@ export async function getServerSideProps(context: any) {
   return {
     props: {},
   };
-};
+}
 
 export default RssFeed;
