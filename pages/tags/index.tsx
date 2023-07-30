@@ -28,7 +28,7 @@ function TagsPage({ tags }: { tags: Tag[] }) {
             <h2>Tags</h2>
             <ul className="tags-list">
               {tags && tags.map((tag) => (
-                <li>
+                <li key={tag.value}>
                   <h3>
                     <Link href={`/tags/${tag.value}`}>
                       {tag.value}

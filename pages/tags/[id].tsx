@@ -100,7 +100,7 @@ function TagListPage({ items }: { items: any }) {
             <h2>{id}</h2>
             <ul className="tags-result-list">
               {results.map((result: ItemResult) => (
-                <TagListResult item={result} />
+                <TagListResult key={result.id} item={result} />
               ))}
             </ul>
           </article>

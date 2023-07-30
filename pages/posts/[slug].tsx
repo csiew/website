@@ -80,7 +80,7 @@ export async function getStaticPaths() {
     .reverse();
   const paths = posts.map((post: any) => ({ params: { slug: post.urlSlug } }));
   return { paths, fallback: false };
-};
+}
 
 export async function getStaticProps({ params }: any) {
   const { slug } = params;
