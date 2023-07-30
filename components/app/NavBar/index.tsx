@@ -1,41 +1,43 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { BsGithub, BsInstagram, BsLinkedin, BsMastodon } from "react-icons/bs";
+import { MdMenu } from "react-icons/md";
 import routes from "../../../lib/routes";
 import { PageRoute } from "../../../lib/@types";
 import Modal from "../../ui/Modal";
 import Button from "../../ui/Button";
-import { MdMenu, MdSearch } from "react-icons/md";
-import config from "../../../config";
 
-const NavBar = ({ setShowSearchModal }: { setShowSearchModal: React.Dispatch<React.SetStateAction<boolean>> }) => {
+function SocialLinks() {
+  return (
+    <div className="social-links">
+      <a title="LinkedIn" href="https://www.linkedin.com/in/clarencesiew/" target="__blank">
+        <BsLinkedin />
+      </a>
+      <a title="Instagram" href="https://instagram.com/clarence_siew" target="__blank">
+        <BsInstagram />
+      </a>
+      <a title="Mastodon" href="https://mastodon.online/@csiew" target="__blank">
+        <BsMastodon />
+      </a>
+      <a title="GitHub" href="https://github.com/csiew" target="__blank">
+        <BsGithub />
+      </a>
+    </div>
+  );
+}
+
+export default function NavBar() {
   const router = useRouter();
-  const [isAtTop, setIsAtTop] = useState<boolean>(true);
   const [showMenu, setShowMenu] = useState<boolean>(false);
 
   const getRoutes = () => {
     return routes.filter((route) => !route.hideFromNavBar);
   };
 
-  const handleScrollEvent = () => {
-    const rootEl = document.getElementById(config.rootElementId);
-    setIsAtTop(rootEl?.scrollTop === 0);
-  };
-
-  useEffect(() => {
-    const rootEl = document.getElementById(config.rootElementId);
-    rootEl?.addEventListener("scroll", handleScrollEvent);
-    window.addEventListener("keydown", (ev: KeyboardEvent) => {
-      if (ev.key === "/") {
-        ev.preventDefault();
-        setShowSearchModal(true);
-      }
-    });
-  }, []);
-
   return (
     <>
-      <header className={!isAtTop ? "with-shadow" : ""}>
+      <header>
         <div className="site-home-link">
           <Link href="/" style={{
             margin: 0,
@@ -46,20 +48,21 @@ const NavBar = ({ setShowSearchModal }: { setShowSearchModal: React.Dispatch<Rea
             justifyContent: "center",
             gap: 0
           }}>
-            <img src="/profile.jpg" />
+            <img src="/cartoon-profile.jpg" />
           </Link>
           <Button
+            id="overlay-menu-btn"
             iconOnly
-            id="search-button"
-            alt="Search this site"
+            alt="Navigation menu"
             style={{
               margin: 0,
-              padding: "0.5rem",
+              padding: "0.25rem",
               border: "none",
               borderRadius: "100%"
             }}
-            onClick={() => setShowSearchModal(true)}>
-            <MdSearch />
+            onClick={() => setShowMenu(true)}
+          >
+            <MdMenu />
           </Button>
         </div>
         <nav className="navbar-menu">
@@ -76,21 +79,8 @@ const NavBar = ({ setShowSearchModal }: { setShowSearchModal: React.Dispatch<Rea
               })
             }
           </ul>
+          <SocialLinks />
         </nav>
-        <Button
-          id="overlay-menu-btn"
-          iconOnly
-          alt="Navigation menu"
-          style={{
-            margin: 0,
-            padding: "0.5rem",
-            border: "none",
-            borderRadius: "100%"
-          }}
-          onClick={() => setShowMenu(true)}
-        >
-          <MdMenu />
-        </Button>
       </header>
       {
         showMenu
@@ -111,6 +101,7 @@ const NavBar = ({ setShowSearchModal }: { setShowSearchModal: React.Dispatch<Rea
                     })
                   }
                 </ul>
+                <SocialLinks />
               </nav>
             </Modal>
           )
@@ -119,5 +110,3 @@ const NavBar = ({ setShowSearchModal }: { setShowSearchModal: React.Dispatch<Rea
     </>
   );
 };
-
-export default NavBar;

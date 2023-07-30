@@ -12,12 +12,12 @@ const WatchingShowCard = ({ show, setSelectedShow }: WatchingShowCardProps) => {
     return (
       <>
         <div className="poster">
-          <img src={show.metadata?.Poster} alt={show.name} />
+          <img src={show.details?.Poster} alt={show.name} />
         </div>
         <div className="metadata">
           <h4>{show.name}</h4>
-          <sub>{show.metadata?.Genre}</sub>
-          <sub>{show.metadata?.Year}</sub>
+          <sub>{show.details?.Genre}</sub>
+          <sub>{show.details?.Year}</sub>
           {
             show.recommended
               ? <Badge variant="success">Must Watch</Badge>

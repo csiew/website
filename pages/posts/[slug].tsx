@@ -1,19 +1,14 @@
 import React, { useEffect } from "react";
-import fs from "fs";
-import path from "path";
 import Head from "next/head";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import ReactMarkdown from "react-markdown";
 import retitle from "../../lib/retitle";
-import { Post } from "../../manifests/@types";
-import { postManifest } from "../../manifests/posts";
 import config from "../../config";
 import NavigationView from "../../components/ui/NavigationView";
 import Breadcrumbs from "../../components/ui/Breadcrumbs";
 import TagList from "../../components/app/TagList";
 
-const BlogPostPage = ({ post }: { post: Post }) => {
+function BlogPostPage({ post }: { post: any }) {
   const router = useRouter();
   
   useEffect(() => {
@@ -38,7 +33,8 @@ const BlogPostPage = ({ post }: { post: Post }) => {
           {
             title: post?.title ?? "Post"
           }
-        ]} />
+        ]}
+      />
       <NavigationView
         content={(
           <article className="content-page">
@@ -51,7 +47,7 @@ const BlogPostPage = ({ post }: { post: Post }) => {
             </div>
             <div className={["content", post.quotesAsNotes ? "blockquotes-as-notes" : ""].join(" ")}>
               <ReactMarkdown linkTarget="_blank">
-                {decodeURI(post?.content ?? "")}
+                {atob(post?.body ?? "")}
               </ReactMarkdown>
             </div>
             <TagList item={post} />
@@ -67,29 +63,38 @@ const BlogPostPage = ({ post }: { post: Post }) => {
         )} />
     </>
   );
-};
+}
 
 export const getStaticPaths = async () => {
-  return {
-    paths: [...postManifest.keys()].map((slug) => ({ params: { slug } })),
-    fallback: false
-  };
-};
+  const response = await fetch(
+    `https://${config.supabase.host}/rest/v1/item?content_type=eq.blog_post`,
+    {
+      headers: {
+        "apikey": config.supabase.apiKey as string
+      }
+    }
+  );
+  const posts = (await response.json())
+    .map((post: any) => post.body)
+    .sort((a: any, b: any) => a.publishedAt.localeCompare(b.publishedAt))
+    .reverse();
+  const paths = posts.map((post: any) => ({ params: { slug: post.urlSlug } }));
+  return { paths, fallback: false };
+}
 
-export const getStaticProps = async (context: any) => {
-  const postContentDir = path.join(process.cwd(), "content", "posts");
-  const definition = postManifest.get(context.params.slug);
-  if (!definition) throw new Error(`Manifest for post '${context.params.slug}' not found`);
-  const content = fs.readFileSync(path.join(postContentDir, definition.filePath), { encoding: "utf8" });
-  const post: Post = {
-    ...definition,
-    publishedAt: (definition?.publishedAt as Date).getTime(),
-    slug: context.params.slug,
-    content
-  };
-  return {
-    props: { post },
-  };
-};
+export async function getStaticProps({ params }: any) {
+  const { slug } = params;
+  const response = await fetch(
+    `https://${config.supabase.host}/rest/v1/item?content_type=eq.blog_post&body->>urlSlug=eq.${slug}`,
+    {
+      headers: {
+        "apikey": config.supabase.apiKey as string
+      }
+    }
+  );
+  const post = (await response.json()).map((post: any) => post.body)?.[0];
+ 
+  return { props: { post } };
+}
 
 export default BlogPostPage;

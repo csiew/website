@@ -2,20 +2,19 @@ import React from "react";
 import { postManifest } from "../manifests/posts";
 import generateRssFeed from "../utils/generate-rss-feed";
 
-const RssFeed = () => {
+function RssFeed() {
   // getServerSideProps will do the heavy lifting
   return <></>;
 };
 
-export const getServerSideProps = async (context: any) => {
+export async function getServerSideProps(context: any) {
   const posts = new Map([...postManifest]);
 
   // We generate the XML sitemap with the posts data
   const feed = await generateRssFeed(
     "Clarence Siew",
     "Clarence's website feed",
-    ["rss.xml"],
-    posts
+    ["rss.xml"]
   );
 
   context.res.setHeader("Content-Type", "text/xml");

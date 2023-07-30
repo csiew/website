@@ -1,37 +1,19 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect } from "react";
 import Head from "next/head";
 import Link from "next/link";
+import { Pool, PoolConfig } from "pg";
 import config from "../../config";
 import retitle from "../../lib/retitle";
 import NavigationView from "../../components/ui/NavigationView";
-import { SearchData, getTags } from "../../lib/manifest";
-import { useRouter } from "next/router";
-import queryHighlight from "../../lib/query-highlight";
 
-const TagsPage = () => {
-  const router = useRouter();
-  const isMountedRef = useRef<boolean>(false);
-  const [tags, setTags] = useState<Map<string, SearchData[]>>();
+export type Tag = {
+  value: string;
+  count: number;
+};
 
-  const handleScrollToQueryTag = () => {
-    const { t } = router.query;
-    if (t?.length && tags?.size) {
-      const tagEl = document.getElementById(t as string);
-      if (tagEl) queryHighlight(tagEl);
-    }
-  };
-
-  useEffect(() => {
-    handleScrollToQueryTag();
-  }, [router.query, tags]);
-
+function TagsPage({ tags }: { tags: Tag[] }) {
   useEffect(() => {
     document.getElementById(config.rootElementId)?.scrollTo({ top: 0 });
-    if (!isMountedRef.current) {
-      const results = getTags();
-      setTags(results);
-    }
-    isMountedRef.current = true;
   }, []);
   
   return (
@@ -44,43 +26,35 @@ const TagsPage = () => {
         content={
           <article className="app-page">
             <h2>Tags</h2>
-            {
-              tags && (
-                <>
-                  <ul>
-                    {
-                      [...tags.entries()]
-                        .sort(([_a, aUsages], [_b, bUsages]) => {
-                          return aUsages.length < bUsages.length ? 1 : -1;
-                        })
-                        .map(([key, usages]) => {
-                          return (
-                            <li key={key} id={key}>
-                              <span>{key} ({usages.length})</span>
-                              <ul>
-                                {
-                                  usages.map((usage) => {
-                                    return (
-                                      <li key={usage.url}>
-                                        <Link href={usage.url}>{usage.title}</Link> ({usage.type})
-                                      </li>
-                                    );
-                                  })
-                                }
-                              </ul>
-                            </li>
-                          );
-                        })
-                    }
-                  </ul>
-                </>
-              )
-            }
+            <ul className="tags-list">
+              {tags && tags.map((tag) => (
+                <li>
+                  <h3>
+                    <Link href={`/tags/${tag.value}`}>
+                      {tag.value}
+                    </Link>
+                  </h3>
+                  <sub>{tag.count} items</sub>
+                </li>
+              ))}
+            </ul>
           </article>
         }
       />
     </>
   );
-};
+}
+
+export async function getStaticProps() {
+  const pool = new Pool(config.database as PoolConfig);
+  const result = await pool.query("SELECT value::TEXT, COUNT(value) FROM (SELECT * FROM item WHERE item.body->>'tags' IS NOT NULL) a, jsonb_array_elements(a.body->'tags') GROUP BY value;");
+  const tags: Tag[] = result.rows
+    .map((tag: any) => ({
+      value: tag.value.replaceAll("\"", ""),
+      count: Number(tag.count)
+    }))
+    .sort((a: any, b: any) => a.count < b.count ? 1 : -1);
+  return { props: { tags } };
+}
 
 export default TagsPage;

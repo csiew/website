@@ -3,29 +3,33 @@
   --navbar-header-fg: var(--fg-color);
 
   --navbar-nav-bg: none;
-  --navbar-nav-bg-hover: var(--bg-color-3);
-  --navbar-nav-bg-active: var(--bg-color-5);
-  --navbar-nav-bg-selected: var(--primary-color);
+  --navbar-nav-bg-hover: none;
+  --navbar-nav-bg-active: none;
+  --navbar-nav-bg-selected: none;
   --navbar-nav-fg: var(--fg-color-7);
   --navbar-nav-fg-hover: var(--fg-color);
   --navbar-nav-fg-active: var(--fg-color);
-  --navbar-nav-fg-selected: var(--bg-color);
+  --navbar-nav-fg-selected: var(--fg-color);
 }
 
 header {
+  max-width: 240px;
   width: 100%;
-  margin: 0;
+  height: 100%;
+  margin-block: 0;
+  margin-inline: 0 auto;
   top: 0;
-  padding: 0.5rem 0.75rem;
+  padding: 1.5rem 1rem;
   z-index: 100;
   position: sticky;
   display: inline-flex;
-  flex-flow: row;
-  align-items: center;
-  justify-content: space-between;
+  flex-flow: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1rem;
   color: var(--navbar-header-fg);
   background: var(--navbar-header-bg);
-  border-bottom: 1px solid var(--border-color);
+  border-left: 1px solid var(--border-color);
   transition: var(--transition);
 }
 
@@ -40,7 +44,7 @@ header .site-home-link {
   padding: 0;
   display: inline-flex;
   flex-flow: row;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-start;
   gap: 0.5rem
 }
@@ -69,13 +73,13 @@ header .site-home-link a img {
 }
 
 nav {
-  height: 100%;
   margin: 0;
   padding: 0;
   display: inline-flex;
-  flex-flow: row;
-  align-items: center;
-  justify-content: flex-end;
+  flex-flow: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1rem;
 }
 nav ul {
   list-style: none;
@@ -84,11 +88,10 @@ nav ul {
   margin: 0;
   padding: 0;
   display: inline-flex;
-  flex-flow: row;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 0.25rem;
-  font-weight: bold;
+  flex-flow: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.5rem;
 }
 nav li {
   margin: 0;
@@ -102,7 +105,7 @@ nav li {
 }
 nav li a {
   margin: 0;
-  padding: 0.25rem 0.75rem;
+  padding: 0;
   display: inline-flex;
   flex-flow: row;
   align-items: center;
@@ -111,6 +114,7 @@ nav li a {
   color: var(--navbar-nav-fg);
   background: var(--navbar-nav-bg);
   border-radius: 64px;
+  font-size: inherit;
   text-decoration: none;
   transition: var(--transition);
 }
@@ -145,6 +149,7 @@ nav.overlay-menu {
 }
 nav.overlay-menu ul {
   width: 100%;
+  height: max-content;
   margin: 0;
   padding: 0;
   display: inline-flex;
@@ -184,13 +189,55 @@ nav.overlay-menu li :is(a, a.active) {
   display: inline-flex;
 }
 
+.social-links {
+  margin: 0;
+  padding: 0;
+  display: inline-flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.social-links a {
+  width: 1rem;
+  height: 1rem;
+  margin: 0;
+  padding: 0;
+  color: var(--navbar-nav-fg);
+}
+.social-links a:hover {
+  color: var(--navbar-nav-fg-hover);
+}
+.social-links a:active {
+  color: var(--navbar-nav-fg-active);
+}
+.social-links a svg {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 @media (max-width: 799px) {
   header {
-    padding: 0.25rem 0.75rem;
+    max-width: unset;
+    width: 100%;
+    height: max-content;
+    padding: 0.5rem 0.75rem;
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-between;
+    border-left: none;
+    border-bottom: 1px solid var(--border-color);
   }
   header h1 {
     display: none;
     font-size: 1.5rem;
+  }
+  header .site-home-link {
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
   }
   nav.navbar-menu {
     display: none;
@@ -199,6 +246,11 @@ nav.overlay-menu li :is(a, a.active) {
     --navbar-menu-fg: var(--fg-color-8);
     --navbar-menu-fg-hover: var(--fg-color-2);
     --navbar-menu-fg-active: var(--fg-color);
+    height: 100%;
+    display: inline-flex;
+    flex-flow: column;
+    align-items: flex-start;
+    justify-content: space-between;
   }
   nav.overlay-menu li a {
     color: var(--fg-color-7);
@@ -214,5 +266,17 @@ nav.overlay-menu li :is(a, a.active) {
   }
   #overlay-menu-btn {
     display: inline-flex;
+  }
+
+  .social-links {
+    width: 100%;
+    padding: 1.5rem 1rem;
+    bottom: 0;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  .social-links a {
+    width: 1.5rem;
+    height: 1.5rem;
   }
 }

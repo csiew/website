@@ -2,37 +2,36 @@ import React, { useEffect } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import config from "../../../config";
-import rawShowsData from "../shows.json";
-import rawShowsMetadata from "../showsMetadata.json";
 import retitle from "../../../lib/retitle";
-import { OmdbResponse, Show, ShowsData } from "../../../lib/watching";
+import { Show } from "../../../lib/watching";
 import NavigationView from "../../../components/ui/NavigationView";
 import Button from "../../../components/ui/Button";
 import Paper from "../../../components/ui/Paper";
 import Toolbar from "../../../components/ui/Toolbar";
 
-const showsData = rawShowsData as ShowsData;
-const showsMetadata = rawShowsMetadata as Array<Partial<OmdbResponse>>;
-
-const ShowDetailPage = ({ show, isInModal }: { show: Show, isInModal?: boolean }) => {
+function ShowDetailPage({ show, isInModal }: { show?: Show, isInModal?: boolean }) {
   const router = useRouter();
 
   useEffect(() => {
     if (!isInModal) {
       document.getElementById(config.rootElementId)?.scrollTo({ top: 0 });
     } else {
-      router.push("/watching", `/watching/show/${show.imdbId}`, { shallow: true });
+      router.push("/watching", `/watching/show/${show?.imdbId}`, { shallow: true });
     }
   }, []);
   
   const details = {
-    "Year": show.metadata?.Year,
-    "Genre": show.metadata?.Genre,
-    "Language": show.metadata?.Language,
-    "Country": show.metadata?.Country,
-    "Starring": show.metadata?.Actors,
-    "Seasons": show.metadata?.totalSeasons,
+    "Year": show?.details?.Year,
+    "Genre": show?.details?.Genre,
+    "Language": show?.details?.Language,
+    "Country": show?.details?.Country,
+    "Starring": show?.details?.Actors,
+    "Seasons": show?.details?.totalSeasons,
   };
+
+  if (!show) {
+    return <p>Show not found</p>;
+  }
 
   return (
     <>
@@ -74,7 +73,7 @@ const ShowDetailPage = ({ show, isInModal }: { show: Show, isInModal?: boolean }
                 </Paper>
                 <Paper>
                   <h3>Plot</h3>
-                  <p>{show.metadata?.Plot}</p>
+                  <p>{show.details?.Plot}</p>
                 </Paper>
                 <Button
                   variant="link"
@@ -85,34 +84,44 @@ const ShowDetailPage = ({ show, isInModal }: { show: Show, isInModal?: boolean }
                   Visit IMDb page
                 </Button>
               </div>
-              <img src={show.metadata?.Poster} height="320px" alt={show.name} />
+              <img src={show.details?.Poster} height="320px" alt={show.name} />
             </section>
           </article>
         )}
       />
     </>
   );
-};
+}
 
-export const getStaticPaths = () => {
-  return {
-    paths: showsData.shows.map((show) => ({
-      params: {
-        id: show.imdbId
-      },
-    })),
-    fallback: false
-  };
-};
+export async function getStaticPaths() {
+  const response = await fetch(
+    `https://${config.supabase.host}/rest/v1/item?content_type=eq.tv_show`,
+    {
+      headers: {
+        "apikey": config.supabase.apiKey as string
+      }
+    }
+  );
+  const shows = (await response.json()).map((show: any) => show.body).sort((a: Show, b: Show) => a.name.localeCompare(b.name));
+  const paths = shows.map((show: Show) => ({
+    params: { id: show.imdbId },
+  }))
+  return { paths, fallback: false }
+}
 
-export const getStaticProps = async (context: any) => {
-  const { id } = context.params;
-  const show = showsData.shows.find((s: Show) => s.imdbId === id);
-  if (!show) throw new Error("Show not found");
-  show.metadata = showsMetadata.find((sm: Partial<OmdbResponse>) => sm.imdbID === show.imdbId);
-  return {
-    props: { show }
-  };
-};
+export async function getStaticProps({ params }: any) {
+  const { id } = params;
+  const response = await fetch(
+    `https://${config.supabase.host}/rest/v1/item?content_type=eq.tv_show&body->>imdbId=eq.${id}`,
+    {
+      headers: {
+        "apikey": config.supabase.apiKey as string
+      }
+    }
+  );
+  const show = (await response.json()).map((show: any) => show.body)?.[0];
+ 
+  return { props: { show } };
+}
 
 export default ShowDetailPage;

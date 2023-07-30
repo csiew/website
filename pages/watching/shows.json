@@ -28,7 +28,8 @@
     {
       "name": "Star Trek: Strange New Worlds",
       "imdbId": "tt12327578",
-      "recommended": true
+      "recommended": true,
+      "watching": true
     },
     {
       "name": "Star Trek: Picard",
@@ -82,7 +83,9 @@
     },
     {
       "name": "Foundation",
-      "imdbId": "tt0804484"
+      "imdbId": "tt0804484",
+      "recommended": true,
+      "watching": true
     },
     {
       "name": "Parlement",
@@ -246,13 +249,11 @@
     {
       "name": "Silo",
       "imdbId": "tt14688458",
-      "watching": true,
       "recommended": true
     },
     {
       "name": "Stargate SG-1",
       "imdbId": "tt0118480",
-      "watching": true,
       "recommended": true
     },
     {
@@ -287,8 +288,7 @@
     },
     {
       "name": "In Limbo",
-      "imdbId": "tt20697956",
-      "watching": true
+      "imdbId": "tt20697956"
     }
   ]
 }

@@ -1,16 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Head from "next/head";
-import "./app.css";
 import NavBar from "../components/app/NavBar";
 import BackToTop from "../components/app/BackToTop";
 import Footer from "../components/app/Footer";
 import config from "../config";
-import Modal from "../components/ui/Modal";
-import SearchPage from "./search";
+import "./app.css";
 
 const AppContainer = ({ Component, pageProps }: any) => {
-  const [showSearchModal, setShowSearchModal] = useState<boolean>(false);
-
   useEffect(() => {
     const rootClassList = document.getElementById(config.rootElementId)?.classList;
     config.features.classicScrollbar
@@ -21,18 +17,11 @@ const AppContainer = ({ Component, pageProps }: any) => {
   return (
     <>
       <Head>
-        <link rel="shortcut icon" href="/profile_transparent_background.png" />
+        <link rel="shortcut icon" href="/cartoon-profile.jpg" />
         <title>Clarence Siew</title>
       </Head>
-      <NavBar setShowSearchModal={setShowSearchModal} />
+      <NavBar />
       <main>
-        {
-          showSearchModal && (
-            <Modal closeWindowCallback={() => setShowSearchModal(false)}>
-              <SearchPage setShowSearchModal={setShowSearchModal} />
-            </Modal>
-          )
-        }
         <Component {...pageProps} />
         <BackToTop />
         <Footer />

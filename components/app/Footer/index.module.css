@@ -13,26 +13,3 @@ footer {
   background: none;
   font-family: var(--font-family-widget);
 }
-
-footer .social-links {
-  margin: 0;
-  padding: 0.5rem;
-  display: inline-flex;
-  flex-flow: row;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-}
-
-footer .social-links a {
-  width: 1.5rem;
-  height: 1.5rem;
-  margin: 0;
-  padding: 0;
-}
-footer .social-links a svg {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}

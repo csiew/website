@@ -1,5 +1,4 @@
 import React from "react";
-import { postManifest } from "../../manifests/posts";
 import generateRssFeed from "../../utils/generate-rss-feed";
 
 const RssFeed = () => {
@@ -12,8 +11,7 @@ export const getServerSideProps = async (context: any) => {
   const feed = await generateRssFeed(
     "Clarence Siew",
     "Clarence's blog",
-    ["posts", "rss.xml"],
-    postManifest
+    ["posts", "rss.xml"]
   );
 
   context.res.setHeader("Content-Type", "text/xml");
