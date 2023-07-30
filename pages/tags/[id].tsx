@@ -126,7 +126,7 @@ export async function getStaticPaths() {
   return { paths, fallback: false };
 }
 
-export async function getServerSideProps({ params }: any) {
+export async function getStaticProps({ params }: any) {
   const { id } = params;
   const pattern = /^[a-zA-Z0-9]+$/;
   if (!pattern.test(id)) return { props: { items: [] } };
