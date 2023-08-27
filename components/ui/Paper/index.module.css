@@ -6,7 +6,7 @@
   justify-content: flex-start;
   align-items: flex-start;
   color: var(--fg-color);
-  background: var(--bg-color);
+  background: none;
   box-shadow: var(--preset-shadow-component);
   border: var(--border-width) solid var(--border-color);
   border-radius: var(--border-radius);

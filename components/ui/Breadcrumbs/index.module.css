@@ -44,7 +44,7 @@
 }
 
 .breadcrumbs ul li a {
-  color: var(--fg-color-1);
+  color: var(--primary-color);
   font-weight: normal;
 }
 

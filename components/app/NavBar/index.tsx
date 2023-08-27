@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { BsGithub, BsInstagram, BsLinkedin, BsMastodon } from "react-icons/bs";
@@ -7,6 +7,7 @@ import routes from "../../../lib/routes";
 import { PageRoute } from "../../../lib/@types";
 import Modal from "../../ui/Modal";
 import Button from "../../ui/Button";
+import { AdminAuthContext } from "../../../stores";
 
 function SocialLinks() {
   return (
@@ -29,6 +30,7 @@ function SocialLinks() {
 
 export default function NavBar() {
   const router = useRouter();
+  const adminAuthContext = useContext(AdminAuthContext);
   const [showMenu, setShowMenu] = useState<boolean>(false);
 
   const getRoutes = () => {
@@ -78,6 +80,11 @@ export default function NavBar() {
                 );
               })
             }
+            {!!adminAuthContext.session?.token?.length && (
+              <li className={router.pathname === "/admin" ? "active" : ""}>
+                <Link href="/admin">Admin</Link>
+              </li>
+            )}
           </ul>
           <SocialLinks />
         </nav>

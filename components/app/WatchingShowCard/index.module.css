@@ -15,10 +15,10 @@ a.watching-show-card:hover {
   cursor: pointer;
 }
 .watching-show-card:is(:hover, :focus) {
-  background: var(--bg-color-5);
+  background: var(--bg-color-2);
 }
 .watching-show-card:active {
-  background: var(--bg-color-7);
+  background: var(--bg-color-3);
 }
 @media (prefers-color-scheme: dark) {
   .watching-show-card:is(:hover, :focus) {
@@ -72,7 +72,7 @@ a.watching-show-card:hover {
 }
 
 .watching-show-card .metadata h4 {
-  width: 200px;
+  width: 100%;
   margin: 0;
   padding: 0;
   display: -webkit-box;

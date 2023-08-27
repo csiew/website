@@ -1,8 +1,7 @@
-import { ReactElement } from "react";
+import { ComponentPropsWithRef, ReactElement } from "react";
 import { BaseComponentProps } from "../../../lib/@types";
 
-export type ModalCommonProps = {
-  children?: string | ReactElement | ReactElement[];
+export type ModalCommonProps = ComponentPropsWithRef<any> & {
   closeWindowCallback?: () => void;
   title?: string;
 };

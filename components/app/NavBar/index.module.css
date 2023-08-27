@@ -1,23 +1,22 @@
 :root {
-  --navbar-header-bg: var(--bg-color);
+  --navbar-header-bg: none;
   --navbar-header-fg: var(--fg-color);
 
   --navbar-nav-bg: none;
   --navbar-nav-bg-hover: none;
   --navbar-nav-bg-active: none;
   --navbar-nav-bg-selected: none;
-  --navbar-nav-fg: var(--fg-color-7);
-  --navbar-nav-fg-hover: var(--fg-color);
+  --navbar-nav-fg: var(--primary-color);
+  --navbar-nav-fg-hover: var(--primary-color-1);
   --navbar-nav-fg-active: var(--fg-color);
   --navbar-nav-fg-selected: var(--fg-color);
 }
 
 header {
-  max-width: 240px;
+  max-width: 200px;
   width: 100%;
   height: 100%;
-  margin-block: 0;
-  margin-inline: 0 auto;
+  margin: 0;
   top: 0;
   padding: 1.5rem 1rem;
   z-index: 100;
@@ -29,13 +28,6 @@ header {
   gap: 1rem;
   color: var(--navbar-header-fg);
   background: var(--navbar-header-bg);
-  border-left: 1px solid var(--border-color);
-  transition: var(--transition);
-}
-
-header.with-shadow {
-  box-shadow: var(--preset-shadow-component);
-  transition: var(--transition);
 }
 
 header .site-home-link {
@@ -115,13 +107,12 @@ nav li a {
   background: var(--navbar-nav-bg);
   border-radius: 64px;
   font-size: inherit;
-  text-decoration: none;
+  text-decoration: underline;
   transition: var(--transition);
 }
 nav li a:hover {
   color: var(--navbar-nav-fg-hover);
   background: var(--navbar-nav-bg-hover);
-  text-decoration: none;
   transition: var(--transition);
 }
 nav li a:active {
@@ -132,6 +123,7 @@ nav li a:active {
 nav li.active :is(a, a:hover) {
   color: var(--navbar-nav-fg-selected);
   background: var(--navbar-nav-bg-selected);
+  font-weight: bold;
   transition: var(--transition);
 }
 
@@ -227,6 +219,7 @@ nav.overlay-menu li :is(a, a.active) {
     flex-flow: row;
     align-items: center;
     justify-content: space-between;
+    background: var(--bg-color-1);
     border-left: none;
     border-bottom: 1px solid var(--border-color);
   }

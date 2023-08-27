@@ -10,6 +10,7 @@
     "db:migrate": "docker compose -f flyway/docker/docker-compose.yml up"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.31.0",
     "lodash": "^4.17.21",
     "next": "^13.4.12",
     "node-fetch": "^3.3.2",
