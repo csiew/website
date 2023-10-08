@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import NavBar from "../components/app/NavBar";
 import BackToTop from "../components/app/BackToTop";
@@ -8,11 +8,20 @@ import config from "../config";
 import "./app.css";
 
 export default function AppContainer({ Component, pageProps }: any) {
+  const [scrolled, setScrolled] = useState<boolean>(false);
+
+  function handleScroll(this: HTMLElement, ev: Event) {
+    setScrolled((ev.target as any).scrollTop > 0);
+  }
+
   useEffect(() => {
-    const rootClassList = document.getElementById(config.rootElementId)?.classList;
+    const rootElement = document.getElementById(config.rootElementId);
+    const rootClassList = rootElement?.classList;
     config.features.classicScrollbar
       ? rootClassList?.add("classic-scrollbar")
       : rootClassList?.remove("classic-scrollbar");
+    rootElement?.addEventListener("scroll", handleScroll);
+    return () => rootElement?.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -22,7 +31,7 @@ export default function AppContainer({ Component, pageProps }: any) {
         <title>Clarence Siew</title>
       </Head>
       <AppContext>
-        <NavBar />
+        <NavBar scrolled={scrolled} />
         <main>
           <Component {...pageProps} />
           <BackToTop />
