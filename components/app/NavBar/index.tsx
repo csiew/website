@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { ComponentPropsWithRef, useContext, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { BsGithub, BsInstagram, BsLinkedin, BsMastodon } from "react-icons/bs";
@@ -7,6 +7,8 @@ import routes from "../../../lib/routes";
 import { PageRoute } from "../../../lib/@types";
 import Modal from "../../ui/Modal";
 import Button from "../../ui/Button";
+import { AdminAuthContext } from "../../../stores";
+import _ from "lodash";
 
 function SocialLinks() {
   return (
@@ -27,8 +29,18 @@ function SocialLinks() {
   );
 }
 
-export default function NavBar() {
+type NavBarProps = ComponentPropsWithRef<any> & {
+  scrolled?: boolean;
+};
+
+const navBarPropsKeys = ["scrolled"];
+
+export default function NavBar(props: NavBarProps) {
+  const sanitisedProps = _.clone(props);
+  navBarPropsKeys.forEach((k) => delete sanitisedProps[k]);
+
   const router = useRouter();
+  const adminAuthContext = useContext(AdminAuthContext);
   const [showMenu, setShowMenu] = useState<boolean>(false);
 
   const getRoutes = () => {
@@ -37,7 +49,13 @@ export default function NavBar() {
 
   return (
     <>
-      <header>
+      <header
+        {...sanitisedProps}
+        className={[
+          props.scrolled ? "scrolled" : "",
+          sanitisedProps.className
+        ].join(" ").trim()}
+      >
         <div className="site-home-link">
           <Link href="/" style={{
             margin: 0,
@@ -48,7 +66,7 @@ export default function NavBar() {
             justifyContent: "center",
             gap: 0
           }}>
-            <img src="/cartoon-profile.jpg" />
+            <img src="/profile.jpg" />
           </Link>
           <Button
             id="overlay-menu-btn"
@@ -78,6 +96,11 @@ export default function NavBar() {
                 );
               })
             }
+            {!!adminAuthContext.session?.token?.length && (
+              <li className={router.pathname === "/admin" ? "active" : ""}>
+                <Link href="/admin">Admin</Link>
+              </li>
+            )}
           </ul>
           <SocialLinks />
         </nav>

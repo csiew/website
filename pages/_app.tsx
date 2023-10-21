@@ -1,33 +1,43 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import NavBar from "../components/app/NavBar";
 import BackToTop from "../components/app/BackToTop";
 import Footer from "../components/app/Footer";
+import AppContext from "../stores";
 import config from "../config";
 import "./app.css";
 
-const AppContainer = ({ Component, pageProps }: any) => {
+export default function AppContainer({ Component, pageProps }: any) {
+  const [scrolled, setScrolled] = useState<boolean>(false);
+
+  function handleScroll(this: HTMLElement, ev: Event) {
+    setScrolled((ev.target as any).scrollTop > 0);
+  }
+
   useEffect(() => {
-    const rootClassList = document.getElementById(config.rootElementId)?.classList;
+    const rootElement = document.getElementById(config.rootElementId);
+    const rootClassList = rootElement?.classList;
     config.features.classicScrollbar
       ? rootClassList?.add("classic-scrollbar")
       : rootClassList?.remove("classic-scrollbar");
+    rootElement?.addEventListener("scroll", handleScroll);
+    return () => rootElement?.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <>
       <Head>
-        <link rel="shortcut icon" href="/cartoon-profile.jpg" />
+        <link rel="shortcut icon" href="/profile.jpg" />
         <title>Clarence Siew</title>
       </Head>
-      <NavBar />
-      <main>
-        <Component {...pageProps} />
-        <BackToTop />
-        <Footer />
-      </main>
+      <AppContext>
+        <NavBar scrolled={scrolled} />
+        <main>
+          <Component {...pageProps} />
+          <BackToTop />
+          <Footer />
+        </main>
+      </AppContext>
     </>
   );
-};
-
-export default AppContainer;
+}

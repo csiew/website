@@ -34,42 +34,14 @@
 .project-decade-group > h3 {
   width: 100%;
   margin: 0;
+  margin-bottom: 0.5rem;
   border-bottom-width: 3px;
   border-bottom-style: solid;
   border-bottom-color: var(--border-color);
   font-size: 1.5rem;
 }
 
-.project-list {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  display: inline-flex;
-  flex-flow: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 1rem;
-}
-
-@media (max-width: 799px) {
-  .project-list {
-    grid-template-columns: repeat(1, 1fr);
-  }
-}
-
-.project-list .project-list-item {
-  width: 100%;
-  margin: 0;
-  padding: 0.5rem 0rem;
-  display: inline-flex;
-  flex-flow: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 0.5rem;
-  border-radius: var(--border-radius);
-}
-
-.project-list .project-list-item > head {
+.project-list-item > head {
   margin: 0;
   padding: 0.25rem 0rem;
   display: inline-flex;
@@ -78,18 +50,18 @@
   justify-content: flex-start;
 }
 
-.project-list .project-list-item > .head > h4 {
+.project-list-item > .head > h4 {
   font-size: 1.2rem;
 }
 
-.project-list .project-list-item > .head > p {
+.project-list-item > .head > p {
   margin: 0;
   padding: 0;
   color: var(--fg-color-3);
   font-weight: normal;
 }
 
-.project-list .project-list-item > .status {
+.project-list-item > .status {
   display: inline-block;
 }
 

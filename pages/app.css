@@ -1,8 +1,9 @@
 @import url('./colors.css');
+@import url('../assets/oak-sans/index.css');
 
 :root {
   --font-family-system: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  --font-family-base: var(--font-family-system);
+  --font-family-base: "Oak Sans", var(--font-family-system);
   --font-family-article: var(--font-family-base);
   --font-family-quote: var(--font-family-base);
   --font-family-header: var(--font-family-base);
@@ -37,7 +38,7 @@ html, body, #__next {
 html {
   color-scheme: light;
   color: var(--fg-color);
-  background: var(--bg-color);
+  background: var(--bg-color-1);
   font-family: var(--font-family-base);
   font-size: 16px;
   font-weight: normal;
@@ -58,28 +59,31 @@ html, body {
   margin: 0 auto;
   padding: 0;
   display: inline-flex;
-  flex-flow: row-reverse;
+  flex-flow: column;
   align-items: flex-start;
   justify-content: flex-start;
   overflow: auto;
+}
+
+main {
+  max-width: 640px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  display: inline-flex;
+  flex-flow: column;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 @media (max-width: 799px) {
   #__next {
     flex-flow: column;
   }
-}
 
-main {
-  max-width: 640px;
-  width: 100%;
-  margin-block: 0;
-  margin-inline: auto 0;
-  padding: 0;
-  display: inline-flex;
-  flex-flow: column;
-  align-items: flex-start;
-  justify-content: flex-start;
+  main {
+    margin-inline: auto;
+  }
 }
 
 ::selection {
@@ -96,12 +100,12 @@ hr {
 
 a {
   color: var(--primary-color);
-  text-decoration: underline solid 2px var(--primary-color-1);
+  text-decoration: underline dotted 1px var(--primary-color-1);
   text-underline-offset: 3px;
+  font-weight: bold;
 }
 a:hover {
   color: var(--primary-color-1);
-  text-decoration-style: solid;
 }
 a:active {
   color: var(--fg-color);
@@ -307,15 +311,11 @@ form .form-field.form-field-checkbox label {
   font-weight: normal;
 }
 
-:is(select, input[type=text], input[type=email], input[type=password], input[type=password], input[type=search], textarea) {
+:is(select, input[type=text], input[type=email], input[type=password], input[type=url], input[type=search], textarea) {
   margin: 0;
   padding: 0.5rem 0.75rem;
-}
-
-:is(input[type=text], input[type=email], input[type=password], input[type=password], input[type=search], textarea) {
   color: var(--fg-color);
-  background: var(--bg-color);
-  box-shadow: var(--preset-shadow-textfield);
+  background: var(--bg-color-3);
   border-width: 1px;
   border-style: solid;
   border-color: var(--border-color);
@@ -323,15 +323,23 @@ form .form-field.form-field-checkbox label {
   font-size: 1rem;
   font-family: var(--font-family-widget);
 }
-:is(input[type=text], input[type=email], input[type=password], input[type=password], input[type=search], textarea):hover {
+:is(select, input[type=text], input[type=email], input[type=password], input[type=url], input[type=search], textarea):hover {
   border-color: var(--fg-color-5);
 }
-:is(input[type=text], input[type=email], input[type=password], input[type=password], input[type=search], textarea):focus {
+:is(select, input[type=text], input[type=email], input[type=password], input[type=url], input[type=search], textarea):focus {
   border-color: var(--primary-color);
   outline: none;
 }
-:is(input[type=text], input[type=email], input[type=password], input[type=password], input[type=search], textarea)::placeholder {
+:is(select, input[type=text], input[type=email], input[type=password], input[type=url], input[type=search], textarea)::placeholder {
   color: var(--fg-color-7);
+}
+
+:is(input[type=text], input[type=email], input[type=password], input[type=url], input[type=search], textarea) {
+  box-shadow: var(--preset-shadow-textfield);
+}
+
+form input[type=url] {
+  width: 100%;
 }
 
 select {
@@ -490,6 +498,7 @@ blockquote::before {
 @import url('../components/ui/NavigationSidebar/index.module.css');
 @import url('../components/ui/NavigationView/index.module.css');
 @import url('../components/ui/Paper/index.module.css');
+@import url('../components/ui/PaperList/index.module.css');
 @import url('../components/ui/Toolbar/index.module.css');
 
 @import url('../components/app/BackToTop/index.module.css');
@@ -500,6 +509,7 @@ blockquote::before {
 
 @import url('./index.module.css');
 @import url('./admin/index.module.css');
+@import url('./admin/login/index.module.css');
 @import url('./posts/index.module.css');
 @import url('./playlists/index.module.css');
 @import url('./projects/index.module.css');

@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
-import Link from "next/link";
+import { useRouter } from "next/router";
 import { capitalize } from "lodash";
 import retitle from "../../lib/retitle";
 import { determineStatusBadgeVariant } from "../../lib/projects";
 import config from "../../config";
 import NavigationView from "../../components/ui/NavigationView";
 import Badge from "../../components/ui/Badge";
+import PaperList from "../../components/ui/PaperList/PaperList";
+import PaperListItem from "../../components/ui/PaperList/PaperListItem";
 import { queryDbRest } from "../../client/db";
 
 const decadeGroupNameMap = new Map<string, string>([
@@ -18,10 +20,8 @@ const decadeGroupNameMap = new Map<string, string>([
 ]);
 
 function Projects({ projects }: { projects: { [k: string]: any } }) {
-  const [
-    projectsGroupedByDecade,
-    setProjectsGroupedByDecade
-  ] = useState();
+  const router = useRouter();
+  const [projectsGroupedByDecade, setProjectsGroupedByDecade] = useState();
 
   useEffect(() => {
     document.getElementById(config.rootElementId)?.scrollTo({ top: 0 });
@@ -54,16 +54,16 @@ function Projects({ projects }: { projects: { [k: string]: any } }) {
                   return (
                     <div key={decadeGroupName} className="project-decade-group">
                       <h3>{decadeGroupNameMap.get(decadeGroupName)}</h3>
-                      <div className="project-list">
+                      <PaperList>
                         {
                           projectsInDecade && projectsInDecade.map((project: any) => (
-                            <div key={project.urlSlug} className="project-list-item">
+                            <PaperListItem
+                              key={project.urlSlug}
+                              className="project-list-item"
+                              onClick={() => router.push(`/projects/${project.urlSlug}`)}
+                            >
                               <div className="head">
-                                <h4>
-                                  <Link href={`/projects/${project.urlSlug}`}>
-                                    {project.title}
-                                  </Link>
-                                </h4>
+                                <h4>{project.title}</h4>
                                 <p>{project.subtitle}, <span>{[project.duration.start, project.duration.end ? (project.duration.start === project.duration.end ? null : project.duration.end) : (project.status === "inactive" ? null : "Present")].filter((y) => !!y).join(" - ")}</span></p>
                               </div>
                               <span className="status">
@@ -71,10 +71,10 @@ function Projects({ projects }: { projects: { [k: string]: any } }) {
                                   {capitalize(project.status)}
                                 </Badge>
                               </span>
-                            </div>
+                            </PaperListItem>
                           ))
                         }
-                      </div>
+                      </PaperList>
                     </div>
                   );
                 })

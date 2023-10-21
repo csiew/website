@@ -44,8 +44,7 @@
 }
 
 .breadcrumbs ul li a {
-  color: var(--fg-color-1);
-  font-weight: normal;
+  color: var(--primary-color);
 }
 
 .breadcrumbs-back-btn {

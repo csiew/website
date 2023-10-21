@@ -1,14 +1,17 @@
 import React, { useEffect } from "react";
 import Head from "next/head";
-import Link from "next/link";
+import { useRouter } from "next/router";
 import path from "path";
 import retitle from "../../lib/retitle";
 import config from "../../config";
 import NavigationView from "../../components/ui/NavigationView";
-import TagList from "../../components/app/TagList";
+import PaperList from "../../components/ui/PaperList/PaperList";
+import PaperListItem from "../../components/ui/PaperList/PaperListItem";
 import { queryDbRest } from "../../client/db";
 
 function Blog({ posts }: { posts: { [k: string]: any }[] }) {
+  const router = useRouter();
+
   useEffect(() => {
     document.getElementById(config.rootElementId)?.scrollTo({ top: 0 });
   }, []);
@@ -24,20 +27,23 @@ function Blog({ posts }: { posts: { [k: string]: any }[] }) {
         content={(
           <article className="app-page">
             <h2>Posts</h2>
-            <div className="post-list">
+            <PaperList>
               {
                 posts?.map((post) => (
-                  <div key={post.urlSlug} className="post-list-entry">
-                    <h3><Link href={path.join("/posts", post.urlSlug)}>{post.title}</Link></h3>
+                  <PaperListItem
+                    key={post.urlSlug}
+                    className="post-list-entry"
+                    onClick={() => router.push(path.join("/posts", post.urlSlug))}
+                  >
+                    <h3>{post.title}</h3>
                     <span>{post.subtitle}</span>
-                    <TagList item={post} />
                     <span className="timestamp">
                       {`${new Date(post.publishedAt).toDateString()}`}
                     </span>
-                  </div>
+                  </PaperListItem>
                 ))
               }
-            </div>
+            </PaperList>
           </article>
         )}
       />
