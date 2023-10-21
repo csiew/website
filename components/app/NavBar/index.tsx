@@ -66,7 +66,7 @@ export default function NavBar(props: NavBarProps) {
             justifyContent: "center",
             gap: 0
           }}>
-            <img src="/cartoon-profile.jpg" />
+            <img src="/profile.jpg" />
           </Link>
           <Button
             id="overlay-menu-btn"

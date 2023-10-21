@@ -110,7 +110,7 @@ nav li a {
   background: var(--navbar-nav-bg);
   border-radius: 64px;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: bold;
   text-decoration: none;
   text-transform: uppercase;
   transition: var(--transition);
@@ -128,7 +128,6 @@ nav li a:active {
 nav li.active :is(a, a:hover) {
   color: var(--navbar-nav-fg-selected);
   background: var(--navbar-nav-bg-selected);
-  font-weight: bold;
   transition: var(--transition);
 }
 

@@ -15,11 +15,13 @@ const routes: PageRoute[] = [
   },
   {
     title: "Playlists",
-    path: "/playlists"
+    path: "/playlists",
+    hideFromNavBar: true
   },
   {
     title: "Watching",
-    path: "/watching"
+    path: "/watching",
+    hideFromNavBar: true
   },
   {
     title: "Tags",
