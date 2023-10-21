@@ -100,12 +100,12 @@ hr {
 
 a {
   color: var(--primary-color);
-  text-decoration: underline solid 2px var(--primary-color-1);
+  text-decoration: underline dotted 1px var(--primary-color-1);
   text-underline-offset: 3px;
+  font-weight: bold;
 }
 a:hover {
   color: var(--primary-color-1);
-  text-decoration-style: solid;
 }
 a:active {
   color: var(--fg-color);

@@ -27,7 +27,7 @@ export default function AppContainer({ Component, pageProps }: any) {
   return (
     <>
       <Head>
-        <link rel="shortcut icon" href="/cartoon-profile.jpg" />
+        <link rel="shortcut icon" href="/profile.jpg" />
         <title>Clarence Siew</title>
       </Head>
       <AppContext>
