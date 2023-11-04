@@ -1,4 +1,5 @@
 .home-page {
+  max-width: 480px;
   display: inline-flex;
   flex-flow: column;
   align-items: flex-start;
@@ -12,11 +13,6 @@
   float: right;
   border-radius: 100%;
   -webkit-user-drag: none;
-}
-
-.home-page p {
-  font-size: 28px;
-  line-height: 1.4;
 }
 
 @media (max-width: 768px) {

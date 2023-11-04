@@ -167,7 +167,7 @@ article:is(.app-page, .content-page) {
 article.app-page h2 {
   width: 100%;
   height: max-content;
-  margin: 1rem 0rem 3rem 0rem;
+  margin: 1.5rem 0rem 2rem 0rem;
   padding: 0rem 0rem 0.25rem 0rem;
   align-self: center;
   color: var(--fg-color);
