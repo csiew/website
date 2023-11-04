@@ -1,26 +1,40 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import ReactMarkdown from "react-markdown";
 import config from "../config";
 import retitle from "../lib/retitle";
 import NavigationView from "../components/ui/NavigationView";
+import { useInterval } from "usehooks-ts";
+
+const greetings = [
+  "Howdy!",
+  "Howdy stranger!",
+  "Hi there, stranger.",
+  "Hi there, visitor.",
+  "Greetings."
+];
 
 const content = `
-I'm a full-stack software engineer based in Melbourne. I love reading about history, listening to rock music (I curate annual zeitgeist [playlists](/playlists)) and the occassional writing of lore for fictional game worlds.
+I'm a full-stack software engineer based in Melbourne. Coding isn't just a job for me, it's been a passion of mine since I was 9 years old and it's been my primary hobby ever since.
 
-Coding isn't just a job for me, it's been a passion of mine since I was 9 years old. Check out a selection of my [personal projects](/projects).
+I also love reading about history (ancient civilisations, culinary history, architecture and urban planning, etc) and scouring Spotify &amp; YouTube for new music.
 
-I mostly develop in TypeScript and JavaScript for both backend services and frontend/websites. I've used a plethora frontend frameworks/libraries such as React, Next.js, Vue.js, Svelte/SvelteKit, and Mithril.js for work and personal projects.
+I mostly develop in TypeScript and JavaScript for both backend services and frontend/websites. I've used a plethora frontend frameworks/libraries such as React (including Next.js), Vue.js, and Svelte (including SvelteKit) for work and personal projects. I also have experience developing in Java and Kotlin with Spring for backend services. I also use Shell and Python scripts from time to time for some DevOps or quick data processing.
 
-I have experience developing in Java and Kotlin for backend services. I also use Shell and Python scripts from time to time for some DevOps or quick data processing.
-
-I also actively use Amazon Web Services at work. For personal projects I largely use Netlify for CI/CD and hosting, with some experimenting with edge functions; Google Firebase for its cloud database and cloud functions.
+I also actively use Amazon Web Services at work. For personal projects I largely use Netlify for CI/CD and hosting, with some experimenting with edge functions. I've also experimented with Google Firebase, Supabase, and PlanetScale for personal projects for both SQL and NoSQL database hosting.
 `;
 
 export default function Home({ lastUpdated }: { lastUpdated: number }) {
+  const [greetingIndex, setGreetingIndex] = useState<number>();
+
   useEffect(() => {
+    setGreetingIndex(Math.floor(Math.random() * greetings.length));
     document.getElementById(config.rootElementId)?.scrollTo({ top: 0 });
   }, []);
+
+  useInterval(() => {
+    setGreetingIndex(Math.floor(Math.random() * greetings.length));
+  }, 3000);
 
   return (
     <>
@@ -32,6 +46,9 @@ export default function Home({ lastUpdated }: { lastUpdated: number }) {
         content={(
           <article className="app-page home-page">
             <h2>Clarence Siew</h2>
+            <p className="greeting">
+              {greetingIndex ? greetings[greetingIndex] : "Hello."}
+            </p>
             <ReactMarkdown>
               {content}
             </ReactMarkdown>

@@ -34,7 +34,7 @@ const WatchingCardGrid = ({ title, keyPrefix, shows, setSelectedShow, filter, co
             { cornerActions }
           </div>
         </div>
-        <div className="card-list">
+        <div className="card-grid">
           {
             filteredShows.map((show) => (
               <WatchingShowCard key={`${keyPrefix}-${show.imdbId}`} show={show} setSelectedShow={setSelectedShow} />

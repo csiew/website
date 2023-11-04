@@ -48,7 +48,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 html, body {
@@ -66,7 +66,7 @@ html, body {
 }
 
 main {
-  max-width: 640px;
+  max-width: 720px;
   width: 100%;
   margin: 0 auto;
   padding: 0;
@@ -99,16 +99,18 @@ hr {
 }
 
 a {
-  color: var(--primary-color);
-  text-decoration: underline dotted 1px var(--primary-color-1);
+  color: var(--fg-color);
+  text-decoration: underline solid 1px var(--fg-color);
   text-underline-offset: 3px;
-  font-weight: bold;
+  font-weight: normal;
 }
 a:hover {
-  color: var(--primary-color-1);
+  color: var(--primary-color);
+  text-decoration-color: var(--primary-color);
 }
 a:active {
-  color: var(--fg-color);
+  color: var(--primary-color-3);
+  text-decoration-color: var(--primary-color-3);
 }
 a.disabled {
   color: var(--fg-color-3);
@@ -166,7 +168,7 @@ article:is(.app-page, .content-page) {
 article.app-page h2 {
   width: 100%;
   height: max-content;
-  margin: 1rem 0rem 3rem 0rem;
+  margin: 1.5rem 0rem 2rem 0rem;
   padding: 0rem 0rem 0.25rem 0rem;
   align-self: center;
   color: var(--fg-color);
@@ -202,10 +204,6 @@ article.app-page h2 {
   article.app-page h2 {
     text-align: center;
   }
-}
-
-article.content-page {
-  margin-block: 3rem;
 }
 
 article.content-page > .header {
@@ -247,9 +245,6 @@ article.content-page > .header > .timestamp {
   color: var(--fg-color-3);
   font-family: var(--font-family-widget);
   font-weight: 600;
-}
-article.content-page > .content {
-  line-height: 1.75;
 }
 
 @media (max-width: 767px) {

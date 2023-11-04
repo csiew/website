@@ -1,14 +1,14 @@
 :root {
-  --navbar-header-bg: var(--bg-color-1);
-  --navbar-header-fg: var(--fg-color);
+  --navbar-header-bg: var(--primary-color);
+  --navbar-header-fg: var(--bg-color);
 
   --navbar-nav-bg: none;
-  --navbar-nav-bg-hover: var(--bg-color-3);
-  --navbar-nav-bg-active: var(--bg-color-5);
-  --navbar-nav-bg-selected: none;
-  --navbar-nav-fg: var(--fg-color-6);
-  --navbar-nav-fg-hover: var(--fg-color-3);
-  --navbar-nav-fg-active: var(--primary-color);
+  --navbar-nav-bg-hover: var(--primary-color-3);
+  --navbar-nav-bg-active: var(--primary-color-2);
+  --navbar-nav-bg-selected: var(--bg-color);
+  --navbar-nav-fg: var(--bg-color);
+  --navbar-nav-fg-hover: var(--bg-color);
+  --navbar-nav-fg-active: var(--bg-color);
   --navbar-nav-fg-selected: var(--primary-color);
 }
 
@@ -16,7 +16,7 @@ header {
   width: 100%;
   margin: 0;
   top: 0;
-  padding: 1rem;
+  padding: 0.75rem 1rem;
   z-index: 100;
   position: sticky;
   display: inline-flex;
@@ -28,7 +28,6 @@ header {
   background: var(--navbar-header-bg);
 }
 header.scrolled {
-  background: var(--bg-color);
   box-shadow: var(--preset-shadow-component);
   transition: var(--transition);
 }
@@ -86,7 +85,7 @@ nav ul {
   flex-flow: row;
   align-items: center;
   justify-content: flex-start;
-  gap: 0;
+  gap: 0.25rem;
 }
 nav li {
   margin: 0;
@@ -201,15 +200,17 @@ nav.overlay-menu li :is(a, a.active) {
   padding: 0.5rem;
   display: inline-block;
   color: var(--navbar-nav-fg);
+  background: var(--navbar-nav-bg);
   line-height: 0;
   border-radius: 100%;
 }
 .social-links a:hover {
   color: var(--navbar-nav-fg-hover);
-  background: var(--bg-color-3);
+  background: var(--navbar-nav-bg-hover);
 }
 .social-links a:active {
   color: var(--navbar-nav-fg-active);
+  background: var(--navbar-nav-bg-active);
 }
 .social-links a svg {
   width: 16px;
@@ -224,13 +225,9 @@ nav.overlay-menu li :is(a, a.active) {
     max-width: unset;
     width: 100%;
     height: max-content;
-    padding: 0.5rem 0.75rem;
     flex-flow: row;
     align-items: center;
     justify-content: space-between;
-    background: var(--bg-color-1);
-    border-left: none;
-    border-bottom: 1px solid var(--border-color);
   }
   header h1 {
     display: none;

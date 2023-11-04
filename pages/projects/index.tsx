@@ -10,6 +10,7 @@ import Badge from "../../components/ui/Badge";
 import PaperList from "../../components/ui/PaperList/PaperList";
 import PaperListItem from "../../components/ui/PaperList/PaperListItem";
 import { queryDbRest } from "../../client/db";
+import Link from "next/link";
 
 const decadeGroupNameMap = new Map<string, string>([
   ["200", "2000s"],
@@ -60,7 +61,6 @@ function Projects({ projects }: { projects: { [k: string]: any } }) {
                             <PaperListItem
                               key={project.urlSlug}
                               className="project-list-item"
-                              onClick={() => router.push(`/projects/${project.urlSlug}`)}
                             >
                               <div className="head">
                                 <h4>{project.title}</h4>
