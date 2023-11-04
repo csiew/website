@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
-import { useRouter } from "next/router";
+import Link from "next/link";
 import { capitalize } from "lodash";
 import retitle from "../../lib/retitle";
 import { determineStatusBadgeVariant } from "../../lib/projects";
@@ -10,7 +10,6 @@ import Badge from "../../components/ui/Badge";
 import PaperList from "../../components/ui/PaperList/PaperList";
 import PaperListItem from "../../components/ui/PaperList/PaperListItem";
 import { queryDbRest } from "../../client/db";
-import Link from "next/link";
 
 const decadeGroupNameMap = new Map<string, string>([
   ["200", "2000s"],
@@ -21,7 +20,6 @@ const decadeGroupNameMap = new Map<string, string>([
 ]);
 
 function Projects({ projects }: { projects: { [k: string]: any } }) {
-  const router = useRouter();
   const [projectsGroupedByDecade, setProjectsGroupedByDecade] = useState();
 
   useEffect(() => {
@@ -63,7 +61,11 @@ function Projects({ projects }: { projects: { [k: string]: any } }) {
                               className="project-list-item"
                             >
                               <div className="head">
-                                <h4>{project.title}</h4>
+                                <h4>
+                                  <Link href={`/projects/${project.urlSlug}`}>
+                                    {project.title}
+                                  </Link>
+                                </h4>
                                 <p>{project.subtitle}, <span>{[project.duration.start, project.duration.end ? (project.duration.start === project.duration.end ? null : project.duration.end) : (project.status === "inactive" ? null : "Present")].filter((y) => !!y).join(" - ")}</span></p>
                               </div>
                               <span className="status">
