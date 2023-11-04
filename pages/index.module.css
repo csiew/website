@@ -14,6 +14,11 @@
   -webkit-user-drag: none;
 }
 
+.home-page p {
+  font-size: 28px;
+  line-height: 1.4;
+}
+
 @media (max-width: 768px) {
   .home-page {
     padding: 0rem;

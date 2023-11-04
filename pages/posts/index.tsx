@@ -8,6 +8,7 @@ import NavigationView from "../../components/ui/NavigationView";
 import PaperList from "../../components/ui/PaperList/PaperList";
 import PaperListItem from "../../components/ui/PaperList/PaperListItem";
 import { queryDbRest } from "../../client/db";
+import Link from "next/link";
 
 function Blog({ posts }: { posts: { [k: string]: any }[] }) {
   const router = useRouter();
@@ -33,9 +34,12 @@ function Blog({ posts }: { posts: { [k: string]: any }[] }) {
                   <PaperListItem
                     key={post.urlSlug}
                     className="post-list-entry"
-                    onClick={() => router.push(path.join("/posts", post.urlSlug))}
                   >
-                    <h3>{post.title}</h3>
+                    <h4>
+                      <Link href={`/posts/${post.urlSlug}`}>
+                        {post.title}
+                      </Link>
+                    </h4>
                     <span>{post.subtitle}</span>
                     <span className="timestamp">
                       {`${new Date(post.publishedAt).toDateString()}`}

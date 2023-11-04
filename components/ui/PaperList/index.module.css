@@ -23,9 +23,6 @@
   border: 1px solid var(--border-color);
   border-top-width: 0px;
   border-radius: 0;
-  transition: var(--transition);
-  user-select: none;
-  cursor: pointer;
 }
 .paper-list .paper-list-item:first-child {
   border-top-width: 1px;
@@ -36,11 +33,27 @@
   border-bottom-left-radius: var(--border-radius);
   border-bottom-right-radius: var(--border-radius);
 }
-.paper-list .paper-list-item:hover {
+.paper-list .paper-list-item.paper-list-item-link {
+  transition: var(--transition);
+  user-select: none;
+  cursor: pointer;
+}
+.paper-list .paper-list-item.paper-list-item-link:hover {
   background: var(--bg-color-2);
   transition: var(--transition);
 }
-.paper-list .paper-list-item:active {
+.paper-list .paper-list-item.paper-list-item-link:active {
   background: var(--bg-color-5);
   transition: var(--transition);
+}
+
+.paper-list .paper-list-item :is(h3, h4) > a {
+  font-weight: bold;
+}
+
+.paper-list .paper-list-item h3 {
+  font-size: 28px;
+}
+.paper-list .paper-list-item h4 {
+  font-size: 26px;
 }

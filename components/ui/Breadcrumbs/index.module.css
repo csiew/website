@@ -1,6 +1,7 @@
 .breadcrumbs {
   width: 100%;
   margin: 0;
+  margin-bottom: 1.5rem;
   top: 0;
   padding: 0.5rem 1rem;
   display: inline-flex;
@@ -8,6 +9,7 @@
   align-items: center;
   justify-content: flex-start;
   color: var(--fg-color-1);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .breadcrumbs ul {
@@ -43,10 +45,6 @@
   font-weight: bold;
 }
 
-.breadcrumbs ul li a {
-  color: var(--primary-color);
-}
-
 .breadcrumbs-back-btn {
   display: none !important;
 }
@@ -58,6 +56,7 @@
   }
 
   .breadcrumbs {
+    margin-bottom: 0;
     padding: 1rem;
     color: var(--fg-color);
     background: none;
