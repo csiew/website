@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
-import NavigationView from "../../components/ui/NavigationView";
+import config from "../../config";
 import routes from "../../lib/routes";
+import NavigationView from "../../components/ui/NavigationView";
 import fetchBlogPosts, { dateTransform } from "../../utils/fetch-blog-posts";
 import fetchProjects from "../../utils/fetch-projects";
 
 function Sitemap({ posts, projects }: { posts: any[]; projects: any[] }) {
+  useEffect(() => {
+    document.getElementById(config.rootElementId)?.scrollTo({ top: 0 });
+  }, []);
+  
   return (
     <NavigationView
       content={(

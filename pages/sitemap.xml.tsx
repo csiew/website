@@ -1,19 +1,31 @@
 import React from "react";
 import generateSiteMap from "../utils/generate-sitemap";
 
-const SiteMap = () => {
+const SiteMap = ({ error }: any) => {
   // getServerSideProps will do the heavy lifting
-  return <></>;
+  return (
+    <>
+      {!!error && <p>{error}</p>}
+    </>
+  );
 };
 
 export async function getServerSideProps(context: any) {
-  // We generate the XML sitemap with the posts data
-  const sitemap = await generateSiteMap();
+  try {
+    // We generate the XML sitemap with the posts data
+    const sitemap = await generateSiteMap();
 
-  context.res.setHeader("Content-Type", "text/xml");
-  // we send the XML to the browser
-  context.res.write(sitemap);
-  context.res.end();
+    // we send the XML to the browser
+    context.res.setHeader("Content-Type", "text/xml");
+    context.res.write(sitemap);
+    context.res.end();
+  } catch (err) {
+    return { 
+      props: {
+        error: String((err as any).message)
+      }
+    };
+  }
 
   return {
     props: {},

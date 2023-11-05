@@ -32,7 +32,7 @@ const routes: PageRoute[] = [
     hideFromNavBar: true
   },
   {
-    title: "Sitemap (XML)",
+    title: "Sitemap",
     path: "/sitemap.xml",
     hideFromNavBar: true
   },

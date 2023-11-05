@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import Head from "next/head";
-import { useRouter } from "next/router";
 import retitle from "../../lib/retitle";
 import config from "../../config";
 import NavigationView from "../../components/ui/NavigationView";

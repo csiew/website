@@ -11,7 +11,11 @@ const greetings = [
   "Howdy stranger!",
   "Hi there, stranger.",
   "Hi there, visitor.",
-  "Greetings."
+  "Greetings.",
+  "Aloha!",
+  "Hola!",
+  "Welcome!",
+  "Oh hey, didn't see you there!"
 ];
 
 const content = `
@@ -34,7 +38,7 @@ export default function Home({ lastUpdated }: { lastUpdated: number }) {
 
   useInterval(() => {
     setGreetingIndex(Math.floor(Math.random() * greetings.length));
-  }, 3000);
+  }, 1000);
 
   return (
     <>
@@ -64,7 +68,7 @@ export default function Home({ lastUpdated }: { lastUpdated: number }) {
   );
 }
 
-export const getStaticProps = async (context: any) => {
+export const getStaticProps = async () => {
   const lastUpdated = Date.now();
   return {
     props: { lastUpdated },
