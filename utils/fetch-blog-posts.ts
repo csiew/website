@@ -1,16 +1,24 @@
-import { queryDb } from "../client/db";
+import { queryDbRest } from "../client/db";
+
+export function dateTransform(data?: any[]) {
+  return data
+    ?.map((p) => ({
+      ...p,
+      date: new Date(p.publishedAt)
+    }))
+    .sort((a: any, b: any) => a.date < b.date ? 1 : -1);
+}
 
 export default async function () {
   const siteURL = "clarencesiew.com";
-  const result = await queryDb("SELECT * FROM item WHERE content_type = 'blog_post';");
-  const posts = result.rows
-    .map((post) => ({
-      title: post.body.title,
-      description: post.body.subtitle,
-      url: `https://${siteURL}/posts/${post.body.urlSlug}`,
-      guid: post.body.urlSlug,
-      date: new Date(post.body.publishedAt)
-    }))
-    .sort((a, b) => a.date < b.date ? 1 : -1);
+  const result = await queryDbRest("item", "content_type=eq.blog_post");
+  const posts = result
+    .map((post: any) => ({
+      title: post.title,
+      description: post.subtitle,
+      url: `https://${siteURL}/posts/${post.urlSlug}`,
+      guid: post.urlSlug,
+      publishedAt: post.publishedAt
+    }));
   return posts;
 }

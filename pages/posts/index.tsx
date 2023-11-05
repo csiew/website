@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import path from "path";
 import retitle from "../../lib/retitle";
 import config from "../../config";
 import NavigationView from "../../components/ui/NavigationView";
@@ -9,10 +8,9 @@ import PaperList from "../../components/ui/PaperList/PaperList";
 import PaperListItem from "../../components/ui/PaperList/PaperListItem";
 import { queryDbRest } from "../../client/db";
 import Link from "next/link";
+import { dateTransform } from "../../utils/fetch-blog-posts";
 
-function Blog({ posts }: { posts: { [k: string]: any }[] }) {
-  const router = useRouter();
-
+function Blog({ posts }: { posts: any[] }) {
   useEffect(() => {
     document.getElementById(config.rootElementId)?.scrollTo({ top: 0 });
   }, []);
@@ -30,7 +28,7 @@ function Blog({ posts }: { posts: { [k: string]: any }[] }) {
             <h2>Posts</h2>
             <PaperList>
               {
-                posts?.map((post) => (
+                dateTransform(posts)?.map((post) => (
                   <PaperListItem
                     key={post.urlSlug}
                     className="post-list-entry"

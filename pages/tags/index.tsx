@@ -4,7 +4,7 @@ import Link from "next/link";
 import config from "../../config";
 import retitle from "../../lib/retitle";
 import NavigationView from "../../components/ui/NavigationView";
-import { queryDb } from "../../client/db";
+import { queryDbRest } from "../../client/db";
 
 export type Tag = {
   value: string;
@@ -46,7 +46,7 @@ function TagsPage({ tags }: { tags: Tag[] }) {
 }
 
 export async function getStaticProps() {
-  const result = await queryDb("SELECT value::TEXT, COUNT(value) FROM (SELECT * FROM item WHERE item.body->>'tags' IS NOT NULL) a, jsonb_array_elements(a.body->'tags') GROUP BY value;");
+  const result = await queryDbRest("item", "SELECT value::TEXT, COUNT(value) FROM (SELECT * FROM item WHERE item.body->>'tags' IS NOT NULL) a, jsonb_array_elements(a.body->'tags') GROUP BY value;");
   const tags: Tag[] = result.rows
     .map((tag: any) => ({
       value: tag.value.replaceAll("\"", ""),
