@@ -19,4 +19,4 @@ export default async function generateRssFeed(
   posts.forEach((post: any) => feed.item(post));
 
   return feed.xml({ indent: true });
-};
+}
