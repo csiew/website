@@ -16,7 +16,7 @@ export default async function generateRssFeed(
     site_url: "https://" + siteURL
   });
 
-  posts.forEach((post) => feed.item(post));
+  posts.forEach((post: any) => feed.item(post));
 
   return feed.xml({ indent: true });
 };
