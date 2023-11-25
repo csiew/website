@@ -19,7 +19,8 @@ const routes: PageRoute[] = [
   },
   {
     title: "Watching",
-    path: "/watching"
+    path: "/watching",
+    hideFromNavBar: true
   },
   {
     title: "Tags",

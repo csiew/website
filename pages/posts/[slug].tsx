@@ -67,7 +67,7 @@ function BlogPostPage({ post }: { post: any }) {
 }
 
 export async function getStaticPaths() {
-  const result = await queryDbRest("item", "content_type=eq.blog_post");
+  const result = await queryDbRest("item", "content_type=eq.blog_post&body->>hiddenAt=is.null");
   const posts = result
     .sort((a: any, b: any) => a.publishedAt.localeCompare(b.publishedAt))
     .reverse();
@@ -77,7 +77,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }: any) {
   const { slug } = params;
-  const result = await queryDbRest("item", `content_type=eq.blog_post&body->>urlSlug=eq.${slug}`);
+  const result = await queryDbRest("item", `content_type=eq.blog_post&body->>hiddenAt=is.null&body->>urlSlug=eq.${slug}`);
   const post = result?.[0];
  
   return { props: { post } };

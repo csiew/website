@@ -23,10 +23,10 @@
 
   --border-color: var(--bg-color-6);
 
-  --primary-color: rgb(50, 150, 50);
-  --primary-color-1: rgb(40, 140, 40);
-  --primary-color-2: rgb(30, 130, 30);
-  --primary-color-3: rgb(20, 120, 20);
+  --primary-color: rgb(150, 50, 50);
+  --primary-color-1: rgb(140, 40, 40);
+  --primary-color-2: rgb(130, 30, 30);
+  --primary-color-3: rgb(120, 20, 20);
 
   --shadow: none;
   --shadow-1: rgba(0, 0, 0, 0.5);
