@@ -1,0 +1,32 @@
+.main {
+  max-width: 1280px;
+  width: 100%;
+  margin-inline: auto;
+  padding: 2rem;
+  display: inline-flex;
+  flex-flow: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+.main > div {
+  width: 100%;
+}
+
+.col {
+  display: inline-flex;
+  flex-flow: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+@media (max-width: 1023px) {
+  .main {
+    flex-flow: column;
+    gap: 5rem;
+  }
+  .col {
+    gap: 5rem;
+  }
+}

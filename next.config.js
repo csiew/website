@@ -1,4 +1,6 @@
 /* eslint-disable no-undef */
+/** @type {import('next').NextConfig} */
+const nextConfig = {};
 
 function getEnv(key, optional=false) {
   let varValue = process.env[key];
@@ -9,8 +11,8 @@ function getEnv(key, optional=false) {
   return varValue;
 }
 
-module.exports = {
-  reactStrictMode: true,
+const combinedConfig = {
+  ...nextConfig,
   webpack: (config) => {
     config.resolve.fallback = { fs: false };
 
@@ -28,3 +30,5 @@ module.exports = {
     DEBUG_MODE: getEnv("DEBUG_MODE", true)
   }
 };
+
+export default combinedConfig;
