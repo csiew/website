@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import ReactMarkdown from "react-markdown";
 import retitle from "../../lib/retitle";
 import config from "../../config";
 import NavigationView from "../../components/ui/NavigationView";
 import Breadcrumbs from "../../components/ui/Breadcrumbs";
 import TagList from "../../components/app/TagList";
 import { queryDbRest } from "../../client/db";
+import Markdown from "../../components/ui/Markdown/Markdown";
 
 function BlogPostPage({ post }: { post: any }) {
   const router = useRouter();
@@ -47,9 +47,7 @@ function BlogPostPage({ post }: { post: any }) {
               </span>
             </div>
             <div className={["content", post.quotesAsNotes ? "blockquotes-as-notes" : ""].join(" ")}>
-              <ReactMarkdown linkTarget="_blank">
-                {atob(post?.body ?? "")}
-              </ReactMarkdown>
+              <Markdown>{atob(post?.body ?? "")}</Markdown>
             </div>
             <TagList item={post} />
             <hr />

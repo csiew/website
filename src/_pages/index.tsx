@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
-import ReactMarkdown from "react-markdown";
 import config from "../config";
 import retitle from "../lib/retitle";
 import NavigationView from "../components/ui/NavigationView";
 import { useInterval } from "usehooks-ts";
 import IntroCard from "../sections/About/About";
+import Markdown from "../components/ui/Markdown/Markdown";
 
 const greetings = [
   "Howdy!",
@@ -55,9 +55,7 @@ export default function Home({ lastUpdated }: { lastUpdated: number }) {
             <p className="greeting">
               {greetingIndex ? greetings[greetingIndex] : "Hello."}
             </p>
-            <ReactMarkdown>
-              {content}
-            </ReactMarkdown>
+            <Markdown>{content}</Markdown>
             <p>
               <span style={{ color: "var(--fg-color-6)", fontStyle: "italic", fontSize: "0.8rem" }}>
                 Last updated: {(new Date(lastUpdated)).toDateString()}

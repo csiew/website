@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import ReactMarkdown from "react-markdown";
 import { capitalize } from "lodash";
 import retitle from "../../lib/retitle";
 import config from "../../config";
@@ -15,6 +14,7 @@ import Paper from "../../components/ui/Paper";
 import { determineStatusBadgeVariant } from "../../lib/projects";
 import TagList from "../../components/app/TagList";
 import { queryDbRest } from "../../client/db";
+import Markdown from "../../components/ui/Markdown/Markdown";
 
 const ProjectPage = ({ project }: { project: any }) => {
   const router = useRouter();
@@ -74,9 +74,7 @@ const ProjectPage = ({ project }: { project: any }) => {
                     return <Badge key={encodeURI(`${project?.title} ${item}`)} variant="plain">{item}</Badge>;
                   })}
                 </div>
-                <ReactMarkdown>
-                  {atob(project?.body ?? "")}
-                </ReactMarkdown>
+                <Markdown>{atob(project?.body ?? "")}</Markdown>
                 <ButtonGroup orientation="horizontal" style={{ width: "100%", justifyContent: "center", margin: "1.5rem 0rem 0.5rem 0rem" }}>
                   <Button variant="link" url={project?.links?.website} newTab={true} disabled={!project?.links?.website}>Website</Button>
                   <Button variant="link" url={project?.links?.repository} newTab={true} disabled={!project?.links?.repository}>Repository</Button>

@@ -3,11 +3,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import _ from "lodash";
-import Markdown from "react-markdown";
 import styles from "./page.module.css";
-import { determineStatusBadgeVariant } from "../../../lib/projects";
 import Card from "../../../components/ui/Card/Card";
-import Badge from "../../../components/ui/Badge/Badge";
+import Markdown from "../../../components/ui/Markdown/Markdown";
 
 export default function PostPage({ params }: { params: { id: string } }) {
   const isMountedRef = useRef<boolean>(false);
@@ -58,9 +56,7 @@ export default function PostPage({ params }: { params: { id: string } }) {
             <sub>{new Date(post?.publishedAt).toLocaleDateString()}</sub>
           </div>
           <div className={styles.content}>
-            <Markdown>
-              {post?.body}
-            </Markdown>
+            <Markdown>{post?.body}</Markdown>
           </div>
         </Card>
       )}

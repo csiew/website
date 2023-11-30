@@ -4,11 +4,11 @@ import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import axios from "axios";
 import _ from "lodash";
-import Markdown from "react-markdown";
 import styles from "./page.module.css";
 import { determineStatusBadgeVariant } from "../../../lib/projects";
 import Card from "../../../components/ui/Card/Card";
 import Badge from "../../../components/ui/Badge/Badge";
+import Markdown from "../../../components/ui/Markdown/Markdown";
 
 export default function ProjectPage({ params }: { params: { id: string } }) {
   const isMountedRef = useRef<boolean>(false);
@@ -75,16 +75,14 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
               <img src={project?.assets?.screenshots[0]} width="100%" />
             </Link>
           )}
-          <Markdown>
-            {project?.body}
-          </Markdown>
+          <Markdown>{project?.body}</Markdown>
           <div className={styles.links}>
             <ul>
               <li>
                 <Link
                   href={project?.links?.website ?? "#"}
                   target="_blank"
-                  className={!project?.links?.website && styles.disabled}
+                  className={!project?.links?.website ? styles.disabled : undefined}
                 >
                   Website
                 </Link>
@@ -93,7 +91,7 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
                 <Link
                   href={project?.links?.repository ?? "#"}
                   target="_blank"
-                  className={!project?.links?.repository && styles.disabled}
+                  className={!project?.links?.repository ? styles.disabled : undefined}
                 >
                   Repository
                 </Link>

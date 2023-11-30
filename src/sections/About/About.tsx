@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import Markdown from "react-markdown";
 import { useInterval } from "usehooks-ts";
 import config from "../../config";
 import Card from "../../components/ui/Card/Card";
+import Markdown from "../../components/ui/Markdown/Markdown";
 
 const greetings = [
   "Howdy!",

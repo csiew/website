@@ -15,6 +15,10 @@ const combinedConfig = {
   ...nextConfig,
   webpack: (config) => {
     config.resolve.fallback = { fs: false };
+    config.resolve.extensionAlias = {
+      ".js": [".js", ".ts"],
+      ".jsx": [".jsx", ".tsx"],
+  };
 
     return config;
   },
@@ -31,4 +35,4 @@ const combinedConfig = {
   }
 };
 
-export default combinedConfig;
+module.exports = combinedConfig;
