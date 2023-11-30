@@ -20,7 +20,7 @@ export default function PostPage({ params }: { params: { id: string } }) {
       if (result.status !== 200) {
         throw new Error(`Failed to fetch post: ${result.status} ${result.statusText}`);
       }
-      let { data } = result;
+      const { data } = result;
       data.body = atob(result.data.body);
       console.log(data);
       setPost(result.data);

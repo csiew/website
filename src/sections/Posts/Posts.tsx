@@ -42,7 +42,7 @@ export default function Posts() {
       {!isLoading && !isError && (
         <div className={styles.postsList}>
           <ul>
-            {posts.map((p) => (
+            {posts.map((p: any) => (
               <li key={p.urlSlug}>
                 <div className={styles.postsListEntryHeader}>
                   <Link href={`/posts/${p.urlSlug}`}>

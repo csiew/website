@@ -30,5 +30,5 @@ export default function AppContext(props: ComponentPropsWithRef<any>) {
     <AdminAuthContext.Provider value={{ session, setSession }}>
       {props.children}
     </AdminAuthContext.Provider>
-  )
+  );
 }
