@@ -6,6 +6,7 @@ import styles from "./Projects.module.css";
 import Card from "../../components/ui/Card/Card";
 import Badge from "../../components/ui/Badge/Badge";
 import { determineStatusBadgeVariant } from "../../lib/projects";
+import CardHeader from "../../components/ui/Card/CardHeader";
 
 const decadeGroupNameMap = new Map<string, string>([
   ["200", "2000s"],
@@ -15,7 +16,7 @@ const decadeGroupNameMap = new Map<string, string>([
   ["204", "2040s"],
 ]);
 
-export default function Projects() {
+export default function Projects({ isListView }: { isListView?: boolean }) {
   const isMountedRef = useRef<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isError, setIsError] = useState<boolean>(false);
@@ -25,7 +26,11 @@ export default function Projects() {
   async function getProjects() {
     try {
       setIsLoading(true);
-      const result = await fetch("/api/projects");
+      let queryUrl = "/api/projects";
+      if (!isListView) {
+        queryUrl += "?limit=5&list=1";
+      }
+      const result = await fetch(queryUrl);
       if (!result.ok) {
         throw new Error(`Failed to fetch projects: ${result.status} ${result.statusText}`);
       }
@@ -49,13 +54,46 @@ export default function Projects() {
 
   return (
     <Card>
-      <h2>Projects</h2>
+      <CardHeader>
+        <h2>
+          {isListView ? "Projects" : <Link href="/projects">Projects</Link>}
+        </h2>
+        {!isListView && (
+          <Link href="/projects" className="seeAllBtn">
+            See all projects
+          </Link>
+        )}
+      </CardHeader>
       {isError && <p>Failed to load projects</p>}
       {isLoading && <p>Loading...</p>}
-      {!isLoading && !isError && (
+      {!isLoading && !isError && !!projects && (
         <div className={styles.container}>
+          {!isListView && (
+            <div className={styles.group}>
+              <ul>
+                {projects.sort((a: any, b: any) => a.duration.start < b.duration.start ? 1 : -1).map((project: any) => (
+                  <li key={project.urlSlug}>
+                    <div className={styles.projectHeader}>
+                      <h4>
+                        <Link href={`/projects/${project.urlSlug}`}>
+                          {project.title}
+                        </Link>
+                      </h4>
+                      <sub>{[project.duration.start, project.duration.end ? (project.duration.start === project.duration.end ? null : project.duration.end) : (project.status === "inactive" ? null : "Present")].filter((y) => !!y).join(" - ")}</sub>
+                    </div>
+                    <p>{project.subtitle}</p>
+                    <span className="status">
+                      <Badge variant={determineStatusBadgeVariant(project.status)}>
+                        {_.capitalize(project.status)}
+                      </Badge>
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
           {
-            projects &&
+            isListView &&
             Object.entries<[string, any[]]>(projects).sort((a, b) => a[0] < b[0] ? 1 : -1).map(([decadeGroupName, projectsInDecade]) => {
               return (
                 <div key={decadeGroupName} className={styles.group}>

@@ -6,7 +6,7 @@ import { createClient } from "@supabase/supabase-js";
 import config from "../../config";
 import retitle from "../../lib/retitle";
 import NavigationView from "../../components/ui/NavigationView";
-import Breadcrumbs from "../../components/ui/Breadcrumbs";
+import Breadcrumbs from "../../components/ui/Breadcrumbs/Breadcrumbs";
 import getTags, { Tag } from "../../utils/fetch-tags";
 
 type ItemFromDb = {

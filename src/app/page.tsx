@@ -15,10 +15,10 @@ export default function Home() {
         <About />
         <Posts />
         <Socials />
-        <Playlists />
       </div>
       <div className={styles.col}>
         <Projects />
+        <Playlists />
       </div>
     </main>
   );

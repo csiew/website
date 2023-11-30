@@ -5,6 +5,7 @@ import _ from "lodash";
 import styles from "./page.module.css";
 import Card from "../../../components/ui/Card/Card";
 import Markdown from "../../../components/ui/Markdown/Markdown";
+import Breadcrumbs from "../../../components/ui/Breadcrumbs/Breadcrumbs";
 
 export default function PostPage({ params }: { params: { id: string } }) {
   const isMountedRef = useRef<boolean>(false);
@@ -40,6 +41,17 @@ export default function PostPage({ params }: { params: { id: string } }) {
 
   return (
     <main className={styles.main}>
+      <Breadcrumbs
+        items={[
+          {
+            title: "Posts",
+            href: "/posts"
+          },
+          {
+            title: post?.title ?? "Post"
+          }
+        ]}
+      />
       {isError && <p>Failed to fetch project</p>}
       {isLoading && <p>Loading...</p>}
       {!isLoading && !isError && (

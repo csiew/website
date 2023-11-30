@@ -8,6 +8,7 @@ import { determineStatusBadgeVariant } from "../../../lib/projects";
 import Card from "../../../components/ui/Card/Card";
 import Badge from "../../../components/ui/Badge/Badge";
 import Markdown from "../../../components/ui/Markdown/Markdown";
+import Breadcrumbs from "../../../components/ui/Breadcrumbs/Breadcrumbs";
 
 export default function ProjectPage({ params }: { params: { id: string } }) {
   const isMountedRef = useRef<boolean>(false);
@@ -43,6 +44,17 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
 
   return (
     <main className={styles.main}>
+      <Breadcrumbs
+        items={[
+          {
+            title: "Projects",
+            href: "/projects"
+          },
+          {
+            title: project?.title ?? "Project"
+          }
+        ]}
+      />
       {isError && <p>Failed to fetch project</p>}
       {isLoading && <p>Loading...</p>}
       {!isLoading && !isError && (

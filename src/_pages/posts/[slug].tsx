@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import retitle from "../../lib/retitle";
 import config from "../../config";
 import NavigationView from "../../components/ui/NavigationView";
-import Breadcrumbs from "../../components/ui/Breadcrumbs";
+import Breadcrumbs from "../../components/ui/Breadcrumbs/Breadcrumbs";
 import TagList from "../../components/app/TagList";
 import { queryDbRest } from "../../client/db";
 import Markdown from "../../components/ui/Markdown/Markdown";

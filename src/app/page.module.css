@@ -24,9 +24,27 @@
 @media (max-width: 1023px) {
   .main {
     flex-flow: column;
-    gap: 5rem;
+    gap: 3rem;
+  }
+  .main > div {
+    margin-bottom: 2rem;
   }
   .col {
-    gap: 5rem;
+    gap: 3rem;
   }
+}
+
+.notFoundMain {
+  max-width: 480px;
+  width: 100%;
+  margin-block: 2rem;
+  margin-inline: auto;
+  padding: 3rem;
+  color: var(--bg-color);
+  background: var(--fg-color);
+  text-align: center;
+}
+
+.notFoundMain h2 {
+  text-transform: uppercase;
 }

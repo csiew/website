@@ -76,3 +76,10 @@
   color: var(--fg-color-5);
   font-size: 1rem;
 }
+
+@media (max-width: 1023px) {
+  .projectHeader {
+    flex-flow: column;
+    justify-content: flex-start;
+  }
+}

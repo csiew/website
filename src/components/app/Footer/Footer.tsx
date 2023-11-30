@@ -1,14 +1,9 @@
 import React from "react";
-import Link from "next/link";
+import styles from "./Footer.module.css";
 
 export default function Footer() {
   return (
-    <footer>
-      <p>
-        <Link href="/sitemap">
-          Sitemap
-        </Link>
-      </p>
+    <footer className={styles.footer}>
       <p>
         &copy; 2023 Clarence Siew
       </p>

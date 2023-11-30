@@ -1,5 +1,5 @@
 .main {
-  max-width: 800px;
+  max-width: var(--content-page-max-width);
   width: 100%;
   margin-inline: auto;
   padding: 2rem;

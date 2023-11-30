@@ -6,7 +6,7 @@ import { capitalize } from "lodash";
 import retitle from "../../lib/retitle";
 import config from "../../config";
 import Badge from "../../components/ui/Badge/Badge";
-import Breadcrumbs from "../../components/ui/Breadcrumbs";
+import Breadcrumbs from "../../components/ui/Breadcrumbs/Breadcrumbs";
 import Button from "../../components/ui/Button";
 import ButtonGroup from "../../components/ui/ButtonGroup";
 import NavigationView from "../../components/ui/NavigationView";

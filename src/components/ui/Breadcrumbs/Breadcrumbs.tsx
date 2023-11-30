@@ -1,7 +1,7 @@
-import Link from "next/link";
 import React from "react";
-import Button from "../Button";
+import Link from "next/link";
 import { MdArrowBack } from "react-icons/md";
+import styles from "./Breadcrumbs.module.css";
 
 type BreadcrumbsProps = {
   items: {
@@ -12,17 +12,15 @@ type BreadcrumbsProps = {
 
 const Breadcrumbs = ({ items }: BreadcrumbsProps) => {
   return (
-    <div className="breadcrumbs">
+    <div className={styles.breadcrumbs}>
       {
         (items.length > 1) && (
-          <Button
-            iconOnly
-            className="breadcrumbs-back-btn"
-            variant="link"
-            url={items[items.length - 2].href}
+          <Link
+            href={items[items.length - 2].href ?? "/"}
+            className={styles.breadcrumbsBackBtn}
           >
             <MdArrowBack />
-          </Button>
+          </Link>
         )
       }
       <ul>

@@ -1,14 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { queryDbRest } from "../../../client/db";
 
-const decadeGroupNameMap = new Map<string, string>([
-  ["200", "2000s"],
-  ["201", "2010s"],
-  ["202", "2020s"],
-  ["203", "2030s"],
-  ["204", "2040s"],
-]);
-
 function regroupByDecade(projects: any) {
   const decadeGroupings = {} as any;
   projects.forEach((project: any) => {
@@ -22,8 +14,24 @@ function regroupByDecade(projects: any) {
 }
 
 export async function GET(request: NextRequest) {
-  const result = await queryDbRest("item", "content_type=eq.project");
+  let queryStr = "content_type=eq.project&order=body->duration->>start.desc,body->duration->>end.desc.nullslast,body->>status.asc";
+  
+  const searchParams = new URL(request.url).searchParams;
+
+  if (searchParams.has("limit")) {
+    const limit = Number(searchParams.get("limit"));
+    if (limit > 0)
+      queryStr += `&limit=${searchParams.get("limit")}`;
+  }
+
+  const result = await queryDbRest("item", queryStr);
   const projects = result.sort((a: any, b: any) => b.duration.start.localeCompare(a.duration.start));
-  const projectsGroupedByDecade = regroupByDecade(projects);
-  return NextResponse.json({ projects: projectsGroupedByDecade });
+
+  const isGroupingByDecade = !searchParams.has("list") || searchParams.get("list") !== "1";
+  
+  if (isGroupingByDecade) {
+    const projectsGroupedByDecade = regroupByDecade(projects);
+    return NextResponse.json({ projects: projectsGroupedByDecade });
+  }
+  return NextResponse.json({ projects });
 }

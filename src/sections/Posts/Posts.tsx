@@ -2,8 +2,9 @@ import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import styles from "./Posts.module.css";
 import Card from "../../components/ui/Card/Card";
+import CardHeader from "../../components/ui/Card/CardHeader";
 
-export default function Posts() {
+export default function Posts({ isListView }: { isListView?: boolean }) {
   const isMountedRef = useRef<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isError, setIsError] = useState<boolean>(false);
@@ -12,7 +13,11 @@ export default function Posts() {
   async function getPosts() {
     try {
       setIsLoading(true);
-      const result = await fetch("/api/posts");
+      let queryUrl = "/api/posts";
+      if (!isListView) {
+        queryUrl += "?order=desc&limit=3";
+      }
+      const result = await fetch(queryUrl);
       if (!result.ok) {
         throw new Error(`Failed to fetch posts: ${result.status} ${result.statusText}`);
       }
@@ -36,7 +41,16 @@ export default function Posts() {
 
   return (
     <Card>
-      <h2>Posts</h2>
+      <CardHeader>
+        <h2>
+          {isListView ? "Posts" : <Link href="/posts">Posts</Link>}
+        </h2>
+        {!isListView && (
+          <Link href="/posts" className="seeAllBtn">
+            See all posts
+          </Link>
+        )}
+      </CardHeader>
       {isError && <p>Failed to fetch posts</p>}
       {isLoading && <p>Loading...</p>}
       {!isLoading && !isError && (

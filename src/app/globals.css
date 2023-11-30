@@ -11,8 +11,9 @@
   --font-family-widget: var(--font-family-base);
   --font-size: 14px;
 
+  --content-page-max-width: 600px;
   --border-width: 1px;
-  --border-radius: 9px;
+  --border-radius: 0;
   --transition: 0.25s;
 
   color-scheme: var(--primary-color);
@@ -31,18 +32,18 @@
 
 html {
   width: 100%;
-  color: var(--fg);
-  background: var(--bg);
+  color: var(--fg-color);
+  background: var(--bg-color);
   font-family: var(--font-family-base);
   font-size: var(--font-size);
   font-weight: normal;
   font-synthesis: none;
   font-display: fallback;
+  line-height: 1.5;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-  line-height: 1.5;
 }
 
 body {
@@ -79,4 +80,26 @@ a:active {
 
 pre {
   font-family: var(--font-family-monospace);
+}
+
+.seeAllBtn {
+  padding: 0.25rem 0.75rem;
+  color: var(--primary-color);
+  background: none;
+  border: 1px solid var(--primary-color);
+  border-radius: var(--border-radius);
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.seeAllBtn:hover {
+  color: var(--bg-color);
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+}
+.seeAllBtn:active {
+  color: var(--bg-color);
+  background: var(--fg-color);
+  border-color: var(--fg-color);
 }

@@ -7,7 +7,7 @@ import { Show } from "../../../lib/watching";
 import NavigationView from "../../../components/ui/NavigationView";
 import Button from "../../../components/ui/Button";
 import Paper from "../../../components/ui/Paper";
-import Breadcrumbs from "../../../components/ui/Breadcrumbs";
+import Breadcrumbs from "../../../components/ui/Breadcrumbs/Breadcrumbs";
 import { queryDbRest } from "../../../client/db";
 
 function ShowDetailPage({ show, isInModal }: { show?: Show, isInModal?: boolean }) {

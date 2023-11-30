@@ -1,5 +1,5 @@
 .main {
-  max-width: 800px;
+  max-width: var(--content-page-max-width);
   width: 100%;
   margin-inline: auto;
   padding: 2rem;
@@ -33,7 +33,6 @@
 .screenshot {
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.125);
 }
 .screenshot img {
   border-radius: var(--border-radius);

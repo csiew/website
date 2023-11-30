@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import NavBar from "../components/app/NavBar/NavBar";
 import BackToTop from "../components/app/BackToTop";
-import Footer from "../components/app/Footer";
+import Footer from "../components/app/Footer/Footer";
 import AppContext from "../stores";
 import config from "../config";
 import "./app.css";

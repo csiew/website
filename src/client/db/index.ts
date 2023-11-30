@@ -9,14 +9,6 @@ export async function queryDbRest(table: string, query: string) {
       }
     }
   );
-  const resultStr = await response.text();
-  console.debug(resultStr);
-  let result;
-  try {
-    result = await response.json();
-  } catch (err) {
-    console.error(err);
-    result = JSON.parse(resultStr);
-  }
+  const result = await response.json();
   return result.map((r: any) => r.body);
 }
