@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import axios from "axios";
 import _ from "lodash";
 import styles from "./page.module.css";
 import Card from "../../../components/ui/Card/Card";
@@ -16,15 +15,14 @@ export default function PostPage({ params }: { params: { id: string } }) {
   async function getProject() {
     try {
       setIsLoading(true);
-      const result = await axios.get(`/api/posts/${params.id}`);
-      if (result.status !== 200) {
+      const result = await fetch(`/api/posts/${params.id}`);
+      if (!result.ok) {
         throw new Error(`Failed to fetch post: ${result.status} ${result.statusText}`);
       }
-      const { data } = result;
-      data.body = atob(result.data.body);
-      console.log(data);
-      setPost(result.data);
-      setIsError(!result.data);
+      const data = await result.json();
+      data.body = atob(data.body);
+      setPost(data);
+      setIsError(!data);
     } catch (err) {
       console.error(err);
       setIsError(true);

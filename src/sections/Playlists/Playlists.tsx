@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import axios from "axios";
 import styles from "./Playlists.module.css";
 import Card from "../../components/ui/Card/Card";
 import { Playlist } from "../../lib/playlists";
@@ -14,11 +13,12 @@ export default function Playlists() {
   async function getPlaylists() {
     try {
       setIsLoading(true);
-      const result = await axios.get("/api/playlists");
-      if (result.status !== 200) {
-        throw new Error("Failed to fetch playlists");
+      const result = await fetch("/api/playlists");
+      if (!result.ok) {
+        throw new Error(`Failed to fetch playlists: ${result.status} ${result.statusText}`);
       }
-      setPlaylists(result.data.playlists);
+      const data = await result.json();
+      setPlaylists(data.playlists);
     } catch (err) {
       console.error(err);
       setIsError(true);

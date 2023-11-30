@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import axios from "axios";
 import styles from "./Posts.module.css";
 import Card from "../../components/ui/Card/Card";
 
@@ -13,11 +12,12 @@ export default function Posts() {
   async function getPosts() {
     try {
       setIsLoading(true);
-      const result = await axios.get("/api/posts");
-      if (result.status !== 200) {
-        throw new Error("Failed to fetch posts");
+      const result = await fetch("/api/posts");
+      if (!result.ok) {
+        throw new Error(`Failed to fetch posts: ${result.status} ${result.statusText}`);
       }
-      setPosts(result.data.posts);
+      const data = await result.json();
+      setPosts(data.posts);
       setIsError(false);
     } catch (err) {
       console.error(err);

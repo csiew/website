@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import axios from "axios";
 import _ from "lodash";
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 import styles from "./Projects.module.css";
@@ -24,16 +23,21 @@ export default function Projects() {
   const [collapsedGroups, setCollapsedGroups] = useState<Set<string>>(new Set<string>());
 
   async function getProjects() {
-    setIsLoading(true);
-    const result = await axios.get("/api/projects");
-    if (result.status !== 200) {
-      console.error(result.statusText);
+    try {
+      setIsLoading(true);
+      const result = await fetch("/api/projects");
+      if (!result.ok) {
+        throw new Error(`Failed to fetch projects: ${result.status} ${result.statusText}`);
+      }
+      const data = await result.json();
+      setProjects(data.projects);
+      setIsError(false);
+    } catch (err) {
+      console.error(err);
       setIsError(true);
-      return;
+    } finally {
+      setIsLoading(false);
     }
-    const { data } = result;
-    setProjects(data.projects);
-    setIsLoading(false);
   }
 
   useEffect(() => {

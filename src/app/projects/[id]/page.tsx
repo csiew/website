@@ -2,7 +2,6 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import axios from "axios";
 import _ from "lodash";
 import styles from "./page.module.css";
 import { determineStatusBadgeVariant } from "../../../lib/projects";
@@ -19,14 +18,14 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
   async function getProject() {
     try {
       setIsLoading(true);
-      const result = await axios.get(`/api/projects/${params.id}`);
-      if (result.status !== 200) {
+      const result = await fetch(`/api/projects/${params.id}`);
+      if (!result.ok) {
         throw new Error(`Failed to fetch project: ${result.status} ${result.statusText}`);
       }
-      const { data } = result;
-      data.body = atob(result.data.body);
-      setProject(result.data);
-      setIsError(!result.data);
+      const data = await result.json();
+      data.body = atob(data.body);
+      setProject(data);
+      setIsError(false);
     } catch (err) {
       console.error(err);
       setIsError(true);
