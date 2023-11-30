@@ -14,7 +14,9 @@ export async function GET(request: NextRequest) {
     }
   
     const result = await queryDbRest("item", queryStr);
-    const posts = result.sort((a: any, b: any) => b.publishedAt.localeCompare(a.publishedAt));
+    console.log({ result });
+    const posts = result.sort((a: any, b: any) => (new Date(a.publishedAt)).getTime() < (new Date(b.publishedAt)).getTime() ? 1 : -1);
+    console.log({ posts });
     return NextResponse.json({ posts });
   } catch (err) {
     console.error(err);
