@@ -15,7 +15,7 @@ export default function Posts({ isListView }: { isListView?: boolean }) {
       setIsLoading(true);
       let queryUrl = "/api/posts";
       if (!isListView) {
-        queryUrl += "?order=desc&limit=3";
+        queryUrl += "?limit=3";
       }
       const result = await fetch(queryUrl);
       if (!result.ok) {
