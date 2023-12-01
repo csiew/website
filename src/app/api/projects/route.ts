@@ -16,7 +16,7 @@ function regroupByDecade(projects: any) {
 export async function GET(request: NextRequest) {
   let queryStr = "content_type=eq.project&order=body->duration->>start.desc,body->duration->>end.desc.nullslast,body->>status.asc";
   
-  const searchParams = new URL(request.url).searchParams;
+  const searchParams = request.nextUrl.searchParams;
 
   if (searchParams.has("limit")) {
     const limit = Number(searchParams.get("limit"));

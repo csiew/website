@@ -5,7 +5,7 @@ export async function GET(request: NextRequest) {
   try {
     let queryStr = "content_type=eq.blog_post&body->>hiddenAt=is.null&order=body->>publishedAt.desc";
   
-    const searchParams = new URL(request.url).searchParams;
+    const searchParams = request.nextUrl.searchParams;
   
     if (searchParams.has("limit")) {
       const limit = Number(searchParams.get("limit"));
