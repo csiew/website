@@ -16,7 +16,7 @@ export default async function generateRssFeed(
     feed_url: "https://" + path.join(siteUrl, ...feedPath),
     site_url: "https://" + siteUrl
   });
-  routes.forEach((r) => feed.item(r));
+  routes.forEach((r: any) => feed.item(r));
   (await fetchBlogPosts()).forEach((post: any) => feed.item(post));
   (await fetchProjects()).forEach((project: any) => feed.item(project));
 
