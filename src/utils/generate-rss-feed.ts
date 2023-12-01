@@ -1,24 +1,22 @@
 import path from "path";
 import RSS from "rss";
-import fetchBlogPosts from "./fetch-blog-posts";
-import fetchProjects from "./fetch-projects";
 import { siteUrl } from "./@types";
-import routes from "./fetch-routes";
+import fetchBlogPosts from "./fetch-blog-posts";
 
-export default async function generateRssFeed(
-  title: string,
-  description: string,
-  feedPath: string[]
-) {
-  const feed = new RSS({
-    title,
-    description,
-    feed_url: "https://" + path.join(siteUrl, ...feedPath),
-    site_url: "https://" + siteUrl
-  });
-  routes.forEach((r: any) => feed.item(r));
-  (await fetchBlogPosts()).forEach((post: any) => feed.item(post));
-  (await fetchProjects()).forEach((project: any) => feed.item(project));
+const baseUrl = `https://${siteUrl}`;
 
-  return feed.xml({ indent: true });
+export const rssConfig = {
+  title: "Clarence Siew",
+  description: "Clarence Siew's website",
+  feed_url: path.join(baseUrl, "rss.xml"),
+  site_url: baseUrl
+};
+
+export default async function generateRssFeed() {
+  const feed = new RSS(rssConfig);
+  const items = await fetchBlogPosts();
+  console.debug({ items });
+  items.forEach((item: any) => feed.item(item));
+
+  return feed;
 }
