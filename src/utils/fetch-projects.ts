@@ -1,6 +1,7 @@
+import { RssFeedEntry } from "./@types";
 import { queryDbRest } from "../client/db";
 
-export default async function () {
+export default async function fetchProjects(): Promise<RssFeedEntry[]> {
   const siteURL = "clarencesiew.com";
   const result = await queryDbRest("item", "content_type=eq.project");
   console.log({ result });

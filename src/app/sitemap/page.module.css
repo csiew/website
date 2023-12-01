@@ -1,0 +1,18 @@
+.main {
+  max-width: var(--content-page-max-width);
+  width: 100%;
+  margin-inline: auto;
+  padding-block: 2rem;
+}
+
+.content ul {
+  list-style: circle inside;
+}
+
+.content ul ul {
+  margin-left: 2rem;
+}
+
+.content ul li {
+  padding-left: 1.5rem;
+}

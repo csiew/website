@@ -1,3 +1,4 @@
+import { RssFeedEntry, siteUrl } from "./@types";
 import { queryDbRest } from "../client/db";
 
 export function dateTransform(data?: any[]) {
@@ -10,14 +11,13 @@ export function dateTransform(data?: any[]) {
     .sort((a: any, b: any) => a.date < b.date ? 1 : -1);
 }
 
-export default async function () {
-  const siteURL = "clarencesiew.com";
+export default async function fetchBlogPosts(): Promise<RssFeedEntry[]> {
   const result = await queryDbRest("item", "content_type=eq.blog_post&body->>hiddenAt=is.null");
   const posts = result
     .map((post: any) => ({
       title: post.title,
       description: post.subtitle,
-      url: `https://${siteURL}/posts/${post.urlSlug}`,
+      url: `https://${siteUrl}/posts/${post.urlSlug}`,
       guid: post.urlSlug,
       publishedAt: post.publishedAt
     }));
