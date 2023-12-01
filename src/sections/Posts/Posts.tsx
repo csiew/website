@@ -6,6 +6,8 @@ import styles from "./Posts.module.css";
 import Card from "../../components/ui/Card/Card";
 import CardHeader from "../../components/ui/Card/CardHeader";
 
+export const dynamic = "force-dynamic";
+
 export default function Posts({ isListView }: { isListView?: boolean }) {
   const isMountedRef = useRef<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);

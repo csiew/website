@@ -10,6 +10,8 @@ import Badge from "../../components/ui/Badge/Badge";
 import { determineStatusBadgeVariant } from "../../lib/projects";
 import CardHeader from "../../components/ui/Card/CardHeader";
 
+export const dynamic = "force-dynamic";
+
 const decadeGroupNameMap = new Map<string, string>([
   ["200", "2000s"],
   ["201", "2010s"],
