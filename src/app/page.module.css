@@ -1,0 +1,50 @@
+.main {
+  max-width: 1280px;
+  width: 100%;
+  margin-inline: auto;
+  padding: 2rem;
+  display: inline-flex;
+  flex-flow: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+.main > div {
+  width: 100%;
+}
+
+.col {
+  display: inline-flex;
+  flex-flow: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+@media (max-width: 1023px) {
+  .main {
+    flex-flow: column;
+    gap: 3rem;
+  }
+  .main > div {
+    margin-bottom: 2rem;
+  }
+  .col {
+    gap: 3rem;
+  }
+}
+
+.notFoundMain {
+  max-width: 480px;
+  width: 100%;
+  margin-block: 2rem;
+  margin-inline: auto;
+  padding: 3rem;
+  color: var(--bg-color);
+  background: var(--fg-color);
+  text-align: center;
+}
+
+.notFoundMain h2 {
+  text-transform: uppercase;
+}

@@ -1,0 +1,45 @@
+.socialLinksGrid {
+  width: 100%;
+  display: inline-flex;
+  flex-flow: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.socialLinksGrid ul {
+  width: 100%;
+  display: inline-grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.socialLinksGrid ul li {
+  width: 100%;
+  display: inline-flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.socialLink {
+  width: 100%;
+  padding: 1rem;
+  display: inline-flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+  color: var(--bg-color);
+  background: var(--primary-color);
+  border-radius: var(--border-radius);
+}
+.socialLink svg {
+  width: 24px;
+  height: 24px;
+  color: var(--bg-color);
+}
+.socialLink:hover {
+  background: var(--primary-color-1);
+}
+.socialLink:active {
+  background: var(--primary-color-3);
+}
