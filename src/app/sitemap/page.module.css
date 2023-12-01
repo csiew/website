@@ -2,7 +2,7 @@
   max-width: var(--content-page-max-width);
   width: 100%;
   margin-inline: auto;
-  padding-block: 2rem;
+  padding: 2rem;
 }
 
 .content ul {
