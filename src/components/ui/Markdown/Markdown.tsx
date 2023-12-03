@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { marked } from "marked";
 import HTMLReactParser from "html-react-parser";
+import styles from "./Markdown.module.css";
 
 export default function Markdown({ children }: { children?: string }) {
   const isMountedRef = useRef<boolean>(false);
@@ -31,10 +32,10 @@ export default function Markdown({ children }: { children?: string }) {
   }, [children]);
 
   return (
-    <>
+    <div className={styles.markdown}>
       {isError && <p>Failed to parse markdown</p>}
       {isLoading && <p>Loading...</p>}
       {!isLoading && !isError && HTMLReactParser(mdHtml)}
-    </>
+    </div>
   );
 }

@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useRef } from "react";
 import { useRouter } from "next/router";
-import { AdminAuthContext } from "../../stores";
+import { AdminAuthContext } from "../../stores/auth";
 
 export default function AdminLogout() {
   const router = useRouter();

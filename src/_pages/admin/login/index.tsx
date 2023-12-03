@@ -6,7 +6,7 @@ import NavigationView from "../../../components/ui/NavigationView";
 import retitle from "../../../lib/retitle";
 import config from "../../../config";
 import Alert from "../../../components/ui/Alert";
-import { AdminAuthContext } from "../../../stores";
+import { AdminAuthContext } from "../../../stores/auth";
 
 export default function AdminLogin() {
   const router = useRouter();
@@ -33,7 +33,6 @@ export default function AdminLogin() {
       console.error(error);
       setIsError(true);
     } else {
-      console.log(data);
       setIsError(false);
       const { token, expiresAt } = extractAccessProps(data);
       window.sessionStorage.setItem("token", token);

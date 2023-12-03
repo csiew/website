@@ -1,5 +1,6 @@
 import { RssFeedEntry, siteUrl } from "./@types";
 import { queryDbRest } from "../client/db";
+import { BlogPost } from "../@types";
 
 export function dateTransform(data?: any[]) {
   return data
@@ -14,7 +15,7 @@ export function dateTransform(data?: any[]) {
 export default async function fetchBlogPosts(): Promise<RssFeedEntry[]> {
   const result = await queryDbRest("item", "content_type=eq.blog_post&body->>hiddenAt=is.null");
   const posts = result
-    .map((post: any) => ({
+    .map((post: BlogPost) => ({
       title: post.title,
       description: post.subtitle,
       url: `https://${siteUrl}/posts/${post.urlSlug}`,

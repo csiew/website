@@ -3,7 +3,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import retitle from "../../lib/retitle";
 import NavigationView from "../../components/ui/NavigationView";
-import { AdminAuthContext } from "../../stores";
+import { AdminAuthContext } from "../../stores/auth";
 import CreatePostModal from "../../components/app/Admin/CreatePostModal/CreatePostModal";
 
 export default function Admin() {

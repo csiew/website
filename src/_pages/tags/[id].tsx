@@ -128,7 +128,6 @@ export async function getStaticProps({ params }: any) {
     .select("*")
     .filter("body->tags", "neq", null)
     .filter("body->>tags", "like", `%${id}%`);
-  console.log({ result });
   const items = result.data
     ?.map((item: any) => {
       if (item.body.body) item.body.body = atob(item.body.body);

@@ -1,6 +1,7 @@
+import { Project } from "../@types";
 import { BadgeVariant } from "../components/ui/Badge/Badge";
 
-export const determineStatusBadgeVariant = (status: string): BadgeVariant => {
+export function determineStatusBadgeVariant(status: string): BadgeVariant {
   switch (status) {
   case "active":
     return "success";
@@ -11,4 +12,16 @@ export const determineStatusBadgeVariant = (status: string): BadgeVariant => {
   default:
     return "plain";
   }
-};
+}
+
+export function regroupByDecade(projects: Project[]) {
+  const decadeGroupings = {} as { [k: string]: Project[] };
+  projects.forEach((project: any) => {
+    const decadeKey = project.duration.start.slice(0, 3);
+    if (!decadeGroupings[decadeKey]) {
+      decadeGroupings[decadeKey] = [];
+    }
+    decadeGroupings[decadeKey].push(project);
+  });
+  return decadeGroupings;
+}
