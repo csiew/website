@@ -5,7 +5,6 @@ import { Project } from "../@types";
 export default async function fetchProjects(): Promise<RssFeedEntry[]> {
   const siteURL = "clarencesiew.com";
   const result = await queryDbRest("item", "content_type=eq.project");
-  console.log({ result });
   const posts = result
     .map((project: Project) => ({
       ...project,

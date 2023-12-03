@@ -33,7 +33,6 @@ export default function AdminLogin() {
       console.error(error);
       setIsError(true);
     } else {
-      console.log(data);
       setIsError(false);
       const { token, expiresAt } = extractAccessProps(data);
       window.sessionStorage.setItem("token", token);
