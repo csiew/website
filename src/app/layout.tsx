@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import NavBar from "../components/app/NavBar/NavBar";
 import Footer from "../components/app/Footer/Footer";
+import AppContext from "../stores";
 
 export const metadata: Metadata = {
   title: "Clarence Siew",
@@ -38,9 +39,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <NavBar />
-        {children}
-        <Footer />
+        <AppContext>
+          <NavBar />
+          {children}
+          <Footer />
+        </AppContext>
       </body>
     </html>
   );

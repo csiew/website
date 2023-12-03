@@ -14,5 +14,5 @@ export async function GET(request: NextRequest) {
 
   const result = await queryDbRest("item", queryStr);
   const posts = result.sort((a: any, b: any) => (new Date(a.publishedAt)).getTime() < (new Date(b.publishedAt)).getTime() ? 1 : -1);
-  return NextResponse.json({ posts });
+  return NextResponse.json(posts);
 }

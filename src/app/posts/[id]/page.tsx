@@ -1,42 +1,42 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import _ from "lodash";
 import styles from "./page.module.css";
 import Card from "../../../components/ui/Card/Card";
 import Markdown from "../../../components/ui/Markdown/Markdown";
 import Breadcrumbs from "../../../components/ui/Breadcrumbs/Breadcrumbs";
+import { BlogPost } from "../../../@types";
+import { DataContext } from "../../../stores/data";
 
 export default function PostPage({ params }: { params: { id: string } }) {
-  const isMountedRef = useRef<boolean>(false);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [isError, setIsError] = useState<boolean>(false);
-  const [post, setPost] = useState<any>();
+  const dataContext = useContext(DataContext);
+  const [{ isLoading, isError }, setFetchState] = useState<{ isLoading: boolean, isError: boolean }>({ isLoading: false, isError: false });
+  const [post, setPost] = useState<BlogPost>();
 
   async function getProject() {
+    let data: BlogPost | undefined;
     try {
-      setIsLoading(true);
-      const result = await fetch(`/api/posts/${params.id}`);
-      if (!result.ok) {
-        throw new Error(`Failed to fetch post: ${result.status} ${result.statusText}`);
+      setFetchState({ isLoading: true, isError: false });
+      if (dataContext.posts.length) {
+        data = dataContext.posts.find((post: BlogPost) => post.urlSlug === params.id);
       }
-      const data = await result.json();
-      data.body = atob(data.body);
+      if (!data) {
+        const rehydratedResult = await fetch(`/api/posts/${params.id}`);
+        if (!rehydratedResult.ok)
+          throw new Error(`Failed to fetch post: ${rehydratedResult.status} ${rehydratedResult.statusText}`);
+        data = await rehydratedResult.json();
+      }
       setPost(data);
-      setIsError(!data);
+      setFetchState({ isLoading: false, isError: false });
     } catch (err) {
       console.error(err);
-      setIsError(true);
-    } finally {
-      setIsLoading(false);
+      setFetchState({ isLoading: false, isError: true });
     }
   }
 
   useEffect(() => {
-    if (!isMountedRef.current) {
-      isMountedRef.current = true;
-      getProject();
-    }
+    getProject();
   }, []);
 
   return (
@@ -52,24 +52,26 @@ export default function PostPage({ params }: { params: { id: string } }) {
           }
         ]}
       />
-      {isError && <p>Failed to fetch project</p>}
-      {isLoading && <p>Loading...</p>}
-      {!isLoading && !isError && (
-        <Card>
-          <div className={styles.header}>
-            <h2>{post?.title}</h2>
-            {post?.subtitle && (
-              <span className={styles.subtitle}>
-                {post?.subtitle}
-              </span>
-            )}
-            <sub>{new Date(post?.publishedAt).toLocaleDateString()}</sub>
-          </div>
-          <div className={styles.content}>
-            <Markdown>{post?.body}</Markdown>
-          </div>
-        </Card>
-      )}
+      <Card>
+        {isError && <p>Failed to fetch post</p>}
+        {isLoading && <p>Loading...</p>}
+        {!isLoading && !isError && (
+          <>
+            <div className={styles.header}>
+              <h2>{post?.title}</h2>
+              {post?.subtitle && (
+                <span className={styles.subtitle}>
+                  {post?.subtitle}
+                </span>
+              )}
+              <sub>{new Date(post?.publishedAt ?? Date.now()).toLocaleDateString()}</sub>
+            </div>
+            <div className={styles.content}>
+              <Markdown>{post?.body}</Markdown>
+            </div>
+          </>
+        )}
+      </Card>
     </main>
   );
 }

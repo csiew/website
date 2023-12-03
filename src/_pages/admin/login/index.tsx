@@ -6,7 +6,7 @@ import NavigationView from "../../../components/ui/NavigationView";
 import retitle from "../../../lib/retitle";
 import config from "../../../config";
 import Alert from "../../../components/ui/Alert";
-import { AdminAuthContext } from "../../../stores";
+import { AdminAuthContext } from "../../../stores/auth";
 
 export default function AdminLogin() {
   const router = useRouter();
