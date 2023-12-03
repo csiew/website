@@ -26,7 +26,7 @@ export default function Projects({ isListView }: { isListView?: boolean }) {
 
   return (
     <Card>
-      {isError && <p>Failed to fetch posts</p>}
+      {isError && <p>Failed to fetch projects</p>}
       {isLoading && <p>Loading...</p>}
       {!isLoading && !isError && (
         <>
