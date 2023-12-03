@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/router";
 import { createClient } from "@supabase/supabase-js";
 import { v4 as uuidv4 } from "uuid";
-import { AdminAuthContext } from "../../../../stores";
+import { AdminAuthContext } from "../../../../stores/auth";
 import config from "../../../../config";
 import Alert from "../../../ui/Alert";
 import Paper from "../../../ui/Paper";
