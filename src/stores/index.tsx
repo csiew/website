@@ -63,7 +63,7 @@ export default function AppContext(props: ComponentPropsWithRef<any>) {
 
   return (
     <AdminAuthContext.Provider value={{ session, setSession }}>
-      <DataContext.Provider value={{ posts, setPosts, projects, setProjects }}>
+      <DataContext.Provider value={{ isLoading, isError, posts, setPosts, projects, setProjects }}>
         {props.children}
       </DataContext.Provider>
     </AdminAuthContext.Provider>
