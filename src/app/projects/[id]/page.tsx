@@ -29,6 +29,7 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
         if (!rehydratedResult.ok)
           throw new Error(`Failed to fetch project: ${rehydratedResult.status} ${rehydratedResult.statusText}`);
         data = await rehydratedResult.json();
+        if (data) data.body = atob(data.body);
       }
       setProject(data);
       setFetchState({ isLoading: false, isError: false });

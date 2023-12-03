@@ -26,6 +26,7 @@ export default function PostPage({ params }: { params: { id: string } }) {
         if (!rehydratedResult.ok)
           throw new Error(`Failed to fetch post: ${rehydratedResult.status} ${rehydratedResult.statusText}`);
         data = await rehydratedResult.json();
+        if (data) data.body = atob(data.body);
       }
       setPost(data);
       setFetchState({ isLoading: false, isError: false });
