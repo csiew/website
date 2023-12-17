@@ -1,6 +1,18 @@
 {
     "collection": [
         {
+            "id": "2023",
+            "name": "2023",
+            "playlists": {
+                "special": [
+                    {
+                        "name": "2023",
+                        "url": "https://open.spotify.com/playlist/3hMSpGLusHXt4IMrKFWwnL?si=7b2db55646314d05"
+                    }
+                ]
+            }
+        },
+        {
             "id": "2022",
             "name": "2022",
             "playlists": {
