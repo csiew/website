@@ -4,7 +4,7 @@ export const getEnv = (key: string) => {
   return varValue;
 };
 
-export default {
+const config = {
   rootElementId: "__next",
   title: {
     text: "Clarence Siew",
@@ -21,7 +21,8 @@ export default {
   debugMode: process.env.DEBUG_MODE,
   features: {
     classicScrollbar: false,
-    omdbClient: false
+    omdbClient: false,
+    useSectionApis: false
   },
   supabase: {
     host: process.env.SUPABASE_HOST,
@@ -35,3 +36,5 @@ export default {
     port: process.env.SUPABASE_DB_PORT
   }
 };
+
+export default config;
