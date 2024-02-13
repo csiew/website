@@ -7,16 +7,10 @@
   flex-flow: column;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: 1.5rem;
+  gap: 3rem;
 }
 .main > div {
   width: 100%;
-}
-
-@media (max-width: 1023px) {
-  .main {
-    gap: 3rem;
-  }
 }
 
 .notFoundMain {
