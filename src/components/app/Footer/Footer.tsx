@@ -11,7 +11,7 @@ export default function Footer() {
         </Link>
       </p>
       <p>
-        &copy; 2023 Clarence Siew
+        &copy; 2024 Clarence Siew
       </p>
     </footer>
   );

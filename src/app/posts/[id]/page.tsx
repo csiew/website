@@ -41,7 +41,7 @@ export default function PostPage({ params }: { params: { id: string } }) {
   }, []);
 
   return (
-    <main className={styles.main}>
+    <>
       <Breadcrumbs
         items={[
           {
@@ -53,26 +53,28 @@ export default function PostPage({ params }: { params: { id: string } }) {
           }
         ]}
       />
-      <Card>
-        {isError && <p>Failed to fetch post</p>}
-        {isLoading && <p>Loading...</p>}
-        {!isLoading && !isError && (
-          <>
-            <div className={styles.header}>
-              <h2>{post?.title}</h2>
-              {post?.subtitle && (
-                <span className={styles.subtitle}>
-                  {post?.subtitle}
-                </span>
-              )}
-              <sub>{new Date(post?.publishedAt ?? Date.now()).toLocaleDateString()}</sub>
-            </div>
-            <div className={styles.content}>
-              <Markdown>{post?.body}</Markdown>
-            </div>
-          </>
-        )}
-      </Card>
-    </main>
+      <main className={styles.main}>
+        <Card>
+          {isError && <p>Failed to fetch post</p>}
+          {isLoading && <p>Loading...</p>}
+          {!isLoading && !isError && (
+            <>
+              <div className={styles.header}>
+                <h2>{post?.title}</h2>
+                {post?.subtitle && (
+                  <span className={styles.subtitle}>
+                    {post?.subtitle}
+                  </span>
+                )}
+                <sub>{new Date(post?.publishedAt ?? Date.now()).toLocaleDateString()}</sub>
+              </div>
+              <div className={styles.content}>
+                <Markdown>{post?.body}</Markdown>
+              </div>
+            </>
+          )}
+        </Card>
+      </main>
+    </>
   );
 }

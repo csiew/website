@@ -44,7 +44,7 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
   }, []);
 
   return (
-    <main className={styles.main}>
+    <>
       <Breadcrumbs
         items={[
           {
@@ -56,64 +56,66 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
           }
         ]}
       />
-      <Card
-        style={{
-          display: "inline-flex",
-          flexFlow: "column",
-          alignItems: "flex-start",
-          justifyContent: "flex-start",
-          gap: "2rem"
-        }}
-      >
-        {isError && <p>Failed to fetch project</p>}
-        {isLoading && <p>Loading...</p>}
-        {!isLoading && !isError && (
-          <>
-            <div className={styles.header}>
-              <h2>{project?.title}</h2>
-              <div className={styles.status}>
-                <sub>
-                  {[project?.duration.start, project?.duration.end ? (project?.duration.start === project?.duration.end ? null : project?.duration.end) : (project?.status === "inactive" ? null : "Present")].filter((y) => !!y).join(" - ")}
-                </sub>
-                <Badge variant={determineStatusBadgeVariant(project?.status ?? "inactive")}>
-                  {_.capitalize(project?.status)}
-                </Badge>
+      <main className={styles.main}>
+        <Card
+          style={{
+            display: "inline-flex",
+            flexFlow: "column",
+            alignItems: "flex-start",
+            justifyContent: "flex-start",
+            gap: "2rem"
+          }}
+        >
+          {isError && <p>Failed to fetch project</p>}
+          {isLoading && <p>Loading...</p>}
+          {!isLoading && !isError && (
+            <>
+              <div className={styles.header}>
+                <h2>{project?.title}</h2>
+                <div className={styles.status}>
+                  <sub>
+                    {[project?.duration.start, project?.duration.end ? (project?.duration.start === project?.duration.end ? null : project?.duration.end) : (project?.status === "inactive" ? null : "Present")].filter((y) => !!y).join(" - ")}
+                  </sub>
+                  <Badge variant={determineStatusBadgeVariant(project?.status ?? "inactive")}>
+                    {_.capitalize(project?.status)}
+                  </Badge>
+                </div>
               </div>
-            </div>
-            {!!project?.assets?.screenshots?.length && (
-              <Link
-                href={project?.assets?.screenshots[0]}
-                className={styles.screenshot}
-              >
-                <img src={project?.assets?.screenshots[0]} width="100%" />
-              </Link>
-            )}
-            <Markdown>{project?.body}</Markdown>
-            <div className={styles.links}>
-              <ul>
-                <li>
-                  <Link
-                    href={project?.links?.website ?? "#"}
-                    target="_blank"
-                    className={!project?.links?.website ? styles.disabled : undefined}
-                  >
-                    Website
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href={project?.links?.repository ?? "#"}
-                    target="_blank"
-                    className={!project?.links?.repository ? styles.disabled : undefined}
-                  >
-                    Repository
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </>
-        )}
-      </Card>
-    </main>
+              {!!project?.assets?.screenshots?.length && (
+                <Link
+                  href={project?.assets?.screenshots[0]}
+                  className={styles.screenshot}
+                >
+                  <img src={project?.assets?.screenshots[0]} width="100%" />
+                </Link>
+              )}
+              <Markdown>{project?.body}</Markdown>
+              <div className={styles.links}>
+                <ul>
+                  <li>
+                    <Link
+                      href={project?.links?.website ?? "#"}
+                      target="_blank"
+                      className={!project?.links?.website ? styles.disabled : undefined}
+                    >
+                      Website
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href={project?.links?.repository ?? "#"}
+                      target="_blank"
+                      className={!project?.links?.repository ? styles.disabled : undefined}
+                    >
+                      Repository
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </>
+          )}
+        </Card>
+      </main>
+    </>
   );
 }
