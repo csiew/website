@@ -1,16 +1,19 @@
 .breadcrumbs {
   width: 100%;
-  margin-bottom: 2rem;
+  max-width: var(--content-page-max-width);
+  margin: 1rem auto;
   top: 0;
   padding: 0.5rem 1rem;
-  position: sticky;
+  /* position: sticky; */
   display: inline-flex;
   flex-flow: row;
   align-items: center;
   justify-content: flex-start;
   color: var(--bg-color);
   background: var(--primary-color);
+  backdrop-filter: blur(8px);
   border-radius: var(--border-radius);
+  transition: var(--transition);
 }
 
 .breadcrumbs a {
@@ -19,6 +22,7 @@
 
 .breadcrumbs ul {
   list-style: none;
+  width: 100%;
   margin: 0 !important;
   padding: 0;
   display: inline-flex;
@@ -35,6 +39,9 @@
   flex-flow: row;
   align-items: center;
   justify-content: flex-start;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .breadcrumbs ul li::after {
   content: '/';
@@ -47,7 +54,11 @@
 }
 
 .breadcrumbs ul li span {
+  width: 100%;
   font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .breadcrumbsBackBtn {
@@ -74,12 +85,21 @@
   height: 16px;
 }
 
-@media (max-width: 1023px) {
+/* @media (max-width: 1023px) {
   .breadcrumbsBackBtn {
     display: inline-flex;
   }
 
   .breadcrumbs ul {
     display: none;
+  }
+} */
+
+@media (max-width: 768px) {
+  .breadcrumbs {
+    margin: 0;
+    top: 0;
+    padding: 0.5rem 1rem;
+    border-radius: 0;
   }
 }

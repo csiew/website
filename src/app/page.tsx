@@ -11,15 +11,11 @@ import Posts from "../sections/Posts/Posts";
 export default function Home() {
   return (
     <main className={styles.main}>
-      <div className={styles.col}>
-        <About />
-        <Posts />
-        <Socials />
-      </div>
-      <div className={styles.col}>
-        <Projects />
-        <Playlists />
-      </div>
+      <About />
+      <Projects />
+      <Posts />
+      <Playlists />
+      <Socials />
     </main>
   );
 }
