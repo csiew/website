@@ -1,13 +1,12 @@
 "use client";
 
-import React, { ComponentPropsWithRef, useEffect, useRef, useState } from "react";
+import React, { ComponentPropsWithRef, useEffect, useState } from "react";
 import { AdminAuthContext, AdminSession } from "./auth";
 import { BlogPost, Project } from "../@types";
 import { DataContext } from "./data";
 
 export default function AppContext(props: ComponentPropsWithRef<any>) {
-  const isMountedRef = useRef<boolean>(false);
-  const [{ isLoading, isError }, setFetchState] = useState<{ isLoading: boolean, isError: boolean }>({ isLoading: false, isError: false });
+  const [{ isLoading, isError, isHydrated }, setFetchState] = useState<{ isLoading: boolean, isError: boolean, isHydrated: boolean }>({ isLoading: false, isError: false, isHydrated: false });
   const [session, setSession] = useState<AdminSession>({});
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [projects, setProjects] = useState<Project[]>([]);
@@ -25,7 +24,7 @@ export default function AppContext(props: ComponentPropsWithRef<any>) {
 
   async function getData() {
     try {
-      setFetchState({ isLoading: true, isError: false });
+      setFetchState({ isLoading: true, isError: false, isHydrated: false });
 
       // Fetch posts
       const postsResult = await fetch("/api/posts");
@@ -46,16 +45,15 @@ export default function AppContext(props: ComponentPropsWithRef<any>) {
       setPosts(postsData);
       setProjects(projectsData);
 
-      setFetchState({ isLoading: false, isError: false });
+      setFetchState({ isLoading: false, isError: false, isHydrated: true });
     } catch (err) {
       console.error(err);
-      setFetchState({ isLoading: false, isError: true });
+      setFetchState({ isLoading: false, isError: true, isHydrated: false });
     }
   }
 
   useEffect(() => {
-    if (!isMountedRef.current) {
-      isMountedRef.current = true;
+    if (!isHydrated) {
       restoreAuthSession();
       getData();
     }
