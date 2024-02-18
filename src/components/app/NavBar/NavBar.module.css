@@ -138,9 +138,15 @@
   background: var(--navbar-nav-bg-active);
 }
 
+@media (max-height: 667px) {
+  .header {
+    position: unset;
+  }
+}
+
 @media (max-width: 768px) {
   .header {
-    padding: 0.5rem 1.75rem;
+    padding: 1rem 1.75rem;
   }
 
   .siteTitleBar h1 {
@@ -151,8 +157,17 @@
     height: 32px;
   }
 
+  .nav ul {
+    gap: 0;
+  }
+  .nav ul li {
+    margin-left: -0.5rem;
+    padding: 0;
+  }
   .nav ul li a {
-    padding: 0.5rem;
-    font-size: 90%;
+    padding: 0.25rem 0.5rem;
+    font-size: 85%;
+    letter-spacing: 1px;
+    transform: rotate(-33deg);
   }
 }

@@ -1,10 +1,12 @@
+"use client";
+
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import styles from "./Playlists.module.css";
 import Card from "../../components/ui/Card/Card";
 import { Playlist } from "../../lib/playlists";
 import configData from "../../config";
-import { getPlaylists as getPlaylistsFromJson } from "../../services/playlists";
+import { getPlaylists as getPlaylistsFromJson } from "../../client/internal/playlists";
 
 export default function Playlists() {
   const isMountedRef = useRef<boolean>(false);

@@ -4,6 +4,8 @@ import React, { ComponentPropsWithRef, useEffect, useState } from "react";
 import { AdminAuthContext, AdminSession } from "./auth";
 import { BlogPost, Project } from "../@types";
 import { DataContext } from "./data";
+import { getProjects } from "../client/internal/projects";
+import { getPosts } from "../client/internal/posts";
 
 export default function AppContext(props: ComponentPropsWithRef<any>) {
   const [{ isLoading, isError, isHydrated }, setFetchState] = useState<{ isLoading: boolean, isError: boolean, isHydrated: boolean }>({ isLoading: false, isError: false, isHydrated: false });
@@ -27,20 +29,10 @@ export default function AppContext(props: ComponentPropsWithRef<any>) {
       setFetchState({ isLoading: true, isError: false, isHydrated: false });
 
       // Fetch posts
-      const postsResult = await fetch("/api/posts");
-      if (!postsResult.ok) {
-        throw new Error(`Failed to fetch posts: ${postsResult.status} ${postsResult.statusText}`);
-      }
-      const postsData = await postsResult.json();
-      postsData.forEach((p: BlogPost) => p.body = atob(p.body));
+      const postsData = await getPosts();
 
       // Fetch projects
-      const projectsResult = await fetch("/api/projects");
-      if (!projectsResult.ok) {
-        throw new Error(`Failed to fetch projects: ${projectsResult.status} ${projectsResult.statusText}`);
-      }
-      const projectsData = await projectsResult.json();
-      projectsData.forEach((p: Project) => p.body = atob(p.body));
+      const projectsData = await getProjects();
 
       setPosts(postsData);
       setProjects(projectsData);
@@ -55,7 +47,7 @@ export default function AppContext(props: ComponentPropsWithRef<any>) {
   useEffect(() => {
     if (!isHydrated) {
       restoreAuthSession();
-      getData();
+      // getData();
     }
   }, []);
 

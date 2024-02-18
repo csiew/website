@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useContext, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import _ from "lodash";
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
@@ -9,8 +9,8 @@ import Card from "../../components/ui/Card/Card";
 import Badge from "../../components/ui/Badge/Badge";
 import { determineStatusBadgeVariant, regroupByDecade } from "../../lib/projects";
 import CardHeader from "../../components/ui/Card/CardHeader";
-import { DataContext } from "../../stores/data";
 import { Project } from "../../@types";
+import { getProjects } from "../../client/internal/projects";
 
 const decadeGroupNameMap = new Map<string, string>([
   ["200", "2000s"],
@@ -21,8 +21,26 @@ const decadeGroupNameMap = new Map<string, string>([
 ]);
 
 export default function Projects({ isListView }: { isListView?: boolean }) {
-  const { projects, isLoading, isError } = useContext(DataContext);
+  const [projects, setProjects] = useState<Project[]>([]);
+  const [{ isLoading, isError, isHydrated }, setFetchState] = useState<{ isLoading: boolean; isError: boolean; isHydrated: boolean }>({ isLoading: false, isError: false, isHydrated: false });
   const [collapsedGroups, setCollapsedGroups] = useState<Set<string>>(new Set<string>());
+
+  async function getData() {
+    if (!isHydrated) {
+      setFetchState({ isLoading: true, isError: false, isHydrated: false });
+      try {
+        setProjects(await getProjects());
+        setFetchState({ isLoading: false, isError: false, isHydrated: true });
+      } catch (err) {
+        console.error(err);
+        setFetchState({ isLoading: false, isError: true, isHydrated: false });
+      }
+    }
+  }
+
+  useEffect(() => {
+    getData();
+  }, []);
 
   return (
     <Card>

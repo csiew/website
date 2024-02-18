@@ -8,8 +8,10 @@
 
 .socialLinksGrid ul {
   width: 100%;
-  display: inline-grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: inline-flex;
+  flex-flow: column;
+  align-items: flex-start;
+  justify-content: flex-start;
   gap: 1rem;
 }
 
@@ -18,28 +20,28 @@
   display: inline-flex;
   flex-flow: row;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .socialLink {
-  width: 100%;
-  padding: 1rem;
+  padding: 0;
   display: inline-flex;
   flex-flow: row;
   align-items: center;
-  justify-content: center;
-  color: var(--bg-color);
-  background: var(--primary-color);
-  border-radius: var(--border-radius);
-}
-.socialLink svg {
-  width: 24px;
-  height: 24px;
-  color: var(--bg-color);
+  justify-content: flex-start;
+  gap: 0.5rem;
+  color: var(--primary-color);
+  transition: var(--transition);
 }
 .socialLink:hover {
-  background: var(--primary-color-1);
+  color: var(--primary-color-1);
 }
 .socialLink:active {
-  background: var(--primary-color-3);
+  color: var(--primary-color-3);
 }
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+

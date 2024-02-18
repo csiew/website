@@ -1,16 +1,34 @@
 "use client";
 
-import React, { useContext } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import styles from "./Posts.module.css";
 import Card from "../../components/ui/Card/Card";
 import CardHeader from "../../components/ui/Card/CardHeader";
-import { DataContext } from "../../stores/data";
 import { BlogPost } from "../../@types";
+import { getPosts } from "../../client/internal/posts";
 
 export default function Posts({ isListView }: { isListView?: boolean }) {
-  const { posts, isLoading, isError } = useContext(DataContext);
+  const [posts, setPosts] = useState<BlogPost[]>([]);
+  const [{ isLoading, isError, isHydrated }, setFetchState] = useState<{ isLoading: boolean; isError: boolean; isHydrated: boolean }>({ isLoading: false, isError: false, isHydrated: false });
   const filteredPosts = isListView ? posts : posts.slice(0, 3);
+
+  async function getData() {
+    if (!isHydrated) {
+      setFetchState({ isLoading: true, isError: false, isHydrated: false });
+      try {
+        setPosts(await getPosts());
+        setFetchState({ isLoading: false, isError: false, isHydrated: true });
+      } catch (err) {
+        console.error(err);
+        setFetchState({ isLoading: false, isError: true, isHydrated: false });
+      }
+    }
+  }
+
+  useEffect(() => {
+    getData();
+  }, []);
 
   return (
     <Card>
