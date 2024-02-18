@@ -1,10 +1,17 @@
+import _ from "lodash";
 import { BlogPost } from "../../@types";
 import { getCache, hasCacheExpired, removeCache, storeCache } from "../cache";
 
 export async function getPosts() {
   try {
     const cachedPosts = getCache("posts");
-    if (!cachedPosts || !Object.keys(cachedPosts).length || !Object.keys(cachedPosts).includes("body") || hasCacheExpired(cachedPosts.expiresAt, cachedPosts.readCount)) {
+    if (
+      !cachedPosts ||
+      !Object.keys(cachedPosts).length ||
+      !Object.keys(cachedPosts).includes("body") ||
+      hasCacheExpired(cachedPosts.expiresAt, cachedPosts.readCount) ||
+      !_.isArray(cachedPosts.body)
+    ) {
       removeCache("posts");
       throw new Error("Cache is invalid");
     }

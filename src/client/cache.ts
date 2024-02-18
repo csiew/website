@@ -18,13 +18,21 @@ export function getCache(k: string) {
   }
   parsedValue.readCount = parsedValue.readCount + 1;
   localStorage.setItem(k, JSON.stringify(parsedValue));
-  return parsedValue;
+
+  const parsedValueToReturn = { ...parsedValue };
+  parsedValueToReturn.body = JSON.parse(atob(parsedValue.body));
+
+  return parsedValueToReturn;
 }
 
 export function storeCache(k: string, v: any) {
-  localStorage.setItem(k, JSON.stringify({ body: v, expiresAt: generateNewExpiryDate() }));
+  localStorage.setItem(k, JSON.stringify({ body: btoa(JSON.stringify(v)), expiresAt: generateNewExpiryDate() }));
 }
 
 export function removeCache(k: string) {
   localStorage.removeItem(k);
+}
+
+export function clearAllCaches() {
+  ["posts", "projects", "playlists"].forEach((k) => localStorage.removeItem(k));
 }

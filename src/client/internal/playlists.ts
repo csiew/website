@@ -5,7 +5,12 @@ import { getCache, hasCacheExpired, removeCache, storeCache } from "../cache";
 export function getPlaylists() {
   try {
     const cachedPlaylists = getCache("playlists");
-    if (!cachedPlaylists || !Object.keys(cachedPlaylists).length || !Object.keys(cachedPlaylists).includes("body") || hasCacheExpired(cachedPlaylists.expiresAt, cachedPlaylists.readCount)) {
+    if (
+      !cachedPlaylists ||
+      !Object.keys(cachedPlaylists).length ||
+      !Object.keys(cachedPlaylists).includes("body") ||
+      hasCacheExpired(cachedPlaylists.expiresAt, cachedPlaylists.readCount)
+    ) {
       removeCache("playlists");
       throw new Error("Cache is invalid");
     }

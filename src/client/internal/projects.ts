@@ -1,10 +1,17 @@
+import _ from "lodash";
 import { Project } from "../../@types";
 import { getCache, hasCacheExpired, removeCache, storeCache } from "../cache";
 
 export async function getProjects() {
   try {
     const cachedProjects = getCache("projects");
-    if (!cachedProjects || !Object.keys(cachedProjects).length || !Object.keys(cachedProjects).includes("body") || hasCacheExpired(cachedProjects.expiresAt, cachedProjects.readCount)) {
+    if (
+      !cachedProjects ||
+      !Object.keys(cachedProjects).length ||
+      !Object.keys(cachedProjects).includes("body") ||
+      hasCacheExpired(cachedProjects.expiresAt, cachedProjects.readCount) ||
+      !_.isArray(cachedProjects.body)
+    ) {
       removeCache("projects");
       throw new Error("Cache is invalid");
     }
