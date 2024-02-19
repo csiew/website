@@ -3,6 +3,16 @@ import { Project } from "../../@types";
 import { getCache, hasCacheExpired, removeCache, storeCache } from "../cache";
 
 export async function getProjects() {
+  const projectsResult = await fetch("/api/projects");
+  if (!projectsResult.ok) {
+    throw new Error(`Failed to fetch projects: ${projectsResult.status} ${projectsResult.statusText}`);
+  }
+  const projectsData = await projectsResult.json();
+  projectsData.forEach((p: Project) => p.body = atob(p.body));
+  return projectsData;
+}
+
+export async function getCachedProjects() {
   try {
     const cachedProjects = getCache("projects");
     if (
@@ -18,12 +28,7 @@ export async function getProjects() {
     return cachedProjects.body;
   } catch (err) {
     console.error(err);
-    const projectsResult = await fetch("/api/projects");
-    if (!projectsResult.ok) {
-      throw new Error(`Failed to fetch projects: ${projectsResult.status} ${projectsResult.statusText}`);
-    }
-    const projectsData = await projectsResult.json();
-    projectsData.forEach((p: Project) => p.body = atob(p.body));
+    const projectsData = await getProjects();
     storeCache("projects", projectsData);
     return projectsData;
   }

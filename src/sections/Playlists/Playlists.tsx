@@ -5,8 +5,7 @@ import Link from "next/link";
 import styles from "./Playlists.module.css";
 import Card from "../../components/ui/Card/Card";
 import { Playlist } from "../../lib/playlists";
-import configData from "../../config";
-import { getPlaylists as getPlaylistsFromJson } from "../../client/internal/playlists";
+import { getCachedPlaylists } from "../../client/internal/playlists";
 
 export default function Playlists() {
   const isMountedRef = useRef<boolean>(false);
@@ -17,17 +16,7 @@ export default function Playlists() {
   async function getPlaylists() {
     try {
       setIsLoading(true);
-      const useSectionApis = configData.features.useSectionApis;
-      if (useSectionApis) {
-        const result = await fetch("/api/playlists");
-        if (!result.ok) {
-          throw new Error(`Failed to fetch playlists: ${result.status} ${result.statusText}`);
-        }
-        const data = await result.json();
-        setPlaylists(data.playlists);
-      } else {
-        setPlaylists(getPlaylistsFromJson());
-      }
+      setPlaylists(getCachedPlaylists());
     } catch (err) {
       console.error(err);
       setIsError(true);

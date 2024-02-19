@@ -10,7 +10,7 @@ import Badge from "../../components/ui/Badge/Badge";
 import { determineStatusBadgeVariant, regroupByDecade } from "../../lib/projects";
 import CardHeader from "../../components/ui/Card/CardHeader";
 import { Project } from "../../@types";
-import { getProjects } from "../../client/internal/projects";
+import { getCachedProjects } from "../../client/internal/projects";
 
 const decadeGroupNameMap = new Map<string, string>([
   ["200", "2000s"],
@@ -29,7 +29,7 @@ export default function Projects({ isListView }: { isListView?: boolean }) {
     if (!isHydrated) {
       setFetchState({ isLoading: true, isError: false, isHydrated: false });
       try {
-        setProjects(await getProjects());
+        setProjects(await getCachedProjects());
         setFetchState({ isLoading: false, isError: false, isHydrated: true });
       } catch (err) {
         console.error(err);

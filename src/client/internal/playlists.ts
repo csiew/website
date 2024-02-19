@@ -3,6 +3,10 @@ import rawPlaylistData from "../../resources/playlists.json";
 import { getCache, hasCacheExpired, removeCache, storeCache } from "../cache";
 
 export function getPlaylists() {
+  return (rawPlaylistData as PlaylistData).collection.flatMap((group) => group.playlists.special);
+}
+
+export function getCachedPlaylists() {
   try {
     const cachedPlaylists = getCache("playlists");
     if (
@@ -17,7 +21,7 @@ export function getPlaylists() {
     return cachedPlaylists.body;
   } catch (err) {
     console.error(err);
-    const playlists = (rawPlaylistData as PlaylistData).collection.flatMap((group) => group.playlists.special);
+    const playlists = getPlaylists();
     storeCache("playlists", playlists);
     return playlists;
   }

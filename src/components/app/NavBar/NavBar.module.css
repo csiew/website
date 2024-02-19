@@ -21,7 +21,8 @@
   gap: 1rem;
   color: var(--navbar-header-fg);
   background: var(--navbar-header-bg);
-  border-bottom: 1px solid var(--border-color);
+  border: 1px solid var(--border-color);
+  border-top: none;
   box-shadow: var(--preset-shadow-component);
   backdrop-filter: blur(4px);
 }
@@ -147,6 +148,7 @@
 @media (max-width: 768px) {
   .header {
     padding: 1rem 1.75rem;
+    border-width: 0px 0px 1px 0px;
   }
 
   .siteTitleBar h1 {

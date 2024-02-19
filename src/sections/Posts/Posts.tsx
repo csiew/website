@@ -6,7 +6,7 @@ import styles from "./Posts.module.css";
 import Card from "../../components/ui/Card/Card";
 import CardHeader from "../../components/ui/Card/CardHeader";
 import { BlogPost } from "../../@types";
-import { getPosts } from "../../client/internal/posts";
+import { getCachedPosts } from "../../client/internal/posts";
 
 export default function Posts({ isListView }: { isListView?: boolean }) {
   const [posts, setPosts] = useState<BlogPost[]>([]);
@@ -17,7 +17,7 @@ export default function Posts({ isListView }: { isListView?: boolean }) {
     if (!isHydrated) {
       setFetchState({ isLoading: true, isError: false, isHydrated: false });
       try {
-        setPosts(await getPosts());
+        setPosts(await getCachedPosts());
         setFetchState({ isLoading: false, isError: false, isHydrated: true });
       } catch (err) {
         console.error(err);
