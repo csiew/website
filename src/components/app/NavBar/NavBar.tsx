@@ -38,6 +38,11 @@ export default function NavBar() {
               Projects
             </Link>
           </li>
+          <li>
+            <Link href="/playlists" className={linkActiveState("/playlists")}>
+              Playlists
+            </Link>
+          </li>
         </ul>
       </nav>
     </header>

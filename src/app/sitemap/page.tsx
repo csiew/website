@@ -78,6 +78,11 @@ export default function PostsPage() {
                   </li>
                 ))}
               </ul>
+              <li>
+                <Link href="/playlists">
+                  Playlists
+                </Link>
+              </li>
             </ul>
           )}
         </div>

@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 import { BsGithub, BsInstagram, BsLinkedin, BsMastodon } from "react-icons/bs";
@@ -30,7 +32,6 @@ const socialLinks = [
 export default function Socials() {
   return (
     <Card>
-      <h2>Socials</h2>
       <div className={styles.socialLinksGrid}>
         <ul>
           {socialLinks.map((sl) => (
@@ -41,7 +42,8 @@ export default function Socials() {
                 className={styles.socialLink}
                 target="_blank"
               >
-                {sl.icon}
+                <span className={styles.icon}>{sl.icon}</span>
+                <span className={styles.label}>{sl.name}</span>
               </Link>
             </li>
           ))}

@@ -1,13 +1,14 @@
 "use client";
 
-import React, { ComponentPropsWithRef, useEffect, useRef, useState } from "react";
+import React, { ComponentPropsWithRef, useEffect, useState } from "react";
 import { AdminAuthContext, AdminSession } from "./auth";
 import { BlogPost, Project } from "../@types";
 import { DataContext } from "./data";
+import { getProjects } from "../client/internal/projects";
+import { getPosts } from "../client/internal/posts";
 
 export default function AppContext(props: ComponentPropsWithRef<any>) {
-  const isMountedRef = useRef<boolean>(false);
-  const [{ isLoading, isError }, setFetchState] = useState<{ isLoading: boolean, isError: boolean }>({ isLoading: false, isError: false });
+  const [{ isLoading, isError, isHydrated }, setFetchState] = useState<{ isLoading: boolean, isError: boolean, isHydrated: boolean }>({ isLoading: false, isError: false, isHydrated: false });
   const [session, setSession] = useState<AdminSession>({});
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [projects, setProjects] = useState<Project[]>([]);
@@ -25,39 +26,28 @@ export default function AppContext(props: ComponentPropsWithRef<any>) {
 
   async function getData() {
     try {
-      setFetchState({ isLoading: true, isError: false });
+      setFetchState({ isLoading: true, isError: false, isHydrated: false });
 
       // Fetch posts
-      const postsResult = await fetch("/api/posts");
-      if (!postsResult.ok) {
-        throw new Error(`Failed to fetch posts: ${postsResult.status} ${postsResult.statusText}`);
-      }
-      const postsData = await postsResult.json();
-      postsData.forEach((p: BlogPost) => p.body = atob(p.body));
+      const postsData = await getPosts();
 
       // Fetch projects
-      const projectsResult = await fetch("/api/projects");
-      if (!projectsResult.ok) {
-        throw new Error(`Failed to fetch projects: ${projectsResult.status} ${projectsResult.statusText}`);
-      }
-      const projectsData = await projectsResult.json();
-      projectsData.forEach((p: Project) => p.body = atob(p.body));
+      const projectsData = await getProjects();
 
       setPosts(postsData);
       setProjects(projectsData);
 
-      setFetchState({ isLoading: false, isError: false });
+      setFetchState({ isLoading: false, isError: false, isHydrated: true });
     } catch (err) {
       console.error(err);
-      setFetchState({ isLoading: false, isError: true });
+      setFetchState({ isLoading: false, isError: true, isHydrated: false });
     }
   }
 
   useEffect(() => {
-    if (!isMountedRef.current) {
-      isMountedRef.current = true;
+    if (!isHydrated) {
       restoreAuthSession();
-      getData();
+      // getData();
     }
   }, []);
 

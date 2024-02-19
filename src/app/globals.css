@@ -45,6 +45,11 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+@media (prefers-color-scheme: dark) {
+  html {
+    background: var(--bg-color-1);
+  }
+}
 
 body {
   width: 100%;
