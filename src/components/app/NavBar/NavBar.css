@@ -59,3 +59,12 @@ header {
     }
   }
 }
+
+@media (max-width: 640px) {
+  header {
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+  }
+}

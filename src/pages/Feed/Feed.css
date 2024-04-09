@@ -1,6 +1,9 @@
 section.feed-posts-list {
+  width: 100%;
+
   & ul {
     list-style: none;
+    width: 100%;
     margin: 0;
     padding: 0;
     display: inline-flex;
@@ -10,10 +13,15 @@ section.feed-posts-list {
     gap: 1rem;
 
     & li {
+      width: 100%;
       margin: 0;
       padding: 1rem;
       border: 1px solid var(--border-color);
       border-radius: var(--border-radius);
+
+      & a {
+        line-break: anywhere;
+      }
 
       & sub.timestamp {
         display: inline-block;
@@ -37,6 +45,7 @@ section.feed-posts-list {
           & span {
             margin: 0;
             padding: 0;
+            display: inline-block;
             color: var(--fg-secondary);
             font-size: 0.75rem;
             font-style: italic;
@@ -44,5 +53,11 @@ section.feed-posts-list {
         }
       }
     }
+  }
+}
+
+@media (max-width: 640px) {
+  .carousel .image-group img {
+    max-width: 320px;
   }
 }
