@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Rethink+Sans:ital,wght@0,400..800;1,400..800&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
+
+:root {
+  --system-font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --body-font: 'Roboto Serif', var(--system-font);
+  --header-font: 'Rethink Sans', var(--system-font);
+
+  --fg: #cccccc;
+  --fg-secondary: #999999;
+  --fg-highlight: white;
+  --bg: black;
+  --bg-secondary: #222222;
+  --accent: dodgerblue;
+  --border-color: #333333;
+  --border-radius: 9px;
+
+  color-scheme: dark;
+  accent-color: var(--accent);
+
+  color: var(--fg);
+  background: var(--bg);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  color: var(--bg);
+  background: var(--accent);
+}
+
+html {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  font-family: var(--body-font);
+}
+
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: inline-flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0;
+}
+
+#root {
+  max-width: 640px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  display: inline-flex;
+  flex-flow: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0.5rem 0rem;
+  font-family: var(--header-font);
+}
+
+.subheading {
+  margin: 0;
+  padding: 0.5rem 0rem;
+  font-size: 1.25rem;
+  font-style: italic;
+}
+
+p {
+  margin: 0;
+  padding: 0.5rem 0rem;
+}
+
+a {
+  color: var(--fg);
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+hr {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-bottom: 1px solid var(--border-color);
+}
+
+ul {
+  margin: 0;
+  padding-block: 0.25rem;
+  padding-inline: 1.5rem 0rem;
+
+  & li {
+    margin: 0;
+    padding-block: 0rem;
+    padding-inline: 0.25rem 0rem;
+  }
+}
+
+main {
+  width: 100%;
+  margin: 0;
+  padding: 1rem;
+}
+
+footer {
+  width: 100%;
+  margin: 0;
+  padding: 1.5rem 0rem;
+  text-align: center;
+}

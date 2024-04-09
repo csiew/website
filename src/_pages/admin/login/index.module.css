@@ -1,7 +1,0 @@
-.login-page form :is(input[type=email], input[type=password]) {
-  width: 100%;
-}
-
-.login-page form :is(input[type=submit]) {
-  margin-inline: auto 0;
-}

@@ -1,42 +1,36 @@
 {
   "name": "website",
-  "version": "8.2.0",
+  "version": "9.0.0",
+  "description": "",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "db:migrate": "docker compose -f flyway/docker/docker-compose.yml up"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "lint": "npx eslint"
   },
+  "author": "Clarence Siew",
   "dependencies": {
-    "@supabase/supabase-js": "^2.39.0",
-    "html-react-parser": "^5.0.6",
+    "events": "^3.3.0",
     "lodash": "^4.17.21",
-    "marked": "^11.0.0",
-    "next": "^14.0.3",
-    "node-fetch": "^3.3.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^4.12.0",
-    "rehype-raw": "^6.1.1",
-    "rss": "^1.2.2",
-    "usehooks-ts": "^2.9.1",
-    "uuid": "^8.3.2"
+    "react-markdown": "^9.0.1",
+    "react-router-dom": "^6.22.3",
+    "xml2js": "^0.6.2"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.202",
-    "@types/node": "^18.18.13",
-    "@types/node-fetch": "^2.6.9",
-    "@types/react": "^18.2.39",
-    "@types/react-dom": "^18.2.17",
-    "@types/rss": "^0.0.30",
-    "@types/uuid": "^8.3.4",
-    "@typescript-eslint/eslint-plugin": "^5.62.0",
-    "@typescript-eslint/parser": "^5.62.0",
-    "eslint": "^8.54.0",
-    "eslint-config-next": "^14.0.3",
+    "@types/lodash": "^4.17.0",
+    "@types/node": "^20.12.5",
+    "@types/react": "^18.2.74",
+    "@types/react-dom": "^18.2.24",
+    "@types/react-router-dom": "^5.3.3",
+    "@types/xml2js": "^0.4.14",
+    "@vitejs/plugin-react-swc": "^3.6.0",
+    "eslint": "^9.0.0",
     "eslint-import-resolver-typescript": "^3.6.1",
-    "eslint-plugin-react": "^7.33.2",
-    "typescript": "^4.9.5"
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-react": "^7.34.1",
+    "typescript": "^5.4.4",
+    "vite": "^5.2.8"
   }
 }
