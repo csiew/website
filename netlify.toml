@@ -1,7 +1,7 @@
 [build]
-command = "next build"
+command = "pnpm build"
 base = "/"
-publish = "/.next/"
+publish = "/dist/"
 
 [[plugins]]
 package = "@netlify/plugin-nextjs"
