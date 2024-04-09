@@ -50,7 +50,7 @@ export default function Feed() {
     {isLoading && <p>Loading...</p>}
     {!isError && !isLoading && (
       <>
-        <h2>Feed</h2>
+        <h2>Feed (<NavLink to="https://mastodon.online/@csiew">Mastodon</NavLink>)</h2>
         <section className="feed-posts-list">
           <ul>
             {posts.map((p) => (
@@ -60,14 +60,16 @@ export default function Feed() {
                   <div className="carousel">
                     {p["media:content"].filter((m: any) => m.$.medium === "image").map((m: any) => (
                       <div key={m.$.url} className="image-group">
-                        <img
-                          src={m.$.url}
-                          title={
-                            _.has(m, "media:description.0._")
-                              ? m["media:description"][0]._
-                              : ""
-                          }
-                        />
+                        <NavLink to={m.$.url}>
+                          <img
+                            src={m.$.url}
+                            title={
+                              _.has(m, "media:description.0._")
+                                ? m["media:description"][0]._
+                                : ""
+                            }
+                          />
+                        </NavLink>
                         {_.has(m, "media:description.0._") && (
                           <span>{m["media:description"][0]._}</span>
                         )}
