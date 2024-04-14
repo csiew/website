@@ -11,27 +11,62 @@ header {
 
   h1 {
     --header-fg: rgba(var(--bg-rgb), 0.25);
+    --header-text-shadow:
+      1px 1px 2px rgba(255, 255, 255, 0.5),
+      -1px -1px 2px rgba(0, 0, 0, 0.25);
 
     padding: 2rem 0rem;
     font-size: 2.5rem;
+    line-height: 1.2;
+    text-align: center;
     text-transform: uppercase;
-    white-space: nowrap;
+    user-select: none;
+    -webkit-user-drag: none;
 
     a {
+      display: inline-flex;
+      flex-flow: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
       color: var(--header-fg);
-      text-shadow:
-        1px 1px 2px rgba(255, 255, 255, 0.75),
-        -1px -1px 2px rgba(0, 0, 0, 0.5);
+      text-shadow: var(--header-text-shadow);
       font-weight: 900;
       text-decoration: none;
       letter-spacing: 4px;
+      transition: var(--transition);
 
       &:hover {
         color: var(--header-fg);
+  
+        .profile-photo {
+          filter: saturate(1);
+          transition: var(--transition);
+        }
       }
 
       &:active {
         color: var(--header-fg);
+      }
+
+      .profile-photo {
+        width: 48px;
+        height: 48px;
+        margin: 0;
+        padding: 0;
+        display: inline-flex;
+        flex-flow: row;
+        align-items: center;
+        justify-content: center;
+        background-image: url('/profile.jpg');
+        background-position: top;
+        background-size: cover;
+        border-radius: 100%;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5) inset;
+        filter: saturate(0);
+        user-select: none;
+        -webkit-user-drag: none;
+        transition: var(--transition);
       }
     }
   }
@@ -52,7 +87,7 @@ header {
       flex-flow: row;
       align-items: center;
       justify-content: flex-start;
-      gap: 0.25rem;
+      gap: 0.5rem;
       background: rgba(0, 0, 0, 0.06);
       border: 1px solid var(--border-color);
       border-bottom: none;

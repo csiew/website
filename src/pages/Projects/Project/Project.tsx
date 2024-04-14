@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import Markdown from "react-markdown";
 import "./Project.css";
+import { NavLink } from "react-router-dom";
 
 export default function Project() {
   const { slug } = useParams();
@@ -51,6 +52,26 @@ export default function Project() {
             <h2>{metadata.title}</h2>
             <p className="subtitle">{metadata.subtitle}</p>
             <sub className="timestamp">{`${metadata.duration?.start}${metadata.duration?.start !== metadata.duration?.end ? ` - ${metadata.duration?.end}` : ""}`}</sub>
+            <div className="project-links">
+              <ul>
+                <li>
+                  <NavLink
+                    to={metadata.links?.website ? metadata.links?.website : "#"}
+                    className={["button", !metadata.links?.website ? "disabled" : ""].join(" ").trim()}
+                  >
+                    Website
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to={metadata.links?.repository ? metadata.links?.repository : "#"}
+                    className={["button", !metadata.links?.repository ? "disabled" : ""].join(" ").trim()}
+                  >
+                    Repository
+                  </NavLink>
+                </li>
+              </ul>
+            </div>
           </div>
           <div className="project-body">
             <Markdown>{content}</Markdown>

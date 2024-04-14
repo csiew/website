@@ -1,8 +1,8 @@
 article.project {
-  & .project-header {
+  .project-header {
     width: 100%;
     margin: 0;
-    padding-block: 1rem;
+    padding-block: 1rem 1.5rem;
     display: inline-flex;
     flex-flow: column;
     align-items: flex-start;
@@ -33,9 +33,38 @@ article.project {
     sub.timestamp {
       color: var(--fg-secondary);
     }
+
+    .project-links {
+      width: 100%;
+      margin-block: 1rem 0rem;
+      margin-inline: 0;
+      padding: 0;
+
+      ul {
+        list-style: none;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        display: inline-flex;
+        flex-flow: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 0.5rem;
+
+        li {
+          width: 100%;
+          margin: 0;
+          padding: 0;
+
+          a.button {
+            width: 100%;
+          }
+        }
+      }
+    }
   }
 
   .project-body {
-    padding-block: 2rem;
+    padding-block: 1.5rem;
   }
 }

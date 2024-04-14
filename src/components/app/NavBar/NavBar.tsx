@@ -5,7 +5,10 @@ export default function NavBar() {
   return (
     <header>
       <h1>
-        <NavLink to="/">Clarence Siew</NavLink>
+      <NavLink to="/">
+        <span className="profile-photo"></span>
+        <span className="site-title">Clarence Siew</span>
+      </NavLink>
       </h1>
       <nav>
         <ul>

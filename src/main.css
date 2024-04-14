@@ -144,6 +144,13 @@ button, .button {
     color: inherit;
     filter: brightness(0.9);
   }
+
+  &:is(:disabled, .disabled) {
+    filter: saturate(0);
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
 }
 
 hr {

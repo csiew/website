@@ -1,5 +1,5 @@
 article.post {
-  & .post-header {
+  .post-header {
     width: 100%;
     margin: 0;
     padding-block: 1rem;
@@ -35,6 +35,6 @@ article.post {
   }
 
   .post-body {
-    padding-block: 2rem;
+    padding-block: 1.5rem;
   }
 }
