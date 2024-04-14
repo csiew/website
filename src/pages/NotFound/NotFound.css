@@ -1,0 +1,15 @@
+img.not-found {
+  width: 240px;
+  height: 240px;
+  margin: 2rem auto;
+  position: relative;
+  display: inline-block;
+  border-radius: 100%;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.button.not-found-redirect {
+  margin: 2rem auto;
+  position: relative;
+}

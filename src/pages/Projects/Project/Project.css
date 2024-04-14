@@ -1,22 +1,23 @@
-article.post {
-  & .post-header {
+article.project {
+  & .project-header {
     width: 100%;
     margin: 0;
     padding-block: 1rem;
     display: inline-flex;
     flex-flow: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-    gap: 1rem;
+    gap: 0.5rem;
     border-bottom: 1px solid var(--border-color);
 
     h2 {
       padding: 0rem;
+      align-self: flex-start;
       color: var(--fg);
       text-shadow: none;
-      font-size: 2.5rem;
+      font-size: 2.25rem;
       font-weight: 900;
-      text-align: center;
+      text-align: left;
       letter-spacing: 0;
       line-height: 1;
       text-transform: none;
@@ -25,7 +26,7 @@ article.post {
     p.subtitle {
       padding: 0;
       color: var(--fg-secondary);
-      font-size: 1.25rem;
+      font-size: 1.1rem;
       text-align: center;
     }
 
@@ -34,7 +35,7 @@ article.post {
     }
   }
 
-  .post-body {
+  .project-body {
     padding-block: 2rem;
   }
 }

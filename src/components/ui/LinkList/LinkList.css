@@ -1,4 +1,4 @@
-section.posts-list {
+section.link-list {
   width: 100%;
   margin: 0;
   padding: 0;
@@ -8,7 +8,7 @@ section.posts-list {
   justify-content: flex-start;
   gap: 0;
 
-  & article {
+  article {
     width: 100%;
     margin: 0;
     padding: 1rem;
@@ -30,18 +30,17 @@ section.posts-list {
       border-radius: 0 0 var(--border-radius) var(--border-radius);
     }
 
-    & h3 {
+    h3 {
       padding: 0;
+      font-size: 1.5rem;
     }
 
-    & p.subtitle {
+    p.subtitle {
       padding: 0;
       color: var(--fg-secondary);
-      font-size: 0.8rem;
-      font-style: italic;
     }
 
-    & sub.timestamp {
+    sub.timestamp {
       color: var(--fg-secondary);
     }
   }

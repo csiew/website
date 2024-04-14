@@ -1,0 +1,21 @@
+{
+  "title": "Podzol",
+  "subtitle": "Podcasts in your terminal",
+  "slug": "podzol",
+  "tags": [
+    "podcasts",
+    "python",
+    "json"
+  ],
+  "stack": [
+    "Python"
+  ],
+  "status": "active",
+  "duration": {
+    "end": "Present",
+    "start": "2020"
+  },
+  "links": {
+    "repository": "https://github.com/csiew/Podzol"
+  }
+}

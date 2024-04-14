@@ -1,0 +1,27 @@
+{
+  "title": "Cast",
+  "subtitle": "Podcast web app",
+  "slug": "cast",
+  "tags": [
+    "podcasts",
+    "webdev",
+    "node",
+    "javascript",
+    "vuejs",
+    "ejs"
+  ],
+  "stack": [
+    "JavaScript",
+    "VueJS"
+  ],
+  "status": "hiatus",
+  "duration": {
+    "end": "2021",
+    "start": "2020"
+  },
+  "assets": {
+    "screenshots": [
+      "/cast.png"
+    ]
+  }
+}

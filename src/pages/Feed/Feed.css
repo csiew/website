@@ -1,7 +1,7 @@
 section.feed-posts-list {
   width: 100%;
 
-  & ul {
+  ul {
     list-style: none;
     width: 100%;
     margin: 0;
@@ -10,20 +10,31 @@ section.feed-posts-list {
     flex-flow: column;
     align-items: flex-start;
     justify-content: flex-start;
-    gap: 1rem;
+    gap: 0;
 
-    & li {
+    li {
       width: 100%;
       margin: 0;
       padding: 1rem;
       border: 1px solid var(--border-color);
-      border-radius: var(--border-radius);
+      border-radius: 0;
+      transition: var(--transition);
 
-      & a {
+      &:first-child {
+        border-radius: var(--border-radius) var(--border-radius) 0 0;
+      }
+      &:not(:last-child) {
+        border-bottom: none;
+      }
+      &:last-child {
+        border-radius: 0 0 var(--border-radius) var(--border-radius);
+      }
+
+      a {
         line-break: anywhere;
       }
 
-      & sub.timestamp {
+      sub.timestamp {
         display: inline-block;
         color: var(--fg-secondary);
 
@@ -34,15 +45,15 @@ section.feed-posts-list {
         }
       }
 
-      & .carousel {
+      .carousel {
         padding-block: 1rem;
 
-        & .image-group {
-          & img {
+        .image-group {
+          img {
             width: 100%;
           }
 
-          & span {
+          span {
             margin: 0;
             padding: 0;
             display: inline-block;

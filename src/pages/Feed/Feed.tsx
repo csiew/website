@@ -50,7 +50,7 @@ export default function Feed() {
     {isLoading && <p>Loading...</p>}
     {!isError && !isLoading && (
       <>
-        <h2>Feed (<NavLink to="https://mastodon.online/@csiew">Mastodon</NavLink>)</h2>
+        <h2>Feed</h2>
         <section className="feed-posts-list">
           <ul>
             {posts.map((p) => (

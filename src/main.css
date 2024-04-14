@@ -1,24 +1,43 @@
-@import url('https://fonts.googleapis.com/css2?family=Rethink+Sans:ital,wght@0,400..800;1,400..800&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
   --system-font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  --body-font: 'Roboto Serif', var(--system-font);
-  --header-font: 'Rethink Sans', var(--system-font);
+  --body-font: 'Public Sans', var(--system-font);
+  --header-font: 'Public Sans', var(--system-font);
+  --monospace-font: 'IBM Plex Mono', monospace;
 
-  --fg: #cccccc;
-  --fg-secondary: #999999;
-  --fg-highlight: white;
-  --bg: black;
-  --bg-secondary: #222222;
-  --accent: dodgerblue;
-  --border-color: #333333;
+  --fg-rgb: 30, 30, 30;
+  --fg-secondary-rgb: 120, 120, 120;
+  --fg-highlight-rgb: 25, 25, 25;
+  --bg-rgb: 220, 220, 220;
+  --bg-secondary-rgb: 245, 245, 245;
+  --accent-rgb: 150, 200, 175;
+  --accent-secondary-rgb: 75, 125, 100;
+  --accent-border-rgb: 100, 150, 125;
+  --border-color-rgb: 200, 200, 200;
+
+  --fg: rgb(var(--fg-rgb));
+  --fg-secondary: rgb(var(--fg-secondary-rgb));
+  --fg-highlight: rgb(var(--fg-highlight-rgb));
+  --bg: rgb(var(--bg-rgb));
+  --bg-secondary: rgb(var(--bg-secondary-rgb));
+  --accent: rgb(var(--accent-rgb));
+  --accent-secondary: rgb(var(--accent-secondary-rgb));
+  --accent-border-color: rgb(var(--accent-border-rgb));
+  --border-color: rgb(var(--border-color-rgb));
   --border-radius: 9px;
+  --transition: 0.25s;
 
-  color-scheme: dark;
+  --skeumorphic-shadow: 
+    0px 2px 4px rgba(0, 0, 0, 0.5),
+    0px 2px 4px rgba(255, 255, 255, 0.75) inset,
+    0px -2px 8px rgba(0, 0, 0, 0.25) inset;
+  --skeumorphic-text-shadow:
+    1px 1px 1px rgba(255, 255, 255, 0.25),
+    -1px -1px 1px rgba(0, 0, 0, 0.125);
+
+  color-scheme: light;
   accent-color: var(--accent);
-
-  color: var(--fg);
-  background: var(--bg);
 }
 
 * {
@@ -26,7 +45,7 @@
 }
 
 ::selection {
-  color: var(--bg);
+  color: var(--bg-secondary);
   background: var(--accent);
 }
 
@@ -34,7 +53,9 @@ html {
   width: 100%;
   margin: 0;
   padding: 0;
-  font-size: 18px;
+  color: var(--fg);
+  background: linear-gradient(to bottom, rgba(var(--bg-rgb), 0.5), rgba(var(--bg-rgb), 0.5)), url('./assets/noise.svg');
+  font-size: 16px;
   font-family: var(--body-font);
 }
 
@@ -80,10 +101,49 @@ p {
   padding: 0.5rem 0rem;
 }
 
+pre, code {
+  font-family: var(--monospace-font);
+}
+
 a {
   color: var(--fg);
   font-weight: bold;
   text-decoration: underline;
+  transition: var(--transition);
+
+  &:hover {
+    color: var(--accent-secondary);
+  }
+}
+
+button, .button {
+  padding: 0.5rem 1rem;
+  display: inline-flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+  color: var(--fg);
+  background: var(--accent);
+  border: 1px solid var(--accent-border-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--skeumorphic-shadow);
+  text-shadow: var(--skeumorphic-text-shadow);
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition);
+
+  &:hover {
+    color: inherit;
+    filter: brightness(1.1);
+  }
+
+  &:active {
+    color: inherit;
+    filter: brightness(0.9);
+  }
 }
 
 hr {
@@ -107,14 +167,59 @@ ul {
 }
 
 main {
+  z-index: 50;
   width: 100%;
   margin: 0;
-  padding: 1rem;
+  padding: 2rem;
+  display: inline-flex;
+  flex-flow: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-top: none;
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  box-shadow:
+    0px 4px 8px rgba(0, 0, 0, 0.5),
+    0px 2px 16px rgba(255, 255, 255, 0.5) inset,
+    0px -4px 8px rgba(0, 0, 0, 0.125) inset,
+    0px 4px 8px rgba(255, 255, 255, 0.5) inset,
+    0px 2px 2px rgba(255, 255, 255, 0.75) inset,
+    0px 4px 8px rgba(0, 0, 0, 0.125) inset,
+    0px 4px 16px rgba(0, 0, 0, 0.25) inset;
+
+  @media (max-width: 640px) {
+    & {
+      border-width: 1px 0px;
+      border-radius: 0;
+      padding: 2rem 1.5rem;
+    }
+  }
+
+  h2:first-child {
+    padding-block: 1rem 2rem;
+    align-self: center;
+    color: rgba(var(--bg-rgb), 0.75);
+    text-shadow:
+      1px 1px 2px rgba(255, 255, 255, 0.75),
+      -1px -1px 2px rgba(0, 0, 0, 0.5);
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: 4px;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1;
+    user-select: none;
+  }
 }
 
 footer {
   width: 100%;
   margin: 0;
-  padding: 1.5rem 0rem;
+  padding: 2.5rem 0rem;
+  color: var(--fg-secondary);
+  font-family: var(--header-font);
+  font-size: 0.9rem;
   text-align: center;
 }

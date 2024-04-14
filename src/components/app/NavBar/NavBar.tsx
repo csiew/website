@@ -35,10 +35,10 @@ export default function NavBar() {
           </li>
           <li>
             <NavLink
-              to="/playlists"
+              to="/projects"
               className={({ isActive }) => isActive ? "active" : "" }
             >
-              Playlists
+              Projects
             </NavLink>
           </li>
         </ul>

@@ -1,0 +1,23 @@
+{
+  "title": "Brioche",
+  "subtitle": "UI library for React projects",
+  "slug": "brioche",
+  "tags": [
+    "react",
+    "javascript",
+    "library"
+  ],
+  "stack": [
+    "JavaScript",
+    "React"
+  ],
+  "status": "inactive",
+  "duration": {
+    "end": "2021",
+    "start": "2020"
+  },
+  "links": {
+    "website": "https://www.npmjs.com/package/brioche",
+    "repository": "https://github.com/csiew/brioche"
+  }
+}

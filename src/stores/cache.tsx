@@ -5,11 +5,14 @@ export type CacheContextType = {
   setFeed?: React.Dispatch<React.SetStateAction<any[]>>;
   posts: any[];
   setPosts?: React.Dispatch<React.SetStateAction<any[]>>;
+  projects: any[];
+  setProjects?: React.Dispatch<React.SetStateAction<any[]>>;
 };
 
 export const defaultCacheContextState = {
   feed: [],
-  posts: []
+  posts: [],
+  projects: []
 };
 
 export const CacheContextState = React.createContext<CacheContextType>(defaultCacheContextState);

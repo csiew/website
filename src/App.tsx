@@ -3,9 +3,11 @@ import AppContext from "./AppContext";
 import NavBar from "./components/app/NavBar/NavBar";
 import NotFound from "./pages/NotFound/NotFound";
 import Home from "./pages/Home/Home";
+import Feed from "./pages/Feed/Feed";
 import Posts from "./pages/Posts/Posts";
 import Post from "./pages/Posts/Post/Post";
-import Feed from "./pages/Feed/Feed";
+import Projects from "./pages/Projects/Projects";
+import Project from "./pages/Projects/Project/Project";
 
 export default function App() {
   return (
@@ -18,6 +20,10 @@ export default function App() {
             element: <Home />
           },
           {
+            path: "/feed",
+            element: <Feed />
+          },
+          {
             path: "/posts",
             element: <Posts />
           },
@@ -26,8 +32,12 @@ export default function App() {
             element: <Post />
           },
           {
-            path: "/feed",
-            element: <Feed />
+            path: "/projects",
+            element: <Projects />
+          },
+          {
+            path: "/projects/:slug",
+            element: <Project />
           },
           {
             path: "*",
