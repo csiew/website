@@ -27,7 +27,7 @@ article.project {
       padding: 0;
       color: var(--fg-secondary);
       font-size: 1.1rem;
-      text-align: center;
+      text-align: left;
     }
 
     sub.timestamp {
