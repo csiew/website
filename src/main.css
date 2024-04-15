@@ -57,6 +57,12 @@ html {
   background: linear-gradient(to bottom, rgba(var(--bg-rgb), 0.5), rgba(var(--bg-rgb), 0.5)), url('./assets/noise.svg');
   font-size: 16px;
   font-family: var(--body-font);
+
+  @media (max-width: 640px) {
+    & {
+      background: linear-gradient(to bottom, rgba(var(--bg-secondary-rgb), 0.5), rgba(var(--bg-secondary-rgb), 0.5)), url('./assets/noise.svg');
+    }
+  }
 }
 
 body {
@@ -200,9 +206,12 @@ main {
 
   @media (max-width: 640px) {
     & {
-      border-width: 1px 0px;
+      padding: 2rem 0.5rem;
+      background: none;
+      border: none;
       border-radius: 0;
-      padding: 2rem 1.5rem;
+      box-shadow: none;
+      padding: 2rem 1rem;
     }
   }
 
@@ -236,4 +245,8 @@ footer {
   font-family: var(--header-font);
   font-size: 0.9rem;
   text-align: center;
+
+  @media (max-width: 640px) {
+    padding-block: 1rem 2.5rem;
+  }
 }
