@@ -8,6 +8,7 @@ import Posts from "./pages/Posts/Posts";
 import Post from "./pages/Posts/Post/Post";
 import Projects from "./pages/Projects/Projects";
 import Project from "./pages/Projects/Project/Project";
+import PersonalLinks from "./components/app/PersonalLinks/PersonalLinks";
 
 export default function App() {
   return (
@@ -46,6 +47,7 @@ export default function App() {
         ])}
       </main>
       <footer>
+        <PersonalLinks />
         &copy; 2024 Clarence Siew
       </footer>
     </AppContext>

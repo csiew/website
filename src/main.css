@@ -14,7 +14,7 @@
   --accent-rgb: 150, 200, 175;
   --accent-secondary-rgb: 75, 125, 100;
   --accent-border-rgb: 100, 150, 125;
-  --border-color-rgb: 200, 200, 200;
+  --border-color-rgb: 180, 180, 180;
 
   --fg: rgb(var(--fg-rgb));
   --fg-secondary: rgb(var(--fg-secondary-rgb));
@@ -117,12 +117,14 @@ a {
 }
 
 button, .button {
+  --btn-fg: var(--fg);
+
   padding: 0.5rem 1rem;
   display: inline-flex;
   flex-flow: row;
   align-items: center;
   justify-content: center;
-  color: var(--fg);
+  color: var(--btn-fg);
   background: var(--accent);
   border: 1px solid var(--accent-border-color);
   border-radius: var(--border-radius);
@@ -136,12 +138,12 @@ button, .button {
   transition: var(--transition);
 
   &:hover {
-    color: inherit;
+    color: var(--btn-fg);
     filter: brightness(1.1);
   }
 
   &:active {
-    color: inherit;
+    color: var(--btn-fg);
     filter: brightness(0.9);
   }
 
@@ -225,6 +227,11 @@ footer {
   width: 100%;
   margin: 0;
   padding: 2.5rem 0rem;
+  display: inline-flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
   color: var(--fg-secondary);
   font-family: var(--header-font);
   font-size: 0.9rem;

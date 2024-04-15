@@ -74,6 +74,15 @@ export default function Project() {
             </div>
           </div>
           <div className="project-body">
+            {metadata.assets?.screenshots && (
+              <div className="project-screenshots">
+                {metadata.assets?.screenshots?.map((s: string) => (
+                  <NavLink to={`/content/projects/${metadata.slug}${s}`}>
+                    <img key={s} src={`/content/projects/${metadata.slug}${s}`} />
+                  </NavLink>
+                ))}
+              </div>
+            )}
             <Markdown>{content}</Markdown>
           </div>
         </article>
