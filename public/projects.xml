@@ -5,12 +5,13 @@
     <description>Clarence Siew's personal projects</description>
     <generator>Custom RSS generator</generator>
     <link>https://clarencesiew.com</link>
-    <lastBuildDate>Wed, 17 Apr 2024 14:18:42 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 17 Apr 2024 14:48:30 GMT</lastBuildDate>
     <atom:link href="https:/clarencesiew.com/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>Antorca Linux</title>
       <author>Clarence Siew</author>
       <description>More polished rebranding and continuation of illume OS</description>
+      <slug>antorca-linux</slug>
       <link>https:/clarencesiew.com/projects/antorca-linux</link>
       <guid>https:/clarencesiew.com/projects/antorca-linux</guid>
       <content:encoded><![CDATA[<p>A Debian-based Linux distribution designed for a simple out of the box experience. Ideal for Windows users transitioning to Linux. It used the Xfce desktop environment.</p>
@@ -20,6 +21,7 @@
       <title>BiscuitWM</title>
       <author>Clarence Siew</author>
       <description>Experimental window manager based on the Python version of TinyWM</description>
+      <slug>biscuitwm</slug>
       <link>https:/clarencesiew.com/projects/biscuitwm</link>
       <guid>https:/clarencesiew.com/projects/biscuitwm</guid>
       <content:encoded><![CDATA[<p>A minimalist X11 window manager for Linux/Unix systems written in Python. It's largely an experimental project. It's based on <a href="https://github.com/mackstann/tinywm">TinyWM</a> and <a href="https://github.com/h-ohsaki/xpywm">xpywm</a>.</p>]]></content:encoded>
@@ -28,6 +30,7 @@
       <title>Brioche</title>
       <author>Clarence Siew</author>
       <description>UI library for React projects</description>
+      <slug>brioche</slug>
       <link>https:/clarencesiew.com/projects/brioche</link>
       <guid>https:/clarencesiew.com/projects/brioche</guid>
       <content:encoded><![CDATA[<p>Brioche is a React UI component library based off the reusable components and stylesheets that were developed via my personal website over the years. It is currently under heavy development and may not have all commonly-used UI components.</p>
@@ -37,6 +40,7 @@
       <title>Cardo</title>
       <author>Clarence Siew</author>
       <description>Experimental client-side frontend library</description>
+      <slug>cardo</slug>
       <link>https:/clarencesiew.com/projects/cardo</link>
       <guid>https:/clarencesiew.com/projects/cardo</guid>
       <content:encoded><![CDATA[<p>A client-side web frontend library (more so a collection of functions to enable single-page web apps). The previous version of my site and my 'Hoddle' Javascript window manager contain the foundational work for this library. The initial version of my upcoming podcast app used this library extensively.</p>
@@ -47,6 +51,7 @@
       <title>Cast</title>
       <author>Clarence Siew</author>
       <description>Podcast web app</description>
+      <slug>cast</slug>
       <link>https:/clarencesiew.com/projects/cast</link>
       <guid>https:/clarencesiew.com/projects/cast</guid>
       <content:encoded><![CDATA[<p>A podcast web app that allows you to manage your podcast subscriptions and bookmarks with an intuitive, well-organised interface.</p>
@@ -58,6 +63,7 @@
       <title>Hoddle</title>
       <author>Clarence Siew</author>
       <description>Toy window manager within a web page</description>
+      <slug>hoddle</slug>
       <link>https:/clarencesiew.com/projects/hoddle</link>
       <guid>https:/clarencesiew.com/projects/hoddle</guid>
       <content:encoded><![CDATA[<p>An experimental client-side JavaScript frontend library to turn a web page into a desktop-like environment. It allows for moveable and resizeable windows.</p>
@@ -67,6 +73,7 @@
       <title>illume OS</title>
       <author>Clarence Siew</author>
       <description>Linux distribution targeted at older hardware</description>
+      <slug>illume-os</slug>
       <link>https:/clarencesiew.com/projects/illume-os</link>
       <guid>https:/clarencesiew.com/projects/illume-os</guid>
       <content:encoded><![CDATA[<p>A lightweight Debian-based Linux distribution designed for old hardware (e.g. 32-bit x86 PCs). It used IceWM as its window manager in version 1.x, before transitioning to the LXDE desktop environment from version 2.x onwards.</p>]]></content:encoded>
@@ -75,6 +82,7 @@
       <title>md2magic</title>
       <author>Clarence Siew</author>
       <description>Experimental toy static site generator</description>
+      <slug>md2magic</slug>
       <link>https:/clarencesiew.com/projects/md2magic</link>
       <guid>https:/clarencesiew.com/projects/md2magic</guid>
       <content:encoded><![CDATA[<p>A static site generator written in Python. Ideal for blogs. Work on a rewrite had been on-and-off until 2020.</p>]]></content:encoded>
@@ -83,6 +91,7 @@
       <title>Podzol</title>
       <author>Clarence Siew</author>
       <description>Podcasts in your terminal</description>
+      <slug>podzol</slug>
       <link>https:/clarencesiew.com/projects/podzol</link>
       <guid>https:/clarencesiew.com/projects/podzol</guid>
       <content:encoded><![CDATA[<p>A podcast app that lives in your terminal. It stores indexes of your podcast subscriptions and episode data in JSON files. It's written in Python and uses the pygame library for audio streaming functionality. Limitations with pygame and cross-platform compatibiltiy (Linux and macOS) led me to start working on a web-based podcast client (which was initially codenamed Podzol).</p>]]></content:encoded>
@@ -91,6 +100,7 @@
       <title>Tab Shelf</title>
       <author>Clarence Siew</author>
       <description>Manage your Chrome tabs from the side panel</description>
+      <slug>tab-shelf</slug>
       <link>https:/clarencesiew.com/projects/tab-shelf</link>
       <guid>https:/clarencesiew.com/projects/tab-shelf</guid>
       <content:encoded><![CDATA[<p>An extension for Google Chrome to let you view and manage your tabs from the side panel. It provides easy access to various controls to sleep tabs, regroup/ungroup tabs, and close them. It was designed to look as close as possible as to what a native implementation of vertical tabs in Chrome would look like (with some creative liberties for the sake of usability).</p>]]></content:encoded>
@@ -99,6 +109,7 @@
       <title>TransitSafe</title>
       <author>Clarence Siew</author>
       <description>Public transport alerts for the little things</description>
+      <slug>transitsafe</slug>
       <link>https:/clarencesiew.com/projects/transitsafe</link>
       <guid>https:/clarencesiew.com/projects/transitsafe</guid>
       <content:encoded><![CDATA[<p>An app and service that lets commuters report incidents (crime, hygiene, medical emergencies, etc) on public transport. It used the Public Transport Victoria APIs to get data on public transport services and station metadata.</p>]]></content:encoded>
@@ -107,6 +118,7 @@
       <title>Website</title>
       <author>Clarence Siew</author>
       <description>This very website</description>
+      <slug>website</slug>
       <link>https:/clarencesiew.com/projects/website</link>
       <guid>https:/clarencesiew.com/projects/website</guid>
       <content:encoded><![CDATA[<h3 id="preframeworkera">Pre-framework era</h3>

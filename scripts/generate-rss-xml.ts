@@ -29,12 +29,16 @@ function fetchMetadata(section: string) {
     const metadata = fs.readFileSync(path.join(process.cwd(), "public", "content", section, slug, "metadata.json"));
     const content = fs.readFileSync(path.join(process.cwd(), "public", "content", section, slug, "index.md"))
     const jsonData = JSON.parse(String(metadata));
+    if (Object.keys(jsonData).includes("private") && jsonData.private === true) {
+      continue;
+    }
     const contentData = htmlConverter.makeHtml(String(content));
     const itemUrl = path.join(siteUrl, section, jsonData.slug);
     const metadataObj: any = {
       title: jsonData.title,
       author: "Clarence Siew",
       description: jsonData.subtitle,
+      slug: jsonData.slug,
       link: itemUrl,
       guid: itemUrl,
       "content:encoded": contentData
