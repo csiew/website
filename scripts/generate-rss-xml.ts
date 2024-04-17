@@ -1,9 +1,11 @@
 import * as fs from "node:fs";
 import * as path from "node:path";
+import { Converter } from "showdown";
 import { Builder } from "xml2js";
 
 const siteUrl = "https://clarencesiew.com";
 
+const htmlConverter = new Converter();
 const xmlBuilder = new Builder({
   rootName: "rss",
   cdata: true
@@ -24,14 +26,18 @@ function fetchMetadata(section: string) {
   const dirList = listContentSlugs(section);
   const metadataJson = [];
   for (const slug of dirList) {
-    const metadata = fs.readFileSync(path.join(process.cwd(), `public/content/${section}/${slug}/metadata.json`));
+    const metadata = fs.readFileSync(path.join(process.cwd(), "public", "content", section, slug, "metadata.json"));
+    const content = fs.readFileSync(path.join(process.cwd(), "public", "content", section, slug, "index.md"))
     const jsonData = JSON.parse(String(metadata));
+    const contentData = htmlConverter.makeHtml(String(content));
     const itemUrl = path.join(siteUrl, section, jsonData.slug);
     const metadataObj: any = {
       title: jsonData.title,
+      author: "Clarence Siew",
       description: jsonData.subtitle,
       link: itemUrl,
-      guid: itemUrl
+      guid: itemUrl,
+      "content:encoded": contentData
     };
     if (Object.keys(jsonData).includes("publishedAt")) {
       metadataObj["pubDate"] = new Date(jsonData.publishedAt).toUTCString();
