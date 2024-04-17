@@ -9,6 +9,10 @@ export type Post = {
 };
 
 export type CacheContextType = {
+  isLoading: boolean;
+  setIsLoading?: React.Dispatch<React.SetStateAction<boolean>>;
+  isError: boolean;
+  setIsError?: React.Dispatch<React.SetStateAction<boolean>>;
   feed: any[];
   setFeed?: React.Dispatch<React.SetStateAction<any[]>>;
   posts: Post[];
@@ -18,6 +22,8 @@ export type CacheContextType = {
 };
 
 export const defaultCacheContextState = {
+  isLoading: false,
+  isError: false,
   feed: [],
   posts: [],
   projects: []

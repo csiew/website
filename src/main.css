@@ -52,6 +52,7 @@
 html {
   width: 100%;
   margin: 0;
+  top: 0;
   padding: 0;
   color: var(--fg);
   background: linear-gradient(to bottom, rgba(var(--bg-rgb), 0.5), rgba(var(--bg-rgb), 0.5)), url('./assets/noise.svg');
@@ -68,6 +69,7 @@ html {
 body {
   width: 100%;
   margin: 0;
+  top: 0;
   padding: 0;
   display: inline-flex;
   flex-flow: column;
@@ -80,6 +82,7 @@ body {
   max-width: 640px;
   width: 100%;
   margin: 0 auto;
+  top: 0;
   padding: 0;
   display: inline-flex;
   flex-flow: column;
