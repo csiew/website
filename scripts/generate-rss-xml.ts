@@ -26,11 +26,12 @@ function fetchMetadata(section: string) {
   for (const slug of dirList) {
     const metadata = fs.readFileSync(path.join(process.cwd(), `public/content/${section}/${slug}/metadata.json`));
     const jsonData = JSON.parse(String(metadata));
+    const itemUrl = path.join(siteUrl, section, jsonData.slug);
     const metadataObj: any = {
       title: jsonData.title,
       description: jsonData.subtitle,
-      link: siteUrl,
-      guid: path.join(siteUrl, section, jsonData.slug)
+      link: itemUrl,
+      guid: itemUrl
     };
     if (Object.keys(jsonData).includes("publishedAt")) {
       metadataObj["pubDate"] = new Date(jsonData.publishedAt).toUTCString();
