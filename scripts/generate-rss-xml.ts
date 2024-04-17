@@ -74,16 +74,32 @@ function writeXmlToPublic(fileName: string, xml: string) {
   fs.writeFileSync(path.join(process.cwd(), "public", `${fileName}.xml`), xml);
 }
 
-const posts = buildXml(
-  "posts",
-  "Clarence Siew",
-  "Clarence Siew's personal blog"
-);
-writeXmlToPublic("rss", posts);
+function createFeeds() {
+  try {
+    console.log("Creating blog post feed...");
+    const posts = buildXml(
+      "posts",
+      "Clarence Siew",
+      "Clarence Siew's personal blog"
+    );
+    writeXmlToPublic("rss", posts);
+    console.log("Successfully written blog post feed");
+    console.log(posts);
+    
+    console.log("Creating projects feed...");
+    const projects = buildXml(
+      "projects",
+      "Clarence Siew",
+      "Clarence Siew's personal projects"
+    );
+    writeXmlToPublic("projects", projects);
+    console.log("Successfully written projects feed");
+    console.log(projects);
+  } catch (err) {
+    console.error("Feed generation failed");
+    console.error(err);
+    throw err;
+  }
+}
 
-const projects = buildXml(
-  "projects",
-  "Clarence Siew",
-  "Clarence Siew's personal projects"
-);
-writeXmlToPublic("projects", projects);
+createFeeds();
