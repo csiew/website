@@ -1,0 +1,28 @@
+{
+  "title": "Hoddle",
+  "subtitle": "Toy window manager within a web page",
+  "slug": "hoddle",
+  "tags": [
+    "experimental",
+    "javascript",
+    "library"
+  ],
+  "stack": [
+    "JavaScript",
+    "HTML"
+  ],
+  "status": "inactive",
+  "duration": {
+    "end": "2020",
+    "start": "2020"
+  },
+  "links": {
+    "website": "https://csiew.github.io/Hoddle",
+    "repository": "https://github.com/csiew/Hoddle"
+  },
+  "assets": {
+    "screenshots": [
+      "/hoddle.png"
+    ]
+  }
+}

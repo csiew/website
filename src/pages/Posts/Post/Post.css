@@ -1,0 +1,40 @@
+article.post {
+  .post-header {
+    width: 100%;
+    margin: 0;
+    padding-block: 1rem;
+    display: inline-flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    border-bottom: 1px solid var(--border-color);
+
+    h2 {
+      padding: 0rem;
+      color: var(--fg);
+      text-shadow: none;
+      font-size: 2.5rem;
+      font-weight: 900;
+      text-align: center;
+      letter-spacing: 0;
+      line-height: 1;
+      text-transform: none;
+    }
+  
+    p.subtitle {
+      padding: 0;
+      color: var(--fg-secondary);
+      font-size: 1.25rem;
+      text-align: center;
+    }
+
+    sub.timestamp {
+      color: var(--fg-secondary);
+    }
+  }
+
+  .post-body {
+    padding-block: 1.5rem;
+  }
+}

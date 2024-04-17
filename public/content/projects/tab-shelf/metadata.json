@@ -1,0 +1,23 @@
+{
+  "title": "Tab Shelf",
+  "subtitle": "Manage your Chrome tabs from the side panel",
+  "slug": "tab-shelf",
+  "tags": [
+    "react",
+    "typescript",
+    "extension",
+    "chrome"
+  ],
+  "stack": [
+    "TypeScript",
+    "React"
+  ],
+  "status": "active",
+  "duration": {
+    "end": "Present",
+    "start": "2023"
+  },
+  "links": {
+    "website": "https://tabshelf.clarencesiew.com"
+  }
+}

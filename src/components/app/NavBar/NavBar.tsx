@@ -1,47 +1,48 @@
-"use client";
-
-import React from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import _ from "lodash";
-import styles from "./NavBar.module.css";
+import { NavLink } from "react-router-dom";
+import "./NavBar.css";
 
 export default function NavBar() {
-  const pathName = usePathname();
-
-  function linkActiveState(url: string) {
-    return pathName === url ? styles.active : "";
-  }
-
   return (
-    <header className={styles.header}>
-      <div className={styles.siteTitleBar}>
-        <Link href="/">
-          <img src="/profile.jpg" />
-          <h1>Clarence Siew</h1>
-        </Link>
-      </div>
-      <nav className={styles.nav}>
+    <header>
+      <h1>
+      <NavLink to="/">
+        <span className="profile-photo"></span>
+        <span className="site-title">Clarence Siew</span>
+      </NavLink>
+      </h1>
+      <nav>
         <ul>
           <li>
-            <Link href="/" className={linkActiveState("/")}>
+            <NavLink
+              to="/"
+              className={({ isActive }) => isActive ? "active" : "" }
+            >
               Home
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link href="/posts" className={linkActiveState("/posts")}>
+            <NavLink
+              to="/feed"
+              className={({ isActive }) => isActive ? "active" : "" }
+            >
+              Feed
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/posts"
+              className={({ isActive }) => isActive ? "active" : "" }
+            >
               Posts
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link href="/projects" className={linkActiveState("/projects")}>
+            <NavLink
+              to="/projects"
+              className={({ isActive }) => isActive ? "active" : "" }
+            >
               Projects
-            </Link>
-          </li>
-          <li>
-            <Link href="/playlists" className={linkActiveState("/playlists")}>
-              Playlists
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </nav>

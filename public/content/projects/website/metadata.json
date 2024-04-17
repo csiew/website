@@ -1,0 +1,30 @@
+{
+  "title": "Website",
+  "subtitle": "This very website",
+  "slug": "website",
+  "tags": [
+    "webdev",
+    "javascript",
+    "typescript",
+    "react",
+    "nextjs",
+    "svelte",
+    "sveltekit",
+    "vuejs",
+    "firebase",
+    "cms"
+  ],
+  "stack": [
+    "JavaScript",
+    "TypeScript",
+    "React",
+    "NextJS",
+    "SvelteKit",
+    "VueJS"
+  ],
+  "status": "active",
+  "duration": {
+    "end": "Present",
+    "start": "2015"
+  }
+}

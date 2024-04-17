@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>Clarence Siew</title>
+    <description>Clarence Siew's personal blog</description>
+    <generator>Custom RSS generator</generator>
+    <link>https://clarencesiew.com</link>
+    <lastBuildDate>Wed, 17 Apr 2024 13:57:18 GMT</lastBuildDate>
+    <atom:link href="https:/clarencesiew.com/rss.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Building a boilerplate factory</title>
+      <description>An experiment in boilerplates and templates</description>
+      <link>https://clarencesiew.com</link>
+      <guid>https:/clarencesiew.com/posts/building-boilerplate-factory</guid>
+      <pubDate>Fri, 05 Feb 2021 03:58:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>Different crowds</title>
+      <description>Thoughts on personal interests and sharing</description>
+      <link>https://clarencesiew.com</link>
+      <guid>https:/clarencesiew.com/posts/different-crowds</guid>
+      <pubDate>Fri, 31 Mar 2023 02:20:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Adventures in Frontend</title>
+      <description>A not-so-technical chronical of the frontend shenanigans I've been up to</description>
+      <link>https://clarencesiew.com</link>
+      <guid>https:/clarencesiew.com/posts/frontend-adventures</guid>
+      <pubDate>Wed, 04 Jan 2023 14:30:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>A new blog, a new static site generator</title>
+      <description>An experiment in static site generators</description>
+      <link>https://clarencesiew.com</link>
+      <guid>https:/clarencesiew.com/posts/new-blog-site-generator</guid>
+      <pubDate>Mon, 19 Oct 2020 06:22:06 GMT</pubDate>
+    </item>
+    <item>
+      <title>Tab Shelf</title>
+      <description>Announcing a vertical tab management extension for Chrome/Chromium</description>
+      <link>https://clarencesiew.com</link>
+      <guid>https:/clarencesiew.com/posts/tab-shelf</guid>
+      <pubDate>Sat, 17 Jun 2023 07:00:00 GMT</pubDate>
+    </item>
+  </channel>
+</rss>

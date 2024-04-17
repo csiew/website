@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>Clarence Siew</title>
+    <description>Clarence Siew's personal projects</description>
+    <generator>Custom RSS generator</generator>
+    <link>https://clarencesiew.com</link>
+    <lastBuildDate>Wed, 17 Apr 2024 13:57:18 GMT</lastBuildDate>
+    <atom:link href="https:/clarencesiew.com/rss.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Antorca Linux</title>
+      <description>More polished rebranding and continuation of illume OS</description>
+      <link>https://clarencesiew.com</link>
+      <guid>https:/clarencesiew.com/projects/antorca-linux</guid>
+    </item>
+    <item>
+      <title>BiscuitWM</title>
+      <description>Experimental window manager based on the Python version of TinyWM</description>
+      <link>https://clarencesiew.com</link>
+      <guid>https:/clarencesiew.com/projects/biscuitwm</guid>
+    </item>
+    <item>
+      <title>Brioche</title>
+      <description>UI library for React projects</description>
+      <link>https://clarencesiew.com</link>
+      <guid>https:/clarencesiew.com/projects/brioche</guid>
+    </item>
+    <item>
+      <title>Cardo</title>
+      <description>Experimental client-side frontend library</description>
+      <link>https://clarencesiew.com</link>
+      <guid>https:/clarencesiew.com/projects/cardo</guid>
+    </item>
+    <item>
+      <title>Cast</title>
+      <description>Podcast web app</description>
+      <link>https://clarencesiew.com</link>
+      <guid>https:/clarencesiew.com/projects/cast</guid>
+    </item>
+    <item>
+      <title>Hoddle</title>
+      <description>Toy window manager within a web page</description>
+      <link>https://clarencesiew.com</link>
+      <guid>https:/clarencesiew.com/projects/hoddle</guid>
+    </item>
+    <item>
+      <title>illume OS</title>
+      <description>Linux distribution targeted at older hardware</description>
+      <link>https://clarencesiew.com</link>
+      <guid>https:/clarencesiew.com/projects/illume-os</guid>
+    </item>
+    <item>
+      <title>md2magic</title>
+      <description>Experimental toy static site generator</description>
+      <link>https://clarencesiew.com</link>
+      <guid>https:/clarencesiew.com/projects/md2magic</guid>
+    </item>
+    <item>
+      <title>Podzol</title>
+      <description>Podcasts in your terminal</description>
+      <link>https://clarencesiew.com</link>
+      <guid>https:/clarencesiew.com/projects/podzol</guid>
+    </item>
+    <item>
+      <title>Tab Shelf</title>
+      <description>Manage your Chrome tabs from the side panel</description>
+      <link>https://clarencesiew.com</link>
+      <guid>https:/clarencesiew.com/projects/tab-shelf</guid>
+    </item>
+    <item>
+      <title>TransitSafe</title>
+      <description>Public transport alerts for the little things</description>
+      <link>https://clarencesiew.com</link>
+      <guid>https:/clarencesiew.com/projects/transitsafe</guid>
+    </item>
+    <item>
+      <title>Website</title>
+      <description>This very website</description>
+      <link>https://clarencesiew.com</link>
+      <guid>https:/clarencesiew.com/projects/website</guid>
+    </item>
+  </channel>
+</rss>

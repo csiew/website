@@ -1,0 +1,24 @@
+{
+  "title": "illume OS",
+  "subtitle": "Linux distribution targeted at older hardware",
+  "slug": "illume-os",
+  "tags": [
+    "linux",
+    "distribution",
+    "icewm",
+    "debian"
+  ],
+  "stack": [
+    "Shell",
+    "HTML",
+    "JavaScript"
+  ],
+  "status": "inactive",
+  "duration": {
+    "end": "2017",
+    "start": "2011"
+  },
+  "links": {
+    "website": "https://illume-os.firebaseapp.com/"
+  }
+}
