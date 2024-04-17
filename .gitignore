@@ -31,3 +31,6 @@ tsconfig.tsbuildinfo
 # Database
 flyway/conf/
 planetscale/
+
+# Local Netlify folder
+.netlify
