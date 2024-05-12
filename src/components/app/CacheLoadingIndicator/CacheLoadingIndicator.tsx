@@ -1,17 +1,16 @@
 import React from "react";
 import { CacheContextState } from "../../../stores/cache";
-import "./LoadingIndicator.css";
+import "./CacheLoadingIndicator.css";
 
 export default function LoadingIndicator() {
   const cacheContext = React.useContext(CacheContextState);
 
-  if (!cacheContext.isLoading)
+  if (!Object.values(cacheContext.isCachePending).every((v) => !!v))
     return <></>;
 
   return (
     <div className="loading-indicator">
-      <span className="loading-indicator-spinner-1"></span>
-      <span className="loading-indicator-spinner-2"></span>
+      <span className="loading-indicator-toast"></span>
     </div>
   );
 }

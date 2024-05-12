@@ -1,15 +1,11 @@
-import React from "react";
 import { NavLink } from "react-router-dom";
-import { CacheContextState } from "../../../stores/cache";
+import LoadingIndicator from "../CacheLoadingIndicator/CacheLoadingIndicator";
 import "./NavBar.css";
-import LoadingIndicator from "../LoadingIndicator/LoadingIndicator";
 
 export default function NavBar() {
-  const cacheContext = React.useContext(CacheContextState);
-
   return (
     <>
-      {cacheContext.isLoading && (<LoadingIndicator />)}
+      <LoadingIndicator />
       <header>
         <h1>
         <NavLink to="/">

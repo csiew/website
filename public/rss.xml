@@ -5,30 +5,7 @@
     <description>Clarence Siew's personal blog</description>
     <generator>Custom RSS generator</generator>
     <link>https://clarencesiew.com</link>
-<<<<<<< HEAD
-    <lastBuildDate>Wed, 17 Apr 2024 13:57:18 GMT</lastBuildDate>
-    <atom:link href="https:/clarencesiew.com/rss.xml" rel="self" type="application/rss+xml"/>
-    <item>
-      <title>Building a boilerplate factory</title>
-      <description>An experiment in boilerplates and templates</description>
-      <link>https://clarencesiew.com</link>
-      <guid>https:/clarencesiew.com/posts/building-boilerplate-factory</guid>
-      <pubDate>Fri, 05 Feb 2021 03:58:08 GMT</pubDate>
-    </item>
-    <item>
-      <title>Different crowds</title>
-      <description>Thoughts on personal interests and sharing</description>
-      <link>https://clarencesiew.com</link>
-      <guid>https:/clarencesiew.com/posts/different-crowds</guid>
-      <pubDate>Fri, 31 Mar 2023 02:20:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>Adventures in Frontend</title>
-      <description>A not-so-technical chronical of the frontend shenanigans I've been up to</description>
-      <link>https://clarencesiew.com</link>
-      <guid>https:/clarencesiew.com/posts/frontend-adventures</guid>
-=======
-    <lastBuildDate>Wed, 17 Apr 2024 14:48:30 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 12 May 2024 12:55:47 GMT</lastBuildDate>
     <atom:link href="https:/clarencesiew.com/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>Building a boilerplate factory</title>
@@ -64,16 +41,10 @@
 <p>Til next time.</p>
 <p><strong><em>EDIT (06/01/2023):</em></strong> I've since extended my personal site to include a CMS to update and/or publish new posts. This update was written in it!</p>
 <p><strong><em>EDIT (17/03/2023):</em></strong> I decided to start scaling back the CMS features for my site. It won't go to waste as I'm migrating the CMS to another side project. I'll be reverting to statically-generated content for now.</p>]]></content:encoded>
->>>>>>> master
       <pubDate>Wed, 04 Jan 2023 14:30:00 GMT</pubDate>
     </item>
     <item>
       <title>A new blog, a new static site generator</title>
-<<<<<<< HEAD
-      <description>An experiment in static site generators</description>
-      <link>https://clarencesiew.com</link>
-      <guid>https:/clarencesiew.com/posts/new-blog-site-generator</guid>
-=======
       <author>Clarence Siew</author>
       <description>An experiment in static site generators</description>
       <slug>new-blog-site-generator</slug>
@@ -83,16 +54,10 @@
 <p>The new script is also written in Python. However I am now using JSON files for its configuration and post manifest. This was inspired by my work on <a href="http://github.com/csiew/biscuitwm">BiscuitWM</a> which also uses a JSON file for configuration.</p>
 <p>You can view the script in all its glory/horror on the <a href="http://github.com/csiew/website">repository</a> of this site (under the name <a href="https://github.com/csiew/website/blob/master/statgen.py"><em>statgen.py</em></a> in the root directory). I will perhaps create a separate repository for this script once it has reached a point of maturity.</p>
 <p>Unlike md2magic, it is not responsible for converting markdown files into HTML. Like I mentioned earlier, it's now more of an indexing tool that allows your site to have a readily-available list of your posts with some metadata.</p>]]></content:encoded>
->>>>>>> master
       <pubDate>Mon, 19 Oct 2020 06:22:06 GMT</pubDate>
     </item>
     <item>
       <title>Tab Shelf</title>
-<<<<<<< HEAD
-      <description>Announcing a vertical tab management extension for Chrome/Chromium</description>
-      <link>https://clarencesiew.com</link>
-      <guid>https:/clarencesiew.com/posts/tab-shelf</guid>
-=======
       <author>Clarence Siew</author>
       <description>Announcing a vertical tab management extension for Chrome/Chromium</description>
       <slug>tab-shelf</slug>
@@ -119,7 +84,6 @@
 <p>Tab Shelf definitely isn't the first vertical tab management extension to make use of the Side Panel API, but I have to say (with some considerable bias) that it's perhaps the prettiest looking one out there at the moment.</p>
 <h2 id="giveitago">Give it a go!</h2>
 <p>You can now get <a href="https://chrome.google.com/webstore/detail/tab-shelf/gkiobnohamhihbaipacecjfljepjjlmg">Tab Shelf on the Chrome Web Store</a>. I'd love to get feedback on it as I'm working through new features and planning future releases. It's already pretty featureful at the time of writing this, but there's still so much more in the pipeline.</p>]]></content:encoded>
->>>>>>> master
       <pubDate>Sat, 17 Jun 2023 07:00:00 GMT</pubDate>
     </item>
   </channel>

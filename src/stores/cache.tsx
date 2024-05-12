@@ -1,5 +1,17 @@
 import React from "react";
 
+export type CacheStatus = {
+  feed: boolean;
+  posts: boolean;
+  projects: boolean;
+};
+
+export const defaultCacheStatus = {
+  feed: false,
+  posts: false,
+  projects: false
+};
+
 export type Post = {
   slug: string;
   title: string;
@@ -9,10 +21,10 @@ export type Post = {
 };
 
 export type CacheContextType = {
-  isLoading: boolean;
-  setIsLoading?: React.Dispatch<React.SetStateAction<boolean>>;
-  isError: boolean;
-  setIsError?: React.Dispatch<React.SetStateAction<boolean>>;
+  isCachePending: CacheStatus;
+  setIsCachePending?: React.Dispatch<React.SetStateAction<CacheStatus>>;
+  isCacheErrored: CacheStatus;
+  setIsCacheErrored?: React.Dispatch<React.SetStateAction<CacheStatus>>;
   feed: any[];
   setFeed?: React.Dispatch<React.SetStateAction<any[]>>;
   posts: Post[];
@@ -22,8 +34,8 @@ export type CacheContextType = {
 };
 
 export const defaultCacheContextState = {
-  isLoading: false,
-  isError: false,
+  isCachePending: defaultCacheStatus,
+  isCacheErrored: defaultCacheStatus,
   feed: [],
   posts: [],
   projects: []
