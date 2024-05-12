@@ -10,17 +10,22 @@ export default function Posts() {
   return (
     <>
       <h2>Posts</h2>
-      <LinkList>
-        {cacheContext.posts.map((p) => (
-          <LinkListItem
-            key={p.slug}
-            title={p.title}
-            subtitle={p.subtitle}
-            url={`/posts/${p.slug}`}
-            timestamp={new Date(p.publishedAt).toDateString()}
-          />
-        ))}
-      </LinkList>
+      {!cacheContext.posts.length
+        ? <p>Loading...</p>
+        : (
+          <LinkList>
+            {cacheContext.posts.map((p) => (
+              <LinkListItem
+                key={p.slug}
+                title={p.title}
+                subtitle={p.subtitle}
+                url={`/posts/${p.slug}`}
+                timestamp={new Date(p.publishedAt).toDateString()}
+              />
+            ))}
+          </LinkList>
+        )
+      }
     </>
   );
 }
