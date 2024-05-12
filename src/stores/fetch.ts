@@ -38,7 +38,7 @@ export async function fetchProjectsViaManifest() {
   if (!manifestResult.ok)
     throw new Error(manifestResult.statusText);
   const manifest = await manifestResult.json();
-  const fetchedProjects = [];
+  const fetchedProjects: any[] = [];
   for (const slug of manifest) {
     const metadataResult = await fetch(`/content/projects/${slug}/metadata.json`);
     if (!metadataResult.ok)

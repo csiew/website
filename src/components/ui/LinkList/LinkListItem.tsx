@@ -5,13 +5,14 @@ type LinkListItemProps = {
   url: string;
   subtitle?: string;
   timestamp?: string;
+  onClick?: () => Promise<void>;
 };
 
 export default function LinkListItem(props: LinkListItemProps) {
   return (
     <article>
       <h3>
-        <NavLink end to={props.url}>
+        <NavLink end to={props.url} onClick={props.onClick}>
           {props.title}
         </NavLink>
       </h3>

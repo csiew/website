@@ -5,7 +5,7 @@
     <description>Clarence Siew's personal blog</description>
     <generator>Custom RSS generator</generator>
     <link>https://clarencesiew.com</link>
-    <lastBuildDate>Wed, 17 Apr 2024 14:48:30 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 12 May 2024 12:55:47 GMT</lastBuildDate>
     <atom:link href="https:/clarencesiew.com/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>Building a boilerplate factory</title>
