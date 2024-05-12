@@ -1,3 +1,4 @@
+import React from "react";
 import { useRoutes } from "react-router-dom";
 import AppContext from "./AppContext";
 import NavBar from "./components/app/NavBar/NavBar";

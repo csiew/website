@@ -1,3 +1,4 @@
+import React from "react";
 import { NavLink } from "react-router-dom";
 import LoadingIndicator from "../CacheLoadingIndicator/CacheLoadingIndicator";
 import "./NavBar.css";
