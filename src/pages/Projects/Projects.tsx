@@ -9,17 +9,22 @@ export default function Projects() {
   return (
     <>
       <h2>Projects</h2>
-      <LinkList>
-        {cacheContext.projects.map((p) => (
-          <LinkListItem
-            key={p.slug}
-            title={p.title}
-            subtitle={p.subtitle}
-            url={`/projects/${p.slug}`}
-            timestamp={`${p.duration?.start}${p.duration?.start !== p.duration?.end ? ` - ${p.duration?.end}` : ""}`}
-          />
-        ))}
-      </LinkList>
+      {!cacheContext.projects.length
+        ? <p>Loading...</p>
+        : (
+          <LinkList>
+            {cacheContext.projects.map((p) => (
+              <LinkListItem
+                key={p.slug}
+                title={p.title}
+                subtitle={p.subtitle}
+                url={`/projects/${p.slug}`}
+                timestamp={`${p.duration?.start}${p.duration?.start !== p.duration?.end ? ` - ${p.duration?.end}` : ""}`}
+              />
+            ))}
+          </LinkList>
+        )
+      }
     </>
   );
 }
