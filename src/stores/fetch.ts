@@ -38,22 +38,21 @@ export async function fetchProjectsViaManifest() {
   if (!manifestResult.ok)
     throw new Error(manifestResult.statusText);
   const manifest = await manifestResult.json();
-  const fetchedProjects: any[] = [];
-  for (const slug of manifest) {
-    const metadataResult = await fetch(`/content/projects/${slug}/metadata.json`);
-    if (!metadataResult.ok)
-      throw new Error(metadataResult.statusText);
-    const contentResult = await fetch(`/content/projects/${slug}/index.md`);
-    if (!contentResult.ok)
-      throw new Error(contentResult.statusText);
-    const htmlConverter = new Converter();
-    const contentHtml = htmlConverter.makeHtml(String(contentResult));
-    const projectData = await metadataResult.json();
-    projectData.content = contentHtml;
-    fetchedProjects.push(projectData);
-  }
-  fetchedProjects.sort((a, b) => {
+  return (
+    await Promise.all(manifest.map(async (slug: string) => {
+      const metadataResult = await fetch(`/content/projects/${slug}/metadata.json`);
+      if (!metadataResult.ok)
+        throw new Error(metadataResult.statusText);
+      const contentResult = await fetch(`/content/projects/${slug}/index.md`);
+      if (!contentResult.ok)
+        throw new Error(contentResult.statusText);
+      const htmlConverter = new Converter();
+      const contentHtml = htmlConverter.makeHtml(String(contentResult));
+      const projectData = await metadataResult.json();
+      projectData.content = contentHtml;
+      return projectData;
+    }))
+  ).sort((a, b) => {
     return a.duration.start < b.duration.start ? 1 : -1;
   });
-  return fetchedProjects;
 }

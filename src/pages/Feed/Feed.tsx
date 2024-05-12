@@ -1,6 +1,5 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { parseStringPromise } from "xml2js";
 import _ from "lodash";
 import { CacheContextState } from "../../stores/cache";
 import "./Feed.css";

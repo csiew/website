@@ -7,7 +7,7 @@
     "build": "tsc && vite build",
     "build:all": "./scripts/build.sh",
     "preview": "vite preview",
-    "lint": "npx eslint",
+    "lint": "npx eslint -c .eslintrc.json",
     "generate:rss": "node -r @swc-node/register scripts/generate-rss-xml.ts"
   },
   "author": "Clarence Siew",
