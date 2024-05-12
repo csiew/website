@@ -5,6 +5,7 @@
     <description>Clarence Siew's personal blog</description>
     <generator>Custom RSS generator</generator>
     <link>https://clarencesiew.com</link>
+<<<<<<< HEAD
     <lastBuildDate>Wed, 17 Apr 2024 13:57:18 GMT</lastBuildDate>
     <atom:link href="https:/clarencesiew.com/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
@@ -26,20 +27,99 @@
       <description>A not-so-technical chronical of the frontend shenanigans I've been up to</description>
       <link>https://clarencesiew.com</link>
       <guid>https:/clarencesiew.com/posts/frontend-adventures</guid>
+=======
+    <lastBuildDate>Wed, 17 Apr 2024 14:48:30 GMT</lastBuildDate>
+    <atom:link href="https:/clarencesiew.com/rss.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Building a boilerplate factory</title>
+      <author>Clarence Siew</author>
+      <description>An experiment in boilerplates and templates</description>
+      <slug>building-boilerplate-factory</slug>
+      <link>https:/clarencesiew.com/posts/building-boilerplate-factory</link>
+      <guid>https:/clarencesiew.com/posts/building-boilerplate-factory</guid>
+      <content:encoded><![CDATA[<p>As of late, I've been attempting some web development projects. I found a common problem with starting several new projects across different frameworks and runtimes is that I've been constantly looking up their docs online or my own notes on setting new projects up.</p>
+<p>I decided it was finally time to start doing a little automation with shell scripts.</p>
+<p>The first runtime-framework combination I'm working with is Node and Express. The script asks for the project name so that it could create a directory in my usual projects directory. It then goes through the motions of running the standard <code>npm</code> or <code>yarn</code> project initialisation. It also installs the <code>nodemon</code> package so that Node could automatically restart the app whenever I make a change.</p>
+<p>It works great for my standard Express backend project setup. However I plan on adding flags so that it could be more convenient to toggle adding additional packages like <code>nodemon</code>. Flags could play a larger role in the future when I automate the setup process for React and Vue projects (i.e. adding a router package, or the Material UI or Bootstrap packages).</p>
+<p>I'm also figuring out a frontend or interface to conveniently toggle various options in a single <em>view</em> rather than fiddling with flags and command line parameters. An <code>ncurses</code> text user interface was my initial choice, but I'm currently experimenting with an Electron app that would call the script and plug in the necessary flags.</p>
+<p>You can take a look at the initial script on <a href="https://github.com/csiew/boilerplate_generators">GitHub</a>. The script is currently designed for use on Debian-based Linux distributions. Support for macOS (and maybe Windows) will come a little later.</p>]]></content:encoded>
+      <pubDate>Fri, 05 Feb 2021 03:58:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>Adventures in Frontend</title>
+      <author>Clarence Siew</author>
+      <description>A not-so-technical chronical of the frontend shenanigans I've been up to</description>
+      <slug>frontend-adventures</slug>
+      <link>https:/clarencesiew.com/posts/frontend-adventures</link>
+      <guid>https:/clarencesiew.com/posts/frontend-adventures</guid>
+      <content:encoded><![CDATA[<p>This post was supposed to be a short foreword to <em>another</em> post about software architecture to briefly chronicle my adventures in the world of frontend web development, from the beginning to the present. But alas, I got a little too excited and ended up writing up something a far too long for a foreword and a little too meandering for a proper post.</p>
+<p>I started bumbling my way into the world of frontend development during a nail-biting final year project through <a href="https://reactjs.org/">React</a>. I consequently had PTSD from trying to learn React (pre-hooks!) with <a href="https://mui.com/">Material UI</a> (now <em>MUI</em>) at the same time. Prior to this I was mostly toying with <a href="https://pygobject.readthedocs.io/en/latest/">Python UI toolkits</a> and <a href="https://github.com/csiew/BiscuitWM">playing around with window managers on Linux</a>.</p>
+<p>As I graduated from uni just as the pandemic kicked-off, I tried to roll-my-own barebones duct-taped client side JavaScript mixed with <a href="https://ejs.co/">template-based responses</a> via an Express server. This was used for my first crack at a podcast web app. It performed <em>poorly</em> and I genuinely appear to have lost the code/repository of this attempt. Some aspects of the client side JavaScript work made its way on to my personal website.</p>
+<p>I then got sucked into the <a href="https://vuejs.org/">Vue.js</a> ecosystem and coming surprisingly close to completing a second crack at this podcast web app. I started getting responses to job applications close to the ~1 year anniversary (late 2020 to early 2021) of the first COVID case on Australian shores, so this project was abandoned. I also re-implemented my personal website using Vue.js.</p>
+<p>I jumped back into the world of React for my first full-stack client (work) project in early 2021. It was initially built using class-based components, but once I understood how <a href="https://reactjs.org/docs/hooks-intro.html">React Hooks</a> worked, I hastily refactored the entire frontend to use functional components. We were supposedly following the Agile methodology, but being fresh out of uni it still didn't click that working on a card/issue <em>absolutely should not</em> involve refactoring half the project <em>all the time</em>. Apologies and thanks to Chris for having the patience to review my absolutely <em>horrifyingly large</em> pull requests!</p>
+<p>My mesmerising UI work and my colleagues' brilliant backend + database design ended up being such a hit that this project ended up getting extended and its scope expanded. After I left this team, they rewrote everything in TypeScript (it was originally all in JavaScript; I would only be introduced to TypeScript in my next work project) whilst retaining my CSS styling.</p>
+<p>Shifting to more backend-heavy work did not satisfy my frontend itch after the success of my previous work project, so I turned to making my personal website something of a playground. I replaced my Vue.js based personal site with a new React site and imbued it with the many learnings from mistakes made in my last work project. I eventually rolled out a UI library called <a href="https://github.com/csiew/brioche">Brioche</a>, but abandoned it around the time I discovered <a href="https://svelte.dev/">Svelte</a> and <a href="https://kit.svelte.dev/">SvelteKit</a>. I then rewrote my site <em>again</em> with SvelteKit.</p>
+<p>I started getting interested in server-side rendering (SSR) as I learned more and more about using SvelteKit. However, a series of <a href="https://www.netlify.com/blog/migrating-breaking-changes-in-sveltekit/">breaking changes in preparation for SvelteKit's 1.0 release</a> and sheer laziness made me return to re-implementing my site with React. A failed attempt to make my site SSR using a <a href="https://vitejs.dev/">Vite</a> plugin led me to finally give <a href="https://nextjs.org/">Next.js</a> a shot. The current version of my site (at the time of publishing) was written using Next.js.</p>
+<p>What comes next in my frontend adventures is still somewhat in the air. I've been looking into <a href="https://medium.com/@vueshenzhen/a-brief-introduction-of-vite-plugin-federation-9e998b2e43b">module federation</a> recently (this was going to be a part of the original post I was going to write) for my own rather-large personal project. I've pulled off another <em>Brioche</em>, in that I extracted the components from my personal website and turned them into a new component library. However this time I don't plan on turning this into a Brioche v0.2.</p>
+<p>Til next time.</p>
+<p><strong><em>EDIT (06/01/2023):</em></strong> I've since extended my personal site to include a CMS to update and/or publish new posts. This update was written in it!</p>
+<p><strong><em>EDIT (17/03/2023):</em></strong> I decided to start scaling back the CMS features for my site. It won't go to waste as I'm migrating the CMS to another side project. I'll be reverting to statically-generated content for now.</p>]]></content:encoded>
+>>>>>>> master
       <pubDate>Wed, 04 Jan 2023 14:30:00 GMT</pubDate>
     </item>
     <item>
       <title>A new blog, a new static site generator</title>
+<<<<<<< HEAD
       <description>An experiment in static site generators</description>
       <link>https://clarencesiew.com</link>
       <guid>https:/clarencesiew.com/posts/new-blog-site-generator</guid>
+=======
+      <author>Clarence Siew</author>
+      <description>An experiment in static site generators</description>
+      <slug>new-blog-site-generator</slug>
+      <link>https:/clarencesiew.com/posts/new-blog-site-generator</link>
+      <guid>https:/clarencesiew.com/posts/new-blog-site-generator</guid>
+      <content:encoded><![CDATA[<p>Welcome to my new blog! I haven't imported my <a href="http://csiew.github.io/blog">old blog posts</a> to this new one. This new blog uses a successor to my static site generator script <a href="http://github.com/csiew/md2magic">md2magic</a> to help with importing and indexing posts.</p>
+<p>The new script is also written in Python. However I am now using JSON files for its configuration and post manifest. This was inspired by my work on <a href="http://github.com/csiew/biscuitwm">BiscuitWM</a> which also uses a JSON file for configuration.</p>
+<p>You can view the script in all its glory/horror on the <a href="http://github.com/csiew/website">repository</a> of this site (under the name <a href="https://github.com/csiew/website/blob/master/statgen.py"><em>statgen.py</em></a> in the root directory). I will perhaps create a separate repository for this script once it has reached a point of maturity.</p>
+<p>Unlike md2magic, it is not responsible for converting markdown files into HTML. Like I mentioned earlier, it's now more of an indexing tool that allows your site to have a readily-available list of your posts with some metadata.</p>]]></content:encoded>
+>>>>>>> master
       <pubDate>Mon, 19 Oct 2020 06:22:06 GMT</pubDate>
     </item>
     <item>
       <title>Tab Shelf</title>
+<<<<<<< HEAD
       <description>Announcing a vertical tab management extension for Chrome/Chromium</description>
       <link>https://clarencesiew.com</link>
       <guid>https:/clarencesiew.com/posts/tab-shelf</guid>
+=======
+      <author>Clarence Siew</author>
+      <description>Announcing a vertical tab management extension for Chrome/Chromium</description>
+      <slug>tab-shelf</slug>
+      <link>https:/clarencesiew.com/posts/tab-shelf</link>
+      <guid>https:/clarencesiew.com/posts/tab-shelf</guid>
+      <content:encoded><![CDATA[<p>On 13 June 2023, I released <a href="https://tabshelf.clarencesiew.com/">Tab Shelf</a> to the world. It's a Google Chrome extension that lets you view and manage your tabs from the new-ish side panel.</p>
+<h2 id="features">Features</h2>
+<p>Aside from viewing your tabs in the side panel, you can also:</p>
+<ul>
+<li>Put tabs to sleep to save system resources.</li>
+<li>Move tabs between groups.</li>
+<li>Create new tab groups from a selection of tabs.</li>
+<li>Close tabs in bulk.</li>
+<li>Control mute/unmute volume (it doesn't even need to have audio playing - you can mute a tab if you suspect that it will autoplay video or audio ahead of time).</li>
+<li>Filter tabs by group (once you get used to it, it effectively feels like a way to treat tab groups like separate workspaces).</li>
+</ul>
+<h2 id="inspiration">Inspiration</h2>
+<p>Of course, vertical tabs aren't new. Not at all. They're already common features on other browsers such as Safari, Microsoft Edge, Vivaldi, and of course, Arc by The Browser Company. Firefox has had a multitude of legendary vertical tab management extensions like Tree-Style Tabs and Sideberry.</p>
+<p>I had previously grown accustomed to vertical tabs when trying the Arc browser extensively. When switching back to Firefox, I just had to install Sideberry to continue having these darn vertical tabs.</p>
+<p>When I hopped on over back to Chrome (I've switched back due for dev purposes), I realised there <em>still</em> wasn't a vertical tab solution ready. Even after Google added side panels to the browser. I was surprised that there wasn't even an API to make use of it at the time.</p>
+<h2 id="fromtheashes">From the ashes</h2>
+<p>Over the King's Birthday long weekend, I discovered that Google had <em>finally</em> made the Side Panel extensions API available in Chrome v114. I immediately thought back to an extension I was working on called TabQueue, which was meant to help with queueing tabs (akin to the already-existent Reading List). I thought: <em>"How about I slap on some vertical tab management features to this?"</em></p>
+<p>Without going too deep into it, much of the TabQueue codebase was written at a time I was just returning to using React extensively for the first time in 1-2 years. I had forgotten how to use the React Context API and state management in TabQueue was a dog's breakfast. I effectively gutted most of the TabQueue code but kept (and heavily modified) much of the existing CSS styling.</p>
+<p>Tab Shelf definitely isn't the first vertical tab management extension to make use of the Side Panel API, but I have to say (with some considerable bias) that it's perhaps the prettiest looking one out there at the moment.</p>
+<h2 id="giveitago">Give it a go!</h2>
+<p>You can now get <a href="https://chrome.google.com/webstore/detail/tab-shelf/gkiobnohamhihbaipacecjfljepjjlmg">Tab Shelf on the Chrome Web Store</a>. I'd love to get feedback on it as I'm working through new features and planning future releases. It's already pretty featureful at the time of writing this, but there's still so much more in the pipeline.</p>]]></content:encoded>
+>>>>>>> master
       <pubDate>Sat, 17 Jun 2023 07:00:00 GMT</pubDate>
     </item>
   </channel>

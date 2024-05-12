@@ -25,7 +25,7 @@ export default function PersonalLinks() {
     <div className="personal-links">
       <ul>
         {links.map((l) => (
-          <li>
+          <li key={l.url}>
             <NavLink to={l.url} target="_blank">
               {l.title}
             </NavLink>

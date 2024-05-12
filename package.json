@@ -17,7 +17,9 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-markdown": "^9.0.1",
-    "react-router-dom": "^6.22.3"
+    "react-router-dom": "^6.22.3",
+    "showdown": "^2.1.0",
+    "xml2js": "^0.6.2"
   },
   "devDependencies": {
     "@swc-node/register": "^1.9.0",
@@ -26,6 +28,7 @@
     "@types/react": "^18.2.74",
     "@types/react-dom": "^18.2.24",
     "@types/react-router-dom": "^5.3.3",
+    "@types/showdown": "^2.0.6",
     "@types/xml2js": "^0.4.14",
     "@vitejs/plugin-react-swc": "^3.6.0",
     "eslint": "^9.0.0",
@@ -33,7 +36,6 @@
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-react": "^7.34.1",
     "typescript": "^5.4.4",
-    "vite": "^5.2.8",
-    "xml2js": "^0.6.2"
+    "vite": "^5.2.8"
   }
 }

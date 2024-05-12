@@ -77,7 +77,7 @@ export default function Project() {
             {metadata.assets?.screenshots && (
               <div className="project-screenshots">
                 {metadata.assets?.screenshots?.map((s: string) => (
-                  <NavLink to={`/content/projects/${metadata.slug}${s}`}>
+                  <NavLink key={s} to={`/content/projects/${metadata.slug}${s}`}>
                     <img key={s} src={`/content/projects/${metadata.slug}${s}`} />
                   </NavLink>
                 ))}
