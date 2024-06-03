@@ -1,11 +1,9 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Link } from "wouter";
 import Markdown from "react-markdown";
 import "./Project.css";
-import { NavLink } from "react-router-dom";
 
-export default function Project() {
-  const { slug } = useParams();
+export default function Project({ slug }: { slug: string }) {
   const isMountedRef = React.useRef<boolean>(false);
   const [isError, setIsError] = React.useState<boolean>(false);
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
@@ -55,20 +53,20 @@ export default function Project() {
             <div className="project-links">
               <ul>
                 <li>
-                  <NavLink
+                  <Link
                     to={metadata.links?.website ? metadata.links?.website : "#"}
                     className={["button", !metadata.links?.website ? "disabled" : ""].join(" ").trim()}
                   >
                     Website
-                  </NavLink>
+                  </Link>
                 </li>
                 <li>
-                  <NavLink
+                  <Link
                     to={metadata.links?.repository ? metadata.links?.repository : "#"}
                     className={["button", !metadata.links?.repository ? "disabled" : ""].join(" ").trim()}
                   >
                     Repository
-                  </NavLink>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -77,9 +75,9 @@ export default function Project() {
             {metadata.assets?.screenshots && (
               <div className="project-screenshots">
                 {metadata.assets?.screenshots?.map((s: string) => (
-                  <NavLink key={s} to={`/content/projects/${metadata.slug}${s}`}>
+                  <Link key={s} to={`/content/projects/${metadata.slug}${s}`}>
                     <img key={s} src={`/content/projects/${metadata.slug}${s}`} />
-                  </NavLink>
+                  </Link>
                 ))}
               </div>
             )}

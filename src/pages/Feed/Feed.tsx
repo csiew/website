@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "wouter";
 import _ from "lodash";
 import { CacheContextState } from "../../stores/cache";
 import "./Feed.css";
@@ -22,7 +22,7 @@ export default function Feed() {
                     <div className="carousel">
                       {p["media:content"].filter((m: any) => m.$.medium === "image").map((m: any) => (
                         <div key={m.$.url} className="image-group">
-                          <NavLink to={m.$.url}>
+                          <Link to={m.$.url}>
                             <img
                               src={m.$.url}
                               title={
@@ -31,7 +31,7 @@ export default function Feed() {
                                   : ""
                               }
                             />
-                          </NavLink>
+                          </Link>
                           {_.has(m, "media:description.0._") && (
                             <span>{m["media:description"][0]._}</span>
                           )}
@@ -41,9 +41,9 @@ export default function Feed() {
                   )}
                   <div>
                     <sub className="timestamp">
-                      <NavLink to={p.link[0]}>
+                      <Link to={p.link[0]}>
                         {new Date(p.pubDate[0]).toLocaleDateString()}
-                      </NavLink>
+                      </Link>
                     </sub>
                   </div>
                 </li>

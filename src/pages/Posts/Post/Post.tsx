@@ -1,10 +1,8 @@
 import React from "react";
-import { useParams } from "react-router-dom";
 import Markdown from "react-markdown";
 import "./Post.css";
 
-export default function Post() {
-  const { slug } = useParams();
+export default function Post({ slug }: { slug: string }) {
   const isMountedRef = React.useRef<boolean>(false);
   const [isError, setIsError] = React.useState<boolean>(false);
   const [isLoading, setIsLoading] = React.useState<boolean>(false);

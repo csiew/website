@@ -1,52 +1,54 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link, useLocation } from "wouter";
 import LoadingIndicator from "../CacheLoadingIndicator/CacheLoadingIndicator";
 import "./NavBar.css";
 
 export default function NavBar() {
+  const [location] = useLocation();
+
   return (
     <>
       <LoadingIndicator />
       <header>
         <h1>
-        <NavLink to="/">
-          <span className="profile-photo"></span>
-          <span className="site-title">Clarence Siew</span>
-        </NavLink>
+          <Link to="/">
+            <span className="profile-photo"></span>
+            <span className="site-title">Clarence Siew</span>
+          </Link>
         </h1>
         <nav>
           <ul>
             <li>
-              <NavLink
+              <Link
                 to="/"
-                className={({ isActive }) => isActive ? "active" : "" }
+                className={location === "/" ? "active" : ""}
               >
                 Home
-              </NavLink>
+              </Link>
             </li>
             <li>
-              <NavLink
+              <Link
                 to="/feed"
-                className={({ isActive }) => isActive ? "active" : "" }
+                className={location === "/feed" ? "active" : ""}
               >
                 Feed
-              </NavLink>
+              </Link>
             </li>
             <li>
-              <NavLink
+              <Link
                 to="/posts"
-                className={({ isActive }) => isActive ? "active" : "" }
+                className={location === "/posts" || location.startsWith("/posts/") ? "active" : ""}
               >
                 Posts
-              </NavLink>
+              </Link>
             </li>
             <li>
-              <NavLink
+              <Link
                 to="/projects"
-                className={({ isActive }) => isActive ? "active" : "" }
+                className={location === "/projects" || location.startsWith("/projects/") ? "active" : ""}
               >
                 Projects
-              </NavLink>
+              </Link>
             </li>
           </ul>
         </nav>

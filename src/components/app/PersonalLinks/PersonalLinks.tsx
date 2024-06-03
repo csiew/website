@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "wouter";
 import "./PersonalLinks.css";
 
 const links = [
@@ -27,9 +27,9 @@ export default function PersonalLinks() {
       <ul>
         {links.map((l) => (
           <li key={l.url}>
-            <NavLink to={l.url} target="_blank">
+            <Link to={l.url} target="_blank">
               {l.title}
-            </NavLink>
+            </Link>
           </li>
         ))}
       </ul>

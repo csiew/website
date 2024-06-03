@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "wouter";
 import "./NotFound.css";
 
 export default function NotFound() {
@@ -11,9 +11,9 @@ export default function NotFound() {
         className="not-found"
         onContextMenu={(e) => e.preventDefault()}
       />
-      <NavLink to="/" className="button not-found-redirect">
+      <Link to="/" className="button not-found-redirect">
         Back to homepage
-      </NavLink>
+      </Link>
     </>
   );
 }

@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link } from "wouter";
 
 type LinkListItemProps = {
   title: string;
@@ -12,9 +12,9 @@ export default function LinkListItem(props: LinkListItemProps) {
   return (
     <article>
       <h3>
-        <NavLink end to={props.url} onClick={props.onClick}>
+        <Link to={props.url} onClick={props.onClick}>
           {props.title}
-        </NavLink>
+        </Link>
       </h3>
       {props.subtitle && (
         <p className="subtitle">{props.subtitle}</p>

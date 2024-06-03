@@ -1,5 +1,5 @@
 import React from "react";
-import { useRoutes } from "react-router-dom";
+import { Route, Switch } from "wouter";
 import AppContext from "./AppContext";
 import NavBar from "./components/app/NavBar/NavBar";
 import NotFound from "./pages/NotFound/NotFound";
@@ -16,41 +16,24 @@ export default function App() {
     <AppContext>
       <NavBar />
       <main>
-        {useRoutes([
-          {
-            path: "/",
-            element: <Home />
-          },
-          {
-            path: "/feed",
-            element: <Feed />
-          },
-          {
-            path: "/posts",
-            element: <Posts />
-          },
-          {
-            path: "/posts/:slug",
-            element: <Post />
-          },
-          {
-            path: "/projects",
-            element: <Projects />
-          },
-          {
-            path: "/projects/:slug",
-            element: <Project />
-          },
-          {
-            path: "*",
-            element: <NotFound />
-          }
-        ])}
+        <Switch>
+          <Route path="/" component={Home} />
+          <Route path="/feed" component={Feed} />
+          <Route path="/posts" component={Posts} />
+          <Route path="/posts/:slug">
+            {(params) => <Post slug={params.slug} />}
+          </Route>
+          <Route path="/projects" component={Projects} />
+          <Route path="/projects/:slug">
+            {(params) => <Project slug={params.slug} />}
+          </Route>
+          <Route component={NotFound} />
+        </Switch>
       </main>
       <footer>
         <PersonalLinks />
         &copy; 2024 Clarence Siew
       </footer>
     </AppContext>
-  )
+  );
 }
