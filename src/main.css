@@ -9,12 +9,12 @@
   --fg-rgb: 30, 30, 30;
   --fg-secondary-rgb: 120, 120, 120;
   --fg-highlight-rgb: 25, 25, 25;
-  --bg-rgb: 220, 220, 220;
-  --bg-secondary-rgb: 245, 245, 245;
-  --accent-rgb: 150, 200, 175;
-  --accent-secondary-rgb: 75, 125, 100;
-  --accent-border-rgb: 100, 150, 125;
-  --border-color-rgb: 180, 180, 180;
+  --bg-rgb: 255, 255, 250;
+  --bg-secondary-rgb: 240, 240, 235;
+  --accent-rgb: 248, 208, 5;
+  --accent-secondary-rgb: 228, 188, 5;
+  --accent-border-rgb: 208, 178, 5;
+  --border-color-rgb: 225, 225, 220;
 
   --fg: rgb(var(--fg-rgb));
   --fg-secondary: rgb(var(--fg-secondary-rgb));
@@ -27,14 +27,31 @@
   --border-color: rgb(var(--border-color-rgb));
   --border-radius: 9px;
   --transition: 0.25s;
-
-  --skeumorphic-shadow: 
-    0px 2px 4px rgba(0, 0, 0, 0.5),
+  
+  --button-shadow:
+    0px 1px 2px rgba(0, 0, 0, 0.125),
+    0px 2px 4px rgba(0, 0, 0, 0.06125),
     0px 2px 4px rgba(255, 255, 255, 0.75) inset,
-    0px -2px 8px rgba(0, 0, 0, 0.25) inset;
-  --skeumorphic-text-shadow:
-    1px 1px 1px rgba(255, 255, 255, 0.25),
-    -1px -1px 1px rgba(0, 0, 0, 0.125);
+    0px 4px 8px rgba(255, 255, 255, 0.5) inset,
+    0px -2px 2px rgba(255, 255, 255, 0.8) inset,
+    0px -2px 8px rgba(0, 0, 0, 0.125) inset;
+  --button-shadow-hover:
+    0px 2px 4px rgba(0, 0, 0, 0.25),
+    0px 4px 8px rgba(0, 0, 0, 0.125),
+    0px 2px 4px rgba(255, 255, 255, 0.75) inset,
+    0px 4px 8px rgba(255, 255, 255, 0.5) inset,
+    0px -2px 2px rgba(255, 255, 255, 0.8) inset,
+    0px -2px 8px rgba(0, 0, 0, 0.125) inset;
+  --button-shadow-active:
+    0px 1px 2px rgba(0, 0, 0, 0.25) inset,
+    0px 2px 4px rgba(0, 0, 0, 0.125) inset,
+    0px 2px 4px rgba(255, 255, 255, 0.75) inset,
+    0px 4px 8px rgba(255, 255, 255, 0.5) inset,
+    0px -2px 2px rgba(255, 255, 255, 0.8) inset,
+    0px -2px 8px rgba(0, 0, 0, 0.125) inset;
+  --button-shadow-current:
+    0px 2px 4px rgba(0, 0, 0, 0.25),
+    0px 4px 8px rgba(0, 0, 0, 0.125);
 
   color-scheme: light;
   accent-color: var(--accent);
@@ -45,8 +62,8 @@
 }
 
 ::selection {
-  color: var(--bg-secondary);
-  background: var(--accent);
+  color: var(--bg);
+  background: var(--fg);
 }
 
 html {
@@ -55,15 +72,10 @@ html {
   top: 0;
   padding: 0;
   color: var(--fg);
-  background: linear-gradient(to bottom, rgba(var(--bg-rgb), 0.5), rgba(var(--bg-rgb), 0.5)), url('./assets/noise.svg');
+  background: var(--bg);
   font-size: 16px;
+  font-weight: 300;
   font-family: var(--body-font);
-
-  @media (max-width: 640px) {
-    & {
-      background: linear-gradient(to bottom, rgba(var(--bg-secondary-rgb), 0.5), rgba(var(--bg-secondary-rgb), 0.5)), url('./assets/noise.svg');
-    }
-  }
 }
 
 body {
@@ -88,8 +100,14 @@ body {
   flex-flow: column;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: 0;
+  gap: 1rem;
   line-height: 1.5;
+}
+
+@media (max-width: 640px) {
+  #root {
+    padding: 1rem;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -116,7 +134,7 @@ pre, code {
 
 a {
   color: var(--fg);
-  font-weight: bold;
+  font-weight: 500;
   text-decoration: underline;
   transition: var(--transition);
 
@@ -126,19 +144,16 @@ a {
 }
 
 button, .button {
-  --btn-fg: var(--fg);
-
   padding: 0.5rem 1rem;
   display: inline-flex;
   flex-flow: row;
   align-items: center;
   justify-content: center;
-  color: var(--btn-fg);
-  background: var(--accent);
-  border: 1px solid var(--accent-border-color);
-  border-radius: var(--border-radius);
-  box-shadow: var(--skeumorphic-shadow);
-  text-shadow: var(--skeumorphic-text-shadow);
+  color: var(--fg);
+  background: var(--bg);
+  border: 1px solid var(--border-color);
+  border-radius: 64px;
+  box-shadow: var(--button-shadow);
   font-family: inherit;
   font-size: inherit;
   font-weight: inherit;
@@ -147,13 +162,17 @@ button, .button {
   transition: var(--transition);
 
   &:hover {
-    color: var(--btn-fg);
-    filter: brightness(1.1);
+    box-shadow: var(--button-shadow-hover);
   }
 
   &:active {
-    color: var(--btn-fg);
-    filter: brightness(0.9);
+    box-shadow: var(--button-shadow-active);
+  }
+
+  &.active {
+    color: var(--fg);
+    background: var(--fg);
+    box-shadow: var(--button-shadow-current);
   }
 
   &:is(:disabled, .disabled) {
@@ -188,24 +207,12 @@ main {
   z-index: 50;
   width: 100%;
   margin: 0;
-  padding: 2rem;
+  padding: 3rem 2rem;
   display: inline-flex;
   flex-flow: column;
   align-items: flex-start;
   justify-content: flex-start;
   gap: 0;
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  border-top: none;
-  border-radius: 0 0 var(--border-radius) var(--border-radius);
-  box-shadow:
-    0px 4px 8px rgba(0, 0, 0, 0.5),
-    0px 2px 16px rgba(255, 255, 255, 0.5) inset,
-    0px -4px 8px rgba(0, 0, 0, 0.125) inset,
-    0px 4px 8px rgba(255, 255, 255, 0.5) inset,
-    0px 2px 2px rgba(255, 255, 255, 0.75) inset,
-    0px 4px 8px rgba(0, 0, 0, 0.125) inset,
-    0px 4px 16px rgba(0, 0, 0, 0.25) inset;
 
   @media (max-width: 640px) {
     & {
@@ -219,19 +226,28 @@ main {
   }
 
   h2:first-child {
-    padding-block: 1rem 2rem;
+    padding-block: 2rem 3rem;
     align-self: center;
-    color: rgba(var(--bg-rgb), 0.75);
-    text-shadow:
-      1px 1px 2px rgba(255, 255, 255, 0.75),
-      -1px -1px 2px rgba(0, 0, 0, 0.5);
+    color: var(--fg);
     font-size: 3rem;
-    font-weight: 900;
-    letter-spacing: 4px;
+    font-weight: 100;
+    letter-spacing: 1rem;
     text-align: center;
     text-transform: uppercase;
     line-height: 1;
     user-select: none;
+  }
+
+  @media (max-width: 640px) {
+    h2:first-child {
+      font-size: 1.75rem;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  main {
+    padding: 0;
   }
 }
 
@@ -248,6 +264,10 @@ footer {
   font-family: var(--header-font);
   font-size: 0.9rem;
   text-align: center;
+
+  a {
+    font-weight: 500;
+  }
 
   @media (max-width: 640px) {
     padding-block: 1rem 2.5rem;

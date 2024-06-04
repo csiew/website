@@ -1,193 +1,191 @@
 header {
-  max-width: 640px;
+  z-index: 100;
   width: 100%;
   margin: 0 auto;
-  padding: 0;
+  top: 1rem;
+  padding: 0.5rem 0.75rem;
+  position: sticky;
   display: inline-flex;
-  flex-flow: column;
+  flex-flow: row;
   align-items: center;
-  justify-content: center;
-  gap: 0;
-
-  @media (max-width: 640px) {
-    & {
-      z-index: 100;
-      padding: 0rem 1rem;
-      top: 0;
-      position: sticky;
-      gap: 1rem;
-      flex-flow: row;
-      justify-content: space-between;
-      background: var(--bg);
-      border-bottom: 1px solid var(--border-color);
-      box-shadow:
-        0px 4px 8px rgba(0, 0, 0, 0.5),
-        0px 2px 4px rgba(255, 255, 255, 0.75) inset,
-        0px -2px 8px rgba(0, 0, 0, 0.3) inset;
-    }
+  justify-content: space-between;
+  gap: 0.5rem;
+  background: rgba(var(--bg-rgb), 0.5);
+  backdrop-filter: blur(4px);
+  border: 1px solid var(--border-color);
+  border-radius: 64px;
+  box-shadow:
+    0px 1px 1px rgba(255, 255, 255, 0.75) inset,
+    0px -1px 1px rgba(255, 255, 255, 0.75) inset,
+    0px -1px 2px rgba(0, 0, 0, 0.25) inset,
+    0px 1px 2px rgba(0, 0, 0, 0.125),
+    0px 2px 4px rgba(0, 0, 0, 0.025),
+    0px 2px 16px rgba(0, 0, 0, 0.05);
+  transition: 0.5s;
+  
+  &:hover {
+    background: rgba(var(--bg-rgb), 0.75);
+    transition: 0.5s;
   }
 
-  h1 {
-    --header-fg: rgba(var(--bg-rgb), 0.25);
-    --header-text-shadow:
-      1px 1px 1px rgba(255, 255, 255, 0.5),
-      -1px -1px 1px rgba(0, 0, 0, 0.25);
-
-    padding: 2rem 0rem;
+  .site-title {
+    width: max-content;
+    padding: 0;
     display: inline-flex;
     flex-flow: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-    font-size: 2.5rem;
-    line-height: 1.2;
-    text-align: center;
-    text-transform: uppercase;
     user-select: none;
     -webkit-user-drag: none;
 
-    @media (max-width: 640px) {
-      & {
-        width: min-content;
-        padding: 0.5rem 0rem;
-      }
-    }
-
     a {
       display: inline-flex;
-      flex-flow: column;
+      flex-flow: row;
       align-items: center;
       justify-content: center;
-      gap: 1.5rem;
-      color: var(--header-fg);
-      text-shadow: var(--header-text-shadow);
-      font-weight: 900;
+      gap: 0.75rem;
+      color: var(--fg);
+      font-size: 2rem;
+      font-weight: 500;
+      line-height: 1.2;
+      text-align: center;
       text-decoration: none;
-      letter-spacing: 4px;
-      transition: var(--transition);
 
-      &:hover {
-        color: var(--header-fg);
-      }
-
-      &:active {
-        color: var(--header-fg);
-      }
-
-      .profile-photo {
-        width: 48px;
-        height: 48px;
+      img {
+        z-index: 101;
+        width: 42px;
+        height: 42px;
         margin: 0;
         padding: 0;
-        display: inline-flex;
-        flex-flow: row;
-        align-items: center;
-        justify-content: center;
-        background-image: url('/profile.jpg');
-        background-position: top;
-        background-size: cover;
+        border: 5px solid rgba(255, 255, 255, 0.8);
         border-radius: 100%;
-        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5) inset;
+        box-shadow:
+          0px 0px 6px rgba(255, 255, 255, 0.75),
+          0px 0px 12px rgba(255, 255, 255, 0.5),
+          0px 0px 18px rgba(255, 255, 255, 0.25);
         user-select: none;
         -webkit-user-drag: none;
-        transition: var(--transition);
+        transition: 0.5s;
 
-        @media (max-width: 640px) {
-          & {
-            width: 32px;
-            height: 32px;
-          }
+        &:hover {
+          border: 5px solid rgba(255, 255, 255, 0.9);
+          box-shadow:
+            0px 0px 6px rgba(255, 255, 255, 0.9),
+            0px 0px 12px rgba(255, 255, 255, 0.8),
+            0px 0px 18px rgba(255, 255, 255, 0.75);
+          transform: scale(1.1);
+          transition: 0.5s;
+        }
+
+        &:active {
+          border: 5px solid rgba(var(--accent-rgb), 0.5);
+          transform: scale(0.95);
+          transition: 0.5s;
         }
       }
 
       @media (max-width: 640px) {
-        .site-title {
-          display: none;
+        img {
+          width: 32px;
+          height: 32px;
         }
+      }
+
+      &:before {
+        content: '';
+        width: 42px;
+        height: 42px;
+        margin: 0;
+        position: absolute;
+        background-image: url('/profile.jpg');
+        background-size: cover;
+        background-position: top;
+        border-radius: 100%;
+        filter: blur(8px) brightness(1.25) saturate(1.5);
+        animation: 10s ProfilePictureShadowTransition infinite linear;
       }
     }
   }
 
   nav {
-    width: 100%;
+    width: max-content;
     margin: 0;
     padding: 0;
     white-space: nowrap;
   
     ul {
       list-style: none;
-      width: 100%;
+      width: max-content;
       margin: 0;
-      padding-block: 0.5rem 0rem;
-      padding-inline: 0.5rem;
+      padding: 0;
       display: inline-flex;
       flex-flow: row;
       align-items: center;
       justify-content: flex-start;
       gap: 0.5rem;
-      background: rgba(0, 0, 0, 0.06);
-      border: 1px solid var(--border-color);
-      border-bottom: none;
-      border-radius: var(--border-radius) var(--border-radius) 0 0;
-      box-shadow:
-        0px 4px 8px rgba(0, 0, 0, 0.5),
-        0px 2px 4px rgba(255, 255, 255, 0.75) inset,
-        0px -2px 8px rgba(0, 0, 0, 0.3) inset;
       font-family: var(--header-font);
-
-      @media (max-width: 640px) {
-        & {
-          padding: 0.5rem 0rem;
-          gap: 0.25rem;
-          background: none;
-          border-width: 0;
-          border-radius: 0;
-          box-shadow: none;
-        }
-      }
   
       li {
-        --nav-link-shadow: var(--skeumorphic-shadow);
+        --nav-link-shadow:
+          0px 1px 2px rgba(0, 0, 0, 0.125),
+          0px 2px 4px rgba(0, 0, 0, 0.06125),
+          0px 2px 4px rgba(255, 255, 255, 0.75) inset,
+          0px 4px 8px rgba(255, 255, 255, 0.5) inset,
+          0px -2px 2px rgba(255, 255, 255, 0.8) inset,
+          0px -2px 8px rgba(0, 0, 0, 0.125) inset;
+        --nav-link-shadow-hover:
+          0px 2px 4px rgba(0, 0, 0, 0.25),
+          0px 4px 8px rgba(0, 0, 0, 0.125),
+          0px 2px 4px rgba(255, 255, 255, 0.75) inset,
+          0px 4px 8px rgba(255, 255, 255, 0.5) inset,
+          0px -2px 2px rgba(255, 255, 255, 0.8) inset,
+          0px -2px 8px rgba(0, 0, 0, 0.125) inset;
+        --nav-link-shadow-active:
+          0px 1px 2px rgba(0, 0, 0, 0.25) inset,
+          0px 2px 4px rgba(0, 0, 0, 0.125) inset,
+          0px 2px 4px rgba(255, 255, 255, 0.75) inset,
+          0px 4px 8px rgba(255, 255, 255, 0.5) inset,
+          0px -2px 2px rgba(255, 255, 255, 0.8) inset,
+          0px -2px 8px rgba(0, 0, 0, 0.125) inset;
+        --nav-link-shadow-current:
+          0px 2px 4px rgba(0, 0, 0, 0.25),
+          0px 4px 8px rgba(0, 0, 0, 0.125);
 
-        width: 100%;
+        width: max-content;
         margin: 0;
         padding: 0;
         display: inline-block;
 
         a {
-          width: 100%;
-          padding: 0.75rem 1rem;
+          width: max-content;
+          padding: 0.25rem 1rem;
           display: inline-block;
           color: var(--fg);
-          border: 1px solid transparent;
-          border-bottom: none;
-          border-radius: var(--border-radius) var(--border-radius) 0 0;
-          text-shadow: var(--skeumorphic-text-shadow);
+          background: var(--bg);
+          border: 1px solid var(--border-color);
+          border-radius: 64px;
+          box-shadow: var(--nav-link-shadow);
+          font-weight: 300;
           text-decoration: none;
           text-align: center;
 
-          @media (max-width: 640px) {
-            & {
-              padding: 0.25rem 0.5rem;
-              border-radius: var(--border-radius);
-              font-size: 0.9rem;
-            }
-          }
-
           &:hover {
             color: var(--fg);
-            background: rgba(var(--fg-rgb), 0.25);
-            border-color: var(--accent-border-color);
-            box-shadow: var(--nav-link-shadow);
+            background: var(--bg);
+            box-shadow: var(--nav-link-shadow-hover);
             text-decoration: none;
-            animation: 0.5s NavLinkHoverGlow infinite alternate;
             transition: var(--transition);
           }
 
+          &:active {
+            box-shadow: var(--nav-link-shadow-active);
+          }
+
           &.active {
-            color: var(--fg);
-            background: var(--accent);
-            border-color: var(--accent-border-color);
-            box-shadow: var(--nav-link-shadow);
+            color: var(--bg);
+            background: var(--fg);
+            border-color: var(--fg);
+            box-shadow: var(--nav-link-shadow-current);
             text-decoration: none;
 
             &:hover {
@@ -203,13 +201,33 @@ header {
       }
     }
   }
+
+  @media (max-width: 640px) {
+    nav {
+      font-size: 0.8rem;
+
+      ul {
+        li {
+          a {
+            padding: 0.125rem 0.5rem;
+          }
+        }
+      }
+    }
+  }
 }
 
-@keyframes NavLinkHoverGlow {
+@keyframes ProfilePictureShadowTransition {
   0% {
-    background: rgba(var(--fg-secondary-rgb), 0.25);
+    filter: blur(8px) brightness(1.25) saturate(1.5) hue-rotate(0deg);
+    transform: rotate(0deg);
+  }
+  50% {
+    filter: blur(16px) brightness(1.5) saturate(2) hue-rotate(360deg);
+    transform: rotate(180deg);
   }
   100% {
-    background: rgba(var(--accent-rgb), 0.75);
+    filter: blur(8px) brightness(1.25) saturate(1.5) hue-rotate(0deg);
+    transform: rotate(360deg);
   }
 }

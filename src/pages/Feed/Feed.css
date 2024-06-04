@@ -36,12 +36,20 @@ section.feed-posts-list {
 
       sub.timestamp {
         display: inline-block;
-        color: var(--fg-secondary);
 
         & a {
+          padding: 0.25rem 0.5rem;
           color: var(--fg-secondary);
+          background: var(--bg-secondary);
+          border-radius: 64px;
           font-weight: normal;
           text-decoration: none;
+          transition: 0.5s;
+
+          &:hover {
+            color: var(--fg);
+            transition: 0.5s;
+          }
         }
       }
 

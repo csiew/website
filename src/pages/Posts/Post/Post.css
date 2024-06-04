@@ -13,11 +13,11 @@ article.post {
     h2 {
       padding: 0rem;
       color: var(--fg);
-      text-shadow: none;
-      font-size: 2.5rem;
+      font-size: 5rem;
+      font-style: italic;
       font-weight: 900;
       text-align: center;
-      letter-spacing: 0;
+      letter-spacing: -0.06125rem;
       line-height: 1;
       text-transform: none;
     }
@@ -25,12 +25,27 @@ article.post {
     p.subtitle {
       padding: 0;
       color: var(--fg-secondary);
-      font-size: 1.25rem;
+      font-size: 2rem;
+      font-style: italic;
+      font-weight: 100;
       text-align: center;
+      line-height: 1.2;
     }
 
     sub.timestamp {
       color: var(--fg-secondary);
+    }
+
+    @media (max-width: 640px) {
+      h2 {
+        font-size: 3rem;
+      }
+
+      p.subtitle {
+        font-size: 1rem;
+        font-weight: 300;
+        line-height: 1.5;
+      }
     }
   }
 

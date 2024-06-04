@@ -32,7 +32,11 @@ section.link-list {
 
     h3 {
       padding: 0;
-      font-size: 1.5rem;
+      font-size: 1.75rem;
+
+      a {
+        font-weight: 300;
+      }
     }
 
     p.subtitle {

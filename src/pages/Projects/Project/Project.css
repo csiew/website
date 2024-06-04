@@ -5,20 +5,19 @@ article.project {
     padding-block: 1rem 1.5rem;
     display: inline-flex;
     flex-flow: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
-    gap: 0.5rem;
+    gap: 0.75rem;
     border-bottom: 1px solid var(--border-color);
 
     h2 {
+      width: max-content;
       padding: 0rem;
-      align-self: flex-start;
       color: var(--fg);
-      text-shadow: none;
-      font-size: 2.25rem;
-      font-weight: 900;
-      text-align: left;
-      letter-spacing: 0;
+      font-size: 3rem;
+      font-weight: 100;
+      text-align: center;
+      letter-spacing: -0.06125rem;
       line-height: 1;
       text-transform: none;
     }
@@ -26,8 +25,8 @@ article.project {
     p.subtitle {
       padding: 0;
       color: var(--fg-secondary);
-      font-size: 1.1rem;
-      text-align: left;
+      font-size: 1rem;
+      text-align: center;
     }
 
     sub.timestamp {
@@ -58,8 +57,26 @@ article.project {
 
           a.button {
             width: 100%;
+
+            &:hover {
+              color: var(--fg);
+            }
           }
         }
+      }
+
+      @media (max-width: 640px) {
+        ul {
+          flex-flow: column;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+
+    @media (max-width: 640px) {
+      p.subtitle {
+        line-height: 1.5;
       }
     }
   }
