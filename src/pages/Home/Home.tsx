@@ -1,5 +1,6 @@
 import React from "react";
 import Markdown from "react-markdown";
+import "./Home.css";
 import homeMd from "./Home.md";
 
 export default function Home() {
@@ -12,8 +13,8 @@ export default function Home() {
   }, []);
 
   return (
-    <>
-      <Markdown children={content} />
-    </>
+    <div className="home">
+      <Markdown>{content}</Markdown>
+    </div>
   );
 }

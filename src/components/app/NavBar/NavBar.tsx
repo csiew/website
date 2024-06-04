@@ -10,12 +10,11 @@ export default function NavBar() {
     <>
       <LoadingIndicator />
       <header>
-        <h1>
+        <div className="site-title">
           <Link to="/">
-            <span className="profile-photo"></span>
-            <span className="site-title">Clarence Siew</span>
+            <img src="/profile.jpg" />
           </Link>
-        </h1>
+        </div>
         <nav>
           <ul>
             <li>
