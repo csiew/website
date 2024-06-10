@@ -51,5 +51,14 @@ article.post {
 
   .post-body {
     padding-block: 1.5rem;
+
+    h1 {
+      margin-block: 1.5rem 0.5rem;
+      font-size: 2rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+    }
   }
 }

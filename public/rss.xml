@@ -5,7 +5,7 @@
     <description>Clarence Siew's personal blog</description>
     <generator>Custom RSS generator</generator>
     <link>https://clarencesiew.com</link>
-    <lastBuildDate>Sun, 12 May 2024 12:55:47 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 10 Jun 2024 07:52:15 GMT</lastBuildDate>
     <atom:link href="https:/clarencesiew.com/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>Building a boilerplate factory</title>
@@ -55,6 +55,76 @@
 <p>You can view the script in all its glory/horror on the <a href="http://github.com/csiew/website">repository</a> of this site (under the name <a href="https://github.com/csiew/website/blob/master/statgen.py"><em>statgen.py</em></a> in the root directory). I will perhaps create a separate repository for this script once it has reached a point of maturity.</p>
 <p>Unlike md2magic, it is not responsible for converting markdown files into HTML. Like I mentioned earlier, it's now more of an indexing tool that allows your site to have a readily-available list of your posts with some metadata.</p>]]></content:encoded>
       <pubDate>Mon, 19 Oct 2020 06:22:06 GMT</pubDate>
+    </item>
+    <item>
+      <title>One Year of Tab Shelf</title>
+      <author>Clarence Siew</author>
+      <description>On gratitude, an acquisition offer, and going somewhat viral</description>
+      <slug>one-year-of-tab-shelf</slug>
+      <link>https:/clarencesiew.com/posts/one-year-of-tab-shelf</link>
+      <guid>https:/clarencesiew.com/posts/one-year-of-tab-shelf</guid>
+      <content:encoded><![CDATA[<p>14 June marks 1 year of Tab Shelf on the Chrome Web Store<a href="#footnote-1"><sup>1</sup></a>. Since 14 June 2023, this project has grown significantly faster and larger in scope than I could've imagined.</p>
+<p>I'm incredibly grateful for the love and support from Tab Shelf's users, my friends and family, and my employer, who even <a href="https://www.linkedin.com/posts/crystal-delta_teamachievement-continuouslearning-crystaldelta-activity-7128510590402105345-KjHY?utm_source=share&utm_medium=member_desktop">featured Tab Shelf as part of their LinkedIn campaign</a> profiling employee achievements outside of work.</p>
+<iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7128510588728610816" height="749" width="100%" frameborder="0" allowfullscreen="" title="Embedded post" style="margin-block: 1.5rem;"></iframe>
+<h1 id="beforewegetstarted">Before we get started</h1>
+<p>Over the last 2 months, I've been rolling out updates to Tab Shelf that have introduced:</p>
+<ul>
+<li>Automated tab grouping rules - assign a list of sites to be automatically grouped. For example, you could group <a href="https://abc.net.au/">abc.net.au</a>, <a href="https://bbc.com/">bbc.com</a>, and <a href="https://reuters.com/">reuters.com</a> under a "News" tab group. If you open a link from any of these sites, that tab would automatically be moved to the "News" group.</li>
+<li>Localisation in 13 languages - you can now use Tab Shelf in English, Chinese (Simplified), Korean, Japanese, German, French, Spanish, Portuguese, Italian, Thai, Vietnamese, Malay, and Indonesian.</li>
+</ul>
+<h1 id="thenumbers">The Numbers</h1>
+<p>Since 14 June, Tab Shelf has been downloaded over 7300 times<a href="#footnote-2"><sup>2</sup></a> via the Chrome Web Store and Microsoft Edge Add-ons store.</p>
+<p>Its user base is incredibly diverse<a href="#footnote-3"><sup>3</sup></a> with the largest number of users being in the United States, China, Canada, Ireland, Japan, Germany, Australia, India, and South Korea.</p>
+<p>Some regions where the user base is growing rapidly include Taiwan, Hong Kong, Indonesia, Brazil, France, Spain, and Italy.</p>
+<h1 id="theoffer">The Offer</h1>
+<p>No, this isn't about <a href="https://youtu.be/D6me2-OurCw?si=zBQ_W-vqsmNN9x3M&t=52">an offer I can't refuse</a>.</p>
+<p>On 9 October 2023, an interesting email dropped in my inbox.</p>
+<p>It started off like the usual feedback email where the person on the other end was telling me how much they loved Tab Shelf. They described how impressed they were, how the user experience was <em><em>tight</em></em>, "which is something you don't see out of the gate often with projects".</p>
+<p>I kept reading.</p>
+<p>"Holy ****."</p>
+<p>"This is an acquisition offer<a href="#footnote-4"><sup>4</sup></a>!"</p>
+<p>At this point, Tab Shelf had only been out for 4 months, and yet it was already supposedly acquisition-ready. I was ecstatic. The person making the offer was a former Google engineer (who I shall refer to as <em>G</em>) in the US who was (and still is at the time of writing) actively making browser extensions of their own.</p>
+<p><em>G</em> and I shot a couple of emails back and forth discussing what such an acquisition would entail. I definitely overwhelmed them with too many questions (as I had never been in such a situation before).</p>
+<p><em>G</em> pointed out that many software engineers like ourselves tend to work on side projects like these, and quickly abandon them when <em>The Next Great Platform</em> or some new tech to play with comes along. He was probably alluding to my list of abandoned projects on my website. Let's be real though, none of those projects were things I used on a daily basis.</p>
+<p>But Tab Shelf was <em>different</em>. It was the first time I was actively using a project of my own for my own personal use, 24/7. I <em>needed</em> it to continue support my tab hoarding tendencies.</p>
+<p>In the end I declined the offer. The price they were offering was fair for a 4 month old extension that only had 390 users. However, I was also doing research on monetisation at the same time and realised that it would potentially be a good source of side income.</p>
+<p>Though, being an active user of Tab Shelf myself, I also wanted to continue to have some control over its user experience.</p>
+<h1 id="thesurges">The Surge(s)</h1>
+<p>In Tab Shelf's one year on the Chrome Web Store, there had been multiple sudden surges of new users.</p>
+<p>I usually check the Chrome Web Store developer dashboard daily to catch-up on the latest numbers. Every now and again, I get to be surprised by one of these surges.</p>
+<p>When these surges happen, I usually download a CSV extract of installs and users by region to figure out what kind of phenomenon I'm dealing with. Then I scour the web for mentions of Tab Shelf.</p>
+<p>In August 2023, Tab Shelf got its first taste of media exposure via <a href="https://archive.is/20230823115528/https://www.fastcompany.com/90940979/chromes-sidebar-apps-are-the-best-new-productivity-feature-no-ones-talking-about">a blog post on Fast Company</a> about the then-new category of side panel extensions on Chrome. User growth was largely isolated to English-speaking regions like the US, UK, Canada, and Australia.</p>
+<p>Between August and December 2023, user numbers in South Korea inconsistently spiked, stagnated, dropped; rinse and repeat. At the time of writing, I still couldn't identify the source of the sudden attention in South Korea. But more on the user count drops later.</p>
+<p>In that same time period, user numbers in Japan surged to a lesser extent. I managed to find some obscure message boards or forums where people recommended Tab Shelf. I'm not surprised if Tab Shelf is still being talked about in such spaces as growth has continued gradually in Japan.</p>
+<p>In January 2024, Tab Shelf <a href="https://archive.is/pulcm">got a mention on MakeUseOf</a> in another blog post about side panel extensions.</p>
+<p>In May 2024, <a href="https://huhuhang.com/post/apps/chrome-side-panel-apps">a Chinese language blog post</a>, again about side panel extensions in-general, mentioned Tab Shelf. User numbers across Chinese speaking regions and what could be assumed to be the wider Chinese diaspora worldwide shot through the roof.</p>
+<p>The blog post lamented that Tab Shelf wasn't available in any other language aside from English.</p>
+<p>I had a eureka moment when I realised that this probably explained the inconsistent user growth in South Korea earlier. To retain the new, substantially larger Chinese-speaking user base, and other non-English-speaking users, I quickly set to work on <a href="https://www.tabshelf.com/changelog/2024.2.x/v2024.2.0">an update to localise Tab Shelf in 13 languages</a>.</p>
+<h1 id="thefuture">The Future</h1>
+<p>Tab Shelf will continue on and I don't have any plans to stop any time soon. Tab Shelf isn't a world changing project, but as we have become accustomed to tabbed browsing on a scale like never before (for better or for worse), it has made browsing the web far more convenient and manageable for many.</p>
+<p>As mentioned prior, monetisation will be a major goal for this year. I'm still working on the features that will be exclusive to "pro" users and the infrastructure to support activations for such users.</p>
+<p>New (major) free features are also still being worked on, such as importing/exporting settings, syncing via Google accounts, etc. I'm also actively working on performance improvements, of which the first part of that work started rolling out in version 2024.2.2.</p>
+<p>Stay tuned for more updates on the <a href="https://tabshelf.com">Tab Shelf website</a>.</p>
+<p>In the meantime, I would be incredibly grateful if you want to <a href="https://ko-fi.com/clarencesiew">give a tip on Ko-fi</a> to support the project!</p>
+<iframe id='kofiframe' src='https://ko-fi.com/clarencesiew/?hidefeed=true&widget=true&embed=true&preview=true' style='border:none;width:100%;margin-block:1.5rem;padding:4px;background:#f9f9f9;' width="100%" height="712" title='clarencesiew'></iframe>
+<h1 id="addendum">Addendum</h1>
+<h2 id="themechanicalclockanalogy">The Mechanical Clock analogy</h2>
+<p>An analogy for working on Tab Shelf popped into my head a few weeks ago - it was like building and maintaining a tiny mechanical watch.</p>
+<p>It isn't a massive project, but there are tons of moving parts within it that have to work in-sync to react to browser events and to keep up with user interaction without grinding everything to a halt.</p>
+<p>It's incredibly fun to work on a project with numerous technical and practical constraints. I've been forced to think through the user experience much more carefully than previous projects. Tab Shelf has to both get out of the user's way, and in a contradictory way, a lot of its features need to be easily discoverable and accessible.</p>
+<h2 id="onmarketing">On marketing</h2>
+<p>I had not seriously invested much time and effort into marketing Tab Shelf, just yet.</p>
+<p>So it's been a wonderful surprise to see blog posts featuring Tab Shelf, and the occasional mention on message boards, forums, and Reddit. It seems that viral word-of-mouth marketing seems to be doing a fantastic job so far.</p>
+<p>The most I have done as of yet has been to post to a Discord group for browser extension developers, the ideal demographic of power users that would need such an extension.</p>
+<p>I made a couple of posts on my own personal social media too. A majority of my family, friends, and acquaintances are not power users (or tab hoarders), so they're the perfect test bed for studying how to attract non-power users.</p>
+<h1 id="footnotes">Footnotes</h1>
+<ol>
+<li><p><span id="footnote-1"></span>Anniversary dates can be a little confusing, however. 5 June marks the anniversary of Tab Shelf being spun-off from another extension project I was working on (LinkQueue), and from that parts of Tab Shelf's codebase dates back to 19 November 2022.</p></li>
+<li><p><span id="footnote-2"></span>This data was sourced from both the Chrome Web Store and Microsoft Edge Add-ons store.</p></li>
+<li><p><span id="footnote-3"></span>This doesn't take into account users from other countries travelling to or living in other countries; only their location is taken into account.</p></li>
+<li><p><span id="footnote-4"></span>More like an expression of interest to acquire Tab Shelf. Just using the term offer to stick with the Godfather reference.</p></li>
+</ol>]]></content:encoded>
+      <pubDate>Mon, 10 Jun 2024 07:30:41 GMT</pubDate>
     </item>
     <item>
       <title>Tab Shelf</title>

@@ -1,6 +1,6 @@
 import React from "react";
-import Markdown from "react-markdown";
 import "./Post.css";
+import RenderMd from "../../../components/util/RenderMd/RenderMd";
 
 export default function Post({ slug }: { slug: string }) {
   const isMountedRef = React.useRef<boolean>(false);
@@ -51,7 +51,7 @@ export default function Post({ slug }: { slug: string }) {
             <sub className="timestamp">{new Date(metadata.publishedAt).toDateString()}</sub>
           </div>
           <div className="post-body">
-            <Markdown>{content}</Markdown>
+            <RenderMd>{content}</RenderMd>
           </div>
         </article>
       )}

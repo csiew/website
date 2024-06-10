@@ -1,5 +1,4 @@
 import React from "react";
-import _ from "lodash";
 import { CacheContextState } from "../../stores/cache";
 import LinkList from "../../components/ui/LinkList/LinkList";
 import LinkListItem from "../../components/ui/LinkList/LinkListItem";
