@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import Markdown from "react-markdown";
 import { Helmet } from "react-helmet-async";
 import "./Project.css";
+import _ from "lodash";
 
 export default function Project({ slug }: { slug: string }) {
   const isMountedRef = React.useRef<boolean>(false);
@@ -53,6 +54,12 @@ export default function Project({ slug }: { slug: string }) {
         <meta property="og:description" content={metadata?.subtitle} />
         <meta property="og:author" content="Clarence Siew" />
         <meta property="og:locale" content="en_GB" />
+        {_.has(metadata, "headlineImage") && _.has(metadata, "headlineImageAlt") && (
+          <>
+            <meta property="og:image" content={metadata?.headlineImage} />
+            <meta property="og:image:alt" content={metadata?.headlineImageAlt} />
+          </>
+        )}
       </Helmet>
       {isError && <p>Failed to fetch project. Try reloading this page.</p>}
       {isLoading && <p>Loading...</p>}
