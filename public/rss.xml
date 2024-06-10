@@ -5,7 +5,7 @@
     <description>Clarence Siew's personal blog</description>
     <generator>Custom RSS generator</generator>
     <link>https://clarencesiew.com</link>
-    <lastBuildDate>Mon, 10 Jun 2024 09:56:53 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 10 Jun 2024 09:59:03 GMT</lastBuildDate>
     <atom:link href="https:/clarencesiew.com/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>Building a boilerplate factory</title>
@@ -67,7 +67,8 @@
       <slug>one-year-of-tab-shelf</slug>
       <link>https:/clarencesiew.com/posts/one-year-of-tab-shelf</link>
       <guid>https:/clarencesiew.com/posts/one-year-of-tab-shelf</guid>
-      <content:encoded><![CDATA[<p>14 June marks 1 year of <a href="https://chromewebstore.google.com/detail/tab-shelf-side-panel-vert/gkiobnohamhihbaipacecjfljepjjlmg">Tab Shelf on the Chrome Web Store</a><a href="#footnote-1"><sup>1</sup></a>. Since 14 June 2023, this project has grown significantly faster and larger in scope than I could've imagined.</p>
+      <content:encoded><![CDATA[<p><img src="/tab-shelf-screenshot.png" alt="Tab Shelf screenshot" /></p>
+<p>14 June marks 1 year of <a href="https://chromewebstore.google.com/detail/tab-shelf-side-panel-vert/gkiobnohamhihbaipacecjfljepjjlmg">Tab Shelf on the Chrome Web Store</a><a href="#footnote-1"><sup>1</sup></a>. Since 14 June 2023, this project has grown significantly faster and larger in scope than I could've imagined.</p>
 <blockquote>
   <p><strong><em>If you haven't heard about Tab Shelf before…</em></strong> it's a Chrome and Edge extension that adds a vertical list of your tabs to the browser side panel. If you're a tab hoarder like me or need to actively have dozens of tabs open at once, this is a far more optimal way to navigate between and manage tabs!</p>
 </blockquote>

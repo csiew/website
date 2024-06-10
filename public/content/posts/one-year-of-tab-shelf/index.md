@@ -1,3 +1,5 @@
+![Tab Shelf screenshot](/tab-shelf-screenshot.png)
+
 14 June marks 1 year of [Tab Shelf on the Chrome Web Store](https://chromewebstore.google.com/detail/tab-shelf-side-panel-vert/gkiobnohamhihbaipacecjfljepjjlmg)[<sup>1</sup>](#footnote-1). Since 14 June 2023, this project has grown significantly faster and larger in scope than I could've imagined.
 
 > **_If you haven't heard about Tab Shelf before..._** it's a Chrome and Edge extension that adds a vertical list of your tabs to the browser side panel. If you're a tab hoarder like me or need to actively have dozens of tabs open at once, this is a far more optimal way to navigate between and manage tabs!
