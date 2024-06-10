@@ -1,5 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
+import _ from "lodash";
 import "./Post.css";
 import RenderMd from "../../../components/util/RenderMd/RenderMd";
 
@@ -44,18 +45,21 @@ export default function Post({ slug }: { slug: string }) {
     <>
       <Helmet>
         <title>{metadata?.title ?? "Blog"} | Clarence Siew</title>
-        <meta name="description" content={metadata?.subtitle} />
-        <meta name="keywords" content={metadata?.keywords} />
-        <meta name="author" content="Clarence Siew" />
-        <meta property="og:title" content={`${metadata?.title ?? "Blog"} | Clarence Siew`} />
-        <meta property="og:url" content={`https://www.clarencesiew.com/posts/${metadata?.slug}`} />
-        <meta property="og:site_name" content="Clarence Siew" />
-        <meta property="og:description" content={metadata?.subtitle} />
-        <meta property="og:keywords" content={metadata?.keywords} />
-        <meta property="og:published_time" content={metadata?.publishedAt} />
-        <meta property="og:author" content="Clarence Siew" />
-        <meta property="og:type" content="article" />
-        <meta property="og:locale" content="en_GB" />
+        <meta name="title" property="og:title" content={`${metadata?.title ?? "Blog"} | Clarence Siew`} />
+        <meta name="url" property="og:url" content={`https://www.clarencesiew.com/posts/${metadata?.slug}`} />
+        <meta name="site_name" property="og:site_name" content="Clarence Siew" />
+        <meta name="description" property="og:description" content={metadata?.subtitle} />
+        <meta name="keywords" property="og:keywords" content={metadata?.keywords} />
+        <meta name="published_time" property="og:published_time" content={metadata?.publishedAt} />
+        <meta name="author" property="og:author" content="Clarence Siew" />
+        <meta name="type" property="og:type" content="article" />
+        <meta name="locale" property="og:locale" content="en_GB" />
+        {_.has(metadata, "headlineImage") && _.has(metadata, "headlineImageAlt") && (
+          <>
+            <meta name="image" property="og:image" content={metadata?.headlineImage} />
+            <meta name="image:alt" property="og:image:alt" content={metadata?.headlineImageAlt} />
+          </>
+        )}
       </Helmet>
       {isError && <p>Failed to fetch post. Try reloading this page.</p>}
       {isLoading && <p>Loading...</p>}

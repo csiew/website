@@ -11,12 +11,12 @@ export default function Posts() {
     <>
       <Helmet>
         <title>Blog | Clarence Siew</title>
-        <meta property="og:title" content="Blog | Clarence Siew" />
-        <meta property="og:url" content="https://www.clarencesiew.com/posts" />
-        <meta property="og:site_name" content="Clarence Siew" />
-        <meta property="og:description" content="Blog posts by Clarence Siew" />
-        <meta property="og:author" content="Clarence Siew" />
-        <meta property="og:locale" content="en_GB" />
+        <meta name="title" property="og:title" content="Blog | Clarence Siew" />
+        <meta name="url" property="og:url" content="https://www.clarencesiew.com/posts" />
+        <meta name="site_name" property="og:site_name" content="Clarence Siew" />
+        <meta name="description" property="og:description" content="Blog posts by Clarence Siew" />
+        <meta name="author" property="og:author" content="Clarence Siew" />
+        <meta name="locale" property="og:locale" content="en_GB" />
       </Helmet>
       <h2>Posts</h2>
       {!cacheContext.posts.length

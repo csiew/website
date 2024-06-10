@@ -12,12 +12,12 @@ export default function Feed() {
     <>
       <Helmet>
         <title>Feed | Clarence Siew</title>
-        <meta property="og:title" content="Feed | Clarence Siew" />
-        <meta property="og:url" content="https://www.clarencesiew.com/feed" />
-        <meta property="og:site_name" content="Clarence Siew" />
-        <meta property="og:description" content="Clarence's Mastodon feed" />
-        <meta property="og:author" content="Clarence Siew" />
-        <meta property="og:locale" content="en_GB" />
+        <meta name="title" property="og:title" content="Feed | Clarence Siew" />
+        <meta name="url" property="og:url" content="https://www.clarencesiew.com/feed" />
+        <meta name="site_name" property="og:site_name" content="Clarence Siew" />
+        <meta name="description" property="og:description" content="Clarence's Mastodon feed" />
+        <meta name="author" property="og:author" content="Clarence Siew" />
+        <meta name="locale" property="og:locale" content="en_GB" />
       </Helmet>
       <h2>Feed</h2>
       {!cacheContext.feed.length
