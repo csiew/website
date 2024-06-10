@@ -25,6 +25,12 @@ export default function Home() {
     <>
       <Helmet>
         <title>Home | Clarence Siew</title>
+        <meta property="og:title" content="Home | Clarence Siew" />
+        <meta property="og:url" content="https://www.clarencesiew.com/" />
+        <meta property="og:site_name" content="Clarence Siew" />
+        <meta property="og:description" content="Software Engineer based in Melbourne" />
+        <meta property="og:author" content="Clarence Siew" />
+        <meta property="og:locale" content="en_GB" />
       </Helmet>
       <div className="home">
         <Link to={latestBlogPost ? `/posts/${latestBlogPost.slug}` : "/posts"}>

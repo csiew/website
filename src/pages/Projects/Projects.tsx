@@ -11,6 +11,12 @@ export default function Projects() {
     <>
       <Helmet>
         <title>Projects | Clarence Siew</title>
+        <meta property="og:title" content="Projects | Clarence Siew" />
+        <meta property="og:url" content="https://www.clarencesiew.com/projects" />
+        <meta property="og:site_name" content="Clarence Siew" />
+        <meta property="og:description" content="Projects by Clarence Siew" />
+        <meta property="og:author" content="Clarence Siew" />
+        <meta property="og:locale" content="en_GB" />
       </Helmet>
       <h2>Projects</h2>
       {!cacheContext.projects.length

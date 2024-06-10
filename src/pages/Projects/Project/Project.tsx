@@ -45,6 +45,14 @@ export default function Project({ slug }: { slug: string }) {
     <>
       <Helmet>
         <title>{metadata?.title ?? "Projects"} | Clarence Siew</title>
+        <meta name="description" content={metadata?.subtitle} />
+        <meta name="author" content="Clarence Siew" />
+        <meta property="og:title" content={`${metadata?.title ?? "Projects"} | Clarence Siew`} />
+        <meta property="og:url" content={`https://www.clarencesiew.com/projects/${metadata?.slug}`} />
+        <meta property="og:site_name" content="Clarence Siew" />
+        <meta property="og:description" content={metadata?.subtitle} />
+        <meta property="og:author" content="Clarence Siew" />
+        <meta property="og:locale" content="en_GB" />
       </Helmet>
       {isError && <p>Failed to fetch project. Try reloading this page.</p>}
       {isLoading && <p>Loading...</p>}

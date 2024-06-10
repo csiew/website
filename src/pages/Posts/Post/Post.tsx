@@ -47,6 +47,15 @@ export default function Post({ slug }: { slug: string }) {
         <meta name="description" content={metadata?.subtitle} />
         <meta name="keywords" content={metadata?.keywords} />
         <meta name="author" content="Clarence Siew" />
+        <meta property="og:title" content={`${metadata?.title ?? "Blog"} | Clarence Siew`} />
+        <meta property="og:url" content={`https://www.clarencesiew.com/posts/${metadata?.slug}`} />
+        <meta property="og:site_name" content="Clarence Siew" />
+        <meta property="og:description" content={metadata?.subtitle} />
+        <meta property="og:keywords" content={metadata?.keywords} />
+        <meta property="og:published_time" content={metadata?.publishedAt} />
+        <meta property="og:author" content="Clarence Siew" />
+        <meta property="og:type" content="article" />
+        <meta property="og:locale" content="en_GB" />
       </Helmet>
       {isError && <p>Failed to fetch post. Try reloading this page.</p>}
       {isLoading && <p>Loading...</p>}

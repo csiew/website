@@ -8,6 +8,12 @@ export default function NotFound() {
     <>
       <Helmet>
         <title>Not Found | Clarence Siew</title>
+        <meta property="og:title" content="Not Found | Clarence Siew" />
+        <meta property="og:url" content="https://www.clarencesiew.com/" />
+        <meta property="og:site_name" content="Clarence Siew" />
+        <meta property="og:description" content="Page not found" />
+        <meta property="og:author" content="Clarence Siew" />
+        <meta property="og:locale" content="en_GB" />
       </Helmet>
       <h2>Not Found</h2>
       <img
