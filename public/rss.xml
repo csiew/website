@@ -5,12 +5,13 @@
     <description>Clarence Siew's personal blog</description>
     <generator>Custom RSS generator</generator>
     <link>https://clarencesiew.com</link>
-    <lastBuildDate>Mon, 10 Jun 2024 07:52:15 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 10 Jun 2024 08:10:28 GMT</lastBuildDate>
     <atom:link href="https:/clarencesiew.com/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>Building a boilerplate factory</title>
       <author>Clarence Siew</author>
       <description>An experiment in boilerplates and templates</description>
+      <keywords>python, static site generator, scripting, boilerplate, web dev</keywords>
       <slug>building-boilerplate-factory</slug>
       <link>https:/clarencesiew.com/posts/building-boilerplate-factory</link>
       <guid>https:/clarencesiew.com/posts/building-boilerplate-factory</guid>
@@ -26,6 +27,7 @@
       <title>Adventures in Frontend</title>
       <author>Clarence Siew</author>
       <description>A not-so-technical chronical of the frontend shenanigans I've been up to</description>
+      <keywords>react, reactjs, vite, next, nextjs, vue, vuejs, svelte, sveltekit, css, static site generator, scripting, frontend, web dev</keywords>
       <slug>frontend-adventures</slug>
       <link>https:/clarencesiew.com/posts/frontend-adventures</link>
       <guid>https:/clarencesiew.com/posts/frontend-adventures</guid>
@@ -47,6 +49,7 @@
       <title>A new blog, a new static site generator</title>
       <author>Clarence Siew</author>
       <description>An experiment in static site generators</description>
+      <keywords>python, static site generator, scripting, boilerplate, web dev</keywords>
       <slug>new-blog-site-generator</slug>
       <link>https:/clarencesiew.com/posts/new-blog-site-generator</link>
       <guid>https:/clarencesiew.com/posts/new-blog-site-generator</guid>
@@ -60,6 +63,7 @@
       <title>One Year of Tab Shelf</title>
       <author>Clarence Siew</author>
       <description>On gratitude, an acquisition offer, and going somewhat viral</description>
+      <keywords>tab shelf, vertical tabs, tab manager, google chrome, chrome, chromium, microsoft edge, extension, browser extension, node, nodejs, react, reactjs, vite, web dev, anniversary, acquisition, linkedin</keywords>
       <slug>one-year-of-tab-shelf</slug>
       <link>https:/clarencesiew.com/posts/one-year-of-tab-shelf</link>
       <guid>https:/clarencesiew.com/posts/one-year-of-tab-shelf</guid>
@@ -130,6 +134,7 @@
       <title>Tab Shelf</title>
       <author>Clarence Siew</author>
       <description>Announcing a vertical tab management extension for Chrome/Chromium</description>
+      <keywords>tab shelf, vertical tabs, tab manager, google chrome, chrome, chromium, microsoft edge, extension, browser extension, node, nodejs, react, reactjs, vite, web dev</keywords>
       <slug>tab-shelf</slug>
       <link>https:/clarencesiew.com/posts/tab-shelf</link>
       <guid>https:/clarencesiew.com/posts/tab-shelf</guid>

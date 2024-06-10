@@ -5,12 +5,13 @@
     <description>Clarence Siew's personal projects</description>
     <generator>Custom RSS generator</generator>
     <link>https://clarencesiew.com</link>
-    <lastBuildDate>Mon, 10 Jun 2024 07:52:15 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 10 Jun 2024 08:10:28 GMT</lastBuildDate>
     <atom:link href="https:/clarencesiew.com/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>Antorca Linux</title>
       <author>Clarence Siew</author>
       <description>More polished rebranding and continuation of illume OS</description>
+      <keywords/>
       <slug>antorca-linux</slug>
       <link>https:/clarencesiew.com/projects/antorca-linux</link>
       <guid>https:/clarencesiew.com/projects/antorca-linux</guid>
@@ -21,6 +22,7 @@
       <title>BiscuitWM</title>
       <author>Clarence Siew</author>
       <description>Experimental window manager based on the Python version of TinyWM</description>
+      <keywords/>
       <slug>biscuitwm</slug>
       <link>https:/clarencesiew.com/projects/biscuitwm</link>
       <guid>https:/clarencesiew.com/projects/biscuitwm</guid>
@@ -30,6 +32,7 @@
       <title>Brioche</title>
       <author>Clarence Siew</author>
       <description>UI library for React projects</description>
+      <keywords/>
       <slug>brioche</slug>
       <link>https:/clarencesiew.com/projects/brioche</link>
       <guid>https:/clarencesiew.com/projects/brioche</guid>
@@ -40,6 +43,7 @@
       <title>Cardo</title>
       <author>Clarence Siew</author>
       <description>Experimental client-side frontend library</description>
+      <keywords/>
       <slug>cardo</slug>
       <link>https:/clarencesiew.com/projects/cardo</link>
       <guid>https:/clarencesiew.com/projects/cardo</guid>
@@ -51,6 +55,7 @@
       <title>Cast</title>
       <author>Clarence Siew</author>
       <description>Podcast web app</description>
+      <keywords/>
       <slug>cast</slug>
       <link>https:/clarencesiew.com/projects/cast</link>
       <guid>https:/clarencesiew.com/projects/cast</guid>
@@ -63,6 +68,7 @@
       <title>Hoddle</title>
       <author>Clarence Siew</author>
       <description>Toy window manager within a web page</description>
+      <keywords/>
       <slug>hoddle</slug>
       <link>https:/clarencesiew.com/projects/hoddle</link>
       <guid>https:/clarencesiew.com/projects/hoddle</guid>
@@ -73,6 +79,7 @@
       <title>illume OS</title>
       <author>Clarence Siew</author>
       <description>Linux distribution targeted at older hardware</description>
+      <keywords/>
       <slug>illume-os</slug>
       <link>https:/clarencesiew.com/projects/illume-os</link>
       <guid>https:/clarencesiew.com/projects/illume-os</guid>
@@ -82,6 +89,7 @@
       <title>md2magic</title>
       <author>Clarence Siew</author>
       <description>Experimental toy static site generator</description>
+      <keywords/>
       <slug>md2magic</slug>
       <link>https:/clarencesiew.com/projects/md2magic</link>
       <guid>https:/clarencesiew.com/projects/md2magic</guid>
@@ -91,6 +99,7 @@
       <title>Podzol</title>
       <author>Clarence Siew</author>
       <description>Podcasts in your terminal</description>
+      <keywords/>
       <slug>podzol</slug>
       <link>https:/clarencesiew.com/projects/podzol</link>
       <guid>https:/clarencesiew.com/projects/podzol</guid>
@@ -100,6 +109,7 @@
       <title>Tab Shelf</title>
       <author>Clarence Siew</author>
       <description>Manage your Chrome tabs from the side panel</description>
+      <keywords/>
       <slug>tab-shelf</slug>
       <link>https:/clarencesiew.com/projects/tab-shelf</link>
       <guid>https:/clarencesiew.com/projects/tab-shelf</guid>
@@ -109,6 +119,7 @@
       <title>TransitSafe</title>
       <author>Clarence Siew</author>
       <description>Public transport alerts for the little things</description>
+      <keywords/>
       <slug>transitsafe</slug>
       <link>https:/clarencesiew.com/projects/transitsafe</link>
       <guid>https:/clarencesiew.com/projects/transitsafe</guid>
@@ -118,6 +129,7 @@
       <title>Website</title>
       <author>Clarence Siew</author>
       <description>This very website</description>
+      <keywords/>
       <slug>website</slug>
       <link>https:/clarencesiew.com/projects/website</link>
       <guid>https:/clarencesiew.com/projects/website</guid>
