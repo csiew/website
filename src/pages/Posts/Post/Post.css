@@ -63,6 +63,7 @@ article.post {
 
     img {
       max-width: 100%;
+      -webkit-user-drag: none;
     }
   }
 }
