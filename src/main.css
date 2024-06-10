@@ -251,6 +251,13 @@ main {
   }
 }
 
+blockquote {
+  margin: 1.5rem 0rem;
+  padding: 1rem 1.5rem;
+  background: var(--bg-secondary);
+  border-radius: var(--border-radius);
+}
+
 footer {
   width: 100%;
   margin: 0;
