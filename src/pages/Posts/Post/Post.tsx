@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import "./Post.css";
 import RenderMd from "../../../components/util/RenderMd/RenderMd";
 
@@ -41,6 +42,12 @@ export default function Post({ slug }: { slug: string }) {
 
   return (
     <>
+      <Helmet>
+        <title>{metadata?.title ?? "Blog"} | Clarence Siew</title>
+        <meta name="description" content={metadata?.subtitle} />
+        <meta name="keywords" content={metadata?.keywords} />
+        <meta name="author" content="Clarence Siew" />
+      </Helmet>
       {isError && <p>Failed to fetch post. Try reloading this page.</p>}
       {isLoading && <p>Loading...</p>}
       {!isError && !isLoading && (

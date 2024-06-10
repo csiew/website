@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "wouter";
+import { Helmet } from "react-helmet-async";
 import _ from "lodash";
 import { CacheContextState } from "../../stores/cache";
 import "./Feed.css";
@@ -9,6 +10,9 @@ export default function Feed() {
   
   return (
     <>
+      <Helmet>
+        <title>Feed | Clarence Siew</title>
+      </Helmet>
       <h2>Feed</h2>
       {!cacheContext.feed.length
         ? <p>Loading...</p>

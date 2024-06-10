@@ -1,10 +1,14 @@
 import React from "react";
 import { Link } from "wouter";
 import "./NotFound.css";
+import { Helmet } from "react-helmet-async";
 
 export default function NotFound() {
   return (
     <>
+      <Helmet>
+        <title>Not Found | Clarence Siew</title>
+      </Helmet>
       <h2>Not Found</h2>
       <img
         src="/not-found.png"

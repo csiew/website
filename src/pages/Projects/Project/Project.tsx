@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "wouter";
 import Markdown from "react-markdown";
+import { Helmet } from "react-helmet-async";
 import "./Project.css";
 
 export default function Project({ slug }: { slug: string }) {
@@ -42,6 +43,9 @@ export default function Project({ slug }: { slug: string }) {
 
   return (
     <>
+      <Helmet>
+        <title>{metadata?.title ?? "Projects"} | Clarence Siew</title>
+      </Helmet>
       {isError && <p>Failed to fetch project. Try reloading this page.</p>}
       {isLoading && <p>Loading...</p>}
       {!isError && !isLoading && (

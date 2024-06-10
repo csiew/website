@@ -27,7 +27,7 @@ function fetchMetadata(section: string) {
   const metadataJson: any[] = [];
   for (const slug of dirList) {
     const metadata = fs.readFileSync(path.join(process.cwd(), "public", "content", section, slug, "metadata.json"));
-    const content = fs.readFileSync(path.join(process.cwd(), "public", "content", section, slug, "index.md"))
+    const content = fs.readFileSync(path.join(process.cwd(), "public", "content", section, slug, "index.md"));
     const jsonData = JSON.parse(String(metadata));
     if (Object.keys(jsonData).includes("private") && jsonData.private === true) {
       continue;
@@ -38,6 +38,7 @@ function fetchMetadata(section: string) {
       title: jsonData.title,
       author: "Clarence Siew",
       description: jsonData.subtitle,
+      keywords: jsonData.keywords,
       slug: jsonData.slug,
       link: itemUrl,
       guid: itemUrl,

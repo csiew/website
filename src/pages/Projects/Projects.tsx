@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import { CacheContextState } from "../../stores/cache";
 import LinkList from "../../components/ui/LinkList/LinkList";
 import LinkListItem from "../../components/ui/LinkList/LinkListItem";
@@ -8,6 +9,9 @@ export default function Projects() {
 
   return (
     <>
+      <Helmet>
+        <title>Projects | Clarence Siew</title>
+      </Helmet>
       <h2>Projects</h2>
       {!cacheContext.projects.length
         ? <p>Loading...</p>
