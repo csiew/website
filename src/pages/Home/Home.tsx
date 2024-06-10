@@ -1,11 +1,19 @@
 import React from "react";
-import Markdown from "react-markdown";
 import { Helmet } from "react-helmet-async";
 import "./Home.css";
 import homeMd from "./Home.md";
+import RenderMd from "../../components/util/RenderMd/RenderMd";
+import { CacheContextState } from "../../stores/cache";
+import { Link } from "wouter";
 
 export default function Home() {
+  const cacheContext = React.useContext(CacheContextState);
   const [content, setContent] = React.useState<string>("");
+
+  const latestBlogPost = React.useMemo(
+    () => cacheContext.posts[0],
+    [cacheContext.posts]
+  );
 
   React.useEffect(() => {
     fetch(homeMd)
@@ -19,7 +27,17 @@ export default function Home() {
         <title>Home | Clarence Siew</title>
       </Helmet>
       <div className="home">
-        <Markdown>{content}</Markdown>
+        <Link to={latestBlogPost ? `/posts/${latestBlogPost.slug}` : "/posts"}>
+          <div className="latest">
+            <span>Read my latest blog post</span>
+            <h2>
+              {latestBlogPost?.title}
+            </h2>
+          </div>
+        </Link>
+        <div className="home-intro">
+          <RenderMd>{content}</RenderMd>
+        </div>
       </div>
     </>
   );
