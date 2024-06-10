@@ -1,6 +1,5 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
-import _ from "lodash";
 import "./Post.css";
 import RenderMd from "../../../components/util/RenderMd/RenderMd";
 
@@ -54,12 +53,8 @@ export default function Post({ slug }: { slug: string }) {
         <meta name="author" property="og:author" content="Clarence Siew" />
         <meta name="type" property="og:type" content="article" />
         <meta name="locale" property="og:locale" content="en_GB" />
-        {_.has(metadata, "headlineImage") && _.has(metadata, "headlineImageAlt") && (
-          <>
-            <meta name="image" property="og:image" content={metadata?.headlineImage} />
-            <meta name="image:alt" property="og:image:alt" content={metadata?.headlineImageAlt} />
-          </>
-        )}
+        {metadata?.image && (<meta name="image" property="og:image" content={metadata?.image} />)}
+        {metadata?.imageAlt && (<meta name="image:alt" property="og:image:alt" content={metadata?.imageAlt} />)}
       </Helmet>
       {isError && <p>Failed to fetch post. Try reloading this page.</p>}
       {isLoading && <p>Loading...</p>}
