@@ -107,7 +107,7 @@ header {
     margin: 0;
     padding: 0;
     white-space: nowrap;
-  
+
     ul {
       list-style: none;
       width: max-content;
@@ -120,7 +120,7 @@ header {
       justify-content: flex-start;
       gap: 0.5rem;
       font-family: var(--header-font);
-  
+
       li {
         width: max-content;
         height: 100%;
