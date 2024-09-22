@@ -91,9 +91,8 @@ body {
 }
 
 #root {
-  max-width: 640px;
   width: 100%;
-  margin: 0 auto;
+  margin: 0;
   top: 0;
   padding: 0;
   display: inline-flex;
@@ -102,12 +101,6 @@ body {
   justify-content: flex-start;
   gap: 1rem;
   line-height: 1.5;
-}
-
-@media (max-width: 640px) {
-  #root {
-    padding: 1rem;
-  }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -205,25 +198,15 @@ ul {
 
 main {
   z-index: 50;
+  max-width: 720px;
   width: 100%;
-  margin: 0;
-  padding: 3rem 2rem;
+  margin: 0 auto;
+  padding: 1rem 4rem;
   display: inline-flex;
   flex-flow: column;
   align-items: flex-start;
   justify-content: flex-start;
   gap: 0;
-
-  @media (max-width: 640px) {
-    & {
-      padding: 2rem 0.5rem;
-      background: none;
-      border: none;
-      border-radius: 0;
-      box-shadow: none;
-      padding: 2rem 1rem;
-    }
-  }
 
   h2:first-child {
     padding-block: 1rem 3rem;
@@ -245,8 +228,25 @@ main {
 }
 
 @media (max-width: 640px) {
+  maub {
+    padding: 2rem;
+    background: none;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 2rem 1rem;
+  }
+}
+
+@media (max-width: 640px) {
   main {
-    padding: 0;
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    padding: 0rem 0.5rem;
   }
 }
 

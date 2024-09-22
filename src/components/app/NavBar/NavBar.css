@@ -1,9 +1,9 @@
 header {
   z-index: 100;
   width: 100%;
-  margin: 0 auto;
-  top: 1rem;
-  padding: 0.5rem 0.75rem;
+  margin: 0;
+  top: 0;
+  padding: 0rem 0.75rem;
   position: sticky;
   display: inline-flex;
   flex-flow: row;
@@ -11,16 +11,8 @@ header {
   justify-content: space-between;
   gap: 0.5rem;
   background: rgba(var(--bg-rgb), 0.75);
-  backdrop-filter: blur(4px);
-  border: 1px solid var(--border-color);
-  border-radius: 64px;
-  box-shadow:
-    0px 1px 1px rgba(255, 255, 255, 0.75) inset,
-    0px -1px 1px rgba(255, 255, 255, 0.75) inset,
-    0px -1px 2px rgba(0, 0, 0, 0.25) inset,
-    0px 1px 2px rgba(0, 0, 0, 0.125),
-    0px 2px 4px rgba(0, 0, 0, 0.025),
-    0px 2px 16px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border-color);
 
   .site-title {
     width: max-content;
@@ -87,8 +79,8 @@ header {
 
       &:before {
         content: '';
-        width: 42px;
-        height: 42px;
+        width: 36px;
+        height: 36px;
         margin: 0;
         position: absolute;
         background-image: url('/profile.jpg');
@@ -98,11 +90,20 @@ header {
         filter: blur(8px) brightness(1.25) saturate(1.5);
         animation: 10s ProfilePictureShadowTransition infinite linear;
       }
+
+      @media (max-width: 640px) {
+        &:before {
+          animation: none;
+          filter: blur(4px) brightness(2) saturate(1.25);
+          transform: none;
+        }
+      }
     }
   }
 
   nav {
     width: max-content;
+    height: 100%;
     margin: 0;
     padding: 0;
     white-space: nowrap;
@@ -110,6 +111,7 @@ header {
     ul {
       list-style: none;
       width: max-content;
+      height: 100%;
       margin: 0;
       padding: 0;
       display: inline-flex;
@@ -120,76 +122,35 @@ header {
       font-family: var(--header-font);
   
       li {
-        --nav-link-shadow:
-          0px 1px 2px rgba(0, 0, 0, 0.125),
-          0px 2px 4px rgba(0, 0, 0, 0.06125),
-          0px 2px 4px rgba(255, 255, 255, 0.75) inset,
-          0px 4px 8px rgba(255, 255, 255, 0.5) inset,
-          0px -2px 2px rgba(255, 255, 255, 0.8) inset,
-          0px -2px 8px rgba(0, 0, 0, 0.125) inset;
-        --nav-link-shadow-hover:
-          0px 2px 4px rgba(0, 0, 0, 0.25),
-          0px 4px 8px rgba(0, 0, 0, 0.125),
-          0px 2px 4px rgba(255, 255, 255, 0.75) inset,
-          0px 4px 8px rgba(255, 255, 255, 0.5) inset,
-          0px -2px 2px rgba(255, 255, 255, 0.8) inset,
-          0px -2px 8px rgba(0, 0, 0, 0.125) inset;
-        --nav-link-shadow-active:
-          0px 1px 2px rgba(0, 0, 0, 0.25) inset,
-          0px 2px 4px rgba(0, 0, 0, 0.125) inset,
-          0px 2px 4px rgba(255, 255, 255, 0.75) inset,
-          0px 4px 8px rgba(255, 255, 255, 0.5) inset,
-          0px -2px 2px rgba(255, 255, 255, 0.8) inset,
-          0px -2px 8px rgba(0, 0, 0, 0.125) inset;
-        --nav-link-shadow-current:
-          0px 2px 4px rgba(0, 0, 0, 0.25),
-          0px 4px 8px rgba(0, 0, 0, 0.125);
-
         width: max-content;
+        height: 100%;
         margin: 0;
         padding: 0;
         display: inline-block;
 
         a {
           width: max-content;
-          padding: 0.25rem 1rem;
-          display: inline-block;
-          color: var(--fg);
-          background: var(--bg);
-          border: 1px solid var(--border-color);
-          border-radius: 64px;
-          box-shadow: var(--nav-link-shadow);
+          height: 100%;
+          padding: 0.75rem 1rem;
+          display: inline-flex;
+          flex-flow: row;
+          align-items: center;
+          justify-content: center;
+          color: var(--fg-secondary);
+          border-block: 3px solid transparent;
           font-weight: 500;
           text-decoration: none;
           text-align: center;
 
           &:hover {
             color: var(--fg);
-            background: var(--bg);
-            box-shadow: var(--nav-link-shadow-hover);
+            border-bottom-color: var(--fg);
             text-decoration: none;
-            transition: var(--transition);
-          }
-
-          &:active {
-            box-shadow: var(--nav-link-shadow-active);
           }
 
           &.active {
-            color: var(--bg);
-            background: var(--fg);
-            border-color: var(--fg);
-            box-shadow: var(--nav-link-shadow-current);
-            text-decoration: none;
-
-            &:hover {
-              animation: unset;
-              filter: brightness(1.1);
-            }
-
-            &:active {
-              filter: brightness(0.9);
-            }
+            color: var(--fg);
+            border-bottom-color: var(--fg);
           }
         }
       }
@@ -203,7 +164,7 @@ header {
       ul {
         li {
           a {
-            padding: 0.125rem 0.5rem;
+            padding: 0.5rem;
           }
         }
       }

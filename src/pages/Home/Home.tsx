@@ -5,6 +5,7 @@ import homeMd from "./Home.md";
 import RenderMd from "../../components/util/RenderMd/RenderMd";
 import { CacheContextState } from "../../stores/cache";
 import { Link } from "wouter";
+import LinkGrid from "../../components/app/LinkGrid/LinkGrid";
 
 export default function Home() {
   const cacheContext = React.useContext(CacheContextState);
@@ -44,6 +45,7 @@ export default function Home() {
         <div className="home-intro">
           <RenderMd>{content}</RenderMd>
         </div>
+        <LinkGrid />
       </div>
     </>
   );
