@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
 
 :root {
   --system-font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  --body-font: 'Public Sans', var(--system-font);
-  --header-font: 'Public Sans', var(--system-font);
+  --body-font: 'Source Serif 4', var(--system-font);
+  --header-font: 'Source Serif 4', var(--system-font);
   --monospace-font: 'IBM Plex Mono', monospace;
 
   --fg-rgb: 30, 30, 30;
@@ -73,8 +73,8 @@ html {
   padding: 0;
   color: var(--fg);
   background: var(--bg);
-  font-size: 16px;
-  font-weight: 300;
+  font-size: 18px;
+  font-weight: normal;
   font-family: var(--body-font);
 }
 
@@ -91,9 +91,8 @@ body {
 }
 
 #root {
-  max-width: 640px;
   width: 100%;
-  margin: 0 auto;
+  margin: 0;
   top: 0;
   padding: 0;
   display: inline-flex;
@@ -102,12 +101,6 @@ body {
   justify-content: flex-start;
   gap: 1rem;
   line-height: 1.5;
-}
-
-@media (max-width: 640px) {
-  #root {
-    padding: 1rem;
-  }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -205,49 +198,55 @@ ul {
 
 main {
   z-index: 50;
+  max-width: 720px;
   width: 100%;
-  margin: 0;
-  padding: 3rem 2rem;
+  margin: 0 auto;
+  padding: 1rem 4rem;
   display: inline-flex;
   flex-flow: column;
   align-items: flex-start;
   justify-content: flex-start;
   gap: 0;
 
-  @media (max-width: 640px) {
-    & {
-      padding: 2rem 0.5rem;
-      background: none;
-      border: none;
-      border-radius: 0;
-      box-shadow: none;
-      padding: 2rem 1rem;
-    }
-  }
-
   h2:first-child {
-    padding-block: 2rem 3rem;
+    padding-block: 1rem 3rem;
     align-self: center;
     color: var(--fg);
-    font-size: 3rem;
-    font-weight: 100;
-    letter-spacing: 1rem;
+    font-size: 4rem;
+    font-weight: 900;
     text-align: center;
-    text-transform: uppercase;
     line-height: 1;
     user-select: none;
   }
 
   @media (max-width: 640px) {
     h2:first-child {
-      font-size: 1.75rem;
+      padding-block: 2rem 3rem;
+      font-size: 3rem;
     }
   }
 }
 
 @media (max-width: 640px) {
+  maub {
+    padding: 2rem;
+    background: none;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 2rem 1rem;
+  }
+}
+
+@media (max-width: 640px) {
   main {
-    padding: 0;
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    padding: 0rem 0.5rem;
   }
 }
 

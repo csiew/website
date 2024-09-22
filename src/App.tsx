@@ -10,7 +10,6 @@ import Posts from "./pages/Posts/Posts";
 import Post from "./pages/Posts/Post/Post";
 import Projects from "./pages/Projects/Projects";
 import Project from "./pages/Projects/Project/Project";
-import PersonalLinks from "./components/app/PersonalLinks/PersonalLinks";
 
 const helmetContext = {};
 
@@ -39,7 +38,6 @@ export default function App() {
           </Switch>
         </main>
         <footer>
-          <PersonalLinks />
           &copy; 2024 Clarence Siew
         </footer>
       </AppContext>
