@@ -3,9 +3,19 @@ import { Helmet } from "react-helmet-async";
 import { CacheContextState } from "../../stores/cache";
 import LinkList from "../../components/ui/LinkList/LinkList";
 import LinkListItem from "../../components/ui/LinkList/LinkListItem";
+import colorIndex from "../../util/color-index";
 
 export default function Projects() {
   const cacheContext = React.useContext(CacheContextState);
+
+  React.useEffect(
+    () => {
+      const customBgRgb = colorIndex.get("projects-bg");
+      if (customBgRgb)
+        document.documentElement.style.setProperty("--bg-rgb", customBgRgb);
+    },
+    []
+  );
 
   return (
     <>

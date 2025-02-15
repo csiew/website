@@ -12,7 +12,6 @@ header {
   gap: 0.5rem;
   background: rgba(var(--bg-rgb), 0.75);
   backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--border-color);
 
   .site-title {
     width: max-content;

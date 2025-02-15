@@ -10,7 +10,7 @@ export default function Project({ slug }: { slug: string }) {
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
   const [metadata, setMetadata] = React.useState<any>({});
   const [content, setContent] = React.useState<string>("");
-  
+
   async function handleFetchContent() {
     console.debug(`Fetching project metadata for: ${slug}`);
     try {
@@ -63,20 +63,24 @@ export default function Project({ slug }: { slug: string }) {
             <div className="project-links">
               <ul>
                 <li>
-                  <Link
-                    to={metadata.links?.website ? metadata.links?.website : "#"}
+                  <a
+                    href={metadata.links?.website ? metadata.links?.website : "#"}
+                    target="_blank"
+                    rel="noreferrer"
                     className={["button", !metadata.links?.website ? "disabled" : ""].join(" ").trim()}
                   >
                     Website
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link
-                    to={metadata.links?.repository ? metadata.links?.repository : "#"}
+                  <a
+                    href={metadata.links?.repository ? metadata.links?.repository : "#"}
+                    target="_blank"
+                    rel="noreferrer"
                     className={["button", !metadata.links?.repository ? "disabled" : ""].join(" ").trim()}
                   >
                     Repository
-                  </Link>
+                  </a>
                 </li>
               </ul>
             </div>

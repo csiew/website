@@ -6,6 +6,7 @@ import RenderMd from "../../components/util/RenderMd/RenderMd";
 import { CacheContextState } from "../../stores/cache";
 import { Link } from "wouter";
 import LinkGrid from "../../components/app/LinkGrid/LinkGrid";
+import colorIndex from "../../util/color-index";
 
 export default function Home() {
   const cacheContext = React.useContext(CacheContextState);
@@ -20,6 +21,10 @@ export default function Home() {
     fetch(homeMd)
       .then((md) => md.text())
       .then((c) => setContent(c));
+
+    const customBgRgb = colorIndex.get("home-bg");
+    if (customBgRgb)
+      document.documentElement.style.setProperty("--bg-rgb", customBgRgb);
   }, []);
 
   return (
@@ -34,14 +39,14 @@ export default function Home() {
         <meta name="locale" property="og:locale" content="en_GB" />
       </Helmet>
       <div className="home">
-        <Link to={latestBlogPost ? `/posts/${latestBlogPost.slug}` : "/posts"}>
-          <div className="latest">
-            <span>Read my latest blog post</span>
-            <h2>
+        <div className="latest">
+          <span>Read my latest blog post</span>
+          <h2>
+            <Link to={latestBlogPost ? `/posts/${latestBlogPost.slug}` : "/posts"}>
               {latestBlogPost?.title}
-            </h2>
-          </div>
-        </Link>
+            </Link>
+          </h2>
+        </div>
         <div className="home-intro">
           <RenderMd>{content}</RenderMd>
         </div>

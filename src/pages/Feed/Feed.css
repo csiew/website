@@ -15,19 +15,11 @@ section.feed-posts-list {
     li {
       width: 100%;
       margin: 0;
-      padding: 1rem;
-      border: 1px solid var(--border-color);
-      border-radius: 0;
-      transition: var(--transition);
+      padding: 1.75rem 1rem;
+      border-bottom: 1px solid var(--border-color);
 
-      &:first-child {
-        border-radius: var(--border-radius) var(--border-radius) 0 0;
-      }
-      &:not(:last-child) {
-        border-bottom: none;
-      }
       &:last-child {
-        border-radius: 0 0 var(--border-radius) var(--border-radius);
+        border-bottom: none;
       }
 
       a {

@@ -2,8 +2,18 @@ import React from "react";
 import { Link } from "wouter";
 import "./NotFound.css";
 import { Helmet } from "react-helmet-async";
+import colorIndex from "../../util/color-index";
 
 export default function NotFound() {
+  React.useEffect(
+    () => {
+      const customBgRgb = colorIndex.get("not-found-bg");
+      if (customBgRgb)
+        document.documentElement.style.setProperty("--bg-rgb", customBgRgb);
+    },
+    []
+  );
+
   return (
     <>
       <Helmet>

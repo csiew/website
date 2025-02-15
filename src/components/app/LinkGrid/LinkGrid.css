@@ -9,8 +9,8 @@
     margin: 0;
     padding: 0;
     display: inline-grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.5rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
 
     li {
       width: 100%;
@@ -28,8 +28,6 @@
         gap: 1rem;
         color: var(--fg);
         background: none;
-        border: 1px solid var(--border-color);
-        border-radius: var(--border-radius);
         text-decoration: none;
 
         span {
@@ -43,7 +41,7 @@
         }
 
         &:hover {
-          background: var(--bg-secondary);
+          text-decoration: underline;
         }
 
         &:active {

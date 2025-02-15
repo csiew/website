@@ -21,7 +21,7 @@ article {
         line-height: 1;
         text-transform: none;
       }
-    
+
       p.subtitle {
         padding: 0;
         color: var(--fg-secondary);
@@ -57,10 +57,6 @@ article {
 
             a.button {
               width: 100%;
-
-              &:hover {
-                color: var(--fg);
-              }
             }
           }
         }

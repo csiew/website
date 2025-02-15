@@ -1,5 +1,5 @@
 import React from "react";
-import { SiGithub, SiInstagram, SiLinkedin, SiMastodon, SiSpotify, SiThreads } from "react-icons/si";
+import { SiBluesky, SiGithub, SiInstagram, SiLinkedin, SiMastodon, SiPixelfed, SiSpotify, SiThreads } from "react-icons/si";
 import "./LinkGrid.css";
 
 const links = [
@@ -22,6 +22,12 @@ const links = [
     newTab: true
   },
   {
+    title: "Bluesky",
+    url: "https://bsky.app/profile/csiew.bsky.social",
+    icon: <SiBluesky />,
+    newTab: true
+  },
+  {
     title: "Threads",
     url: "https://threads.net/@clarence_siew",
     icon: <SiThreads />,
@@ -31,6 +37,12 @@ const links = [
     title: "Instagram",
     url: "https://instagram.com/clarence_siew",
     icon: <SiInstagram />,
+    newTab: true
+  },
+  {
+    title: "Pixelfed",
+    url: "https://pixelfed.social/i/web/profile/787269058851499264",
+    icon: <SiPixelfed />,
     newTab: true
   },
   {
@@ -47,7 +59,7 @@ function LinkGrid() {
       <ul>
         {links.map((link) => (
           <li key={link.url}>
-            <a href={link.url} target="_blank">
+            <a href={link.url} target="_blank" rel="noreferrer">
               {link.icon}
               <span>{link.title}</span>
             </a>
