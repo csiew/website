@@ -1,4 +1,4 @@
-import _ from "lodash";
+import { get } from "lodash";
 import { parseStringPromise } from "xml2js";
 import { Converter } from "showdown";
 import { Post } from "./cache";
@@ -9,7 +9,7 @@ export async function fetchPostsViaRss() {
     throw new Error(feedXmlResult.statusText);
   const feedXml = await feedXmlResult.text();
   const feedJson = await parseStringPromise(feedXml);
-  return _.get(feedJson, "rss.channel[0].item")
+  return get(feedJson, "rss.channel[0].item")
     .map((p: any) => ({
       slug: p.slug,
       title: p.title,
@@ -30,7 +30,7 @@ export async function fetchMastodonFeedViaRss() {
     throw new Error(feedXmlResult.statusText);
   const feedXml = await feedXmlResult.text();
   const feedJson = await parseStringPromise(feedXml);
-  return _.get(feedJson, "rss.channel[0].item");
+  return get(feedJson, "rss.channel[0].item");
 }
 
 export async function fetchProjectsViaManifest() {
