@@ -1,20 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
 :root {
   --system-font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  --body-font: 'Source Serif 4', var(--system-font);
-  --header-font: 'Source Serif 4', var(--system-font);
+  --body-font: 'Nunito', var(--system-font);
+  --header-font: 'Nunito', var(--system-font);
   --monospace-font: 'IBM Plex Mono', monospace;
 
   --fg-rgb: 30, 30, 30;
   --fg-secondary-rgb: 120, 120, 120;
   --fg-highlight-rgb: 25, 25, 25;
-  --bg-rgb: 255, 255, 250;
-  --bg-secondary-rgb: 240, 240, 235;
+  --bg-rgb: 255, 250, 235;
+  --bg-secondary-rgb: 245, 240, 225;
   --accent-rgb: 248, 208, 5;
   --accent-secondary-rgb: 228, 188, 5;
   --accent-border-rgb: 208, 178, 5;
-  --border-color-rgb: 225, 225, 220;
+  --border-color-rgb: var(--fg-rgb);
 
   --fg: rgb(var(--fg-rgb));
   --fg-secondary: rgb(var(--fg-secondary-rgb));
@@ -27,31 +27,6 @@
   --border-color: rgb(var(--border-color-rgb));
   --border-radius: 9px;
   --transition: 0.25s;
-  
-  --button-shadow:
-    0px 1px 2px rgba(0, 0, 0, 0.125),
-    0px 2px 4px rgba(0, 0, 0, 0.06125),
-    0px 2px 4px rgba(255, 255, 255, 0.75) inset,
-    0px 4px 8px rgba(255, 255, 255, 0.5) inset,
-    0px -2px 2px rgba(255, 255, 255, 0.8) inset,
-    0px -2px 8px rgba(0, 0, 0, 0.125) inset;
-  --button-shadow-hover:
-    0px 2px 4px rgba(0, 0, 0, 0.25),
-    0px 4px 8px rgba(0, 0, 0, 0.125),
-    0px 2px 4px rgba(255, 255, 255, 0.75) inset,
-    0px 4px 8px rgba(255, 255, 255, 0.5) inset,
-    0px -2px 2px rgba(255, 255, 255, 0.8) inset,
-    0px -2px 8px rgba(0, 0, 0, 0.125) inset;
-  --button-shadow-active:
-    0px 1px 2px rgba(0, 0, 0, 0.25) inset,
-    0px 2px 4px rgba(0, 0, 0, 0.125) inset,
-    0px 2px 4px rgba(255, 255, 255, 0.75) inset,
-    0px 4px 8px rgba(255, 255, 255, 0.5) inset,
-    0px -2px 2px rgba(255, 255, 255, 0.8) inset,
-    0px -2px 8px rgba(0, 0, 0, 0.125) inset;
-  --button-shadow-current:
-    0px 2px 4px rgba(0, 0, 0, 0.25),
-    0px 4px 8px rgba(0, 0, 0, 0.125);
 
   color-scheme: light;
   accent-color: var(--accent);
@@ -73,7 +48,7 @@ html {
   padding: 0;
   color: var(--fg);
   background: var(--bg);
-  font-size: 18px;
+  font-size: 20px;
   font-weight: normal;
   font-family: var(--body-font);
 }
@@ -129,11 +104,6 @@ a {
   color: var(--fg);
   font-weight: 500;
   text-decoration: underline;
-  transition: var(--transition);
-
-  &:hover {
-    color: var(--accent-secondary);
-  }
 }
 
 button, .button {
@@ -144,28 +114,29 @@ button, .button {
   justify-content: center;
   color: var(--fg);
   background: var(--bg);
-  border: 1px solid var(--border-color);
+  border: 2px solid var(--border-color);
   border-radius: 64px;
-  box-shadow: var(--button-shadow);
   font-family: inherit;
   font-size: inherit;
-  font-weight: inherit;
+  font-weight: bold;
   text-decoration: none;
   cursor: pointer;
   transition: var(--transition);
+  -webkit-user-drag: none;
 
   &:hover {
-    box-shadow: var(--button-shadow-hover);
+    color: var(--bg);
+    background: var(--fg);
   }
 
   &:active {
-    box-shadow: var(--button-shadow-active);
+    color: var(--fg);
+    background: var(--bg-secondary);
   }
 
   &.active {
-    color: var(--fg);
+    color: var(--bg);
     background: var(--fg);
-    box-shadow: var(--button-shadow-current);
   }
 
   &:is(:disabled, .disabled) {
@@ -198,7 +169,7 @@ ul {
 
 main {
   z-index: 50;
-  max-width: 720px;
+  max-width: 800px;
   width: 100%;
   margin: 0 auto;
   padding: 1rem 4rem;
@@ -267,7 +238,7 @@ footer {
   justify-content: center;
   gap: 1.5rem;
   color: var(--fg-secondary);
-  font-family: var(--header-font);
+  font-family: var(--body-font);
   font-size: 0.9rem;
   text-align: center;
 

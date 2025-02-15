@@ -21,8 +21,6 @@
     gap: 0.5rem;
     color: var(--fg);
     background: none;
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius);
     text-align: center;
     text-decoration: none;
     transition: var(--transition);
@@ -40,14 +38,8 @@
       padding: 0;
     }
 
-    &:hover {
-      background: var(--bg-secondary);
-      transition: var(--transition);
-    }
-
-    &:active {
-      color: var(--bg);
-      background: var(--fg);
+    a {
+      font-weight: 900;
     }
   }
 
@@ -61,8 +53,6 @@
     justify-content: flex-start;
     gap: 0.25rem;
     background: none;
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius);
     font-size: 1.75rem;
     font-weight: 400;
     letter-spacing: -0.025rem;

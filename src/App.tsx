@@ -38,7 +38,7 @@ export default function App() {
           </Switch>
         </main>
         <footer>
-          &copy; 2024 Clarence Siew
+          &copy; 2025 Clarence Siew
         </footer>
       </AppContext>
     </HelmetProvider>

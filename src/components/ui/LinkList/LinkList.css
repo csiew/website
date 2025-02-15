@@ -11,23 +11,16 @@ section.link-list {
   article {
     width: 100%;
     margin: 0;
-    padding: 1rem;
+    padding: 1.75rem 1rem;
     display: inline-flex;
     flex-flow: column;
     align-items: flex-start;
     justify-content: flex-start;
     gap: 0.5rem;
-    border: 1px solid var(--border-color);
-    border-radius: 0;
+    border-bottom: 1px solid var(--border-color);
 
-    &:first-child {
-      border-radius: var(--border-radius) var(--border-radius) 0 0;
-    }
-    &:not(:last-child) {
-      border-bottom: none;
-    }
     &:last-child {
-      border-radius: 0 0 var(--border-radius) var(--border-radius);
+      border-bottom: none;
     }
 
     h3 {

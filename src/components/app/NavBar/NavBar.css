@@ -12,7 +12,6 @@ header {
   gap: 0.5rem;
   background: rgba(var(--bg-rgb), 0.75);
   backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--border-color);
 
   .site-title {
     width: max-content;
@@ -107,7 +106,7 @@ header {
     margin: 0;
     padding: 0;
     white-space: nowrap;
-  
+
     ul {
       list-style: none;
       width: max-content;
@@ -120,7 +119,7 @@ header {
       justify-content: flex-start;
       gap: 0.5rem;
       font-family: var(--header-font);
-  
+
       li {
         width: max-content;
         height: 100%;
