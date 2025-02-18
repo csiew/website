@@ -6,13 +6,13 @@ import ReactCompiler from "babel-plugin-react-compiler";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-      react({
-        babel: {
-          plugins: [ReactCompiler],
-        },
-      }),
-      optimizeLodashImports()
-    ],
+    react({
+      babel: {
+        plugins: [ReactCompiler],
+      },
+    }),
+    optimizeLodashImports()
+  ],
   assetsInclude: ["**/*.md"],
   build: {
     outDir: "./dist",
