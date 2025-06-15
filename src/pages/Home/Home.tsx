@@ -6,7 +6,6 @@ import RenderMd from "../../components/util/RenderMd/RenderMd";
 import { CacheContextState } from "../../stores/cache";
 import { Link } from "wouter";
 import LinkGrid from "../../components/app/LinkGrid/LinkGrid";
-import colorIndex from "../../util/color-index";
 
 export default function Home() {
   const cacheContext = React.useContext(CacheContextState);
@@ -21,10 +20,6 @@ export default function Home() {
     fetch(homeMd)
       .then((md) => md.text())
       .then((c) => setContent(c));
-
-    const customBgRgb = colorIndex.get("home-bg");
-    if (customBgRgb)
-      document.documentElement.style.setProperty("--bg-rgb", customBgRgb);
   }, []);
 
   return (

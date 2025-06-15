@@ -44,7 +44,7 @@
       border: 1px solid indigo;
       border-radius: var(--border-radius);
       text-transform: uppercase;
-      font-size: 80%;
+      font-size: 75%;
       font-weight: bold;
       letter-spacing: 2px;
       user-select: none;
@@ -55,6 +55,7 @@
       margin: 0;
       padding-inline: 1rem;
       color: var(--fg);
+      font-size: 125%;
       text-align: left;
     }
 

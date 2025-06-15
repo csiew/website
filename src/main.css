@@ -9,7 +9,7 @@
   --fg-rgb: 30, 30, 30;
   --fg-secondary-rgb: 120, 120, 120;
   --fg-highlight-rgb: 25, 25, 25;
-  --bg-rgb: 255, 250, 235;
+  --bg-rgb: 255, 252, 245;
   --bg-secondary-rgb: 245, 240, 225;
   --accent-rgb: 248, 208, 5;
   --accent-secondary-rgb: 228, 188, 5;
@@ -58,7 +58,7 @@ html {
   top: 0;
   padding: 0;
   color: var(--fg);
-  background: var(--bg-secondary);
+  background: var(--bg);
   font-size: 18px;
   font-weight: normal;
   font-family: var(--body-font);
