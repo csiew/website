@@ -10,17 +10,16 @@ section.feed-posts-list {
     flex-flow: column;
     align-items: flex-start;
     justify-content: flex-start;
-    gap: 0;
+    gap: 1.5rem;
 
     li {
       width: 100%;
       margin: 0;
       padding: 1.75rem 1rem;
-      border-bottom: 1px solid var(--border-color);
-
-      &:last-child {
-        border-bottom: none;
-      }
+      background: rgba(var(--bg-rgb), 0.75);
+      box-shadow: var(--3d-shadow);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius);
 
       a {
         line-break: anywhere;
@@ -33,6 +32,7 @@ section.feed-posts-list {
           padding: 0.25rem 0.5rem;
           color: var(--fg-secondary);
           background: var(--bg-secondary);
+          border: 1px solid var(--fg-secondary);
           border-radius: 64px;
           font-weight: normal;
           text-decoration: none;
@@ -40,6 +40,8 @@ section.feed-posts-list {
 
           &:hover {
             color: var(--fg);
+            box-shadow: var(--3d-shadow);
+            border: 1px solid var(--border-color);
             transition: 0.5s;
           }
         }

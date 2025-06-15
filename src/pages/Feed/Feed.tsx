@@ -4,19 +4,9 @@ import { Helmet } from "react-helmet-async";
 import { has } from "lodash";
 import { CacheContextState } from "../../stores/cache";
 import "./Feed.css";
-import colorIndex from "../../util/color-index";
 
 export default function Feed() {
   const cacheContext = React.useContext(CacheContextState);
-
-  React.useEffect(
-    () => {
-      const customBgRgb = colorIndex.get("feed-bg");
-      if (customBgRgb)
-        document.documentElement.style.setProperty("--bg-rgb", customBgRgb);
-    },
-    []
-  );
 
   return (
     <>

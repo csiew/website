@@ -40,12 +40,12 @@ export default function Home() {
       </Helmet>
       <div className="home">
         <div className="latest">
-          <span>Read my latest blog post</span>
-          <h2>
+          <span className="section-title">Latest</span>
+          <span className="article-title">
             <Link to={latestBlogPost ? `/posts/${latestBlogPost.slug}` : "/posts"}>
               {latestBlogPost?.title}
             </Link>
-          </h2>
+          </span>
         </div>
         <div className="home-intro">
           <RenderMd>{content}</RenderMd>

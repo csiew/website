@@ -2,13 +2,13 @@ article.post {
   .post-header {
     width: 100%;
     margin: 0;
+    margin-bottom: 2rem;
     padding-block: 1rem;
     display: inline-flex;
     flex-flow: column;
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    border-bottom: 1px solid var(--border-color);
 
     h2 {
       padding: 0rem;
@@ -49,7 +49,11 @@ article.post {
   }
 
   .post-body {
-    padding-block: 1.5rem;
+    padding: 2rem 1.5rem;
+    background: var(--bg);
+    box-shadow: var(--3d-shadow);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
 
     h1 {
       margin-block: 1.5rem 0.5rem;

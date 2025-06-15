@@ -5,6 +5,7 @@
   flex-flow: column;
   align-items: flex-start;
   justify-content: flex-start;
+  gap: 1.5rem;
 
   a:has(.latest) {
     width: 100%;
@@ -13,24 +14,48 @@
 
   .latest {
     width: 100%;
-    padding: 1rem;
+    margin: 0;
+    padding: 0.5rem;
     display: inline-flex;
-    flex-flow: column;
+    flex-flow: row;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
     color: var(--fg);
-    background: none;
+    background: rgba(var(--bg-rgb), 0.5);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--3d-shadow);
+    border-radius: var(--border-radius-1);
     text-align: center;
     text-decoration: none;
     transition: var(--transition);
 
-    span {
-      color: var(--fg);
+    &:hover {
+      background: rgba(var(--bg-rgb), 0.75);
+    }
+
+    .section-title {
+      margin: 0;
+      padding: 0.75rem 1.25rem;
+      color: white;
+      background: linear-gradient(to bottom right, steelblue, indigo);
+      box-shadow: var(--3d-shadow);
+      text-shadow: 2px 2px 1px indigo;
+      border: 1px solid indigo;
+      border-radius: var(--border-radius);
       text-transform: uppercase;
       font-size: 80%;
-      font-weight: 500;
+      font-weight: bold;
+      letter-spacing: 2px;
       user-select: none;
+    }
+
+    .article-title {
+      width: 100%;
+      margin: 0;
+      padding-inline: 1rem;
+      color: var(--fg);
+      text-align: left;
     }
 
     h2 {
@@ -52,7 +77,10 @@
     align-items: flex-start;
     justify-content: flex-start;
     gap: 0.25rem;
-    background: none;
+    background: rgba(var(--bg-rgb), 0.5);
+    box-shadow: var(--3d-shadow);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-1);
     font-size: 1.75rem;
     font-weight: 400;
     letter-spacing: -0.025rem;
