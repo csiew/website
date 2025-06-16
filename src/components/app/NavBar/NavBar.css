@@ -26,10 +26,6 @@ header {
     border: 1px solid var(--border-color);
     border-radius: 128px;
     transition: var(--transition);
-
-    &:hover {
-      backdrop-filter: blur(8px);
-    }
   }
 
   .site-title {
