@@ -65,6 +65,7 @@
       color: var(--fg);
       font-family: var(--header-font);
       font-size: 125%;
+      font-weight: bold;
       text-align: left;
     }
 
@@ -74,7 +75,7 @@
     }
 
     a {
-      font-weight: 900;
+      font-weight: bold;
     }
   }
 
