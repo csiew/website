@@ -1,20 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
 
 :root {
   --system-font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  --body-font: Jost, var(--system-font);
-  --header-font: Jost, var(--system-font);
-  --monospace-font: 'IBM Plex Mono', monospace;
+  --body-font: Merriweather, var(--system-font);
+  --header-font: Merriweather, var(--system-font);
+  --monospace-font: 'Google Sans Code', monospace;
 
-  --fg-rgb: 230, 230, 230;
-  --fg-secondary-rgb: 120, 120, 120;
-  --fg-highlight-rgb: 25, 25, 25;
-  --bg-rgb: 45, 45, 45;
-  --bg-secondary-rgb: 25, 25, 25;
+  --fg-rgb: 0, 0, 0;
+  --fg-secondary-rgb: 100, 100, 100;
+  --fg-highlight-rgb: 50, 50, 50;
+  --bg-rgb: 255, 255, 255;
+  --bg-secondary-rgb: 235, 235, 235;
   --accent-rgb: 248, 208, 5;
   --accent-secondary-rgb: 228, 188, 5;
   --accent-border-rgb: 208, 178, 5;
-  --border-color-rgb: 100, 100, 100;
+  --border-color-rgb: 200, 200, 200;
 
   --fg: rgb(var(--fg-rgb));
   --fg-secondary: rgb(var(--fg-secondary-rgb));
@@ -33,11 +33,10 @@
   --transition: 0.25s;
 
   --3d-shadow:
-    0.5px 0.5px 1px rgba(255, 255, 255, 0.325) inset,
-    -0.5px -0.5px 1px rgba(255, 255, 255, 0.325) inset,
-    -1px -1px 2px rgba(0, 0, 0, 0.5) inset,
-    0px 4px 8px rgba(0, 0, 0, 0.325),
-    0px 4px 32px rgba(0, 0, 0, 0.125);
+    0.5px 0.5px 1px rgba(255, 255, 255, 0.5) inset,
+    -0.5px -0.5px 1px rgba(255, 255, 255, 0.5) inset,
+    0px 2px 4px rgba(0, 0, 0, 0.25),
+    0px 4px 8px rgba(0, 0, 0, 0.125);
 
   color-scheme: light;
   accent-color: var(--accent);
@@ -86,7 +85,7 @@ body {
   align-items: flex-start;
   justify-content: flex-start;
   gap: 1rem;
-  line-height: 1.5;
+  line-height: 1.75;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -195,7 +194,7 @@ main {
     align-self: center;
     color: var(--fg);
     font-size: 4rem;
-    font-weight: 900;
+    font-weight: 800;
     text-align: center;
     line-height: 1;
     user-select: none;

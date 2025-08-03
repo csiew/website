@@ -92,11 +92,9 @@
     box-shadow: var(--3d-shadow);
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius-1);
-    font-family: var(--header-font);
-    font-size: 1.75rem;
+    font-family: inherit;
+    font-size: 1.25rem;
     font-weight: 400;
-    letter-spacing: -0.025rem;
-    line-height: 1.33;
   }
 }
 

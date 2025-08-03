@@ -12,15 +12,16 @@ header {
   gap: 0;
 
   .header-content {
-    width: 100%;
-    margin: 0;
+    max-width: 768px;
+    width: min-content;
+    margin: 0 auto;
     padding: 0.5rem;
     display: inline-flex;
     flex-flow: row;
     align-items: center;
     justify-content: space-between;
-    gap: 0.5rem;
-    background: rgba(var(--bg-rgb), 0.5);
+    gap: 1rem;
+    background: rgba(var(--bg-rgb), 0.75);
     backdrop-filter: blur(4px);
     box-shadow: var(--3d-shadow);
     border: 1px solid var(--border-color);
@@ -65,7 +66,7 @@ header {
           0px 0px 18px rgba(255, 255, 255, 0.25);
         user-select: none;
         -webkit-user-drag: none;
-        transition: 0.5s;
+        transition: 0.75s;
 
         &:hover {
           border: 5px solid rgba(255, 255, 255, 0.9);
@@ -73,13 +74,13 @@ header {
             0px 0px 6px rgba(255, 255, 255, 0.9),
             0px 0px 12px rgba(255, 255, 255, 0.8),
             0px 0px 18px rgba(255, 255, 255, 0.75);
-          transform: scale(1.1);
-          transition: 0.5s;
+          transform: scale(1.25);
+          transition: 0.25s;
         }
 
         &:active {
           border: 5px solid rgba(var(--accent-rgb), 0.5);
-          transform: scale(0.95);
+          transform: scale(1.1);
           transition: 0.5s;
         }
       }
@@ -102,7 +103,6 @@ header {
         background-position: top;
         border-radius: 100%;
         filter: blur(8px) brightness(1.25) saturate(1.5);
-        animation: 10s ProfilePictureShadowTransition infinite linear;
       }
 
       @media (max-width: 640px) {
@@ -194,20 +194,5 @@ header {
         }
       }
     }
-  }
-}
-
-@keyframes ProfilePictureShadowTransition {
-  0% {
-    filter: blur(8px) brightness(1.25) saturate(1.5) hue-rotate(0deg);
-    transform: rotate(0deg);
-  }
-  50% {
-    filter: blur(16px) brightness(1.5) saturate(2) hue-rotate(360deg);
-    transform: rotate(180deg);
-  }
-  100% {
-    filter: blur(8px) brightness(1.25) saturate(1.5) hue-rotate(0deg);
-    transform: rotate(360deg);
   }
 }
