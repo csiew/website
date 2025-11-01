@@ -3,30 +3,27 @@ header {
   width: 100%;
   margin: 0;
   top: 0;
-  padding: 1rem;
+  padding: 0;
   position: sticky;
   display: inline-flex;
   flex-flow: row;
   align-items: center;
   justify-content: space-between;
   gap: 0;
+  background: rgba(var(--bg-rgb), 0.75);
+  backdrop-filter: blur(4px);
+  border-bottom: 1px solid var(--border-color);
 
   .header-content {
-    max-width: 768px;
-    width: min-content;
+    max-width: 640px;
+    width: 100%;
     margin: 0 auto;
-    padding: 0.5rem;
+    padding: 0.5rem 0rem;
     display: inline-flex;
     flex-flow: row;
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    background: rgba(var(--bg-rgb), 0.75);
-    backdrop-filter: blur(4px);
-    box-shadow: var(--3d-shadow);
-    border: 1px solid var(--border-color);
-    border-radius: 128px;
-    transition: var(--transition);
   }
 
   .site-title {
@@ -145,7 +142,7 @@ header {
         a {
           width: max-content;
           height: 100%;
-          padding: 0.5rem 1rem;
+          padding: 0.25rem 0.75rem;
           display: inline-flex;
           flex-flow: row;
           align-items: center;
@@ -159,15 +156,18 @@ header {
 
           &:hover {
             color: var(--fg);
-            background: var(--bg-secondary);
-            box-shadow: var(--3d-shadow);
+            background: rgba(230, 230, 230, 0.5);
             text-decoration: none;
           }
 
           &.active {
+            color: var(--fg);
+            background: rgba(200, 200, 200, 0.5);
+          }
+
+          &:active {
             color: var(--bg);
             background: var(--fg);
-            box-shadow: var(--3d-shadow);
           }
         }
       }

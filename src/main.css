@@ -1,16 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 :root {
   --system-font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  --body-font: Merriweather, var(--system-font);
-  --header-font: Merriweather, var(--system-font);
-  --monospace-font: 'Google Sans Code', monospace;
+  --body-font: Inter, var(--system-font);
+  --header-font: Inter, var(--system-font);
+  --monospace-font: 'Cascadia Code', monospace;
 
   --fg-rgb: 0, 0, 0;
   --fg-secondary-rgb: 100, 100, 100;
   --fg-highlight-rgb: 50, 50, 50;
   --bg-rgb: 255, 255, 255;
-  --bg-secondary-rgb: 235, 235, 235;
+  --bg-secondary-rgb: 245, 245, 245;
   --accent-rgb: 248, 208, 5;
   --accent-secondary-rgb: 228, 188, 5;
   --accent-border-rgb: 208, 178, 5;

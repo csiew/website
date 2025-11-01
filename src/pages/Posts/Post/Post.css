@@ -48,11 +48,7 @@ article.post {
   }
 
   .post-body {
-    padding: 2rem 1.5rem;
-    background: var(--bg);
-    box-shadow: var(--3d-shadow);
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius);
+    padding: 0;
 
     h1 {
       margin-block: 1.5rem 0.5rem;

@@ -3,18 +3,10 @@ import { Helmet } from "react-helmet-async";
 import "./Home.css";
 import homeMd from "./Home.md";
 import RenderMd from "../../components/util/RenderMd/RenderMd";
-import { CacheContextState } from "../../stores/cache";
-import { Link } from "wouter";
 import LinkGrid from "../../components/app/LinkGrid/LinkGrid";
 
 export default function Home() {
-  const cacheContext = React.useContext(CacheContextState);
   const [content, setContent] = React.useState<string>("");
-
-  const latestBlogPost = React.useMemo(
-    () => cacheContext.posts[0],
-    [cacheContext.posts]
-  );
 
   React.useEffect(() => {
     fetch(homeMd)
@@ -34,14 +26,6 @@ export default function Home() {
         <meta name="locale" property="og:locale" content="en_GB" />
       </Helmet>
       <div className="home">
-        <div className="latest">
-          <span className="section-title">Latest</span>
-          <span className="article-title">
-            <Link to={latestBlogPost ? `/posts/${latestBlogPost.slug}` : "/posts"}>
-              {latestBlogPost?.title}
-            </Link>
-          </span>
-        </div>
         <div className="home-intro">
           <RenderMd>{content}</RenderMd>
         </div>

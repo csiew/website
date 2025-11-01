@@ -17,7 +17,6 @@ section.feed-posts-list {
       margin: 0;
       padding: 1.75rem 1rem;
       background: rgba(var(--bg-rgb), 0.75);
-      box-shadow: var(--3d-shadow);
       border: 1px solid var(--border-color);
       border-radius: var(--border-radius);
 

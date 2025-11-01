@@ -1,5 +1,5 @@
 import React from "react";
-import { SiBluesky, SiGithub, SiInstagram, SiLinkedin, SiMastodon, SiPixelfed, SiSpotify, SiThreads } from "react-icons/si";
+import { SiBluesky, SiGithub, SiInstagram, SiLinkedin, SiMastodon, SiThreads } from "react-icons/si";
 import "./LinkGrid.css";
 
 const links = [
@@ -37,18 +37,6 @@ const links = [
     title: "Instagram",
     url: "https://instagram.com/clarence_siew",
     icon: <SiInstagram />,
-    newTab: true
-  },
-  {
-    title: "Pixelfed",
-    url: "https://pixelfed.social/i/web/profile/787269058851499264",
-    icon: <SiPixelfed />,
-    newTab: true
-  },
-  {
-    title: "Spotify",
-    url: "https://open.spotify.com/user/csiew",
-    icon: <SiSpotify />,
     newTab: true
   }
 ];

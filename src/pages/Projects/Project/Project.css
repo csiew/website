@@ -81,7 +81,6 @@ article {
     .project-body {
       padding: 1.5rem;
       background: var(--bg);
-      box-shadow: var(--3d-shadow);
       border: 1px solid var(--border-color);
       border-radius: var(--border-radius);
 
