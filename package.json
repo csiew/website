@@ -2,6 +2,9 @@
   "name": "website",
   "version": "11.0.0",
   "description": "",
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "scripts": {
     "dev": "astro dev",
     "build": "astro check && astro build",
