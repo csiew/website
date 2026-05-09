@@ -1,0 +1,54 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import LinkGrid from "../components/LinkGrid.astro";
+import { SITE, absoluteUrl } from "../lib/site";
+
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: SITE.name,
+    url: absoluteUrl("/"),
+    image: absoluteUrl("/profile.jpg"),
+    jobTitle: "Software Engineer",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Melbourne",
+      addressCountry: "AU"
+    },
+    sameAs: [
+      "https://linkedin.com/in/clarencesiew",
+      "https://github.com/csiew",
+      "https://mastodon.online/@csiew",
+      "https://bsky.app/profile/csiew.bsky.social",
+      "https://threads.net/@clarence_siew",
+      "https://instagram.com/clarence_siew"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: SITE.name,
+    url: absoluteUrl("/")
+  }
+];
+---
+
+<BaseLayout
+  title={SITE.name}
+  description={SITE.description}
+  pathname="/"
+  image="/profile.jpg"
+  imageAlt={SITE.name}
+  structuredData={structuredData}
+>
+  <div class="home">
+    <div class="home-intro">
+      <p>Hi there!</p>
+      <p>I'm Clarence.</p>
+      <p>I'm a software engineer based in Melbourne, Australia, though I originally hail from sunny Penang, Malaysia.</p>
+      <p>I started coding when I was 10 with Windows batch scripts, and now I build web apps and services both professionally and as a hobby.</p>
+    </div>
+    <LinkGrid />
+  </div>
+</BaseLayout>

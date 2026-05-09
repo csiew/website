@@ -1,0 +1,26 @@
+---
+const { pathname } = Astro.props;
+
+function isActive(path: string) {
+  if (path === "/") return pathname === "/";
+  return pathname === path || pathname.startsWith(`${path}/`);
+}
+---
+
+<header>
+  <div class="header-content">
+    <div class="site-title">
+      <a href="/" aria-label="Clarence Siew homepage">
+        <img src="/profile.jpg" alt="Clarence Siew" />
+      </a>
+    </div>
+    <nav aria-label="Primary navigation">
+      <ul>
+        <li><a href="/" class:list={{ active: isActive("/") }}>Home</a></li>
+        <li><a href="/feed" class:list={{ active: isActive("/feed") }}>Feed</a></li>
+        <li><a href="/posts" class:list={{ active: isActive("/posts") }}>Posts</a></li>
+        <li><a href="/projects" class:list={{ active: isActive("/projects") }}>Projects</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

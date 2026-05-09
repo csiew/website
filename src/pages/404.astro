@@ -1,0 +1,19 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { SITE } from "../lib/site";
+---
+
+<BaseLayout
+  title={`Not Found | ${SITE.name}`}
+  description="Page not found"
+  pathname="/404"
+  noindex
+>
+  <h2>Not Found</h2>
+  <img
+    src="/not-found.png"
+    alt="Page not found"
+    class="not-found"
+  />
+  <a href="/" class="button not-found-redirect">Back to homepage</a>
+</BaseLayout>

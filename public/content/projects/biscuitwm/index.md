@@ -1,1 +1,0 @@
-A minimalist X11 window manager for Linux/Unix systems written in Python. It's largely an experimental project. It's based on [TinyWM](https://github.com/mackstann/tinywm) and [xpywm](https://github.com/h-ohsaki/xpywm).

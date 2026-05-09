@@ -1,0 +1,91 @@
+---
+import { getCollection, render } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { SITE, absoluteUrl } from "../../lib/site";
+
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+  return projects.map((project) => ({
+    params: { slug: project.data.slug },
+    props: { project }
+  }));
+}
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+const pathname = `/projects/${project.data.slug}`;
+const duration = project.data.duration.start === project.data.duration.end
+  ? project.data.duration.start
+  : `${project.data.duration.start} - ${project.data.duration.end}`;
+const screenshots = project.data.assets?.screenshots ?? [];
+const firstScreenshot = screenshots[0]
+  ? `/content/projects/${project.data.slug}${screenshots[0]}`
+  : undefined;
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  name: project.data.title,
+  description: project.data.subtitle,
+  author: {
+    "@type": "Person",
+    name: SITE.author,
+    url: absoluteUrl("/")
+  },
+  url: absoluteUrl(pathname),
+  keywords: project.data.tags,
+  image: firstScreenshot ? absoluteUrl(firstScreenshot) : undefined
+};
+---
+
+<BaseLayout
+  title={`${project.data.title} | ${SITE.name}`}
+  description={project.data.subtitle}
+  pathname={pathname}
+  image={firstScreenshot}
+  imageAlt={`${project.data.title} screenshot`}
+  structuredData={structuredData}
+>
+  <article class="project">
+    <div class="project-header">
+      <h2>{project.data.title}</h2>
+      <p class="subtitle">{project.data.subtitle}</p>
+      <sub class="timestamp">{duration}</sub>
+      <div class="project-links">
+        <ul>
+          <li>
+            <a
+              href={project.data.links.website ?? "#"}
+              target="_blank"
+              rel="noreferrer"
+              class:list={["button", { disabled: !project.data.links.website }]}
+            >
+              Website
+            </a>
+          </li>
+          <li>
+            <a
+              href={project.data.links.repository ?? "#"}
+              target="_blank"
+              rel="noreferrer"
+              class:list={["button", { disabled: !project.data.links.repository }]}
+            >
+              Repository
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="project-body">
+      {screenshots.length > 0 && (
+        <div class="project-screenshots">
+          {screenshots.map((screenshot: string) => (
+            <a href={`/content/projects/${project.data.slug}${screenshot}`}>
+              <img src={`/content/projects/${project.data.slug}${screenshot}`} alt={`${project.data.title} screenshot`} />
+            </a>
+          ))}
+        </div>
+      )}
+      <Content />
+    </div>
+  </article>
+</BaseLayout>

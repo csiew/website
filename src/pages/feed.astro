@@ -1,0 +1,14 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Feed from "../components/Feed";
+import { SITE } from "../lib/site";
+---
+
+<BaseLayout
+  title={`Feed | ${SITE.name}`}
+  description="Clarence's Mastodon feed"
+  pathname="/feed"
+>
+  <h2>Feed</h2>
+  <Feed client:load />
+</BaseLayout>

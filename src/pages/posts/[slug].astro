@@ -1,0 +1,58 @@
+---
+import { getCollection, render } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { SITE, absoluteUrl, formatDate } from "../../lib/site";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("posts");
+  return posts.map((post) => ({
+    params: { slug: post.data.slug },
+    props: { post }
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const title = `${post.data.title} | ${SITE.name}`;
+const pathname = `/posts/${post.data.slug}`;
+const keywords = post.data.keywords?.split(",").map((keyword: string) => keyword.trim()).filter(Boolean) ?? [];
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: post.data.title,
+  description: post.data.subtitle,
+  datePublished: post.data.publishedAt.toISOString(),
+  author: {
+    "@type": "Person",
+    name: SITE.author,
+    url: absoluteUrl("/")
+  },
+  url: absoluteUrl(pathname),
+  keywords,
+  image: post.data.image ? absoluteUrl(post.data.image) : undefined
+};
+---
+
+<BaseLayout
+  title={title}
+  description={post.data.subtitle}
+  pathname={pathname}
+  type="article"
+  image={post.data.image}
+  imageAlt={post.data.imageAlt}
+  publishedAt={post.data.publishedAt}
+  keywords={post.data.keywords}
+  noindex={post.data.private}
+  structuredData={structuredData}
+>
+  <article class="post">
+    <div class="post-header">
+      <h2>{post.data.title}</h2>
+      <p class="subtitle">{post.data.subtitle}</p>
+      <sub class="timestamp">{formatDate(post.data.publishedAt)}</sub>
+    </div>
+    <div class="post-body">
+      <Content />
+    </div>
+  </article>
+</BaseLayout>

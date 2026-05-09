@@ -1,0 +1,92 @@
+---
+import NavBar from "../components/NavBar.astro";
+import { SITE, absoluteAssetUrl, absoluteUrl } from "../lib/site";
+import "../styles/main.css";
+import "../styles/navbar.css";
+import "../styles/link-grid.css";
+import "../styles/link-list.css";
+import "../styles/home.css";
+import "../styles/post.css";
+import "../styles/project.css";
+import "../styles/feed.css";
+import "../styles/not-found.css";
+
+type Props = {
+  title: string;
+  description: string;
+  pathname: string;
+  type?: "website" | "article";
+  image?: string;
+  imageAlt?: string;
+  publishedAt?: Date | string;
+  keywords?: string;
+  noindex?: boolean;
+  structuredData?: Record<string, unknown> | Record<string, unknown>[];
+};
+
+const {
+  title,
+  description,
+  pathname,
+  type = "website",
+  image,
+  imageAlt,
+  publishedAt,
+  keywords,
+  noindex = false,
+  structuredData
+} = Astro.props;
+
+const canonical = absoluteUrl(pathname);
+const imageUrl = absoluteAssetUrl(image);
+const pageTitle = title.includes(SITE.name) ? title : `${title} | ${SITE.name}`;
+const jsonLd = structuredData
+  ? Array.isArray(structuredData) ? structuredData : [structuredData]
+  : [];
+---
+
+<!DOCTYPE html>
+<html lang={SITE.language}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    {keywords && <meta name="keywords" content={keywords} />}
+    <meta name="author" content={SITE.author} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/jpeg" href="/profile.jpg" />
+    <link rel="alternate" type="application/rss+xml" title={`${SITE.name} blog RSS`} href={absoluteUrl("/rss.xml")} />
+    <link rel="alternate" type="application/rss+xml" title={`${SITE.name} projects RSS`} href={absoluteUrl("/projects.xml")} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content={SITE.name} />
+    <meta property="og:locale" content={SITE.locale} />
+    <meta property="og:type" content={type} />
+    {imageUrl && <meta property="og:image" content={imageUrl} />}
+    {imageAlt && <meta property="og:image:alt" content={imageAlt} />}
+    {publishedAt && <meta property="article:published_time" content={new Date(publishedAt).toISOString()} />}
+    {type === "article" && <meta property="article:author" content={SITE.author} />}
+    <meta name="twitter:card" content={imageUrl ? "summary_large_image" : "summary"} />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    {imageUrl && <meta name="twitter:image" content={imageUrl} />}
+    {imageAlt && <meta name="twitter:image:alt" content={imageAlt} />}
+    {jsonLd.map((data) => (
+      <script is:inline type="application/ld+json" set:html={JSON.stringify(data)} />
+    ))}
+  </head>
+  <body>
+    <div id="root">
+      <NavBar pathname={pathname} />
+      <main>
+        <slot />
+      </main>
+      <footer>
+        &copy; {new Date().getFullYear()} {SITE.name}
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { SITE } from "../../lib/site";
+
+const projects = (await getCollection("projects"))
+  .sort((a, b) => b.data.duration.start.localeCompare(a.data.duration.start));
+
+function durationLabel(project: typeof projects[number]) {
+  const { start, end } = project.data.duration;
+  return start === end ? start : `${start} - ${end}`;
+}
+---
+
+<BaseLayout
+  title={`Projects | ${SITE.name}`}
+  description={`Projects by ${SITE.name}`}
+  pathname="/projects"
+>
+  <h2>Projects</h2>
+  <section class="link-list">
+    {projects.map((project) => (
+      <article>
+        <h3><a href={`/projects/${project.data.slug}`}>{project.data.title}</a></h3>
+        <p class="subtitle">{project.data.subtitle}</p>
+        <sub class="timestamp">{durationLabel(project)}</sub>
+      </article>
+    ))}
+  </section>
+</BaseLayout>
