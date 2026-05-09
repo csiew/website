@@ -4,6 +4,7 @@ subtitle: "An experiment in static site generators"
 slug: "new-blog-site-generator"
 publishedAt: "2020-10-19T06:22:06.000Z"
 keywords: "python, static site generator, scripting, boilerplate, web dev"
+tags: ["python","ssg","scripting","boilerplate","webdev"]
 ---
 Welcome to my new blog! I haven't imported my [old blog posts](http://csiew.github.io/blog) to this new one. This new blog uses a successor to my static site generator script [md2magic](http://github.com/csiew/md2magic) to help with importing and indexing posts.
 

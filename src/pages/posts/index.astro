@@ -1,7 +1,8 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { SITE, formatDate } from "../../lib/site";
+import PostList from "../../components/PostList.astro";
+import { SITE } from "../../lib/site";
 
 const posts = (await getCollection("posts"))
   .filter((post) => !post.data.private)
@@ -13,14 +14,6 @@ const posts = (await getCollection("posts"))
   description={`Blog posts by ${SITE.name}`}
   pathname="/posts"
 >
-  <h2>Posts</h2>
-  <section class="link-list">
-    {posts.map((post) => (
-      <article>
-        <h3><a href={`/posts/${post.data.slug}`}>{post.data.title}</a></h3>
-        <p class="subtitle">{post.data.subtitle}</p>
-        <sub class="timestamp">{formatDate(post.data.publishedAt)}</sub>
-      </article>
-    ))}
-  </section>
+  <h2>Writing</h2>
+  <PostList posts={posts} />
 </BaseLayout>

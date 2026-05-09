@@ -1,7 +1,21 @@
 ---
+import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import LinkGrid from "../components/LinkGrid.astro";
-import { SITE, absoluteUrl } from "../lib/site";
+import { SITE, absoluteUrl, formatDate } from "../lib/site";
+
+const projects = (await getCollection("projects"))
+  .sort((a, b) => b.data.duration.start.localeCompare(a.data.duration.start))
+  .slice(0, 4);
+
+const posts = (await getCollection("posts"))
+  .filter((post) => !post.data.private)
+  .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime())
+  .slice(0, 3);
+
+function durationLabel(project: typeof projects[number]) {
+  const { start, end } = project.data.duration;
+  return start === end ? start : `${start} - ${end}`;
+}
 
 const structuredData = [
   {
@@ -43,12 +57,42 @@ const structuredData = [
   structuredData={structuredData}
 >
   <div class="home">
-    <div class="home-intro">
-      <p>Hi there!</p>
-      <p>I'm Clarence.</p>
-      <p>I'm a software engineer based in Melbourne, Australia, though I originally hail from sunny Penang, Malaysia.</p>
-      <p>I started coding when I was 10 with Windows batch scripts, and now I build web apps and services both professionally and as a hobby.</p>
-    </div>
-    <LinkGrid />
+    <section class="home-hero" aria-labelledby="home-title">
+      <h1 id="home-title">Clarence Siew</h1>
+      <p class="lede">Software engineer in Melbourne building web apps, browser tools, and services.</p>
+      <p>Originally from Penang, Malaysia. Started with Windows batch scripts at 10; still happiest turning small technical obsessions into useful software.</p>
+    </section>
+
+    <section class="home-section" aria-labelledby="selected-projects">
+      <div class="section-heading">
+        <h2 id="selected-projects">Selected projects</h2>
+        <a href="/projects">All projects</a>
+      </div>
+      <div class="index-list">
+        {projects.map((project) => (
+          <article>
+            <a href={`/projects/${project.data.slug}`}>{project.data.title}</a>
+            <p>{project.data.subtitle}</p>
+            <span>{durationLabel(project)}</span>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="home-section" aria-labelledby="recent-writing">
+      <div class="section-heading">
+        <h2 id="recent-writing">Recent writing</h2>
+        <a href="/posts">All writing</a>
+      </div>
+      <div class="index-list">
+        {posts.map((post) => (
+          <article>
+            <a href={`/posts/${post.data.slug}`}>{post.data.title}</a>
+            <p>{post.data.subtitle}</p>
+            <span>{formatDate(post.data.publishedAt)}</span>
+          </article>
+        ))}
+      </div>
+    </section>
   </div>
 </BaseLayout>

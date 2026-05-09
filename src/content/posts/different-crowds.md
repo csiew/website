@@ -5,6 +5,7 @@ slug: "different-crowds"
 publishedAt: "2023-03-31T02:20:00.000Z"
 private: true
 keywords: "social media, hobbies"
+tags: ["social-media","personal"]
 ---
 > This post was meant to be a small musing on my new `/now` page. But I just kept writing, and writing, and writing as more thoughts poured out of my head.
 

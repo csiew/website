@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import TagList from "../../components/TagList.astro";
 import { SITE, absoluteUrl, formatDate } from "../../lib/site";
 
 export async function getStaticPaths() {
@@ -16,6 +17,7 @@ const { Content } = await render(post);
 const title = `${post.data.title} | ${SITE.name}`;
 const pathname = `/posts/${post.data.slug}`;
 const keywords = post.data.keywords?.split(",").map((keyword: string) => keyword.trim()).filter(Boolean) ?? [];
+const structuredKeywords = Array.from(new Set([...post.data.tags, ...keywords]));
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
@@ -28,7 +30,7 @@ const structuredData = {
     url: absoluteUrl("/")
   },
   url: absoluteUrl(pathname),
-  keywords,
+  keywords: structuredKeywords,
   image: post.data.image ? absoluteUrl(post.data.image) : undefined
 };
 ---
@@ -50,6 +52,7 @@ const structuredData = {
       <h2>{post.data.title}</h2>
       <p class="subtitle">{post.data.subtitle}</p>
       <sub class="timestamp">{formatDate(post.data.publishedAt)}</sub>
+      <TagList tags={post.data.tags} ariaLabel={`${post.data.title} tags`} />
     </div>
     <div class="post-body">
       <Content />

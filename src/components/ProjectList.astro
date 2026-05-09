@@ -1,0 +1,29 @@
+---
+import type { CollectionEntry } from "astro:content";
+import TagList from "./TagList.astro";
+
+type Project = CollectionEntry<"projects">;
+
+type Props = {
+  projects: Project[];
+};
+
+const { projects } = Astro.props;
+
+function durationLabel(project: Project) {
+  const { start, end } = project.data.duration;
+  return start === end ? start : `${start} - ${end}`;
+}
+---
+
+<section class="link-list">
+  {projects.map((project) => (
+    <article>
+      <h3><a href={`/projects/${project.data.slug}`}>{project.data.title}</a></h3>
+      <p class="subtitle">{project.data.subtitle}</p>
+      <sub class="timestamp">{durationLabel(project)}</sub>
+      <TagList tags={project.data.tags} ariaLabel={`${project.data.title} tags`} limit={5} />
+    </article>
+  ))}
+</section>
+

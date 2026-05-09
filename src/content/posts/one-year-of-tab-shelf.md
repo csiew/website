@@ -4,6 +4,7 @@ subtitle: "On gratitude, an acquisition offer, and going somewhat viral"
 slug: "one-year-of-tab-shelf"
 publishedAt: "2024-06-10T07:30:41.687Z"
 keywords: "tab shelf, vertical tabs, tab manager, google chrome, chrome, chromium, microsoft edge, extension, browser extension, node, nodejs, react, reactjs, vite, web dev, anniversary, acquisition, linkedin"
+tags: ["tab-shelf","chrome","extension","node","react","webdev"]
 image: "https://www.clarencesiew.com/tab-shelf-promo.png"
 imageAlt: "Tab Shelf promotional card"
 ---

@@ -2,7 +2,7 @@
 title: "BiscuitWM"
 subtitle: "Experimental window manager based on the Python version of TinyWM"
 slug: "biscuitwm"
-tags: ["experimental","python","windowmanager","linux","x11"]
+tags: ["experimental","python","window-manager","linux","x11"]
 stack: ["Python"]
 status: "hiatus"
 duration: {"end":"2021","start":"2020"}

@@ -2,33 +2,27 @@
 const links = [
   {
     title: "LinkedIn",
-    url: "https://linkedin.com/in/clarencesiew",
-    icon: '<path d="M12 12h.01" /><path d="M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" /><path d="M22 13a18.15 18.15 0 0 1-20 0" /><rect width="20" height="14" x="2" y="6" rx="2" />'
+    url: "https://linkedin.com/in/clarencesiew"
   },
   {
     title: "GitHub",
-    url: "https://github.com/csiew",
-    icon: '<path d="M15 6a9 9 0 0 0-9 9V3" /><circle cx="18" cy="6" r="3" /><circle cx="6" cy="18" r="3" />'
+    url: "https://github.com/csiew"
   },
   {
     title: "Mastodon",
-    url: "https://mastodon.online/@csiew",
-    icon: '<path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" />'
+    url: "https://mastodon.online/@csiew"
   },
   {
     title: "Bluesky",
-    url: "https://bsky.app/profile/csiew.bsky.social",
-    icon: '<path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />'
+    url: "https://bsky.app/profile/csiew.bsky.social"
   },
   {
     title: "Threads",
-    url: "https://threads.net/@clarence_siew",
-    icon: '<circle cx="12" cy="12" r="4" /><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8" />'
+    url: "https://threads.net/@clarence_siew"
   },
   {
     title: "Instagram",
-    url: "https://instagram.com/clarence_siew",
-    icon: '<path d="M13.997 4a2 2 0 0 1 1.76 1.05l.486.9A2 2 0 0 0 18.003 7H20a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1.997a2 2 0 0 0 1.759-1.048l.489-.904A2 2 0 0 1 10.004 4z" /><circle cx="12" cy="13" r="3" />'
+    url: "https://instagram.com/clarence_siew"
   }
 ];
 ---
@@ -38,17 +32,6 @@ const links = [
     {links.map((link) => (
       <li>
         <a href={link.url} target="_blank" rel="noreferrer">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            aria-hidden="true"
-            set:html={link.icon}
-          />
           <span>{link.title}</span>
         </a>
       </li>

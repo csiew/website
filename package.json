@@ -18,6 +18,7 @@
     "@astrojs/react": "^5.0.4",
     "@astrojs/rss": "^4.0.18",
     "@astrojs/sitemap": "^3.7.2",
+    "@lucide/astro": "^1.14.0",
     "astro": "^6.3.1",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",

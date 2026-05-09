@@ -50,6 +50,63 @@ const jsonLd = structuredData
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script is:inline>
+      (() => {
+        const modes = new Set(["light", "dark", "auto"]);
+        const root = document.documentElement;
+        const colorSchemeQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+        function resolveTheme(preference) {
+          if (preference === "dark" || (preference === "auto" && colorSchemeQuery.matches)) {
+            return "dark";
+          }
+
+          return "light";
+        }
+
+        function applyThemePreference(preference) {
+          const nextPreference = modes.has(preference) ? preference : "auto";
+
+          root.dataset.theme = resolveTheme(nextPreference);
+          root.dataset.themePreference = nextPreference;
+
+          return nextPreference;
+        }
+
+        function readStoredPreference() {
+          try {
+            return localStorage.getItem("theme");
+          } catch {
+            return null;
+          }
+        }
+
+        window.setThemePreference = (preference) => {
+          const nextPreference = applyThemePreference(preference);
+
+          try {
+            localStorage.setItem("theme", nextPreference);
+          } catch {
+            // Ignore storage failures so the selector still updates the current page.
+          }
+
+          window.dispatchEvent(new CustomEvent("themechange", {
+            detail: {
+              preference: nextPreference,
+              theme: root.dataset.theme
+            }
+          }));
+        };
+
+        applyThemePreference(readStoredPreference());
+
+        colorSchemeQuery.addEventListener("change", () => {
+          if (root.dataset.themePreference === "auto") {
+            applyThemePreference("auto");
+          }
+        });
+      })();
+    </script>
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
     {keywords && <meta name="keywords" content={keywords} />}

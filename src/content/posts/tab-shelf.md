@@ -4,6 +4,7 @@ subtitle: "Announcing a vertical tab management extension for Chrome/Chromium"
 slug: "tab-shelf"
 publishedAt: "2023-06-17T07:00:00.000Z"
 keywords: "tab shelf, vertical tabs, tab manager, google chrome, chrome, chromium, microsoft edge, extension, browser extension, node, nodejs, react, reactjs, vite, web dev"
+tags: ["tab-shelf","chrome","extension","node","react","webdev"]
 ---
 On 13 June 2023, I released [Tab Shelf](https://tabshelf.clarencesiew.com/) to the world. It's a Google Chrome extension that lets you view and manage your tabs from the new-ish side panel.
 

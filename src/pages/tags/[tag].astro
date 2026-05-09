@@ -1,0 +1,52 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProjectList from "../../components/ProjectList.astro";
+import PostList from "../../components/PostList.astro";
+import { SITE } from "../../lib/site";
+import { normaliseTag, tagLabel, uniqueTags } from "../../lib/tags";
+
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+  const posts = (await getCollection("posts")).filter((post) => !post.data.private);
+  const tags = uniqueTags([
+    ...projects.flatMap((project) => project.data.tags),
+    ...posts.flatMap((post) => post.data.tags)
+  ]);
+
+  return tags.map((tag) => ({
+    params: { tag },
+    props: { tag }
+  }));
+}
+
+const { tag } = Astro.props;
+const label = tagLabel(tag);
+const projects = (await getCollection("projects"))
+  .filter((project) => project.data.tags.some((projectTag: string) => normaliseTag(projectTag) === tag))
+  .sort((a, b) => b.data.duration.start.localeCompare(a.data.duration.start));
+const posts = (await getCollection("posts"))
+  .filter((post) => !post.data.private)
+  .filter((post) => post.data.tags.some((postTag: string) => normaliseTag(postTag) === tag))
+  .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+---
+
+<BaseLayout
+  title={`#${label} | ${SITE.name}`}
+  description={`Projects and writing tagged ${label} by ${SITE.name}`}
+  pathname={`/tags/${tag}`}
+>
+  <h2>#{label}</h2>
+  {projects.length > 0 && (
+    <>
+      <h3 class="section-label">Projects</h3>
+      <ProjectList projects={projects} />
+    </>
+  )}
+  {posts.length > 0 && (
+    <>
+      <h3 class="section-label">Writing</h3>
+      <PostList posts={posts} />
+    </>
+  )}
+</BaseLayout>

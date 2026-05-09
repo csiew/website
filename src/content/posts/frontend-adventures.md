@@ -4,6 +4,7 @@ subtitle: "A not-so-technical chronical of the frontend shenanigans I've been up
 slug: "frontend-adventures"
 publishedAt: "2023-01-04T14:30:00.000Z"
 keywords: "react, reactjs, vite, next, nextjs, vue, vuejs, svelte, sveltekit, css, static site generator, scripting, frontend, web dev"
+tags: ["frontend","webdev","javascript","react","vuejs","svelte","sveltekit","nextjs","ssg"]
 ---
 This post was supposed to be a short foreword to _another_ post about software architecture to briefly chronicle my adventures in the world of frontend web development, from the beginning to the present. But alas, I got a little too excited and ended up writing up something a far too long for a foreword and a little too meandering for a proper post.
 

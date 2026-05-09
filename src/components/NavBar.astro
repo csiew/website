@@ -1,10 +1,49 @@
 ---
+import {
+  BriefcaseBusiness,
+  Camera,
+  Cloud,
+  Code,
+  FolderKanban,
+  House,
+  MessageCircle,
+  MessagesSquare,
+  Monitor,
+  Moon,
+  PencilLine,
+  Rss,
+  Sun
+} from "@lucide/astro";
+import { SITE } from "../lib/site";
+
 const { pathname } = Astro.props;
 
 function isActive(path: string) {
   if (path === "/") return pathname === "/";
   return pathname === path || pathname.startsWith(`${path}/`);
 }
+
+const navLinks = [
+  { title: "Index", url: "/", icon: House },
+  { title: "Feed", url: "/feed", icon: Rss },
+  { title: "Writing", url: "/posts", icon: PencilLine },
+  { title: "Projects", url: "/projects", icon: FolderKanban }
+];
+
+const externalLinks = [
+  { title: "LinkedIn", url: "https://linkedin.com/in/clarencesiew", icon: BriefcaseBusiness },
+  { title: "GitHub", url: "https://github.com/csiew", icon: Code },
+  { title: "Mastodon", url: "https://mastodon.online/@csiew", icon: MessageCircle },
+  { title: "Bluesky", url: "https://bsky.app/profile/csiew.bsky.social", icon: Cloud },
+  { title: "Threads", url: "https://threads.net/@clarence_siew", icon: MessagesSquare },
+  { title: "Instagram", url: "https://instagram.com/clarence_siew", icon: Camera }
+];
+
+const themeOptions = [
+  { value: "auto", label: "Auto", icon: Monitor },
+  { value: "light", label: "Light", icon: Sun },
+  { value: "dark", label: "Dark", icon: Moon }
+];
 ---
 
 <header>
@@ -12,15 +51,109 @@ function isActive(path: string) {
     <div class="site-title">
       <a href="/" aria-label="Clarence Siew homepage">
         <img src="/profile.jpg" alt="Clarence Siew" />
+        <span>
+          <strong>{SITE.name}</strong>
+          <small>Software engineer</small>
+        </span>
       </a>
     </div>
     <nav aria-label="Primary navigation">
       <ul>
-        <li><a href="/" class:list={{ active: isActive("/") }}>Home</a></li>
-        <li><a href="/feed" class:list={{ active: isActive("/feed") }}>Feed</a></li>
-        <li><a href="/posts" class:list={{ active: isActive("/posts") }}>Posts</a></li>
-        <li><a href="/projects" class:list={{ active: isActive("/projects") }}>Projects</a></li>
+        {navLinks.map((link) => {
+          const Icon = link.icon;
+
+          return (
+            <li>
+              <a href={link.url} class:list={{ active: isActive(link.url) }}>
+                <Icon aria-hidden="true" size={16} stroke-width={2} />
+                <span>{link.title}</span>
+              </a>
+            </li>
+          );
+        })}
       </ul>
     </nav>
+    <section class="nav-elsewhere" aria-labelledby="nav-elsewhere-title">
+      <h2 id="nav-elsewhere-title">Elsewhere</h2>
+      <ul>
+        {externalLinks.map((link) => {
+          const Icon = link.icon;
+
+          return (
+            <li>
+              <a href={link.url} target="_blank" rel="noreferrer">
+                <Icon aria-hidden="true" size={15} stroke-width={2} />
+                <span>{link.title}</span>
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+    </section>
+    <div class="theme-select">
+      <label for="theme-select">Theme</label>
+      <select id="theme-select" name="theme" data-theme-select>
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+      </select>
+      <div class="theme-pill-group" role="group" aria-label="Theme">
+        {themeOptions.map((option) => {
+          const Icon = option.icon;
+
+          return (
+            <button
+              type="button"
+              class="theme-pill"
+              value={option.value}
+              aria-label={`${option.label} theme`}
+              aria-pressed={option.value === "auto" ? "true" : "false"}
+              title={option.label}
+              data-theme-option
+            >
+              <Icon aria-hidden="true" size={16} stroke-width={2} />
+            </button>
+          );
+        })}
+      </div>
+    </div>
   </div>
 </header>
+
+<script is:inline>
+  (() => {
+    const select = document.querySelector("[data-theme-select]");
+    const options = Array.from(document.querySelectorAll("[data-theme-option]"));
+
+    if (!(select instanceof HTMLSelectElement) || !options.every((option) => option instanceof HTMLButtonElement)) {
+      return;
+    }
+
+    function syncSelect() {
+      const preference = document.documentElement.dataset.themePreference ?? "auto";
+
+      select.value = preference;
+      options.forEach((option) => {
+        option.setAttribute("aria-pressed", option.value === preference ? "true" : "false");
+      });
+    }
+
+    syncSelect();
+
+    select.addEventListener("change", () => {
+      if (typeof window.setThemePreference === "function") {
+        window.setThemePreference(select.value);
+      }
+    });
+
+    options.forEach((option) => {
+      option.addEventListener("click", () => {
+        if (typeof window.setThemePreference === "function") {
+          window.setThemePreference(option.value);
+        }
+      });
+    });
+
+    window.addEventListener("themechange", syncSelect);
+  })();
+</script>

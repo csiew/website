@@ -1,15 +1,14 @@
 img.not-found {
-  width: 240px;
-  height: 240px;
-  margin: 2rem auto;
-  position: relative;
-  display: inline-block;
-  border-radius: 100%;
+  width: 180px;
+  height: 180px;
+  margin: 2rem 0;
+  display: block;
+  border-radius: 50%;
+  filter: grayscale(0.1);
   user-select: none;
   -webkit-user-drag: none;
 }
 
 .button.not-found-redirect {
-  margin: 2rem auto;
-  position: relative;
+  margin-top: 1rem;
 }

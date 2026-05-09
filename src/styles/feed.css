@@ -1,75 +1,71 @@
 section.feed-posts-list {
   width: 100%;
-
-  ul {
-    list-style: none;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    display: inline-flex;
-    flex-flow: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 1.5rem;
-
-    li {
-      width: 100%;
-      margin: 0;
-      padding: 1.75rem 1rem;
-      background: rgba(var(--bg-rgb), 0.75);
-      border: 1px solid var(--border-color);
-      border-radius: var(--border-radius);
-
-      a {
-        line-break: anywhere;
-      }
-
-      sub.timestamp {
-        display: inline-block;
-
-        & a {
-          padding: 0.25rem 0.5rem;
-          color: var(--fg-secondary);
-          background: var(--bg-secondary);
-          border: 1px solid var(--fg-secondary);
-          border-radius: 64px;
-          font-weight: normal;
-          text-decoration: none;
-          transition: 0.5s;
-
-          &:hover {
-            color: var(--fg);
-            box-shadow: var(--3d-shadow);
-            border: 1px solid var(--border-color);
-            transition: 0.5s;
-          }
-        }
-      }
-
-      .carousel {
-        padding-block: 1rem;
-
-        .image-group {
-          img {
-            width: 100%;
-          }
-
-          span {
-            margin: 0;
-            padding: 0;
-            display: inline-block;
-            color: var(--fg-secondary);
-            font-size: 0.75rem;
-            font-style: italic;
-          }
-        }
-      }
-    }
-  }
+  margin-top: 1rem;
+  border-top: 1px solid var(--border-color);
 }
 
-@media (max-width: 640px) {
-  .carousel .image-group img {
-    max-width: 320px;
-  }
+section.feed-posts-list ul {
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+section.feed-posts-list li {
+  width: 100%;
+  margin: 0;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+section.feed-posts-list li > div:first-child {
+  color: var(--fg);
+}
+
+section.feed-posts-list p {
+  margin: 0 0 0.75rem;
+}
+
+section.feed-posts-list a {
+  overflow-wrap: anywhere;
+}
+
+section.feed-posts-list sub.timestamp {
+  display: inline-block;
+  margin-top: 0.75rem;
+  color: var(--fg-secondary);
+  font-size: 0.84rem;
+}
+
+section.feed-posts-list sub.timestamp a {
+  color: var(--fg-secondary);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+section.feed-posts-list sub.timestamp a:hover {
+  color: var(--accent);
+}
+
+.carousel {
+  margin-top: 1rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.image-group img {
+  width: 100%;
+  display: block;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+}
+
+.image-group span {
+  margin-top: 0.45rem;
+  display: inline-block;
+  color: var(--fg-secondary);
+  font-size: 0.82rem;
+  font-style: italic;
 }

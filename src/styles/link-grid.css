@@ -1,78 +1,29 @@
 .link-grid {
   width: 100%;
-  margin: 0;
-  padding: 0;
-
-  ul {
-    list-style: none;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    display: inline-grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.5rem;
-
-    li {
-      width: 100%;
-      margin: 0;
-      padding: 0;
-
-      a {
-        width: 100%;
-        margin: 0;
-        padding: 1rem;
-        display: inline-flex;
-        flex-flow: column;
-        align-items: center;
-        justify-content: center;
-        gap: 1rem;
-        color: var(--fg);
-        background: none;
-        border-radius: var(--border-radius);
-        text-decoration: none;
-        transition: var(--transition);
-
-        span {
-          font-size: 90%;
-          line-height: 1;
-        }
-
-        svg {
-          width: 36px;
-          height: 36px;
-        }
-
-        &:hover {
-          background: rgba(230, 230, 230, 0.5);
-          text-decoration: none;
-        }
-
-        &:active {
-          color: var(--bg);
-          background: var(--fg);
-        }
-      }
-    }
-  }
 }
 
-@media (max-width: 640px) {
-  .link-grid {
-    ul {
-      grid-template-columns: repeat(3, 1fr);
+.link-grid ul {
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem 1.15rem;
+}
 
-      li {
-        a {
-          span {
-            font-size: 75%;
-          }
+.link-grid li {
+  margin: 0;
+  padding: 0;
+}
 
-          svg {
-            width: 28px;
-            height: 28px;
-          }
-        }
-      }
-    }
-  }
+.link-grid a {
+  color: var(--fg-secondary);
+  font-size: 0.98rem;
+  font-weight: 550;
+  text-decoration: none;
+}
+
+.link-grid a:hover {
+  color: var(--accent);
 }

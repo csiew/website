@@ -1,0 +1,27 @@
+---
+import { tagLabel, tagPath } from "../lib/tags";
+
+type Props = {
+  tags: string[];
+  ariaLabel: string;
+  className?: string;
+  limit?: number;
+};
+
+const {
+  tags,
+  ariaLabel,
+  className = "tag-list",
+  limit
+} = Astro.props;
+const visibleTags = typeof limit === "number" ? tags.slice(0, limit) : tags;
+---
+
+{visibleTags.length > 0 && (
+  <ul class={className} aria-label={ariaLabel}>
+    {visibleTags.map((tag) => (
+      <li><a href={tagPath(tag)}>{tagLabel(tag)}</a></li>
+    ))}
+  </ul>
+)}
+

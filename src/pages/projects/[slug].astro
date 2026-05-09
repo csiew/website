@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import TagList from "../../components/TagList.astro";
 import { SITE, absoluteUrl } from "../../lib/site";
 
 export async function getStaticPaths() {
@@ -21,6 +22,11 @@ const screenshots = project.data.assets?.screenshots ?? [];
 const firstScreenshot = screenshots[0]
   ? `/content/projects/${project.data.slug}${screenshots[0]}`
   : undefined;
+const stackLabels = project.data.stack;
+const projectLinks = [
+  { label: "Website", href: project.data.links.website },
+  { label: "Repository", href: project.data.links.repository }
+].filter((link) => link.href);
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "CreativeWork",
@@ -50,30 +56,25 @@ const structuredData = {
       <h2>{project.data.title}</h2>
       <p class="subtitle">{project.data.subtitle}</p>
       <sub class="timestamp">{duration}</sub>
-      <div class="project-links">
-        <ul>
-          <li>
-            <a
-              href={project.data.links.website ?? "#"}
-              target="_blank"
-              rel="noreferrer"
-              class:list={["button", { disabled: !project.data.links.website }]}
-            >
-              Website
-            </a>
-          </li>
-          <li>
-            <a
-              href={project.data.links.repository ?? "#"}
-              target="_blank"
-              rel="noreferrer"
-              class:list={["button", { disabled: !project.data.links.repository }]}
-            >
-              Repository
-            </a>
-          </li>
+      {stackLabels.length > 0 && (
+        <ul class="project-stack" aria-label={`${project.data.title} technology stack`}>
+          {stackLabels.map((item: string) => <li>{item}</li>)}
         </ul>
-      </div>
+      )}
+      <TagList tags={project.data.tags} ariaLabel={`${project.data.title} tags`} />
+      {projectLinks.length > 0 && (
+        <div class="project-links">
+          <ul>
+            {projectLinks.map((link) => (
+              <li>
+                <a href={link.href} target="_blank" rel="noreferrer" class="button">
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
     <div class="project-body">
       {screenshots.length > 0 && (

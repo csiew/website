@@ -4,6 +4,7 @@ subtitle: "An experiment in boilerplates and templates"
 slug: "building-boilerplate-factory"
 publishedAt: "2021-02-05T03:58:08.000Z"
 keywords: "python, static site generator, scripting, boilerplate, web dev"
+tags: ["python","ssg","scripting","boilerplate","webdev"]
 ---
 As of late, I've been attempting some web development projects. I found a common problem with starting several new projects across different frameworks and runtimes is that I've been constantly looking up their docs online or my own notes on setting new projects up.
 

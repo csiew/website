@@ -1,100 +1,122 @@
-article {
-  &.project {
-    .project-header {
-      width: 100%;
-      margin: 0;
-      margin-bottom: 2rem;
-      padding: 1rem 1.5rem;
-      display: inline-flex;
-      flex-flow: column;
-      align-items: center;
-      justify-content: center;
-      gap: 0.75rem;
+article.project {
+  width: 100%;
+}
 
-      h2 {
-        padding: 0rem;
-        color: var(--fg);
-        font-size: 4rem;
-        font-weight: 800;
-        text-align: center;
-        line-height: 1;
-        text-transform: none;
-      }
+article.project .project-header {
+  width: 100%;
+  margin: 0 0 2.5rem;
+  padding-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.85rem;
+  border-bottom: 1px solid var(--border-color);
+}
 
-      p.subtitle {
-        padding: 0;
-        color: var(--fg-secondary);
-        font-size: 1rem;
-        text-align: center;
-      }
+article.project .project-header h2 {
+  max-width: 12ch;
+  color: var(--fg);
+  font-size: clamp(2.6rem, 7vw, 5rem);
+  font-weight: 650;
+  line-height: 0.98;
+}
 
-      sub.timestamp {
-        color: var(--fg-secondary);
-      }
+article.project .project-header p.subtitle {
+  max-width: 34rem;
+  color: var(--fg-secondary);
+  font-size: clamp(1.2rem, 2.2vw, 1.65rem);
+  font-weight: 480;
+  line-height: 1.22;
+}
 
-      .project-links {
-        width: 100%;
-        margin-block: 1rem 0rem;
-        margin-inline: 0;
-        padding: 0;
+article.project .project-header sub.timestamp {
+  color: var(--fg-secondary);
+  font-size: 0.88rem;
+}
 
-        ul {
-          list-style: none;
-          width: 100%;
-          margin: 0;
-          padding: 0;
-          display: inline-flex;
-          flex-flow: row;
-          align-items: flex-start;
-          justify-content: flex-start;
-          gap: 0.5rem;
+.project-stack,
+.project-links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.8rem;
+}
 
-          li {
-            width: 100%;
-            margin: 0;
-            padding: 0;
+.project-stack li {
+  margin: 0;
+  padding: 0;
+  color: var(--fg-secondary);
+  font-size: 0.84rem;
+}
 
-            a.button {
-              width: 100%;
-              box-shadow: var(--3d-shadow);
-              border: 1px solid var(--border-color);
-            }
-          }
-        }
+.project-stack li + li::before {
+  content: "/";
+  margin-right: 0.8rem;
+  color: var(--accent-secondary);
+}
 
-        @media (max-width: 640px) {
-          ul {
-            flex-flow: column;
-            align-items: center;
-            justify-content: center;
-          }
-        }
-      }
+.project-links {
+  width: 100%;
+  margin-top: 0.3rem;
+}
 
-      @media (max-width: 640px) {
-        p.subtitle {
-          line-height: 1.5;
-        }
-      }
-    }
+.project-links li {
+  margin: 0;
+  padding: 0;
+}
 
-    .project-body {
-      padding: 1.5rem;
-      background: var(--bg);
-      border: 1px solid var(--border-color);
-      border-radius: var(--border-radius);
+.project-links a.button {
+  padding: 0;
+}
 
-      .project-screenshots {
-        margin-block: 0rem 1rem;
+article.project .project-body {
+  width: 100%;
+}
 
-        img {
-          max-width: 100%;
-          display: inline-block;
-          border: 1px solid var(--border-color);
-          border-radius: var(--border-radius);
-          box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-      }
-    }
+article.project .project-body > * + * {
+  margin-top: 1.1rem;
+}
+
+article.project .project-body h1,
+article.project .project-body h2,
+article.project .project-body h3,
+article.project .project-body h4 {
+  margin-top: 2.35rem;
+}
+
+article.project .project-body h3 {
+  font-size: clamp(1.45rem, 2vw, 1.8rem);
+}
+
+article.project .project-body h4 {
+  font-size: 1.18rem;
+}
+
+.project-screenshots {
+  width: 100%;
+  margin: 0 0 2rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.project-screenshots a {
+  display: block;
+}
+
+.project-screenshots img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  -webkit-user-drag: none;
+}
+
+@media (max-width: 640px) {
+  article.project .project-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
   }
 }
