@@ -1,26 +1,28 @@
 section.link-list {
   width: 100%;
-  border-top: 1px solid var(--border-color);
+  border-top: 1px solid rgba(var(--fg-rgb), 0.28);
 }
 
 section.link-list article {
   width: 100%;
   margin: 0;
-  padding: 1.35rem 0;
+  padding: 1.25rem 0;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr) minmax(9rem, auto);
   grid-template-areas:
     "title meta"
     "subtitle meta"
     "tags tags";
-  gap: 0.35rem 1.5rem;
-  border-bottom: 1px solid var(--border-color);
+  gap: 0.25rem 1.5rem;
+  border-bottom: 1px solid rgba(var(--fg-rgb), 0.16);
 }
 
 section.link-list h3 {
   grid-area: title;
   padding: 0;
-  font-size: clamp(1.35rem, 2.5vw, 1.85rem);
+  font-size: clamp(1.45rem, 2.8vw, 2.1rem);
+  font-weight: 500;
+  line-height: 1.05;
 }
 
 section.link-list h3 a {
@@ -37,14 +39,20 @@ section.link-list p.subtitle {
   padding: 0;
   color: var(--fg-secondary);
   font-size: 1rem;
+  line-height: 1.48;
 }
 
 section.link-list sub.timestamp {
   grid-area: meta;
   align-self: start;
   color: var(--fg-secondary);
-  font-size: 0.84rem;
+  font-family: var(--label-font);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
   line-height: 1.4;
+  text-align: right;
+  text-transform: uppercase;
   white-space: nowrap;
 }
 
@@ -55,19 +63,23 @@ section.link-list sub.timestamp {
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.35rem 0.65rem;
+  gap: 0.35rem 0.6rem;
 }
 
 .tag-list li {
   margin: 0;
   padding: 0;
   color: var(--fg-secondary);
-  font-size: 0.8rem;
+  font-family: var(--label-font);
+  font-size: 0.68rem;
+  font-weight: 650;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .tag-list li::before {
   content: "#";
-  color: var(--accent-secondary);
+  color: var(--accent);
 }
 
 .tag-list a {
@@ -84,9 +96,13 @@ section.link-list sub.timestamp {
 }
 
 .section-label {
-  margin: 2.5rem 0 0.8rem;
+  margin: 2.75rem 0 0.85rem;
   color: var(--fg-secondary);
-  font-size: 0.95rem;
+  font-family: var(--label-font);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 main > h2:first-child + .section-label {
@@ -104,6 +120,7 @@ main > h2:first-child + .section-label {
   }
 
   section.link-list sub.timestamp {
+    text-align: left;
     white-space: normal;
   }
 }

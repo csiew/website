@@ -6,6 +6,7 @@ import {
   Code,
   FolderKanban,
   House,
+  Menu,
   MessageCircle,
   MessagesSquare,
   Monitor,
@@ -24,7 +25,7 @@ function isActive(path: string) {
 }
 
 const navLinks = [
-  { title: "Index", url: "/", icon: House },
+  { title: "Home", url: "/", icon: House },
   { title: "Feed", url: "/feed", icon: Rss },
   { title: "Writing", url: "/posts", icon: PencilLine },
   { title: "Projects", url: "/projects", icon: FolderKanban }
@@ -48,6 +49,16 @@ const themeOptions = [
 
 <header>
   <div class="header-content">
+    <button
+      type="button"
+      class="nav-menu-toggle"
+      aria-label="Toggle navigation"
+      aria-controls="nav-menu-sections"
+      aria-expanded="false"
+      data-nav-menu-toggle
+    >
+      <Menu aria-hidden="true" size={18} stroke-width={2} />
+    </button>
     <div class="site-title">
       <a href="/" aria-label="Clarence Siew homepage">
         <img src="/profile.jpg" alt="Clarence Siew" />
@@ -57,64 +68,67 @@ const themeOptions = [
         </span>
       </a>
     </div>
-    <nav aria-label="Primary navigation">
-      <ul>
-        {navLinks.map((link) => {
-          const Icon = link.icon;
+    <div id="nav-menu-sections" class="nav-menu-sections" data-nav-menu-sections>
+      <nav aria-labelledby="nav-site-title">
+        <h2 id="nav-site-title">Site</h2>
+        <ul>
+          {navLinks.map((link) => {
+            const Icon = link.icon;
 
-          return (
-            <li>
-              <a href={link.url} class:list={{ active: isActive(link.url) }}>
+            return (
+              <li>
+                <a href={link.url} class:list={{ active: isActive(link.url) }} aria-label={link.title} title={link.title}>
+                  <Icon aria-hidden="true" size={16} stroke-width={2} />
+                  <span>{link.title}</span>
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
+      <section class="nav-elsewhere" aria-labelledby="nav-elsewhere-title">
+        <h2 id="nav-elsewhere-title">Elsewhere</h2>
+        <ul>
+          {externalLinks.map((link) => {
+            const Icon = link.icon;
+
+            return (
+              <li>
+                <a href={link.url} target="_blank" rel="noreferrer" aria-label={link.title} title={link.title}>
+                  <Icon aria-hidden="true" size={15} stroke-width={2} />
+                  <span>{link.title}</span>
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+      <div class="theme-select">
+        <label for="theme-select">Theme</label>
+        <select id="theme-select" name="theme" data-theme-select>
+          <option value="auto" selected>Auto</option>
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+        </select>
+        <div class="theme-pill-group" role="group" aria-label="Theme">
+          {themeOptions.map((option) => {
+            const Icon = option.icon;
+
+            return (
+              <button
+                type="button"
+                class="theme-pill"
+                value={option.value}
+                aria-label={`${option.label} theme`}
+                aria-pressed={option.value === "auto" ? "true" : "false"}
+                title={option.label}
+                data-theme-option
+              >
                 <Icon aria-hidden="true" size={16} stroke-width={2} />
-                <span>{link.title}</span>
-              </a>
-            </li>
-          );
-        })}
-      </ul>
-    </nav>
-    <section class="nav-elsewhere" aria-labelledby="nav-elsewhere-title">
-      <h2 id="nav-elsewhere-title">Elsewhere</h2>
-      <ul>
-        {externalLinks.map((link) => {
-          const Icon = link.icon;
-
-          return (
-            <li>
-              <a href={link.url} target="_blank" rel="noreferrer">
-                <Icon aria-hidden="true" size={15} stroke-width={2} />
-                <span>{link.title}</span>
-              </a>
-            </li>
-          );
-        })}
-      </ul>
-    </section>
-    <div class="theme-select">
-      <label for="theme-select">Theme</label>
-      <select id="theme-select" name="theme" data-theme-select>
-        <option value="auto" selected>Auto</option>
-        <option value="light">Light</option>
-        <option value="dark">Dark</option>
-      </select>
-      <div class="theme-pill-group" role="group" aria-label="Theme">
-        {themeOptions.map((option) => {
-          const Icon = option.icon;
-
-          return (
-            <button
-              type="button"
-              class="theme-pill"
-              value={option.value}
-              aria-label={`${option.label} theme`}
-              aria-pressed={option.value === "auto" ? "true" : "false"}
-              title={option.label}
-              data-theme-option
-            >
-              <Icon aria-hidden="true" size={16} stroke-width={2} />
-            </button>
-          );
-        })}
+              </button>
+            );
+          })}
+        </div>
       </div>
     </div>
   </div>
@@ -122,8 +136,27 @@ const themeOptions = [
 
 <script is:inline>
   (() => {
+    const menuToggle = document.querySelector("[data-nav-menu-toggle]");
+    const menuSections = document.querySelector("[data-nav-menu-sections]");
     const select = document.querySelector("[data-theme-select]");
     const options = Array.from(document.querySelectorAll("[data-theme-option]"));
+
+    if (menuToggle instanceof HTMLButtonElement && menuSections instanceof HTMLElement) {
+      function setMenuOpen(isOpen) {
+        menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        menuSections.classList.toggle("is-open", isOpen);
+      }
+
+      menuToggle.addEventListener("click", () => {
+        setMenuOpen(menuToggle.getAttribute("aria-expanded") !== "true");
+      });
+
+      menuSections.addEventListener("click", (event) => {
+        if (event.target instanceof Element && event.target.closest("a")) {
+          setMenuOpen(false);
+        }
+      });
+    }
 
     if (!(select instanceof HTMLSelectElement) || !options.every((option) => option instanceof HTMLButtonElement)) {
       return;

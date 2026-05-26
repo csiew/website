@@ -1,7 +1,7 @@
 section.feed-posts-list {
   width: 100%;
   margin-top: 1rem;
-  border-top: 1px solid var(--border-color);
+  border-top: 1px solid rgba(var(--fg-rgb), 0.28);
 }
 
 section.feed-posts-list ul {
@@ -16,8 +16,8 @@ section.feed-posts-list ul {
 section.feed-posts-list li {
   width: 100%;
   margin: 0;
-  padding: 1.5rem 0;
-  border-bottom: 1px solid var(--border-color);
+  padding: 1.35rem 0;
+  border-bottom: 1px solid rgba(var(--fg-rgb), 0.16);
 }
 
 section.feed-posts-list li > div:first-child {
@@ -36,12 +36,16 @@ section.feed-posts-list sub.timestamp {
   display: inline-block;
   margin-top: 0.75rem;
   color: var(--fg-secondary);
-  font-size: 0.84rem;
+  font-family: var(--label-font);
+  font-size: 0.7rem;
+  font-weight: 650;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 section.feed-posts-list sub.timestamp a {
   color: var(--fg-secondary);
-  font-weight: 500;
+  font-weight: 560;
   text-decoration: none;
 }
 
@@ -58,14 +62,13 @@ section.feed-posts-list sub.timestamp a:hover {
 .image-group img {
   width: 100%;
   display: block;
-  border: 1px solid var(--border-color);
-  border-radius: var(--border-radius);
+  border-radius: 0;
 }
 
 .image-group span {
   margin-top: 0.45rem;
   display: inline-block;
   color: var(--fg-secondary);
-  font-size: 0.82rem;
-  font-style: italic;
+  font-family: var(--label-font);
+  font-size: 0.72rem;
 }

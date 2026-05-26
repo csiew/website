@@ -4,34 +4,36 @@ article.project {
 
 article.project .project-header {
   width: 100%;
-  margin: 0 0 2.5rem;
-  padding-bottom: 2rem;
+  margin: 0 0 2.75rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0.85rem;
-  border-bottom: 1px solid var(--border-color);
+  gap: 0.9rem;
 }
 
 article.project .project-header h2 {
-  max-width: 12ch;
+  max-width: 13ch;
   color: var(--fg);
-  font-size: clamp(2.6rem, 7vw, 5rem);
-  font-weight: 650;
-  line-height: 0.98;
+  font-size: clamp(3rem, 7.5vw, 6.4rem);
+  font-weight: 500;
+  line-height: 0.88;
 }
 
 article.project .project-header p.subtitle {
-  max-width: 34rem;
+  max-width: 40rem;
   color: var(--fg-secondary);
-  font-size: clamp(1.2rem, 2.2vw, 1.65rem);
-  font-weight: 480;
+  font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+  font-weight: 400;
   line-height: 1.22;
 }
 
 article.project .project-header sub.timestamp {
   color: var(--fg-secondary);
-  font-size: 0.88rem;
+  font-family: var(--label-font);
+  font-size: 0.72rem;
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 .project-stack,
@@ -48,7 +50,11 @@ article.project .project-header sub.timestamp {
   margin: 0;
   padding: 0;
   color: var(--fg-secondary);
-  font-size: 0.84rem;
+  font-family: var(--label-font);
+  font-size: 0.7rem;
+  font-weight: 650;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .project-stack li + li::before {
@@ -68,11 +74,13 @@ article.project .project-header sub.timestamp {
 }
 
 .project-links a.button {
-  padding: 0;
+  padding: 0.2rem 0;
 }
 
 article.project .project-body {
-  width: 100%;
+  width: min(100%, 740px);
+  font-size: 1.03rem;
+  line-height: 1.72;
 }
 
 article.project .project-body > * + * {
@@ -109,8 +117,7 @@ article.project .project-body h4 {
   width: 100%;
   height: auto;
   display: block;
-  border: 1px solid var(--border-color);
-  border-radius: var(--border-radius);
+  border-radius: 0;
   -webkit-user-drag: none;
 }
 

@@ -2,6 +2,7 @@
   "name": "website",
   "version": "11.0.0",
   "description": "",
+  "packageManager": "pnpm@11.2.2",
   "engines": {
     "node": ">=22.12.0"
   },

@@ -3,7 +3,7 @@ img.not-found {
   height: 180px;
   margin: 2rem 0;
   display: block;
-  border-radius: 50%;
+  border-radius: 0;
   filter: grayscale(0.1);
   user-select: none;
   -webkit-user-drag: none;
