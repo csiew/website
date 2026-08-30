@@ -4,13 +4,9 @@ module.exports = {
   extends: [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:react/recommended",
-    "plugin:react/jsx-runtime",
-    "plugin:react-hooks/recommended",
   ],
   ignorePatterns: ["dist", ".eslintrc.cjs"],
   parser: "@typescript-eslint/parser",
-  plugins: ["react-refresh"],
   rules: {
     "indent": [
       "error",
@@ -28,14 +24,7 @@ module.exports = {
       "error",
       "always"
     ],
-    "react-refresh/only-export-components": [
-      "warn",
-      { allowConstantExport: true },
-    ],
     "@typescript-eslint/no-explicit-any": "warn",
-    "@typescript-eslint/no-unused-vars": "warn",
-    "react/prop-types": [0],
-    "react/jsx-uses-react": "error",   
-    "react/jsx-uses-vars": "error"
+    "@typescript-eslint/no-unused-vars": "warn"
   },
 }

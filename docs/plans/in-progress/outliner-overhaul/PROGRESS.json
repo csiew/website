@@ -1,0 +1,108 @@
+{
+  "$schema": "../../../../.pi/schemas/progress-schema.json",
+  "slug": "outliner-overhaul",
+  "status": "planning",
+  "summary": "Replace the Astro homepage with a static five-section outliner, retire the Feed surface, add post-like Interests content/routes, and progressively enhance accessible disclosure without URL state.",
+  "phases": [
+    {
+      "number": 1,
+      "title": "Foundation and route retirement",
+      "priority": "P0",
+      "status": "complete",
+      "doc": "01-phase-outliner-overhaul.md",
+      "description": "Remove the obsolete Feed surface, establish shared route/content data, add compact utility navigation with Back behaviour, and preserve existing static outputs.",
+      "completionEvidence": {
+        "evidenceId": "ev-outliner-overhaul-phase1",
+        "classification": "ordinary",
+        "phase": 1,
+        "createdAt": "2026-08-29T06:38:16.144Z",
+        "verificationId": "verify-outliner-overhaul-phase1-1787985386374",
+        "reviewIterationId": "review-outliner-overhaul-phase1-it6"
+      },
+      "outcome": "verified evidence ev-outliner-overhaul-phase1"
+    },
+    {
+      "number": 2,
+      "title": "Interest content and section routes",
+      "priority": "P0",
+      "status": "complete",
+      "doc": "02-phase-outliner-overhaul.md",
+      "description": "Add the post-like Interests collection with required metadata and URL-only entries, plus About, Interests, and Contact Astro destinations.",
+      "completionEvidence": {
+        "evidenceId": "ev-outliner-overhaul-phase2",
+        "classification": "ordinary",
+        "phase": 2,
+        "createdAt": "2026-08-29T06:44:01.968Z",
+        "verificationId": "verify-outliner-overhaul-phase2-1787985806419",
+        "reviewIterationId": "review-outliner-overhaul-phase2-it1"
+      },
+      "outcome": "verified evidence ev-outliner-overhaul-phase2"
+    },
+    {
+      "number": 3,
+      "title": "Server-rendered outliner",
+      "priority": "P0",
+      "status": "complete",
+      "doc": "03-phase-outliner-overhaul.md",
+      "description": "Replace the homepage presentation with the five-node leaf-only outliner and ensure all navigation remains server-rendered and no-JavaScript discoverable.",
+      "completionEvidence": {
+        "evidenceId": "ev-outliner-overhaul-phase3",
+        "classification": "ordinary",
+        "phase": 3,
+        "createdAt": "2026-08-29T06:48:09.659Z",
+        "verificationId": "verify-outliner-overhaul-phase3-1787986053305",
+        "reviewIterationId": "review-outliner-overhaul-phase3-it1"
+      },
+      "outcome": "verified evidence ev-outliner-overhaul-phase3"
+    },
+    {
+      "number": 4,
+      "title": "Disclosure behaviour and visual verification",
+      "priority": "P0",
+      "status": "complete",
+      "doc": "04-phase-outliner-overhaul.md",
+      "description": "Implement accessible chevron disclosure, responsive sparse styling, external-link indicators, automated checks, and final route/SEO validation.",
+      "completionEvidence": {
+        "evidenceId": "ev-outliner-overhaul-phase4",
+        "classification": "ordinary",
+        "phase": 4,
+        "createdAt": "2026-08-29T06:56:57.139Z",
+        "verificationId": "verify-outliner-overhaul-phase4-1787986591529",
+        "reviewIterationId": "review-outliner-overhaul-phase4-it2"
+      },
+      "outcome": "verified evidence ev-outliner-overhaul-phase4"
+    }
+  ],
+  "progressLog": [
+    {
+      "date": "2026-08-29",
+      "phase": 0,
+      "outcome": "Plan written"
+    },
+    {
+      "date": "2026-08-29",
+      "phase": 1,
+      "outcome": "Completed via verified evidence ev-outliner-overhaul-phase1"
+    },
+    {
+      "date": "2026-08-29",
+      "phase": 2,
+      "outcome": "Completed via verified evidence ev-outliner-overhaul-phase2"
+    },
+    {
+      "date": "2026-08-29",
+      "phase": 3,
+      "outcome": "Completed via verified evidence ev-outliner-overhaul-phase3"
+    },
+    {
+      "date": "2026-08-29",
+      "phase": 4,
+      "outcome": "Completed via verified evidence ev-outliner-overhaul-phase4"
+    },
+    {
+      "date": "2026-08-29",
+      "phase": 4,
+      "outcome": "Completed via verified evidence ev-outliner-overhaul-phase4"
+    }
+  ]
+}

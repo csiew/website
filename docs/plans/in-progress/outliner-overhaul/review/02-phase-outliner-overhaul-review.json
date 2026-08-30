@@ -1,0 +1,74 @@
+{
+  "slug": "outliner-overhaul",
+  "phase": 2,
+  "iterations": [
+    {
+      "phase": 2,
+      "slug": "outliner-overhaul",
+      "iteration": 1,
+      "verificationId": "verify-outliner-overhaul-phase2-1787985806419",
+      "graph": {
+        "state": "READY",
+        "generation": "bc95576530915400",
+        "fileCount": 36,
+        "symbolCount": 21,
+        "importCount": 14,
+        "createdAt": "2026-08-29T06:43:49.876Z",
+        "projectHash": "bc95576530915400"
+      },
+      "findings": [],
+      "queries": [
+        {
+          "query": "Trace all Interest collection consumers",
+          "target": "interests",
+          "applied": true
+        },
+        {
+          "query": "Inspect shared contact link consumers",
+          "target": "CONTACT_LINKS",
+          "applied": true
+        },
+        {
+          "query": "Check About route and content ownership",
+          "target": "AboutContent",
+          "applied": true
+        },
+        {
+          "query": "Check Feed route remains retired",
+          "target": "Feed",
+          "applied": true
+        }
+      ],
+      "inspectedSymbols": [
+        "interests",
+        "InterestList",
+        "AboutContent",
+        "CONTACT_LINKS",
+        "isValidInterestEntry",
+        "interestHref",
+        "NavBar",
+        "BaseLayout"
+      ],
+      "inspectedFiles": [
+        "src/content.config.ts",
+        "src/lib/interests.ts",
+        "src/lib/contact.ts",
+        "src/components/InterestList.astro",
+        "src/components/AboutContent.astro",
+        "src/components/LinkGrid.astro",
+        "src/components/NavBar.astro",
+        "src/layouts/BaseLayout.astro",
+        "src/pages/about.astro",
+        "src/pages/interests/index.astro",
+        "src/pages/interests/[slug].astro",
+        "src/pages/contact.astro",
+        "src/styles/about.css",
+        "tests/interests/interests-content.test.ts",
+        "tests/interests/interest-metadata.test.ts",
+        "tests/sections/section-routes.test.ts"
+      ],
+      "isClean": true,
+      "createdAt": "2026-08-29T06:43:49.877Z"
+    }
+  ]
+}

@@ -1,20 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 :root {
   --system-font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --jost-font: "Jost", var(--system-font);
-  --body-font: var(--jost-font);
-  --header-font: var(--jost-font);
-  --label-font: var(--jost-font);
+  --body-font: "Inter", var(--system-font);
+  --header-font: "Inter", var(--system-font);
+  --label-font: "Inter", var(--system-font);
   --monospace-font: "JetBrains Mono", monospace;
 
   --fg-rgb: 20, 18, 15;
   --fg-secondary-rgb: 106, 100, 91;
   --fg-highlight-rgb: 78, 38, 46;
-  --bg-rgb: 250, 248, 241;
-  --bg-secondary-rgb: 241, 237, 227;
-  --accent-rgb: 78, 38, 46;
-  --accent-secondary-rgb: 111, 85, 75;
+  --bg-rgb: 255, 255, 255;
+  --bg-secondary-rgb: 225, 225, 225;
+  --accent-rgb: 50, 75, 25;
+  --accent-secondary-rgb: 50, 150, 75;
   --accent-border-rgb: 181, 167, 151;
   --border-color-rgb: 215, 207, 193;
 
@@ -91,7 +90,7 @@ html {
   padding: 0;
   color: var(--fg);
   background: var(--bg);
-  font-size: 19px;
+  font-size: 1rem;
   font-family: var(--body-font);
   font-weight: 400;
 }
@@ -105,12 +104,12 @@ body {
 }
 
 #root {
-  width: min(1180px, calc(100% - 48px));
+  width: min(960px, calc(100% - 48px));
   min-height: 100vh;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 218px minmax(0, 1fr);
-  grid-template-rows: 1fr auto;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto minmax(0, 1fr) auto;
   background: var(--surface);
   line-height: 1.65;
 }
@@ -189,7 +188,6 @@ a:hover {
 
 a:focus-visible,
 button:focus-visible,
-.theme-select select:focus-visible,
 .button:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 4px;
@@ -254,9 +252,9 @@ main {
   width: 100%;
   min-width: 0;
   margin: 0;
-  padding: clamp(2.5rem, 6vw, 4.75rem) 0 clamp(3rem, 7vw, 5.5rem) clamp(2.25rem, 5vw, 5rem);
-  grid-column: 2;
-  grid-row: 1;
+  padding: clamp(2.25rem, 4vw, 3.75rem) 0 clamp(3rem, 7vw, 5.5rem);
+  grid-column: 1;
+  grid-row: 2;
 }
 
 main > h2:first-child {
@@ -288,9 +286,9 @@ iframe {
 footer {
   width: 100%;
   margin: 0;
-  padding: 1.1rem 0 2rem clamp(2.25rem, 5vw, 5rem);
-  grid-column: 2;
-  grid-row: 2;
+  padding: 1.1rem 0 2rem;
+  grid-column: 1;
+  grid-row: 3;
   color: var(--fg-secondary);
   font-family: var(--label-font);
   font-size: 0.78rem;
@@ -301,8 +299,6 @@ footer {
     width: min(760px, calc(100% - 32px));
     min-height: auto;
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
   }
 
   main {

@@ -1,5 +1,5 @@
 import { defineConfig } from "astro/config";
-import react from "@astrojs/react";
+import { unified } from "@astrojs/markdown-remark";
 import sitemap from "@astrojs/sitemap";
 import rehypeExternalLinks from "rehype-external-links";
 import fs from "node:fs";
@@ -26,20 +26,21 @@ export default defineConfig({
   site,
   trailingSlash: "never",
   integrations: [
-    react(),
     sitemap({
       filter: (page) => !privatePostPaths.has(page)
     })
   ],
   markdown: {
-    rehypePlugins: [
-      [
-        rehypeExternalLinks,
-        {
-          target: "_blank",
-          rel: ["noopener", "noreferrer"]
-        }
+    processor: unified({
+      rehypePlugins: [
+        [
+          rehypeExternalLinks,
+          {
+            target: "_blank",
+            rel: ["noopener", "noreferrer"]
+          }
+        ]
       ]
-    ]
+    })
   }
 });

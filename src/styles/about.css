@@ -1,0 +1,36 @@
+article.about {
+  width: min(100%, 48rem);
+  padding-bottom: 2.5rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.5rem;
+}
+
+.about-header {
+  margin: 0;
+}
+
+.about-header .lede {
+  max-width: 36rem;
+  color: var(--fg);
+  font-size: clamp(1.2rem, 2vw, 1.55rem);
+  line-height: 1.3;
+}
+
+.about-body {
+  max-width: 42rem;
+  color: var(--fg-secondary);
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
+
+.about-body > * + * {
+  margin-top: 0.9rem;
+}
+
+@media (max-width: 640px) {
+  article.about {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}

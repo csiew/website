@@ -3,12 +3,11 @@ import NavBar from "../components/NavBar.astro";
 import { SITE, absoluteAssetUrl, absoluteUrl } from "../lib/site";
 import "../styles/main.css";
 import "../styles/navbar.css";
-import "../styles/link-grid.css";
 import "../styles/link-list.css";
 import "../styles/home.css";
+import "../styles/about.css";
 import "../styles/post.css";
 import "../styles/project.css";
-import "../styles/feed.css";
 import "../styles/not-found.css";
 
 type Props = {
@@ -137,7 +136,7 @@ const jsonLd = structuredData
   </head>
   <body>
     <div id="root">
-      <NavBar pathname={pathname} />
+      <NavBar />
       <main>
         <slot />
       </main>

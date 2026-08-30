@@ -1,0 +1,64 @@
+{
+  "slug": "outliner-overhaul",
+  "phase": 3,
+  "iterations": [
+    {
+      "phase": 3,
+      "slug": "outliner-overhaul",
+      "iteration": 1,
+      "verificationId": "verify-outliner-overhaul-phase3-1787986053305",
+      "graph": {
+        "state": "READY",
+        "generation": "bc95576530915400",
+        "fileCount": 36,
+        "symbolCount": 21,
+        "importCount": 14,
+        "createdAt": "2026-08-29T06:48:00.554Z",
+        "projectHash": "bc95576530915400"
+      },
+      "findings": [],
+      "queries": [
+        {
+          "query": "Trace Outline callers and homepage ownership",
+          "target": "Outline",
+          "applied": true
+        },
+        {
+          "query": "Trace OutlineNode recursion and rendered branch structure",
+          "target": "OutlineNode",
+          "applied": true
+        },
+        {
+          "query": "Trace Interest route/link resolution",
+          "target": "interestHref",
+          "applied": true
+        },
+        {
+          "query": "Check all homepage links remain ordinary anchors",
+          "target": "outline link semantics",
+          "applied": true
+        }
+      ],
+      "inspectedSymbols": [
+        "Outline",
+        "OutlineNode",
+        "interestHref",
+        "isExternalInterest",
+        "CONTACT_LINKS"
+      ],
+      "inspectedFiles": [
+        "src/pages/index.astro",
+        "src/components/Outline.astro",
+        "src/components/OutlineNode.astro",
+        "src/lib/interests.ts",
+        "src/lib/contact.ts",
+        "src/content.config.ts",
+        "tests/outliner/structure.test.ts",
+        "tests/outliner/links.test.ts",
+        "tests/outliner/no-js.test.ts"
+      ],
+      "isClean": true,
+      "createdAt": "2026-08-29T06:48:00.555Z"
+    }
+  ]
+}

@@ -1,0 +1,333 @@
+{
+  "slug": "outliner-overhaul",
+  "phase": 1,
+  "iterations": [
+    {
+      "phase": 1,
+      "slug": "outliner-overhaul",
+      "iteration": 1,
+      "verificationId": "verify-outliner-overhaul-phase1-1787985241590",
+      "graph": {
+        "state": "READY",
+        "generation": "bc95576530915400",
+        "fileCount": 33,
+        "symbolCount": 10,
+        "importCount": 14,
+        "createdAt": "2026-08-29T06:34:21.988Z",
+        "projectHash": "bc95576530915400"
+      },
+      "findings": [],
+      "queries": [
+        {
+          "query": "Trace callers of Feed before deletion",
+          "target": "Feed",
+          "applied": true
+        },
+        {
+          "query": "Inspect NavBar callers and route props",
+          "target": "NavBar",
+          "applied": true
+        },
+        {
+          "query": "Check all /feed references after retirement",
+          "target": "route references",
+          "applied": true
+        }
+      ],
+      "inspectedSymbols": [
+        "NavBar",
+        "BaseLayout",
+        "SITE",
+        "absoluteUrl"
+      ],
+      "inspectedFiles": [
+        "package.json",
+        "pnpm-lock.yaml",
+        "astro.config.mjs",
+        ".eslintrc.cjs",
+        "src/components/NavBar.astro",
+        "src/layouts/BaseLayout.astro",
+        "src/pages/feed.astro",
+        "src/components/Feed.tsx",
+        "src/styles/feed.css",
+        "playwright.config.ts",
+        "tests/route-retirement.test.ts",
+        "tests/utility-navigation.test.ts",
+        "tests/route-retirement.e2e.ts",
+        "tests/utility-navigation.e2e.ts"
+      ],
+      "isClean": true,
+      "createdAt": "2026-08-29T06:34:22.004Z"
+    },
+    {
+      "phase": 1,
+      "slug": "outliner-overhaul",
+      "iteration": 1,
+      "verificationId": "verify-outliner-overhaul-phase1-1787985270351",
+      "graph": {
+        "state": "READY",
+        "generation": "bc95576530915400",
+        "fileCount": 33,
+        "symbolCount": 10,
+        "importCount": 14,
+        "createdAt": "2026-08-29T06:34:42.769Z",
+        "projectHash": "bc95576530915400"
+      },
+      "findings": [],
+      "queries": [
+        {
+          "query": "Trace callers of Feed before deletion",
+          "target": "Feed",
+          "applied": true
+        },
+        {
+          "query": "Inspect NavBar callers and route props",
+          "target": "NavBar",
+          "applied": true
+        },
+        {
+          "query": "Check all /feed references after retirement",
+          "target": "route references",
+          "applied": true
+        }
+      ],
+      "inspectedSymbols": [
+        "NavBar",
+        "BaseLayout",
+        "SITE",
+        "absoluteUrl"
+      ],
+      "inspectedFiles": [
+        "package.json",
+        "pnpm-lock.yaml",
+        "astro.config.mjs",
+        ".eslintrc.cjs",
+        "src/components/NavBar.astro",
+        "src/layouts/BaseLayout.astro",
+        "playwright.config.ts",
+        "tests/route-retirement.test.ts",
+        "tests/utility-navigation.test.ts",
+        "tests/route-retirement.e2e.ts",
+        "tests/utility-navigation.e2e.ts"
+      ],
+      "isClean": true,
+      "createdAt": "2026-08-29T06:34:42.775Z"
+    },
+    {
+      "phase": 1,
+      "slug": "outliner-overhaul",
+      "iteration": 1,
+      "verificationId": "verify-outliner-overhaul-phase1-1787985270351",
+      "graph": {
+        "state": "READY",
+        "generation": "bc95576530915400",
+        "fileCount": 33,
+        "symbolCount": 10,
+        "importCount": 14,
+        "createdAt": "2026-08-29T06:35:23.257Z",
+        "projectHash": "bc95576530915400"
+      },
+      "findings": [],
+      "queries": [
+        {
+          "query": "Trace callers of Feed before deletion",
+          "target": "Feed",
+          "applied": true
+        },
+        {
+          "query": "Inspect NavBar callers and route props",
+          "target": "NavBar",
+          "applied": true
+        },
+        {
+          "query": "Check all /feed references after retirement",
+          "target": "route references",
+          "applied": true
+        }
+      ],
+      "inspectedSymbols": [
+        "NavBar",
+        "BaseLayout",
+        "SITE",
+        "absoluteUrl"
+      ],
+      "inspectedFiles": [
+        "package.json",
+        "pnpm-lock.yaml",
+        "astro.config.mjs",
+        ".eslintrc.cjs",
+        "src/components/NavBar.astro",
+        "src/layouts/BaseLayout.astro",
+        "playwright.config.ts",
+        "tests/route-retirement.test.ts",
+        "tests/utility-navigation.test.ts",
+        "tests/route-retirement.e2e.ts",
+        "tests/utility-navigation.e2e.ts"
+      ],
+      "isClean": true,
+      "createdAt": "2026-08-29T06:35:23.269Z"
+    },
+    {
+      "phase": 1,
+      "slug": "outliner-overhaul",
+      "iteration": 1,
+      "verificationId": "verify-outliner-overhaul-phase1-1787985352153",
+      "graph": {
+        "state": "READY",
+        "generation": "bc95576530915400",
+        "fileCount": 33,
+        "symbolCount": 10,
+        "importCount": 14,
+        "createdAt": "2026-08-29T06:36:18.785Z",
+        "projectHash": "bc95576530915400"
+      },
+      "findings": [],
+      "queries": [
+        {
+          "query": "Trace callers of Feed before deletion",
+          "target": "Feed",
+          "applied": true
+        },
+        {
+          "query": "Inspect NavBar callers and route props",
+          "target": "NavBar",
+          "applied": true
+        },
+        {
+          "query": "Check all /feed references after retirement",
+          "target": "route references",
+          "applied": true
+        }
+      ],
+      "inspectedSymbols": [
+        "NavBar",
+        "BaseLayout",
+        "SITE",
+        "absoluteUrl"
+      ],
+      "inspectedFiles": [
+        "package.json",
+        "pnpm-lock.yaml",
+        "astro.config.mjs",
+        ".eslintrc.cjs",
+        "src/components/NavBar.astro",
+        "src/layouts/BaseLayout.astro",
+        "playwright.config.ts",
+        "tests/route-retirement.test.ts",
+        "tests/utility-navigation.test.ts",
+        "tests/route-retirement.e2e.ts",
+        "tests/utility-navigation.e2e.ts"
+      ],
+      "isClean": true,
+      "createdAt": "2026-08-29T06:36:18.793Z"
+    },
+    {
+      "phase": 1,
+      "slug": "outliner-overhaul",
+      "iteration": 1,
+      "verificationId": "verify-outliner-overhaul-phase1-1787985386374",
+      "graph": {
+        "state": "READY",
+        "generation": "bc95576530915400",
+        "fileCount": 33,
+        "symbolCount": 10,
+        "importCount": 14,
+        "createdAt": "2026-08-29T06:36:41.852Z",
+        "projectHash": "bc95576530915400"
+      },
+      "findings": [],
+      "queries": [
+        {
+          "query": "Trace callers of Feed before deletion",
+          "target": "Feed",
+          "applied": true
+        },
+        {
+          "query": "Inspect NavBar callers and route props",
+          "target": "NavBar",
+          "applied": true
+        },
+        {
+          "query": "Check all /feed references after retirement",
+          "target": "route references",
+          "applied": true
+        }
+      ],
+      "inspectedSymbols": [
+        "NavBar",
+        "BaseLayout",
+        "SITE",
+        "absoluteUrl"
+      ],
+      "inspectedFiles": [
+        "package.json",
+        "pnpm-lock.yaml",
+        "astro.config.mjs",
+        ".eslintrc.cjs",
+        "src/components/NavBar.astro",
+        "src/layouts/BaseLayout.astro",
+        "playwright.config.ts",
+        "tests/route-retirement.test.ts",
+        "tests/utility-navigation.test.ts",
+        "tests/route-retirement.e2e.ts",
+        "tests/utility-navigation.e2e.ts"
+      ],
+      "isClean": true,
+      "createdAt": "2026-08-29T06:36:41.864Z"
+    },
+    {
+      "phase": 1,
+      "slug": "outliner-overhaul",
+      "iteration": 1,
+      "verificationId": "verify-outliner-overhaul-phase1-1787985386374",
+      "graph": {
+        "state": "READY",
+        "generation": "bc95576530915400",
+        "fileCount": 33,
+        "symbolCount": 10,
+        "importCount": 14,
+        "createdAt": "2026-08-29T06:37:46.939Z",
+        "projectHash": "bc95576530915400"
+      },
+      "findings": [],
+      "queries": [
+        {
+          "query": "Trace callers of Feed before deletion",
+          "target": "Feed",
+          "applied": true
+        },
+        {
+          "query": "Inspect NavBar callers and route props",
+          "target": "NavBar",
+          "applied": true
+        },
+        {
+          "query": "Check all /feed references after retirement",
+          "target": "route references",
+          "applied": true
+        }
+      ],
+      "inspectedSymbols": [
+        "NavBar",
+        "BaseLayout",
+        "SITE",
+        "absoluteUrl"
+      ],
+      "inspectedFiles": [
+        "package.json",
+        "pnpm-lock.yaml",
+        "astro.config.mjs",
+        ".eslintrc.cjs",
+        "src/components/NavBar.astro",
+        "src/layouts/BaseLayout.astro",
+        "playwright.config.ts",
+        "tests/route-retirement.test.ts",
+        "tests/utility-navigation.test.ts",
+        "tests/route-retirement.e2e.ts",
+        "tests/utility-navigation.e2e.ts"
+      ],
+      "isClean": true,
+      "createdAt": "2026-08-29T06:37:46.948Z"
+    }
+  ]
+}

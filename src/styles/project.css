@@ -12,28 +12,22 @@ article.project .project-header {
 }
 
 article.project .project-header h2 {
-  max-width: 13ch;
   color: var(--fg);
-  font-size: clamp(3rem, 7.5vw, 6.4rem);
-  font-weight: 500;
-  line-height: 0.88;
+  font-size: 2.5rem;
+  font-weight: 650;
+  line-height: 1;
 }
 
 article.project .project-header p.subtitle {
-  max-width: 40rem;
   color: var(--fg-secondary);
-  font-size: clamp(1.25rem, 2.2vw, 1.75rem);
-  font-weight: 400;
-  line-height: 1.22;
+  font-size: 1.5rem;
+  line-height: 1.25;
 }
 
 article.project .project-header sub.timestamp {
   color: var(--fg-secondary);
   font-family: var(--label-font);
-  font-size: 0.72rem;
-  font-weight: 650;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  font-size: 1rem;
 }
 
 .project-stack,
@@ -74,13 +68,22 @@ article.project .project-header sub.timestamp {
 }
 
 .project-links a.button {
-  padding: 0.2rem 0;
+  padding: 0.25rem 1rem;
+  font-size: 1.5rem;
+  text-decoration: none;
+  border: 3px solid var(--accent-secondary);
+
+  &:hover {
+    color: var(--bg);
+    background: var(--fg);
+    border-color: var(--fg);
+  }
 }
 
 article.project .project-body {
   width: min(100%, 740px);
-  font-size: 1.03rem;
-  line-height: 1.72;
+  font-size: 1rem;
+  line-height: 1.75;
 }
 
 article.project .project-body > * + * {

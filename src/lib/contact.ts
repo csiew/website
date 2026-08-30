@@ -1,5 +1,4 @@
----
-const links = [
+export const CONTACT_LINKS = [
   {
     title: "LinkedIn",
     url: "https://linkedin.com/in/clarencesiew"
@@ -24,17 +23,4 @@ const links = [
     title: "Instagram",
     url: "https://instagram.com/clarence_siew"
   }
-];
----
-
-<div class="link-grid">
-  <ul>
-    {links.map((link) => (
-      <li>
-        <a href={link.url} target="_blank" rel="noreferrer">
-          <span>{link.title}</span>
-        </a>
-      </li>
-    ))}
-  </ul>
-</div>
+] as const;

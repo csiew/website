@@ -1,0 +1,132 @@
+{
+  "slug": "outliner-overhaul",
+  "phase": 4,
+  "iterations": [
+    {
+      "phase": 4,
+      "slug": "outliner-overhaul",
+      "iteration": 1,
+      "verificationId": "verify-outliner-overhaul-phase4-1787986367285",
+      "graph": {
+        "state": "READY",
+        "generation": "bc95576530915400",
+        "fileCount": 36,
+        "symbolCount": 21,
+        "importCount": 14,
+        "createdAt": "2026-08-29T06:53:18.503Z",
+        "projectHash": "bc95576530915400"
+      },
+      "findings": [],
+      "queries": [
+        {
+          "query": "Trace Outline disclosure event ownership",
+          "target": "Outline",
+          "applied": true
+        },
+        {
+          "query": "Trace NavBar Back control callers",
+          "target": "NavBar",
+          "applied": true
+        },
+        {
+          "query": "Check external-link indicator semantics across tree and InterestList",
+          "target": "external-link-indicator",
+          "applied": true
+        },
+        {
+          "query": "Check CSS selectors for mobile overflow and hidden branch state",
+          "target": "outline responsive styles",
+          "applied": true
+        }
+      ],
+      "inspectedSymbols": [
+        "Outline",
+        "OutlineNode",
+        "NavBar",
+        "BaseLayout",
+        "interestHref",
+        "CONTACT_LINKS"
+      ],
+      "inspectedFiles": [
+        "src/components/Outline.astro",
+        "src/components/OutlineNode.astro",
+        "src/styles/home.css",
+        "src/components/NavBar.astro",
+        "src/layouts/BaseLayout.astro",
+        "tests/outliner/disclosure.test.ts",
+        "tests/outliner/disclosure.e2e.ts",
+        "tests/outliner/accessibility.test.ts",
+        "tests/outliner/external-links.test.ts",
+        "tests/outliner/external-links.e2e.ts",
+        "tests/outliner/responsive.test.ts",
+        "tests/integration/build-and-routes.test.ts",
+        "tests/integration/build-and-routes.e2e.ts"
+      ],
+      "isClean": true,
+      "createdAt": "2026-08-29T06:53:18.514Z"
+    },
+    {
+      "phase": 4,
+      "slug": "outliner-overhaul",
+      "iteration": 1,
+      "verificationId": "verify-outliner-overhaul-phase4-1787986591529",
+      "graph": {
+        "state": "READY",
+        "generation": "bc95576530915400",
+        "fileCount": 36,
+        "symbolCount": 21,
+        "importCount": 14,
+        "createdAt": "2026-08-29T06:56:50.667Z",
+        "projectHash": "bc95576530915400"
+      },
+      "findings": [],
+      "queries": [
+        {
+          "query": "Trace Outline disclosure event ownership",
+          "target": "Outline",
+          "applied": true
+        },
+        {
+          "query": "Trace NavBar Back control callers",
+          "target": "NavBar",
+          "applied": true
+        },
+        {
+          "query": "Check external-link indicator semantics across tree and InterestList",
+          "target": "external-link-indicator",
+          "applied": true
+        },
+        {
+          "query": "Check CSS selectors for mobile overflow and hidden branch state",
+          "target": "outline responsive styles",
+          "applied": true
+        }
+      ],
+      "inspectedSymbols": [
+        "Outline",
+        "OutlineNode",
+        "NavBar",
+        "BaseLayout",
+        "interestHref",
+        "CONTACT_LINKS"
+      ],
+      "inspectedFiles": [
+        "src/components/Outline.astro",
+        "src/components/OutlineNode.astro",
+        "src/styles/home.css",
+        "src/components/NavBar.astro",
+        "src/layouts/BaseLayout.astro",
+        "tests/outliner/disclosure.test.ts",
+        "tests/outliner/disclosure.e2e.ts",
+        "tests/outliner/accessibility.test.ts",
+        "tests/outliner/external-links.test.ts",
+        "tests/outliner/external-links.e2e.ts",
+        "tests/outliner/responsive.test.ts",
+        "tests/integration/build-and-routes.test.ts",
+        "tests/integration/build-and-routes.e2e.ts"
+      ],
+      "isClean": true,
+      "createdAt": "2026-08-29T06:56:50.677Z"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+---
+import { getCollection } from "astro:content";
+import { CONTACT_LINKS } from "../lib/contact";
+import { formatDate } from "../lib/site";
+import OutlineNode from "./OutlineNode.astro";
+
+const posts = (await getCollection("posts"))
+  .filter((post) => !post.data.private)
+  .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+const projects = (await getCollection("projects"))
+  .sort((a, b) => b.data.duration.start.localeCompare(a.data.duration.start));
+function durationLabel(project: typeof projects[number]) {
+  const { start, end } = project.data.duration;
+  return start === end ? start : `${start} - ${end}`;
+}
+
+type Node = {
+  label: string;
+  href?: string;
+  external?: boolean;
+  children?: Node[];
+};
+
+const nodes: Node[] = [
+  {
+    label: "Contact",
+    children: CONTACT_LINKS.map((link) => ({
+      label: link.title,
+      href: link.url,
+      external: true
+    }))
+  },
+  {
+    label: "Posts",
+    href: "/posts",
+    children: posts.map((post) => ({
+      label: post.data.title,
+      href: `/posts/${post.data.slug}`,
+      subtitle: post.data.subtitle,
+      meta: formatDate(post.data.publishedAt)
+    }))
+  },
+  {
+    label: "Projects",
+    href: "/projects",
+    children: projects.map((project) => ({
+      label: project.data.title,
+      href: `/projects/${project.data.slug}`,
+      subtitle: project.data.subtitle,
+      meta: durationLabel(project)
+    }))
+  },
+];
+---
+
+<nav class="outline" aria-label="Site outline">
+  <ul data-outline-root>
+    {nodes.map((node, index) => <OutlineNode node={node} id={`outline-${index}`} />)}
+  </ul>
+</nav>

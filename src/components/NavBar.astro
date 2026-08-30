@@ -1,44 +1,10 @@
 ---
 import {
-  BriefcaseBusiness,
-  Camera,
-  Cloud,
-  Code,
-  FolderKanban,
-  House,
-  Menu,
-  MessageCircle,
-  MessagesSquare,
   Monitor,
   Moon,
-  PencilLine,
-  Rss,
   Sun
 } from "@lucide/astro";
 import { SITE } from "../lib/site";
-
-const { pathname } = Astro.props;
-
-function isActive(path: string) {
-  if (path === "/") return pathname === "/";
-  return pathname === path || pathname.startsWith(`${path}/`);
-}
-
-const navLinks = [
-  { title: "Home", url: "/", icon: House },
-  { title: "Feed", url: "/feed", icon: Rss },
-  { title: "Writing", url: "/posts", icon: PencilLine },
-  { title: "Projects", url: "/projects", icon: FolderKanban }
-];
-
-const externalLinks = [
-  { title: "LinkedIn", url: "https://linkedin.com/in/clarencesiew", icon: BriefcaseBusiness },
-  { title: "GitHub", url: "https://github.com/csiew", icon: Code },
-  { title: "Mastodon", url: "https://mastodon.online/@csiew", icon: MessageCircle },
-  { title: "Bluesky", url: "https://bsky.app/profile/csiew.bsky.social", icon: Cloud },
-  { title: "Threads", url: "https://threads.net/@clarence_siew", icon: MessagesSquare },
-  { title: "Instagram", url: "https://instagram.com/clarence_siew", icon: Camera }
-];
 
 const themeOptions = [
   { value: "auto", label: "Auto", icon: Monitor },
@@ -49,16 +15,6 @@ const themeOptions = [
 
 <header>
   <div class="header-content">
-    <button
-      type="button"
-      class="nav-menu-toggle"
-      aria-label="Toggle navigation"
-      aria-controls="nav-menu-sections"
-      aria-expanded="false"
-      data-nav-menu-toggle
-    >
-      <Menu aria-hidden="true" size={18} stroke-width={2} />
-    </button>
     <div class="site-title">
       <a href="/" aria-label="Clarence Siew homepage">
         <img src="/profile.jpg" alt="Clarence Siew" />
@@ -68,125 +24,63 @@ const themeOptions = [
         </span>
       </a>
     </div>
-    <div id="nav-menu-sections" class="nav-menu-sections" data-nav-menu-sections>
-      <nav aria-labelledby="nav-site-title">
-        <h2 id="nav-site-title">Site</h2>
-        <ul>
-          {navLinks.map((link) => {
-            const Icon = link.icon;
+    <button type="button" class="theme-cycle" data-theme-cycle aria-label="Theme: Auto. Activate to switch to Light.">
+      {themeOptions.map((option) => {
+        const Icon = option.icon;
 
-            return (
-              <li>
-                <a href={link.url} class:list={{ active: isActive(link.url) }} aria-label={link.title} title={link.title}>
-                  <Icon aria-hidden="true" size={16} stroke-width={2} />
-                  <span>{link.title}</span>
-                </a>
-              </li>
-            );
-          })}
-        </ul>
-      </nav>
-      <section class="nav-elsewhere" aria-labelledby="nav-elsewhere-title">
-        <h2 id="nav-elsewhere-title">Elsewhere</h2>
-        <ul>
-          {externalLinks.map((link) => {
-            const Icon = link.icon;
-
-            return (
-              <li>
-                <a href={link.url} target="_blank" rel="noreferrer" aria-label={link.title} title={link.title}>
-                  <Icon aria-hidden="true" size={15} stroke-width={2} />
-                  <span>{link.title}</span>
-                </a>
-              </li>
-            );
-          })}
-        </ul>
-      </section>
-      <div class="theme-select">
-        <label for="theme-select">Theme</label>
-        <select id="theme-select" name="theme" data-theme-select>
-          <option value="auto" selected>Auto</option>
-          <option value="light">Light</option>
-          <option value="dark">Dark</option>
-        </select>
-        <div class="theme-pill-group" role="group" aria-label="Theme">
-          {themeOptions.map((option) => {
-            const Icon = option.icon;
-
-            return (
-              <button
-                type="button"
-                class="theme-pill"
-                value={option.value}
-                aria-label={`${option.label} theme`}
-                aria-pressed={option.value === "auto" ? "true" : "false"}
-                title={option.label}
-                data-theme-option
-              >
-                <Icon aria-hidden="true" size={16} stroke-width={2} />
-              </button>
-            );
-          })}
-        </div>
-      </div>
-    </div>
+        return (
+          <span class="theme-cycle-icon" data-theme-icon={option.value} hidden={option.value !== "auto"}>
+            <Icon aria-hidden="true" size={16} stroke-width={2} />
+          </span>
+        );
+      })}
+      <span data-theme-label>Auto</span>
+    </button>
   </div>
 </header>
 
 <script is:inline>
   (() => {
-    const menuToggle = document.querySelector("[data-nav-menu-toggle]");
-    const menuSections = document.querySelector("[data-nav-menu-sections]");
-    const select = document.querySelector("[data-theme-select]");
-    const options = Array.from(document.querySelectorAll("[data-theme-option]"));
+    const button = document.querySelector("[data-theme-cycle]");
 
-    if (menuToggle instanceof HTMLButtonElement && menuSections instanceof HTMLElement) {
-      function setMenuOpen(isOpen) {
-        menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-        menuSections.classList.toggle("is-open", isOpen);
-      }
-
-      menuToggle.addEventListener("click", () => {
-        setMenuOpen(menuToggle.getAttribute("aria-expanded") !== "true");
-      });
-
-      menuSections.addEventListener("click", (event) => {
-        if (event.target instanceof Element && event.target.closest("a")) {
-          setMenuOpen(false);
-        }
-      });
-    }
-
-    if (!(select instanceof HTMLSelectElement) || !options.every((option) => option instanceof HTMLButtonElement)) {
+    if (!(button instanceof HTMLButtonElement)) {
       return;
     }
 
-    function syncSelect() {
-      const preference = document.documentElement.dataset.themePreference ?? "auto";
+    const icons = Array.from(button.querySelectorAll("[data-theme-icon]"));
+    const label = button.querySelector("[data-theme-label]");
+    const order = ["auto", "light", "dark"];
+    const labels = { auto: "Auto", light: "Light", dark: "Dark" };
 
-      select.value = preference;
-      options.forEach((option) => {
-        option.setAttribute("aria-pressed", option.value === preference ? "true" : "false");
-      });
+    function nextPreference(preference) {
+      return order[(order.indexOf(preference) + 1) % order.length] ?? "light";
     }
 
-    syncSelect();
+    function syncButton() {
+      const preference = document.documentElement.dataset.themePreference ?? "auto";
+      const next = nextPreference(preference);
 
-    select.addEventListener("change", () => {
+      icons.forEach((icon) => {
+        icon.hidden = icon.dataset.themeIcon !== preference;
+      });
+
+      if (label) {
+        label.textContent = labels[preference] ?? "Auto";
+      }
+
+      button.setAttribute("aria-label", `Theme: ${labels[preference] ?? preference}. Activate to switch to ${labels[next] ?? next}.`);
+    }
+
+    syncButton();
+
+    button.addEventListener("click", () => {
+      const preference = document.documentElement.dataset.themePreference ?? "auto";
+
       if (typeof window.setThemePreference === "function") {
-        window.setThemePreference(select.value);
+        window.setThemePreference(nextPreference(preference));
       }
     });
 
-    options.forEach((option) => {
-      option.addEventListener("click", () => {
-        if (typeof window.setThemePreference === "function") {
-          window.setThemePreference(option.value);
-        }
-      });
-    });
-
-    window.addEventListener("themechange", syncSelect);
+    window.addEventListener("themechange", syncButton);
   })();
 </script>

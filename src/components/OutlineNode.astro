@@ -1,0 +1,63 @@
+---
+import { ArrowUpRight, CornerDownRight } from "@lucide/astro";
+import OutlineNode from "./OutlineNode.astro";
+
+type OutlineNode = {
+  label: string;
+  href?: string;
+  external?: boolean;
+  subtitle?: string;
+  meta?: string;
+  children?: OutlineNode[];
+};
+
+type Props = {
+  node: OutlineNode;
+  id: string;
+  depth?: number;
+};
+
+const { node, id, depth = 0 } = Astro.props;
+const childrenId = `${id}-children`;
+const hasChildren = Boolean(node.children?.length);
+---
+
+<li class:list={{ "outline-node": true, "has-children": hasChildren }} data-outline-node>
+  <div class="outline-row">
+    {depth > 0 && <CornerDownRight class="outline-node-marker" aria-hidden="true" size={16} stroke-width={1.8} />}
+    <div class="outline-content">
+      {node.href ? (
+        <a
+          class="outline-link"
+          href={node.href}
+          target={node.external ? "_blank" : undefined}
+          rel={node.external ? "noreferrer" : undefined}
+          aria-label={node.external ? `${node.label} (external link)` : node.label}
+          data-outline-link
+        >
+          <span>{node.label}</span>
+          {node.external && (
+            <ArrowUpRight
+              class="external-link-indicator"
+              data-external-link-indicator
+              aria-hidden="true"
+              size={14}
+              stroke-width={2}
+            />
+          )}
+        </a>
+      ) : (
+        <span class="outline-link outline-label">{node.label}</span>
+      )}
+      {node.subtitle && <p class="outline-description">{node.subtitle}</p>}
+      {node.meta && <span class="outline-meta">{node.meta}</span>}
+    </div>
+  </div>
+  {hasChildren && (
+    <div id={childrenId} class="outline-children" data-outline-children>
+      <ul>
+        {node.children?.map((child, index) => <OutlineNode node={child} id={`${id}-${index}`} depth={depth + 1} />)}
+      </ul>
+    </div>
+  )}
+</li>

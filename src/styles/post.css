@@ -12,35 +12,29 @@ article.post .post-header {
 }
 
 article.post .post-header h2 {
-  max-width: 13ch;
   color: var(--fg);
-  font-size: clamp(3rem, 7.5vw, 6.4rem);
-  font-weight: 500;
-  line-height: 0.88;
+  font-size: 2.5rem;
+  font-weight: 650;
+  line-height: 1;
 }
 
 article.post .post-header p.subtitle {
-  max-width: 40rem;
   color: var(--fg-secondary);
-  font-size: clamp(1.25rem, 2.2vw, 1.75rem);
-  font-weight: 400;
-  line-height: 1.22;
+  font-size: 1.5rem;
+  line-height: 1.25;
 }
 
 article.post .post-header sub.timestamp {
   color: var(--fg-secondary);
   font-family: var(--label-font);
-  font-size: 0.72rem;
-  font-weight: 650;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  font-size: 1rem;
 }
 
 article.post .post-body {
   width: min(100%, 740px);
   color: var(--fg);
-  font-size: 1.03rem;
-  line-height: 1.72;
+  font-size: 1rem;
+  line-height: 1.75;
 }
 
 article.post .post-body > * + * {
@@ -54,15 +48,18 @@ article.post .post-body h3 {
 }
 
 article.post .post-body h1 {
-  font-size: clamp(1.9rem, 3vw, 2.45rem);
+  font-size: 1.5rem;
+  font-weight: 650;
 }
 
 article.post .post-body h2 {
-  font-size: clamp(1.45rem, 2vw, 1.8rem);
+  font-size: 1.325rem;
+  font-weight: 600;
 }
 
 article.post .post-body h3 {
-  font-size: 1.18rem;
+  font-size: 1.25rem;
+  font-weight: 550;
 }
 
 article.post .post-body p,
